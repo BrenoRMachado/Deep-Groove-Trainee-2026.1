@@ -1,6 +1,6 @@
 # **Trainee 2026.1**
 
-# **Nome do seu blog**
+# **Deep Groove**
 
 ## **Projeto Trainee, Code Jr, 2026.1**
 
@@ -17,16 +17,17 @@
 ## Equipe
 
 #### Desenvolvedores:
-* [Trainee 1](coloque o link do github)
-* [Trainee 2](coloque o link do github)
-* [Trainee 3](coloque o link do github)
-* [Trainee 4](coloque o link do github)
+* [Bernardo Grijó](link do github)
+* [Camille Roberta](link do github)
+* [Laura Oliveira Bastos](link do github)
+* [Theo Lucca Castro](link do github)
+
 
 #### Scrum Master:
-* [Nome do Scrum](coloque o link do github).
+* [Breno Reis Machado](https://github.com/BrenoRMachado) 
 
 #### Links Úteis:
-* [Trello do Projeto]()
+* [Trello do Projeto](https://trello.com/b/CfcPwpqN/deep-groove)
 
 ---
 
