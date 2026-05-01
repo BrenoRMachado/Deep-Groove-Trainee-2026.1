@@ -17,10 +17,10 @@
 ## Equipe
 
 #### Desenvolvedores:
-* [Bernardo Grijó](link do github)
-* [Camille Roberta](link do github)
-* [Laura Oliveira Bastos](link do github)
-* [Theo Lucca Castro](link do github)
+* [Bernardo Grijó](https://github.com/BernardoGrijoFontes)
+* [Camille Roberta](https://github.com/T0RR4S)
+* [Laura Oliveira Bastos](https://github.com/LauraBastosdev)
+* [Luan da Silva Dutra Dias](https://github.com/LuanDutraDias)
 
 
 #### Scrum Master:
