@@ -1,0 +1,17 @@
+/* * Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* * Estilo da página de posts */
+#PaginaDePosts {
+    background: linear-gradient(to bottom, #5B162D, #000000);
+    padding: 1rem 5rem;
+}
+
+/* * Estilo do título da página de posts */
+.TituloDaPaginaDePosts {
+    color: white;
+}
