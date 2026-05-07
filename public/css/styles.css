@@ -1,4 +1,4 @@
-/* * Reset CSS */
+/* * Reset CSS da página de posts*/
 * {
     margin: 0;
     padding: 0;
@@ -6,41 +6,63 @@
 }
 
 /* * Estilo da página de posts */
-#PaginaDePosts {
+#pagina-de-posts {
     background: linear-gradient(to bottom, #5B162D, #000000);
     padding: 1rem 5rem;
 }
 
 /* * Estilo do título da página de posts */
-.TituloDaPaginaDePosts {
+.titulo-da-pagina-de-posts {
     color: white;
     padding: 0.6rem 0;
+    font-size: 3rem;
 }
 
-/* * Estilo da barra de pesquisa da página de posts */
-.ContainerDePesquisaDaPaginaDePosts{
+/* * Estilo do container de pesquisa da página de posts */
+.container-de-pesquisa-da-pagina-de-posts {
     padding: 1.1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 10rem;
 }
 
-.BarraDePesquisaDaPaginaDePosts {
+/* *Estilo da barra de pesquisa da página de posts */
+.barra-de-pesquisa-da-pagina-de-posts {
     background-color: white;
     border: 3px solid black;
     border-radius: 30px;
     width: 30rem;
+    display: flex;
+    align-items: center;
 }
 
-/* *Estilo da pesquisa da página de posts */
-.PesquisarNaPaginaDePosts {
+.pesquisar-na-pagina-de-posts {
     all: unset;
     font-style: italic;
     width: 100%;
-    padding: 0.7rem;
+    padding: 0.8rem;
+    font-size: 1.3rem;
 }
 
-.PesquisarNaPaginaDePosts::placeholder{
+.pesquisar-na-pagina-de-posts::placeholder {
     color: #F09859;
 }
 
-.PesquisarNaPaginaDePosts:focus::placeholder{
+.pesquisar-na-pagina-de-posts:focus::placeholder {
     opacity: 0;
+}
+
+/* *Estilo dos ícones de filtro e de pesquisa da página de posts */
+.icone-de-pesquisa-da-pagina-de-posts {
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+
+.icone-filtro-de-pesquisa-da-pagina-de-posts {
+    color: #F09859;
+    background-color: white;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
 }
