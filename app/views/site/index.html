@@ -9,15 +9,32 @@
 </head>
 <body>
     <main id="pagina-de-posts">
-        <h1 class="titulo-da-pagina-de-posts">Publicações</h1>
-        <section class="container-de-pesquisa-da-pagina-de-posts">
-            <div class="barra-de-pesquisa-da-pagina-de-posts">
-                <input type="text" placeholder="Qual álbum você está procurando?" class="pesquisar-na-pagina-de-posts">
-                <i class="icone-de-pesquisa-da-pagina-de-posts bi bi-search"></i>
+        <h1 class="titulo">Publicações</h1>
+        <section id="container-de-pesquisa">
+            <div class="barra-de-pesquisa">
+                <input type="text" placeholder="Qual álbum você está procurando?" class="pesquisar">
+                <i class="icone-de-pesquisa bi bi-search"></i>
             </div>
-            <i class="icone-filtro-de-pesquisa-da-pagina-de-posts bi bi-filter-circle-fill"></i>
+            <i class="icone-filtro-de-pesquisa bi bi-filter-circle-fill"></i>
+        </section>
+        <section id="container-de-mudanca-de-pagina">
+            <div class="container-botoes">
+                <i class="seta-esquerda-mudar-pagina bi bi-chevron-left"></i>
+                <div class="botao-pagina-atual">
+                    <p>1</p>
+                </div>
+                <div class="botao-proxima-pagina">
+                    <p>2</p>
+                </div>
+                <div class="botao-proxima-proxima-pagina">
+                    <p>3</p>
+                </div>
+                <div class="existe-mais-paginas">
+                    <p>...</p>
+                </div>
+                <i class="seta-direita-mudar-pagina bi bi-chevron-right"></i>
+            </div>
         </section>
     </main>
-
 </body>
 </html>
