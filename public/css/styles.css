@@ -8,26 +8,26 @@
 /* * Estilo da página de posts */
 #pagina-de-posts {
     background: linear-gradient(to bottom, #5B162D, #000000);
-    padding: 1rem 5rem;
+    padding: 1rem 0;
 }
 
 /* * Estilo do título da página de posts */
-.titulo-da-pagina-de-posts {
+#pagina-de-posts .titulo {
     color: white;
-    padding: 0.6rem 0;
+    padding: 0.6rem 5rem;
     font-size: 3rem;
 }
 
 /* * Estilo do container de pesquisa da página de posts */
-.container-de-pesquisa-da-pagina-de-posts {
-    padding: 1.1rem 0;
+#pagina-de-posts #container-de-pesquisa {
+    padding: 1.1rem 5rem;
     display: flex;
     align-items: center;
     gap: 10rem;
 }
 
 /* *Estilo da barra de pesquisa da página de posts */
-.barra-de-pesquisa-da-pagina-de-posts {
+#pagina-de-posts .barra-de-pesquisa {
     background-color: white;
     border: 3px solid black;
     border-radius: 30px;
@@ -36,7 +36,7 @@
     align-items: center;
 }
 
-.pesquisar-na-pagina-de-posts {
+#pagina-de-posts .pesquisar {
     all: unset;
     font-style: italic;
     width: 100%;
@@ -44,25 +44,86 @@
     font-size: 1.3rem;
 }
 
-.pesquisar-na-pagina-de-posts::placeholder {
+#pagina-de-posts .pesquisar::placeholder {
     color: #F09859;
 }
 
-.pesquisar-na-pagina-de-posts:focus::placeholder {
+#pagina-de-posts .pesquisar:focus::placeholder {
     opacity: 0;
 }
 
 /* *Estilo dos ícones de filtro e de pesquisa da página de posts */
-.icone-de-pesquisa-da-pagina-de-posts {
+#pagina-de-posts .icone-de-pesquisa {
     margin-right: 1rem;
     font-size: 2rem;
 }
 
-.icone-filtro-de-pesquisa-da-pagina-de-posts {
+#pagina-de-posts .icone-filtro-de-pesquisa {
     color: #F09859;
     background-color: white;
     font-size: 3rem;
     display: flex;
     align-items: center;
     border-radius: 50%;
+}
+
+/* *Estilo do container de mudança de página da página de posts */
+#pagina-de-posts #container-de-mudanca-de-pagina {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    padding: 1.8rem 0;
+}
+
+#pagina-de-posts .container-botoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* *Estilo dos botões de mudança de página da página de posts */
+#pagina-de-posts .seta-esquerda-mudar-pagina, #pagina-de-posts .seta-direita-mudar-pagina {
+    font-size: 4rem;
+    color: white;
+}
+
+#pagina-de-posts .botao-pagina-atual {
+    border-radius: 50%;
+    background-color: #F09859;
+    color: white;
+    padding: 1rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pagina-de-posts .botao-proxima-pagina, #pagina-de-posts .botao-proxima-proxima-pagina {
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    padding: 1rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pagina-de-posts .botao-pagina-atual p, #pagina-de-posts .botao-proxima-pagina p, #pagina-de-posts .botao-proxima-proxima-pagina p {
+    font-size: 2.5rem;
+}
+
+#pagina-de-posts .existe-mais-paginas {
+    display: flex;
+    align-items: flex-end;
+    height: 4rem;
+}
+
+#pagina-de-posts .existe-mais-paginas p {
+    font-size: 2.5rem;
+    color: white;
 }
