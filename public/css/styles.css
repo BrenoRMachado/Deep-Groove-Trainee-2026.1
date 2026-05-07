@@ -14,4 +14,33 @@
 /* * Estilo do título da página de posts */
 .TituloDaPaginaDePosts {
     color: white;
+    padding: 0.6rem 0;
+}
+
+/* * Estilo da barra de pesquisa da página de posts */
+.ContainerDePesquisaDaPaginaDePosts{
+    padding: 1.1rem 0;
+}
+
+.BarraDePesquisaDaPaginaDePosts {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 30px;
+    width: 30rem;
+}
+
+/* *Estilo da pesquisa da página de posts */
+.PesquisarNaPaginaDePosts {
+    all: unset;
+    font-style: italic;
+    width: 100%;
+    padding: 0.7rem;
+}
+
+.PesquisarNaPaginaDePosts::placeholder{
+    color: #F09859;
+}
+
+.PesquisarNaPaginaDePosts:focus::placeholder{
+    opacity: 0;
 }
