@@ -1,0 +1,45 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 10vh;
+    background: linear-gradient(to right, #000000, #5B162D);
+    display: flex;
+    flex-direction: row;
+}
+
+.metade-navbar {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.segunda-metade {
+    justify-content: end;
+}
+
+.botoes {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    color: #FEECE8;
+}
+
+
+
