@@ -2,6 +2,9 @@
 
 :root {
     --cor-laranja-200: #F09859;
+    --cor-branco-100: #ffffff;
+    --cor-preto-100: #000000;
+    --cor-vinho-100: #5B162D;
     --espacamento-padding-medio: 5rem;
 }
 
@@ -16,13 +19,13 @@
 
 /* * Estilo da página de posts */
 #pagina-de-posts {
-    background: linear-gradient(to bottom, #5B162D, #000000);
+    background: linear-gradient(to bottom, var(--cor-vinho-100), #000000);
     padding: 1rem 0;
 }
 
 /* * Estilo do título da página de posts */
 #pagina-de-posts .titulo {
-    color: white;
+    color: var(--cor-branco-100);
     padding: 0.6rem var(--espacamento-padding-medio);
     font-size: 3rem;
 }
@@ -37,8 +40,8 @@
 
 /* *Estilo da barra de pesquisa da página de posts */
 #pagina-de-posts .barra-de-pesquisa {
-    background-color: white;
-    border: 3px solid black;
+    background-color: var(--cor-branco-100);
+    border: 3px solid var(--cor-preto-100);
     border-radius: 30px;
     width: 30rem;
     display: flex;
@@ -47,7 +50,6 @@
 
 #pagina-de-posts .pesquisar {
     all: unset;
-    font-style: italic;
     width: 100%;
     padding: 0.8rem;
     font-size: 1.3rem;
@@ -55,6 +57,7 @@
 
 #pagina-de-posts .pesquisar::placeholder {
     color: var(--cor-laranja-200);
+    font-style: italic;
 }
 
 #pagina-de-posts .pesquisar:focus::placeholder {
@@ -69,7 +72,7 @@
 
 #pagina-de-posts .icone-filtro-de-pesquisa {
     color: var(--cor-laranja-200);
-    background-color: white;
+    background-color: var(--cor-branco-100);
     font-size: 3rem;
     display: flex;
     align-items: center;
@@ -117,10 +120,11 @@
 #pagina-de-posts .album {
     width: 20rem;
     height: 20rem;
-    background-color: black;
-    border: 1.5px solid black;
+    background-color: var(--cor-preto-100);
+    border: 1.5px solid var(--cor-preto-100);
     border-radius: 16px;
     box-shadow: 3px 3px 5px 3px var(--cor-laranja-200);
+    position: relative;
 }
 
 /* *Foto da capa dos álbuns da página de posts */
@@ -130,6 +134,40 @@
     height: 100%;
     border-radius: 16px;
 }
+
+/* *Animação da foto do álbum ao passar o mouse por cima (página-de-posts) */
+#pagina-de-posts .album:hover img {
+    opacity: 25%;
+}
+
+/* *Estilo do texto contido no álbum da página de posts */
+#pagina-de-posts .texto-contido-no-album {
+    display: none;
+}
+
+#pagina-de-posts .texto-contido-no-album h2 {
+    color: var(--cor-laranja-200);
+    font-size: 2rem;
+}
+
+#pagina-de-posts .texto-contido-no-album p {
+    color: var(--cor-branco-100);
+    font-size: 1.2rem;
+}
+
+/* *Animação do texto escrito na foto do álbum ao passar o mouse por cima (página de posts) */
+#pagina-de-posts .album:hover .texto-contido-no-album {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    inset: 0;
+    padding: 1.2rem 0;;
+}
+
 
 /* *Estilo do container de mudança de página da página de posts */
 #pagina-de-posts #container-de-mudanca-de-pagina {
@@ -149,29 +187,29 @@
 
 /* *Estilo dos botões de mudança de página da página de posts */
 #pagina-de-posts .seta-esquerda-mudar-pagina, #pagina-de-posts .seta-direita-mudar-pagina {
-    font-size: 4rem;
-    color: white;
+    font-size: 3.5rem;
+    color: var(--cor-branco-100);
 }
 
 #pagina-de-posts #container-de-mudanca-de-pagina .botao-numerado {
     border-radius: 50%;
     padding: 1rem;
-    width: 3.6rem;
-    height: 3.6rem;
+    width: 3.1rem;
+    height: 3.1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 #pagina-de-posts .botao-pagina-atual {
     background-color: var(--cor-laranja-200);
-    color: white;
+    color: var(--cor-branco-100);
 }
 
 #pagina-de-posts .botao-proxima-pagina, #pagina-de-posts .botao-proxima-proxima-pagina {
-    background-color: white;
-    color: black;
+    background-color: var(--cor-branco-100);
+    color: var(cor-preto-100);
 }
 
 #pagina-de-posts .existe-mais-paginas {
@@ -182,10 +220,10 @@
 
 #pagina-de-posts .existe-mais-paginas {
     font-size: 2.5rem;
-    color: white;
+    color: var(--cor-branco-100);
 }
 
-/* *Animação dos botões de mudança de página */
+/* *Animação dos botões de mudança de página da página de posts*/
 #pagina-de-posts #container-de-mudanca-de-pagina .botao {
     transition: transform 0.5s ease;
 }
