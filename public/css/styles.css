@@ -1,3 +1,10 @@
+/* *Variáveis */
+
+:root {
+    --cor-laranja-200: #F09859;
+    --espacamento-padding-medio: 5rem;
+}
+
 /* * Reset CSS da página de posts*/
 * {
     margin: 0;
@@ -14,13 +21,13 @@
 /* * Estilo do título da página de posts */
 #pagina-de-posts .titulo {
     color: white;
-    padding: 0.6rem 5rem;
+    padding: 0.6rem var(--espacamento-padding-medio);
     font-size: 3rem;
 }
 
 /* * Estilo do container de pesquisa da página de posts */
 #pagina-de-posts #container-de-pesquisa {
-    padding: 1.1rem 5rem;
+    padding: 1.1rem var(--espacamento-padding-medio);
     display: flex;
     align-items: center;
     gap: 10rem;
@@ -45,7 +52,7 @@
 }
 
 #pagina-de-posts .pesquisar::placeholder {
-    color: #F09859;
+    color: var(--cor-laranja-200);
 }
 
 #pagina-de-posts .pesquisar:focus::placeholder {
@@ -59,7 +66,7 @@
 }
 
 #pagina-de-posts .icone-filtro-de-pesquisa {
-    color: #F09859;
+    color: var(--cor-laranja-200);
     background-color: white;
     font-size: 3rem;
     display: flex;
@@ -89,10 +96,8 @@
     color: white;
 }
 
-#pagina-de-posts .botao-pagina-atual {
+#pagina-de-posts #container-de-mudanca-de-pagina .botao-numerado {
     border-radius: 50%;
-    background-color: #F09859;
-    color: white;
     padding: 1rem;
     width: 3.6rem;
     height: 3.6rem;
@@ -101,16 +106,14 @@
     align-items: center;
 }
 
+#pagina-de-posts .botao-pagina-atual {
+    background-color: var(--cor-laranja-200);
+    color: white;
+}
+
 #pagina-de-posts .botao-proxima-pagina, #pagina-de-posts .botao-proxima-proxima-pagina {
-    border-radius: 50%;
     background-color: white;
     color: black;
-    padding: 1rem;
-    width: 3.6rem;
-    height: 3.6rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #pagina-de-posts .botao-pagina-atual p, #pagina-de-posts .botao-proxima-pagina p, #pagina-de-posts .botao-proxima-proxima-pagina p {
@@ -172,7 +175,7 @@
     background-color: black;
     border: 1.5px solid black;
     border-radius: 16px;
-    box-shadow: 3px 3px 5px 3px #F09859;
+    box-shadow: 3px 3px 5px 3px var(--cor-laranja-200);
 }
 
 /* *Foto da capa dos álbuns da página de posts */
