@@ -6,6 +6,7 @@
     --cor-preto-100: #000000;
     --cor-vinho-100: #5B162D;
     --espacamento-padding-medio: 5rem;
+    --fonte-primaria: "Roboto", sans-serif;
 }
 
 /* * Reset CSS da página de posts*/
@@ -21,6 +22,7 @@
 #pagina-de-posts {
     background: linear-gradient(to bottom, var(--cor-vinho-100), #000000);
     padding: 1rem 0;
+    font-family: var(--fonte-primaria);
 }
 
 /* * Estilo do título da página de posts */
