@@ -10,6 +10,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* * Estilo da página de posts */
@@ -74,63 +76,6 @@
     border-radius: 50%;
 }
 
-/* *Estilo do container de mudança de página da página de posts */
-#pagina-de-posts #container-de-mudanca-de-pagina {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 1.8rem 0;
-}
-
-#pagina-de-posts .container-botoes {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* *Estilo dos botões de mudança de página da página de posts */
-#pagina-de-posts .seta-esquerda-mudar-pagina, #pagina-de-posts .seta-direita-mudar-pagina {
-    font-size: 4rem;
-    color: white;
-}
-
-#pagina-de-posts #container-de-mudanca-de-pagina .botao-numerado {
-    border-radius: 50%;
-    padding: 1rem;
-    width: 3.6rem;
-    height: 3.6rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#pagina-de-posts .botao-pagina-atual {
-    background-color: var(--cor-laranja-200);
-    color: white;
-}
-
-#pagina-de-posts .botao-proxima-pagina, #pagina-de-posts .botao-proxima-proxima-pagina {
-    background-color: white;
-    color: black;
-}
-
-#pagina-de-posts .botao-pagina-atual p, #pagina-de-posts .botao-proxima-pagina p, #pagina-de-posts .botao-proxima-proxima-pagina p {
-    font-size: 2.5rem;
-}
-
-#pagina-de-posts .existe-mais-paginas {
-    display: flex;
-    align-items: flex-end;
-    height: 4rem;
-}
-
-#pagina-de-posts .existe-mais-paginas p {
-    font-size: 2.5rem;
-    color: white;
-}
-
 /* *Estilo do container de posts da página de posts */
 #pagina-de-posts #container-posts {
     display: grid;
@@ -184,4 +129,68 @@
     width: 100%;
     height: 100%;
     border-radius: 16px;
+}
+
+/* *Estilo do container de mudança de página da página de posts */
+#pagina-de-posts #container-de-mudanca-de-pagina {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1.8rem 0;
+}
+
+#pagina-de-posts .container-botoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* *Estilo dos botões de mudança de página da página de posts */
+#pagina-de-posts .seta-esquerda-mudar-pagina, #pagina-de-posts .seta-direita-mudar-pagina {
+    font-size: 4rem;
+    color: white;
+}
+
+#pagina-de-posts #container-de-mudanca-de-pagina .botao-numerado {
+    border-radius: 50%;
+    padding: 1rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+#pagina-de-posts .botao-pagina-atual {
+    background-color: var(--cor-laranja-200);
+    color: white;
+}
+
+#pagina-de-posts .botao-proxima-pagina, #pagina-de-posts .botao-proxima-proxima-pagina {
+    background-color: white;
+    color: black;
+}
+
+#pagina-de-posts .existe-mais-paginas {
+    display: flex;
+    align-items: flex-end;
+    height: 4rem;
+}
+
+#pagina-de-posts .existe-mais-paginas {
+    font-size: 2.5rem;
+    color: white;
+}
+
+/* *Animação dos botões de mudança de página */
+#pagina-de-posts #container-de-mudanca-de-pagina .botao {
+    transition: transform 0.5s ease;
+}
+
+#pagina-de-posts #container-de-mudanca-de-pagina .botao:hover {
+    transform: scale(1.15);
+    cursor: pointer;
 }
