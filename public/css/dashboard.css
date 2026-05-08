@@ -5,6 +5,7 @@
     --cor-branco-100: #ffffff;
     --cor-preto-100: #000000;
     --espacamento-padding-pequeno: 1rem;
+    --espacamento-padding-menor: 0.5rem;
     --fonte-primaria: "Roboto", sans-serif;
 }
 
@@ -26,6 +27,7 @@
     padding: var(--espacamento-padding-pequeno);
     font-family: var(--fonte-primaria);
     color: var(--cor-branco-100);
+    border-radius: 0 0 16px 16px;
 }
 
 #dashboard-cabecalho .container-perfil {
@@ -52,4 +54,19 @@
     border-radius: 50%;
     color: var(--cor-preto-100);
     background-color: var(--cor-branco-100);
+}
+
+/* *Estilo da área de dados sobre o número de publicações e usuários do site */
+#dados-usuarios-publicacoes-dashboard {
+    padding: var(--espacamento-padding-menor);
+    display: flex;
+    gap: 1rem;
+    color: var(--cor-branco-100);
+    font-family: var(--fonte-primaria);
+}
+
+#dados-usuarios-publicacoes-dashboard .numero-de-usuarios, #dados-usuarios-publicacoes-dashboard .numero-de-publicacoes {
+    background-color: var(--cor-laranja-200);
+    padding: var(--espacamento-padding-menor);
+    border-radius: 16px;
 }
