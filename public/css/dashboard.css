@@ -1,0 +1,55 @@
+/* *Variáveis */
+
+:root {
+    --cor-laranja-200: #F09859;
+    --cor-branco-100: #ffffff;
+    --cor-preto-100: #000000;
+    --espacamento-padding-pequeno: 1rem;
+    --fonte-primaria: "Roboto", sans-serif;
+}
+
+/* * Reset CSS da página de posts*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* *Estilo do cabeçalho do dashboard */
+#dashboard-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cor-laranja-200);
+    padding: var(--espacamento-padding-pequeno);
+    font-family: var(--fonte-primaria);
+    color: var(--cor-branco-100);
+}
+
+#dashboard-cabecalho .container-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#dashboard-cabecalho .dados-do-administrador {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#dashboard-cabecalho .icone-perfil {
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    color: var(--cor-preto-100);
+    background-color: var(--cor-branco-100);
+}
