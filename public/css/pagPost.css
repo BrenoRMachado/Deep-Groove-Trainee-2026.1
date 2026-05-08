@@ -58,6 +58,21 @@
     width: 400px;
     /* altura */
     height: 200px;
+    padding: 5px 20px;
+
+    /*! nome da função - tempo para completar a volta - velocidade cte - por tempo infinito */
+    animation: girar 3s linear infinite;
+}
+
+/*! funçao q faz o disco rodar */
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .capa-album-d {
