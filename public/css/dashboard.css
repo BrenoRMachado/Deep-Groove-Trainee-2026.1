@@ -75,7 +75,7 @@
 #navegar-para-paginas-administrativas-dashboard {
     display: flex;
     justify-content: space-evenly;
-    padding: 2rem 0;
+    align-items: center;
 }
 
 /* *Estilo dos containers para navegar para a lista de usuários e para a tabela de publicações */
@@ -111,4 +111,26 @@
     top: 50%;
     transform: translateY(-50%);
     right: 0;
+}
+
+/* *Estilo para rodapé do dashboard */ 
+#rodape-dashboard {
+    font-family: var(--fonte-primaria);
+    color: var(--cor-branco-100);
+    background-color: var(--cor-laranja-200);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.8rem;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border-radius: 16px 0 0 0;
+    align-items: center;
+}
+
+/* *Estilo para ícone de sign out do dashboard */
+
+#rodape-dashboard .icone-sign-out {
+    font-size: 1.5rem;
 }
