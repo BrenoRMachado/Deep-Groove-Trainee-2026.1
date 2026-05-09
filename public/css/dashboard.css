@@ -15,15 +15,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased; /* *Letras visualmente melhores (suavização) para Chrome, Edge... */
+    -moz-osx-font-smoothing: grayscale; /* *Letras visualmente melhores (suavização) para Firefox... */
 }
 
 /* *Estilo de toda página do dashboard */
 #dashboard {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
+    min-height: 100vh; /* !Necessário para que a página ocupe todo o espaço da tela */
 }
 
 /* *Estilo do cabeçalho do dashboard */
@@ -36,6 +36,8 @@
     font-family: var(--fonte-primaria);
     color: var(--cor-branco-100);
     border-radius: 0 0 16px 16px;
+    gap: 1rem;
+
 }
 
 #dashboard #cabecalho h1 {
@@ -53,6 +55,8 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    align-items: flex-end;
+    text-align: end;
 }
 
 #dashboard #cabecalho .dados-do-administrador p {
@@ -81,7 +85,7 @@
     font-family: var(--fonte-primaria);
 }
 
-#dashboard #dados-usuarios-publicacoes .numero-de-usuarios, #dashboard #dados-usuarios-publicacoes .numero-de-publicacoes {
+#dashboard #dados-usuarios-publicacoes .numero-de-usuarios-publicacoes {
     background-color: var(--cor-laranja-200);
     padding: var(--espacamento-padding-menor);
     border-radius: 16px;
@@ -90,19 +94,22 @@
 /* *Estilo da área de navegar para páginas administrativas no dashboard */
 #dashboard #navegar-para-paginas-administrativas{
     display: flex;
+    flex-wrap: wrap;
     flex: 1;
     justify-content: space-evenly;
     align-items: center;
+    padding: 1rem;
+    gap: 1rem;
 }
 
 /* *Estilo dos containers para navegar para a lista de usuários e para a tabela de publicações */
-#dashboard #navegar-para-paginas-administrativas .container-lista-de-usuarios, #dashboard #navegar-para-paginas-administrativas .container-tabela-de-publicacoes {
+#dashboard #navegar-para-paginas-administrativas .container-lista-tabela {
     width: 18rem;
     height: 14rem;
     position: relative;
 }
 
-#dashboard #navegar-para-paginas-administrativas .container-texto-lista-de-usuarios, #dashboard #navegar-para-paginas-administrativas .container-texto-tabela-de-publicacoes {
+#dashboard #navegar-para-paginas-administrativas .container-texto-lista-tabela {
     max-width: 87%;
     height: 100%;
     display: flex;
@@ -119,7 +126,7 @@
     font-size: 1.25rem;
 }
 
-#dashboard #navegar-para-paginas-administrativas .icone-lista-de-usuarios, #dashboard #navegar-para-paginas-administrativas .icone-tabela-de-publicacoes {
+#dashboard #navegar-para-paginas-administrativas .icone-lista-tabela {
     background-color: var(--cor-laranja-200);
     padding: 0.3rem 0.9rem;
     font-size: 2.5rem;
@@ -127,13 +134,13 @@
     border-radius: 16px;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); /* !Soma com "top:50%" e centraliza o ícone das páginas */
     right: 0;
     transition: transform 0.4s ease;
 }
 
 /* *Animação para os ícones da lista de usuários e da tabela de publicações */
-#dashboard #navegar-para-paginas-administrativas .icone-lista-de-usuarios:hover , #dashboard #navegar-para-paginas-administrativas .icone-tabela-de-publicacoes:hover {
+#dashboard #navegar-para-paginas-administrativas .icone-lista-tabela:hover {
     transform: translateY(-50%) scale(1.1);
     cursor: pointer;
 } 
@@ -164,4 +171,33 @@
 /* *Estilo para ícone de sign out do dashboard */
 #dashboard #rodape .icone-sign-out {
     font-size: 1.5rem;
+}
+
+/* *Responsividade para telas de largura 620px ou menor */
+@media (max-width: 620px) {
+    #dashboard #navegar-para-paginas-administrativas {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    #dashboard #navegar-para-paginas-administrativas .container-lista-tabela {
+        width: 17rem;
+        height: 16rem;
+        display: flex;
+        justify-content: center;
+    }
+    #dashboard #navegar-para-paginas-administrativas .container-texto-lista-tabela {
+        width: 100%;
+        max-height: 88%;
+        padding: 0 var(--espacamento-padding-medio);
+        font-size: 1.15rem;
+    }
+    #dashboard #navegar-para-paginas-administrativas .icone-lista-tabela {
+        top: auto;
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%);
+    }
+    #dashboard #navegar-para-paginas-administrativas .icone-lista-tabela:hover {
+        transform: translateX(50%) scale(1.1);
+    } 
 }
