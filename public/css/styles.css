@@ -17,6 +17,11 @@ a {
     color: white;
 }
 
+.titulo-login {
+    font-family: 'EB Garamond';
+    font-weight: bold;
+}
+
 .metade-tela-login {
     display: flex;
     width: 50%;
@@ -31,14 +36,23 @@ a {
 }
 
 .imagem {
-    background-color: black;
+    background: url(../assets/background\ login\ ween.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .botao-login{
     background: linear-gradient(#F09859, #C06850);
     margin-top: 5%;
-    border-radius: 1.5rem;
-    color: white
+    border-radius: 2rem;
+    color: white;
+    font-size: large;
+}
+
+input {
+    border-radius: 2rem;
+    font-size: large;
 }
 
 form {
@@ -47,3 +61,7 @@ form {
     justify-content: center;
 }
 
+.para-cadastro {
+    color: #F09859;
+    text-decoration: underline;
+}
