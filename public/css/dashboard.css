@@ -23,7 +23,7 @@
 #dashboard {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; 
 }
 
 /* *Estilo do cabeçalho do dashboard */
@@ -103,7 +103,7 @@
 }
 
 #dashboard #navegar-para-paginas-administrativas .container-texto-lista-de-usuarios, #dashboard #navegar-para-paginas-administrativas .container-texto-tabela-de-publicacoes {
-    max-width: 85%;
+    max-width: 87%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -121,15 +121,22 @@
 
 #dashboard #navegar-para-paginas-administrativas .icone-lista-de-usuarios, #dashboard #navegar-para-paginas-administrativas .icone-tabela-de-publicacoes {
     background-color: var(--cor-laranja-200);
-    padding: 0.4rem 1rem;
-    font-size: 2.7rem;
+    padding: 0.3rem 0.9rem;
+    font-size: 2.5rem;
     color: var(--cor-branco-100);
     border-radius: 16px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 0;
+    transition: transform 0.4s ease;
 }
+
+/* *Animação para os ícones da lista de usuários e da tabela de publicações */
+#dashboard #navegar-para-paginas-administrativas .icone-lista-de-usuarios:hover , #dashboard #navegar-para-paginas-administrativas .icone-tabela-de-publicacoes:hover {
+    transform: translateY(-50%) scale(1.1);
+    cursor: pointer;
+} 
 
 /* *Estilo para rodapé do dashboard */ 
 #dashboard #rodape {
@@ -148,8 +155,13 @@
     border-radius: 16px 0 0 0;
 }
 
-/* *Estilo para ícone de sign out do dashboard */
+/* *Animação para container de sign out do dashboard */
+#dashboard .container-sign-out:hover {
+    cursor: pointer;
+    color: var(--cor-preto-100);
+}
 
+/* *Estilo para ícone de sign out do dashboard */
 #dashboard #rodape .icone-sign-out {
     font-size: 1.5rem;
 }
