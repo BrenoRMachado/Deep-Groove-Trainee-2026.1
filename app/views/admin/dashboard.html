@@ -14,39 +14,43 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"> 
 </head>
 <body>
-    <header id="cabecalho-dashboard">
-        <h1>Dashboard</h1>
-        <div class="container-perfil">
-            <div class="dados-do-administrador">
-                <p>Nome do administrador</p>
-                <p>Administrador</p>
+    <div id="dashboard">
+        <header id="cabecalho">
+            <h1>Dashboard</h1>
+            <div class="container-perfil">
+                <div class="dados-do-administrador">
+                    <p>Nome do administrador</p>
+                    <p>Administrador</p>
+                </div>
+                <i class="icone-perfil bi bi-person-check"></i>
             </div>
-            <i class="icone-perfil bi bi-person-check"></i>
-        </div>
-    </header>
-    <section id="dados-usuarios-publicacoes-dashboard">
-        <p class="numero-de-usuarios">Total de usuários: <span>X</span></p>
-        <p class="numero-de-publicacoes">Total de publicações: <span>Y</span></p>
-    </section>  
-    <main id="navegar-para-paginas-administrativas-dashboard">
-        <div class="container-lista-de-usuarios">
-            <div class="container-texto-lista-de-usuarios">
-                <h2>Lista de Usuários</h2>
-                <p>Gerencie os usuários do sistema</p>
+        </header>
+        <section id="dados-usuarios-publicacoes">
+            <p class="numero-de-usuarios">Total de usuários: <span>X</span></p>
+            <p class="numero-de-publicacoes">Total de publicações: <span>Y</span></p>
+        </section>  
+        <main id="navegar-para-paginas-administrativas">
+            <div class="container-lista-de-usuarios">
+                <div class="container-texto-lista-de-usuarios">
+                    <h2>Lista de Usuários</h2>
+                    <p>Gerencie os usuários do sistema</p>
+                </div>
+                <i class="icone-lista-de-usuarios bi bi-person-lines-fill"></i>
             </div>
-            <i class="icone-lista-de-usuarios bi bi-person-lines-fill"></i>
-        </div>
-        <div class="container-tabela-de-publicacoes">
-            <div class="container-texto-tabela-de-publicacoes">
-                <h2>Tabela de Publicações</h2>
-                <p>Administre as publicações do sistema</p>
+            <div class="container-tabela-de-publicacoes">
+                <div class="container-texto-tabela-de-publicacoes">
+                    <h2>Tabela de Publicações</h2>
+                    <p>Administre as publicações do sistema</p>
+                </div>
+                <i class="icone-tabela-de-publicacoes bi bi-file-earmark-post-fill"></i>
             </div>
-            <i class="icone-tabela-de-publicacoes bi bi-file-earmark-post-fill"></i>
-        </div>
-    </main>
-    <footer id="rodape-dashboard">
-        <p>Sign out</p>
-        <i class="icone-sign-out bi bi-box-arrow-right"></i>
-    </footer>
+        </main>
+        <footer id="rodape">
+            <div class="container-sign-out">
+                <p>Sign out</p>
+                <i class="icone-sign-out bi bi-box-arrow-right"></i>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
