@@ -65,3 +65,10 @@ form {
     color: #F09859;
     text-decoration: underline;
 }
+
+.logo-login {
+    height: 15%;
+    width: 15%;
+    position: absolute;
+    bottom: 0;
+}
