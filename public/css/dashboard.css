@@ -19,7 +19,7 @@
 }
 
 /* *Estilo do cabeçalho do dashboard */
-#dashboard-cabecalho {
+#cabecalho-dashboard {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,20 +30,20 @@
     border-radius: 0 0 16px 16px;
 }
 
-#dashboard-cabecalho .container-perfil {
+#cabecalho-dashboard .container-perfil {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
 }
 
-#dashboard-cabecalho .dados-do-administrador {
+#cabecalho-dashboard .dados-do-administrador {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-#dashboard-cabecalho .icone-perfil {
+#cabecalho-dashboard .icone-perfil {
     font-size: 2.5rem;
     padding: 0.5rem;
     display: flex;
@@ -69,4 +69,46 @@
     background-color: var(--cor-laranja-200);
     padding: var(--espacamento-padding-menor);
     border-radius: 16px;
+}
+
+/* *Estilo da área de navegar para páginas administrativas no dashboard */
+#navegar-para-paginas-administrativas-dashboard {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem 0;
+}
+
+/* *Estilo dos containers para navegar para a lista de usuários e para a tabela de publicações */
+#navegar-para-paginas-administrativas-dashboard .container-lista-de-usuarios, #navegar-para-paginas-administrativas-dashboard .container-tabela-de-publicacoes {
+    height: 14rem;
+    width: 17rem;
+    position: relative;
+}
+
+#navegar-para-paginas-administrativas-dashboard .container-texto-lista-de-usuarios, #navegar-para-paginas-administrativas-dashboard .container-texto-tabela-de-publicacoes {
+    width: 88%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1.5px solid var(--cor-preto-100);
+    border-radius: 16px;
+    box-shadow: 3px 3px 5px 3px var(--cor-laranja-200);
+    padding: 2rem;
+    font-family: var(--fonte-primaria);
+}
+
+#navegar-para-paginas-administrativas-dashboard .icone-lista-de-usuarios, #navegar-para-paginas-administrativas-dashboard .icone-tabela-de-publicacoes {
+    background-color: var(--cor-laranja-200);
+    padding: 0.4rem 0.6rem;
+    font-size: 2.5rem;
+    color: var(--cor-branco-100);
+    border-radius: 16px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
 }
