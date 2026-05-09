@@ -59,10 +59,3 @@ form {
     flex-direction: column;
     justify-content: center;
 }
-
-img {
-    width: 15%;
-    height: 15%;
-    position: absolute;
-    bottom: 0;
-}
