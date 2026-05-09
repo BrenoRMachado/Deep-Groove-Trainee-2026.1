@@ -5,7 +5,7 @@
     --cor-branco-100: #ffffff;
     --cor-preto-100: #000000;
     --cor-vinho-100: #5B162D;
-    --espacamento-padding-medio: 5rem;
+    --espacamento-padding-medio: 3rem;
     --fonte-primaria: "Roboto", sans-serif;
 }
 
@@ -21,23 +21,21 @@
 /* * Estilo da página de posts */
 #pagina-de-posts {
     background: linear-gradient(to bottom, var(--cor-vinho-100), #000000);
-    padding: 1rem 0;
     font-family: var(--fonte-primaria);
 }
 
 /* * Estilo do título da página de posts */
 #pagina-de-posts .titulo {
     color: var(--cor-branco-100);
-    padding: 0.6rem var(--espacamento-padding-medio);
-    font-size: 3rem;
+    padding: 1rem var(--espacamento-padding-medio);
 }
 
 /* * Estilo do container de pesquisa da página de posts */
 #pagina-de-posts #container-de-pesquisa {
-    padding: 1.1rem var(--espacamento-padding-medio);
+    padding: 0 var(--espacamento-padding-medio);
     display: flex;
     align-items: center;
-    gap: 10rem;
+    gap: 7rem;
 }
 
 /* *Estilo da barra de pesquisa da página de posts */
@@ -53,8 +51,8 @@
 #pagina-de-posts .pesquisar {
     all: unset;
     width: 100%;
-    padding: 0.8rem;
-    font-size: 1.3rem;
+    padding: 0.5rem;
+    font-size: 1rem;
 }
 
 #pagina-de-posts .pesquisar::placeholder {
@@ -69,13 +67,13 @@
 /* *Estilo dos ícones de filtro e de pesquisa da página de posts */
 #pagina-de-posts .icone-de-pesquisa {
     margin-right: 1rem;
-    font-size: 2rem;
+    font-size: 1.25rem;
 }
 
 #pagina-de-posts .icone-filtro-de-pesquisa {
     color: var(--cor-laranja-200);
     background-color: var(--cor-branco-100);
-    font-size: 3rem;
+    font-size: 2.2rem;
     display: flex;
     align-items: center;
     border-radius: 50%;
@@ -88,40 +86,19 @@
     justify-content: center;
     gap: 4rem;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    padding: 2rem 5rem;
+    padding: 2rem var(--espacamento-padding-medio);
 }
 
 /* *Estilo do container dos álbuns da página de posts */
 #pagina-de-posts .album-container {
-    width: 30rem;
-    height: 20rem;
-}
-
-#pagina-de-posts .album-container1 {
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
-}
-
-#pagina-de-posts .album-container2 {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-}
-
-#pagina-de-posts .album-container3 {
-    grid-row: 2 / 3;
-    grid-column: 1 / 2;
-}
-
-#pagina-de-posts .album-container4 {
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
+    width: 25rem;
+    height: 15rem;
 }
 
 /* *Estilo dos álbuns da página de posts */
 #pagina-de-posts .album {
-    width: 20rem;
-    height: 20rem;
+    width: 15rem;
+    height: 15rem;
     background-color: var(--cor-preto-100);
     border: 1.5px solid var(--cor-preto-100);
     border-radius: 16px;
@@ -149,12 +126,11 @@
 
 #pagina-de-posts .texto-contido-no-album h2 {
     color: var(--cor-laranja-200);
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 #pagina-de-posts .texto-contido-no-album p {
     color: var(--cor-branco-100);
-    font-size: 1.2rem;
 }
 
 /* *Animação do texto escrito na foto do álbum ao passar o mouse por cima (página de posts) */
@@ -189,19 +165,19 @@
 
 /* *Estilo dos botões de mudança de página da página de posts */
 #pagina-de-posts .seta-esquerda-mudar-pagina, #pagina-de-posts .seta-direita-mudar-pagina {
-    font-size: 3.5rem;
+    font-size: 2rem;
     color: var(--cor-branco-100);
 }
 
 #pagina-de-posts #container-de-mudanca-de-pagina .botao-numerado {
     border-radius: 50%;
     padding: 1rem;
-    width: 3.1rem;
-    height: 3.1rem;
+    width: 2.4rem;
+    height: 2.4rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.3rem;
 }
 
 #pagina-de-posts .botao-pagina-atual {
@@ -217,20 +193,27 @@
 #pagina-de-posts .existe-mais-paginas {
     display: flex;
     align-items: flex-end;
-    height: 4rem;
+    height: 3.2rem;
 }
 
 #pagina-de-posts .existe-mais-paginas {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     color: var(--cor-branco-100);
 }
 
 /* *Animação dos botões de mudança de página da página de posts*/
 #pagina-de-posts #container-de-mudanca-de-pagina .botao {
-    transition: transform 0.5s ease;
+    transition: transform 0.4s ease;
 }
 
 #pagina-de-posts #container-de-mudanca-de-pagina .botao:hover {
     transform: scale(1.15);
     cursor: pointer;
+}
+
+/* *Responsividade */
+@media (max-width: 900px) {
+    #pagina-de-posts #container-posts {
+        grid-template-columns: 1fr;
+    }
 }
