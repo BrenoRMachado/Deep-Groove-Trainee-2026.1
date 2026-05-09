@@ -14,6 +14,36 @@ a {
     width: 100vw;
     height: 100vh;
     flex-direction: row;
+    color: white;
 }
 
+.metade-tela-login {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.formulario {
+    background: linear-gradient(#5B162D, black);
+}
+
+.imagem {
+    background-color: black;
+}
+
+.botao-login{
+    background: linear-gradient(#F09859, #C06850);
+    margin-top: 5%;
+    border-radius: 1.5rem;
+    color: white
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
