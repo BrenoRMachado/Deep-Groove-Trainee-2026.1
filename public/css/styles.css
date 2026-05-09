@@ -59,3 +59,10 @@ form {
     flex-direction: column;
     justify-content: center;
 }
+
+.logo {
+    height: 15%;
+    width: 15%;
+    position: absolute;
+    bottom: 0;
+}
