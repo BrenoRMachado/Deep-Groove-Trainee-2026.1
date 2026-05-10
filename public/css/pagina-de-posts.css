@@ -35,7 +35,7 @@
     padding: 0 var(--espacamento-padding-medio);
     display: flex;
     align-items: center;
-    gap: 7rem;
+    gap: 1rem;
 }
 
 /* *Estilo da barra de pesquisa da página de posts */
@@ -43,7 +43,7 @@
     background-color: var(--cor-branco-100);
     border: 3px solid var(--cor-preto-100);
     border-radius: 30px;
-    width: 30rem;
+    width: 25.5rem;
     display: flex;
     align-items: center;
 }
@@ -91,19 +91,25 @@
 
 /* *Estilo do container dos álbuns da página de posts */
 #pagina-de-posts .album-container {
-    width: 25rem;
-    height: 15rem;
+    width: 38rem;
+    height: 20rem;
     display: flex;
     position: relative;
 }
 
 /* *Estilo do disco de vinil dos àlbuns da páginas de posts */
 #pagina-de-posts .album-container .disco-de-vinil {
-    width: 80%;
+    width: 70%;
     height: 100%;
     position: absolute;
     top: 50%;
     right: 0;
+    transform: translateY(-50%);
+    z-index: 1; /* !Menor que o álbum (z-index: 2) para que fique atrás dele */
+}
+
+/* *Animação do disco de vinil ao passar o mouse por cima do disco e da capa do álbum */
+#pagina-de-posts .album-container .disco-de-vinil:hover, #pagina-de-posts .album:hover ~ .disco-de-vinil {
     animation-name: disco-de-vinil-girando-infinitamente;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -112,13 +118,14 @@
 
 /* *Estilo dos álbuns da página de posts */
 #pagina-de-posts .album {
-    width: 15rem;
-    height: 15rem;
+    width: 65%;
+    height: 100%;
     background-color: var(--cor-preto-100);
     border: 1.5px solid var(--cor-preto-100);
     border-radius: 16px;
     box-shadow: 3px 3px 5px 3px var(--cor-laranja-200);
     position: relative;
+    z-index: 2;
 }
 
 /* *Foto da capa dos álbuns da página de posts */
@@ -229,7 +236,7 @@
 /* *Animações */
 @keyframes disco-de-vinil-girando-infinitamente {
     0% {
-        transform: translateY(-50%) rotate(0deg); 
+        transform: translateY(-50%) rotate(0deg);  /* !Usa translateY(-50%) pra manter o disco de vinil centralizado; vem antes do rotate */
     }
     100% {
         transform: translateY(-50%) rotate(360deg);
