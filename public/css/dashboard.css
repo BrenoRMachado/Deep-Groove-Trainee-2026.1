@@ -1,7 +1,8 @@
 /* *Variáveis */
 
 :root {
-    --cor-laranja-200: #F09859;
+    --cor-laranja-100: #E08E6D;
+    --cor-gradiente-100: linear-gradient(#6D3534 0%, #9A4E45 35%, #C66E57 70%, #E08E6D 100%);
     --cor-branco-100: #ffffff;
     --cor-preto-100: #000000;
     --espacamento-padding-medio: 1rem;
@@ -31,7 +32,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--cor-laranja-200);
+    background: var(--cor-gradiente-100);
     padding: var(--espacamento-padding-menor) var(--espacamento-padding-medio);
     font-family: var(--fonte-primaria);
     color: var(--cor-branco-100);
@@ -73,7 +74,7 @@
     height: 2.7rem;
     border-radius: 50%;
     color: var(--cor-preto-100);
-    background-color: var(--cor-branco-100);
+    background: var(--cor-branco-100);
 }
 
 /* *Estilo da área de dados sobre o número de publicações e usuários do site */
@@ -86,7 +87,7 @@
 }
 
 #dashboard #dados-usuarios-publicacoes .numero-de-usuarios-publicacoes {
-    background-color: var(--cor-laranja-200);
+    background: var(--cor-gradiente-100);
     padding: var(--espacamento-padding-menor);
     border-radius: 16px;
 }
@@ -120,14 +121,14 @@
     text-align: center;
     border: 1.5px solid var(--cor-preto-100);
     border-radius: 16px;
-    box-shadow: 3px 3px 5px 3px var(--cor-laranja-200);
+    box-shadow: 3px 3px 5px 3px var(--cor-laranja-100);
     padding: 1rem 2rem;
     font-family: var(--fonte-primaria);
     font-size: 1.25rem;
 }
 
 #dashboard #navegar-para-paginas-administrativas .icone-lista-tabela {
-    background-color: var(--cor-laranja-200);
+    background: var(--cor-laranja-100);
     padding: 0.3rem 0.9rem;
     font-size: 2.5rem;
     color: var(--cor-branco-100);
@@ -154,7 +155,7 @@
 #dashboard .container-sign-out {
     font-family: var(--fonte-primaria);
     color: var(--cor-branco-100);
-    background-color: var(--cor-laranja-200);
+    background: var(--cor-gradiente-100);
     padding: var(--espacamento-padding-menor) var(--espacamento-padding-medio);
     display: flex;
     align-items: center;
