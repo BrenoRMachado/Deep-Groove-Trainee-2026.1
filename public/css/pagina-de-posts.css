@@ -93,6 +93,21 @@
 #pagina-de-posts .album-container {
     width: 25rem;
     height: 15rem;
+    display: flex;
+    position: relative;
+}
+
+/* *Estilo do disco de vinil dos àlbuns da páginas de posts */
+#pagina-de-posts .album-container .disco-de-vinil {
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    animation-name: disco-de-vinil-girando-infinitamente;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
 }
 
 /* *Estilo dos álbuns da página de posts */
@@ -209,6 +224,16 @@
 #pagina-de-posts #container-de-mudanca-de-pagina .botao:hover {
     transform: scale(1.15);
     cursor: pointer;
+}
+
+/* *Animações */
+@keyframes disco-de-vinil-girando-infinitamente {
+    0% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-50%) rotate(360deg);
+    }
 }
 
 /* *Responsividade */
