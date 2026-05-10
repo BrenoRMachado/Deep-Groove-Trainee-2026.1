@@ -122,15 +122,15 @@
 }
 
 /* *Foto da capa dos álbuns da página de posts */
-#pagina-de-posts .album img {
+#pagina-de-posts .album .capa-album {
     object-fit: fill;
     width: 100%;
     height: 100%;
     border-radius: 16px;
 }
 
-/* *Animação da foto do álbum ao passar o mouse por cima (página-de-posts) */
-#pagina-de-posts .album:hover img {
+/* *Animação da foto do álbum ao passar o mouse por cima da foto e do disco de vinil (página-de-posts) */
+#pagina-de-posts .album:hover .capa-album, #pagina-de-posts .album-container .disco-de-vinil:hover ~ .album .capa-album {
     opacity: 25%;
 }
 
@@ -148,8 +148,8 @@
     color: var(--cor-branco-100);
 }
 
-/* *Animação do texto escrito na foto do álbum ao passar o mouse por cima (página de posts) */
-#pagina-de-posts .album:hover .texto-contido-no-album {
+/* *Animação do texto escrito na foto do álbum ao passar o mouse por cima da foto e do disco de vinil (página de posts) */
+#pagina-de-posts .album:hover .texto-contido-no-album, #pagina-de-posts .album-container .disco-de-vinil:hover ~ .album  .texto-contido-no-album {
     height: 100%;
     width: 100%;
     display: flex;
@@ -229,7 +229,7 @@
 /* *Animações */
 @keyframes disco-de-vinil-girando-infinitamente {
     0% {
-        transform: translateY(-50%) rotate(0deg);
+        transform: translateY(-50%) rotate(0deg); 
     }
     100% {
         transform: translateY(-50%) rotate(360deg);
