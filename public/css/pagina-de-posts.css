@@ -5,7 +5,7 @@
     --cor-branco-100: #ffffff;
     --cor-preto-100: #000000;
     --cor-vinho-100: #5B162D;
-    --espacamento-padding-medio: 3rem;
+    --espacamento-padding-medio: 5rem;
     --fonte-primaria: "Roboto", sans-serif;
 }
 
@@ -22,6 +22,8 @@
 #pagina-de-posts {
     background: linear-gradient(to bottom, var(--cor-vinho-100), #000000);
     font-family: var(--fonte-primaria);
+    display: flex;
+    flex-direction: column;
 }
 
 /* * Estilo do título da página de posts */
@@ -81,17 +83,18 @@
 
 /* *Estilo do container de posts da página de posts */
 #pagina-de-posts #container-posts {
-    display: grid;
+    display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 4rem;
-    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+    row-gap: 5rem;
     padding: 2rem var(--espacamento-padding-medio);
 }
 
 /* *Estilo do container dos álbuns da página de posts */
 #pagina-de-posts .album-container {
-    width: 38rem;
+    width: 35rem;
     height: 20rem;
     display: flex;
     position: relative;
@@ -99,8 +102,8 @@
 
 /* *Estilo do disco de vinil dos àlbuns da páginas de posts */
 #pagina-de-posts .album-container .disco-de-vinil {
-    width: 70%;
     height: 100%;
+    aspect-ratio: 1 / 1;
     position: absolute;
     top: 50%;
     right: 0;
@@ -118,7 +121,7 @@
 
 /* *Estilo dos álbuns da página de posts */
 #pagina-de-posts .album {
-    width: 65%;
+    width: 72%;
     height: 100%;
     background-color: var(--cor-preto-100);
     border: 1.5px solid var(--cor-preto-100);
@@ -148,10 +151,11 @@
 
 #pagina-de-posts .texto-contido-no-album h2 {
     color: var(--cor-laranja-200);
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 #pagina-de-posts .texto-contido-no-album p {
+    font-size: 1.2rem;
     color: var(--cor-branco-100);
 }
 
@@ -244,8 +248,67 @@
 }
 
 /* *Responsividade */
-@media (max-width: 900px) {
-    #pagina-de-posts #container-posts {
-        grid-template-columns: 1fr;
+@media (max-width: 1335px) {
+    #pagina-de-posts .barra-de-pesquisa {
+        width: 23.5rem;
+    }
+    #pagina-de-posts .album-container {
+        width: 32rem;
     }
 }
+
+@media (max-width: 1230px) {
+    #pagina-de-posts .barra-de-pesquisa {
+        width: 22rem;
+    }
+    #pagina-de-posts .album-container {
+        width: 30rem;
+    }
+}
+
+@media (max-width: 1170px) {
+    #pagina-de-posts .barra-de-pesquisa {
+        width: 20.5rem;
+    }
+    #pagina-de-posts .album-container {
+        width: 28rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    #pagina-de-posts .barra-de-pesquisa {
+        width: 18.5rem;
+    }
+    #pagina-de-posts .album-container {
+        width: 25rem;
+        height: 18rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    #pagina-de-posts .barra-de-pesquisa {
+        width: 18.5rem;
+    }
+    #pagina-de-posts .album-container {
+        width: 25rem;
+        height: 18rem;
+    }
+}
+
+@media (max-width: 991px) {
+    #pagina-de-posts {
+        align-items: center;
+    }
+    #pagina-de-posts .barra-de-pesquisa {
+        padding: 0;
+        width: 19rem;
+    }
+    #pagina-de-posts #container-posts {
+        justify-content: center;
+    }
+    #pagina-de-posts .album-container {
+        width: 25rem;
+        height: 18rem;
+    }
+}
+/* TODO: Melhorar bastante a responsividade */
