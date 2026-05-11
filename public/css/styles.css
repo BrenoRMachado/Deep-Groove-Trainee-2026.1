@@ -19,6 +19,7 @@ a {
 .titulo-cadastro {
     font-family: 'EB Garamond';
     font-weight: bold;
+    font-size: 3vw;
 }
 
 .metade-tela-cadastro {
@@ -58,6 +59,7 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 100%;
 }
 
 .logo {
@@ -65,4 +67,14 @@ form {
     width: 15%;
     position: absolute;
     bottom: 0;
+}
+
+input {
+    height: 5%;
+    padding-right:5%; 
+    padding-left: 5%;
+}
+
+button {
+    height: 5%;
 }
