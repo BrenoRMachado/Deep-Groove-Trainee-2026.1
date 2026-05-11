@@ -38,7 +38,6 @@
     color: var(--cor-branco-100);
     border-radius: 0 0 16px 16px;
     gap: 1rem;
-
 }
 
 #dashboard #cabecalho h1 {
@@ -201,4 +200,53 @@
     #dashboard #navegar-para-paginas-administrativas .icone-lista-tabela:hover {
         transform: translateX(50%) scale(1.1);
     } 
+}
+
+/* *Responsividade para telas de largura maior que 1024px */
+@media (min-width: 1025px) {
+    #dashboard #cabecalho h1 {
+        font-size: 2.2rem;
+    }
+
+    #dashboard #cabecalho .dados-do-administrador p {
+        font-size: 0.9rem;
+    }
+
+    #dashboard #cabecalho .icone-perfil {
+        font-size: 3rem;
+        width: 3.9rem;
+        height: 3.8rem;
+    }
+
+    #dashboard #dados-usuarios-publicacoes .numero-de-usuarios-publicacoes {
+        padding: var(--espacamento-padding-medio);
+        font-size: 1.1rem;
+    }
+
+    #dashboard #navegar-para-paginas-administrativas {
+        padding: 1rem;
+    }
+
+    #dashboard #navegar-para-paginas-administrativas .container-lista-tabela {
+        width: 22rem;
+        height: 18rem;
+    }
+
+    #dashboard #navegar-para-paginas-administrativas .container-texto-lista-tabela {
+        font-size: 1.5rem;
+    }
+
+    #dashboard #navegar-para-paginas-administrativas .icone-lista-tabela {
+        background: var(--cor-laranja-100);
+        padding: 0.4rem 1rem;
+        font-size: 3.3rem;
+    }
+
+    #dashboard .container-sign-out p{
+        font-size: 1.7rem;
+    }
+
+    #dashboard #rodape .icone-sign-out {
+        font-size: 2.2rem;
+    }
 }
