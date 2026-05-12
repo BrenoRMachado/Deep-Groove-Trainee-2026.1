@@ -88,8 +88,10 @@
     line-height: 1;
 }
 
+/* !INÍCIO ÁREA DE POSTS DA PÁGINA DE POSTS PARA DESKTOP */
+
 /* *Estilo do container de posts da página de posts */
-#pagina-de-posts #container-posts {
+#pagina-de-posts #container-posts-desktop {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -100,7 +102,7 @@
 }
 
 /* *Estilo do container dos álbuns da página de posts */
-#pagina-de-posts .album-container {
+#pagina-de-posts #container-posts-desktop .album-container {
     width: 35rem;
     height: 20rem;
     display: flex;
@@ -108,7 +110,7 @@
 }
 
 /* *Estilo do disco de vinil dos àlbuns da páginas de posts */
-#pagina-de-posts .album-container .disco-de-vinil {
+#pagina-de-posts #container-posts-desktop .album-container .disco-de-vinil {
     height: 100%;
     aspect-ratio: 1 / 1;
     position: absolute;
@@ -119,15 +121,15 @@
 }
 
 /* *Animação do disco de vinil ao passar o mouse por cima do disco e da capa do álbum */
-#pagina-de-posts .album-container .disco-de-vinil:hover, #pagina-de-posts .album:hover ~ .disco-de-vinil {
-    animation-name: disco-de-vinil-girando-infinitamente;
+#pagina-de-posts #container-posts-desktop .album-container .disco-de-vinil:hover, #pagina-de-posts .album:hover ~ .disco-de-vinil {
+    animation-name: disco-de-vinil-girando-infinitamente-desktop;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-duration: 2s;
 }
 
 /* *Estilo dos álbuns da página de posts */
-#pagina-de-posts .album {
+#pagina-de-posts #container-posts-desktop .album {
     width: 72%;
     height: 100%;
     background-color: var(--cor-preto-100);
@@ -139,7 +141,7 @@
 }
 
 /* *Foto da capa dos álbuns da página de posts */
-#pagina-de-posts .album .capa-album {
+#pagina-de-posts #container-posts-desktop .album .capa-album {
     object-fit: fill;
     width: 100%;
     height: 100%;
@@ -147,27 +149,27 @@
 }
 
 /* *Animação da foto do álbum ao passar o mouse por cima da foto e do disco de vinil (página-de-posts) */
-#pagina-de-posts .album:hover .capa-album, #pagina-de-posts .album-container .disco-de-vinil:hover ~ .album .capa-album {
+#pagina-de-posts #container-posts-desktop .album:hover .capa-album, #pagina-de-posts .album-container .disco-de-vinil:hover ~ .album .capa-album {
     opacity: 25%;
 }
 
-/* *Estilo do texto contido no álbum da página de posts */
-#pagina-de-posts .texto-contido-no-album {
+/* *Estilo das informações contidas no álbum da página de posts */
+#pagina-de-posts #container-posts-desktop .informacoes-do-album {
     display: none;
 }
 
-#pagina-de-posts .texto-contido-no-album h2 {
+#pagina-de-posts #container-posts-desktop .informacoes-do-album h2 {
     color: var(--cor-laranja-200);
     font-size: 2rem;
 }
 
-#pagina-de-posts .texto-contido-no-album p {
+#pagina-de-posts #container-posts-desktop .informacoes-do-album p {
     font-size: 1.2rem;
     color: var(--cor-branco-100);
 }
 
 /* *Animação do texto escrito na foto do álbum ao passar o mouse por cima da foto e do disco de vinil (página de posts) */
-#pagina-de-posts .album:hover .texto-contido-no-album, #pagina-de-posts .album-container .disco-de-vinil:hover ~ .album  .texto-contido-no-album {
+#pagina-de-posts #container-posts-desktop .album:hover .informacoes-do-album, #pagina-de-posts .album-container .disco-de-vinil:hover ~ .album  .informacoes-do-album {
     height: 100%;
     width: 100%;
     display: flex;
@@ -179,6 +181,93 @@
     padding: 1.2rem 0;;
 }
 
+/* !FIM DA ÁREA DE POSTS DA PÁGINA DE POSTS PARA DESKTOP */
+
+/* !INÍCIO DA ÁREA DE POSTS DA PÁGINA DE POSTS PARA MOBILE */
+
+/* *Estilo do container de posts da página de posts */
+#pagina-de-posts #container-posts-mobile {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+    padding: 2rem var(--espacamento-padding-medio);
+}
+
+/* *Estilo do container dos álbuns da página de posts */
+#pagina-de-posts #container-posts-mobile .album-container {
+    width: 20rem;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* *Estilo do container do texto e da capa do álbum da página de posts */ 
+#pagina-de-posts #container-posts-mobile .capa-texto-album-container {
+    background-color: var(--cor-branco-100);
+    border: 1.5px solid var(--cor-preto-100);
+    border-radius: 16px;
+    box-shadow: 3px 3px 5px 3px var(--cor-laranja-200);
+    margin-top: 7.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* *Estilo do disco de vinil dos àlbuns da páginas de posts */
+#pagina-de-posts #container-posts-mobile .album-container .disco-de-vinil {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    top: 0%;
+    z-index: 1; /* !Menor que o álbum (z-index: 2) para que fique atrás dele */
+    animation-name: disco-de-vinil-girando-infinitamente-mobile;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+}
+
+/* *Estilo dos álbuns da página de posts */
+#pagina-de-posts #container-posts-mobile .album {
+    width: 100%;
+    height: 60%;
+    border: 1.5px solid var(--cor-preto-100);
+    border-radius: 16px;
+    box-shadow: 3px 3px 5px 3px var(--cor-laranja-200);
+    position: relative;
+    z-index: 2;
+}
+
+/* *Foto da capa dos álbuns da página de posts */
+#pagina-de-posts #container-posts-mobile .album .capa-album {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+}
+
+/* *Estilo das informações dos álbuns da página de posts */ 
+#pagina-de-posts #container-posts-mobile .informacoes-do-album {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#pagina-de-posts #container-posts-mobile .informacoes-do-album h2 {
+    color: var(--cor-laranja-200);
+    font-size: 2rem;
+}
+
+#pagina-de-posts #container-posts-mobile .informacoes-do-album p {
+    font-size: 1.2rem;
+    color: var(--cor-preto-100);
+}
+
+/* !FIM DA ÁREA DE POSTS DA PÁGINA DE POSTS PARA MOBILE */
 
 /* *Estilo do container de mudança de página da página de posts */
 #pagina-de-posts #container-de-mudanca-de-pagina {
@@ -248,12 +337,21 @@
 }
 
 /* *Animações */
-@keyframes disco-de-vinil-girando-infinitamente {
+@keyframes disco-de-vinil-girando-infinitamente-desktop {
     0% {
         transform: translateY(-50%) rotate(0deg);  /* !Usa translateY(-50%) pra manter o disco de vinil centralizado; vem antes do rotate */
     }
     100% {
         transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+@keyframes disco-de-vinil-girando-infinitamente-mobile {
+    0% {
+        transform: rotate(0deg);  /* !Usa translateY(-50%) pra manter o disco de vinil centralizado; vem antes do rotate */
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
@@ -313,12 +411,11 @@
         padding: 0;
         width: 19rem;
     }
-    #pagina-de-posts #container-posts {
-        justify-content: center;
+    #pagina-de-posts #container-posts-desktop {
+        display: none
     }
-    #pagina-de-posts .album-container {
-        width: 25rem;
-        height: 18rem;
+    #pagina-de-posts #container-posts-mobile {
+        display: flex
     }
 }
-/* TODO: Melhorar bastante a responsividade */
+/* TODO: Melhorar bastante a responsividade e verificar a melhor forma de trocar o CSS do desktop para mobile (usando JS?) */
