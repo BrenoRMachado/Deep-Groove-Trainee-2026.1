@@ -28,28 +28,32 @@
             </div>
         </header>
         <section id="dados-usuarios-publicacoes">
-            <p class="numero-de-usuarios-publicacoes numero-de-usuarios">Total de usuários: <span>X</span></p>
-            <p class="numero-de-usuarios-publicacoes numero-de-publicacoes">Total de publicações: <span>Y</span></p>
+            <ul class="lista-dados-usuarios-publicacoes">
+                <li class="numero-de-usuarios-publicacoes numero-de-usuarios">Total de usuários: <span>X</span></li>
+                <li class="numero-de-usuarios-publicacoes numero-de-publicacoes">Total de publicações: <span>Y</span></li>
+            </ul>
         </section>  
-        <main id="navegar-para-paginas-administrativas">
-            <div class="container-lista-tabela container-lista-de-usuarios">
-                <div class="container-texto-lista-tabela container-texto-lista-de-usuarios">
-                    <h2>Lista de Usuários</h2>
-                    <p>Gerencie os usuários do sistema</p>
+        <main id="area-de-navegacao">
+            <nav id="navegar-para-paginas-administrativas">
+                <div class="container-lista-tabela container-lista-de-usuarios">
+                    <div class="container-texto-lista-tabela container-texto-lista-de-usuarios">
+                        <h2>Lista de Usuários</h2>
+                        <p>Gerencie os usuários do sistema</p>
+                    </div>
+                    <button class="icone-lista-tabela icone-lista-de-usuarios">
+                        <i class="bi bi-person-lines-fill"></i>
+                    </button>
                 </div>
-                <button class="icone-lista-tabela icone-lista-de-usuarios">
-                    <i class="bi bi-person-lines-fill"></i>
-                </button>
-            </div>
-            <div class="container-lista-tabela container-tabela-de-publicacoes">
-                <div class="container-texto-lista-tabela container-texto-tabela-de-publicacoes">
-                    <h2>Tabela de Publicações</h2>
-                    <p>Administre as publicações do sistema</p>
+                <div class="container-lista-tabela container-tabela-de-publicacoes">
+                    <div class="container-texto-lista-tabela container-texto-tabela-de-publicacoes">
+                        <h2>Tabela de Publicações</h2>
+                        <p>Administre as publicações do sistema</p>
+                    </div>
+                    <button class="icone-lista-tabela icone-tabela-de-publicacoes">
+                        <i class="bi bi-file-earmark-post-fill"></i>
+                    </button>
                 </div>
-                <button class="icone-lista-tabela icone-tabela-de-publicacoes">
-                    <i class="bi bi-file-earmark-post-fill"></i>
-                </button>
-            </div>
+            </nav>
         </main>
         <footer id="rodape">
             <button class="botao-sign-out">
