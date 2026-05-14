@@ -1,0 +1,179 @@
+:root {
+    --corDestaque: #FEB579;
+    --corParagrafos: #E0D7D7;
+    --fonteTitulos: "Inter", sans-serif;
+    --fonteParagrafos: "Montserrat", sans-serif;
+
+    /* pra deixar a fonte mais grossa // font-weight:*/
+    --tamfontesubtitulo: 600;
+
+    --tamfonteparagrafo: 500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-color: #431223;
+    display: flex;
+
+            /* cima/baixo (MESMO) esquerda/direita(MESMO) */
+    padding: 8rem 1rem;
+}
+
+.logos {
+    display: flex;
+    flex-direction: column;
+
+    /* vai ocupar 1/3 da largura  tela */
+    width: 33.33vw;
+
+    /* vai ocupar toda a altura da tela */
+    height: 100%;
+
+    gap: 10px;
+
+    /* centraliza na vertical */
+    align-items: center;
+
+    /* centraliza na horizontal */
+    justify-content: center;
+}
+
+.sobrenos{
+     /* vai ocupar 1/3 da largura  tela */
+    width: 33.33vw;
+
+    /* vai ocupar toda a altura da tela */
+    height: 100%;
+
+    /* coloquei para o align-items funcionar */
+    display: flex;
+    flex-direction: column;
+
+     /* centraliza na vertical */
+    align-items: center;
+
+    /* centraliza na horizontal */
+    justify-content: center;
+}
+
+.contatos{
+      /* vai ocupar 1/3 da largura  tela */
+    width: 33.33vw;
+
+    /* vai ocupar toda a altura da tela */
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+
+     /* centraliza na vertical */
+    align-items: center;
+
+    /* centraliza na horizontal */
+    justify-content: center;
+}
+
+.titulo {
+    font-family: var(--fonteTitulos);
+}
+
+.redes {
+    font-family: var(--fonteTitulos)
+}
+
+.redessociais {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2rem;
+
+    align-items: center;
+}
+
+.des {
+    font-family: var(--fonteTitulos)
+}
+
+.conteudo {
+    font-family: var(--fonteParagrafos);
+    text-align: center;
+}
+
+.par {
+    font-weight: var(--tamfonteparagrafo);
+}
+
+.corParagrafos {
+    color: var(--corParagrafos);
+}
+
+.corDestaque {
+    color: var(--corDestaque);
+}
+
+.logosRedesSociais {
+    display: flex;
+    gap: 1rem;
+
+   /* centraliza na vertical */
+    align-items: center;
+
+    /* centraliza na horizontal */
+    justify-content: center;
+}
+
+.polvoLogo {
+    width: 15rem;
+    height: auto;
+}
+
+.subtitulo {
+    font-weight: var(--tamfontesubtitulo);
+}
+
+.conteudosobrenos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    align-items: center;
+}
+
+.trecho {
+    display: flex;
+    gap: 0.3rem;
+
+    padding: 0 1rem;
+}
+
+.aumenta {
+    /* a classs esta pronta pra mudar quando o houver ou outra ação acontecer nesse
+    caso vai ser em vel 0.3m pra nn dar um BOOM quando mudar */
+    transition: transform 0.3s;
+}
+
+/* houver - quando o mouse estiver em cima */
+.aumenta:hover {
+    /* vai aumentar a escala do trem por isso scale, o normal é 1 entt 1.1 aumenta em 10%
+    , 1.2 aumenta em 20% e assim vai */
+    /* se eu quisese rodar seria trasform: rotate(10deg) */
+    /* inclinar skew(10deg) */
+    /* deg - graus */
+    transform: scale(1.3);
+}
+
+.codefooter {
+    display: flex;
+    flex-direction: column;
+
+    /* centraliza na vertical */
+    align-items: center;
+
+    gap: 1rem;
+}
