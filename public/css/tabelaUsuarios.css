@@ -1,0 +1,81 @@
+:root {
+    --corclara: #FEECE8;
+    --fontetitulo: "Erica One", sans-serif;
+    --pesotitulo: 1000;
+    --linhatabela: #FEB579;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    padding-left: 16rem;
+}
+
+.addUser {
+    display: flex;
+
+    align-items: center;
+    justify-items: center;
+}
+
+.infoUser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.topoTabelaUser {
+    display: flex;
+    justify-content: space-between;
+}
+
+.textoTitulo {
+    color: var(--corclara);
+    font-family: var(--fontetitulo);
+    font-weight: var(--pesotitulo);
+}
+
+.titulo {
+    text-align: center;
+}
+
+.tabela{
+    display: flex;
+    flex-direction: column;
+
+   
+    justify-content: center;
+
+    padding: 1rem;
+    /* centraliza a tebela  nas partes laterais*/
+    margin: auto;
+
+    /*! para tds as colunas da tabela ficarem do msm tamanho */
+    table-layout: fixed;
+
+    /*! qunado a lateral da tabela ficar maior q a tela, com isso é posivel rolar ela pro lado sem quebrar a tabela */
+    overflow-x: auto;
+
+    border-radius: 1rem;
+
+    background-color: var(--corclara);
+}
+
+/*? colunas das tabelas coluna cabeçalho e coluna body */
+.colunacab, .colunageral{
+    text-align: center;
+
+    /* add um espaço na no topo e no baixo da div */
+    padding: 1.5vh;
+
+}
+
+.colunageral {
+    border-top: 2px solid var(--linhatabela);
+}
+

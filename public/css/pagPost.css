@@ -1,6 +1,6 @@
 #capa-d {
     /*! faz os elementos ficarem lado a lado */
-    display: flex; //acho q inline faz a msm coisa
+    display: flex; /*acho q inline faz a msm coisa */
     gap: 100px;
 }
 
