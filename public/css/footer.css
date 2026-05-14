@@ -59,6 +59,8 @@ body {
 
     /* centraliza na horizontal */
     justify-content: center;
+
+    gap: 3rem;
 }
 
 .contatos{
