@@ -1,0 +1,49 @@
+/* *Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* *Variáveis */
+:root {
+    --cor-marrom-500: #6D3534;
+    --cor-marrom-300: #9A4E45;
+    --cor-bege-100: #C66E57;
+    --cor-laranja-100: #E08E60;
+}
+
+/* *Estilo da sidebar */
+#sidebar {
+    background: linear-gradient(var(--cor-marrom-500), var(--cor-marrom-300), var(--cor-bege-100), var(--cor-laranja-100));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: fit-content;
+}
+
+/* *Estilo do container da logo e do botão de abrir e fechar a sidebar */
+#sidebar .container-logo-icone-abrir-fechar-sidebar {
+    display: flex;
+    align-items: center;
+}
+
+/* *Estilo da logo principal da sidebar */
+#sidebar .logo-principal-deep-groove {
+    width: 5rem;
+}
+
+/* *Estilo do botão de abrir e fechar a sidebar */
+#sidebar .botao-abrir-fechar-sidebar {
+    background: none;
+    border: none;
+    height: fit-content;
+    cursor: pointer;
+}
+
+/* *Estilo dos itens das páginas administrativas da sidebar */
+#sidebar .sidebar-fechada {
+    display: none;
+}
