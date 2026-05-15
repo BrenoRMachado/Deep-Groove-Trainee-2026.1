@@ -189,13 +189,39 @@ body{
 }
 
 /* *Estilo do container de edicao de foto de perfil */
+#modal-edicao-usuarios .container-edicao-foto-de-perfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 1rem;
+}
+
 #modal-edicao-usuarios .container-edicao-foto-de-perfil .icone-foto-de-perfil {
     font-size: 10rem;
     color: var(--cor-branco-100);
-    border: 1px solid var(--cor-preto-100);
+    border: 2px solid var(--cor-preto-100);
     border-radius: 50%;
+    display: block;
+    line-height: 0.85;
 }
 
+#modal-edicao-usuarios .container-edicao-foto-de-perfil .icone-editar-foto-de-perfil {
+    background-color: var(--cor-branco-100);
+    font-size: 0.8rem;
+    padding: 0.25rem;
+    display: flex;
+    border-radius: 50%;
+    position: absolute;
+    right: 2%;
+    bottom: 19%;
+}
+
+#modal-edicao-usuarios .container-edicao-foto-de-perfil .instrucao-editar-foto-de-perfil {
+    color: var(--cor-branco-100);
+    font-size: 1.15rem;
+}
 
 /* *Estilo da seção de edição das informações do usuário */
 #modal-edicao-usuarios .secao-edicao-dados-do-usuario {
@@ -232,6 +258,7 @@ body{
     border-radius: 5px;
     padding: 0.3rem;
     background: none;
+    border: 2px solid var(--cor-preto-100);
 }
 
 /* *Estilo do container dos botões de salvar e cancelar */
