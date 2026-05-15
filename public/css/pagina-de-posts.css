@@ -5,7 +5,8 @@
     --cor-branco-100: #ffffff;
     --cor-preto-100: #000000;
     --cor-vinho-100: #5B162D;
-    --espacamento-padding-medio: 5rem;
+    --espacamento-padding-grande: 7rem;
+    --espacamento-padding-pequeno: 1.5rem;
     --fonte-primaria: "Roboto", sans-serif;
 }
 
@@ -24,20 +25,22 @@
     font-family: var(--fonte-primaria);
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
 /* * Estilo do título da página de posts */
 #pagina-de-posts .titulo {
     color: var(--cor-branco-100);
-    padding: 1rem var(--espacamento-padding-medio);
+    padding: var(--espacamento-padding-pequeno) var(--espacamento-padding-grande);
 }
 
 /* * Estilo do container de pesquisa da página de posts */
 #pagina-de-posts #container-de-pesquisa {
-    padding: 0 var(--espacamento-padding-medio);
     display: flex;
     align-items: center;
     gap: 1rem;
+    padding: 0 var(--espacamento-padding-grande);
 }
 
 /* *Estilo da barra de pesquisa da página de posts */
@@ -45,7 +48,7 @@
     background-color: var(--cor-branco-100);
     border: 3px solid var(--cor-preto-100);
     border-radius: 30px;
-    width: 25.5rem;
+    width: 24rem;
     display: flex;
     align-items: center;
 }
@@ -98,12 +101,13 @@
     flex-wrap: wrap;
     column-gap: 2rem;
     row-gap: 5rem;
-    padding: 2rem var(--espacamento-padding-medio);
+    padding: 2rem var(--espacamento-padding-grande);
+    flex: 1;
 }
 
 /* *Estilo do container dos álbuns da página de posts */
 #pagina-de-posts #container-posts-desktop .album-container {
-    width: 35rem;
+    width: 32.5rem;
     height: 20rem;
     display: flex;
     position: relative;
@@ -183,7 +187,7 @@
 
 /* !FIM DA ÁREA DE POSTS DA PÁGINA DE POSTS PARA DESKTOP */
 
-/* !INÍCIO DA ÁREA DE POSTS DA PÁGINA DE POSTS PARA MOBILE */
+/* !INÍCIO DA ÁREA DE POSTS DA PÁGINA DE POSTS PARA TABLET / MOBILE */
 
 /* *Estilo do container de posts da página de posts */
 #pagina-de-posts #container-posts-mobile {
@@ -192,13 +196,13 @@
     align-items: center;
     justify-content: space-between;
     gap: 5rem;
-    padding: 2rem var(--espacamento-padding-medio);
+    padding: 4rem 0;
 }
 
 /* *Estilo do container dos álbuns da página de posts */
 #pagina-de-posts #container-posts-mobile .album-container {
     width: 20rem;
-    height: 35rem;
+    height: 45rem;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -232,10 +236,10 @@
 /* *Estilo dos álbuns da página de posts */
 #pagina-de-posts #container-posts-mobile .album {
     width: 100%;
-    height: 60%;
+    height: 50%;
     border: 1.5px solid var(--cor-preto-100);
     border-radius: 16px;
-    box-shadow: 3px 3px 5px 3px var(--cor-laranja-200);
+    box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.25);
     position: relative;
     z-index: 2;
 }
@@ -267,7 +271,7 @@
     color: var(--cor-preto-100);
 }
 
-/* !FIM DA ÁREA DE POSTS DA PÁGINA DE POSTS PARA MOBILE */
+/* !FIM DA ÁREA DE POSTS DA PÁGINA DE POSTS PARA TABLET / MOBILE */
 
 /* *Estilo do container de mudança de página da página de posts */
 #pagina-de-posts #container-de-mudanca-de-pagina {
@@ -356,66 +360,97 @@
 }
 
 /* *Responsividade */
-@media (max-width: 1335px) {
-    #pagina-de-posts .barra-de-pesquisa {
-        width: 23.5rem;
-    }
-    #pagina-de-posts .album-container {
-        width: 32rem;
-    }
-}
 
-@media (max-width: 1230px) {
-    #pagina-de-posts .barra-de-pesquisa {
-        width: 22rem;
+/* !Laptop */
+@media (max-width: 1025px) {
+    :root {
+        --espacamento-padding-grande: 4rem;
     }
-    #pagina-de-posts .album-container {
-        width: 30rem;
-    }
-}
-
-@media (max-width: 1170px) {
-    #pagina-de-posts .barra-de-pesquisa {
-        width: 20.5rem;
-    }
-    #pagina-de-posts .album-container {
-        width: 28rem;
-    }
-}
-
-@media (max-width: 1100px) {
     #pagina-de-posts .barra-de-pesquisa {
         width: 18.5rem;
     }
-    #pagina-de-posts .album-container {
-        width: 25rem;
-        height: 18rem;
+    #pagina-de-posts #container-posts-desktop {
+        column-gap: 1rem;
+        row-gap: 2rem;
+    }
+    #pagina-de-posts #container-posts-desktop .album-container {
+        width: 26em;
+        height: 19rem;
+    }
+    #pagina-de-posts #container-posts-desktop .album {
+        width: 69%;
     }
 }
 
-@media (max-width: 1100px) {
-    #pagina-de-posts .barra-de-pesquisa {
-        width: 18.5rem;
-    }
-    #pagina-de-posts .album-container {
-        width: 25rem;
-        height: 18rem;
-    }
-}
-
-@media (max-width: 991px) {
+/* !Tablet */
+@media (max-width: 769px) {
     #pagina-de-posts {
         align-items: center;
     }
-    #pagina-de-posts .barra-de-pesquisa {
+    #pagina-de-posts .titulo {
+        padding: var(--espacamento-padding-pequeno) 0;
+    }
+    #pagina-de-posts #container-de-pesquisa {
         padding: 0;
-        width: 19rem;
+    }
+    #pagina-de-posts .barra-de-pesquisa {
+        width: 25rem;
     }
     #pagina-de-posts #container-posts-desktop {
-        display: none
+        display: none;
     }
     #pagina-de-posts #container-posts-mobile {
-        display: flex
+        display: flex;
+    }
+    #pagina-de-posts #container-posts-mobile .capa-texto-album-container {
+        margin-top: 8.5rem;
     }
 }
-/* TODO: Melhorar bastante a responsividade e verificar a melhor forma de trocar o CSS do desktop para mobile (usando JS?) */
+
+/* !Mobile L */
+@media (max-width: 426px) {
+    #pagina-de-posts .barra-de-pesquisa {
+        width: 18rem;
+    }
+    #pagina-de-posts .pesquisar {
+        font-size: 0.9rem;
+    }
+    #pagina-de-posts #container-posts-mobile {
+        row-gap: 4rem;
+    }
+    #pagina-de-posts #container-posts-mobile .album-container {
+        width: 16rem;
+        height: 37rem;
+    }
+    #pagina-de-posts #container-posts-mobile .capa-texto-album-container {
+        margin-top: 7rem;
+    }
+    #pagina-de-posts #container-posts-mobile .informacoes-do-album h2 {
+        color: var(--cor-laranja-200);
+        font-size: 1.5rem;
+    }
+    #pagina-de-posts #container-posts-mobile .informacoes-do-album p {
+        font-size: 1rem;
+        color: var(--cor-preto-100);
+    }
+}
+
+/* !Mobile M */
+@media (max-width: 376px) {
+    #pagina-de-posts .barra-de-pesquisa {
+        width: 15rem;
+    }
+    #pagina-de-posts #container-posts-mobile .capa-texto-album-container {
+        margin-top: 6.5rem;
+    }
+}
+
+/* !Mobile S */
+@media (max-width: 321px) {
+    #pagina-de-posts .barra-de-pesquisa {
+        width: 14rem;
+    }
+    #pagina-de-posts #container-posts-mobile .album-container {
+        width: 15rem;
+    }
+}
