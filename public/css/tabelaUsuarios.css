@@ -168,9 +168,10 @@ body{
     transform: translate(-50%, -50%);
     width: 35rem;
     height: 25rem;
-    border: 1px solid black;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
     border-radius: 50px;
-    display: grid;
+    display: none;
     grid-template-columns: 40% 60%;
 }    
 
@@ -289,4 +290,14 @@ body{
 
 #modal-edicao-usuarios .container-botoes-salvar-cancelar .botao-cancelar {
     background-color: var(--cor-vermelho-100);
+}
+
+/* *Estilo do filtro ao abrir o modal */
+.filtro-ao-abrir-modal-da-tabela-de-usuarios {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: none;
+    background-color: var(--cor-preto-100);
+    opacity: 0.5;
 }
