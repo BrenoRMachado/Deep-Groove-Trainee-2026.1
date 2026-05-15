@@ -9,7 +9,10 @@
     --pesogertab: 550;
     --pesopesq: 500;
     --cortextopesq: #773B36;
-
+    --cor-branco-200: #FEECE8;
+    --cor-branco-100: #FFFFFF;
+    --cor-preto-100: #000000;
+    --cor-marrom-100: #6D3534;
 }
 
 * {
@@ -153,4 +156,76 @@ body{
     color: var(--cortextopesq);
     font-weight: var(--pesopesq);
     font-family: var(--fonte);
+}
+
+/* *ESTILO DO MODAL DE EDIÇÃO DE USUÁRIOS */
+#modal-edicao-usuarios {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35rem;
+    height: 25rem;
+    border: 1px solid black;
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}    
+
+/* *Estilo da seção de edição da foto de perfil do usuário */
+#modal-edicao-usuarios .secao-edicao-foto-de-perfil {
+    height: 100%;
+    width: 100%;
+    background-image:url(../assets/fundo-disco-de-vinil.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px 0 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* *Estilo do container de edicao de foto de perfil */
+#modal-edicao-usuarios .container-edicao-foto-de-perfil .icone-foto-de-perfil {
+    font-size: 10rem;
+    color: var(--cor-branco-100);
+    border: 1px solid var(--cor-preto-100);
+    border-radius: 50%;
+}
+
+
+/* *Estilo da seção de edição das informações do usuário */
+#modal-edicao-usuarios .secao-edicao-dados-do-usuario {
+    background-color: var(--cor-branco-200);
+    border-radius: 0 50px 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+} 
+
+#modal-edicao-usuarios .container-editar-nome-email-senha {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#modal-edicao-usuarios .container-editar-dado {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* *Estilo do título do dado a ser editado do usuário (Nome, E-mail, Senha) */
+#modal-edicao-usuarios .titulo-dado {
+    color: var(--cor-marrom-100);
+    font-weight: bold;
+}
+
+/* *Estilo do input de digitar o dado do usuário */
+#modal-edicao-usuarios .editar-dado {
+    border-radius: 5px;
+    padding: 0.3rem;
+    background: none;
 }
