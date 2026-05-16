@@ -170,7 +170,7 @@ body{
     height: 25rem;
     border: 2px solid rgba(0, 0, 0, 0.5);
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
-    border-radius: 50px;
+    border-radius: 30px;
     display: none;
     grid-template-columns: 40% 60%;
 }    
@@ -182,7 +182,7 @@ body{
     background-image:url(../assets/fundo-disco-de-vinil.png);
     background-size: cover;
     background-position: center;
-    border-radius: 50px 0 0 50px;
+    border-radius: 30px 0 0 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -227,7 +227,7 @@ body{
 /* *Estilo da seção de edição das informações do usuário */
 #modal-edicao-usuarios .secao-edicao-dados-do-usuario {
     background-color: var(--cor-branco-200);
-    border-radius: 0 50px 50px 0;
+    border-radius: 0 30px 30px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -301,3 +301,42 @@ body{
     background-color: var(--cor-preto-100);
     opacity: 0.5;
 }
+
+/* !INÍCIO da responsividade PARA MODAL DE EDIÇÃO DE USUÁRIOS*/
+@media (max-width: 769px){
+    #modal-edicao-usuarios {
+        display: flex;
+        flex-direction: column;
+        height: 35rem;
+        width: 22rem;
+    }
+    #modal-edicao-usuarios .secao-edicao-foto-de-perfil {
+        height: 35%;
+        border-radius: 30px 30px 0 0;
+    }
+    #modal-edicao-usuarios .container-edicao-foto-de-perfil .icone-foto-de-perfil {
+        font-size: 8rem;
+    }
+    #modal-edicao-usuarios .container-edicao-foto-de-perfil .instrucao-editar-foto-de-perfil {
+        font-size: 1rem;
+    }
+    #modal-edicao-usuarios .secao-edicao-dados-do-usuario {
+        border-radius: 0 0 30px 30px;
+        height: 65%;
+        padding: 0;
+        justify-content: space-evenly;
+    }
+    #modal-edicao-usuarios .container-editar-nome-email-senha {
+        gap: 1.3rem;
+    }
+}
+
+@media (max-width: 426px){
+    #modal-edicao-usuarios {
+        width: 20rem;
+    }
+}
+
+/* TODO: Acho melhor a tela de edição de usuário ocupar a tela inteira no mobile, vou obter essa opinião e se for aceita realizo depois, terei que meio que desativar o resto da página 
+
+/* !FIM da responsividade PARA MODAL DE EDIÇÃO DE USUÁRIOS*/
