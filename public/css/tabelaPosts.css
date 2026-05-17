@@ -1,0 +1,342 @@
+:root {
+    --corclara: #FEECE8;
+    --fontetitulo: "Erica One", sans-serif;
+    --pesotitulo: 100;
+    --linhatabela: #FEB579;
+    --fonte: "Inter", sans-serif;
+    --cordestaque: #C06850;
+    --pesocabtab: 800;
+    --pesogertab: 550;
+    --pesopesq: 500;
+    --cortextopesq: #773B36;
+    --cor-branco-200: #FEECE8;
+    --cor-branco-100: #FFFFFF;
+    --cor-preto-100: #000000;
+    --cor-marrom-100: #6D3534;
+    --cor-vermelho-100: #FF0000;
+    --cor-verde-100: #22C55E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    padding-left: 16rem;
+
+    padding-top: 1rem;
+    min-height: 100vh;
+
+   
+    background: linear-gradient(
+        #6D3534 39%, 
+        #9A4E45 75%,
+        #C66E57 94%,
+        #E08E6D 100%
+    );
+}
+
+.addPost {
+    display: flex;
+
+    align-items: center;
+    justify-items: center;
+}
+
+.infoUser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.topoTabelaPosts {
+    display: flex;
+    /* o justify sempre mexe no eixo principal nesse caso row */
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+.textoTitulo {
+    color: var(--corclara);
+    font-family: var(--fontetitulo);
+    font-weight: var(--pesotitulo);
+}
+
+.titulo {
+    text-align: center;
+}
+
+.tabela{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   
+    margin-top: 3rem;
+ 
+    justify-content: center;
+
+    /*! para tds as colunas da tabela ficarem do msm tamanho */
+    table-layout: fixed;
+
+    /*! qunado a lateral da tabela ficar maior q a tela, com isso é posivel rolar ela pro lado sem quebrar a tabela */
+    overflow-x: auto;
+
+    border-radius: 1rem;
+
+    background-color: var(--corclara);
+}
+
+/*? colunas das tabelas coluna cabeçalho e coluna body */
+.colunaCab, .colunageral{
+    text-align: center;
+
+    /* add um espaço na no topo e no baixo da div */
+    padding: 1.5vh;
+
+    font-family: var(--fonte);
+
+}
+
+.colunageral {
+    border-top: 2px solid var(--linhatabela);
+    font-weight: var(--pesogertab);
+}
+
+.colunaCab {
+    color: var(--cordestaque);
+    font-weight: var(--pesocabtab);
+}
+
+.textop {
+    font-family: var(--fonte);
+    color: var(--corclara);
+}
+
+.textoh3 {
+    font-family: var(--fonte);
+    color: var(--corclara);
+}
+
+.icone {
+    color: var(--corclara);
+    
+}
+
+.addUser {
+    background-color: var(--cordestaque);
+
+    border-radius: 1rem;
+    height: 2.5rem;
+    width: 8rem;
+
+}
+
+
+.pesqUser {
+
+    background-color: var(--corclara);
+
+    background-image: url(../assets/Frame\ 90.svg);
+    /*! pra img nn repitir no fundo td */
+    background-repeat: no-repeat;
+
+    border-radius: 3rem;
+
+    /* cima direita baixo esquerda */
+    padding: 1rem 1rem 1rem 3rem;
+
+    /*! coloca o o back 1 p/ laterais e no centro de td */
+    background-position: 1rem center;
+}
+
+.pesqUser::placeholder {
+    color: var(--cortextopesq);
+    font-weight: var(--pesopesq);
+    font-family: var(--fonte);
+}
+
+/* *ESTILO DO MODAL DE EDIÇÃO DE USUÁRIOS */
+#modal-edicao-usuarios {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35rem;
+    height: 25rem;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    display: none;
+    grid-template-columns: 40% 60%;
+}    
+
+/* *Estilo da seção de edição da foto de perfil do usuário */
+#modal-edicao-usuarios .secao-edicao-foto-de-perfil {
+    height: 100%;
+    width: 100%;
+    background-image:url(../assets/fundo-disco-de-vinil.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px 0 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* *Estilo do container de edicao de foto de perfil */
+#modal-edicao-usuarios .container-edicao-foto-de-perfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 1rem;
+}
+
+#modal-edicao-usuarios .container-edicao-foto-de-perfil .icone-foto-de-perfil {
+    font-size: 10rem;
+    color: var(--cor-branco-100);
+    border: 2px solid var(--cor-preto-100);
+    border-radius: 50%;
+    display: block;
+    line-height: 0.85;
+}
+
+#modal-edicao-usuarios .container-edicao-foto-de-perfil .icone-editar-foto-de-perfil {
+    background-color: var(--cor-branco-100);
+    font-size: 0.8rem;
+    padding: 0.25rem;
+    display: flex;
+    border-radius: 50%;
+    position: absolute;
+    right: 2%;
+    bottom: 19%;
+}
+
+#modal-edicao-usuarios .container-edicao-foto-de-perfil .instrucao-editar-foto-de-perfil {
+    color: var(--cor-branco-100);
+    font-size: 1.15rem;
+}
+
+/* *Estilo da seção de edição das informações do usuário */
+#modal-edicao-usuarios .secao-edicao-dados-do-usuario {
+    background-color: var(--cor-branco-200);
+    border-radius: 0 30px 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+#modal-edicao-usuarios .container-editar-nome-email-senha {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 80%;
+}
+
+#modal-edicao-usuarios .container-editar-dado {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* *Estilo do título do dado a ser editado do usuário (Nome, E-mail, Senha) */
+#modal-edicao-usuarios .titulo-dado {
+    color: var(--cor-marrom-100);
+    font-weight: bold;
+}
+
+/* *Estilo do input de digitar o dado do usuário */
+#modal-edicao-usuarios .editar-dado {
+    border-radius: 5px;
+    padding: 0.3rem;
+    background: none;
+    border: 2px solid var(--cor-preto-100);
+}
+
+/* *Estilo do container dos botões de salvar e cancelar */
+#modal-edicao-usuarios .container-botoes-salvar-cancelar {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* *Estilo dos botões de salvar e cancelar */
+#modal-edicao-usuarios .container-botoes-salvar-cancelar .botao {
+    padding: 0.5rem;
+    height: fit-content;
+    border-radius: 5px;
+    border: none;
+    color: var(--cor-branco-100);
+    text-shadow: 
+        -0.5px -0.5px 0 var(--cor-preto-100),
+        0.5px -0.5px 0 var(--cor-preto-100),
+        -0.5px  0.5px 0 var(--cor-preto-100),
+        0.51px  0.5px 0 var(--cor-preto-100);
+}
+
+#modal-edicao-usuarios .container-botoes-salvar-cancelar .botao-salvar {
+    background-color: var(--cor-verde-100);
+}
+
+#modal-edicao-usuarios .container-botoes-salvar-cancelar .botao-cancelar {
+    background-color: var(--cor-vermelho-100);
+}
+
+/* *Estilo do filtro ao abrir o modal */
+.filtro-ao-abrir-modal-da-tabela-de-usuarios {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: none;
+    background-color: var(--cor-preto-100);
+    opacity: 0.5;
+}
+
+/* !INÍCIO da responsividade PARA MODAL DE EDIÇÃO DE USUÁRIOS*/
+@media (max-width: 769px){
+    #modal-edicao-usuarios {
+        display: flex;
+        flex-direction: column;
+        height: 35rem;
+        width: 22rem;
+    }
+    #modal-edicao-usuarios .secao-edicao-foto-de-perfil {
+        height: 35%;
+        border-radius: 30px 30px 0 0;
+    }
+    #modal-edicao-usuarios .container-edicao-foto-de-perfil .icone-foto-de-perfil {
+        font-size: 8rem;
+    }
+    #modal-edicao-usuarios .container-edicao-foto-de-perfil .instrucao-editar-foto-de-perfil {
+        font-size: 1rem;
+    }
+    #modal-edicao-usuarios .secao-edicao-dados-do-usuario {
+        border-radius: 0 0 30px 30px;
+        height: 65%;
+        padding: 0;
+        justify-content: space-evenly;
+    }
+    #modal-edicao-usuarios .container-editar-nome-email-senha {
+        gap: 1.3rem;
+    }
+}
+
+@media (max-width: 426px){
+    #modal-edicao-usuarios {
+        width: 20rem;
+    }
+}
+
+/* TODO: Acho melhor a tela de edição de usuário ocupar a tela inteira no mobile, vou obter essa opinião e se for aceita realizo depois, terei que meio que desativar o resto da página 
+
+/* !FIM da responsividade PARA MODAL DE EDIÇÃO DE USUÁRIOS*/
