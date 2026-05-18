@@ -7,7 +7,7 @@
     --cor-vinho-100: #5B162D;
     --espacamento-padding-grande: 7rem;
     --espacamento-padding-pequeno: 1.5rem;
-    --fonte-primaria: "Roboto", sans-serif;
+    --fonte-primaria: "EB Garamond", serif;;
 }
 
 /* * Reset CSS da página de posts*/
@@ -41,14 +41,14 @@
     align-items: center;
     gap: 1rem;
     padding: 0 var(--espacamento-padding-grande);
+    width: 100%;
 }
 
 /* *Estilo da barra de pesquisa da página de posts */
 #pagina-de-posts .barra-de-pesquisa {
     background-color: var(--cor-branco-100);
-    border: 3px solid var(--cor-preto-100);
     border-radius: 30px;
-    width: 24rem;
+    width: 88.5%;
     display: flex;
     align-items: center;
 }
@@ -81,11 +81,13 @@
 #pagina-de-posts .icone-filtro-de-pesquisa {
     color: var(--cor-laranja-200);
     background-color: var(--cor-branco-100);
+    width: 2rem;
+    height: 2rem;
     font-size: 2.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    border-radius: 100px;
     border: none;
     cursor: pointer;
     line-height: 1;
@@ -366,9 +368,6 @@
     :root {
         --espacamento-padding-grande: 4rem;
     }
-    #pagina-de-posts .barra-de-pesquisa {
-        width: 18.5rem;
-    }
     #pagina-de-posts #container-posts-desktop {
         column-gap: 1rem;
         row-gap: 2rem;
@@ -393,9 +392,6 @@
     #pagina-de-posts #container-de-pesquisa {
         padding: 0;
     }
-    #pagina-de-posts .barra-de-pesquisa {
-        width: 25rem;
-    }
     #pagina-de-posts #container-posts-desktop {
         display: none;
     }
@@ -409,9 +405,6 @@
 
 /* !Mobile L */
 @media (max-width: 426px) {
-    #pagina-de-posts .barra-de-pesquisa {
-        width: 18rem;
-    }
     #pagina-de-posts .pesquisar {
         font-size: 0.9rem;
     }
@@ -437,9 +430,6 @@
 
 /* !Mobile M */
 @media (max-width: 376px) {
-    #pagina-de-posts .barra-de-pesquisa {
-        width: 15rem;
-    }
     #pagina-de-posts #container-posts-mobile .capa-texto-album-container {
         margin-top: 6.5rem;
     }
@@ -447,9 +437,6 @@
 
 /* !Mobile S */
 @media (max-width: 321px) {
-    #pagina-de-posts .barra-de-pesquisa {
-        width: 14rem;
-    }
     #pagina-de-posts #container-posts-mobile .album-container {
         width: 15rem;
     }
