@@ -213,6 +213,7 @@ body{
     color: var(--cor-branco-100);
     font-size: 1.2rem;
     border-radius: 10px;
+    font-family: "Roboto", sans-serif;
 }
 
 #modal-edicao-posts .container-edicao-capa-do-album .botao-editar-capa-do-album {
@@ -260,14 +261,16 @@ body{
 #modal-edicao-posts .titulo-dado {
     color: var(--cor-marrom-100);
     font-weight: bold;
+    font-family: "Roboto", sans-serif;
 }
 
 /* *Estilo do input de digitar o dado do usuário */
 #modal-edicao-posts .editar-dado {
     border-radius: 5px;
-    padding: 0.3rem;
+    padding: 0.4rem;
     background: none;
     border: 2px solid var(--cor-preto-100);
+    font-family: "Roboto", sans-serif;
 }
 
 #modal-edicao-posts .editar-descricao {
@@ -291,11 +294,7 @@ body{
     border-radius: 5px;
     border: none;
     color: var(--cor-branco-100);
-    text-shadow: 
-        -0.5px -0.5px 0 var(--cor-preto-100),
-        0.5px -0.5px 0 var(--cor-preto-100),
-        -0.5px  0.5px 0 var(--cor-preto-100),
-        0.51px  0.5px 0 var(--cor-preto-100);
+    font-family: "Roboto", sans-serif;
 }
 
 #modal-edicao-posts .container-botoes-salvar-cancelar .botao-salvar {
