@@ -1,0 +1,17 @@
+:root{
+    /* cores presentes na hero section */
+    --color:#000000;
+    --color:#FFA96B;
+    --color:#FFFFFF;
+    --imagem:
+
+}
+body{
+    align-items: flex-start;
+    align-self: stretch;
+    background: linear-gradient(180deg, #5B162D 0%, #000 31.53%, #FFF 70.21%, #000 78%, #440D22 100%);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
