@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"> 
 </head>
 <body>
-    <div id="dashboard">
+    <main id="dashboard">
         <header id="cabecalho">
             <h1>Dashboard</h1>
             <div class="container-perfil">
@@ -28,39 +28,36 @@
                 </button>
             </div>
         </header>
-        <section id="dados-usuarios-publicacoes">
-            <ul class="lista-dados-usuarios-publicacoes">
-                <li class="numero-de-usuarios-publicacoes numero-de-usuarios">Total de usuários: <span>X</span></li>
-                <li class="numero-de-usuarios-publicacoes numero-de-publicacoes">Total de publicações: <span>Y</span></li>
+        <nav id="dados-usuarios-publicacoes-e-navegar-para-paginas-administrativas">
+            <ul class="lista-dados-usuarios-publicacoes-e-navegar-para-paginas-administrativas">
+                <li class="container-usuarios-publicacoes container-usuarios">
+                    <div class="numero-de-usuarios-publicacoes numero-de-usuarios">
+                        <i class="icone icone-usuarios bi bi-people-fill"></i>
+                        <p>Total de usuários: <span class="quantidade-total-de-usuarios">X</span></p>
+                    </div>
+                    <button class="botao-navegar-para-paginas-administrativas botao-navegar-para-tabela-de-usuarios">Tabela de Usuários</button>
+                </li>
+                <li class="container-usuarios-publicacoes container-publicacoes">
+                    <div class="numero-de-usuarios-publicacoes numero-de-publicacoes">
+                        <i class="icone icone-publicacoes bi bi-disc"></i>
+                        <p>Total de usuários: <span class="quantidade-total-de-publicacoes">X</span></p>
+                    </div>
+                    <button class="botao-navegar-para-paginas-administrativas botao-navegar-para-tabela-de-publicacoes">Tabela de Publicações</button>
+                </li>
             </ul>
-        </section>  
-        <main id="area-de-navegacao">
-            <nav id="navegar-para-paginas-administrativas">
-                <div class="container-lista-tabela container-lista-de-usuarios">
-                    <div class="container-texto-lista-tabela container-texto-lista-de-usuarios">
-                        <h2>Lista de Usuários</h2>
-                        <p>Gerencie os usuários do sistema</p>
-                    </div>
-                    <button class="icone-lista-tabela icone-lista-de-usuarios">
-                        <i class="bi bi-person-lines-fill"></i>
-                    </button>
-                </div>
-                <div class="container-lista-tabela container-tabela-de-publicacoes">
-                    <div class="container-texto-lista-tabela container-texto-tabela-de-publicacoes">
-                        <h2>Tabela de Publicações</h2>
-                        <p>Administre as publicações do sistema</p>
-                    </div>
-                    <button class="icone-lista-tabela icone-tabela-de-publicacoes">
-                        <i class="bi bi-file-earmark-post-fill"></i>
-                    </button>
-                </div>
-            </nav>
-        </main>
+        </nav>  
+        <div id="container-titulo-de-fundo">
+            <h1 class="titulo-de-fundo">DEEPGROOVE</h1>
+        </div>
         <footer id="rodape">
-            <button class="botao-sign-out">
+            <button class="botao botao-home">
+                <i class="icone-home bi bi-house-door-fill"></i>
+            </button>
+            <button class="botao botao-sign-out">
                 <i class="icone-sign-out bi bi-box-arrow-right"></i>
             </button>
         </footer>
-    </div>
+        <img class="imagem-disco-de-vinil-fundo" src="../../../public/assets/disco-de-vinil.png">
+    </main>
 </body>
 </html>
