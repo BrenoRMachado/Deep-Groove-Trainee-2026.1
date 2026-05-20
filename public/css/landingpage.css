@@ -1,17 +1,158 @@
-:root{
-    /* cores presentes na hero section */
-    --color:#000000;
-    --color:#FFA96B;
-    --color:#FFFFFF;
-    --imagem:
-
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
 }
+
 body{
     align-items: flex-start;
     align-self: stretch;
-    background: linear-gradient(180deg, #5B162D 0%, #000 31.53%, #FFF 70.21%, #000 78%, #440D22 100%);
+    background: linear-gradient(to bottom, #5B162D 0%, #000 31.53%, #FFF 70.21%, #000 78%, #440D22 100%);
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar{
+    height: 10vh;
     margin: 0;
     padding: 0;
+    width: 100vw;
+}
+
+.hero-section{
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    gap: 5.25rem;
+    height: 52.6875rem;
+    padding: 0 5rem;
+    width: 100vw;
+}
+
+.elementos-hs{
+    align-items: center;
+    display: flex;
+    flex: 1 0 0;
+    gap: 4.25rem;
+    justify-content: center;
+}
+
+.metade-texto{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    height: 32.4375rem;
+    justify-content: center;
+    width: 42.4375rem;
+}
+
+#slogan{
+    aspect-ratio: 70/43;
+    border-radius: 1.125rem;
+    flex-shrink: 0;
+    height: 15.625rem;
+    width: 25.4375rem;
+}
+
+.texto_hs{
+
+    /*todo: layout da caixa de texto */
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0;
+    justify-content: flex-end;
+
+    /*todo: tipografia */
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.5rem;
+    text-align: center;
+}
+
+.botão{
+
+    /*todo: layout da caixa do botão */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    justify-content: center;
+    padding: 0.625rem;
+    width: 25.4375rem;
+    
+    /*todo: aparência da caixa */
+    background-color: #FFA96B;
+    border-radius: 1.5625rem;
+
+    /*todo: tipografia */
+    color: #000;
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.125rem;
+    text-align: center;
+}
+
+.metade-logo{
+    align-items: center;
+    display: flex;
+    height: 34.125rem;
+    justify-content: space-between;
+    padding: 0.625rem;
+    width: 33.8125rem;
+}
+
+.carroussel{
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    height: 22.8125rem;
+    gap: 1.25rem;
+    overflow: hidden;
+    padding: 1.75rem 5rem 2.8125rem 5rem;
+    width: 100%;
+}
+
+.titulo_carroussel{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.slider-conteudo{
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.slider-item{
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    gap: 1.25rem;
+    min-width: 30%;
+}
+
+.slider-item img{
+    align-items: flex-start;
+    border-radius: 2.8125rem;
+    display: flex;
+    gap: 0.625rem;
+    height: 16.3125rem;
+    padding: 0.625rem;
+    width: 25.9375rem;
 }
