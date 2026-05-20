@@ -44,6 +44,7 @@
     justify-content: space-between;
     padding: 0 var(--espacamento-padding-grande);
     width: 100%;
+    gap: 1rem;
 }
 
 /* *Estilo da barra de pesquisa da página de posts */
@@ -87,6 +88,7 @@
     height: 1.8rem;
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: 2.2rem;
     border-radius: 50%;
     border: none;
@@ -99,10 +101,10 @@
 /* *Estilo do container de posts da página de posts */
 #pagina-de-posts #container-posts-desktop {
     display: flex;
-    align-content: space-between;
+    align-content: space-evenly;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: var(--espacamento-padding-medio) var(--espacamento-padding-grande);
+    padding: 0 var(--espacamento-padding-grande);
     flex: 1;
 }
 
@@ -166,11 +168,12 @@
 /* *Estilo das informações contidas no álbum da página de posts */
 #pagina-de-posts #container-posts-desktop .informacoes-do-album {
     display: none;
+    padding: 0.1rem;
 }
 
 #pagina-de-posts #container-posts-desktop .titulo-do-album {
     color: var(--cor-laranja-200);
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-family: var(--fonte-titulo);
 }
 
@@ -209,8 +212,8 @@
 
 /* *Estilo do container dos álbuns da página de posts */
 #pagina-de-posts #container-posts-mobile .album-container {
-    width: 60%;
-    height: 55rem;
+    width: 51%;
+    height: 46rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -235,10 +238,7 @@
     position: absolute;
     top: 0%;
     z-index: 1; /* !Menor que o álbum (z-index: 2) para que fique atrás dele */
-    animation-name: disco-de-vinil-girando-infinitamente-mobile;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-duration: 2s;
+    animation: disco-de-vinil-girando-infinitamente-mobile 2s linear infinite;
 }
 
 /* *Estilo dos álbuns da página de posts */
@@ -271,6 +271,7 @@
 
 #pagina-de-posts #container-posts-mobile .titulo-do-album {
     font-size: 2.3rem;
+    color: var(--cor-laranja-200);
 }
 
 #pagina-de-posts #container-posts-mobile .descricao-autor-do-album {
@@ -379,11 +380,27 @@
     #pagina-de-posts {
         align-items: center;
     }
-    #pagina-de-posts .titulo {
-        padding: var(--espacamento-padding-pequeno) 0 3rem 0;
+    #pagina-de-posts > .titulo {
+        padding: var(--espacamento-padding-pequeno) 0 2rem 0;
+        font-size: 4rem;
     }
     #pagina-de-posts #container-de-pesquisa {
         padding: 0 2rem;
+    }
+    #pagina-de-posts #container-de-pesquisa .barra-de-pesquisa {
+        padding: 0.2rem;
+    }
+    #pagina-de-posts #container-de-pesquisa .pesquisar {
+        font-size: 1.4rem;
+    }
+    #pagina-de-posts #container-de-pesquisa .icone-de-pesquisa {
+        font-size: 1.7rem;
+    }
+
+    #pagina-de-posts #container-de-pesquisa .icone-filtro-de-pesquisa {
+        font-size: 3rem;
+        height: 2.2rem;
+        width: 2.2rem;;
     }
     #pagina-de-posts #container-posts-desktop {
         display: none;
@@ -393,22 +410,13 @@
     }
 }
 
-@media (max-width: 640px){
-    #pagina-de-posts #container-posts-mobile .album-container{
-        height: 40rem;
-    }
-    #pagina-de-posts #container-posts-mobile .informacoes-do-album h2 {
-        font-size: 1.5rem;
-    }
-    #pagina-de-posts #container-posts-mobile .informacoes-do-album p {
-        font-size: 1rem;
-    }
-}
-
 /* !Mobile L */
 @media (max-width: 426px) {
+    #pagina-de-posts > .titulo {
+        font-size: 3rem;
+    }
     #pagina-de-posts #container-de-pesquisa {
-        padding: 0 2rem;
+        padding: 0 1.1rem;
     }
     #pagina-de-posts .barra-de-pesquisa {
         width: 85%;
@@ -417,34 +425,20 @@
         font-size: 0.9rem;
     }
     #pagina-de-posts #container-posts-mobile {
+        padding: 2rem 0;
         row-gap: 4rem;
     }
     #pagina-de-posts #container-posts-mobile .album-container {
         width: 68%;
-        height: 37rem;
+        height: 35rem;
     }
     #pagina-de-posts #container-posts-mobile .capa-texto-album-container {
         height: 82%;
     }
-}
-
-/* !Mobile M */
-@media (max-width: 376px) {
-    #pagina-de-posts #container-posts-mobile {
-        padding: 4rem 1.5rem;
+    #pagina-de-posts #container-posts-mobile .album{
+        height: 52%;
     }
-    #pagina-de-posts #container-posts-mobile .album-container {
-        width: 80%;
-        height: 35rem;
-    }
-}
-
-/* !Mobile S */
-@media (max-width: 321px) {
-    #pagina-de-posts #container-de-pesquisa {
-        padding: 0 1.5rem;
-    }
-    #pagina-de-posts #container-posts-mobile .album-container {
-        width: 15rem;
+    #pagina-de-posts #container-posts-mobile .titulo-do-album {
+        font-size: 2rem;
     }
 }
