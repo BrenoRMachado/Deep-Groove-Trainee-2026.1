@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../public/css/tabelaUsuarios.css">
 
-    <!-- impotando fontes google -->
+    <!--* impotando fontes google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Erica+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-    <!-- importando bootstrap-icons -->
+    <!--* importando bootstrap-icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <title>Usuários Cadastrados</title>
 </head>
 
-<body>
+<body id="tbuser">
 
     <div class="filtro-ao-abrir-modal-da-tabela-de-usuarios"></div>
 
@@ -82,7 +82,7 @@
                     <td class="colunageral">Administrador</td>
 
                     <td class="colunageral">
-                        <i class="acao bi bi-eye-fill"></i>
+                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
                         <i class="acao bi bi-pencil-square"></i>
                         <i class="acao bi bi-trash"></i>
                     </td>
@@ -208,13 +208,13 @@
 
             <tfoot>
                 <tr>
-                    <td colspan="6">Fim da tabela</td>
+                    <!-- tem q fazer a paginaçao -->
                 </tr>
             </tfoot>
         </table>
     </section>
 
-    <!-- *MODAL DE EDIÇÃO DE USUÁRIOS  -->
+    <!--* MODAL DE EDIÇÃO DE USUÁRIOS  -->
     <div id="modal-edicao-usuarios">
         <section class="secao-edicao-foto-de-perfil">
             <figure class="container-edicao-foto-de-perfil">
@@ -245,7 +245,62 @@
         </section>
     </div>
 
+    <!--* MODAL DE VISUALIZAR USUÁRIOS -->
+
+    <div class="fundo" onclick="fecharModalVisu('modal-visu-user')">
+
+        <div class="xis">
+            <img src="../../../public/assets/XCircleFill.svg" alt="" onclick="fecharModalVisu('modal-visu-user')">
+        </div>
+
+        <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
+        <div id="modal-visu-user" class="des-modal-geral" onclick="event.stopPropagation()">
+
+            <section class="fotodeperfil">
+                <img class="imgperfil" src="../../../public/assets/fotodeperfil.jpg" alt="Foto de perfil">
+            </section>
+
+            <section class="containerpolvoIMG">
+                <img class="polvoIMG" src="../../../public/assets/polvo-modal.jpeg" alt="polvo">
+            </section>
+
+            <section id="container-dados-visu">
+                <!-- disabled- desbilita total 
+            readonly- nn deixa editar mas pode clicar e copiar o texto -->
+
+                <div class="dados-visu">
+                    <div class="destaque-dados-visu">ID</div>
+                    <div class="dado-visu">1</div>
+                </div>
+
+                <div class="dados-visu">
+                    <div class="destaque-dados-visu">NOME</div>
+                    <div class="dado-visu">Fulano Sicrano da Silva Miguez Soares</div>
+                </div>
+
+                <div class="dados-visu">
+                    <div class="destaque-dados-visu">EMAIL</div>
+                    <div class="dado-visu">fulanosilva123@gmail.com</div>
+                </div>
+
+                <div class="dados-visu">
+                    <div class="destaque-dados-visu">TIPO</div>
+                    <div class="dado-visu">Administrador</div>
+                </div>
+
+
+            </section>
+
+        </div>
+
+    </div>
+
+    <!--* MODAL DE EXCLUIR USÚARIOS -->
+
+
     <script src="../../../public/js/tabela-de-usuarios.js"></script>
+
 </body>
+
 
 </html>

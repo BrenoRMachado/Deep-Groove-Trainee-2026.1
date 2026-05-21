@@ -9,12 +9,23 @@
     --pesogertab: 550;
     --pesopesq: 500;
     --cortextopesq: #773B36;
+
+    /** var modal editar */
     --cor-branco-200: #FEECE8;
     --cor-branco-100: #FFFFFF;
     --cor-preto-100: #000000;
     --cor-marrom-100: #6D3534;
     --cor-vermelho-100: #FF0000;
     --cor-verde-100: #22C55E;
+
+    /** var modal visualizar e excluir */
+    --fundodecormodal: #6D3534;
+    --fundodecorcontainerdados: #CA998F; 
+    --corbackdado: #FEECE8;
+    --corbordainput-cordestaque: #6D3534;
+    --pesomodal: 600;
+    --tamfontemodal: 0.8rem;
+
 }
 
 * {
@@ -23,10 +34,8 @@
   box-sizing: border-box;
 }
 
-body{
-    padding-left: 16rem;
-
-    padding-top: 1rem;
+#tbuser{
+    padding: 1rem 2rem;
     min-height: 100vh;
 
    
@@ -36,6 +45,7 @@ body{
         #C66E57 94%,
         #E08E6D 100%
     );
+    
 }
 
 .addUser {
@@ -146,6 +156,7 @@ body{
     background-repeat: no-repeat;
 
     border-radius: 3rem;
+    border: 1rem solid #6D3534;
 
     /* cima direita baixo esquerda */
     padding: 1rem 1rem 1rem 3rem;
@@ -360,3 +371,179 @@ body{
 /* TODO: Acho melhor a tela de edição de usuário ocupar a tela inteira no mobile, vou obter essa opinião e se for aceita realizo depois, terei que meio que desativar o resto da página */
 
 /* !FIM da responsividade PARA MODAL DE EDIÇÃO DE USUÁRIOS*/
+
+
+
+
+/*? MODAL DE VISUALIZAR USUARIO */
+
+.des-modal-geral {
+    background-color: var(--fundodecormodal);
+
+    /*? fica position em rel a tela, e serve como position relative para os filhos */
+    position: fixed;
+
+    
+
+    top: 50%;
+    left: 50%;
+ 
+    /*! trasforma o elemento e move(translate) ele nesse caso 50% do elemento volta na horizontal e vertical nn mexe (x,y) */
+    transform: translate(-50%, -50%);
+
+    border-radius: 2rem;
+
+    display: none;
+    flex-direction: column;
+    gap: 3rem;
+
+    /* box-shadow: x y blur emvolta cor;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5); */
+    /* box-shadow: 0 0 0  100vw rgba(0,0,0,0.5); */
+}
+
+.fundo{
+    position: fixed;
+    inset: 0;
+
+    /* inset é o mesmo disso aqui
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; */
+
+    display: none;
+
+    background-color: #00000059;
+    backdrop-filter: blur(8px);
+
+}
+
+#container-dados-visu {
+    background-color: var(--fundodecorcontainerdados);
+    
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 1.5rem;
+
+    width: 20vw;
+    height: 25vh;
+
+    padding: 0.5rem 1rem;
+
+    margin: 2rem 4rem 2rem 4rem;
+
+    /* nesse caso horizontal */
+    align-items: center; 
+
+    /* nesse caso vertical */
+    justify-content: center;
+
+}
+
+.dados-visu {
+    display: flex; 
+    gap: 0.5rem;
+
+    background-color: var(--corbackdado);
+    border-radius: 1rem;
+
+    height: 4vh;
+    width:90%;
+    align-items: center;
+    padding: 0 0.5rem;
+
+}
+
+.dado-visu {
+    display: flex; 
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-family: var(--fonte);
+    font-weight: var(--pesomodal);
+    font-size: var(--tamfontemodal);
+
+    /*! scrolla a div no eixo x */
+    overflow-x: auto;
+
+    /*! nao deixa q a div scrolla nesse sentido */
+    overflow-y: hidden;
+
+    /*! tira a barra de scroll */
+    scrollbar-width: none;
+
+    /*! mantem o texto td em uma linha proibindo q ele quebre */
+    white-space: nowrap;
+}
+
+/** isso tira a borda do input e coloca um corzinha nele
+.input {
+   border: none;
+   background-color: var(--corbackinput);
+}  */
+
+.destaque-dados-visu {
+    background-color: var(--corbordainput-cordestaque);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 1rem;
+    height: 1.2rem;
+    width: 4rem;
+
+    font-family: var(--fonte);
+    font-weight: var(--pesomodal);
+    font-size: var(--tamfontemodal);
+    color: var(--corbackdado);
+}
+
+.polvoIMG {
+   
+
+    width: 100%;
+    height: 20vh;
+
+    /*? corta a img */
+    object-fit: cover;
+
+    /*? pega uma parte especifica da img*/ 
+    /*? pode ser center top bottom left right ou assim x y*/
+    object-position: 100% 35%;
+
+    /* ordem relogio */
+    border-radius: 2rem 2rem 0 0;
+
+}
+
+.containerpolvoIMG {
+    width: 100%;
+}
+
+.fotodeperfil{
+   
+    position: absolute;
+    padding-top: 5%;
+
+    left: 50%;
+    transform: translateX(-50%);    
+}
+
+.imgperfil {
+    width: 12em;
+    height: 12rem;
+
+    /* corta a img */
+    object-fit: cover;
+
+    border-radius: 11rem;
+    border: 0.5rem solid var(--fundodecormodal);
+}
+
+.xis {
+    padding-top: 3vh;
+    padding-left: 95%; 
+    cursor: pointer;
+}
