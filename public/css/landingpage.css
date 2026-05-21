@@ -247,9 +247,10 @@ body{
     background-color: #FFF;
     display: flex;
     flex-direction: column;
-    height: 79.53vh;
-    padding: 1.5625rem 5rem 2.1875rem 5rem;
-    /* width: 100%; */
+    height: auto;
+    min-height: 79.53vh;
+    padding: 1.5625rem clamp(1.5rem, 5vw, 5rem);
+    width: 100%;
 }
 
 .titulo-mosaico{
@@ -265,42 +266,59 @@ body{
     align-items: center;
     display: flex;
     flex-shrink: 0;
+    gap: 2rem;
     height: 60.27vh;
     justify-content: space-between;
-    width: 118.51vw;
+    width: 100%;
 }
 
+/*? coluna da esquerda: post grande */
 .postGrande{
     /*? layout */
     align-items: flex-start;
     display: flex;
+    flex: 1;
     flex-direction: column;
-    flex-shrink: 0;
     gap: 0.625rem;
     height: 55.46vh;
-    padding: 0.625rem;
-    width: 56.85vw;
+    image-rendering: auto;
+    min-width: 300px;
 
     /*? aparencia */
+    background-color: #FFF;
     border-radius: 2.31vw;
     box-shadow: -15px 15px 10px 0 rgba(0, 0, 0, 0.20);
 }
 
+.postGrande img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2.31vw;
+}
+
+/*? coluna da direita: container dos 3 posts pequenos */
 .postsPquenos{
     align-items: center;
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
-    gap: 0.625rem;
-    height: 57.87vh;
+    gap: 1;
+    height: auto;
+    image-rendering: auto;
     justify-content: center;
-    width: 56.29vw;
+    min-height: 57.87vh;
+    min-width: 300px;
+    /* width: 100%; */
 }
-#p1{
-    align-items: flex-start;
+
+/*? post 1: contem imagem e texto */
+.p1{
+    align-items: center;
     align-self: stretch;
+    background-color: #FFF;
     border-radius: 2.77vw;
     display: flex;
+    flex-direction: row;
     flex-shrink: 0;
     gap: 0.9375rem;
     height: 17.87vh;
@@ -308,12 +326,15 @@ body{
 }
 #i1{
     /*? layout */
-    align-items: flex-start;
     display: flex;
-    flex: 1 0 0;
-    gap: 0.625rem;
+    flex: 1;
+    flex-shrink: 0;
     height: 14.81vh;
-
+    justify-content: center;
+    object-fit: cover;
+    transform: translateZ(0);
+    width: 40%;
+    
     /*? aparencia */
     border-radius: 2.77vw;
     box-shadow: -10px 10px 10px 0 rgba(0, 0, 0, 0.20);
@@ -321,26 +342,30 @@ body{
 #t1{
     /*? layout */
     display: flex;
-    flex: 1 0 0;
+    flex: 1;
     flex-direction: column;
-    height: 14.81vh;
+    height: auto;
     justify-content: center;
+    width: 55%;
     
     /*? tipografia */
     color: #000;
     font-family: Montserrat;
-    font-size: 2.22vw;
+    font-size: clamp(0.9rem, 1.5vw, 1.3rem);
     font-style: normal;
     font-weight: 600;
-    line-height: 3.24vh;
+    line-height: 1.4;
     text-align: justify;
 }
 
-#p2{
-    align-items: flex-start;
+/*? post 2: contem imagem e texto */
+.p2{
+    align-items: center;
     align-self: stretch;
+    background-color: #FFF;
     border-radius: 2.77vw;
     display: flex;
+    flex-direction: row;
     flex-shrink: 0;
     gap: 0.9375rem;
     height: 17.87vh;
@@ -348,12 +373,15 @@ body{
 }
 #i2{
     /*? layout */
-    align-items: flex-start;
     display: flex;
-    flex: 1 0 0;
-    gap: 0.625rem;
+    flex: 1;
+    flex-shrink: 0;
     height: 14.81vh;
-
+    justify-content: center;
+    object-fit: cover;
+    transform: translateZ(0);
+    width: 40%;
+    
     /*? aparencia */
     border-radius: 2.77vw;
     box-shadow: -10px 10px 10px 0 rgba(0, 0, 0, 0.20);
@@ -361,26 +389,30 @@ body{
 #t2{
     /*? layout */
     display: flex;
-    flex: 1 0 0;
+    flex: 1;
     flex-direction: column;
-    height: 14.81vh;
-    justify-content: center;
+    height: auto;
+    justify-self: center;
+    width: 55%;
     
     /*? tipografia */
     color: #000;
     font-family: Montserrat;
-    font-size: 2.22vw;
+    font-size: clamp(0.9rem, 1.5vw, 1.3rem);
     font-style: normal;
     font-weight: 600;
-    line-height: 3.24vh;
+    line-height: 1.4;
     text-align: justify;
 }
 
-#p3{
-    align-items: flex-start;
+/*? post 3: contem imagem e texto */
+.p3{
+    align-items: center;
     align-self: stretch;
+    background-color: #FFF;
     border-radius: 2.77vw;
     display: flex;
+    flex-direction: row;
     flex-shrink: 0;
     gap: 0.9375rem;
     height: 17.87vh;
@@ -388,12 +420,15 @@ body{
 }
 #i3{
     /*? layout */
-    align-items: flex-start;
     display: flex;
-    flex: 1 0 0;
-    gap: 0.625rem;
+    flex: 1;
+    flex-shrink: 0;
     height: 14.81vh;
-
+    justify-content: center;
+    object-fit: cover;
+    transform: translateZ(0);
+    width: 40%;
+    
     /*? aparencia */
     border-radius: 2.77vw;
     box-shadow: -10px 10px 10px 0 rgba(0, 0, 0, 0.20);
@@ -401,17 +436,18 @@ body{
 #t3{
     /*? layout */
     display: flex;
-    flex: 1 0 0;
+    flex: 1;
     flex-direction: column;
-    height: 14.81vh;
+    height: auto;
     justify-content: center;
+    width: 55%;
     
     /*? tipografia */
     color: #000;
     font-family: Montserrat;
-    font-size: 2.22vw;
+    font-size: clamp(0.9rem, 1.5vw, 1.3rem);
     font-style: normal;
     font-weight: 600;
-    line-height: 3.24vh;
+    line-height: 1.4;
     text-align: justify;
 }
