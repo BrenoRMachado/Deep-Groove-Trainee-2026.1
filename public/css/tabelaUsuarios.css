@@ -377,6 +377,7 @@
 
 /*? MODAL DE VISUALIZAR USUARIO */
 
+/*! visu e excluir */
 .des-modal-geral {
     background-color: var(--fundodecormodal);
 
@@ -384,7 +385,6 @@
     position: fixed;
 
     
-
     top: 50%;
     left: 50%;
  
@@ -396,13 +396,15 @@
     display: none;
     flex-direction: column;
     gap: 3rem;
+    cursor: default;
 
     /* box-shadow: x y blur emvolta cor;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5); */
     /* box-shadow: 0 0 0  100vw rgba(0,0,0,0.5); */
 }
 
-.fundo{
+/*! visu e excluir */
+.fundoE, .fundoV{
     position: fixed;
     inset: 0;
 
@@ -416,6 +418,8 @@
 
     background-color: #00000059;
     backdrop-filter: blur(8px);
+
+    cursor: pointer;
 
 }
 
@@ -543,7 +547,11 @@
 }
 
 .xis {
-    padding-top: 3vh;
-    padding-left: 95%; 
-    cursor: pointer;
+    cursor: pointer;    
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+
+    width: 2rem;
 }
+

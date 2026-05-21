@@ -33,7 +33,7 @@ function abrirModalVisu(idModalVisu) {
         modalvisu.style.display = "flex"; 
         
          //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
-        const fundomodal = document.querySelector('.fundo');
+        const fundomodal = document.querySelector('.fundoV');
         fundomodal.style.display = "flex"
 }
 
@@ -44,6 +44,30 @@ function fecharModalVisu(idModalVisu) {
         modalvisu.style.display = "none";  
         
         //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
-        const fundomodal = document.querySelector('.fundo');
+        const fundomodal = document.querySelector('.fundoV');
+        fundomodal.style.display = "none"
+}
+
+//! jsmodalexcluir
+
+function abrirModalExcluir(idModalExcluir) {
+        //let - var q pode mudar dps
+        //const - var constante nn muda dps
+        const modalexcluir = document.querySelector('#modal-excluir-user');
+        modalexcluir.style.display = "flex"; 
+        
+         //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
+        const fundomodal = document.querySelector('.fundoE');
+        fundomodal.style.display = "flex"
+}
+
+function fecharModalExcluir(idModalExcluir) {
+        //let - var q pode mudar dps
+        //const - var constante nn muda dps
+        const modalexcluir = document.querySelector('#modal-excluir-user');
+        modalexcluir.style.display = "none";  
+        
+        //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
+        const fundomodal = document.querySelector('.fundoE');
         fundomodal.style.display = "none"
 }

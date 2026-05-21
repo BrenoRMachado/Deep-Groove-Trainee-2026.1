@@ -84,7 +84,7 @@
                     <td class="colunageral">
                         <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
                         <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
                     </td>
 
                 </tr>
@@ -247,11 +247,9 @@
 
     <!--* MODAL DE VISUALIZAR USUÁRIOS -->
 
-    <div class="fundo" onclick="fecharModalVisu('modal-visu-user')">
+    <div class="fundoV" onclick="fecharModalVisu('modal-visu-user')">
 
-        <div class="xis">
-            <img src="../../../public/assets/XCircleFill.svg" alt="" onclick="fecharModalVisu('modal-visu-user')">
-        </div>
+
 
         <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
         <div id="modal-visu-user" class="des-modal-geral" onclick="event.stopPropagation()">
@@ -262,6 +260,12 @@
 
             <section class="containerpolvoIMG">
                 <img class="polvoIMG" src="../../../public/assets/polvo-modal.jpeg" alt="polvo">
+
+
+                <img class="xis" src="../../../public/assets/XCircleFill.svg" alt="x"
+                    onclick="fecharModalVisu('modal-visu-user')">
+
+
             </section>
 
             <section id="container-dados-visu">
@@ -296,6 +300,28 @@
     </div>
 
     <!--* MODAL DE EXCLUIR USÚARIOS -->
+
+     <div class="fundoE">
+
+        <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
+        <div id="modal-excluir-user" class="des-modal-geral" onclick="event.stopPropagation()">
+
+            <section class="fotodeperfil">
+                <img class="imgperfil" src="../../../public/assets/fotodeperfil.jpg" alt="Foto de perfil">
+            </section>
+
+            <section class="containerpolvoIMG">
+                <img class="polvoIMG" src="../../../public/assets/polvo-modal.jpeg" alt="polvo">
+
+                <img class="xis" src="../../../public/assets/XCircleFill.svg" alt="x"
+                onclick="fecharModalVisu('modal-visu-user')">
+            </section>
+
+        </div>
+
+
+     </div>
+
 
 
     <script src="../../../public/js/tabela-de-usuarios.js"></script>
