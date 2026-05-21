@@ -22,6 +22,39 @@ html, .tudolanding {
     background: linear-gradient(to bottom, #5B162D 25%, #000 78%);
 }
 
+/* HERO SECTION */
+.hero-section {
+    align-items: center;
+    align-self: stretch;
+
+    display: flex;
+    height: 100vh;
+    padding: 0 clamp(1.5rem, 5vw, 5rem);
+    min-height: 92vh;
+    width: 100%;
+}
+
+.elementos-hs {
+    align-items: center;
+    display: flex;
+    flex: 1 0 0;
+    gap: 4.25rem;
+    justify-content: center;
+    /* min-width: max-content; */
+    width: 100%;
+}
+
+.metade-texto {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 3rem;
+    height: 47.05vh;
+    justify-content: center;
+    min-width: 17.5rem;
+}
+
 .tudolanding {
     align-items: flex-start;
     background-attachment: fixed;
@@ -66,51 +99,6 @@ html, .tudolanding {
     color: #FEECE8;
 }
 
-
-/* HERO SECTION */
-.hero-section {
-    align-items: center;
-    align-self: stretch;
-
-    display: flex;
-    height: 100vh;
-    padding: 0 clamp(1.5rem, 5vw, 5rem);
-    min-height: 92vh;
-    width: 100%;
-}
-
-.elementos-hs {
-    align-items: center;
-    display: flex;
-    flex: 1 0 0;
-    gap: 4.25rem;
-    justify-content: center;
-    /* min-width: max-content; */
-    width: 100%;
-}
-
-.metade-texto {
-    align-items: center;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 0.625rem;
-    height: 47.05vh;
-    justify-content: center;
-    min-width: 17.5rem;
-}
-
-#slogan {
-    aspect-ratio: 70/43;
-    border-radius: 1.66vw;
-    flex-shrink: 0;
-    height: auto;
-    image-rendering: auto;
-    width: 37.68vw;
-
-    transform: translateZ(0);
-}
-
 .texto_hs {
 
     /*todo: layout da caixa de texto */
@@ -126,7 +114,7 @@ html, .tudolanding {
     font-size: clamp(1rem, 1.85vw, 2rem);
     font-style: normal;
     font-weight: 600;
-    line-height: 2;
+    line-height: 2.5rem;
     text-align: center;
 }
 
@@ -191,27 +179,30 @@ html, .tudolanding {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    padding: 0 clamp(1.5rem, 5vw, 5rem)
+    padding: 0 clamp(1.5rem, 5vw, 5rem);
 }
 
 /*! contem as divs onde estam as imagens */
 .slider-conteudo {
     display: flex;
-    gap: 0.625rem;
+    gap: 1.5rem;
+    height: 100%;
     max-width: 100%;
     overflow-x: auto;
+    padding: 0 clamp(1.5rem, 5vw, 5rem);
     scroll-behavior: smooth;
     width: 100%;
-    height: 100%;
+   
 }
 
 /*! onde está as imagens */
 .slider-item {
     display: block;
     flex-shrink: 0;
-    image-rendering: auto;
-    width: 38.42vw;
     height: 100%;
+    image-rendering: auto;
+    width: 30vw;
+    
 }
 
 /*! as imagens */
@@ -229,7 +220,7 @@ html, .tudolanding {
 .nav-arrow {
     position: absolute;
     top: 125%;
-    transform: translateY(-50%);
+    transform: translateY(-90%);
     background-color: rgba(225, 225, 225, 0, 9);
     color: black;
     width: 3vw;
@@ -250,23 +241,18 @@ html, .tudolanding {
     color: white;
 }
 
-#seta_esquerda {
-    left: 0.9vw;
-}
-
-#seta_direita {
-    right: 0.9vw;
-}
+#seta_esquerda {left: 0.9vw;}
+#seta_direita {right: 0.9vw;}
 
 /*! area onde fica as bolinhas */
 .radio-auto {
     align-items: center;
     display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 2vh;
-    margin: 1vw 0;
     gap: 0.5vw;
+    height: 2vh;
+    justify-content: center;
+    margin: 1vw 0;
+    width: 100vw;
 }
 
 /*! bolinhas */
@@ -292,7 +278,7 @@ html, .tudolanding {
     display: flex;
     flex-direction: column;
     height: auto;
-    min-height: 79.53vh;
+    min-height: auto;
     padding: 1.5625rem clamp(1.5rem, 5vw, 5rem);
     width: 100%;
 }
@@ -346,13 +332,13 @@ html, .tudolanding {
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 1;
+    gap: 1rem;
     height: auto;
     image-rendering: auto;
     justify-content: center;
     min-height: 57.87vh;
     min-width: 300px;
-    /* width: 100%; */
+    width: 50%;
 }
 
 /*? post 1: contem imagem e texto */
@@ -374,7 +360,7 @@ html, .tudolanding {
     display: flex;
     flex: 1;
     flex-shrink: 0;
-    height: 14.81vh;
+    height: 16.5vh;
     justify-content: center;
     object-fit: cover;
     transform: translateZ(0);
@@ -423,7 +409,7 @@ html, .tudolanding {
     display: flex;
     flex: 1;
     flex-shrink: 0;
-    height: 14.81vh;
+    height: 16.5vh;
     justify-content: center;
     object-fit: cover;
     transform: translateZ(0);
@@ -472,7 +458,7 @@ html, .tudolanding {
     display: flex;
     flex: 1;
     flex-shrink: 0;
-    height: 14.81vh;
+    height: 16.5vh;
     justify-content: center;
     object-fit: cover;
     transform: translateZ(0);
