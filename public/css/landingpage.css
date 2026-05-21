@@ -27,11 +27,13 @@ body{
     flex-direction: column;
 }
 
+/* NAVBAR */
 .navbar{
     height: 10vh;
     width: 100%;
 }
 
+/* HERO SECTION */
 .hero-section{
     align-items: center;
     align-self: stretch;
@@ -130,6 +132,7 @@ body{
     min-width: 17.5rem;
 }
 
+/* CARROUSSEL */
 /*! a box do carroussel como um todo */
 .carroussel{
     align-items: flex-start;
@@ -184,6 +187,7 @@ body{
     width: 100%;
 }
 
+/*! as setas do carroussel */
 .nav-arrow{
     position: absolute;
     top: 125%;
@@ -201,14 +205,16 @@ body{
     transition: 0.3s;
     z-index: 10;
 }
+
+/*! efeito das setas quando o cursor passa em cima */
 .nav-arrow:hover{
     background-color: #2d8b33;
     color: white;
 }
-
 #seta_esquerda{ left: 0.9vw;}
 #seta_direita{right: 0.9vw;}
 
+/*! area onde fica as bolinhas */
 .radio-auto{
     align-items: center;
     display: flex;
@@ -219,6 +225,7 @@ body{
     gap: 0.5vw;
 }
 
+/*! bolinhas */
 .radio-label{
     border: 0.10vw solid white;
     padding: 0.4vw;
@@ -227,6 +234,10 @@ body{
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
+/*! efeito das bolinhas quando o cursor passa em cima */
 .radio-label.active{
     background-color: #2d8b33;
 }
+
+/* MOSAICO */

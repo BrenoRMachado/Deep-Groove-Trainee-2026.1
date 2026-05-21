@@ -48,7 +48,7 @@ function updateRadioLabel()
 {
     const labels = document.querySelectorAll('.radio-label');
     labels.forEach( (l,i) => {
-        1.classList.toggle('active', i === currentPage)
+        classList.toggle('active', i === currentPage)
     });
 }
 
