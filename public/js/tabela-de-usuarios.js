@@ -7,17 +7,17 @@ let estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
 
 // *Implementa função que ativa o modal de edição de usuários
 iconesDeEdicaoDeUsuario.forEach((iconeDeEdicaoDeUsuario) => {
-    iconeDeEdicaoDeUsuario.addEventListener('click', function() {
-            modalDeEdicaoDeUsuario.style.display = 'grid';
-            filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'flex';
-            estadoAtualDoModalDeEdicaoDeUsuario = 'aberto';
-    });
+        iconeDeEdicaoDeUsuario.addEventListener('click', function () {
+                modalDeEdicaoDeUsuario.style.display = 'grid';
+                filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'flex';
+                estadoAtualDoModalDeEdicaoDeUsuario = 'aberto';
+        });
 });
 
 // *Seleciona o botão de cancelar do modal de edição de usuários 
 const botaoCancelarEdicaoDeUsuario = document.querySelector('#modal-edicao-usuarios .botao-cancelar');
 
-botaoCancelarEdicaoDeUsuario.addEventListener('click', function(){
+botaoCancelarEdicaoDeUsuario.addEventListener('click', function () {
         modalDeEdicaoDeUsuario.style.display = 'none';
         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'none';
         estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
@@ -30,9 +30,9 @@ function abrirModalVisu(idModalVisu) {
         //let - var q pode mudar dps
         //const - var constante nn muda dps
         const modalvisu = document.querySelector('#modal-visu-user');
-        modalvisu.style.display = "flex"; 
-        
-         //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
+        modalvisu.style.display = "flex";
+
+        //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
         const fundomodal = document.querySelector('.fundoV');
         fundomodal.style.display = "flex"
 }
@@ -41,12 +41,14 @@ function fecharModalVisu(idModalVisu) {
         //let - var q pode mudar dps
         //const - var constante nn muda dps
         const modalvisu = document.querySelector('#modal-visu-user');
-        modalvisu.style.display = "none";  
-        
+        modalvisu.style.display = "none";
+
         //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
         const fundomodal = document.querySelector('.fundoV');
         fundomodal.style.display = "none"
 }
+
+//? O FUNDO NN PODE SER A MESMA CLASS PQ O JS PEGA A PRIMEIRA CLASS E SE FOR A MSM SEMPRE ESTARIA PEGANDO O DE VISU E ASSIM NN APARECE O RESTO
 
 //! jsmodalexcluir
 
@@ -54,9 +56,9 @@ function abrirModalExcluir(idModalExcluir) {
         //let - var q pode mudar dps
         //const - var constante nn muda dps
         const modalexcluir = document.querySelector('#modal-excluir-user');
-        modalexcluir.style.display = "flex"; 
-        
-         //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
+        modalexcluir.style.display = "flex";
+
+        //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
         const fundomodal = document.querySelector('.fundoE');
         fundomodal.style.display = "flex"
 }
@@ -65,8 +67,8 @@ function fecharModalExcluir(idModalExcluir) {
         //let - var q pode mudar dps
         //const - var constante nn muda dps
         const modalexcluir = document.querySelector('#modal-excluir-user');
-        modalexcluir.style.display = "none";  
-        
+        modalexcluir.style.display = "none";
+
         //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
         const fundomodal = document.querySelector('.fundoE');
         fundomodal.style.display = "none"

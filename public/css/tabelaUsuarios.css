@@ -26,6 +26,20 @@
     --pesomodal: 600;
     --tamfontemodal: 0.8rem;
 
+    --fonteaviso: "Montserrat", sans-serif;
+    --coraviso: #000000;
+    --cordestaviso: #5B162D;
+    --backbotao: #C06850;
+    --letrabotao: #FEECE8;
+
+    --pesoaviso: 800;
+    --tamaviso: 1.2rem;
+
+    --pesoavisorodape: 500;
+    --tamavisorod: 1rem;
+
+    --pesoexcluirbotao: 700;
+
 }
 
 * {
@@ -377,8 +391,7 @@
 
 /*? MODAL DE VISUALIZAR USUARIO */
 
-/*! visu e excluir */
-.des-modal-geral {
+.des-modal-vi {
     background-color: var(--fundodecormodal);
 
     /*? fica position em rel a tela, e serve como position relative para os filhos */
@@ -526,7 +539,7 @@
     width: 100%;
 }
 
-.fotodeperfil{
+.fotodeperfilvi {
    
     position: absolute;
     padding-top: 5%;
@@ -535,7 +548,7 @@
     transform: translateX(-50%);    
 }
 
-.imgperfil {
+.imgperfilvi {
     width: 12em;
     height: 12rem;
 
@@ -553,5 +566,148 @@
     top: 1rem;
 
     width: 2rem;
+
+    transition: 0.3s;
 }
 
+.xis:hover {
+    transform: scale(1.3);
+}
+
+/** MODAL EXCLUIR */
+
+.des-modal-ex {
+    background-color: var(--fundodecormodal);
+
+    /*? fica position em rel a tela, e serve como position relative para os filhos */
+    position: fixed;
+
+    height: 62vh;
+
+    /* centraliza */
+    top: 50%;
+    left: 50%;
+ 
+    /*! trasforma o elemento e move(translate) ele nesse caso 50% do elemento volta na horizontal e vertical nn mexe (x,y) */
+    transform: translate(-50%, -50%);
+
+    border-radius: 2rem;
+
+    display: none;
+    flex-direction: column;
+    gap: 3rem;
+    cursor: default;
+
+    /* box-shadow: x y blur emvolta cor;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5); */
+    /* box-shadow: 0 0 0  100vw rgba(0,0,0,0.5); */
+}
+
+.caixaclara {
+    background-color: var(--fundodecorcontainerdados);
+    
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 1.5rem;
+
+    width: 20vw;
+    height: auto;
+    padding: 5rem 0 1rem 0;
+
+
+    margin: 8rem 4rem 0 4rem;
+
+    /* nesse caso horizontal */
+    align-items: center; 
+
+    /* nesse caso vertical */
+    justify-content: center;
+}
+
+.containeraviso {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.avisoSEMdestaque {
+    font-family: var(--fonteaviso);
+    color: var(--coraviso);
+    font-weight: var(--pesoaviso);
+    text-align: center;
+    font-size: var(--tamaviso);
+}
+
+.avisoCOMdestaque{
+    font-family: var(--fonteaviso);
+    color: var(--cordestaviso);
+    font-weight: var(--pesoaviso);
+    text-align: center;
+    font-size: var(--tamaviso);
+}
+
+.rodapeaviso {
+    font-family: var(--fonteaviso);
+    color: var(--coraviso);
+    font-weight: var(--pesoavisorodape);
+    justify-content: center;
+    text-align: center;
+    font-size: var(--tamavisorod);
+}
+
+.containerbotoes {
+    display: flex;
+    gap: 1rem;
+}
+
+.botao {
+    font-family: var(--fonteaviso);
+    font-weight: var(--pesoexcluirbotao);
+    background-color: var(--backbotao);
+    color: var(--letrabotao);
+    width: 8vw;
+    height: 4vh;
+
+    align-items: center;
+    justify-content: center;
+
+    /* tira a borda horrenda q vem no botao */
+    border: none; 
+    border-radius: 2rem;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/*! houver - quando passa o mouse */
+.botao:hover {
+    transform: scale(1.1);
+}
+
+.fotodeperfilex{
+   
+    position: absolute;
+    padding-bottom: 85%;
+
+    left: 50%;
+    transform: translateX(-50%);    
+}
+
+.imgperfilex {
+    width: 12em;
+    height: 12rem;
+
+    /* corta a img */
+    object-fit: cover;
+
+    border-radius: 11rem;
+    border: 0.5rem solid var(--fundodecorcontainerdados);
+}
+
+.mensagem-botao {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+}

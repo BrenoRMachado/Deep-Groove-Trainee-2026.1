@@ -73,6 +73,7 @@
             </thead>
 
             <tbody class="tabelageral">
+
                 <!-- linha -->
                 <tr class="linha linhaTab">
                     <td class="colunageral">1</td>
@@ -98,9 +99,9 @@
                     <td class="colunageral">Administrador</td>
 
                     <td class="colunageral">
-                        <i class="acao bi bi-eye-fill"></i>
+                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
                         <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
                     </td>
 
                 </tr>
@@ -114,9 +115,9 @@
                     <td class="colunageral">Administrador</td>
 
                     <td class="colunageral">
-                        <i class="acao bi bi-eye-fill"></i>
+                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
                         <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
                     </td>
 
                 </tr>
@@ -130,9 +131,9 @@
                     <td class="colunageral">Administrador</td>
 
                     <td class="colunageral">
-                        <i class="acao bi bi-eye-fill"></i>
+                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
                         <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
                     </td>
 
                 </tr>
@@ -146,9 +147,9 @@
                     <td class="colunageral">Administrador</td>
 
                     <td class="colunageral">
-                        <i class="acao bi bi-eye-fill"></i>
+                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
                         <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
                     </td>
 
                 </tr>
@@ -162,9 +163,9 @@
                     <td class="colunageral">Administrador</td>
 
                     <td class="colunageral">
-                        <i class="acao bi bi-eye-fill"></i>
+                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
                         <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
                     </td>
 
                 </tr>
@@ -178,9 +179,9 @@
                     <td class="colunageral">Administrador</td>
 
                     <td class="colunageral">
-                        <i class="acao bi bi-eye-fill"></i>
+                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
                         <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
                     </td>
 
                 </tr>
@@ -194,14 +195,12 @@
                     <td class="colunageral">Administrador</td>
 
                     <td class="colunageral">
-                        <i class="acao bi bi-eye-fill"></i>
+                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
                         <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
                     </td>
 
                 </tr>
-
-
 
 
             </tbody>
@@ -252,10 +251,10 @@
 
 
         <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
-        <div id="modal-visu-user" class="des-modal-geral" onclick="event.stopPropagation()">
+        <div id="modal-visu-user" class="des-modal-vi" onclick="event.stopPropagation()">
 
-            <section class="fotodeperfil">
-                <img class="imgperfil" src="../../../public/assets/fotodeperfil.jpg" alt="Foto de perfil">
+            <section class="fotodeperfilvi">
+                <img class="imgperfilvi" src="../../../public/assets/fotodeperfil.jpg" alt="Foto de perfil">
             </section>
 
             <section class="containerpolvoIMG">
@@ -301,26 +300,48 @@
 
     <!--* MODAL DE EXCLUIR USÚARIOS -->
 
-     <div class="fundoE">
+    <div class="fundoE" onclick="fecharModalExcluir('modal-excluir-user')">
 
         <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
-        <div id="modal-excluir-user" class="des-modal-geral" onclick="event.stopPropagation()">
+        <div id="modal-excluir-user" class="des-modal-ex" onclick="event.stopPropagation()">
 
-            <section class="fotodeperfil">
-                <img class="imgperfil" src="../../../public/assets/fotodeperfil.jpg" alt="Foto de perfil">
-            </section>
 
-            <section class="containerpolvoIMG">
-                <img class="polvoIMG" src="../../../public/assets/polvo-modal.jpeg" alt="polvo">
 
-                <img class="xis" src="../../../public/assets/XCircleFill.svg" alt="x"
-                onclick="fecharModalVisu('modal-visu-user')">
-            </section>
+            <div class="caixaclara">
+                <section class="fotodeperfilex">
+                    <img class="imgperfilex" src="../../../public/assets/fotodeperfil.jpg" alt="Foto de perfil">
+                </section>
+
+                <section class="X">
+                    <img class="xis" src="../../../public/assets/XCircleFill.svg" alt="x"
+                        onclick="fecharModalExcluir('modal-excluir-user')">
+                </section>
+
+                <div class="mensagem-botao">
+                    <section class="containeraviso">
+                        <div class="avisotexto">
+                            <!--* o span é inline entt continua ja td na mesma linha -->
+                            <p class="avisoSEMdestaque">Tem certeza que deseja excluir o usuário
+                                <span class="avisoCOMdestaque">Fulano Sicrano da
+                                    Silva Miguez Soares
+                                </span>?
+                            </p>
+                        </div>
+                        <p class="rodapeaviso">Você não pode desfazer essa ação.</p>
+                    </section>
+
+                    <section class="containerbotoes">
+                        <button class="botao" onclick="fecharModalExcluir('modal-excluir-user')">CANCELAR</button>
+                        <button class="botao" onclick="fecharModalExcluir('modal-excluir-user')">SIM</button>
+                    </section>
+                </div>
+
+            </div>
 
         </div>
 
 
-     </div>
+    </div>
 
 
 
