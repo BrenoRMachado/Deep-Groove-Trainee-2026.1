@@ -9,8 +9,8 @@ function trocaTextoParaTelasDeTamanhoMenorQue1025px() {
     if (window.matchMedia('(max-width: 769px)').matches) {
         textoTotalDeUsuarios.childNodes[0].nodeValue = 'Usuários: ';
         textoTotalDePublicacoes.childNodes[0].nodeValue = 'Posts: ';
-        textoBotaoIrParaTabelaDeUsuarios.textContent = 'Ir';
-        textoBotaoIrParaTabelaDePublicacoes.textContent = 'Ir';
+        textoBotaoIrParaTabelaDeUsuarios.textContent = 'Ver';
+        textoBotaoIrParaTabelaDePublicacoes.textContent = 'Ver';
     }
     else if (window.matchMedia('(max-width: 1025px)').matches) {
         textoTotalDeUsuarios.childNodes[0].nodeValue = 'Nº Usuários: ';
