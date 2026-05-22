@@ -1,11 +1,13 @@
-//! jsmodaledit
+// ! INÍCIO DO CÓDIGO DO MODAL DE EDIÇÃO DE USUÁRIOS DA TABELA DE USUÁRIOS
 // *Seleciona icones de edicao de usuário da tabela de usuários, o modal de edição de usuários e o filtro ao abrir o modal da tabela de usuários
+
 const filtroAoAbrirModalDaTabelaDeUsuarios = document.querySelector('.filtro-ao-abrir-modal-da-tabela-de-usuarios');
 const iconesDeEdicaoDeUsuario = document.querySelectorAll('.tabela .bi-pencil-square');
 const modalDeEdicaoDeUsuario = document.querySelector('#modal-edicao-usuarios');
 let estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
 
 // *Implementa função que ativa o modal de edição de usuários
+
 iconesDeEdicaoDeUsuario.forEach((iconeDeEdicaoDeUsuario) => {
     iconeDeEdicaoDeUsuario.addEventListener('click', function() {
             modalDeEdicaoDeUsuario.style.display = 'grid';
@@ -15,14 +17,17 @@ iconesDeEdicaoDeUsuario.forEach((iconeDeEdicaoDeUsuario) => {
 });
 
 // *Seleciona o botão de cancelar do modal de edição de usuários 
+
 const botaoCancelarEdicaoDeUsuario = document.querySelector('#modal-edicao-usuarios .botao-cancelar');
+
+// *Implementa função que fecha o modal de edição de usuários ao clicar no botão cancelar
 
 botaoCancelarEdicaoDeUsuario.addEventListener('click', function(){
         modalDeEdicaoDeUsuario.style.display = 'none';
         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'none';
         estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
 });
-// *Implementa função que fecha o modal de edição de usuários ao clicar no botão cancelar
+// ! FIM 
 
 //! jsmodalvisu
 
