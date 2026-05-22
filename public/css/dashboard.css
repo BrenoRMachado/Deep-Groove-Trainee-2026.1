@@ -178,6 +178,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0 var(--espacamento-padding-maior) var(--espacamento-padding-maior) var(--espacamento-padding-maior);
+    z-index: 2;
 }
 
 /* *Estilo para botões HOME e SIGN OUT do dashboard */
