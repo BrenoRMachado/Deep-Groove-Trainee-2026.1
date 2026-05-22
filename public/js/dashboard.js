@@ -5,24 +5,26 @@ const textoTotalDePublicacoes = document.querySelector('.texto-dados-publicacoes
 const textoBotaoIrParaTabelaDeUsuarios = document.querySelector('.botao-navegar-para-tabela-de-usuarios');
 const textoBotaoIrParaTabelaDePublicacoes = document.querySelector('.botao-navegar-para-tabela-de-publicacoes');
 
+// *Função que troca os textos da seção do número de usuários e publicações da dashboard
+
 function trocaTextoParaTelasDeTamanhoMenorQue1025px() {
     if (window.matchMedia('(max-width: 769px)').matches) {
         textoTotalDeUsuarios.childNodes[0].nodeValue = 'Usuários: ';
         textoTotalDePublicacoes.childNodes[0].nodeValue = 'Posts: ';
-        textoBotaoIrParaTabelaDeUsuarios.textContent = 'Ver';
-        textoBotaoIrParaTabelaDePublicacoes.textContent = 'Ver';
+        textoBotaoIrParaTabelaDeUsuarios.innerHTML = 'Ver <i class="icone-navegar bi bi-chevron-right"></i>';
+        textoBotaoIrParaTabelaDePublicacoes.innerHTML = 'Ver <i class="icone-navegar bi bi-chevron-right"></i>';
     }
     else if (window.matchMedia('(max-width: 1025px)').matches) {
         textoTotalDeUsuarios.childNodes[0].nodeValue = 'Nº Usuários: ';
         textoTotalDePublicacoes.childNodes[0].nodeValue = 'Nº Publicações: ';
-        textoBotaoIrParaTabelaDeUsuarios.textContent = 'Conferir';
-        textoBotaoIrParaTabelaDePublicacoes.textContent = 'Conferir';
+        textoBotaoIrParaTabelaDeUsuarios.innerHTML = 'Conferir <i class="icone-navegar bi bi-chevron-right"></i>';
+        textoBotaoIrParaTabelaDePublicacoes.innerHTML = 'Conferir <i class="icone-navegar bi bi-chevron-right"></i>';
     }
     else {
         textoTotalDeUsuarios.childNodes[0].nodeValue = 'Total de Usuários: ';
         textoTotalDePublicacoes.childNodes[0].nodeValue = 'Total de Publicações: ';
-        textoBotaoIrParaTabelaDeUsuarios.textContent = 'Tabela de Usuários';
-        textoBotaoIrParaTabelaDePublicacoes.textContent = 'Tabela de Publicações';
+        textoBotaoIrParaTabelaDeUsuarios.innerHTML = 'Tabela de Usuários <i class="icone-navegar bi bi-chevron-right"></i>';
+        textoBotaoIrParaTabelaDePublicacoes.innerHTML = 'Tabela de Publicações <i class="icone-navegar bi bi-chevron-right"></i>';
     }
 }
 

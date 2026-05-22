@@ -8,6 +8,7 @@
     --cor-branco-100: #ffffff;
     --cor-preto-100: #000000;
     --espacamento-padding-maior: 3rem;
+    --espacamento-padding-grande: 2rem;
     --espacamento-padding-medio: 1rem;
     --espacamento-padding-pequeno: 0.8rem;
     --espacamento-padding-menor: 0.6rem;
@@ -37,7 +38,12 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* !Necessário para que a página ocupe todo o espaço da tela */
-    background-image: url(../assets/fundo-deepgroove.png);
+    background:
+        linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.75)
+        ),
+        url(../assets/fundo-deepgroove.png);
     background-size: cover;
     overflow-y: hidden;
 }
@@ -47,8 +53,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem var(--espacamento-padding-maior) 1rem var(--espacamento-padding-maior);
-    font-family: var(--fonte-primaria);
+    padding: var(--espacamento-padding-grande) var(--espacamento-padding-maior) var(--espacamento-padding-medio) var(--espacamento-padding-maior);
     color: var(--cor-branco-100);
     border-radius: 0 0 16px 16px;
     gap: 1rem;
@@ -56,8 +61,8 @@
 
 /* *Estilo do título do cabeçalho da dashboard */
 #dashboard #cabecalho .titulo-cabecalho {
-    font-size: 3rem;
-    font-family: var(--fonte-titulo);
+    font-size: 4rem;
+    font-family: var(--fonte-primaria);
 }
 
 /* *Estilo do perfil do administrador da dashboard */
@@ -77,6 +82,7 @@
 }
 
 #dashboard #cabecalho .dados-do-admin {
+    font-family: var(--fonte-primaria);
     font-size: 1rem;
 }
 
@@ -133,7 +139,7 @@
 }
 
 /* *Estilo do ícone de usuários e publicações */
-#dashboard #area-navegacao-e-estatisticas .icone {
+#dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas {
     font-size: 2.8rem;
     line-height: 1;
 }
@@ -194,6 +200,10 @@
     background-color: var(--cor-laranja-100);
 }
 
+#dashboard #rodape .botao-sign-out {
+    padding: var(--espacamento-padding-menor) var(--espacamento-padding-menor) var(--espacamento-padding-menor) var(--espacamento-padding-medio);
+}
+
 /* *Animação ao passar o mouse por cima dos botões HOME e SIGN OUT da dashboard */
 #dashboard #rodape .botao:hover {
     transform: scale(1.03);
@@ -235,7 +245,7 @@
     }
     
     #dashboard #cabecalho .titulo-cabecalho {
-        font-size: 5rem;
+        font-size: 6rem;
     }
     
     #dashboard #cabecalho .dados-do-admin {
@@ -252,7 +262,7 @@
         font-size: 2rem;
     }
     
-    #dashboard #area-navegacao-e-estatisticas .icone {
+    #dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas {
         font-size: 4rem;
     }
     
@@ -295,29 +305,15 @@
     }
 }
 
-/* !Celular */
+/* !Celular - GRANDES MUDANÇAS */
 @media (max-width: 652px) {
     :root {
         --espacamento-padding-maior: 1.2rem;
         --espacamento-padding-medio: 0.7rem;
     }
-
-    #dashboard #area-navegacao-e-estatisticas .lista-area-navegacao-e-estatisticas {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    #dashboard #area-navegacao-e-estatisticas .container-usuarios-publicacoes {
-        width: 100%;
-    }
-
-    #dashboard .imagem-disco-de-vinil-fundo {
-        height: auto;
-        width: 50%;
-    }
-
+    
     #dashboard #cabecalho .titulo-cabecalho {
-        font-size: 2rem;
+        font-size: 2.7rem;
     }
     
     #dashboard #cabecalho .dados-do-admin {
@@ -329,19 +325,73 @@
         width: 3.6rem;
         height: 3.4rem;
     }
+    
+    #dashboard #area-navegacao-e-estatisticas .lista-area-navegacao-e-estatisticas {
+        margin-top: 2rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    #dashboard #area-navegacao-e-estatisticas .container-usuarios-publicacoes {
+        width: 100%;
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.03)
+        );
+        /* *EFEITO VIDRO */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        /* * */
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow:
+            inset 0 1px 1px rgba(255,255,255,0.08),
+            0 8px 32px rgba(0,0,0,0.35);
+    }
+    
+    #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes {
+        padding: var(--espacamento-padding-menor) var(--espacamento-padding-menor);
+        border-radius: 16px;
+        width: 75%;
+    }
+    
+    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
+        width: 25%;
+    }
+    
     #dashboard #area-navegacao-e-estatisticas .texto-dados-totais {
         font-size: 1rem;
     }
     
-    #dashboard #area-navegacao-e-estatisticas .icone {
-        font-size: 2rem;
+    #dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas {
+        font-size: 1.7rem;
+        background-color: var(--cor-marrom-100);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.8rem;
     }
     
     #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
         font-size: 1rem;
     }
+
+    #dashboard #container-titulo-de-fundo {
+        align-items: flex-end;
+        padding-bottom: 1rem;
+    }
+
+    #dashboard #container-titulo-de-fundo .titulo-de-fundo {
+        font-size: 13vw;
+    }
     
     #dashboard #rodape .botao {
         font-size: 2rem;
+    }
+     
+    #dashboard .imagem-disco-de-vinil-fundo {
+        height: auto;
+        width: 50%;
     }
 }
