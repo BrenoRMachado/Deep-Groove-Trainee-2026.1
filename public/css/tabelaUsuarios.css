@@ -343,9 +343,8 @@
 
 /* *Estilo do filtro ao abrir o modal */
 .filtro-ao-abrir-modal-da-tabela-de-usuarios {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    position: fixed;
+    inset: 0;
     display: none;
     background-color: var(--cor-preto-100);
     opacity: 0.5;
