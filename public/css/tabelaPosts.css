@@ -76,7 +76,7 @@
     gap: 1rem;
 }
 
-.topoTabelaUser {
+.topoTabelaPosts {
     display: flex;
     /* o justify sempre mexe no eixo principal nesse caso row */
     justify-content: space-between;
@@ -151,7 +151,7 @@
     
 }
 
-.addUser {
+.addPost {
     background-color: var(--cordestaque);
 
     border-radius: 1rem;
