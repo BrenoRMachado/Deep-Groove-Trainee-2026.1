@@ -131,6 +131,11 @@
     font-weight: var(--pesogertab);
 }
 
+.capa-thriller {
+    height: 4rem;
+    width: 4rem;
+}
+
 .colunaCab {
     color: var(--cordestaque);
     font-weight: var(--pesocabtab);
