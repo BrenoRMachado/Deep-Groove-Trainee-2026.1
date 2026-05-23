@@ -153,7 +153,9 @@
 
 .addPost {
     background-color: var(--cordestaque);
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     border-radius: 1rem;
     height: 2.5rem;
     width: 8rem;
