@@ -204,13 +204,13 @@
 }
 
 /* *ESTILO DO MODAL DE EDIÇÃO DE USUÁRIOS */
-#modal-edicao-usuarios {
+#modal-edicao-posts {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 35rem;
-    height: 23rem;
+    height: 25rem;
     border: 2px solid rgba(0, 0, 0, 0.5);
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
@@ -219,12 +219,12 @@
 }    
 
 /* *Estilo da seção de edição da foto de perfil do usuário */
-#modal-edicao-usuarios .secao-edicao-foto-de-perfil {
+#modal-edicao-posts .secao-edicao-capa-do-album {
     height: 100%;
     width: 100%;
-    background-image:url(../assets/fundo-disco-de-vinil.png);
+    background-image:url(../assets/fundo-album-disco-de-vinil.png);
     background-size: cover;
-    background-position: center;
+    background-position: 70% 0%;
     border-radius: 30px 0 0 30px;
     display: flex;
     flex-direction: column;
@@ -232,125 +232,132 @@
     justify-content: center;
 }
 
-/* *Estilo do container de edicao de foto de perfil */
-#modal-edicao-usuarios .container-edicao-foto-de-perfil {
+/* *Estilo do container de edicao da capa do álbum */
+#modal-edicao-posts .container-edicao-capa-do-album {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 0.5rem;
+    height: 44%;
+    width: 57%;
+}
+
+#modal-edicao-posts .container-edicao-capa-do-album .container-capa-do-album {
     position: relative;
-    gap: 1rem;
-}
-
-#modal-edicao-usuarios .container-edicao-foto-de-perfil .icone-foto-de-perfil {
-    font-size: 10rem;
-    color: var(--cor-branco-100);
+    width: 100%;
+    height: 100%;
     border: 2px solid var(--cor-preto-100);
-    border-radius: 50%;
-    display: block;
-    line-height: 0.85;
+    border-radius: 10px;
+    background-color: var(--cor-branco-200);
 }
 
-#modal-edicao-usuarios .container-edicao-foto-de-perfil .instrucao-editar-foto-de-perfil {
+#modal-edicao-posts .container-edicao-capa-do-album .instrucao-editar-capa-do-album {
     color: var(--cor-branco-100);
-    font-size: 1.15rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
     font-family: "Roboto", sans-serif;
 }
 
-#modal-edicao-usuarios .container-edicao-foto-de-perfil .icone-editar-foto-de-perfil {
-    background-color: var(--cor-branco-100);
-    font-size: 0.8rem;
-    padding: 0.25rem;
-    display: flex;
-    border-radius: 50%;
+#modal-edicao-posts .container-edicao-capa-do-album .botao-editar-capa-do-album {
     position: absolute;
-    right: 2%;
-    bottom: 19%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    border: none;
+    background: none;
 }
 
-/* *Animação ao passar o mouse por cima do ícone de editar perfil */
-#modal-edicao-usuarios .container-edicao-foto-de-perfil .icone-editar-foto-de-perfil:hover {
-    transform: scale(1.05);
-    cursor: pointer;
+/* *Animação ao passar o mouse por cima do botão de editar capa do álbum */
+#modal-edicao-posts .container-edicao-capa-do-album .botao-editar-capa-do-album:hover {
+    transform: translate(-50%, -50%) scale(1.05);
     transition: transform 0.2s;
+    cursor: pointer;
 }
 
 /* *Estilo da seção de edição das informações do usuário */
-#modal-edicao-usuarios .secao-edicao-dados-do-usuario {
+#modal-edicao-posts .secao-edicao-dados-do-album {
     background-color: var(--cor-branco-200);
     border-radius: 0 30px 30px 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
-#modal-edicao-usuarios .container-editar-nome-email-senha {
+#modal-edicao-posts .container-editar-titulo-descricao-autor {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     width: 80%;
-    height: 75%;
+    height: 82%;
 }
 
-#modal-edicao-usuarios .container-editar-dado {
+#modal-edicao-posts .container-editar-dado {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
 /* *Estilo do título do dado a ser editado do usuário (Nome, E-mail, Senha) */
-#modal-edicao-usuarios .titulo-dado {
+#modal-edicao-posts .titulo-dado {
     color: var(--cor-marrom-100);
     font-weight: bold;
     font-family: "Roboto", sans-serif;
 }
 
 /* *Estilo do input de digitar o dado do usuário */
-#modal-edicao-usuarios .editar-dado {
-    font-family: "Roboto", sans-serif;
+#modal-edicao-posts .editar-dado {
     border-radius: 5px;
     padding: 0.4rem;
     background: none;
     border: 2px solid var(--cor-preto-100);
+    font-family: "Roboto", sans-serif;
+}
+
+#modal-edicao-posts .editar-descricao {
+    height: 8rem;
+    resize: none;
 }
 
 /* *Estilo do container dos botões de salvar e cancelar */
-#modal-edicao-usuarios .container-botoes-salvar-cancelar {
+#modal-edicao-posts .container-botoes-salvar-cancelar {
     width: 80%;
-    height: 25%;
+    height: 18%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
 }
 
 /* *Estilo dos botões de salvar e cancelar */
-#modal-edicao-usuarios .container-botoes-salvar-cancelar .botao {
-    font-family: "Roboto", sans-serif;
+#modal-edicao-posts .container-botoes-salvar-cancelar .botao {
     padding: 0.5rem;
     height: fit-content;
     border-radius: 5px;
     border: none;
     color: var(--cor-branco-100);
+    font-family: "Roboto", sans-serif;
+    min-width: 40%;
 }
 
-#modal-edicao-usuarios .container-botoes-salvar-cancelar .botao-salvar {
+#modal-edicao-posts .container-botoes-salvar-cancelar .botao-salvar {
     background-color: var(--cor-verde-100);
 }
 
-#modal-edicao-usuarios .container-botoes-salvar-cancelar .botao-cancelar {
+#modal-edicao-posts .container-botoes-salvar-cancelar .botao-cancelar {
     background-color: var(--cor-vermelho-100);
 }
 
-/* *Animação ao passar o mouse por cima dos botões de salvar e cancelar */
-#modal-edicao-usuarios .container-botoes-salvar-cancelar .botao:hover {
+#modal-edicao-posts .container-botoes-salvar-cancelar .botao:hover {
     transform: scale(1.05);
+    transition: transform 0.2;
     cursor: pointer;
-    transition: transform 0.2s;
 }
 
 /* *Estilo do filtro ao abrir o modal */
-.filtro-ao-abrir-modal-da-tabela-de-usuarios {
+.filtro-ao-abrir-modal-da-tabela-de-posts {
     position: fixed;
     inset: 0;
     display: none;
@@ -358,43 +365,46 @@
     opacity: 0.5;
 }
 
-/* !INÍCIO da responsividade PARA MODAL DE EDIÇÃO DE USUÁRIOS*/
+/* !INÍCIO da responsividade PARA MODAL DE EDIÇÃO DE POSTS*/
 @media (max-width: 769px){
-    #modal-edicao-usuarios {
+    #modal-edicao-posts {
         display: flex;
         flex-direction: column;
         height: 35rem;
         width: 22rem;
     }
-    #modal-edicao-usuarios .secao-edicao-foto-de-perfil {
+    #modal-edicao-posts .secao-edicao-capa-do-album {
         height: 35%;
         border-radius: 30px 30px 0 0;
+        background-size: 110%;
     }
-    #modal-edicao-usuarios .container-edicao-foto-de-perfil .icone-foto-de-perfil {
+    #modal-edicao-posts .container-edicao-capa-do-album {
+        height: 70%;
+        width: 45%;
+    }
+    #modal-edicao-posts .container-edicao-capa-do-album .icone-foto-de-perfil {
         font-size: 8rem;
     }
-    #modal-edicao-usuarios .container-edicao-foto-de-perfil .instrucao-editar-foto-de-perfil {
+    #modal-edicao-posts .container-edicao-capa-do-album .instrucao-editar-capa-do-album {
         font-size: 1rem;
     }
-    #modal-edicao-usuarios .secao-edicao-dados-do-usuario {
+    #modal-edicao-posts .secao-edicao-dados-do-album {
         border-radius: 0 0 30px 30px;
         height: 65%;
+        padding: 0;
         justify-content: space-evenly;
     }
 }
 
 @media (max-width: 426px){
-    #modal-edicao-usuarios {
+    #modal-edicao-posts {
         width: 20rem;
     }
 }
 
-/* TODO: Acho melhor a tela de edição de usuário ocupar a tela inteira no mobile, vou obter essa opinião e se for aceita realizo depois, terei que meio que desativar o resto da página */
+/* TODO: Acho melhor a tela de edição de usuário ocupar a tela inteira no mobile, vou obter essa opinião e se for aceita realizo depois, terei que meio que desativar o resto da página 
 
-/* !FIM da responsividade PARA MODAL DE EDIÇÃO DE USUÁRIOS*/
-
-
-
+/* !FIM da responsividade PARA MODAL DE EDIÇÃO DE POSTS*/
 
 /*? MODAL DE VISUALIZAR USUARIO */
 
@@ -717,8 +727,4 @@
     flex-direction: column;
     gap: 2.5rem;
     align-items: center;
-}
-
-#modal-edicao-posts {
-    display: none;
 }

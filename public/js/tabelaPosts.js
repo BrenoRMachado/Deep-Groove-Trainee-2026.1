@@ -1,32 +1,31 @@
 // ! INÍCIO DO CÓDIGO DO MODAL DE EDIÇÃO DE USUÁRIOS DA TABELA DE USUÁRIOS
-// *Seleciona icones de edicao de usuário da tabela de usuários, o modal de edição de usuários e o filtro ao abrir o modal da tabela de usuários
+// *Seleciona icones de edicao de posts da tabela de posts, o modal de edição de usuários e o filtro ao abrir o modal da tabela de posts
 
-const filtroAoAbrirModalDaTabelaDeUsuarios = document.querySelector('.filtro-ao-abrir-modal-da-tabela-de-usuarios');
-const iconesDeEdicaoDeUsuario = document.querySelectorAll('.tabela .bi-pencil-square');
-const modalDeEdicaoDeUsuario = document.querySelector('#modal-edicao-usuarios');
-let estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
+const filtroAoAbrirModalDaTabelaDePosts = document.querySelector('.filtro-ao-abrir-modal-da-tabela-de-posts');
+const iconesDeEdicaoDePost = document.querySelectorAll('.tabela .bi-pencil-square');
+const modalDeEdicaoDePosts = document.querySelector('#modal-edicao-posts');
+let estadoAtualDoModalDeEdicaoDePosts = 'fechado';
 
-// *Implementa função que ativa o modal de edição de usuários
+// *Implementa função que ativa o modal de edição de posts
 
-iconesDeEdicaoDeUsuario.forEach((iconeDeEdicaoDeUsuario) => {
-        iconeDeEdicaoDeUsuario.addEventListener('click', function () {
-                modalDeEdicaoDeUsuario.style.display = 'grid';
-                filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'flex';
-                estadoAtualDoModalDeEdicaoDeUsuario = 'aberto';
+iconesDeEdicaoDePost.forEach((iconeDeEdicaoDePost) => {
+        iconeDeEdicaoDePost.addEventListener('click', function () {
+                modalDeEdicaoDePosts.style.display = 'grid';
+                filtroAoAbrirModalDaTabelaDePosts.style.display = 'flex';
+                estadoAtualDoModalDeEdicaoDePosts = 'aberto';
         });
 });
 
-// *Seleciona o botão de cancelar do modal de edição de usuários 
+// *Seleciona o botão de cancelar do modal de edição de posts
 
-const botaoCancelarEdicaoDeUsuario = document.querySelector('#modal-edicao-usuarios .botao-cancelar');
+const botaoCancelarEdicaoDePosts = document.querySelector('#modal-edicao-posts .botao-cancelar');
 
-botaoCancelarEdicaoDeUsuario.addEventListener('click', function () {
+// *Implementa função que fecha o modal de edição de posts ao clicar no botão cancelar
 
-// *Implementa função que fecha o modal de edição de usuários ao clicar no botão cancelar
-
-        modalDeEdicaoDeUsuario.style.display = 'none';
-        filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'none';
-        estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
+botaoCancelarEdicaoDePosts.addEventListener('click', function () {
+        modalDeEdicaoDePosts.style.display = 'none';
+        filtroAoAbrirModalDaTabelaDePosts.style.display = 'none';
+        estadoAtualDoModalDeEdicaoDePosts = 'fechado';
 });
 // ! FIM 
 
