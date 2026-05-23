@@ -710,3 +710,7 @@
     gap: 2.5rem;
     align-items: center;
 }
+
+#modal-edicao-posts {
+    display: none;
+}
