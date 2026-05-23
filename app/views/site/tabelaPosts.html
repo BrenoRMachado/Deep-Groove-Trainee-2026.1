@@ -65,6 +65,136 @@
         </section>
     </div>
 
+    <div id="modal-edicao-usuarios">
+        <section class="secao-edicao-foto-de-perfil">
+            <figure class="container-edicao-foto-de-perfil">
+                <i class="icone-foto-de-perfil bi bi-person-circle"></i>
+                <i class="icone-editar-foto-de-perfil bi bi-pencil"></i>
+                <figcaption class="instrucao-editar-foto-de-perfil">Editar foto de perfil</figcaption>
+            </figure>
+        </section>
+        <section class="secao-edicao-dados-do-usuario">
+            <form class="container-editar-nome-email-senha">
+                <div class="container-editar-dado container-editar-nome">
+                    <span class="titulo-dado">Nome:</span>
+                    <input class="editar-dado" type="text" placeholder="Digite o seu nome">
+                </div>
+                <div class="container-editar-dado container-editar-email">
+                    <span class="titulo-dado">E-mail:</span>
+                    <input class="editar-dado" type="text" placeholder="Digite o seu e-mail">
+                </div>
+                <div class="container-editar-dado container-editar-senha">
+                    <span class="titulo-dado">Senha:</span>
+                    <input class="editar-dado" type="text" placeholder="Digite a sua senha">
+                </div>
+            </form>
+            <div class="container-botoes-salvar-cancelar">
+                <button class="botao botao-cancelar">Cancelar</button>
+                <button class="botao botao-salvar">Salvar</button>
+            </div>
+        </section>
+    </div>
+
+    <!--* MODAL DE VISUALIZAR USUÁRIOS -->
+
+    <div class="fundoV" onclick="fecharModalVisu('modal-visu-user')">
+
+
+
+        <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
+        <div id="modal-visu-user" class="des-modal-vi" onclick="event.stopPropagation()">
+
+            <section class="fotodeperfilvi">
+                <img class="imgperfilvi" src="../../../public/assets/fotodeperfil.jpg" alt="Foto de perfil">
+            </section>
+
+            <section class="containerpolvoIMG">
+                <img class="polvoIMG" src="../../../public/assets/polvo-modal.jpeg" alt="polvo">
+
+
+                <img class="xis" src="../../../public/assets/XCircleFill.svg" alt="x"
+                    onclick="fecharModalVisu('modal-visu-user')">
+
+
+            </section>
+
+            <section id="container-dados-visu">
+                <!-- disabled- desbilita total 
+            readonly- nn deixa editar mas pode clicar e copiar o texto -->
+
+                <div class="dados-visu">
+                    <div class="destaque-dados-visu">ID</div>
+                    <div class="dado-visu">1</div>
+                </div>
+
+                <div class="dados-visu">
+                    <div class="destaque-dados-visu">NOME</div>
+                    <div class="dado-visu">Fulano Sicrano da Silva Miguez Soares</div>
+                </div>
+
+                <div class="dados-visu">
+                    <div class="destaque-dados-visu">EMAIL</div>
+                    <div class="dado-visu">fulanosilva123@gmail.com</div>
+                </div>
+
+                <div class="dados-visu">
+                    <div class="destaque-dados-visu">TIPO</div>
+                    <div class="dado-visu">Administrador</div>
+                </div>
+
+
+            </section>
+
+        </div>
+
+    </div>
+
+    <!--* MODAL DE EXCLUIR USÚARIOS -->
+
+    <div class="fundoE" onclick="fecharModalExcluir('modal-excluir-user')">
+
+        <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
+        <div id="modal-excluir-user" class="des-modal-ex" onclick="event.stopPropagation()">
+
+
+
+            <div class="caixaclara">
+                <section class="fotodeperfilex">
+                    <img class="imgperfilex" src="../../../public/assets/fotodeperfil.jpg" alt="Foto de perfil">
+                </section>
+
+                <section class="X">
+                    <img class="xis" src="../../../public/assets/XCircleFill.svg" alt="x"
+                        onclick="fecharModalExcluir('modal-excluir-user')">
+                </section>
+
+                <div class="mensagem-botao">
+                    <section class="containeraviso">
+                        <div class="avisotexto">
+                            <!--* o span é inline entt continua ja td na mesma linha -->
+                            <p class="avisoSEMdestaque">Tem certeza que deseja excluir o usuário
+                                <span class="avisoCOMdestaque">Fulano Sicrano da
+                                    Silva Miguez Soares
+                                </span>?
+                            </p>
+                        </div>
+                        <p class="rodapeaviso">Você não pode desfazer essa ação.</p>
+                    </section>
+
+                    <section class="containerbotoes">
+                        <button class="botao" onclick="fecharModalExcluir('modal-excluir-user')">CANCELAR</button>
+                        <button class="botao" onclick="fecharModalExcluir('modal-excluir-user')">SIM</button>
+                    </section>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
 </section>
     <section class="titulo">
         <h1 class="textoTitulo">POSTAGENS</h1>
@@ -236,6 +366,6 @@
         </table>
     </section>
 
-    <script src="../../../public/js/tabela-de-usuarios.js"></script>
+    <script src="../../../public/js/tabelaPosts.js"></script>
 </body>
 </html>
