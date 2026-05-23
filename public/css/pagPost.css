@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
 #capa-d {
     /*! faz os elementos ficarem lado a lado */
     display: flex; /*acho q inline faz a msm coisa */
@@ -152,7 +158,7 @@
     flex-direction: column;
     gap: 20px;
     padding: /*TETO*/20px /*LADO*/40px;
-
+   
 
 }
 
@@ -181,4 +187,42 @@ body{
     background-color: #E0D7D7;
     width: 100%;
     height: 2px;
+}
+
+@media (max-width:431px) {
+
+   #capa-d {
+    flex-direction: column;
+    gap: 0;
+
+   }
+
+   .conteudo-capa-d {
+    padding-left: 0;
+   }
+
+   .dados-capa-d {
+    gap: 15%;
+   }
+
+   #sobre-d {
+    display: flex;
+    flex-direction: column;
+   }
+
+   
+   .s {
+    display: none;
+   }
+
+   .musica-d {
+    gap: 15%;
+    justify-content: center;
+    align-items: center;
+   }
+
+    .disco-d {
+        width: 105vw;
+    }
+
 }
