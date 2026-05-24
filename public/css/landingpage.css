@@ -72,25 +72,21 @@ html, .tudolanding {
 .titulo2 {
     display: flex;
     justify-content: center;
-    gap: 4rem;
+    gap: 1rem;
     align-items: baseline;
 
 }
 
 .h1lan {
     font-family: "Anton", sans-serif;
-    font-size: 7rem;
     color: #FEECE8;
-    font-size: 6rem;
-    transform: scaleX(1.5);
+    font-size: 7rem;
 }
 
 .h11lan {
     font-family: "Anton", sans-serif;
-    font-size: 7rem;
     color: #FEECE8;
-    font-size: 6rem;
-    transform: scaleX(1.5);
+    font-size: 7rem;
 }
 
 .h3lan {
