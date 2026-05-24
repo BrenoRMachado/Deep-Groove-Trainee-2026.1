@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container-cadastro {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: row;
+    color: white;
+}
+
+.titulo-cadastro {
+    font-family: 'EB Garamond';
+    font-weight: bold;
+    font-size: 3vw;
+}
+
+.metade-tela-cadastro {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.imagem {
+    background: url(../assets/background\ cadastro\ ween.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.formulario {
+    background: linear-gradient(#5B162D, black);
+}
+
+.botao-cadastro{
+    background: linear-gradient(#F09859, #C06850);
+    margin-top: 5%;
+    border-radius: 2rem;
+    color: white;
+    font-size: large;
+}
+
+input {
+    border-radius: 2rem;
+    font-size: large;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.logo {
+    height: 15%;
+    width: 15%;
+    position: absolute;
+    bottom: 0;
+}
+
+input {
+    height: 5%;
+    padding-right:5%; 
+    padding-left: 5%;
+}
+
+button {
+    height: 5%;
+}
