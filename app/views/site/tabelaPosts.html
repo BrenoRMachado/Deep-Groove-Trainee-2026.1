@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../public/css/tabelaPosts.css">
+    <!-- impotando fontes google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Erica+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- importando bootstrap-icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body id="tbposts">
+
+<div class="filtro-ao-abrir-modal-da-tabela-de-posts"></div>
+
+<section class="topoTabelaPosts">
+    <div class="addPost">
+        <i class="icone bi bi-plus"></i>
+        <p class="textop">Novo Post</p>
+    </div>
+
+    <div class="infoUser">
+        <img src="../../../public/assets/ícone usuário.svg" alt="User">
+
+        <div class="infos">
+            <h3 class="textoh3">Fulano</h3>
+            <h3 class="textoh3">Administrador</h3>
+        </div>
+
+    </div>
+
+    <!-- *MODAL DE EDIÇÃO DE POSTS  -->
+    <div id="modal-edicao-posts">
+        <section class="secao-edicao-capa-do-album">
+            <figure class="container-edicao-capa-do-album">
+                <div class="container-capa-do-album">
+                    <button class="botao-editar-capa-do-album">
+                        <i class="icone-editar-capa-do-album bi bi-image"></i>
+                    </button>
+                </div>
+                <figcaption class="instrucao-editar-capa-do-album">Editar capa</figcaption>
+            </figure>
+        </section>
+        <section class="secao-edicao-dados-do-album">
+            <form class="container-editar-titulo-descricao-autor">
+                <div class="container-editar-dado container-editar-titulo">
+                    <span class="titulo-dado">Título:</span>
+                    <input class="editar-dado" type="text" placeholder="Título do álbum">
+                </div>
+                <div class="container-editar-dado container-editar-descricao">
+                    <span class="titulo-dado">Descrição:</span>
+                    <textarea class="editar-dado editar-descricao" placeholder="Descrição do álbum"></textarea>
+                </div>
+                <div class="container-editar-dado container-editar-autor">
+                    <span class="titulo-dado">Autor:</span>
+                    <input class="editar-dado" type="text" placeholder="Nome do autor da publicação">
+                </div>
+            </form>
+            <div class="container-botoes-salvar-cancelar">
+                <button class="botao botao-cancelar">Cancelar</button>
+                <button class="botao botao-salvar">Salvar</button>
+            </div>
+        </section>
+    </div>
+
+    <!--* MODAL DE VISUALIZAR POSTS -->
+
+    <div class="fundoV" onclick="fecharModalVisu('modal-visu-user')">
+
+
+
+        <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
+        <div id="modal-visu-user" class="des-modal-vi" onclick="event.stopPropagation()">
+
+            <section class="fotodeperfilvi">
+                <img class="imgperfilvi" src="../../../public/assets/fotodeperfil.jpg" alt="Foto de perfil">
+            </section>
+
+            <section class="containerpolvoIMG">
+                <img class="polvoIMG" src="../../../public/assets/polvo-modal.jpeg" alt="polvo">
+
+
+                <img class="xis" src="../../../public/assets/XCircleFill.svg" alt="x"
+                    onclick="fecharModalVisu('modal-visu-user')">
+
+
+            </section>
+
+            <section id="container-dados-visu">
+                <!-- disabled- desbilita total 
+            readonly- nn deixa editar mas pode clicar e copiar o texto -->
+
+                <div class="dados-visu">
+                    <div class="destaque-dados-visu">ID</div>
+                    <div class="dado-visu">1</div>
+                </div>
+
+                <div class="dados-visu">
+                    <div class="destaque-dados-visu">NOME</div>
+                    <div class="dado-visu">Fulano Sicrano da Silva Miguez Soares</div>
+                </div>
+
+                <div class="dados-visu">
+                    <div class="destaque-dados-visu">EMAIL</div>
+                    <div class="dado-visu">fulanosilva123@gmail.com</div>
+                </div>
+
+                <div class="dados-visu">
+                    <div class="destaque-dados-visu">TIPO</div>
+                    <div class="dado-visu">Administrador</div>
+                </div>
+
+
+            </section>
+
+        </div>
+
+    </div>
+
+    <!--* MODAL DE EXCLUIR USÚARIOS -->
+
+    <div class="fundoE" onclick="fecharModalExcluir('modal-excluir-user')">
+
+        <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
+        <div id="modal-excluir-user" class="des-modal-ex" onclick="event.stopPropagation()">
+
+
+
+            <div class="caixaclara">
+                <section class="fotodeperfilex">
+                    <img class="imgperfilex" src="../../../public/assets/fotodeperfil.jpg" alt="Foto de perfil">
+                </section>
+
+                <section class="X">
+                    <img class="xis" src="../../../public/assets/XCircleFill.svg" alt="x"
+                        onclick="fecharModalExcluir('modal-excluir-user')">
+                </section>
+
+                <div class="mensagem-botao">
+                    <section class="containeraviso">
+                        <div class="avisotexto">
+                            <!--* o span é inline entt continua ja td na mesma linha -->
+                            <p class="avisoSEMdestaque">Tem certeza que deseja excluir o usuário
+                                <span class="avisoCOMdestaque">Fulano Sicrano da
+                                    Silva Miguez Soares
+                                </span>?
+                            </p>
+                        </div>
+                        <p class="rodapeaviso">Você não pode desfazer essa ação.</p>
+                    </section>
+
+                    <section class="containerbotoes">
+                        <button class="botao" onclick="fecharModalExcluir('modal-excluir-user')">CANCELAR</button>
+                        <button class="botao" onclick="fecharModalExcluir('modal-excluir-user')">SIM</button>
+                    </section>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+    <section class="titulo">
+        <h1 class="textoTitulo">POSTAGENS</h1>
+    </section>
+
+    <section class="pesquisar">
+        <input type="text" class="pesqUser" placeholder="Pesquisar postagem...">
+    </section>
+
+    <section class="tabela">
+        <table class="tabeladentro">
+            <!-- cabeçalho -->
+            <thead class="tabelacabe">
+                <!-- linha -->
+                <tr class="linha linhaCab">
+                    <!-- coluna -->
+                    <th class="coluna colunaCab">ID</th>
+
+                    <th class="coluna colunaCab">Álbum</th>
+
+                    <th class="coluna colunaCab">Artista</th>
+
+                    <th class="coluna colunaCab">Título</th>
+
+                    <th class="coluna colunaCab">Ações</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody class="tabelageral">
+
+                <!-- linha -->
+                <tr class="linha linhaTab">
+                    <td class="colunageral">1</td>
+                    <td class="colunageral"><img class="capa-thriller" src="../../../public/assets/capa-thriller.jpg"></td>
+                    <td class="colunageral">Fulano</td>
+
+                    <td class="colunageral">Título</td>
+
+                    <td class="colunageral">
+                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
+                        <i class="acao bi bi-pencil-square"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
+                    </td>
+
+                </tr>
+
+                <!-- linha -->
+                <tr class="linha linhaTab">
+                    <td class="colunageral">1</td>
+                    <td class="colunageral"><img class="capa-thriller" src="../../../public/assets/capa-thriller.jpg"></td>
+                    <td class="colunageral">Fulano</td>
+
+                    <td class="colunageral">Título</td>
+
+                    <td class="colunageral">
+                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
+                        <i class="acao bi bi-pencil-square"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
+                    </td>
+
+                </tr>
+
+                <!-- linha -->
+                <tr class="linha linhaTab">
+                    <td class="colunageral">1</td>
+                    <td class="colunageral"><img class="capa-thriller" src="../../../public/assets/capa-thriller.jpg"></td>
+                    <td class="colunageral">Fulano</td>
+
+                    <td class="colunageral">Título</td>
+
+                    <td class="colunageral">
+                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
+                        <i class="acao bi bi-pencil-square"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
+                    </td>
+
+                </tr>
+
+                <!-- linha -->
+                <tr class="linha linhaTab">
+                    <td class="colunageral">1</td>
+                    <td class="colunageral"><img class="capa-thriller" src="../../../public/assets/capa-thriller.jpg"></td>
+                    <td class="colunageral">Fulano</td>
+
+                    <td class="colunageral">Título</td>
+
+                    <td class="colunageral">
+                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
+                        <i class="acao bi bi-pencil-square"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
+                    </td>
+
+                </tr>
+
+                <!-- linha -->
+                <tr class="linha linhaTab">
+                    <td class="colunageral">1</td>
+                    <td class="colunageral"><img class="capa-thriller" src="../../../public/assets/capa-thriller.jpg"></td>
+                    <td class="colunageral">Fulano</td>
+
+                    <td class="colunageral">Título</td>
+
+                    <td class="colunageral">
+                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
+                        <i class="acao bi bi-pencil-square"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
+                    </td>
+
+                </tr>
+
+                <!-- linha -->
+                <tr class="linha linhaTab">
+                    <td class="colunageral">1</td>
+                    <td class="colunageral"><img class="capa-thriller" src="../../../public/assets/capa-thriller.jpg"></td>
+                    <td class="colunageral">Fulano</td>
+
+                    <td class="colunageral">Título</td>
+
+                    <td class="colunageral">
+                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
+                        <i class="acao bi bi-pencil-square"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
+                    </td>
+
+                </tr>
+
+                <!-- linha -->
+                <tr class="linha linhaTab">
+                    <td class="colunageral">1</td>
+                    <td class="colunageral"><img class="capa-thriller" src="../../../public/assets/capa-thriller.jpg"></td>
+                    <td class="colunageral">Fulano</td>
+
+                    <td class="colunageral">Título</td>
+
+                    <td class="colunageral">
+                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
+                        <i class="acao bi bi-pencil-square"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
+                    </td>
+
+                </tr>
+
+                <!-- linha -->
+                <tr class="linha linhaTab">
+                    <td class="colunageral">1</td>
+                    <td class="colunageral"><img class="capa-thriller" src="../../../public/assets/capa-thriller.jpg"></td>''
+                    <td class="colunageral">Fulano</td>
+
+                    <td class="colunageral">Título</td>
+
+                    <td class="colunageral">
+                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
+                        <i class="acao bi bi-pencil-square"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
+                    </td>
+
+                </tr>
+
+
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <!-- tem q fazer a paginaçao -->
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <script src="../../../public/js/tabelaPosts.js"></script>
+</body>
+</html>
