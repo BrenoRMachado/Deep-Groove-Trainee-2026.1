@@ -1,0 +1,730 @@
+:root {
+    --corclara: #FEECE8;
+    --fontetitulo: "Erica One", sans-serif;
+    --pesotitulo: 100;
+    --linhatabela: #FEB579;
+    --fonte: "Inter", sans-serif;
+    --cordestaque: #C06850;
+    --pesocabtab: 800;
+    --pesogertab: 550;
+    --pesopesq: 500;
+    --cortextopesq: #773B36;
+
+    /** var modal editar */
+    --cor-branco-200: #FEECE8;
+    --cor-branco-100: #FFFFFF;
+    --cor-preto-100: #000000;
+    --cor-marrom-100: #6D3534;
+    --cor-vermelho-100: #FF0000;
+    --cor-verde-100: #22C55E;
+
+    /** var modal visualizar e excluir */
+    --fundodecormodal: #6D3534;
+    --fundodecorcontainerdados: #CA998F; 
+    --corbackdado: #FEECE8;
+    --corbordainput-cordestaque: #6D3534;
+    --pesomodal: 600;
+    --tamfontemodal: 0.8rem;
+
+    --fonteaviso: "Montserrat", sans-serif;
+    --coraviso: #000000;
+    --cordestaviso: #5B162D;
+    --backbotao: #C06850;
+    --letrabotao: #FEECE8;
+
+    --pesoaviso: 800;
+    --tamaviso: 1.2rem;
+
+    --pesoavisorodape: 500;
+    --tamavisorod: 1rem;
+
+    --pesoexcluirbotao: 700;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#tbposts{
+    padding: 1rem 2rem;
+    min-height: 100vh;
+
+   
+    background: linear-gradient(
+        #6D3534 39%, 
+        #9A4E45 75%,
+        #C66E57 94%,
+        #E08E6D 100%
+    );
+    
+}
+
+.addUser {
+    display: flex;
+
+    align-items: center;
+    justify-items: center;
+}
+
+.infoUser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.topoTabelaPosts {
+    display: flex;
+    /* o justify sempre mexe no eixo principal nesse caso row */
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+.textoTitulo {
+    color: var(--corclara);
+    font-family: var(--fontetitulo);
+    font-weight: var(--pesotitulo);
+}
+
+.titulo {
+    text-align: center;
+}
+
+.tabela{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   
+    margin-top: 3rem;
+ 
+    justify-content: center;
+
+    /*! para tds as colunas da tabela ficarem do msm tamanho */
+    table-layout: fixed;
+
+    /*! qunado a lateral da tabela ficar maior q a tela, com isso é posivel rolar ela pro lado sem quebrar a tabela */
+    overflow-x: auto;
+
+    border-radius: 1rem;
+
+    background-color: var(--corclara);
+}
+
+/*? colunas das tabelas coluna cabeçalho e coluna body */
+.colunaCab, .colunageral{
+    text-align: center;
+
+    /* add um espaço na no topo e no baixo da div */
+    padding: 1.5vh;
+
+    font-family: var(--fonte);
+
+}
+
+.colunageral {
+    border-top: 2px solid var(--linhatabela);
+    font-weight: var(--pesogertab);
+}
+
+.capa-thriller {
+    height: 4rem;
+    width: 4rem;
+}
+
+.colunaCab {
+    color: var(--cordestaque);
+    font-weight: var(--pesocabtab);
+}
+
+.textop {
+    font-family: var(--fonte);
+    color: var(--corclara);
+}
+
+.textoh3 {
+    font-family: var(--fonte);
+    color: var(--corclara);
+}
+
+.icone {
+    color: var(--corclara);
+    
+}
+
+.addPost {
+    background-color: var(--cordestaque);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    height: 2.5rem;
+    width: 8rem;
+
+}
+
+
+.pesqUser {
+
+    background-color: var(--corclara);
+
+    background-image: url(../assets/Frame\ 90.svg);
+    /*! pra img nn repitir no fundo td */
+    background-repeat: no-repeat;
+
+    border-radius: 3rem;
+    border: 1rem solid #6D3534;
+
+    /* cima direita baixo esquerda */
+    padding: 1rem 1rem 1rem 3rem;
+
+    /*! coloca o o back 1 p/ laterais e no centro de td */
+    background-position: 1rem center;
+}
+
+.pesqUser::placeholder {
+    color: var(--cortextopesq);
+    font-weight: var(--pesopesq);
+    font-family: var(--fonte);
+}
+
+/* *Animação ao passar o mouse por cima dos ícones de ação da tabela de usuários */
+.tabelageral .acao {
+    transition: transform 0.2s;
+}
+
+.tabelageral .acao:hover {
+    transform: scale(1.35);
+    cursor: pointer;
+}
+
+/* *ESTILO DO MODAL DE EDIÇÃO DE USUÁRIOS */
+#modal-edicao-posts {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35rem;
+    height: 25rem;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    display: none;
+    grid-template-columns: 40% 60%;
+}    
+
+/* *Estilo da seção de edição da foto de perfil do usuário */
+#modal-edicao-posts .secao-edicao-capa-do-album {
+    height: 100%;
+    width: 100%;
+    background-image:url(../assets/fundo-album-disco-de-vinil.png);
+    background-size: cover;
+    background-position: 70% 0%;
+    border-radius: 30px 0 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* *Estilo do container de edicao da capa do álbum */
+#modal-edicao-posts .container-edicao-capa-do-album {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    height: 44%;
+    width: 57%;
+}
+
+#modal-edicao-posts .container-edicao-capa-do-album .container-capa-do-album {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--cor-preto-100);
+    border-radius: 10px;
+    background-color: var(--cor-branco-200);
+}
+
+#modal-edicao-posts .container-edicao-capa-do-album .instrucao-editar-capa-do-album {
+    color: var(--cor-branco-100);
+    font-size: 1.2rem;
+    border-radius: 10px;
+    font-family: "Roboto", sans-serif;
+}
+
+#modal-edicao-posts .container-edicao-capa-do-album .botao-editar-capa-do-album {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    border: none;
+    background: none;
+}
+
+/* *Animação ao passar o mouse por cima do botão de editar capa do álbum */
+#modal-edicao-posts .container-edicao-capa-do-album .botao-editar-capa-do-album:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+/* *Estilo da seção de edição das informações do usuário */
+#modal-edicao-posts .secao-edicao-dados-do-album {
+    background-color: var(--cor-branco-200);
+    border-radius: 0 30px 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#modal-edicao-posts .container-editar-titulo-descricao-autor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 80%;
+    height: 82%;
+}
+
+#modal-edicao-posts .container-editar-dado {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* *Estilo do título do dado a ser editado do usuário (Nome, E-mail, Senha) */
+#modal-edicao-posts .titulo-dado {
+    color: var(--cor-marrom-100);
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+}
+
+/* *Estilo do input de digitar o dado do usuário */
+#modal-edicao-posts .editar-dado {
+    border-radius: 5px;
+    padding: 0.4rem;
+    background: none;
+    border: 2px solid var(--cor-preto-100);
+    font-family: "Roboto", sans-serif;
+}
+
+#modal-edicao-posts .editar-descricao {
+    height: 8rem;
+    resize: none;
+}
+
+/* *Estilo do container dos botões de salvar e cancelar */
+#modal-edicao-posts .container-botoes-salvar-cancelar {
+    width: 80%;
+    height: 18%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* *Estilo dos botões de salvar e cancelar */
+#modal-edicao-posts .container-botoes-salvar-cancelar .botao {
+    padding: 0.5rem;
+    height: fit-content;
+    border-radius: 5px;
+    border: none;
+    color: var(--cor-branco-100);
+    font-family: "Roboto", sans-serif;
+    min-width: 40%;
+}
+
+#modal-edicao-posts .container-botoes-salvar-cancelar .botao-salvar {
+    background-color: var(--cor-verde-100);
+}
+
+#modal-edicao-posts .container-botoes-salvar-cancelar .botao-cancelar {
+    background-color: var(--cor-vermelho-100);
+}
+
+#modal-edicao-posts .container-botoes-salvar-cancelar .botao:hover {
+    transform: scale(1.05);
+    transition: transform 0.2;
+    cursor: pointer;
+}
+
+/* *Estilo do filtro ao abrir o modal */
+.filtro-ao-abrir-modal-da-tabela-de-posts {
+    position: fixed;
+    inset: 0;
+    display: none;
+    background-color: var(--cor-preto-100);
+    opacity: 0.5;
+}
+
+/* !INÍCIO da responsividade PARA MODAL DE EDIÇÃO DE POSTS*/
+@media (max-width: 769px){
+    #modal-edicao-posts {
+        display: flex;
+        flex-direction: column;
+        height: 35rem;
+        width: 22rem;
+    }
+    #modal-edicao-posts .secao-edicao-capa-do-album {
+        height: 35%;
+        border-radius: 30px 30px 0 0;
+        background-size: 110%;
+    }
+    #modal-edicao-posts .container-edicao-capa-do-album {
+        height: 70%;
+        width: 45%;
+    }
+    #modal-edicao-posts .container-edicao-capa-do-album .icone-foto-de-perfil {
+        font-size: 8rem;
+    }
+    #modal-edicao-posts .container-edicao-capa-do-album .instrucao-editar-capa-do-album {
+        font-size: 1rem;
+    }
+    #modal-edicao-posts .secao-edicao-dados-do-album {
+        border-radius: 0 0 30px 30px;
+        height: 65%;
+        padding: 0;
+        justify-content: space-evenly;
+    }
+}
+
+@media (max-width: 426px){
+    #modal-edicao-posts {
+        width: 20rem;
+    }
+}
+
+/* TODO: Acho melhor a tela de edição de usuário ocupar a tela inteira no mobile, vou obter essa opinião e se for aceita realizo depois, terei que meio que desativar o resto da página 
+
+/* !FIM da responsividade PARA MODAL DE EDIÇÃO DE POSTS*/
+
+/*? MODAL DE VISUALIZAR USUARIO */
+
+.des-modal-vi {
+    background-color: var(--fundodecormodal);
+
+    /*? fica position em rel a tela, e serve como position relative para os filhos */
+    position: fixed;
+
+    
+    top: 50%;
+    left: 50%;
+ 
+    /*! trasforma o elemento e move(translate) ele nesse caso 50% do elemento volta na horizontal e vertical nn mexe (x,y) */
+    transform: translate(-50%, -50%);
+
+    border-radius: 2rem;
+
+    display: none;
+    flex-direction: column;
+    gap: 3rem;
+    cursor: default;
+
+    /* box-shadow: x y blur emvolta cor;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5); */
+    /* box-shadow: 0 0 0  100vw rgba(0,0,0,0.5); */
+}
+
+/*! visu e excluir */
+.fundoE, .fundoV{
+    position: fixed;
+    inset: 0;
+
+    /* inset é o mesmo disso aqui
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; */
+
+    display: none;
+
+    background-color: #00000059;
+    backdrop-filter: blur(8px);
+
+    cursor: pointer;
+
+}
+
+#container-dados-visu {
+    background-color: var(--fundodecorcontainerdados);
+    
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 1.5rem;
+
+    width: 20vw;
+    height: 25vh;
+
+    padding: 0.5rem 1rem;
+
+    margin: 2rem 4rem 2rem 4rem;
+
+    /* nesse caso horizontal */
+    align-items: center; 
+
+    /* nesse caso vertical */
+    justify-content: center;
+
+}
+
+.dados-visu {
+    display: flex; 
+    gap: 0.5rem;
+
+    background-color: var(--corbackdado);
+    border-radius: 1rem;
+
+    height: 4vh;
+    width:90%;
+    align-items: center;
+    padding: 0 0.5rem;
+
+}
+
+.dado-visu {
+    display: flex; 
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-family: var(--fonte);
+    font-weight: var(--pesomodal);
+    font-size: var(--tamfontemodal);
+
+    /*! scrolla a div no eixo x */
+    overflow-x: auto;
+
+    /*! nao deixa q a div scrolla nesse sentido */
+    overflow-y: hidden;
+
+    /*! tira a barra de scroll */
+    scrollbar-width: none;
+
+    /*! mantem o texto td em uma linha proibindo q ele quebre */
+    white-space: nowrap;
+}
+
+/** isso tira a borda do input e coloca um corzinha nele
+.input {
+   border: none;
+   background-color: var(--corbackinput);
+}  */
+
+.destaque-dados-visu {
+    background-color: var(--corbordainput-cordestaque);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 1rem;
+    height: 1.2rem;
+    width: 4rem;
+
+    font-family: var(--fonte);
+    font-weight: var(--pesomodal);
+    font-size: var(--tamfontemodal);
+    color: var(--corbackdado);
+}
+
+.polvoIMG {
+   
+
+    width: 100%;
+    height: 20vh;
+
+    /*? corta a img */
+    object-fit: cover;
+
+    /*? pega uma parte especifica da img*/ 
+    /*? pode ser center top bottom left right ou assim x y*/
+    object-position: 100% 35%;
+
+    /* ordem relogio */
+    border-radius: 2rem 2rem 0 0;
+
+}
+
+.containerpolvoIMG {
+    width: 100%;
+}
+
+.fotodeperfilvi {
+   
+    position: absolute;
+    padding-top: 5%;
+
+    left: 50%;
+    transform: translateX(-50%);    
+}
+
+.imgperfilvi {
+    width: 12em;
+    height: 12rem;
+
+    /* corta a img */
+    object-fit: cover;
+
+    border-radius: 11rem;
+    border: 0.5rem solid var(--fundodecormodal);
+}
+
+.xis {
+    cursor: pointer;    
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+
+    width: 2rem;
+
+    transition: 0.3s;
+}
+
+.xis:hover {
+    transform: scale(1.3);
+}
+
+/** MODAL EXCLUIR */
+
+.des-modal-ex {
+    background-color: var(--fundodecormodal);
+
+    /*? fica position em rel a tela, e serve como position relative para os filhos */
+    position: fixed;
+
+    height: 62vh;
+
+    /* centraliza */
+    top: 50%;
+    left: 50%;
+ 
+    /*! trasforma o elemento e move(translate) ele nesse caso 50% do elemento volta na horizontal e vertical nn mexe (x,y) */
+    transform: translate(-50%, -50%);
+
+    border-radius: 2rem;
+
+    display: none;
+    flex-direction: column;
+    gap: 3rem;
+    cursor: default;
+
+    /* box-shadow: x y blur emvolta cor;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5); */
+    /* box-shadow: 0 0 0  100vw rgba(0,0,0,0.5); */
+}
+
+.caixaclara {
+    background-color: var(--fundodecorcontainerdados);
+    
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 1.5rem;
+
+    width: 20vw;
+    height: auto;
+    padding: 5rem 0 1rem 0;
+
+
+    margin: 8rem 4rem 0 4rem;
+
+    /* nesse caso horizontal */
+    align-items: center; 
+
+    /* nesse caso vertical */
+    justify-content: center;
+}
+
+.containeraviso {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.avisoSEMdestaque {
+    font-family: var(--fonteaviso);
+    color: var(--coraviso);
+    font-weight: var(--pesoaviso);
+    text-align: center;
+    font-size: var(--tamaviso);
+}
+
+.avisoCOMdestaque{
+    font-family: var(--fonteaviso);
+    color: var(--cordestaviso);
+    font-weight: var(--pesoaviso);
+    text-align: center;
+    font-size: var(--tamaviso);
+}
+
+.rodapeaviso {
+    font-family: var(--fonteaviso);
+    color: var(--coraviso);
+    font-weight: var(--pesoavisorodape);
+    justify-content: center;
+    text-align: center;
+    font-size: var(--tamavisorod);
+}
+
+.containerbotoes {
+    display: flex;
+    gap: 1rem;
+}
+
+.botao {
+    font-family: var(--fonteaviso);
+    font-weight: var(--pesoexcluirbotao);
+    background-color: var(--backbotao);
+    color: var(--letrabotao);
+    width: 8vw;
+    height: 4vh;
+
+    align-items: center;
+    justify-content: center;
+
+    /* tira a borda horrenda q vem no botao */
+    border: none; 
+    border-radius: 2rem;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/*! houver - quando passa o mouse */
+.botao:hover {
+    transform: scale(1.1);
+}
+
+.fotodeperfilex{
+   
+    position: absolute;
+    padding-bottom: 85%;
+
+    left: 50%;
+    transform: translateX(-50%);    
+}
+
+.imgperfilex {
+    width: 12em;
+    height: 12rem;
+
+    /* corta a img */
+    object-fit: cover;
+
+    border-radius: 11rem;
+    border: 0.5rem solid var(--fundodecorcontainerdados);
+}
+
+.mensagem-botao {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+}

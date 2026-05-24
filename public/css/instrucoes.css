@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container-instrucoes {
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    width: 100vw;
+    /* faz com que a tela possa crescer quando scrollamos */
+    min-height: 100vh;
+    background: linear-gradient(#5B162D, black);
+    gap: 10vh;
+}
+
+.container-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    border-radius:30px;
+    padding: 5%;
+    text-align: center;
+}
+
+.background-opaco {
+    background-color: rgba(0, 0, 0, 0.25);
+}
