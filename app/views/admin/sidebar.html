@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+
+    <!-- *LINK PARA CSS -->
+    <link rel="stylesheet" href="../../../public/css/sidebar.css">
+
+    <!-- *ÍCONES -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+    <main id=sidebar>
+        <div class="container-logo-icone-abrir-fechar-sidebar">
+            <img class="logo-principal-deep-groove" src="../../../public/assets/logo-principal-deep-groove.png" alt="logo-principal-sidebar">
+            <button class="botao-abrir-fechar-sidebar">
+                <i class="icone-abrir-fechar-sidebar bi bi-chevron-right"></i>
+            </button>
+        </div>
+        <ul class="navegar-para-paginas-administrativas">
+            <li class="pagina-inicial">
+                <i class="icone icone-pagina-inicial bi bi-house-door"></i>
+                <span class="nome-da-pagina-administrativa sidebar-fechada">Home</span>
+            </li>
+            <li class="pagina-lista-de-usuarios">
+                <i class="icone icone-pagina-lista-de-usuarios bi bi-person-square"></i>
+                <span class="nome-da-pagina-administrativa sidebar-fechada">Usuários</span>
+            </li>
+            <li class="pagina-dashboard">
+                <i class="icone icone-pagina-dashboard bi bi-house-door"></i>
+                <span class="nome-da-pagina-administrativa sidebar-fechada">Dashboard</span>
+            </li>
+            <li class="pagina-tabela-de-publicacoes">
+                <i class="icone icone-pagina-tabela-de-publicacoes bi bi-window-stack"></i>
+                <span class="nome-da-pagina-administrativa sidebar-fechada">Publicações</span>
+            </li>
+        </ul>
+        <button class="botao-sign-out">
+            <i class="icone-sign-out bi bi-box-arrow-left"></i>
+            <span class="texto-sign-out">Sign out</span>
+        </button>
+    </main>
+    <script src="../../../public/js/sidebar.js"></script>
+</body>
+</html>

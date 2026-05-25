@@ -1,0 +1,397 @@
+/* *Variáveis */
+
+:root {
+    --cor-laranja-100: #E08E6D;
+    --cor-laranja-200: #C66E57;
+    --cor-marrom-100: #9A4E45;
+    --cor-marrom-200: #6D3534;
+    --cor-branco-100: #ffffff;
+    --cor-preto-100: #000000;
+    --espacamento-padding-maior: 3rem;
+    --espacamento-padding-grande: 2rem;
+    --espacamento-padding-medio: 1rem;
+    --espacamento-padding-pequeno: 0.8rem;
+    --espacamento-padding-menor: 0.6rem;
+    --fonte-primaria: "Montserrat", sans-serif;
+    --fonte-titulo: 'MinhaFontePersonalizada';
+}
+
+/* *Fontes */
+@font-face {
+    font-family: 'MinhaFontePersonalizada';
+    src: url(../assets/TAN\ St.\ Canard\ Regular.otf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* * Reset CSS da página de posts*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased; /* *Letras visualmente melhores (suavização) para Chrome, Edge... */
+    -moz-osx-font-smoothing: grayscale; /* *Letras visualmente melhores (suavização) para Firefox... */
+}
+
+/* *Estilo de toda página do dashboard */
+#dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* !Necessário para que a página ocupe todo o espaço da tela */
+    background:
+        linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.75)
+        ),
+        url(../assets/fundo-deepgroove.png);
+    background-size: cover;
+    overflow-y: hidden;
+}
+
+/* *Estilo do cabeçalho do dashboard */
+#dashboard #cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--espacamento-padding-grande) var(--espacamento-padding-maior) var(--espacamento-padding-medio) var(--espacamento-padding-maior);
+    color: var(--cor-branco-100);
+    border-radius: 0 0 16px 16px;
+    gap: 1rem;
+}
+
+/* *Estilo do título do cabeçalho da dashboard */
+#dashboard #cabecalho .titulo-cabecalho {
+    font-size: 4rem;
+    font-family: var(--fonte-primaria);
+}
+
+/* *Estilo do perfil do administrador da dashboard */
+#dashboard #cabecalho .container-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#dashboard #cabecalho .container-dados-do-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
+    text-align: end;
+}
+
+#dashboard #cabecalho .dados-do-admin {
+    font-family: var(--fonte-primaria);
+    font-size: 1rem;
+}
+
+#dashboard #cabecalho .icone-perfil {
+    font-size: 3rem;
+    padding: var(--espacamento-padding-menor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 3.8rem;
+    border-radius: 50%;
+    color: var(--cor-preto-100);
+    background: var(--cor-branco-100);
+    border: none;
+}
+
+/* *Estilo da área de dados sobre o número de publicações e usuários do site */
+#dashboard #area-navegacao-e-estatisticas {
+    padding: 0 var(--espacamento-padding-maior);
+    color: var(--cor-branco-100);
+    font-family: var(--fonte-primaria);
+}
+
+#dashboard #area-navegacao-e-estatisticas .lista-area-navegacao-e-estatisticas {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 100%;
+}
+
+#dashboard #area-navegacao-e-estatisticas .container-usuarios-publicacoes {
+    padding: var(--espacamento-padding-menor) var(--espacamento-padding-menor);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    width: 47%;
+    background-color: var(--cor-marrom-100);
+}
+
+/* *Estilo do container que mostra o número total de usuários e do container do número de publicações */
+#dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 50%;
+}
+
+/* *Estilo do texto de informação do número de usuários e publicações */
+#dashboard #area-navegacao-e-estatisticas .texto-dados-totais {
+    font-size: 1.2rem;
+}
+
+/* *Estilo do ícone de usuários e publicações */
+#dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas {
+    font-size: 2.8rem;
+    line-height: 1;
+}
+
+/* *Estilo do botão da dashboard de navegar para as páginas administrativas */
+#dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
+    color: var(--cor-branco-100);
+    background-color: var(--cor-laranja-100);
+    border: none;
+    border-radius: 16px;
+    padding: var(--espacamento-padding-pequeno) var(--espacamento-padding-medio);
+    font-family: var(--fonte-primaria);
+    font-size: 1.2rem;
+    width: 50%;
+}
+
+/* *Animação dos botões da dashboard de navegar para as páginas administrativas */
+#dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s;
+    cursor: pointer;
+    opacity: 0.95;
+}
+
+/* *Estilo do título de fundo da dashboard */
+#dashboard #container-titulo-de-fundo {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+#dashboard #container-titulo-de-fundo .titulo-de-fundo {
+    color: var(--cor-branco-100);
+    font-family: var(--fonte-titulo);
+    font-size: 10vw;
+}
+
+/* *Estilo para rodapé do dashboard */ 
+#dashboard #rodape {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--espacamento-padding-maior) var(--espacamento-padding-maior) var(--espacamento-padding-maior);
+    z-index: 2;
+}
+
+/* *Estilo para botões HOME e SIGN OUT do dashboard */
+#dashboard #rodape .botao {
+    color: var(--cor-branco-100);
+    padding: var(--espacamento-padding-menor) var(--espacamento-padding-medio);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 2.5rem;
+    border: none;
+    background-color: var(--cor-laranja-100);
+}
+
+#dashboard #rodape .botao-sign-out {
+    padding: var(--espacamento-padding-menor) var(--espacamento-padding-menor) var(--espacamento-padding-menor) var(--espacamento-padding-medio);
+}
+
+/* *Animação ao passar o mouse por cima dos botões HOME e SIGN OUT da dashboard */
+#dashboard #rodape .botao:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s;
+    cursor: pointer;
+    opacity: 0.95;
+}
+
+/* *Estilo do container do disco de vinil como imagem de fundo */
+#dashboard .container-imagem-disco-de-vinil-fundo {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* *Estilo do disco de vinil como imagem de fundo */
+#dashboard .imagem-disco-de-vinil-fundo {
+    height: 100%;
+}
+
+/* *Responsividade */
+
+/* !Monitor 2K */
+
+@media (min-width: 2559px) {
+    :root {
+        --espacamento-padding-maior: 4rem;
+        --espacamento-padding-medio: 2rem;
+        --espacamento-padding-pequeno: 1.4rem;
+        --espacamento-padding-menor: 1rem;
+    }
+    
+    #dashboard #cabecalho {
+        padding-bottom: 2rem;
+    }
+    
+    #dashboard #cabecalho .titulo-cabecalho {
+        font-size: 6rem;
+    }
+    
+    #dashboard #cabecalho .dados-do-admin {
+        font-size: 2rem;
+    }
+    
+    #dashboard #cabecalho .icone-perfil {
+        font-size: 5rem;
+        width: 7rem;
+        height: 6.8rem;
+    }
+    
+    #dashboard #area-navegacao-e-estatisticas .texto-dados-totais {
+        font-size: 2rem;
+    }
+    
+    #dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas {
+        font-size: 4rem;
+    }
+    
+    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
+        font-size: 2rem;
+    }
+    
+    #dashboard #rodape .botao {
+        font-size: 5rem;
+    }
+}
+
+/* !Laptop pequeno / Tablet deitado */
+@media (max-width: 1025px) {
+    :root {
+        --espacamento-padding-maior: 2rem;
+    }
+
+    #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes {
+        width: 60%;
+    }
+
+    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
+        width: 40%;
+    }
+}
+
+/* !Tablet em pé */
+@media (max-width: 769px) {
+    #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes {
+        width: 70%;
+    }
+
+    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
+        width: 30%;
+    }
+
+    #dashboard .imagem-disco-de-vinil-fundo {
+        height: auto;
+    }
+}
+
+/* !Celular - GRANDES MUDANÇAS */
+@media (max-width: 652px) {
+    :root {
+        --espacamento-padding-maior: 1.2rem;
+        --espacamento-padding-medio: 0.7rem;
+    }
+    
+    #dashboard #cabecalho .titulo-cabecalho {
+        font-size: 2.7rem;
+    }
+    
+    #dashboard #cabecalho .dados-do-admin {
+        display: none;
+    }
+    
+    #dashboard #cabecalho .icone-perfil {
+        font-size: 2.8rem;
+        width: 3.6rem;
+        height: 3.4rem;
+    }
+    
+    #dashboard #area-navegacao-e-estatisticas .lista-area-navegacao-e-estatisticas {
+        margin-top: 2rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    #dashboard #area-navegacao-e-estatisticas .container-usuarios-publicacoes {
+        width: 100%;
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.03)
+        );
+        /* *EFEITO VIDRO */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        /* * */
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow:
+            inset 0 1px 1px rgba(255,255,255,0.08),
+            0 8px 32px rgba(0,0,0,0.35);
+    }
+    
+    #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes {
+        padding: var(--espacamento-padding-menor) var(--espacamento-padding-menor);
+        border-radius: 16px;
+        width: 75%;
+    }
+    
+    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
+        width: 25%;
+    }
+    
+    #dashboard #area-navegacao-e-estatisticas .texto-dados-totais {
+        font-size: 1rem;
+    }
+    
+    #dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas {
+        font-size: 1.7rem;
+        background-color: var(--cor-marrom-100);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.8rem;
+    }
+    
+    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
+        font-size: 1rem;
+    }
+
+    #dashboard #container-titulo-de-fundo {
+        align-items: flex-end;
+        padding-bottom: 1rem;
+    }
+
+    #dashboard #container-titulo-de-fundo .titulo-de-fundo {
+        font-size: 13vw;
+    }
+    
+    #dashboard #rodape .botao {
+        font-size: 2rem;
+    }
+     
+    #dashboard .imagem-disco-de-vinil-fundo {
+        height: auto;
+        width: 50%;
+    }
+}
