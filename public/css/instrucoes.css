@@ -30,3 +30,7 @@ body {
 .background-opaco {
     background-color: rgba(0, 0, 0, 0.25);
 }
+
+.amarelo {
+    color: #F09859;
+}
