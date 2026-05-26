@@ -35,7 +35,7 @@ a {
     background: linear-gradient(#5B162D, black);
 }
 
-.imagem {
+.imagem-login {
     background: url(../assets/background\ login\ ween.png);
     background-size: 100%;
     background-repeat: no-repeat;
@@ -48,13 +48,21 @@ a {
     border-radius: 2rem;
     color: white;
     font-size: large;
-    height: 1.7;
+    height: 2.2rem;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 20rem;
+    box-sizing: border-box;
 }
 
 input {
     border-radius: 2rem;
+    height: 2.2rem;
+    width: 20rem;
+    padding-left: 3%;
+    padding-right: 3%;
     font-size: large;
-    height: 1.7rem;
+    box-sizing: border-box;
 }
 
 form {
@@ -69,8 +77,15 @@ form {
 }
 
 .logo-login {
-    height: 15%;
+    height: 17%;
     width: 15%;
     position: absolute;
     bottom: 0;
+}
+
+.imagem-cadastro {
+    background: url(../assets/background\ cadastro\ ween.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
