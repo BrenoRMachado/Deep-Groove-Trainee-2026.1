@@ -48,11 +48,13 @@ a {
     border-radius: 2rem;
     color: white;
     font-size: large;
+    height: 1.7;
 }
 
 input {
     border-radius: 2rem;
     font-size: large;
+    height: 1.7rem;
 }
 
 form {
