@@ -9,6 +9,7 @@ body {
 a {
     text-decoration: none !important; /* Uso do !important para garantir que a propriedade não seja quebrada */
     color: inherit !important;
+    display: flex;
 }
 
 .navbar {
@@ -34,6 +35,7 @@ a {
 
 .segunda-metade {
     justify-content: end;
+    padding-right: 2rem;
 }
 
 .botoes {
@@ -50,4 +52,11 @@ a {
 .logo {
     width: 30%;
     height: 210%;
+}
+
+.container-perfil {
+    background-color: white;
+    width: 2.5rem;
+    height: min-content;
+    border-radius: 50%;
 }
