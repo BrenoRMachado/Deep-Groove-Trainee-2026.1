@@ -164,69 +164,57 @@ html, .tudolanding {
 /* CARROUSSEL */
 /*! a box do carroussel como um todo */
 .carroussel {
-    align-items: flex-start;
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    gap: 1.25rem;
-    overflow: hidden;
-    padding: 1.75rem 0 0 0;
-    max-width: 100%;
-    width: 100%;
     background-color: #FFF;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
 }
 
 /*! titulo do carroussel-texto */
 .titulo_carroussel {
-    color: #000;
+    color: #5B162D;
+    background-color: transparent;
     font-family: Montserrat;
     font-size: clamp(1.2rem, 2.96vw, 2.5rem);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: normal;
-    padding: 0 clamp(1.5rem, 5vw, 5rem);
+    margin: 2vh 0 3vh 0;
+    text-align: center;
+}
+
+.titulo_carroussel img{
+    width: 10%;
 }
 
 /*! contem as divs onde estam as imagens */
 .slider-conteudo {
     display: flex;
-    gap: 1.5rem;
-    height: 100%;
-    max-width: 100%;
-    overflow-x: auto;
-    padding: 0 clamp(1.5rem, 5vw, 5rem);
-    scroll-behavior: smooth;
-    width: 100%;
+    overflow: hidden;
+
    
 }
 
 /*! onde está as imagens */
 .slider-item {
-    display: block;
-    flex-shrink: 0;
-    height: 100%;
-    image-rendering: auto;
-    width: 30vw;
+  min-width: 28%;
     
 }
 
 /*! as imagens */
 .slider-item img {
-    align-items: flex-start;
     border-radius: 4.16vw;
-    display: block;
-    height: 24.16vh;
+    height: 35vh;
     object-fit: cover;
     transition: transform 0.3s;
-    width: 100%;
+    width: 25vw;
 }
 
 /*! as setas do carroussel */
 .nav-arrow {
     position: absolute;
-    top: 125%;
-    transform: translateY(-90%);
+    top: 50%;
+    transform: translateY(-50%);
     background-color: rgba(225, 225, 225, 0, 9);
     color: black;
     width: 3vw;
@@ -243,12 +231,12 @@ html, .tudolanding {
 
 /*! efeito das setas quando o cursor passa em cima */
 .nav-arrow:hover {
-    background-color: #2d8b33;
+    background-color: #FFA96B;
     color: white;
 }
 
-#seta_esquerda {left: 0.9vw;}
-#seta_direita {right: 0.9vw;}
+.seta_esquerda {left: 0.9vw;}
+.seta_direita {right: 0.9vw;}
 
 /*! area onde fica as bolinhas */
 .radio-auto {
@@ -273,7 +261,7 @@ html, .tudolanding {
 
 /*! efeito das bolinhas quando o cursor passa em cima */
 .radio-label.active {
-    background-color: #2d8b33;
+    background-color: #FFA96B;
 }
 
 /* MOSAICO */
@@ -290,14 +278,19 @@ html, .tudolanding {
 }
 
 .titulo-mosaico {
-    color: #000;
+    color: #5B162D;
     font-family: Montserrat;
     font-size: clamp(1.2rem, 2.96vw, 2.5rem);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: normal;
+    text-align: center;
 }
 
+.titulo-mosaico img{
+    width: 10%;
+    color: aqua;
+}
 .elementos-post {
     align-items: center;
     display: flex;
@@ -329,7 +322,6 @@ html, .tudolanding {
 .postGrande img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     border-radius: 2.31vw;
 }
 
@@ -342,8 +334,6 @@ html, .tudolanding {
     height: auto;
     image-rendering: auto;
     justify-content: center;
-    min-height: 57.87vh;
-    min-width: 300px;
     width: 50%;
 }
 
@@ -361,14 +351,13 @@ html, .tudolanding {
     padding: 1.25rem;
 }
 
-#i1 {
+.i1 {
     /*? layout */
     display: flex;
     flex: 1;
     flex-shrink: 0;
     height: 16.5vh;
     justify-content: center;
-    object-fit: cover;
     transform: translateZ(0);
     width: 40%;
 
@@ -377,7 +366,7 @@ html, .tudolanding {
     box-shadow: -10px 10px 10px 0 rgba(0, 0, 0, 0.20);
 }
 
-#t1 {
+.t1 {
     /*? layout */
     display: flex;
     flex: 1;
@@ -410,14 +399,13 @@ html, .tudolanding {
     padding: 1.25rem;
 }
 
-#i2 {
+.i2 {
     /*? layout */
     display: flex;
     flex: 1;
     flex-shrink: 0;
     height: 16.5vh;
     justify-content: center;
-    object-fit: cover;
     transform: translateZ(0);
     width: 40%;
 
@@ -426,7 +414,7 @@ html, .tudolanding {
     box-shadow: -10px 10px 10px 0 rgba(0, 0, 0, 0.20);
 }
 
-#t2 {
+.t2 {
     /*? layout */
     display: flex;
     flex: 1;
@@ -459,14 +447,13 @@ html, .tudolanding {
     padding: 1.25rem;
 }
 
-#i3 {
+.i3 {
     /*? layout */
     display: flex;
     flex: 1;
     flex-shrink: 0;
     height: 16.5vh;
     justify-content: center;
-    object-fit: cover;
     transform: translateZ(0);
     width: 40%;
 
@@ -475,7 +462,7 @@ html, .tudolanding {
     box-shadow: -10px 10px 10px 0 rgba(0, 0, 0, 0.20);
 }
 
-#t3 {
+.t3 {
     /*? layout */
     display: flex;
     flex: 1;
