@@ -252,47 +252,47 @@
 
         <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
         <div id="modal-visu-user" class="des-modal-vi" onclick="event.stopPropagation()">
+            <div class="imagemV">
+                <!-- <img class="fundoModalIMG" src="../../../public/assets/fundo modal.png" alt="Fundo"> -->
+                <section class="fotodeperfilvi">
+                    <img class="imgperfilvi" src="../../../public/assets/fotodeperfil.jpg" alt="Foto de perfil">
+                </section>
 
-            <section class="fotodeperfilvi">
-                <img class="imgperfilvi" src="../../../public/assets/fotodeperfil.jpg" alt="Foto de perfil">
-            </section>
+                <section class="x">
 
-            <section class="containerpolvoIMG">
-                <img class="polvoIMG" src="../../../public/assets/polvo-modal.jpeg" alt="polvo">
+                    <img class="xis" src="../../../public/assets/XCircleFill.svg" alt="x"
+                        onclick="fecharModalVisu('modal-visu-user')">
 
+                </section>
 
-                <img class="xis" src="../../../public/assets/XCircleFill.svg" alt="x"
-                    onclick="fecharModalVisu('modal-visu-user')">
-
-
-            </section>
-
-            <section id="container-dados-visu">
-                <!-- disabled- desbilita total 
+                <section id="container-dados-visu">
+                    <!-- disabled- desbilita total 
             readonly- nn deixa editar mas pode clicar e copiar o texto -->
 
-                <div class="dados-visu">
-                    <div class="destaque-dados-visu">ID</div>
-                    <div class="dado-visu">1</div>
-                </div>
+                    <div class="dados-visu">
+                        <div class="destaque-dados-visu id">ID</div>
+                        <div class="dado-visu">1</div>
+                    </div>
 
-                <div class="dados-visu">
-                    <div class="destaque-dados-visu">NOME</div>
-                    <div class="dado-visu">Fulano Sicrano da Silva Miguez Soares</div>
-                </div>
+                    <div class="dados-visu">
+                        <div class="destaque-dados-visu nome">NOME</div>
+                        <div class="dado-visu">Fulano Sicrano da Silva Miguez Soares</div>
+                    </div>
 
-                <div class="dados-visu">
-                    <div class="destaque-dados-visu">EMAIL</div>
-                    <div class="dado-visu">fulanosilva123@gmail.com</div>
-                </div>
+                    <div class="dados-visu">
+                        <div class="destaque-dados-visu email">EMAIL</div>
+                        <div class="dado-visu">fulanosilva123@gmail.com</div>
+                    </div>
 
-                <div class="dados-visu">
-                    <div class="destaque-dados-visu">TIPO</div>
-                    <div class="dado-visu">Administrador</div>
-                </div>
+                    <div class="dados-visu">
+                        <div class="destaque-dados-visu tipo">TIPO</div>
+                        <div class="dado-visu">Administrador</div>
+                    </div>
 
 
-            </section>
+                </section>
+
+            </div>
 
         </div>
 
@@ -302,12 +302,13 @@
 
     <div class="fundoE" onclick="fecharModalExcluir('modal-excluir-user')">
 
+
         <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
         <div id="modal-excluir-user" class="des-modal-ex" onclick="event.stopPropagation()">
+            <div class="imagemE">
 
 
 
-            <div class="caixaclara">
                 <section class="fotodeperfilex">
                     <img class="imgperfilex" src="../../../public/assets/fotodeperfil.jpg" alt="Foto de perfil">
                 </section>
@@ -316,30 +317,27 @@
                     <img class="xis" src="../../../public/assets/XCircleFill.svg" alt="x"
                         onclick="fecharModalExcluir('modal-excluir-user')">
                 </section>
-
-                <div class="mensagem-botao">
-                    <section class="containeraviso">
-                        <div class="avisotexto">
-                            <!--* o span é inline entt continua ja td na mesma linha -->
-                            <p class="avisoSEMdestaque">Tem certeza que deseja excluir o usuário
-                                <span class="avisoCOMdestaque">Fulano Sicrano da
-                                    Silva Miguez Soares
-                                </span>?
-                            </p>
-                        </div>
-                        <p class="rodapeaviso">Você não pode desfazer essa ação.</p>
-                    </section>
-
-                    <section class="containerbotoes">
-                        <button class="botao" onclick="fecharModalExcluir('modal-excluir-user')">CANCELAR</button>
-                        <button class="botao" onclick="fecharModalExcluir('modal-excluir-user')">SIM</button>
-                    </section>
+                
+                <div class="caixamensagem">
+                        <section class="containeraviso">
+                            <div class="avisotexto">
+                                <!--* o span é inline entt continua ja td na mesma linha -->
+                                <p class="avisoSEMdestaque">Tem certeza que deseja excluir o usuário
+                                    <span class="avisoCOMdestaque">Fulano Sicrano da
+                                        Silva Miguez Soares
+                                    </span>?
+                                </p>
+                            </div>
+                            <p class="rodapeaviso">Você não pode desfazer essa ação.</p>
+                        </section>
                 </div>
 
+                <section class="containerbotoes">
+                    <button class="botao cancelar" onclick="fecharModalExcluir('modal-excluir-user')">CANCELAR</button>
+                    <button class="botao sim" onclick="fecharModalExcluir('modal-excluir-user')">SIM</button>
+                </section>
             </div>
-
         </div>
-
 
     </div>
 
