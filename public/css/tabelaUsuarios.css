@@ -19,31 +19,39 @@
     --cor-verde-100: #22C55E;
 
     /** var modal visualizar e excluir */
-    --fundodecorcontainerdados: #3B0714; 
+    --fundodecorcontainerdados: #F7DBD4; 
     --corfontedadovisu: #FEECE8;
+    --corfontedadovisusub: #AE706D;
+
+    --pesotitulomodal: 600;
+    --pesosub: 600;
+
+    --colorinfo: #571A29;
     --pesomodal: 600;
     --tamfontemodal: 0.8rem;
+    --tamfontemodaldes: 0.6rem;
     --borderperfil: #EDBFBB;
+    --colorborda: #E8BDB6;
 
     --colorid: #7E193B;
     --colornome: #945E5D;
     --coloremail: #B62A3C;
     --colortipo: #B64621;
-    --colorcancelar: #400817;
-    --colorsim: #DF6943;
+    --colorcancelar: #AE706D;
+    --colorsim: #DD6640;
 
-
-    --fonteaviso: "Montserrat", sans-serif;
-    --coraviso: #FEECE8;
+    --fontemodaltitulo: "Montserrat", sans-serif;
+    --fontemodal: "Montserrat", sans-serif;
+    --coraviso: #571A29;
     --cordestaviso: #C2502E;
-    --backbotao: #C06850;
+    --backbotao: ##622223;
     --letrabotao: #FEECE8;
 
     --pesoaviso: 800;
-    --tamaviso: 1.2rem;
+    --tamaviso: 1rem;
 
     --pesoavisorodape: 500;
-    --tamavisorod: 1rem;
+    --tamavisorod: 0.8rem;
 
     --pesoexcluirbotao: 700;
 
@@ -399,7 +407,7 @@
 
 /*? MODAL DE VISUALIZAR USUARIO */
 
-.des-modal-vi {
+.des-modal-vi, .des-modal-ex {
     /*? fica position em rel a tela, e serve como position relative para os filhos */
     position: fixed;
     width: 40vw;
@@ -425,12 +433,33 @@
     /* box-shadow: 0 0 0  100vw rgba(0,0,0,0.5); */
 }
 
-.imagemV{
+.oqmodalVI, .oqmodalEX{
+   padding: 1.2rem 0 0 1rem;
+    width: fit-content;
+   /*display: flex;
+   flex-direction: column;
+   align-items: center; */
+}
+
+.textvih3, .textexh3{
+    font-family: var(--fontemodaltitulo);
+    color: var(--corfontedadovisu);
+    font-weight: var(--pesotitulomodal);
+}
+
+.textvip, .textexp{
+    font-family: var(--fontemodaltitulo);
+    color: var(--corfontedadovisusub);
+    font-weight: var(--pesosub);
+    font-size: 0.8rem;
+}
+
+.imagemV, .imagemE{
     background-image: url(../assets/fundo\ modal.png);
     height: 100%;
 
-    background-size: 140vh;
-    background-position: 37% 37%;
+    background-size: 130vh;
+    background-position: 37% 30%;
 }
 
 /*! visu e excluir */
@@ -453,16 +482,16 @@
 
 }
 
-#container-dados-visu {
+#container-dados-visu, .caixamensagem {
     background-color: var(--fundodecorcontainerdados);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     border-radius: 1rem;
 
-    margin: 15rem 4rem 1rem 4rem;
+    margin: 10rem 0 1rem 8rem;
     padding: 1rem 0;
-    width: 80%;
+    width: 60%;
 
 
     /* nesse caso horizontal */
@@ -473,13 +502,21 @@
 
 }
 
+.caixamensagem{
+    width: 60%;
+    height: 30%;
+    margin: 10rem 0 1rem 7.5rem;
+    padding: 1rem 1.5rem;
+
+}
+
 .dados-visu {
     display: flex; 
     gap: 0.5rem;
 
     border-radius: 1rem;
 
-    height: 4vh;
+    height: 4.5vh;
     width:90%;
     align-items: center;
     padding: 0 0.5rem;
@@ -494,7 +531,11 @@
     font-family: var(--fonte);
     font-weight: var(--pesomodal);
     font-size: var(--tamfontemodal);
-    color: var(--corfontedadovisu);
+    color: var(--colorinfo);
+
+    border: 0.1rem solid var(--colorborda);
+    border-radius: 0.5rem;
+    padding: 0 0 0 0.5rem;
 
     /*! scrolla a div no eixo x */
     overflow-x: auto;
@@ -523,13 +564,13 @@
     justify-content: center;
     align-items: center;
     
-    border-radius: 0.3rem;
-    height: 1.2rem;
+    border-radius: 0.8rem;
+    height: 70%;
     width: 4rem;
 
     font-family: var(--fonte);
     font-weight: var(--pesomodal);
-    font-size: var(--tamfontemodal);
+    font-size: var(--tamfontemodaldes)
 }
 
 .id{
@@ -545,24 +586,25 @@
   background-color: var(--colortipo);
 }
 
-.fotodeperfilvi {
+.fotodeperfilvi, .fotodeperfilex {
    
     position: absolute;
-    padding-top: 5%;
+
+    top: 10%;
 
     left: 50%;
     transform: translateX(-50%);    
 }
 
-.imgperfilvi {
-    width: 12em;
-    height: 12rem;
+.imgperfilvi, .imgperfilex {
+    width: 10rem;
+    height: 10rem;
 
     /* corta a img */
     object-fit: cover;
 
     border-radius: 11rem;
-    border: 0.3rem solid var(--borderperfil);
+    border: 0.2rem solid var(--borderperfil);
 }
 
 .xis {
@@ -582,52 +624,6 @@
 
 /** MODAL EXCLUIR */
 
-.des-modal-ex {
-    /*? fica position em rel a tela, e serve como position relative para os filhos */
-    position: fixed;
-    width: 40vw;
-    height: 60vh;
-
-    overflow: hidden;
-    
-    top: 50%;
-    left: 50%;
- 
-    /*! trasforma o elemento e move(translate) ele nesse caso 50% do elemento volta na horizontal e vertical nn mexe (x,y) */
-    transform: translate(-50%, -50%);
-
-    border-radius: 2rem;
-
-    display: none;
-    flex-direction: column;
-    gap: 3rem;
-    cursor: default;
-
-    /* box-shadow: x y blur emvolta cor;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5); */
-    /* box-shadow: 0 0 0  100vw rgba(0,0,0,0.5); */
-}
-
-.caixamensagem {
-    background-color: var(--fundodecorcontainerdados);
-    
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    border-radius: 1rem;
-
-
-    margin: 15rem 4rem 1rem 6rem;
-    padding: 1rem 0;
-    width: 70%;
-
-
-    /* nesse caso horizontal */
-    align-items: center; 
-
-    /* nesse caso vertical */
-    justify-content: center;
-}
 
 .containeraviso {
     display: flex;
@@ -636,7 +632,7 @@
 }
 
 .avisoSEMdestaque {
-    font-family: var(--fonteaviso);
+    font-family: var(--fontemodal);
     color: var(--coraviso);
     font-weight: var(--pesoaviso);
     text-align: center;
@@ -644,7 +640,7 @@
 }
 
 .avisoCOMdestaque{
-    font-family: var(--fonteaviso);
+    font-family: var(--fontemodal);
     color: var(--cordestaviso);
     font-weight: var(--pesoaviso);
     text-align: center;
@@ -652,7 +648,7 @@
 }
 
 .rodapeaviso {
-    font-family: var(--fonteaviso);
+    font-family: var(--fontemodal);
     color: var(--coraviso);
     font-weight: var(--pesoavisorodape);
     justify-content: center;
@@ -668,19 +664,19 @@
 }
 
 .botao {
-    font-family: var(--fonteaviso);
+    font-family: var(--fontemodal);
     font-weight: var(--pesoexcluirbotao);
     background-color: var(--backbotao);
     color: var(--letrabotao);
-    width: 7vw;
-    height: 5vh;
+    width: 8vw;
+    height: 3.5vh;
 
     align-items: center;
     justify-content: center;
 
     /* tira a borda horrenda q vem no botao */
     border: none; 
-    border-radius: 0.5rem;
+    border-radius: 2rem;
     cursor: pointer;
 
     transition: 0.3s;
@@ -689,26 +685,6 @@
 /*! houver - quando passa o mouse */
 .botao:hover {
     transform: scale(1.1);
-}
-
-.fotodeperfilex{
-   
-     position: absolute;
-    padding-top: 5%;
-
-    left: 50%;
-    transform: translateX(-50%);    
-}
-
-.imgperfilex {
-   width: 12em;
-    height: 12rem;
-
-    /* corta a img */
-    object-fit: cover;
-
-    border-radius: 11rem;
-    border: 0.3rem solid var(--borderperfil);
 }
 
 
@@ -724,13 +700,7 @@
     background-color: var(--colorsim);
 }
 .cancelar{
-    background-color: var(--colorcancelar);
+    border: 0.1rem solid var(--colorcancelar);
+    color: var(--colorcancelar);
 }
 
-.imagemE{
-    background-image: url(../assets/fundo\ modal.png);
-    height: 100%;
-
-    background-size: 140vh;
-    background-position: 37% 37%;
-}
