@@ -3,6 +3,7 @@
 :root {
     --cor-laranja-200: #F09859;
     --cor-branco-100: #ffffff;
+    --cor-preto-50: #2b2121;
     --cor-preto-100: #000000;
     --cor-vinho-100: #5B162D;
     --espacamento-padding-medio: 2rem;
@@ -22,7 +23,7 @@
 
 /* * Estilo da página de posts */
 #pagina-de-posts {
-    background: linear-gradient(to bottom, var(--cor-vinho-100), #000000);
+    background: linear-gradient(to bottom, var(--cor-vinho-100), var(--cor-preto-50), var(--cor-vinho-100));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,7 +38,7 @@
     font-family: var(--fonte-titulo);
     font-size: 2.5rem;
     display: flex;
-    width: 60%;
+    width: 65%;
 }
 
 /* * Estilo do container de pesquisa da página de posts */
@@ -45,14 +46,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 60%;
+    width: 65%;
 }
 
 /* *Estilo da barra de pesquisa da página de posts */
 #pagina-de-posts #container-de-pesquisa .barra-de-pesquisa {
     background-color: var(--cor-branco-100);
     border-radius: 30px;
-    width: 90.8%;
+    width: 93.5%;
     display: flex;
     align-items: center;
 }
@@ -105,13 +106,14 @@
     align-content: space-evenly;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 60%;
-    height: 100vh;
+    width: 65%;
+    height: 110vh;
 }
 
 /* *Estilo do container dos álbuns da página de posts */
 #pagina-de-posts #container-posts-desktop .album-container {
     width: 30%;
+    height: 25%;
     display: flex;
     position: relative;
 }
@@ -122,7 +124,7 @@
     aspect-ratio: 1 / 1;
     position: absolute;
     top: 50%;
-    right: 31.7%;
+    right: 23%;
     transform: translateY(-50%);
     z-index: 1; /* !Menor que o álbum (z-index: 2) para que fique atrás dele */
 }
@@ -130,8 +132,7 @@
 /* *Animação do disco de vinil ao passar o mouse por cima da capa do álbum */
 #pagina-de-posts #container-posts-desktop .album:hover ~ .disco-de-vinil {
     animation: 
-        disco-de-vinil-saindo-de-tras-do-album 0.5s linear forwards,
-        disco-de-vinil-girando-infinitamente-desktop 2s linear 0.5s infinite;
+        disco-de-vinil-saindo-de-tras-do-album 0.5s linear forwards
 }
 
 /* *Animação do cursor ao passar o mouse por cima da foto da capa do álbum da página de posts */
@@ -143,11 +144,11 @@
 
 /* *Estilo dos álbuns da página de posts */
 #pagina-de-posts #container-posts-desktop .album {
-    width: 68%;
+    width: 77%;
     height: 100%;
     background-color: var(--cor-preto-100);
     border: 1.5px solid var(--cor-preto-100);
-    border-radius: 16px;
+    border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12), -2px -2px 10px rgba(0, 0, 0, 0.12);
     position: relative;
     z-index: 2;
@@ -158,7 +159,7 @@
     object-fit: fill;
     width: 100%;
     height: 100%;
-    border-radius: 16px;
+    border-radius: 8px;
 }
 
 /* *Animação da foto do álbum e do disco de vinil ao passar o mouse por cima da foto (página-de-posts) */
@@ -173,15 +174,17 @@
 }
 
 #pagina-de-posts #container-posts-desktop .titulo-do-album {
-    color: var(--cor-laranja-200);
-    font-size: 1.4rem;
+    color: var(--cor-branco-100);
+    font-weight: bold;
+    font-size: 1.2rem;
     font-family: var(--fonte-titulo);
 }
 
 #pagina-de-posts #container-posts-desktop .descricao-autor-do-album {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--cor-branco-100);
     font-family: var(--fonte-primaria);
+    font-weight: 300;
 }
 
 /* *Animação do texto escrito na foto do álbum ao passar o mouse por cima da foto e do disco de vinil (página de posts) */
@@ -190,7 +193,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    gap: 0.1rem;
+    justify-content: center;
     align-items: center;
     position: absolute;
     inset: 0;
@@ -268,17 +272,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 0.1rem;
 }
 
 #pagina-de-posts #container-posts-mobile .titulo-do-album {
     font-size: 2.5rem;
-    color: var(--cor-laranja-200);
+    font-weight: bold;
+    color: var(--cor-preto-100);
 }
 
 #pagina-de-posts #container-posts-mobile .descricao-autor-do-album {
     font-size: 1.6rem;
     color: var(--cor-preto-100);
+    font-weight: 300;
 }
 
 /* !FIM DA ÁREA DE POSTS DA PÁGINA DE POSTS PARA TABLET / MOBILE */
@@ -301,7 +308,7 @@
 
 /* *Estilo dos botões de mudança de página da página de posts */
 #pagina-de-posts #container-de-mudanca-de-pagina .seta-esquerda-mudar-pagina, #pagina-de-posts #container-de-mudanca-de-pagina .seta-direita-mudar-pagina {
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: var(--cor-branco-100);
     border: none;
     background: none;
@@ -310,12 +317,12 @@
 #pagina-de-posts #container-de-mudanca-de-pagina .botao-numerado {
     border-radius: 50%;
     padding: 1rem;
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2rem;
+    height: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.3rem;
+    font-size: 1rem;
     border: none;
 }
 
@@ -332,11 +339,11 @@
 #pagina-de-posts #container-de-mudanca-de-pagina.existe-mais-paginas {
     display: flex; 
     align-items: flex-end;
-    height: 2.9rem;
+    height: 2.6rem;
 }
 
 #pagina-de-posts #container-de-mudanca-de-pagina .existe-mais-paginas {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--cor-branco-100);
 }
 
@@ -354,15 +361,6 @@
 @keyframes disco-de-vinil-saindo-de-tras-do-album {
     to {
         right: 0;
-    }
-}
-
-@keyframes disco-de-vinil-girando-infinitamente-desktop {
-    0% {
-        transform: translateY(-50%) rotate(0deg);  /* !Usa translateY(-50%) pra manter o disco de vinil centralizado; vem antes do rotate */
-    }
-    100% {
-        transform: translateY(-50%) rotate(360deg);
     }
 }
 
