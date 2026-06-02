@@ -170,20 +170,28 @@ html, .tudolanding {
     width: 100%;
 }
 
-/*! titulo do carroussel-texto */
+.titulo-total1{
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 1rem 0;
+
+}
+/* ! titulo do carroussel-texto*/
 .titulo_carroussel {
     color: #5B162D;
-    background-color: transparent;
     font-family: Montserrat;
     font-size: clamp(1.2rem, 2.96vw, 2.5rem);
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     margin: 2vh 0 3vh 0;
-    text-align: center;
+    padding: 1rem 0 0 0;
 }
 
-.titulo_carroussel img{
+/* ! titulo do carroussel-imagem*/
+.titulo_carroussel_img{
     width: 10%;
 }
 
@@ -191,14 +199,11 @@ html, .tudolanding {
 .slider-conteudo {
     display: flex;
     overflow: hidden;
-
-   
 }
 
 /*! onde está as imagens */
 .slider-item {
   min-width: 28%;
-    
 }
 
 /*! as imagens */
@@ -272,11 +277,21 @@ html, .tudolanding {
     display: flex;
     flex-direction: column;
     height: auto;
-    min-height: auto;
+    min-height: 100%;
     padding: 1.5625rem clamp(1.5rem, 5vw, 5rem);
     width: 100%;
 }
 
+/*? contem as imagens e o texto */
+.titulo-total2{
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+/*? titulo do mosaico-texto */
 .titulo-mosaico {
     color: #5B162D;
     font-family: Montserrat;
@@ -284,24 +299,25 @@ html, .tudolanding {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    text-align: center;
 }
 
-.titulo-mosaico img{
+/* ? titulo do mosaico-imagem*/
+.titulo_mosaico_img{
     width: 10%;
-    color: aqua;
 }
+
+/*? contem o post grande e os posts pequenos */
 .elementos-post {
     align-items: center;
     display: flex;
     flex-shrink: 0;
-    gap: 2rem;
-    height: 60.27vh;
+    gap: 4rem;
+    height: auto;
     justify-content: space-between;
     width: 100%;
 }
 
-/*? coluna da esquerda: post grande */
+/*? coluna da esquerda: conteiner da imagem */
 .postGrande {
     /*? layout */
     align-items: flex-start;
@@ -309,9 +325,9 @@ html, .tudolanding {
     flex: 1;
     flex-direction: column;
     gap: 0.625rem;
-    height: 55.46vh;
+    height: 60vh;
     image-rendering: auto;
-    min-width: 300px;
+    /* min-width: 300px; */
 
     /*? aparencia */
     background-color: #FFF;
@@ -319,6 +335,7 @@ html, .tudolanding {
     box-shadow: -15px 15px 10px 0 rgba(0, 0, 0, 0.20);
 }
 
+/*? imagem do .postGrande */
 .postGrande img {
     width: 100%;
     height: 100%;
@@ -330,7 +347,7 @@ html, .tudolanding {
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     height: auto;
     image-rendering: auto;
     justify-content: center;
@@ -342,30 +359,32 @@ html, .tudolanding {
     align-items: center;
     align-self: stretch;
     background-color: #FFF;
-    border-radius: 2.77vw;
+    border-radius: 1.5vw;
     display: flex;
     flex-direction: row;
     flex-shrink: 0;
     gap: 0.9375rem;
     height: 17.87vh;
-    padding: 1.25rem;
 }
 
+/*? imagem 1 */
 .i1 {
     /*? layout */
     display: flex;
-    flex: 1;
+   
     flex-shrink: 0;
-    height: 16.5vh;
+    height: 18.5vh;
     justify-content: center;
     transform: translateZ(0);
-    width: 40%;
+    object-fit: cover;
+    width: 36%;
 
     /*? aparencia */
-    border-radius: 2.77vw;
+    border-radius: 1.5vw;
     box-shadow: -10px 10px 10px 0 rgba(0, 0, 0, 0.20);
 }
 
+/*? texto 1 */
 .t1 {
     /*? layout */
     display: flex;
@@ -390,30 +409,34 @@ html, .tudolanding {
     align-items: center;
     align-self: stretch;
     background-color: #FFF;
-    border-radius: 2.77vw;
+    border-radius: 1.5vw;
     display: flex;
     flex-direction: row;
     flex-shrink: 0;
     gap: 0.9375rem;
     height: 17.87vh;
-    padding: 1.25rem;
 }
 
+.teste{
+    width: 200px;
+}
+
+/*? imagem 2 */
 .i2 {
     /*? layout */
     display: flex;
-    flex: 1;
     flex-shrink: 0;
-    height: 16.5vh;
+    height: 18.5vh;
     justify-content: center;
     transform: translateZ(0);
-    width: 40%;
+    width: 36%;
 
     /*? aparencia */
-    border-radius: 2.77vw;
+    border-radius: 1.5vw;
     box-shadow: -10px 10px 10px 0 rgba(0, 0, 0, 0.20);
 }
 
+/*? texto 2 */
 .t2 {
     /*? layout */
     display: flex;
@@ -438,30 +461,30 @@ html, .tudolanding {
     align-items: center;
     align-self: stretch;
     background-color: #FFF;
-    border-radius: 2.77vw;
+    border-radius: 1.5vw;
     display: flex;
     flex-direction: row;
     flex-shrink: 0;
     gap: 0.9375rem;
     height: 17.87vh;
-    padding: 1.25rem;
 }
 
+/*? imagem 3 */
 .i3 {
     /*? layout */
     display: flex;
-    flex: 1;
     flex-shrink: 0;
-    height: 16.5vh;
+    height: 18.5vh;
     justify-content: center;
     transform: translateZ(0);
-    width: 40%;
+    width: 36%;
 
     /*? aparencia */
-    border-radius: 2.77vw;
+    border-radius: 1.5vw;
     box-shadow: -10px 10px 10px 0 rgba(0, 0, 0, 0.20);
 }
 
+/*? texto 3 */
 .t3 {
     /*? layout */
     display: flex;
