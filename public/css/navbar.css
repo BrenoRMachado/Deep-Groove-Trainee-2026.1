@@ -49,9 +49,19 @@ a {
     gap: 1rem;
 }
 
+.botoes:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
 .logo {
     width: 30%;
     height: 210%;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 .container-perfil {
