@@ -2,7 +2,7 @@
 
 return [
     'database' => [
-        'name' => 'deepgrove_db',
+        'name' => 'deepgroove_db',
         'username' => 'root',
         'password' => 'root',
         'connection' => 'mysql:host=db',
