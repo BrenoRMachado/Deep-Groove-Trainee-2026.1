@@ -26,6 +26,60 @@ a {
 .titulo-login {
     font-family: 'Fonte-Titulo';
     font-weight: bold;
+    font-size: 50px;
+}
+
+.container-titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 30%;
+    padding-bottom: 2.5%;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h2, input, button, h3 {
+    font-family: "Inter", sans-serif;
+}
+
+.container-form {
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.container-botao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;    
+}
+
+.container-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8%;
+}
+
+.container-elemento-input {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.container-logo {
+    height: 30%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .metade-tela-login {
@@ -33,7 +87,6 @@ a {
     width: 50%;
     height: 100%;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
 }
 
@@ -42,10 +95,18 @@ a {
 }
 
 .imagem-login {
-    background: url(../assets/background\ login\ ween.png);
+    background: url(../assets/background\ cadastro\ ween.png);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+input, button {
+    border: none;
+}
+
+input, button {
+    font-weight: 600;
 }
 
 .botao-login{
