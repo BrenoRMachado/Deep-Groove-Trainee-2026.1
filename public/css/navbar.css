@@ -65,10 +65,11 @@ a {
 }
 
 .container-perfil {
-    background-color: #F09859;
+    /* background-color: #F09859; */
     width: 2.5rem;
     height: min-content;
     border-radius: 50%;
+    border: 2px solid #F09859;
 }
 
 .navbar-mobile {
@@ -111,10 +112,22 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F09859;
-    width: 1.9rem;
+    /* background-color: #F09859; */
+    width: 2.2rem;
     height: min-content;
     border-radius: 50%;
+    border: 3px solid #F09859;
+}
+
+.container-posts-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #F09859; */
+    width: 2.2rem;
+    height: min-content;
+    border-radius: 50%;
+    border: 3px solid #a8043a;  
 }
 
 .mobile-centro {
@@ -132,9 +145,11 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    gap: 2vh;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    gap: 4vh;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 @media (max-width: 480px) {
