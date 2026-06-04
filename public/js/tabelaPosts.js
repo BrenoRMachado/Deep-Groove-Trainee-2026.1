@@ -10,7 +10,7 @@ let estadoAtualDoModalDeEdicaoDePosts = 'fechado';
 
 iconesDeEdicaoDePost.forEach((iconeDeEdicaoDePost) => {
         iconeDeEdicaoDePost.addEventListener('click', function () {
-                modalDeEdicaoDePosts.style.display = 'grid';
+                modalDeEdicaoDePosts.style.display = 'flex';
                 filtroAoAbrirModalDaTabelaDePosts.style.display = 'flex';
                 estadoAtualDoModalDeEdicaoDePosts = 'aberto';
         });

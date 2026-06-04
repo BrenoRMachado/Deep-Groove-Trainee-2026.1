@@ -59,6 +59,8 @@
         #C66E57 94%,
         #E08E6D 100%
     );
+
+    position: relative;
     
 }
 
@@ -209,22 +211,22 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 35rem;
-    height: 25rem;
+    width: 40%;
+    height: 80%;
     border: 2px solid rgba(0, 0, 0, 0.5);
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
-    display: none;
+    display: flex;
+    flex-direction: column;
     grid-template-columns: 40% 60%;
+    background-image: url(../assets/fundo-modais-editada.jpeg);
+    background-size: cover;
 }    
 
 /* *Estilo da seção de edição da foto de perfil do usuário */
 #modal-edicao-posts .secao-edicao-capa-do-album {
-    height: 100%;
+    height: 30%;
     width: 100%;
-    background-image:url(../assets/fundo-album-disco-de-vinil.png);
-    background-size: cover;
-    background-position: 70% 0%;
     border-radius: 30px 0 0 30px;
     display: flex;
     flex-direction: column;
@@ -239,8 +241,8 @@
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    height: 44%;
-    width: 57%;
+    height: 30%;
+    width: 40%;
 }
 
 #modal-edicao-posts .container-edicao-capa-do-album .container-capa-do-album {
@@ -278,15 +280,15 @@
 
 /* *Estilo da seção de edição das informações do usuário */
 #modal-edicao-posts .secao-edicao-dados-do-album {
-    background-color: var(--cor-branco-200);
     border-radius: 0 30px 30px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--cor-branco-100);
 }
 
-#modal-edicao-posts .container-editar-titulo-descricao-autor {
+#modal-edicao-posts .container-editar-titulo-ano-autor {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -314,11 +316,6 @@
     background: none;
     border: 2px solid var(--cor-preto-100);
     font-family: "Roboto", sans-serif;
-}
-
-#modal-edicao-posts .editar-descricao {
-    height: 8rem;
-    resize: none;
 }
 
 /* *Estilo do container dos botões de salvar e cancelar */
