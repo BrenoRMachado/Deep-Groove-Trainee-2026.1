@@ -182,6 +182,20 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    padding-left: 10%;
+    padding-left: 5%;
     padding-top: 2%;
 }
+
+.seta {
+    font-size: 3rem;
+}
+
+.seta:hover {
+    cursor: pointer;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
