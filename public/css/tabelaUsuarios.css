@@ -463,7 +463,7 @@
 }
 
 /*! visu e excluir */
-.fundoE, .fundoV{
+.fundo{
     position: fixed;
     inset: 0;
 

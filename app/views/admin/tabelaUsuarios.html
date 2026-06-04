@@ -83,121 +83,9 @@
                     <td class="colunageral">Administrador</td>
 
                     <td class="colunageral">
-                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
+                        <i class="acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user', '#fundoV')"></i>
                         <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
-                    </td>
-
-                </tr>
-
-                <!-- linha -->
-                <tr class="linha linhaTab">
-                    <td class="colunageral">1</td>
-                    <td class="colunageral"><i class="bi bi-person-circle"></i></td>
-                    <td class="colunageral">Fulano</td>
-                    <td class="colunageral">fulano@gmail.com</td>
-                    <td class="colunageral">Administrador</td>
-
-                    <td class="colunageral">
-                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
-                        <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
-                    </td>
-
-                </tr>
-
-                <!-- linha -->
-                <tr class="linha linhaTab">
-                    <td class="colunageral">1</td>
-                    <td class="colunageral"><i class="bi bi-person-circle"></i></td>
-                    <td class="colunageral">Fulano</td>
-                    <td class="colunageral">fulano@gmail.com</td>
-                    <td class="colunageral">Administrador</td>
-
-                    <td class="colunageral">
-                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
-                        <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
-                    </td>
-
-                </tr>
-
-                <!-- linha -->
-                <tr class="linha linhaTab">
-                    <td class="colunageral">1</td>
-                    <td class="colunageral"><i class="bi bi-person-circle"></i></td>
-                    <td class="colunageral">Fulano</td>
-                    <td class="colunageral">fulano@gmail.com</td>
-                    <td class="colunageral">Administrador</td>
-
-                    <td class="colunageral">
-                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
-                        <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
-                    </td>
-
-                </tr>
-
-                <!-- linha -->
-                <tr class="linha linhaTab">
-                    <td class="colunageral">1</td>
-                    <td class="colunageral"><i class="bi bi-person-circle"></i></td>
-                    <td class="colunageral">Fulano</td>
-                    <td class="colunageral">fulano@gmail.com</td>
-                    <td class="colunageral">Administrador</td>
-
-                    <td class="colunageral">
-                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
-                        <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
-                    </td>
-
-                </tr>
-
-                <!-- linha -->
-                <tr class="linha linhaTab">
-                    <td class="colunageral">1</td>
-                    <td class="colunageral"><i class="bi bi-person-circle"></i></td>
-                    <td class="colunageral">Fulano</td>
-                    <td class="colunageral">fulano@gmail.com</td>
-                    <td class="colunageral">Administrador</td>
-
-                    <td class="colunageral">
-                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
-                        <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
-                    </td>
-
-                </tr>
-
-                <!-- linha -->
-                <tr class="linha linhaTab">
-                    <td class="colunageral">1</td>
-                    <td class="colunageral"><i class="bi bi-person-circle"></i></td>
-                    <td class="colunageral">Fulano</td>
-                    <td class="colunageral">fulano@gmail.com</td>
-                    <td class="colunageral">Administrador</td>
-
-                    <td class="colunageral">
-                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
-                        <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
-                    </td>
-
-                </tr>
-
-                <!-- linha -->
-                <tr class="linha linhaTab">
-                    <td class="colunageral">1</td>
-                    <td class="colunageral"><i class="bi bi-person-circle"></i></td>
-                    <td class="colunageral">Fulano</td>
-                    <td class="colunageral">fulano@gmail.com</td>
-                    <td class="colunageral">Administrador</td>
-
-                    <td class="colunageral">
-                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
-                        <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModal('#modal-excluir-user', '#fundoE')"></i>
                     </td>
 
                 </tr>
@@ -246,7 +134,7 @@
 
     <!--* MODAL DE VISUALIZAR USUÁRIOS -->
 
-    <div class="fundoV" onclick="fecharModalVisu('modal-visu-user')">
+    <div class="fundo" id="fundoV" onclick="fecharModal('#modal-visu-user', '#fundoV')">
 
 
 
@@ -267,7 +155,7 @@
                 <section class="x">
 
                     <img class="xis" src="../../../public/assets/XCircleFill.svg" alt="x"
-                        onclick="fecharModalVisu('modal-visu-user')">
+                        onclick="fecharModal('#modal-visu-user', '#fundoV')">
 
                 </section>
 
@@ -306,7 +194,7 @@
 
     <!--* MODAL DE EXCLUIR USÚARIOS -->
 
-    <div class="fundoE" onclick="fecharModalExcluir('modal-excluir-user')">
+    <div class="fundo" id="fundoE" onclick="fecharModal('#modal-excluir-user', '#fundoE')">
 
 
         <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
@@ -326,7 +214,7 @@
 
                 <section class="X">
                     <img class="xis" src="../../../public/assets/XCircleFill.svg" alt="x"
-                        onclick="fecharModalExcluir('modal-excluir-user')">
+                        onclick="fecharModal('#modal-excluir-user', '#fundoE')">
                 </section>
 
                 <div class="caixamensagem">
@@ -344,8 +232,8 @@
                 </div>
 
                 <section class="containerbotoes">
-                    <button class="botao cancelar" onclick="fecharModalExcluir('modal-excluir-user')">CANCELAR</button>
-                    <button class="botao sim" onclick="fecharModalExcluir('modal-excluir-user')">SIM</button>
+                    <button class="botao cancelar" onclick="fecharModal('#modal-excluir-user', '#fundoE')">CANCELAR</button>
+                    <button class="botao sim" onclick="fecharModal('#modal-excluir-user', '#fundoE')">SIM</button>
                 </section>
             </div>
         </div>
