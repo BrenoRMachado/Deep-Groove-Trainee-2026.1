@@ -36,36 +36,52 @@
 
     <!-- *MODAL DE EDIÇÃO DE POSTS  -->
     <div id="modal-edicao-posts">
-        <section class="secao-edicao-capa-do-album">
-            <figure class="container-edicao-capa-do-album">
-                <div class="container-capa-do-album">
-                    <button class="botao-editar-capa-do-album">
-                        <i class="icone-editar-capa-do-album bi bi-image"></i>
+        <section class="secao-texto-foto-fechar-modal">
+            <div class="container-texto">
+                <h1>Editar álbum</h1>
+                <p>Atualize as informações do álbum</p>
+            </div>
+            <figure class="container-foto-capa-do-album">
+                <i class="icone-foto-capa-do-album bi bi-image"></i>
+            </figure>
+            <div class="container-botao-fechar-modal">
+                <button class="botao-fechar-modal">
+                    <i class="icone-fechar-modal bi bi-x"></i>
+                </button>
+            </div>    
+        </section>
+        <form class="secao-edicao-dados-do-album">
+            <section class="secao-instrucao-editar-foto-capa-do-album">
+                <div class="container-instrucao-editar-foto-capa-do-album">
+                    <div class="container-texto-instrucao-editar-foto-capa-do-album">    
+                        <h2>Capa do álbum</h2>
+                        <p>Recomendamos uma imagem quadrada de pelo menos 500x500px</p>
+                    </div>
+                    <button class="botao-alterar-foto-capa-do-album">
+                        <i class="icone-alterar-foto-capa-do-album bi bi-box-arrow-up"></i>
+                        <span>Alterar foto</span>
                     </button>
                 </div>
-                <figcaption class="instrucao-editar-capa-do-album">Editar capa</figcaption>
-            </figure>
-        </section>
-        <section class="secao-edicao-dados-do-album">
-            <form class="container-editar-titulo-descricao-autor">
+            </section>
+            <section class="secao-editar-titulo-ano-autor">
                 <div class="container-editar-dado container-editar-titulo">
-                    <span class="titulo-dado">Título:</span>
+                    <span class="titulo-dado titulo-titulo">Título</span>
                     <input class="editar-dado" type="text" placeholder="Título do álbum">
                 </div>
-                <div class="container-editar-dado container-editar-descricao">
-                    <span class="titulo-dado">Descrição:</span>
-                    <textarea class="editar-dado editar-descricao" placeholder="Descrição do álbum"></textarea>
+                <div class="container-editar-dado container-editar-ano">
+                    <span class="titulo-dado titulo-ano">Ano</span>
+                    <input class="editar-dado editar-ano" placeholder="Ano do álbum"></input>
                 </div>
                 <div class="container-editar-dado container-editar-autor">
-                    <span class="titulo-dado">Autor:</span>
-                    <input class="editar-dado" type="text" placeholder="Nome do autor da publicação">
+                    <span class="titulo-dado titulo-autor">Autor</span>
+                    <input class="editar-dado" type="text" placeholder="Autor da publicação">
                 </div>
-            </form>
-            <div class="container-botoes-salvar-cancelar">
-                <button class="botao botao-cancelar">Cancelar</button>
-                <button class="botao botao-salvar">Salvar</button>
-            </div>
-        </section>
+                <div class="secao-botoes-salvar-cancelar">
+                    <button class="botao botao-cancelar">Cancelar</button>
+                    <button class="botao botao-salvar">Salvar</button>
+                </div>
+            </section>
+        </form>
     </div>
 
     

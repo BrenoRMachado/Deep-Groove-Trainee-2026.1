@@ -10,7 +10,7 @@ let estadoAtualDoModalDeEdicaoDePosts = 'fechado';
 
 iconesDeEdicaoDePost.forEach((iconeDeEdicaoDePost) => {
         iconeDeEdicaoDePost.addEventListener('click', function () {
-                modalDeEdicaoDePosts.style.display = 'grid';
+                modalDeEdicaoDePosts.style.display = 'flex';
                 filtroAoAbrirModalDaTabelaDePosts.style.display = 'flex';
                 estadoAtualDoModalDeEdicaoDePosts = 'aberto';
         });
@@ -19,6 +19,7 @@ iconesDeEdicaoDePost.forEach((iconeDeEdicaoDePost) => {
 // *Seleciona o botão de cancelar do modal de edição de posts
 
 const botaoCancelarEdicaoDePosts = document.querySelector('#modal-edicao-posts .botao-cancelar');
+const botaoFecharEdicaoDePosts = document.querySelector('#modal-edicao-posts .botao-fechar-modal');
 
 // *Implementa função que fecha o modal de edição de posts ao clicar no botão cancelar
 
@@ -27,6 +28,13 @@ botaoCancelarEdicaoDePosts.addEventListener('click', function () {
         filtroAoAbrirModalDaTabelaDePosts.style.display = 'none';
         estadoAtualDoModalDeEdicaoDePosts = 'fechado';
 });
+
+botaoFecharEdicaoDePosts.addEventListener('click', function () {
+        modalDeEdicaoDePosts.style.display = 'none';
+        filtroAoAbrirModalDaTabelaDePosts.style.display = 'none';
+        estadoAtualDoModalDeEdicaoDePosts = 'fechado';
+});
+
 // ! FIM 
 
 //! jsmodalvisu
