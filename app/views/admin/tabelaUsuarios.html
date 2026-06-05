@@ -102,35 +102,55 @@
     </section>
 
     <!--* MODAL DE EDIÇÃO DE USUÁRIOS  -->
-    <div id="modal-edicao-usuarios">
-        <section class="secao-edicao-foto-de-perfil">
-            <figure class="container-edicao-foto-de-perfil">
+     <div id="modal-edicao-usuarios">
+        <section class="secao-texto-foto-fechar-modal">
+            <div class="container-texto">
+                <h1>Editar perfil</h1>
+                <p>Atualize as informações do seu perfil</p>
+            </div>
+            <figure class="container-foto-de-perfil">
                 <i class="icone-foto-de-perfil bi bi-person-circle"></i>
-                <i class="icone-editar-foto-de-perfil bi bi-pencil"></i>
-                <figcaption class="instrucao-editar-foto-de-perfil">Editar foto de perfil</figcaption>
             </figure>
+            <div class="container-botao-fechar-modal">
+                <button class="botao-fechar-modal">
+                    <i class="icone-fechar-modal bi bi-x"></i>
+                </button>
+            </div>    
         </section>
-        <section class="secao-edicao-dados-do-usuario">
-            <form class="container-editar-nome-email-senha">
+        <form class="secao-edicao-dados-do-usuario">
+            <section class="secao-instrucao-editar-foto-de-perfil">
+                <div class="container-instrucao-editar-foto-de-perfil">
+                    <div class="container-texto-instrucao-editar-foto-de-perfil">    
+                        <h2>Foto de perfil</h2>
+                        <p>Recomendamos uma imagem quadrada de pelo menos 500x500px</p>
+                    </div>
+                    <button class="botao-alterar-foto-de-perfil">
+                        <i class="icone-alterar-foto-de-perfil bi bi-box-arrow-up"></i>
+                        <span>Alterar foto</span>
+                    </button>
+                </div>
+            </section>
+            <section class="secao-editar-nome-email-senha">
                 <div class="container-editar-dado container-editar-nome">
-                    <span class="titulo-dado">Nome:</span>
-                    <input class="editar-dado" type="text" placeholder="Digite o seu nome">
+                    <span class="titulo-dado titulo-nome">Nome</span>
+                    <input class="editar-dado" type="text" placeholder="Nome">
                 </div>
                 <div class="container-editar-dado container-editar-email">
-                    <span class="titulo-dado">E-mail:</span>
-                    <input class="editar-dado" type="text" placeholder="Digite o seu e-mail">
+                    <span class="titulo-dado titulo-email">Email</span>
+                    <input class="editar-dado editar-email" placeholder="Email"></input>
                 </div>
                 <div class="container-editar-dado container-editar-senha">
-                    <span class="titulo-dado">Senha:</span>
-                    <input class="editar-dado" type="text" placeholder="Digite a sua senha">
+                    <span class="titulo-dado titulo-senha">Senha</span>
+                    <input class="editar-dado" type="text" placeholder="Senha">
                 </div>
-            </form>
-            <div class="container-botoes-salvar-cancelar">
-                <button class="botao botao-cancelar">Cancelar</button>
-                <button class="botao botao-salvar">Salvar</button>
-            </div>
-        </section>
+                <div class="secao-botoes-salvar-cancelar">
+                    <button class="botao botao-cancelar">Cancelar</button>
+                    <button class="botao botao-salvar">Salvar</button>
+                </div>
+            </section>
+        </form>
     </div>
+
 
     <!--* MODAL DE VISUALIZAR USUÁRIOS -->
 
