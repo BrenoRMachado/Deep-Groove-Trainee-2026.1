@@ -239,6 +239,7 @@
     justify-content: space-between;
 }
 
+/* *Estilo do texto de editar foto da capa do álbum */
 #modal-edicao-posts .container-texto {
     font-size: 0.6rem;
     width: 35%;
@@ -264,12 +265,14 @@
     background: none;
 }
 
+/* *Estilo do container do botão de fechar modal*/
 #modal-edicao-posts .container-botao-fechar-modal {
     display: flex;
     justify-content: flex-end;
     width: 35%;
 }
 
+/* *Estilo do botão de fechar modal*/
 #modal-edicao-posts .botao-fechar-modal {
     border: none;
     border-radius: 50%;
@@ -281,6 +284,7 @@
     width: fit-content;
 }
 
+/* *Animação ao passar o mouse por cima do botão de fechar modal*/
 #modal-edicao-posts .botao-fechar-modal:hover {
     transform: scale(1.015);
     transition: transform 0.2;
@@ -299,7 +303,7 @@
     width: 100%;
 }
 
-/* *Estilo do container de instruções de editar foto da capa do álbum */
+/* *Estilo da secao de instruções e de editar foto da capa do álbum */
 #modal-edicao-posts .secao-instrucao-editar-foto-capa-do-album {
     width: 80%;
     height: 20%;
@@ -312,6 +316,7 @@
     align-items: center;
 }
 
+/* *Estilo do container de instruções de editar foto da capa do álbum */
 #modal-edicao-posts .container-instrucao-editar-foto-capa-do-album {
     width: 90%;
     height: 100%;
@@ -320,6 +325,7 @@
     align-items: center;
 }
 
+/* *Estilo do texto de instruções de editar foto da capa do álbum */
 #modal-edicao-posts .container-texto-instrucao-editar-foto-capa-do-album {
     width: 60%;
     display: flex;
@@ -328,6 +334,7 @@
     color: var(--cor-vinho-100);
 }
 
+/* *Estilo do botão de editar foto da capa do álbum */
 #modal-edicao-posts .botao-alterar-foto-capa-do-album {
     color: var(--cor-branco-300);
     width: 35%;
@@ -340,6 +347,7 @@
     justify-content: space-evenly;
 }
 
+/* *Animacao ao o mouse por cima do botão de editar foto da capa do álbum */
 #modal-edicao-posts .botao-alterar-foto-capa-do-album:hover {
     transform: scale(1.015);
     transition: transform 0.2;
@@ -347,6 +355,7 @@
     opacity: 0.95;
 }
 
+/* *Estilo da secao de editar informações do álbum e de salvar e cancelar */
 #modal-edicao-posts .secao-editar-titulo-ano-autor {
     display: flex;
     flex-direction: column;
@@ -358,6 +367,7 @@
     border-radius: 30px;
 }
 
+/* *Estilo do container de editar o dado da publicação*/
 #modal-edicao-posts .container-editar-dado {
     display: flex;
     align-items: center;
@@ -444,6 +454,7 @@
     color: var(--cor-vinho-100);
 }
 
+/* *Animação ao passar o mouse por cima dos botões e cancelar e salvar a edição do post */
 #modal-edicao-posts .secao-botoes-salvar-cancelar .botao:hover {
     transform: scale(1.015);
     transition: transform 0.2;
