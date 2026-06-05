@@ -10,24 +10,31 @@ let estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
 
 iconesDeEdicaoDeUsuario.forEach((iconeDeEdicaoDeUsuario) => {
         iconeDeEdicaoDeUsuario.addEventListener('click', function () {
-                modalDeEdicaoDeUsuario.style.display = 'grid';
+                modalDeEdicaoDeUsuario.style.display = 'flex';
                 filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'flex';
                 estadoAtualDoModalDeEdicaoDeUsuario = 'aberto';
         });
 });
 
-// *Seleciona o botão de cancelar do modal de edição de usuários 
+// *Seleciona o botão de cancelar e de fechar do modal de edição de usuários 
 
 const botaoCancelarEdicaoDeUsuario = document.querySelector('#modal-edicao-usuarios .botao-cancelar');
+const botaoFecharEdicaoDeUsuario = document.querySelector('#modal-edicao-usuarios .botao-fechar-modal');
+
+// *Implementa as funções que fecham o modal de edição de usuários ao clicar no botão cancelar ou no botão de fechar
 
 botaoCancelarEdicaoDeUsuario.addEventListener('click', function () {
-
-// *Implementa função que fecha o modal de edição de usuários ao clicar no botão cancelar
-
         modalDeEdicaoDeUsuario.style.display = 'none';
         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'none';
         estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
 });
+
+botaoFecharEdicaoDeUsuario.addEventListener('click', function () {
+        modalDeEdicaoDeUsuario.style.display = 'none';
+        filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'none';
+        estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
+});
+
 // ! FIM 
 
 //! jsmodal
