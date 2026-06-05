@@ -162,12 +162,33 @@
 
     <section class="tabela">
         <table>
-            <tr>
-                <th>ID</th>
-                <th>Álbum</th>
-                <th>Artista</th>
-                <th>Título</th>
-                <th>Ações</th>
+            <thead class="tabelacabe">
+                <tr class="linha linhaCab">
+                    <th class="coluna colunaCab">ID</th>
+
+                    <th class="coluna colunaCab">Álbum</th>
+
+                    <th class="coluna colunaCab">Artista</th>
+
+                    <th class="coluna colunaCab">Título</th>
+
+                    <th class="coluna colunaCab">Ações</th>
+
+                </tr>
+
+            </thead>
+            <tr class="linha linhaTab">
+                <td class="colunageral">1</td>
+                <td class="colunageral"><img class="capa-thriller" src="../../../public/assets/capa-thriller.jpg"></td>
+                <td class="colunageral">Título</td>
+                <td class="colunageral">fulano@gmail.com</td>
+
+                <td class="colunageral">
+                    <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
+                    <i class="acao bi bi-pencil-square"></i>
+                    <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
+                </td>
+
             </tr>
         </table>
     </section>
