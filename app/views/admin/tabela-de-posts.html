@@ -18,10 +18,12 @@
 <div class="filtro-ao-abrir-modal-da-tabela-de-posts"></div>
 
 <section class="topoTabelaPosts">
-    <div class="addPost">
-        <i class="icone bi bi-plus"></i>
-        <p class="textop">Novo Post</p>
-    </div>
+    <button class="botao-novo-post">
+        <div class="addPost">
+            <i class="icone bi bi-plus" style="font-size: x-large;"></i>
+            <p class="textop">Novo Post</p>
+        </div>
+    </button>
 
     <div class="infoUser">
         <img src="../../../public/assets/ícone usuário.svg" alt="User">
@@ -165,8 +167,37 @@
 
         </div>
 
-
     </div>
+
+    <!-- MODAL DE CRIAR POSTS -->
+
+    <div id="modal-criar-posts">
+        <div class="metade-modal-criar imagem-modal-criar">
+            <div class="imagem-capa-modal-criar">
+                <i class="bi bi-plus-square-dotted" style="font-size: 3rem; color: #5B162D; "></i>
+            </div>
+        </div>
+        <form class="metade-modal-criar formulario-modal-criar">
+            <div class="area-input-modal-criar">
+                <h3>Título:</h3>
+                <input class="input-criar-post">
+            </div>
+            <div class="area-input-modal-criar">
+                <h3>Autor:</h3>
+                <input class="input-criar-post">
+            </div>
+            <div class="area-input-modal-criar">
+                <h3>Data de criação:</h3>
+                <input class="input-criar-post">
+            </div>
+            <div class="area-input-modal-criar">
+                <h3>Descrição:</h3>
+                <input class="input-criar-post">
+            </div>
+        </form>
+    </div>
+
+    <!-- Página -->
 
     <section class="titulo">
         <h1 class="textoTitulo">POSTAGENS</h1>

@@ -223,7 +223,7 @@
     height: 85%;
     box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(255, 255, 255, 0.5);
     border-radius: 30px;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
@@ -809,4 +809,65 @@
     flex-direction: column;
     gap: 2.5rem;
     align-items: center;
+}
+
+.botao-novo-post {
+    text-decoration: none;
+    border: none;
+    outline: none;
+    color: inherit;
+    background-color: inherit;
+}
+
+.botao-novo-post:hover {   
+    cursor: pointer;
+}
+
+#modal-criar-posts{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    width: 40%;
+    background-color: white;
+    flex-direction: row;
+}
+
+.metade-modal-criar {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imagem-modal-criar {
+    background-color: #5B162D;
+}
+
+.imagem-capa-modal-criar {
+    background-color: white;
+    border-radius: 5px;
+    width: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario-modal-criar {
+    background-color: #CA998F;
+    color: white;
+    font-family: var(--fonte);
+}
+
+.area-input-modal-criar {
+    width: 70%;
+}
+
+.input-criar-post {
+    width: 100%;
 }
