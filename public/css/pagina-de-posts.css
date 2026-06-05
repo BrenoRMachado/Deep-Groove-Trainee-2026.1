@@ -164,13 +164,23 @@
 
 /* *Animação da foto do álbum e do disco de vinil ao passar o mouse por cima da foto (página-de-posts) */
 #pagina-de-posts #container-posts-desktop .album:hover .capa-album {
-    opacity: 25%;
+    animation: 
+        foto-da-capa-do-album-escurecendo 0.5s linear forwards;    
 }
 
 /* *Estilo das informações contidas no álbum da página de posts */
 #pagina-de-posts #container-posts-desktop .informacoes-do-album {
-    display: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    inset: 0;
     padding: 0.1rem;
+    opacity: 0;
 }
 
 #pagina-de-posts #container-posts-desktop .titulo-do-album {
@@ -189,15 +199,8 @@
 
 /* *Animação do texto escrito na foto do álbum ao passar o mouse por cima da foto e do disco de vinil (página de posts) */
 #pagina-de-posts #container-posts-desktop .album:hover .informacoes-do-album, #pagina-de-posts #container-posts-desktop .disco-de-vinil:hover ~ .album  .informacoes-do-album {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
+    animation: 
+        informacoes-do-album-aparecendo 0.5s linear forwards;
 }
 
 /* !FIM DA ÁREA DE POSTS DA PÁGINA DE POSTS PARA DESKTOP */
@@ -358,6 +361,24 @@
 }
 
 /* *Animações */
+@keyframes foto-da-capa-do-album-escurecendo {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.25;
+    }
+}
+
+@keyframes informacoes-do-album-aparecendo{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 @keyframes disco-de-vinil-saindo-de-tras-do-album {
     to {
         right: 0;
