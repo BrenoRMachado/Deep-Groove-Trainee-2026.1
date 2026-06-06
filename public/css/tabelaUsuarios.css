@@ -808,3 +808,123 @@
     color: var(--colorcancelar);
 }
 
+/* CSS do modal de criar usuário */
+
+#modal-criar-posts{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    width: 40%;
+    background-color: white;
+    flex-direction: row;
+}
+
+.metade-modal-criar {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imagem-modal-criar {
+    background-color: #5B162D;
+}
+
+.imagem-capa-modal-criar {
+    background-color: white;
+    border-radius: 100%;
+    width: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario-modal-criar {
+    padding-top: 5%;
+    justify-content: flex-start;
+    background-color: #CA998F;
+    color: white;
+    font-family: var(--fonte);
+}
+
+.container-formulario-criar {
+    display: flex;
+    height: 85%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12%;
+    justify-content: center;
+}
+
+.area-input-modal-criar {
+    width: 70%;
+}
+
+.input-criar-post {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    height: 60%;
+    font-size: 1rem;
+    padding-left: 2%;
+}
+
+.input-criar-post::placeholder {
+    color: #CA998F;
+}
+
+.textarea-descricao {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding-left: 2%;
+}
+
+.textarea-descricao::placeholder {
+    color: #CA998F;
+    font-family: var(--fonte);
+}
+
+.container-botoes-criar {
+    display: flex;
+    height: 15%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 30%;
+    padding-left: 5%;
+    padding-right: 10%;
+}
+
+.botao-modal-criar {
+    height: fit-content;
+    font-size: large;
+    height: 50%;
+    width: 40%;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.botao-modal-criar:hover {
+    cursor: pointer;
+}
+
+.botao-modal-criar.cancelar {
+    background-color: #6D3534;
+}
+
+.botao-modal-criar.salvar {
+    background-color: #387736;
+}
