@@ -835,6 +835,7 @@
     width: 40%;
     background-color: white;
     flex-direction: row;
+    border-radius: 20px;
 }
 
 .metade-modal-criar {
@@ -851,6 +852,8 @@
     background-size: cover;
     background-position: center;
     gap: 2%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .area-lapis-editar {
@@ -899,6 +902,8 @@
     background-color: #CA998F;
     color: white;
     font-family: var(--fonte);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .container-formulario-criar {
