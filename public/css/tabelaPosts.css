@@ -847,7 +847,9 @@
 }
 
 .imagem-modal-criar {
-    background-color: #5B162D;
+    background-image: url(../assets/fundo-modais-editada.jpeg);
+    background-size: cover;
+    background-position: center;
     gap: 2%;
 }
 
@@ -975,3 +977,10 @@
     background-color: #387736;
 }
 
+#dataPostCriado {
+    color: #CA998F;
+}
+
+.escrita-inputs-modal-criar {
+    color: #6D3534
+}

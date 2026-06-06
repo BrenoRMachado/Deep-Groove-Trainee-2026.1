@@ -92,9 +92,11 @@ function fecharModalExcluir(idModalExcluir) {
 const modalCriar = document.getElementById('modal-criar-posts')
 
 function abrirModalCriar(){
+        filtroAoAbrirModalDaTabelaDePosts.style.display = "flex"
         modalCriar.style.display = "flex"
 }
 
 function fecharModalCriar(){
+        filtroAoAbrirModalDaTabelaDePosts.style.display = "none"
         modalCriar.style.display = "none"
 }
