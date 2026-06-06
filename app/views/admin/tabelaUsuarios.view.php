@@ -115,22 +115,25 @@
 
             <tbody class="tabelageral">
 
-                <!-- linha -->
-                <tr class="linha linhaTab">
-                    <td class="colunageral">1</td>
-                    <td class="colunageral"><i class="bi bi-person-circle"></i></td>
-                    <td class="colunageral">Fulano</td>
-                    <td class="colunageral">fulano@gmail.com</td>
-                    <td class="colunageral">Administrador</td>
+                <?php foreach($usuarios as $usuario): ?>
 
-                    <td class="colunageral">
-                        <i class="acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user', '#fundoV')"></i>
-                        <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash" onclick="abrirModal('#modal-excluir-user', '#fundoE')"></i>
-                    </td>
+                    <!-- linha -->
+                    <tr class="linha linhaTab">
+                        <td class="colunageral"><?= $usuario->id ?></td>
+                        <td class="colunageral"><i class="bi bi-person-circle"></i></td>
+                        <td class="colunageral"><?= $usuario->nome ?></td>
+                        <td class="colunageral"><?= $usuario->email ?></td>
+                        <td class="colunageral"><?= $usuario->is_admin ? 'Administrador' : 'Usuário' ?></td>
 
-                </tr>
+                        <td class="colunageral">
+                            <i class="acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user', '#fundoV')"></i>
+                            <i class="acao bi bi-pencil-square"></i>
+                            <i class="acao bi bi-trash" onclick="abrirModal('#modal-excluir-user', '#fundoE')"></i>
+                        </td>
 
+                    </tr>
+
+                <?php endforeach ?>
 
             </tbody>
 
