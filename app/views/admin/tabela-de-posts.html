@@ -18,7 +18,7 @@
 <div class="filtro-ao-abrir-modal-da-tabela-de-posts"></div>
 
 <section class="topoTabelaPosts">
-    <button class="botao-novo-post">
+    <button class="botao-novo-post" onclick="abrirModalCriar()">
         <div class="addPost">
             <i class="icone bi bi-plus" style="font-size: x-large;"></i>
             <p class="textop">Novo Post</p>
@@ -180,24 +180,24 @@
         <form class="metade-modal-criar formulario-modal-criar">
             <div class="container-formulario-criar">
                 <div class="area-input-modal-criar">
-                <h3>Título:</h3>
-                <input class="input-criar-post" placeholder="Digite o título">
-                </div>
-                <div class="area-input-modal-criar" placeholder="Digite o título">
-                    <h3>Autor:</h3>
-                    <input class="input-criar-post" placeholder="Digite o título">
-                </div>
-                <div class="area-input-modal-criar" placeholder="Digite o título">
-                    <h3>Data de criação:</h3>
+                    <h3>Título:</h3>
                     <input class="input-criar-post" placeholder="Digite o título">
                 </div>
                 <div class="area-input-modal-criar">
+                    <h3>Autor:</h3>
+                    <input class="input-criar-post" placeholder="Digite o nome do autor">
+                </div>
+                <div class="area-input-modal-criar">
+                    <h3>Data de criação:</h3>
+                    <input class="input-criar-post" placeholder="Digite a data de criação">
+                </div>
+                <div class="area-input-modal-criar">
                     <h3>Descrição:</h3>
-                    <textarea class="textarea-descricao" rows="10" placeholder="Digite o título"></textarea>
+                    <textarea class="textarea-descricao" rows="10" placeholder="Digite a descrição"></textarea>
                 </div>
             </div>
             <div class="container-botoes-criar">
-                <button class="botao-modal-criar cancelar">Cancelar</button>
+                <button class="botao-modal-criar cancelar" type="button" onclick="fecharModalCriar()">Cancelar</button>
                 <button class="botao-modal-criar salvar">Salvar</button>
             </div>
         </form>
