@@ -21,43 +21,54 @@
 
 <body id="tbuser">
 
-    <!-- MODAL DE CRIAR POSTS -->
+    <div class="filtro-ao-abrir-modal-da-tabela-de-usuarios"></div>
 
-    <div id="modal-criar-posts">
+    <!-- MODAL DE CRIAR USUARIOS -->
+
+    <div id="modal-criar-usuarios">
         <div class="metade-modal-criar imagem-modal-criar">
             <div class="imagem-capa-modal-criar">
-                <i class="bi bi-person-plus" style="font-size: 3rem; color: #5B162D; "></i>
+                <i class="bi bi-person" style="font-size: 3rem; color: #5B162D; "></i>
+            </div>
+            <div class="area-lapis-editar">
+                    <div class="container-lapis-editar">
+                        <button class="botao-lapis-modal-criar">
+                            <i class="bi bi-pencil" style="color: #5B162D;"></i>
+                        </button>
+                    </div>
             </div>
         </div>
         <form class="metade-modal-criar formulario-modal-criar">
             <div class="container-formulario-criar">
                 <div class="area-input-modal-criar">
-                <h3>Nome:</h3>
+                <h3 class="texto-campo-input-criar">Nome:</h3>
                 <input class="input-criar-post" placeholder="Digite seu nome">
                 </div>
                 <div class="area-input-modal-criar">
-                    <h3>Email:</h3>
+                    <h3 class="texto-campo-input-criar">Email:</h3>
                     <input class="input-criar-post" placeholder="Digite seu email">
                 </div>
                 <div class="area-input-modal-criar">
-                    <h3>Senha:</h3>
+                    <h3 class="texto-campo-input-criar">Senha:</h3>
                     <input class="input-criar-post" placeholder="Digite sua senha">
                 </div>
             </div>
             <div class="container-botoes-criar">
-                <button class="botao-modal-criar cancelar">Cancelar</button>
+                <button class="botao-modal-criar cancelar" type="button" onclick="fecharModalCriar()">Cancelar</button>
                 <button class="botao-modal-criar salvar">Salvar</button>
             </div>
         </form>
     </div>
 
-    <div class="filtro-ao-abrir-modal-da-tabela-de-usuarios"></div>
+
 
     <section class="topoTabelaUser">
-        <div class="addUser">
-            <i class="icone bi bi-plus"></i>
-            <p class="textop">Novo usuário</p>
-        </div>
+        <button class="botao-novo-post" onclick="abrirModalCriar()">
+            <div class="addUser">
+                <i class="icone bi bi-plus"></i>
+                <p class="textop">Novo usuário</p>
+            </div>
+        </button>
 
         <div class="infoUser">
             <img src="../../../public/assets/ícone usuário.svg" alt="User">

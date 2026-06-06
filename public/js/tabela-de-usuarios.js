@@ -59,6 +59,18 @@ function fecharModal(idModal, fundo) {
         //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
         const fundomodal = document.querySelector(fundo);
         fundomodal.style.display = "none"
+}
 
-        
+// CÓDIGO DO MODAL DE ADICIONAR USUÁRIO
+
+const modalCriar = document.getElementById('modal-criar-usuarios')
+
+function abrirModalCriar(){
+        filtroAoAbrirModalDaTabelaDeUsuarios.style.display = "flex"
+        modalCriar.style.display = "flex"
+}
+
+function fecharModalCriar(){
+        filtroAoAbrirModalDaTabelaDeUsuarios.style.display = "none"
+        modalCriar.style.display = "none"
 }
