@@ -834,7 +834,7 @@
     width: 40%;
     background-color: white;
     flex-direction: row;
-    border-radius: 30px;
+    border-radius: 20px;
 }
 
 .metade-modal-criar {
@@ -851,8 +851,8 @@
     background-position: center;
     background-size: cover;
     gap: 2%;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .area-lapis-editar {
@@ -896,8 +896,8 @@
 }
 
 .formulario-modal-criar {
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
     padding-top: 5%;
     justify-content: flex-start;
     background-color: #CA998F;
