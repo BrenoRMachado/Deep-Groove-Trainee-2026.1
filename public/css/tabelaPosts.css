@@ -18,6 +18,10 @@
     --cor-vermelho-50: #A62C3A;
     --cor-laranja-200: #AC432B;
 
+    /* !FONTES PADRÃO DOS MODAIS */
+    --fonte-modal-titulo: "Montserrat", sans-serif;
+    --fonte-modal: "Montserrat", sans-serif;
+
     /** var modal editar */
     --cor-branco-200: #FEECE8;
     --cor-branco-100: #FFFFFF;
@@ -228,6 +232,7 @@
     align-items: center;
     justify-content: space-evenly;
     background-image: url(../assets/fundo-modais-editada.jpeg);
+    background-position: 50% 80%;
     background-size: cover;
 }    
 
@@ -244,7 +249,7 @@
     font-size: 0.6rem;
     width: 35%;
     color: var(--cor-branco-300);
-    font-family: var(--fonteaviso);
+    font-family: var(--fonte-modal-titulo);
 }
 
 /* *Estilo do container da foto da capa do álbum */
@@ -282,6 +287,7 @@
     display: flex;
     height: fit-content;
     width: fit-content;
+    background-color: var(--cor-branco-300);
 }
 
 /* *Animação ao passar o mouse por cima do botão de fechar modal*/
@@ -308,7 +314,6 @@
     width: 80%;
     height: 20%;
     border-radius: 30px;
-    font-family: "Roboto", sans-serif;
     background-color: var(--cor-branco-300);
     font-size: 0.7rem;
     display: flex;
@@ -332,6 +337,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     color: var(--cor-vinho-100);
+    font-family: var(--fonte-modal);
 }
 
 /* *Estilo do botão de editar foto da capa do álbum */
@@ -353,6 +359,7 @@
     transition: transform 0.2;
     cursor: pointer;
     opacity: 0.95;
+    font-family: var(--fonte-modal);
 }
 
 /* *Estilo da secao de editar informações do álbum e de salvar e cancelar */
@@ -380,7 +387,6 @@
 #modal-edicao-posts .titulo-dado {
     color: var(--cor-branco-300);
     font-weight: bold;
-    font-family: "Roboto", sans-serif;
     border-radius: 30px;
     width: 20%;
     display: flex;
@@ -388,6 +394,7 @@
     align-items: center;
     height: 60%;
     font-size: 0.8rem;
+    font-family: var(--fonte-modal);
 }
 
 #modal-edicao-posts .titulo-titulo {
@@ -410,7 +417,7 @@
     padding: 0 0.4rem;
     background: none;
     border: 2px solid var(--cor-branco-400);
-    font-family: "Roboto", sans-serif;
+    font-family: var(--fonte-modal);
     color: var(--cor-vinho-100);
 }
 
@@ -438,7 +445,7 @@
 #modal-edicao-posts .secao-botoes-salvar-cancelar .botao {
     border-radius: 30px;
     border: none;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--fonte-modal);
     width: 40%;
     height: 85%;
 }
