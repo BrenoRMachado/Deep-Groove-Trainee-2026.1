@@ -45,7 +45,6 @@
 #pagina-de-posts #container-de-pesquisa {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 65%;
 }
 
@@ -53,7 +52,7 @@
 #pagina-de-posts #container-de-pesquisa .barra-de-pesquisa {
     background-color: var(--cor-branco-100);
     border-radius: 30px;
-    width: 93.5%;
+    width: 85%;
     display: flex;
     align-items: center;
 }
@@ -81,6 +80,12 @@
     border: none;
     background: none;
     cursor: pointer;
+}
+
+#pagina-de-posts #container-de-pesquisa .container-botao-filtro-de-pesquisa {
+    width: 8%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 #pagina-de-posts #container-de-pesquisa .botao-filtro-de-pesquisa {

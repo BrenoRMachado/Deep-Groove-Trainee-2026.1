@@ -28,9 +28,11 @@
                     <i class="icone de pesquisa bi bi-search"></i>
                 </button>
             </div>
-            <button class="botao-filtro-de-pesquisa">
-                <i class="icone-filtro-de-pesquisa bi bi-filter-circle-fill"></i>
-            </button>
+            <div class="container-botao-filtro-de-pesquisa">
+                <button class="botao-filtro-de-pesquisa">
+                    <i class="icone-filtro-de-pesquisa bi bi-filter-circle-fill"></i>
+                </button>
+            </div>    
         </section>
 
         <!-- !INÍCIO DA ÁREA DE POSTS PARA DESKTOP -->

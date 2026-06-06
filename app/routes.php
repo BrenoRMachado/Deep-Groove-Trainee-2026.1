@@ -7,4 +7,4 @@ use App\Core\Router;
 // !composer dump-autoload reconstrói as rotas
 
 $router->get('', 'ExampleController@index');
-$router->get('posts', 'paginaDePostsController@index');
+$router->get('posts', 'PaginaDePostsController@index');
