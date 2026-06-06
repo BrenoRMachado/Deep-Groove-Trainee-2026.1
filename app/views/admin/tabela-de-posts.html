@@ -18,10 +18,12 @@
 <div class="filtro-ao-abrir-modal-da-tabela-de-posts"></div>
 
 <section class="topoTabelaPosts">
-    <div class="addPost">
-        <i class="icone bi bi-plus"></i>
-        <p class="textop">Novo Post</p>
-    </div>
+    <button class="botao-novo-post" onclick="abrirModalCriar()">
+        <div class="addPost">
+            <i class="icone bi bi-plus" style="font-size: x-large;"></i>
+            <p class="textop">Novo Post</p>
+        </div>
+    </button>
 
     <div class="infoUser">
         <img src="../../../public/assets/ícone usuário.svg" alt="User">
@@ -165,8 +167,50 @@
 
         </div>
 
-
     </div>
+
+    <!-- MODAL DE CRIAR POSTS -->
+
+    <div id="modal-criar-posts">
+        <div class="metade-modal-criar imagem-modal-criar">
+            <div class="imagem-capa-modal-criar">
+                <i class="bi bi-plus-square-dotted" style="font-size: 3rem; color: #5B162D; "></i>
+            </div>
+            <div class="area-lapis-editar">
+                    <div class="container-lapis-editar">
+                        <button class="botao-lapis-modal-criar">
+                            <i class="bi bi-pencil" style="color: #5B162D;"></i>
+                        </button>
+                    </div>
+            </div>
+        </div>
+        <form class="metade-modal-criar formulario-modal-criar">
+            <div class="container-formulario-criar">
+                <div class="area-input-modal-criar">
+                    <h3 class="escrita-inputs-modal-criar">Título:</h3>
+                    <input class="input-criar-post" placeholder="Digite o título">
+                </div>
+                <div class="area-input-modal-criar">
+                    <h3 class="escrita-inputs-modal-criar">Autor:</h3>
+                    <input class="input-criar-post" placeholder="Digite o nome do autor">
+                </div>
+                <div class="area-input-modal-criar">
+                    <h3 class="escrita-inputs-modal-criar">Data de criação:</h3>
+                    <input type="date" id="dataPostCriado" class="input-criar-post" placeholder="Digite a data de criação">
+                </div>
+                <div class="area-input-modal-criar">
+                    <h3 class="escrita-inputs-modal-criar">Descrição:</h3>
+                    <textarea class="textarea-descricao" rows="10" placeholder="Digite a descrição"></textarea>
+                </div>
+            </div>
+            <div class="container-botoes-criar">
+                <button class="botao-modal-criar cancelar" type="button" onclick="fecharModalCriar()">Cancelar</button>
+                <button class="botao-modal-criar salvar">Salvar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Página -->
 
     <section class="titulo">
         <h1 class="textoTitulo">POSTAGENS</h1>
@@ -178,12 +222,33 @@
 
     <section class="tabela">
         <table>
-            <tr>
-                <th>ID</th>
-                <th>Álbum</th>
-                <th>Artista</th>
-                <th>Título</th>
-                <th>Ações</th>
+            <thead class="tabelacabe">
+                <tr class="linha linhaCab">
+                    <th class="coluna colunaCab">ID</th>
+
+                    <th class="coluna colunaCab">Álbum</th>
+
+                    <th class="coluna colunaCab">Artista</th>
+
+                    <th class="coluna colunaCab">Título</th>
+
+                    <th class="coluna colunaCab">Ações</th>
+
+                </tr>
+
+            </thead>
+            <tr class="linha linhaTab">
+                <td class="colunageral">1</td>
+                <td class="colunageral"><img class="capa-thriller" src="../../../public/assets/capa-thriller.jpg"></td>
+                <td class="colunageral">Título</td>
+                <td class="colunageral">fulano@gmail.com</td>
+
+                <td class="colunageral">
+                    <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
+                    <i class="acao bi bi-pencil-square"></i>
+                    <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
+                </td>
+
             </tr>
         </table>
     </section>

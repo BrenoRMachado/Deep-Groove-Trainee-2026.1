@@ -86,3 +86,17 @@ function fecharModalExcluir(idModalExcluir) {
         const fundomodal = document.querySelector('.fundoE');
         fundomodal.style.display = "none"
 }
+
+// Código do modal de criar posts
+
+const modalCriar = document.getElementById('modal-criar-posts')
+
+function abrirModalCriar(){
+        filtroAoAbrirModalDaTabelaDePosts.style.display = "flex"
+        modalCriar.style.display = "flex"
+}
+
+function fecharModalCriar(){
+        filtroAoAbrirModalDaTabelaDePosts.style.display = "none"
+        modalCriar.style.display = "none"
+}
