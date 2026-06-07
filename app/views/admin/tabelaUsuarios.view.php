@@ -25,40 +25,41 @@
 
     <!-- MODAL DE CRIAR USUARIOS -->
 
-    <div id="modal-criar-usuarios">
+    <form id="modal-criar-usuarios"  method="POST" action="/tabelausuarios/criar" enctype="multipart/form-data">
         <div class="metade-modal-criar imagem-modal-criar">
             <div class="imagem-capa-modal-criar">
                 <i class="bi bi-person" style="font-size: 3rem; color: #5B162D; "></i>
             </div>
             <div class="area-lapis-editar">
                     <div class="container-lapis-editar">
-                        <button class="botao-lapis-modal-criar">
+                        <button type="button" class="botao-lapis-modal-criar">
                             <i class="bi bi-pencil" style="color: #5B162D;"></i>
                         </button>
+                        <input type="file" name="foto-de-perfil" id="foto-de-perfil-escolhida" accept="image/*">
                     </div>
             </div>
         </div>
-        <form class="metade-modal-criar formulario-modal-criar">
+        <div class="metade-modal-criar formulario-modal-criar">
             <div class="container-formulario-criar">
                 <div class="area-input-modal-criar">
                 <h3 class="texto-campo-input-criar">Nome:</h3>
-                <input class="input-criar-post" placeholder="Digite seu nome">
+                <input class="input-criar-post" placeholder="Digite seu nome" type="text" name="nome">
                 </div>
                 <div class="area-input-modal-criar">
                     <h3 class="texto-campo-input-criar">Email:</h3>
-                    <input class="input-criar-post" placeholder="Digite seu email">
+                    <input class="input-criar-post" placeholder="Digite seu email" type="email" name="email">
                 </div>
                 <div class="area-input-modal-criar">
                     <h3 class="texto-campo-input-criar">Senha:</h3>
-                    <input class="input-criar-post" placeholder="Digite sua senha">
+                    <input class="input-criar-post" placeholder="Digite sua senha" type="password" name="senha">
                 </div>
             </div>
             <div class="container-botoes-criar">
                 <button class="botao-modal-criar cancelar" type="button" onclick="fecharModalCriar()">Cancelar</button>
-                <button class="botao-modal-criar salvar">Salvar</button>
+                <button class="botao-modal-criar salvar" type="submit">Salvar</button>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
 
 
 
@@ -115,22 +116,25 @@
 
             <tbody class="tabelageral">
 
-                <!-- linha -->
-                <tr class="linha linhaTab">
-                    <td class="colunageral">1</td>
-                    <td class="colunageral"><i class="bi bi-person-circle"></i></td>
-                    <td class="colunageral">Fulano</td>
-                    <td class="colunageral">fulano@gmail.com</td>
-                    <td class="colunageral">Administrador</td>
+                <?php foreach($usuarios as $usuario): ?>
 
-                    <td class="colunageral">
-                        <i class="acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user', '#fundoV')"></i>
-                        <i class="acao bi bi-pencil-square"></i>
-                        <i class="acao bi bi-trash" onclick="abrirModal('#modal-excluir-user', '#fundoE')"></i>
-                    </td>
+                    <!-- linha -->
+                    <tr class="linha linhaTab">
+                        <td class="colunageral"><?= $usuario->id ?></td>
+                        <td class="colunageral"><img src="<?= $usuario->foto ?>"></td>
+                        <td class="colunageral"><?= $usuario->nome ?></td>
+                        <td class="colunageral"><?= $usuario->email ?></td>
+                        <td class="colunageral"><?= $usuario->is_admin ? 'Administrador' : 'Usuário' ?></td>
 
-                </tr>
+                        <td class="colunageral">
+                            <i class="acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user', '#fundoV')"></i>
+                            <i class="acao bi bi-pencil-square"></i>
+                            <i class="acao bi bi-trash" onclick="abrirModal('#modal-excluir-user', '#fundoE')"></i>
+                        </td>
 
+                    </tr>
+
+                <?php endforeach ?>
 
             </tbody>
 
