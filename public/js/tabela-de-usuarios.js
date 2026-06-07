@@ -63,6 +63,15 @@ function fecharModal(idModal, fundo) {
 
 // CÓDIGO DO MODAL DE ADICIONAR USUÁRIO
 
+// *Seleciona o botão de adicionar e o input de escolher a foto de perfil do usuário:
+const botaoAdicionaFotoDePerfil = document.querySelector('.botao-lapis-modal-criar');
+const inputEscolherFotoDePerfil = document.getElementById('foto-de-perfil-escolhida');
+
+// *Aciona o input de escolher foto de perfil ao clicar no botão de adicionar foto de perfil do usuário:
+botaoAdicionaFotoDePerfil.addEventListener('click', function() {
+        inputEscolherFotoDePerfil.click();
+});
+
 const modalCriar = document.getElementById('modal-criar-usuarios')
 
 function abrirModalCriar(){

@@ -887,6 +887,10 @@
     cursor: pointer;
 }
 
+#modal-criar-usuarios #foto-de-perfil-escolhida {
+    display: none;
+}
+
 .imagem-capa-modal-criar {
     background-color: white;
     border-radius: 100%;
@@ -895,6 +899,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.imagem-capa-modal-criar .foto-de-perfil-do-usuario{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .formulario-modal-criar {
