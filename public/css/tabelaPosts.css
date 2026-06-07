@@ -973,7 +973,7 @@
     height: 50%;
     width: 40%;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
     color: white;
 }
 
@@ -982,11 +982,14 @@
 }
 
 .botao-modal-criar.cancelar {
-    background-color: #6D3534;
+    border: 1px solid var(--cor-vinho-100);
+    background-color: transparent;
+    color: var(--cor-vinho-100);
 }
 
 .botao-modal-criar.salvar {
-    background-color: #387736;
+    background-color: var(--cor-vermelho-50);
+    color: var(--cor-branco-300);
 }
 
 #dataPostCriado {
