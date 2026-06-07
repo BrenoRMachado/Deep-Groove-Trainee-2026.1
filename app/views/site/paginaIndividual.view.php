@@ -29,8 +29,8 @@
 
             </div>
 
-            <div class="conteudo-capa-d">
-                <h1 class="nome-album-d">NOME DO ÁLBUM</h1>
+            <div class="conteudo-capa">
+                <h1 class="nome-album">NOME DO ÁLBUM</h1>
 
                 <div class="nota-d">
                     <p class="textinhos">3/5</p>
@@ -59,8 +59,12 @@
                     </div>
                 </div>
 
-                <div class="estrelas-d">
-                    <img class="estrelas" src="../../../public/assets/img/Avaliar.svg" alt="5 estrelas">
+                <div class="containerEstrelas">
+                    <img class="estrela" src="../../../public/assets/img/estrela.svg" alt="estrela">
+                    <img class="estrela" src="../../../public/assets/img/estrela.svg" alt="estrela">
+                    <img class="estrela" src="../../../public/assets/img/estrela.svg" alt="estrela">
+                    <img class="estrela" src="../../../public/assets/img/estrela.svg" alt="estrela">
+                    <img class="estrela" src="../../../public/assets/img/estrela.svg" alt="estrela">
                 </div>
             </div>
 
@@ -103,25 +107,33 @@
 
                 <div class="conteudo-faixas-d">
 
-                    <div class="musica-d">
-
-                        <div class="dados-faixa-d">
-                            <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
-                            <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
-                            <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
-                        </div>
-                        <p class="textinhos">03:45</p>
-
-                    </div>
-
-                    <div class="musica-d s">
+                   <div class="musica-d">
 
                         <div class="dados-faixa-d">
                              <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
                             <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
-                            <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
+                            <div class="nome-tempo">
+                                <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
+                                 <p class="textinhos">03:45</p>
+                            </div>
+                            
                         </div>
-                        <p class="textinhos">03:45</p>
+                       
+                    </div>
+
+                    <div class="linha-d some"></div>
+
+                    <div class="musica-d">
+
+                        <div class="dados-faixa-d">
+                             <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
+                            <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
+                            <div class="nome-tempo">
+                                <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
+                                 <p class="textinhos">03:45</p>
+                            </div>
+                            
+                        </div>
 
                     </div>
 
@@ -131,53 +143,33 @@
                 
                 <div class="conteudo-faixas-d">
 
-                    <div class="musica-d">
+                     <div class="musica-d">
 
                         <div class="dados-faixa-d">
                              <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
                             <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
-                            <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
+                            <div class="nome-tempo">
+                                <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
+                                 <p class="textinhos">03:45</p>
+                            </div>
+                            
                         </div>
-                        <p class="textinhos">03:45</p>
 
                     </div>
 
-                    <div class="musica-d s">
+                    <div class="linha-d some"></div>
+
+                     <div class="musica-d">
 
                         <div class="dados-faixa-d">
                              <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
                             <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
-                            <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
+                            <div class="nome-tempo">
+                                <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
+                                 <p class="textinhos">03:45</p>
+                            </div>
+                            
                         </div>
-                        <p class="textinhos">03:45</p>
-
-                    </div>
-
-                </div>
-
-                <div class="linha-d"></div>
-
-                <div class="conteudo-faixas-d">
-
-                    <div class="musica-d">
-
-                        <div class="dados-faixa-d">
-                             <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
-                            <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
-                            <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
-                        </div>
-                        <p class="textinhos">03:45</p>
-
-                    </div>
-
-                    <div class="musica-d s">
-
-                        <div class="dados-faixa-d">
-                             <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
-                            <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
-                            <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
-                        </div>
-                        <p class="textinhos">03:45</p>
 
                     </div>
 
@@ -187,25 +179,69 @@
 
                 <div class="conteudo-faixas-d">
 
-                    <div class="musica-d">
+                   <div class="musica-d">
 
                         <div class="dados-faixa-d">
                              <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
                             <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
-                            <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
+                            <div class="nome-tempo">
+                                <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
+                                 <p class="textinhos">03:45</p>
+                            </div>
+                            
                         </div>
-                        <p class="textinhos">03:45</p>
 
                     </div>
 
-                    <div class="musica-d s">
+                    <div class="linha-d some"></div>
+
+                   <div class="musica-d">
 
                         <div class="dados-faixa-d">
                              <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
                             <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
-                            <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
+                            <div class="nome-tempo">
+                                <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
+                                 <p class="textinhos">03:45</p>
+                            </div>
+                            
                         </div>
-                        <p class="textinhos">03:45</p>
+
+                    </div>
+
+                </div>
+
+                <div class="linha-d"></div>
+
+                <div class="conteudo-faixas-d">
+
+                   <div class="musica-d">
+
+                        <div class="dados-faixa-d">
+                             <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
+                            <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
+                            <div class="nome-tempo">
+                                <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
+                                 <p class="textinhos">03:45</p>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                    <div class="linha-d some"></div>
+
+                     <div class="musica-d">
+
+                        <div class="dados-faixa-d">
+                             <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
+                            <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
+                            <div class="nome-tempo">
+                                <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
+                                 <p class="textinhos">03:45</p>
+                            </div>
+                            
+                        </div>
 
                     </div>
 
