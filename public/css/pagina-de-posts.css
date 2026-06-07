@@ -429,6 +429,10 @@
         font-size: 1.7rem;
     }
 
+    #pagina-de-posts #container-de-pesquisa .container-botao-filtro-de-pesquisa {
+        width: 12%;
+    }
+
     #pagina-de-posts #container-de-pesquisa .botao-filtro-de-pesquisa {
         font-size: 3rem;
         height: 2.2rem;
@@ -461,6 +465,7 @@
     }
     #pagina-de-posts #container-de-pesquisa {
         padding: 0 1.1rem;
+        width: 95%;
     }
     #pagina-de-posts #container-de-pesquisa .barra-de-pesquisa {
         width: 80%;
@@ -468,6 +473,11 @@
     #pagina-de-posts .pesquisar {
         font-size: 0.9rem;
     }
+
+    #pagina-de-posts #container-de-pesquisa .container-botao-filtro-de-pesquisa {
+        width: 18%;
+    }
+
     #pagina-de-posts #container-posts-mobile {
         row-gap: 4rem;
     }
