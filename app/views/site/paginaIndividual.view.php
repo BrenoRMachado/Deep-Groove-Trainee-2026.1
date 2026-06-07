@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../public/css/pagPost.css">
+    <link rel="stylesheet" href="../../../public/css/paginaIndividual.css">
     <title>Álbum</title>
 
     <!-- fontes google -->
@@ -25,7 +25,7 @@
                 <div class="capa-album-d">
                 </div>
 
-                <img class="disco-d" src="../../../public/assets/img/DiscFill.svg" alt="Disco">
+                <img class="disco-d" src="../../../public/assets/disco-de-vinil-pagina-de-posts.png" alt="Disco">
 
             </div>
 
@@ -66,23 +66,25 @@
 
         </section>
 
-        <div class="linha-d"></div>
+        <div class="linha-princ"></div>
 
         <section id="sobre-d">
-            <div class="analise-conceito-d">
-                <h2 class="h2-sobre-d">ANÁLISE</h2>
+
+            <div class="conceito">
+                <h2 class="h2-sobre-d">CONCEITO</h2>
                 <p class="textinhos-sobre">O conceito do álbum está na história do garoto cego, surdo e
                     mudo, Tommy Walker, que passa a ter essa condição depois
                     de ver seu pai sendo morto pelo amante da mãe. Pesado, né?
                     Tommy, quarto álbum da banda inglesa, apresenta o que se
                     sucede na vida do garoto depois do acontecimento, que vira
                     mestre em jogo de pinball e é encarado como sendo um novo
-                    Messias.</p>
-            </div>
-
-            <div class="analise-conceito-d">
-                <h2 class="h2-sobre-d">CONCEITO</h2>
-                <p class="textinhos-sobre">O conceito do álbum está na história do garoto cego, surdo e
+                    Messias. O conceito do álbum está na história do garoto cego, surdo e
+                    mudo, Tommy Walker, que passa a ter essa condição depois
+                    de ver seu pai sendo morto pelo amante da mãe. Pesado, né?
+                    Tommy, quarto álbum da banda inglesa, apresenta o que se
+                    sucede na vida do garoto depois do acontecimento, que vira
+                    mestre em jogo de pinball e é encarado como sendo um novo
+                    Messias. O conceito do álbum está na história do garoto cego, surdo e
                     mudo, Tommy Walker, que passa a ter essa condição depois
                     de ver seu pai sendo morto pelo amante da mãe. Pesado, né?
                     Tommy, quarto álbum da banda inglesa, apresenta o que se
@@ -92,43 +94,20 @@
             </div>
         </section>
 
+
+
         <section id="faixas-d">
             <h2 id="titulo-faixas-d">FAIXAS</h2>
 
             <div class="agrupamento-faixas-d">
 
-               <div class="conteudo-faixas-d">
-
-                    <div class="musica-d">
-
-                        <div class="dados-faixa-d">
-                            <img src="../../../public/assets/img/Play.svg" alt="play">
-                            <img src="../../../public/assets/img/Capa.svg" alt="faixa">
-                            <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
-                        </div>
-                        <p class="textinhos">03:45</p>
-
-                    </div>
-
-                    <div class="musica-d s">
-
-                        <div class="dados-faixa-d">
-                            <img src="../../../public/assets/img/Play.svg" alt="play">
-                            <img src="../../../public/assets/img/Capa.svg" alt="faixa">
-                            <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
-                        </div>
-                        <p class="textinhos">03:45</p>
-
-                    </div>
-
-                </div>
                 <div class="conteudo-faixas-d">
 
                     <div class="musica-d">
 
                         <div class="dados-faixa-d">
-                            <img src="../../../public/assets/img/Play.svg" alt="play">
-                            <img src="../../../public/assets/img/Capa.svg" alt="faixa">
+                            <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
+                            <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
                             <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
                         </div>
                         <p class="textinhos">03:45</p>
@@ -138,8 +117,8 @@
                     <div class="musica-d s">
 
                         <div class="dados-faixa-d">
-                            <img src="../../../public/assets/img/Play.svg" alt="play">
-                            <img src="../../../public/assets/img/Capa.svg" alt="faixa">
+                             <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
+                            <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
                             <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
                         </div>
                         <p class="textinhos">03:45</p>
@@ -148,13 +127,15 @@
 
                 </div>
 
-                 <div class="conteudo-faixas-d">
+                <div class="linha-d"></div>
+                
+                <div class="conteudo-faixas-d">
 
                     <div class="musica-d">
 
                         <div class="dados-faixa-d">
-                            <img src="../../../public/assets/img/Play.svg" alt="play">
-                            <img src="../../../public/assets/img/Capa.svg" alt="faixa">
+                             <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
+                            <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
                             <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
                         </div>
                         <p class="textinhos">03:45</p>
@@ -164,8 +145,8 @@
                     <div class="musica-d s">
 
                         <div class="dados-faixa-d">
-                            <img src="../../../public/assets/img/Play.svg" alt="play">
-                            <img src="../../../public/assets/img/Capa.svg" alt="faixa">
+                             <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
+                            <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
                             <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
                         </div>
                         <p class="textinhos">03:45</p>
@@ -174,13 +155,15 @@
 
                 </div>
 
-                   <div class="conteudo-faixas-d">
+                <div class="linha-d"></div>
+
+                <div class="conteudo-faixas-d">
 
                     <div class="musica-d">
 
                         <div class="dados-faixa-d">
-                            <img src="../../../public/assets/img/Play.svg" alt="play">
-                            <img src="../../../public/assets/img/Capa.svg" alt="faixa">
+                             <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
+                            <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
                             <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
                         </div>
                         <p class="textinhos">03:45</p>
@@ -190,8 +173,8 @@
                     <div class="musica-d s">
 
                         <div class="dados-faixa-d">
-                            <img src="../../../public/assets/img/Play.svg" alt="play">
-                            <img src="../../../public/assets/img/Capa.svg" alt="faixa">
+                             <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
+                            <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
                             <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
                         </div>
                         <p class="textinhos">03:45</p>
@@ -200,7 +183,35 @@
 
                 </div>
 
+                <div class="linha-d"></div>
+
+                <div class="conteudo-faixas-d">
+
+                    <div class="musica-d">
+
+                        <div class="dados-faixa-d">
+                             <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
+                            <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
+                            <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
+                        </div>
+                        <p class="textinhos">03:45</p>
+
+                    </div>
+
+                    <div class="musica-d s">
+
+                        <div class="dados-faixa-d">
+                             <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
+                            <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
+                            <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
+                        </div>
+                        <p class="textinhos">03:45</p>
+
+                    </div>
+
                 </div>
+
+            </div>
 
             </div>
 
