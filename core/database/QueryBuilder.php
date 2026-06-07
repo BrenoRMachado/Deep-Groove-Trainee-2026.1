@@ -14,9 +14,9 @@ class QueryBuilder
         $this->pdo = $pdo;
     }
 
-    public function selectAll($table)
+    public function selectAll($tabela)
     {
-        $sql = "select * from {$table}";
+        $sql = "select * from {$tabela}";
 
         try {
             $stmt = $this->pdo->prepare($sql);
@@ -28,4 +28,24 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
+
+    public function insert($tabela, $parametros) {
+        $sql = sprintf('INSERT INTO %s (%s) VALUES(:%s)', 
+        $tabela, 
+        implode(', ', array_keys($parametros)), 
+        implode(', :', array_keys($parametros)),
+        );
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute($parametros);
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
+
 }

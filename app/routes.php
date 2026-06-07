@@ -9,3 +9,4 @@ use App\Core\Router;
 $router->get('', 'ExampleController@index');
 
 $router->get('tabelausuarios', 'TabelaUsuariosController@index');
+$router->post('tabelausuarios/criar', 'TabelaUsuariosController@criarUsuarios');
