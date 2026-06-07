@@ -25,7 +25,7 @@
 
     <!-- MODAL DE CRIAR USUARIOS -->
 
-    <form id="modal-criar-usuarios"  method="POST" action="/tabelausuarios/criar" enctype="multipart/form-data">
+    <form id="modal-criar-usuarios"  method="POST" action="/tabelaUsuarios/criar" enctype="multipart/form-data">
         <div class="metade-modal-criar imagem-modal-criar">
             <div class="imagem-capa-modal-criar">
                 <i class="bi bi-person" style="font-size: 3rem; color: #5B162D; "></i>
@@ -35,7 +35,7 @@
                         <button type="button" class="botao-lapis-modal-criar">
                             <i class="bi bi-pencil" style="color: #5B162D;"></i>
                         </button>
-                        <input type="file" name="foto-de-perfil" id="foto-de-perfil-escolhida" accept="image/*">
+                        <input type="file" name="foto-de-perfil" class="foto-de-perfil-escolhida" accept="image/*">
                     </div>
             </div>
         </div>
@@ -128,7 +128,7 @@
 
                         <td class="colunageral">
                             <i class="acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user', '#fundoV')"></i>
-                            <i class="acao bi bi-pencil-square"></i>
+                            <i class="acao bi bi-pencil-square" data-id="<?= $usuario->id ?>" data-nome="<?= $usuario->nome ?> "data-email="<?= $usuario->email ?>"></i>
                             <i class="acao bi bi-trash" onclick="abrirModal('#modal-excluir-user', '#fundoE')"></i>
                         </td>
 
@@ -162,40 +162,41 @@
                 </button>
             </div>    
         </section>
-        <form class="secao-edicao-dados-do-usuario">
+        <form class="secao-edicao-dados-do-usuario" method="POST" action="/tabelaUsuarios/editar" enctype="multipart/form-data">
+            <input type="hidden" name="id" id="id-usuario-edicao">
             <section class="secao-instrucao-editar-foto-de-perfil">
                 <div class="container-instrucao-editar-foto-de-perfil">
                     <div class="container-texto-instrucao-editar-foto-de-perfil">    
                         <h2>Foto de perfil</h2>
                         <p>Recomendamos uma imagem quadrada de pelo menos 500x500px</p>
                     </div>
-                    <button class="botao-alterar-foto-de-perfil">
+                    <button type="button" class="botao-alterar-foto-de-perfil">
                         <i class="icone-alterar-foto-de-perfil bi bi-box-arrow-up"></i>
                         <span>Alterar foto</span>
                     </button>
+                    <input type="file" name="foto-de-perfil" class="foto-de-perfil-escolhida" accept="image/*">
                 </div>
             </section>
             <section class="secao-editar-nome-email-senha">
                 <div class="container-editar-dado container-editar-nome">
                     <span class="titulo-dado titulo-nome">Nome</span>
-                    <input class="editar-dado" type="text" placeholder="Nome">
+                    <input class="editar-dado" type="text" placeholder="Nome" name="nome">
                 </div>
                 <div class="container-editar-dado container-editar-email">
                     <span class="titulo-dado titulo-email">Email</span>
-                    <input class="editar-dado editar-email" placeholder="Email"></input>
+                    <input class="editar-dado editar-email" placeholder="Email" type="email" name="email"></input>
                 </div>
                 <div class="container-editar-dado container-editar-senha">
                     <span class="titulo-dado titulo-senha">Senha</span>
-                    <input class="editar-dado" type="text" placeholder="Senha">
+                    <input class="editar-dado" type="password" placeholder="Senha" name="senha">
                 </div>
                 <div class="secao-botoes-salvar-cancelar">
-                    <button class="botao botao-cancelar">Cancelar</button>
-                    <button class="botao botao-salvar">Salvar</button>
+                    <button class="botao botao-cancelar" type="button">Cancelar</button>
+                    <button class="botao botao-salvar" type="submit">Salvar</button>
                 </div>
             </section>
         </form>
     </div>
-
 
     <!--* MODAL DE VISUALIZAR USUÁRIOS -->
 

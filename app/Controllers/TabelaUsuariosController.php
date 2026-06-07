@@ -21,7 +21,7 @@ class TabelaUsuariosController {
 
         $nomeDaFotoDePerfil = sha1(uniqid($_FILES['foto-de-perfil']['name'], true)) . "." . pathinfo($_FILES['foto-de-perfil']['name'], PATHINFO_EXTENSION);
 
-        $caminhoDaImagem = "/public/assets/fotos-de-perfil-dos-usuarios/" . $nomeDaFotoDePerfil;
+        $caminhoDaImagem = $_SERVER['DOCUMENT_ROOT'] . "/public/assets/fotos-de-perfil-dos-usuarios/" . $nomeDaFotoDePerfil;
 
         move_uploaded_file($fotoDePerfilTemporaria, $caminhoDaImagem);
 
@@ -34,8 +34,32 @@ class TabelaUsuariosController {
 
         App::get('database') -> insert('usuarios', $parametros);
 
-        header('Location: /tabelausuarios');
+        header('Location: /tabelaUsuarios');
 
-    }        
+    }       
+    
+    public function editarUsuarios() {
+
+        $fotoDePerfilTemporaria = $_FILES['foto-de-perfil']['tmp_name'];
+
+        $nomeDaFotoDePerfil = sha1(uniqid($_FILES['foto-de-perfil']['name'], true)) . "." . pathinfo($_FILES['foto-de-perfil']['name'], PATHINFO_EXTENSION);
+
+        $caminhoDaImagem = $_SERVER['DOCUMENT_ROOT'] . "/public/assets/fotos-de-perfil-dos-usuarios/" . $nomeDaFotoDePerfil;
+
+        move_uploaded_file($fotoDePerfilTemporaria, $caminhoDaImagem);
+
+        $parametros = [
+            'nome' => $_POST['nome'],
+            'email' => $_POST['email'],
+            'senha' => $_POST['senha'],
+            'foto' => $caminhoDaImagem,
+            ];  
+
+        $id = $_POST['id'];
+
+        App::get('database') -> update('usuarios', $id, $parametros);
+
+        header('Location: /tabelaUsuarios');
+    }
 
 }

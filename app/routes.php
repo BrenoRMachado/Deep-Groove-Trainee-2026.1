@@ -8,5 +8,6 @@ use App\Core\Router;
 
 $router->get('', 'ExampleController@index');
 
-$router->get('tabelausuarios', 'TabelaUsuariosController@index');
-$router->post('tabelausuarios/criar', 'TabelaUsuariosController@criarUsuarios');
+$router->get('tabelaUsuarios', 'TabelaUsuariosController@index');
+$router->post('tabelaUsuarios/criar', 'TabelaUsuariosController@criarUsuarios');
+$router->post('tabelaUsuarios/editar', 'TabelaUsuariosController@editarUsuarios');

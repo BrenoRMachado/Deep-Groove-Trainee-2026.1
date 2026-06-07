@@ -887,7 +887,7 @@
     cursor: pointer;
 }
 
-#modal-criar-usuarios #foto-de-perfil-escolhida {
+.foto-de-perfil-escolhida {
     display: none;
 }
 

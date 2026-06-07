@@ -48,4 +48,26 @@ class QueryBuilder
 
     }
 
+    public function update($tabela, $id, $parametros) {
+
+        $sql = sprintf('UPDATE %s SET %s WHERE id = %s', 
+        $tabela, 
+        implode(', ', array_map(function($parametro) {
+            return $parametro . ' = :' .$parametro;
+        }, array_keys($parametros))), 
+        $id
+        );
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute($parametros);
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
+
 }
