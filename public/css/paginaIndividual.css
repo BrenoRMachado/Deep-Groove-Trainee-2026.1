@@ -294,4 +294,36 @@
         width: 105vw;
     }
 
+    .capa-album-d {
+    /* largura */
+    width: 12rem;
+    /* altura */
+    height: 29vh;
+    background-color: #5B162D;
+    border-radius: 1rem;
+
+    /*! px- grossura da borda solido-tipo, pq pode ser blur, etc e a cor */
+    border: 0.3rem solid #F09859;
+
+    position: absolute;
+    z-index: 2;
+}
+
+    .disco-d {
+     width: 12.5rem;  /* 200px */
+  height: 12rem; /* 200px */
+    padding: 0.4rem 7rem;
+
+    /*! nome da função - tempo para completar a volta - velocidade cte - por tempo infinito */
+    animation: girar 3s linear infinite;
+}
+
+.play {
+    width: 5vw;
+}
+
+.faixa {
+    width: 6vw;
+}
+
 }
