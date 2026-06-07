@@ -28,7 +28,7 @@
     <form id="modal-criar-usuarios"  method="POST" action="/tabelaUsuarios/criar" enctype="multipart/form-data">
         <div class="metade-modal-criar imagem-modal-criar">
             <div class="imagem-capa-modal-criar">
-                <i class="bi bi-person" style="font-size: 3rem; color: #5B162D; "></i>
+                <i class="bi bi-image" style="font-size: 3rem; color: #5B162D; "></i>
             </div>
             <div class="area-lapis-editar">
                     <div class="container-lapis-editar">
