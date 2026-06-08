@@ -243,19 +243,20 @@
                 </tr>
 
             </thead>
-            <tr class="linha linhaTab">
-                <td class="colunageral">1</td>
-                <td class="colunageral"><img class="capa-thriller" src="../../../public/assets/capa-thriller.jpg"></td>
-                <td class="colunageral">Título</td>
-                <td class="colunageral">fulano@gmail.com</td>
+            <?php foreach($publicacoes as $publicacao): ?>
+                <tr class="linha linhaTab">
+                    <td class="colunageral">1</td>
+                    <td class="colunageral"><img class="capa-thriller" src="../../../public/assets/capa-thriller.jpg"></td>
+                    <td class="colunageral">Título</td>
+                    <td class="colunageral">fulano@gmail.com</td>
 
-                <td class="colunageral">
-                    <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
-                    <i class="acao bi bi-pencil-square"></i>
-                    <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
-                </td>
-
-            </tr>
+                    <td class="colunageral">
+                        <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>
+                        <i class="acao bi bi-pencil-square"></i>
+                        <i class="acao bi bi-trash" onclick="abrirModalExcluir('modal-excluir-user')"></i>
+                    </td>
+                </tr>
+            <?php endforeach ?>
         </table>
     </section>
 

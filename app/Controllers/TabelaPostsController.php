@@ -9,6 +9,7 @@ class TabelaPostsController
 {
     public function index()
     {
-        return view('admin/tabela-de-posts');
+        $publicacoes = App::get('database')->selectAll('publicacoes');
+        return view('admin/tabela-de-posts', $publicacoes);
     }
 }
