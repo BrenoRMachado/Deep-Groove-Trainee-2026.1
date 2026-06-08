@@ -171,44 +171,50 @@
 
     <!-- MODAL DE CRIAR POSTS -->
 
-    <div id="modal-criar-posts">
-        <div class="metade-modal-criar imagem-modal-criar">
-            <div class="imagem-capa-modal-criar">
-                <i class="bi bi-image" style="font-size: 3rem; color: #5B162D; "></i>
+    <form id="modal-criar-posts">
+        <div class="alto-modal-criar">
+            <div class="um-terco-alto-modal-criar">oi</div>
+            <div class="um-terco-alto-modal-criar">oi</div>
+            <div class="um-terco-alto-modal-criar">oi</div>
+        </div>
+
+        <!-- Parte onde fica a opção de mudar a foto -->
+
+        <div class="baixo-modal-criar">
+            <div class="area-de-colocar-informacoes container-informacoes-foto">
+                <div class="primeira-parte-do-container-informacoes-foto">
+                    <h2>Capa do álbum</h2>
+                    <p>Recomendamos uma imagem quadrada de pelo menos 500 por 500 pixels</p>
+                </div>
+                <div class="segunda-parte-do-container-informacoes-foto">
+                    <button class="botao-anexar-foto-modal-criar">
+                        <i class="bi bi-box-arrow-up"></i>
+                        Anexar foto
+                    </button>
+                </div>
             </div>
-            <div class="area-lapis-editar">
-                    <div class="container-lapis-editar">
-                        <button class="botao-lapis-modal-criar">
-                            <i class="bi bi-pencil" style="color: #5B162D;"></i>
-                        </button>
+
+
+        <!-- Parte onde fica o formulario com as informações a serem preenchidas -->
+
+
+            <div class="area-de-colocar-informacoes">
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Título</div> <input placeholder="Digite o título"></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Data de criação</div> <input type="date"></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Autor</div> <input placeholder="Digite o nome do autor"></div>
+                <div class="container-textarea">
+                    <div class="container-dado-a-criar" style="background-color: var(--cor-amarelo);">
+                        Descrição
                     </div>
+                    <textarea rows="10" placeholder="Digite a descrição"></textarea>
+                </div>
+                <div class="quarto-da-area-informacoes">
+                    <button class="botao-modal-criar cancelar">Cancelar</button>
+                    <button class="botao-modal-criar salva">Salvar</button>
+                </div>
             </div>
         </div>
-        <form class="metade-modal-criar formulario-modal-criar">
-            <div class="container-formulario-criar">
-                <div class="area-input-modal-criar">
-                    <h3 class="escrita-inputs-modal-criar">Título:</h3>
-                    <input class="input-criar-post" placeholder="Digite o título">
-                </div>
-                <div class="area-input-modal-criar">
-                    <h3 class="escrita-inputs-modal-criar">Autor:</h3>
-                    <input class="input-criar-post" placeholder="Digite o nome do autor">
-                </div>
-                <div class="area-input-modal-criar">
-                    <h3 class="escrita-inputs-modal-criar">Data de criação:</h3>
-                    <input type="date" id="dataPostCriado" class="input-criar-post" placeholder="Digite a data de criação">
-                </div>
-                <div class="area-input-modal-criar">
-                    <h3 class="escrita-inputs-modal-criar">Descrição:</h3>
-                    <textarea class="textarea-descricao" rows="10" placeholder="Digite a descrição"></textarea>
-                </div>
-            </div>
-            <div class="container-botoes-criar">
-                <button class="botao-modal-criar cancelar" type="button" onclick="fecharModalCriar()">Cancelar</button>
-                <button class="botao-modal-criar salvar">Salvar</button>
-            </div>
-        </form>
-    </div>
+</form>
 
     <!-- Página -->
 
