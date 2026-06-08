@@ -245,10 +245,10 @@
             </thead>
             <?php foreach($publicacoes as $publicacao): ?>
                 <tr class="linha linhaTab">
-                    <td class="colunageral">1</td>
+                    <td class="colunageral"><?= $publicacao->id ?></td>
                     <td class="colunageral"><img class="capa-thriller" src="../../../public/assets/capa-thriller.jpg"></td>
-                    <td class="colunageral">Título</td>
-                    <td class="colunageral">fulano@gmail.com</td>
+                    <td class="colunageral"><?= $publicacao->artista ?></td>
+                    <td class="colunageral"><?=  $publicacao->titulo ?></td>
 
                     <td class="colunageral">
                         <i class="acao bi bi-eye-fill" onclick="abrirModalVisu('modal-visu-user')"></i>

@@ -10,6 +10,6 @@ class TabelaPostsController
     public function index()
     {
         $publicacoes = App::get('database')->selectAll('publicacoes');
-        return view('admin/tabela-de-posts', $publicacoes);
+        return view('admin/tabela-de-posts', compact('publicacoes'));
     }
 }
