@@ -861,6 +861,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    font-family: var(--fonte-modal);
 }
 
 .um-terco-alto-modal-criar {
@@ -874,6 +875,7 @@
 .um-terco-alto-modal-criar h2 {
     font-size: 3vh;
     color: var(--cor-branco-300);
+
 }
 
 .parte-esquerda-alto-modal {
