@@ -11,6 +11,7 @@ class TabelaUsuariosController {
 
         $usuarios = App::get('database') -> selectAll('usuarios');
     
+        //* esse compact pega as info de ususrios de trasforma em um array
         return view('admin/tabelaUsuarios', compact('usuarios'));
 
     }
@@ -58,6 +59,16 @@ class TabelaUsuariosController {
         $id = $_POST['id'];
 
         App::get('database') -> update('usuarios', $id, $parametros);
+
+        header('Location: /tabelaUsuarios');
+    }
+
+    public function excluirUsuarios() {
+        $id = $_POST['id'];
+
+        // var_dump($_POST); VER SE O ID TAVA INDO MSM
+        
+        App::get('database') -> delete('usuarios', $id);
 
         header('Location: /tabelaUsuarios');
     }

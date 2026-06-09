@@ -11,3 +11,4 @@ $router->get('', 'ExampleController@index');
 $router->get('tabelaUsuarios', 'TabelaUsuariosController@index');
 $router->post('tabelaUsuarios/criar', 'TabelaUsuariosController@criarUsuarios');
 $router->post('tabelaUsuarios/editar', 'TabelaUsuariosController@editarUsuarios');
+$router->post('tabelaUsuarios/excluir', 'TabelaUsuariosController@excluirUsuarios');
