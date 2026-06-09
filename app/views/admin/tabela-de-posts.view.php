@@ -184,13 +184,13 @@
                 </div>
             </div>
             <div class="um-terco-alto-modal-criar parte-direita-alto-modal">
-                <button class="container-x">
+                <button class="container-x" type="button" onclick="fecharModalCriar()">
                     <i class="sair-da-pagina bi bi-x fill"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Parte onde fica a opção de mudar a foto -->
+        <!-- Parte onde fica a opção de selecionar a foto -->
 
         <div class="baixo-modal-criar">
             <div class="area-de-colocar-informacoes container-informacoes-foto">
@@ -199,7 +199,7 @@
                     <p>Recomendamos uma imagem quadrada de pelo menos 500 por 500 pixels</p>
                 </div>
                 <div class="segunda-parte-do-container-informacoes-foto">
-                    <button class="botao-anexar-foto-modal-criar">
+                    <button type="button" class="botao-anexar-foto-modal-criar">
                         <i class="bi bi-box-arrow-up"></i>
                         Anexar foto
                     </button>
@@ -224,7 +224,7 @@
                     <textarea rows="10" placeholder="Digite a descrição" name="conceito"></textarea>
                 </div>
                 <div class="quarto-da-area-informacoes">
-                    <button class="botao-modal-criar cancelar" type="button">Cancelar</button>
+                    <button class="botao-modal-criar cancelar" type="button" onclick="fecharModalCriar()">Cancelar</button>
                     <button class="botao-modal-criar salva">Salvar</button>
                 </div>
             </div>

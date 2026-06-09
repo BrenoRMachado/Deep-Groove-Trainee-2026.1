@@ -854,6 +854,10 @@
     background-size: cover;
 }
 
+#modal-criar-posts button:hover {
+    transform: scale(1.025);
+}
+
 .alto-modal-criar {
     display: flex;
     height: 23%;
