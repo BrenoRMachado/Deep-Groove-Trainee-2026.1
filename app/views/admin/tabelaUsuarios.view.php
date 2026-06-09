@@ -23,40 +23,53 @@
 
     <div class="filtro-ao-abrir-modal-da-tabela-de-usuarios"></div>
 
-    <!-- MODAL DE CRIAR USUARIOS -->
+    <!-- MODAL DE CRIAR POSTS -->
 
-    <form id="modal-criar-usuarios"  method="POST" action="/tabelaUsuarios/criar" enctype="multipart/form-data">
-        <div class="metade-modal-criar imagem-modal-criar">
-            <div class="imagem-capa-modal-criar">
-                <i class="bi bi-image" style="font-size: 3rem; color: #5B162D; "></i>
+    <!-- Parte de cima do modal, onde fica a imagem de capa  -->
+
+    <form id="modal-criar-usuarios">
+        <div class="alto-modal-criar">
+            <div class="um-terco-alto-modal-criar parte-esquerda-alto-modal">
+                <h2>Criar usuário</h2>
             </div>
-            <div class="area-lapis-editar">
-                    <div class="container-lapis-editar">
-                        <button type="button" class="botao-lapis-modal-criar">
-                            <i class="bi bi-pencil" style="color: #5B162D;"></i>
-                        </button>
-                        <input type="file" name="foto-de-perfil" class="foto-de-perfil-escolhida" accept="image/*">
-                    </div>
+            <div class="um-terco-alto-modal-criar">
+                <div class="parte-media-alto-modal">
+                    <i class="imagem-placeholder-capa-criar-post bi bi-person-circle"></i>
+                </div>
+            </div>
+            <div class="um-terco-alto-modal-criar parte-direita-alto-modal">
+                <button class="container-x" type="button" onclick="fecharModalCriar()">
+                    <i class="sair-da-pagina bi bi-x fill"></i>
+                </button>
             </div>
         </div>
-        <div class="metade-modal-criar formulario-modal-criar">
-            <div class="container-formulario-criar">
-                <div class="area-input-modal-criar">
-                <h3 class="texto-campo-input-criar">Nome:</h3>
-                <input class="input-criar-post" placeholder="Digite seu nome" type="text" name="nome">
+
+        <!-- Parte onde fica a opção de selecionar a foto -->
+
+        <div class="baixo-modal-criar">
+            <div class="area-de-colocar-informacoes container-informacoes-foto">
+                <div class="primeira-parte-do-container-informacoes-foto">
+                    <h2>Foto de perfil</h2>
+                    <p>Recomendamos uma imagem quadrada de pelo menos 500 por 500 pixels</p>
                 </div>
-                <div class="area-input-modal-criar">
-                    <h3 class="texto-campo-input-criar">Email:</h3>
-                    <input class="input-criar-post" placeholder="Digite seu email" type="email" name="email">
-                </div>
-                <div class="area-input-modal-criar">
-                    <h3 class="texto-campo-input-criar">Senha:</h3>
-                    <input class="input-criar-post" placeholder="Digite sua senha" type="password" name="senha">
+                <div class="segunda-parte-do-container-informacoes-foto">
+                    <button type="button" class="botao-anexar-foto-modal-criar">
+                        <i class="bi bi-box-arrow-up"></i>
+                        Anexar foto
+                    </button>
                 </div>
             </div>
-            <div class="container-botoes-criar">
-                <button class="botao-modal-criar cancelar" type="button" onclick="fecharModalCriar()">Cancelar</button>
-                <button class="botao-modal-criar salvar" type="submit">Salvar</button>
+
+        <!-- Parte onde fica o formulario com as informações a serem preenchidas -->
+
+            <div class="area-de-colocar-informacoes">
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Nome</div> <input placeholder="Digite o nome" name="titulo"></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Email</div> <input placeholder="Digite o email" name="ano"></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Senha</div> <input placeholder="Digite a senha" name="ano"></div>
+                <div class="quarto-da-area-informacoes">
+                    <button class="botao-modal-criar cancelar" type="button" onclick="fecharModalCriar()">Cancelar</button>
+                    <button class="botao-modal-criar salva">Salvar</button>
+                </div>
             </div>
         </div>
     </form>
