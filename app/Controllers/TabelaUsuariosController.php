@@ -9,10 +9,32 @@ class TabelaUsuariosController {
 
     public function index() {
 
-        $usuarios = App::get('database') -> selectAll('usuarios');
+        $database = App::get('database');
+
+        $limite = 6;
+
+        //* verifica a pagina atual e retorna ela se for null retorna a pagina 1
+        $paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+        if ($paginaAtual < 1){
+            $paginaAtual = 1;
+        }
+
+        $salto = ($paginaAtual - 1) * $limite;
+
+        $totalUsuarios = $database -> countAll('usuarios');
+        // ceil pega o teto(arrendoda pra cima)
+        $totalPaginas = ceil($totalUsuarios/$limite);
+
+        $usuarios = $database->paginate('usuarios', $limite, $salto);
+
+        // $usuarios = App::get('database') -> selectAll('usuarios');
     
         //* esse compact pega as info de ususrios de trasforma em um array
-        return view('admin/tabelaUsuarios', compact('usuarios'));
+        return view('admin/tabelaUsuarios', [
+            'usuarios' => $usuarios,
+            'paginaAtual' => $paginaAtual,
+            'totalPaginas' => $totalPaginas
+        ]);
 
     }
 

@@ -16,6 +16,10 @@
     <!--* importando bootstrap-icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
+    <!-- link do bootstrap -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2JL0vWa8Ck2rdkQ2Bzep5IDxbcnCeu0xjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
+
     <title>Usuários Cadastrados</title>
 </head>
 
@@ -140,7 +144,50 @@
 
             <tfoot>
                 <tr>
-                    <!-- tem q fazer a paginaçao -->
+                    <!-- paginaçao -->
+                    <?php if ($totalPaginas > 1): ?>
+                    
+                        <div class="containerPaginacao">
+                            <ul class="paginacao">
+                                <li>
+                                    <a heref="?pagina=<?= max(1, $paginaAtual - 1) ?>" class="<?= $paginaAtual <= 1 ? 'disabled' : ''?>">&laquo; Anterior</a>
+                                </li>
+
+                                <?php 
+                                    $start = max(2, $paginaAtual - 1);
+                                    $end = min($totalPaginas - 1, $paginaAtual + 1);
+                                ?>
+
+                                <li>
+                                    <a heref="?pagina=1" class="<?= $paginaAtual == 1 ? 'active' : ''?>">1</a>
+                                </li>
+
+                                <?php if ($start > 2):?>
+                                    <li><span class="dots">...</span>
+                                <?php endif; ?>
+
+                                <?php for ($i = $start; $i <= $end; $i++): ?>
+                                    <li>
+                                        <a heref="?pagina=<?= $i ?>" class="<?= $paginaAtual == $i ? 'active' : ''?>"> <?= $i ?></a>
+                                    </li>
+                                <?php endfor; ?>
+
+                                <?php if ($end < $totalPaginas - 1):?>
+                                    <li><span class="dots">...</span>
+                                <?php endif; ?>
+
+                                <li>
+                                    <a heref="?pagina=<?= $totalPaginas ?>" class="<?= $paginaAtual == $totalPaginas ? 'active' : ''?>"> <?= $totalPaginas ?></a>
+                                </li>
+
+                                <li>
+                                    <a heref="?pagina=<?= min($totalPaginas, $paginaAtual + 1) ?>" class="<?= $paginaAtual >= $totalPaginas ? 'disabled' : ''?>">Próximo &raquo;</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    <?php endif; ?>
+
                 </tr>
             </tfoot>
         </table>
