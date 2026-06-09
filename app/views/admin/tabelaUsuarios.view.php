@@ -16,6 +16,10 @@
     <!--* importando bootstrap-icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
+    <!-- link do bootstrap -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2JL0vWa8Ck2rdkQ2Bzep5IDxbcnCeu0xjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
+
     <title>Usuários Cadastrados</title>
 </head>
 
@@ -140,20 +144,63 @@
                         <td class="colunageral"><?= $usuario->is_admin ? 'Administrador' : 'Usuário' ?></td>
 
                         <td class="colunageral">
-                            <i class="acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user', '#fundoV')"></i>
+                            <i class="acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user<?= $usuario->id ?>', '#fundoV')"></i>
                             <i class="acao bi bi-pencil-square" data-id="<?= $usuario->id ?>" data-nome="<?= $usuario->nome ?> "data-email="<?= $usuario->email ?>"></i>
-                            <i class="acao bi bi-trash" onclick="abrirModal('#modal-excluir-user', '#fundoE')"></i>
+                            <i class="acao bi bi-trash" onclick="abrirModal('#modal-excluir-user<?= $usuario->id ?>', '#fundoE')"></i>
                         </td>
 
                     </tr>
 
-                <?php endforeach ?>
+                <?php endforeach; ?>
 
             </tbody>
 
             <tfoot>
                 <tr>
-                    <!-- tem q fazer a paginaçao -->
+                    <!-- paginaçao -->
+                    <?php if ($totalPaginas > 1): ?>
+                    
+                        <div class="containerPaginacao">
+                            <ul class="paginacao">
+                                <li>
+                                    <a heref="?pagina=<?= max(1, $paginaAtual - 1) ?>" class="<?= $paginaAtual <= 1 ? 'disabled' : ''?>">&laquo; Anterior</a>
+                                </li>
+
+                                <?php 
+                                    $start = max(2, $paginaAtual - 1);
+                                    $end = min($totalPaginas - 1, $paginaAtual + 1);
+                                ?>
+
+                                <li>
+                                    <a heref="?pagina=1" class="<?= $paginaAtual == 1 ? 'active' : ''?>">1</a>
+                                </li>
+
+                                <?php if ($start > 2):?>
+                                    <li><span class="dots">...</span>
+                                <?php endif; ?>
+
+                                <?php for ($i = $start; $i <= $end; $i++): ?>
+                                    <li>
+                                        <a heref="?pagina=<?= $i ?>" class="<?= $paginaAtual == $i ? 'active' : ''?>"> <?= $i ?></a>
+                                    </li>
+                                <?php endfor; ?>
+
+                                <?php if ($end < $totalPaginas - 1):?>
+                                    <li><span class="dots">...</span>
+                                <?php endif; ?>
+
+                                <li>
+                                    <a heref="?pagina=<?= $totalPaginas ?>" class="<?= $paginaAtual == $totalPaginas ? 'active' : ''?>"> <?= $totalPaginas ?></a>
+                                </li>
+
+                                <li>
+                                    <a heref="?pagina=<?= min($totalPaginas, $paginaAtual + 1) ?>" class="<?= $paginaAtual >= $totalPaginas ? 'disabled' : ''?>">Próximo &raquo;</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    <?php endif; ?>
+
                 </tr>
             </tfoot>
         </table>
@@ -212,14 +259,12 @@
     </div>
 
     <!--* MODAL DE VISUALIZAR USUÁRIOS -->
-
-    <div class="fundo" id="fundoV" onclick="fecharModal('#modal-visu-user', '#fundoV')">
-
-
-
+    <div class="fundo" id="fundoV" onclick="fecharModal('#modal-visu-user<?= $usuario->id ?>', '#fundoV')">
+     <?php foreach($usuarios as $usuario): ?>
         <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
-        <div id="modal-visu-user" class="des-modal-vi" onclick="event.stopPropagation()">
+        <div id="modal-visu-user<?= $usuario->id ?>" class="des-modal-vi" onclick="event.stopPropagation()">
             <div class="imagemV">
+                
                 <!-- <img class="fundoModalIMG" src="../../../public/assets/fundo modal.png" alt="Fundo"> -->
 
                 <section class="oqmodalVI">
@@ -228,56 +273,62 @@
                 </section>
 
                 <section class="fotodeperfilvi">
-                    <img class="imgperfilvi" src="../../../public/assets/fotodeperfil.jpg" alt="Foto de perfil">
+                    <img class="imgperfilvi" src="../../../public/assets/fotos-de-perfil-dos-usuarios<?= $usuario->foto ?>" alt="Foto de perfil">
                 </section>
 
                 <section class="x">
 
                     <img class="xis" src="../../../public/assets/XCircleFill.svg" alt="x"
-                        onclick="fecharModal('#modal-visu-user', '#fundoV')">
+                        onclick="fecharModal('#modal-visu-user<?= $usuario->id?>', '#fundoV')">
 
                 </section>
 
+                
                 <section id="container-dados-visu">
                     <!-- disabled- desbilita total 
             readonly- nn deixa editar mas pode clicar e copiar o texto -->
 
                     <div class="dados-visu">
                         <div class="destaque-dados-visu id">ID</div>
-                        <div class="dado-visu">1</div>
+                        <div class="dado-visu"> <?= $usuario->id ?> </div>
                     </div>
 
                     <div class="dados-visu">
                         <div class="destaque-dados-visu nome">NOME</div>
-                        <div class="dado-visu">Fulano Sicrano da Silva Miguez Soares</div>
+                        <div class="dado-visu"> <?= $usuario->nome ?> </div>
                     </div>
 
                     <div class="dados-visu">
                         <div class="destaque-dados-visu email">EMAIL</div>
-                        <div class="dado-visu">fulanosilva123@gmail.com</div>
+                        <div class="dado-visu"> <?= $usuario->email ?> </div>
                     </div>
 
                     <div class="dados-visu">
                         <div class="destaque-dados-visu tipo">TIPO</div>
-                        <div class="dado-visu">Administrador</div>
+                        <div class="dado-visu"> <?= $usuario->is_admin ?> </div>
                     </div>
 
 
                 </section>
 
+                 
+
             </div>
 
         </div>
 
+     <?php endforeach; ?>
     </div>
 
     <!--* MODAL DE EXCLUIR USÚARIOS -->
 
-    <div class="fundo" id="fundoE" onclick="fecharModal('#modal-excluir-user', '#fundoE')">
+    <div class="fundo" id="fundoE" onclick="fecharModal('#modal-excluir-user<?= $usuario->id ?>', '#fundoE')">
+        
+     <?php foreach($usuarios as $usuario): ?>
 
 
         <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
-        <div id="modal-excluir-user" class="des-modal-ex" onclick="event.stopPropagation()">
+        <div id="modal-excluir-user<?= $usuario->id ?>" class="des-modal-ex" onclick="event.stopPropagation()">
             <div class="imagemE">
 
                 <section class="oqmodalEX">
@@ -293,7 +344,7 @@
 
                 <section class="X">
                     <img class="xis" src="../../../public/assets/XCircleFill.svg" alt="x"
-                        onclick="fecharModal('#modal-excluir-user', '#fundoE')">
+                        onclick="fecharModal('#modal-excluir-user<?= $usuario->id?>', '#fundoE')">
                 </section>
 
                 <div class="caixamensagem">
@@ -301,9 +352,7 @@
                         <div class="avisotexto">
                             <!--* o span é inline entt continua ja td na mesma linha -->
                             <p class="avisoSEMdestaque">Tem certeza que deseja excluir o usuário
-                                <span class="avisoCOMdestaque">Fulano Sicrano da
-                                    Silva Miguez Soares
-                                </span>?
+                                <span class="avisoCOMdestaque"> <?= $usuario->nome ?> </span>?
                             </p>
                         </div>
                         <p class="rodapeaviso">Você não pode desfazer essa ação.</p>
@@ -311,14 +360,23 @@
                 </div>
 
                 <section class="containerbotoes">
-                    <button class="botao cancelar" onclick="fecharModal('#modal-excluir-user', '#fundoE')">CANCELAR</button>
-                    <button class="botao sim" onclick="fecharModal('#modal-excluir-user', '#fundoE')">SIM</button>
+
+                <button class="botao cancelar" onclick="fecharModal('#modal-excluir-user<?= $usuario->id?>', '#fundoE')">CANCELAR</button>
+
+                <form action="tabelaUsuarios/excluir" method="POST">
+                    <!-- hidden = nn aperece para o user
+                    ai manda o id para o submit da função de excluir -->
+                    <input type="hidden" name="id" value="<?= $usuario->id ?>">
+                    
+                    <button class="botao sim" type="submit">SIM</button>
+                </form>
+                  
                 </section>
             </div>
-        </div>
+     </div>
 
+  <?php endforeach; ?>
     </div>
-
 
 
     <script src="../../../public/js/tabela-de-usuarios.js"></script>
