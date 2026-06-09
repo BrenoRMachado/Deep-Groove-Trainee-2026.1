@@ -268,7 +268,7 @@
 
 
         <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
-        <form id="modal-excluir-user<?= $usuario->id ?>" class="des-modal-ex" onclick="event.stopPropagation()" action="tabelaUsuarios/excluir" method="POST">
+        <div id="modal-excluir-user<?= $usuario->id ?>" class="des-modal-ex" onclick="event.stopPropagation()">
             <div class="imagemE">
 
                 <section class="oqmodalEX">
@@ -300,17 +300,20 @@
                 </div>
 
                 <section class="containerbotoes">
+
+                <button class="botao cancelar" onclick="fecharModal('#modal-excluir-user<?= $usuario->id?>', '#fundoE')">CANCELAR</button>
+
+                <form action="tabelaUsuarios/excluir" method="POST">
+                    <!-- hidden = nn aperece para o user
+                    ai manda o id para o submit da função de excluir -->
+                    <input type="hidden" name="id" value="<?= $usuario->id ?>">
                     
-                <!-- hidden = nn aperece para o user
-                ai manda o id para o submit da função de excluir -->
-                <input type="hidden" name="id" value="<?= $usuario->id ?>">
-                    
-                    <button class="botao cancelar" onclick="fecharModal('#modal-excluir-user<?= $usuario->id?>', '#fundoE')">CANCELAR</button>
                     <button class="botao sim" type="submit">SIM</button>
+                </form>
                   
                 </section>
             </div>
-        </form>
+     </div>
 
   <?php endforeach; ?>
     </div>
