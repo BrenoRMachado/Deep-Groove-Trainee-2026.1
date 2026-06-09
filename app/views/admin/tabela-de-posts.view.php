@@ -171,11 +171,23 @@
 
     <!-- MODAL DE CRIAR POSTS -->
 
+    <!-- Parte de cima do modal, onde fica a imagem de capa  -->
+
     <form method="POST" action="/tabela-de-posts/create" id="modal-criar-posts">
         <div class="alto-modal-criar">
-            <div class="um-terco-alto-modal-criar">oi</div>
-            <div class="um-terco-alto-modal-criar">oi</div>
-            <div class="um-terco-alto-modal-criar">oi</div>
+            <div class="um-terco-alto-modal-criar parte-esquerda-alto-modal">
+                <h2>Criar postagem</h2>
+            </div>
+            <div class="um-terco-alto-modal-criar">
+                <div class="parte-media-alto-modal">
+                    <i class="imagem-placeholder-capa-criar-post bi bi-image"></i>
+                </div>
+            </div>
+            <div class="um-terco-alto-modal-criar parte-direita-alto-modal">
+                <button class="container-x">
+                    <i class="sair-da-pagina bi bi-x fill"></i>
+                </button>
+            </div>
         </div>
 
         <!-- Parte onde fica a opção de mudar a foto -->
@@ -194,9 +206,7 @@
                 </div>
             </div>
 
-
         <!-- Parte onde fica o formulario com as informações a serem preenchidas -->
-
 
             <div class="area-de-colocar-informacoes">
                 <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Título</div> <input placeholder="Digite o título" name="titulo"></div>
