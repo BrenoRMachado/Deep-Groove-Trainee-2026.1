@@ -171,7 +171,7 @@
 
     <!-- MODAL DE CRIAR POSTS -->
 
-    <form id="modal-criar-posts">
+    <form method="POST" action="/tabela-de-posts/create" id="modal-criar-posts">
         <div class="alto-modal-criar">
             <div class="um-terco-alto-modal-criar">oi</div>
             <div class="um-terco-alto-modal-criar">oi</div>
@@ -199,17 +199,22 @@
 
 
             <div class="area-de-colocar-informacoes">
-                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Título</div> <input placeholder="Digite o título"></div>
-                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Data de criação</div> <input type="date"></div>
-                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Autor</div> <input placeholder="Digite o nome do autor"></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Título</div> <input placeholder="Digite o título" name="titulo"></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Ano de lançamento</div> <input placeholder="Digite o ano" name="ano"></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Artista</div> <input placeholder="Digite o nome do artista" name="artista"></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: green;">Gênero</div> <input name="genero"></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: blue;">Foto</div> <input name="foto"></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: purple;">Duração</div> <input name="duracao"></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: black;">Id usuário</div> <input name="id_usuario"></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: cyan;">Id deezer</div> <input name="id_deezer"></div>
                 <div class="container-textarea">
                     <div class="container-dado-a-criar" style="background-color: var(--cor-amarelo);">
                         Descrição
                     </div>
-                    <textarea rows="10" placeholder="Digite a descrição"></textarea>
+                    <textarea rows="10" placeholder="Digite a descrição" name="conceito"></textarea>
                 </div>
                 <div class="quarto-da-area-informacoes">
-                    <button class="botao-modal-criar cancelar">Cancelar</button>
+                    <button class="botao-modal-criar cancelar" type="button">Cancelar</button>
                     <button class="botao-modal-criar salva">Salvar</button>
                 </div>
             </div>
