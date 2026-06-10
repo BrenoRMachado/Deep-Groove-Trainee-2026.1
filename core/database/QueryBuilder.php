@@ -70,4 +70,52 @@ class QueryBuilder
 
     }
 
+    // DELETE FROM `usuarios` WHERE 0
+    public function delete($tabela, $id){
+        $sql = sprintf('DELETE FROM %s WHERE %s',
+        $tabela,
+        'id = :id'
+        );
+
+        
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute(compact('id'));
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    //paginação
+    //usa pra ver o total de elementos da tabela
+    public function countAll($tabela){
+        $sql = "SELECT COUNT(*) AS total FROM {$tabela}";
+
+         try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetch(PDO::FETCH_ASSOC)['total'];
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function paginate($tabela, $limite, $salto){
+        $sql = "SELECT * FROM {$tabela} LIMIT {$limite} OFFSET {$salto}";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+     //FIM paginação
+
 }
