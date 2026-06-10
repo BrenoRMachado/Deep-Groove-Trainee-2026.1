@@ -28,4 +28,37 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
+
+    public function countAllPosts($tabela){
+
+        $sql = "SELECT COUNT(*) AS total FROM {$tabela}";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetch(PDO::FETCH_ASSOC)['total'];
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
+
+    public function paginatePosts($tabela, $limite, $offset) {
+
+        $sql = "SELECT * FROM {$tabela} LIMIT {$limite} OFFSET {$offset}";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
+
 }
