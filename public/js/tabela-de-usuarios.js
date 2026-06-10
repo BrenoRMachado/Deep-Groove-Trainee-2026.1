@@ -64,16 +64,15 @@ function fecharModal(idModal, fundo) {
         fundomodal.style.display = "none"
 }
 
-// // CÓDIGO DO MODAL DE ADICIONAR USUÁRIO
+// *CÓDIGO DO MODAL DE ADICIONAR USUÁRIO
 
-// // *Seleciona o botão de adicionar a foto de perfil do usuário:
-// const botaoAdicionaFotoDePerfil = document.querySelector('.botao-lapis-modal-criar');
-// const inputEscolherFotoDePerfilDoModalDeCriar = inputsEscolherFotoDePerfil[0];
+// *Seleciona o input de adicionar a foto de perfil do usuário:
+const inputEscolherFotoDePerfilDoModalDeCriar = document.querySelector('#modal-criar-usuarios .foto-de-perfil-escolhida');
 
-// // *Aciona o input de escolher foto de perfil ao clicar no botão de adicionar foto de perfil do usuário:
-// botaoAdicionaFotoDePerfil.addEventListener('click', function() {
-//         inputEscolherFotoDePerfilDoModalDeCriar.click();
-// });
+// *Aciona o input de escolher foto de perfil ao clicar no botão de adicionar foto de perfil do usuário:
+function adicionarFotoDePerfil() {
+        inputEscolherFotoDePerfilDoModalDeCriar.click();
+};
 
 const modalCriar = document.getElementById("modal-criar-usuarios")
 
