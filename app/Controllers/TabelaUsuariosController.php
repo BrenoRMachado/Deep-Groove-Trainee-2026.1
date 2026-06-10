@@ -69,6 +69,10 @@ class TabelaUsuariosController {
 
         if (!empty($_FILES['foto-de-perfil']['tmp_name'])) {
 
+            $fotoAntiga = $usuarioAtual->foto;
+
+            unlink($fotoAntiga);
+
             $fotoDePerfilTemporaria = $_FILES['foto-de-perfil']['tmp_name'];
     
             $nomeDaFotoDePerfil = sha1(uniqid($_FILES['foto-de-perfil']['name'], true)) . "." . pathinfo($_FILES['foto-de-perfil']['name'], PATHINFO_EXTENSION);
@@ -98,6 +102,12 @@ class TabelaUsuariosController {
         $id = $_POST['id'];
 
         // var_dump($_POST); VER SE O ID TAVA INDO MSM
+
+        $usuarioAtual = App::get('database')->selectById('usuarios', $id);
+
+        $fotoAtual = $usuarioAtual->foto;
+
+        unlink($fotoAtual);
         
         App::get('database') -> delete('usuarios', $id);
 
