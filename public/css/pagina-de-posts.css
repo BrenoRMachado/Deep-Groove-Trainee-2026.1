@@ -152,9 +152,8 @@
     width: 77%;
     height: 100%;
     background-color: var(--cor-preto-100);
-    border: 1.5px solid var(--cor-preto-100);
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12), -2px -2px 10px rgba(0, 0, 0, 0.12);
+    box-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.3), -1.5px -1.5px 3px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 2;
 }
@@ -312,14 +311,16 @@
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    list-style: none;
 }
 
 /* *Estilo dos botões de mudança de página da página de posts */
-#pagina-de-posts #container-de-mudanca-de-pagina .seta-esquerda-mudar-pagina, #pagina-de-posts #container-de-mudanca-de-pagina .seta-direita-mudar-pagina {
+#pagina-de-posts #container-de-mudanca-de-pagina .seta-esquerda-mudar-para-pagina-anterior, #pagina-de-posts #container-de-mudanca-de-pagina .seta-direita-mudar-para-proxima-pagina {
     font-size: 1.7rem;
     color: var(--cor-branco-100);
     border: none;
     background: none;
+    display: flex;
 }
 
 #pagina-de-posts #container-de-mudanca-de-pagina .botao-numerado {
@@ -330,18 +331,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.3rem;
     border: none;
-}
-
-#pagina-de-posts #container-de-mudanca-de-pagina .botao-pagina-atual {
-    background-color: var(--cor-laranja-200);
-    color: var(--cor-branco-100);
-}
-
-#pagina-de-posts #container-de-mudanca-de-pagina .botao-proxima-pagina, #pagina-de-posts #container-de-mudanca-de-pagina .botao-proxima-proxima-pagina {
     background-color: var(--cor-branco-100);
-    color: var(cor-preto-100);
+    color: var(--cor-preto-100);
+    text-decoration: none;
+}
+
+#pagina-de-posts #container-de-mudanca-de-pagina .container-botoes .ativo {
+    background-color: var(--cor-laranja-200);
+    color: var(--cor-branco-100) !important;
 }
 
 #pagina-de-posts #container-de-mudanca-de-pagina.existe-mais-paginas {
@@ -363,6 +362,14 @@
 #pagina-de-posts #container-de-mudanca-de-pagina .botao:hover {
     transform: scale(1.15);
     cursor: pointer;
+}
+
+#pagina-de-posts #container-de-mudanca-de-pagina .botao-numerado:active {
+    color: currentColor;
+}
+
+#pagina-de-posts #container-de-mudanca-de-pagina .botao-numerado:visited {
+    color: currentColor;
 }
 
 /* *Animações */
@@ -439,7 +446,7 @@
         width: 2.2rem;;
     }
 
-    #pagina-de-posts #container-de-mudanca-de-pagina .seta-esquerda-mudar-pagina, #pagina-de-posts #container-de-mudanca-de-pagina .seta-direita-mudar-pagina {
+    #pagina-de-posts #container-de-mudanca-de-pagina .seta-esquerda-mudar-para-pagina-anterior, #pagina-de-posts #container-de-mudanca-de-pagina .seta-direita-mudar-para-proxima-pagina {
         font-size: 3rem;
     }
 
