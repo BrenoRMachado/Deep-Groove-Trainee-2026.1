@@ -31,7 +31,7 @@
 
     <!-- Parte de cima do modal, onde fica a imagem de capa  -->
 
-    <form id="modal-criar-usuarios">
+    <form id="modal-criar-usuarios" method="POST" action="/tabelaUsuarios/criar" enctype="multipart/form-data">
         <div class="alto-modal-criar">
             <div class="um-terco-alto-modal-criar parte-esquerda-alto-modal">
                 <h2>Criar usuário</h2>
@@ -57,19 +57,20 @@
                     <p>Recomendamos uma imagem quadrada de pelo menos 500 por 500 pixels</p>
                 </div>
                 <div class="segunda-parte-do-container-informacoes-foto">
-                    <button type="button" class="botao-anexar-foto-modal-criar">
+                    <button type="button" class="botao-anexar-foto-modal-criar" onclick="adicionarFotoDePerfil()">
                         <i class="bi bi-box-arrow-up"></i>
                         Anexar foto
                     </button>
+                    <input type="file" name="foto-de-perfil" class="foto-de-perfil-escolhida" accept="image/*">
                 </div>
             </div>
 
         <!-- Parte onde fica o formulario com as informações a serem preenchidas -->
 
             <div class="area-de-colocar-informacoes">
-                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Nome</div> <input placeholder="Digite o nome" name="titulo"></div>
-                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Email</div> <input placeholder="Digite o email" name="ano"></div>
-                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Senha</div> <input placeholder="Digite a senha" name="ano"></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Nome</div> <input placeholder="Digite o nome" name="nome" required></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Email</div> <input placeholder="Digite o email" name="email" required></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Senha</div> <input placeholder="Digite a senha" name="senha" required></div>
                 <div class="quarto-da-area-informacoes">
                     <button class="botao-modal-criar cancelar" type="button" onclick="fecharModalCriar()">Cancelar</button>
                     <button class="botao-modal-criar salva">Salvar</button>
@@ -241,15 +242,15 @@
             <section class="secao-editar-nome-email-senha">
                 <div class="container-editar-dado container-editar-nome">
                     <span class="titulo-dado titulo-nome">Nome</span>
-                    <input class="editar-dado" type="text" placeholder="Nome" name="nome">
+                    <input class="editar-dado" type="text" placeholder="Nome" name="nome" required> 
                 </div>
                 <div class="container-editar-dado container-editar-email">
                     <span class="titulo-dado titulo-email">Email</span>
-                    <input class="editar-dado editar-email" placeholder="Email" type="email" name="email"></input>
+                    <input class="editar-dado editar-email" placeholder="Email" type="email" name="email" required></input>
                 </div>
                 <div class="container-editar-dado container-editar-senha">
                     <span class="titulo-dado titulo-senha">Senha</span>
-                    <input class="editar-dado" type="password" placeholder="Senha" name="senha">
+                    <input class="editar-dado" type="password" placeholder="Senha" name="senha" required>
                 </div>
                 <div class="secao-botoes-salvar-cancelar">
                     <button class="botao botao-cancelar" type="button" onclick="cancelarEdicaoDeUsuario('#modal-edicao-usuarios<?= $usuario->id ?>')">Cancelar</button>
