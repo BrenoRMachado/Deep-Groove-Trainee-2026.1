@@ -125,11 +125,12 @@ html, .tudolanding {
     gap: 0.625rem;
     justify-content: center;
     padding: 0.625rem;
-    width: 35vw;
+    width: 20vw;
 
     /*todo: aparência da caixa */
     background-color: #FFA96B;
     border-radius: 2.31vw;
+    border: none;
 
     /*todo: tipografia */
     color: #000;
@@ -166,6 +167,7 @@ html, .tudolanding {
 .carroussel {
     background-color: #FFF;
     overflow: hidden;
+    padding: 1.5625rem clamp(1.5rem, 5vw, 5rem);
     position: relative;
     width: 100%;
 }
@@ -175,7 +177,7 @@ html, .tudolanding {
     display: flex;
     gap: 0.5rem;
     justify-content: center;
-    margin: 1rem 0;
+    margin: 0 0 1rem 0;
 
 }
 /* ! titulo do carroussel-texto*/
@@ -203,7 +205,7 @@ html, .tudolanding {
 
 /*! onde está as imagens */
 .slider-item {
-  min-width: 28%;
+  min-width: 30%;
 }
 
 /*! as imagens */
@@ -219,7 +221,7 @@ html, .tudolanding {
 .nav-arrow {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(+30%);
     background-color: rgba(225, 225, 225, 0, 9);
     color: black;
     width: 3vw;
@@ -244,7 +246,7 @@ html, .tudolanding {
 .seta_direita {right: 0.9vw;}
 
 /*! area onde fica as bolinhas */
-.radio-auto {
+/* .radio-auto {
     align-items: center;
     display: flex;
     gap: 0.5vw;
@@ -252,22 +254,22 @@ html, .tudolanding {
     justify-content: center;
     margin: 1vw 0;
     width: 100vw;
-}
+} */
 
 /*! bolinhas */
-.radio-label {
+/* .radio-label {
     border: 0.10vw solid white;
     padding: 0.4vw;
     border-radius: 50%;
     background-color: #ccc;
     cursor: pointer;
     transition: background-color 0.3s;
-}
+} */
 
 /*! efeito das bolinhas quando o cursor passa em cima */
-.radio-label.active {
+/* .radio-label.active {
     background-color: #FFA96B;
-}
+} */
 
 /* MOSAICO */
 .mosaico {
@@ -311,9 +313,9 @@ html, .tudolanding {
     align-items: center;
     display: flex;
     flex-shrink: 0;
-    gap: 4rem;
+    gap: 5rem;
     height: auto;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
 }
 
@@ -322,12 +324,9 @@ html, .tudolanding {
     /*? layout */
     align-items: flex-start;
     display: flex;
-    flex: 1;
     flex-direction: column;
-    gap: 0.625rem;
     height: 60vh;
     image-rendering: auto;
-    /* min-width: 300px; */
 
     /*? aparencia */
     background-color: #FFF;
@@ -349,7 +348,6 @@ html, .tudolanding {
     flex-direction: column;
     gap: 1.5rem;
     height: auto;
-    image-rendering: auto;
     justify-content: center;
     width: 50%;
 }
@@ -371,7 +369,6 @@ html, .tudolanding {
 .i1 {
     /*? layout */
     display: flex;
-   
     flex-shrink: 0;
     height: 18.5vh;
     justify-content: center;
