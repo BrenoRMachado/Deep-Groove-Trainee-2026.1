@@ -99,7 +99,7 @@
                         <div class="container-dado-a-criar" style="background-color: var(--cor-amarelo);">
                             Descrição
                         </div>
-                        <textarea rows="10" placeholder="Digite a descrição" name="conceito"></textarea>
+                        <textarea rows="10" placeholder="Digite a descrição" name="conceito"><?= $publicacao->conceito ?></textarea>
                     </div>
                     <div class="quarto-da-area-informacoes">
                         <button class="botao-modal-criar cancelar" type="button" onclick="fecharModal('modal-criar-posts')">Cancelar</button>
