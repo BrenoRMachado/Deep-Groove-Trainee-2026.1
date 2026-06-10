@@ -1014,6 +1014,12 @@
     gap: 5%
 }
 
+
+/* *Input de escolher a foto de perfil escondido */
+#modal-criar-usuarios .foto-de-perfil-escolhida {
+    display: none;
+}
+
 .area-de-colocar-informacoes::-webkit-scrollbar {
     width: 7px; 
 }
