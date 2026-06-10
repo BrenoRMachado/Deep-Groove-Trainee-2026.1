@@ -199,20 +199,45 @@
         </section>
 
         <!-- !FIM DA ÁREA DE POSTS PARA TABLET / MOBILE -->
-
+        
         <section id="container-de-mudanca-de-pagina">
-            <div class="container-botoes">
-                <button class="botao seta-esquerda-mudar-pagina">
-                    <i class="bi bi-chevron-left"></i>
-                </button>
-                <button class="botao-numerado botao botao-pagina-atual">1</button>
-                <button class="botao botao-numerado botao-proxima-pagina">2</button>
-                <button class="botao botao-numerado botao-proxima-proxima-pagina">3</button>
-                <span class="existe-mais-paginas">...</span>
-                <button class="botao seta-direita-mudar-pagina">
-                    <i class="bi bi-chevron-right"></i>
-                </button>
-            </div>
+            <?php
+                $comeco = max(2, $paginaAtual - 1);
+                $final = min($totalDePaginas - 1, $paginaAtual + 1);
+            ?>
+            <ul class="container-botoes">
+                <li>
+                    <a href="?pagina=<?=  max(1, $paginaAtual - 1) ?>" class="<?= $paginaAtual <= 1 ? 'desabilitado' : ''?> botao seta-esquerda-mudar-para-pagina-anterior">
+                        <i class="bi bi-chevron-left"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="?pagina=1" class="<?= $paginaAtual == 1 ? 'ativo' : ''?> botao botao-numerado">1</a>
+                </li>
+                <?php if ($comeco > 2): ?>
+                    <li>
+                        <span class="existe-mais-paginas">...</span>
+                    </li>
+                <?php endif; ?>    
+                <?php for ($i = $comeco; $i <= $final; $i++): ?>
+                    <li>
+                        <a href="?pagina=<? $i ?>" class="<?= $paginaAtual == $i ? 'ativo' : ''?> botao botao-numerado"><?= $i ?></a>
+                    </li>
+                <?php endfor; ?>    
+                <?php if ($final < $totalDePaginas - 1): ?>
+                    <li>
+                        <span class="existe-mais-paginas">...</span>
+                    </li>
+                <?php endif; ?> 
+                <li>
+                    <a href="?pagina=<?= $totalDePaginas ?>" class="<?= $paginaAtual == $totalDePaginas ? 'ativo' : ''?> botao botao-numerado"><?= $totalDePaginas ?></a>
+                </li>
+                <li>
+                    <a href="?pagina=<?=  min($totalDePaginas, $paginaAtual + 1) ?>" class="<?= $paginaAtual >= $totalDePaginas ? 'desabilitado' : ''?> botao seta-direita-mudar-para-proxima-pagina">
+                        <i class="bi bi-chevron-right"></i>
+                    </a>
+                </li>
+            </ul>
         </section>
     </main>
 </body>
