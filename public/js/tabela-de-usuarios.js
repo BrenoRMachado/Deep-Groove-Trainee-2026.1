@@ -1,3 +1,17 @@
+//* Todos os campos com 'required' no input exibiram a seguinte mensagem: */
+const inputsObrigatoriosDosModais = document.querySelectorAll('input[required]');
+
+inputsObrigatoriosDosModais.forEach(input => {
+        input.addEventListener('invalid', function() {
+                if (this.value === ''){
+                        this.setCustomValidity('Este campo é obrigatório');
+                }
+        });
+        input.addEventListener('input', function() {
+                this.setCustomValidity('');
+        });
+});
+
 // ! INÍCIO DO CÓDIGO DO MODAL DE EDIÇÃO DE USUÁRIOS DA TABELA DE USUÁRIOS
 // *Seleciona icones de edicao de usuário da tabela de usuários, o modal de edição de usuários e o filtro ao abrir o modal da tabela de usuários
 
