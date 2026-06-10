@@ -11,3 +11,6 @@ $router->get('tabela-de-posts', 'TabelaPostsController@index');
 
 // Método para criar o post
 $router->post('tabela-de-posts/create', 'TabelaPostsController@store');
+
+// Método para editar as informações
+$router->post('tabela-de-posts/edit', 'TabelaPostsController@edit');

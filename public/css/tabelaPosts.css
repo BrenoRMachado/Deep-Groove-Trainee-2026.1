@@ -222,7 +222,7 @@
 }
 
 /* *ESTILO DO MODAL DE EDIÇÃO DE POSTS */
-#modal-edicao-posts {
+.modal-edicao-posts {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -241,7 +241,7 @@
 }    
 
 /* *Estilo da secao do texto, da foto, e do ícone de fechar o modal */
-#modal-edicao-posts .secao-texto-foto-fechar-modal {
+.modal-edicao-posts .secao-texto-foto-fechar-modal {
     width: 90%;
     height: 23%;
     display: flex;
@@ -249,7 +249,7 @@
 }
 
 /* *Estilo do texto de editar foto da capa do álbum */
-#modal-edicao-posts .container-texto {
+.modal-edicao-posts .container-texto {
     font-size: 0.6rem;
     width: 35%;
     color: var(--cor-branco-300);
@@ -257,7 +257,7 @@
 }
 
 /* *Estilo do container da foto da capa do álbum */
-#modal-edicao-posts .container-foto-capa-do-album {
+.modal-edicao-posts .container-foto-capa-do-album {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -268,21 +268,21 @@
 }
 
 /* *Estilo do ícone da foto da capa do álbum */
-#modal-edicao-posts .container-foto-capa-do-album .icone-foto-capa-do-album {
+.modal-edicao-posts .container-foto-capa-do-album .icone-foto-capa-do-album {
     font-size: 3rem;
     border: none;
     background: none;
 }
 
 /* *Estilo do container do botão de fechar modal*/
-#modal-edicao-posts .container-botao-fechar-modal {
+.modal-edicao-posts .container-botao-fechar-modal {
     display: flex;
     justify-content: flex-end;
     width: 35%;
 }
 
 /* *Estilo do botão de fechar modal*/
-#modal-edicao-posts .botao-fechar-modal {
+.modal-edicao-posts .botao-fechar-modal {
     border: none;
     border-radius: 50%;
     font-size: 1.5rem;
@@ -295,7 +295,7 @@
 }
 
 /* *Animação ao passar o mouse por cima do botão de fechar modal*/
-#modal-edicao-posts .botao-fechar-modal:hover {
+.modal-edicao-posts .botao-fechar-modal:hover {
     transform: scale(1.015);
     transition: transform 0.2;
     cursor: pointer;
@@ -303,7 +303,7 @@
 }
 
 /* *Estilo da seção de edição das informações do usuário */
-#modal-edicao-posts .secao-edicao-dados-do-album {
+.modal-edicao-posts .secao-edicao-dados-do-album {
     border-radius: 30px;
     display: flex;
     flex-direction: column;
@@ -314,7 +314,7 @@
 }
 
 /* *Estilo da secao de instruções e de editar foto da capa do álbum */
-#modal-edicao-posts .secao-instrucao-editar-foto-capa-do-album {
+.modal-edicao-posts .secao-instrucao-editar-foto-capa-do-album {
     width: 80%;
     height: 20%;
     border-radius: 30px;
@@ -326,7 +326,7 @@
 }
 
 /* *Estilo do container de instruções de editar foto da capa do álbum */
-#modal-edicao-posts .container-instrucao-editar-foto-capa-do-album {
+.modal-edicao-posts .container-instrucao-editar-foto-capa-do-album {
     width: 90%;
     height: 100%;
     display: flex;
@@ -335,7 +335,7 @@
 }
 
 /* *Estilo do texto de instruções de editar foto da capa do álbum */
-#modal-edicao-posts .container-texto-instrucao-editar-foto-capa-do-album {
+.modal-edicao-posts .container-texto-instrucao-editar-foto-capa-do-album {
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -345,7 +345,7 @@
 }
 
 /* *Estilo do botão de editar foto da capa do álbum */
-#modal-edicao-posts .botao-alterar-foto-capa-do-album {
+.modal-edicao-posts .botao-alterar-foto-capa-do-album {
     color: var(--cor-branco-300);
     width: 35%;
     height: 45%;
@@ -358,7 +358,7 @@
 }
 
 /* *Animacao ao o mouse por cima do botão de editar foto da capa do álbum */
-#modal-edicao-posts .botao-alterar-foto-capa-do-album:hover {
+.modal-edicao-posts .botao-alterar-foto-capa-do-album:hover {
     transform: scale(1.015);
     transition: transform 0.2;
     cursor: pointer;
@@ -367,7 +367,7 @@
 }
 
 /* *Estilo da secao de editar informações do álbum e de salvar e cancelar */
-#modal-edicao-posts .secao-editar-titulo-ano-autor {
+.modal-edicao-posts .secao-editar-titulo-ano-autor {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -379,7 +379,7 @@
 }
 
 /* *Estilo do container de editar o dado da publicação*/
-#modal-edicao-posts .container-editar-dado {
+.modal-edicao-posts .container-editar-dado {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -388,7 +388,7 @@
 }
 
 /* *Estilo do título do dado a ser editado do usuário (Nome, E-mail, Senha) */
-#modal-edicao-posts .titulo-dado {
+.modal-edicao-posts .titulo-dado {
     color: var(--cor-branco-300);
     font-weight: bold;
     border-radius: 30px;
@@ -401,20 +401,20 @@
     font-family: var(--fonte-modal);
 }
 
-#modal-edicao-posts .titulo-titulo {
+.modal-edicao-posts .titulo-titulo {
     background-color: var(--cor-vinho-100);
 }
 
-#modal-edicao-posts .titulo-ano {
+.modal-edicao-posts .titulo-ano {
     background-color: var(--cor-laranja-200);
 }
 
-#modal-edicao-posts .titulo-autor {
+.modal-edicao-posts .titulo-autor {
     background-color: var(--cor-vermelho-50);
 }
 
 /* *Estilo do input de digitar o dado do usuário */
-#modal-edicao-posts .editar-dado {
+.modal-edicao-posts .editar-dado {
     border-radius: 10px;
     height: 100%;
     width: 75%;
@@ -426,18 +426,18 @@
 }
 
 /* *Estilo do placeholder de editar dado */
-#modal-edicao-posts .editar-dado::placeholder {
+.modal-edicao-posts .editar-dado::placeholder {
     color: var(--cor-vinho-100);
     opacity: 0.5;
 }
 
 /* *Estilo da borda do input ao clicar nele */
-#modal-edicao-posts .editar-dado:focus {
+.modal-edicao-posts .editar-dado:focus {
     outline: none;
 }
 
 /* *Estilo do container dos botões de salvar e cancelar */
-#modal-edicao-posts .secao-botoes-salvar-cancelar {
+.modal-edicao-posts .secao-botoes-salvar-cancelar {
     width: 90%;
     height: 15%;
     display: flex;
@@ -446,7 +446,7 @@
 }
 
 /* *Estilo dos botões de salvar e cancelar */
-#modal-edicao-posts .secao-botoes-salvar-cancelar .botao {
+.modal-edicao-posts .secao-botoes-salvar-cancelar .botao {
     border-radius: 30px;
     border: none;
     font-family: var(--fonte-modal);
@@ -454,19 +454,19 @@
     height: 85%;
 }
 
-#modal-edicao-posts .secao-botoes-salvar-cancelar .botao-salvar {
+.modal-edicao-posts .secao-botoes-salvar-cancelar .botao-salvar {
     background-color: var(--cor-vermelho-50);
     color: var(--cor-branco-300);
 }
 
-#modal-edicao-posts .secao-botoes-salvar-cancelar .botao-cancelar {
+.modal-edicao-posts .secao-botoes-salvar-cancelar .botao-cancelar {
     border: 1px solid var(--cor-vinho-100);
     background-color: transparent;
     color: var(--cor-vinho-100);
 }
 
 /* *Animação ao passar o mouse por cima dos botões e cancelar e salvar a edição do post */
-#modal-edicao-posts .secao-botoes-salvar-cancelar .botao:hover {
+.modal-edicao-posts .secao-botoes-salvar-cancelar .botao:hover {
     transform: scale(1.015);
     transition: transform 0.2;
     cursor: pointer;
@@ -485,21 +485,21 @@
 /* !INÍCIO da responsividade PARA MODAL DE EDIÇÃO DE POSTS*/
 /* *Tablet deitado/Laptop pequeno */
 @media (max-width: 1025px){
-    #modal-edicao-posts {
+    .modal-edicao-posts {
         width: 65%;
     }
 }
 
 /* *Tablet na vertical */
 @media (max-width: 769px){
-    #modal-edicao-posts {
+    .modal-edicao-posts {
         width: 80%;
     }
 }
 
 /* *Celulares */
 @media (max-width: 600px){
-    #modal-edicao-posts {
+    .modal-edicao-posts {
             width: 95%;
             height: 95%;
         }
@@ -856,6 +856,7 @@
 
 #modal-criar-posts button:hover {
     transform: scale(1.025);
+    cursor: pointer;
 }
 
 .alto-modal-criar {
