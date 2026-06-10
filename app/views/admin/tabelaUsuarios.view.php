@@ -242,15 +242,15 @@
             <section class="secao-editar-nome-email-senha">
                 <div class="container-editar-dado container-editar-nome">
                     <span class="titulo-dado titulo-nome">Nome</span>
-                    <input class="editar-dado" type="text" placeholder="Nome" name="nome" required> 
+                    <input class="editar-dado" type="text" placeholder="Nome" name="nome"> 
                 </div>
                 <div class="container-editar-dado container-editar-email">
                     <span class="titulo-dado titulo-email">Email</span>
-                    <input class="editar-dado editar-email" placeholder="Email" type="email" name="email" required></input>
+                    <input class="editar-dado editar-email" placeholder="Email" type="email" name="email"></input>
                 </div>
                 <div class="container-editar-dado container-editar-senha">
                     <span class="titulo-dado titulo-senha">Senha</span>
-                    <input class="editar-dado" type="password" placeholder="Senha" name="senha" required>
+                    <input class="editar-dado" type="password" placeholder="Senha" name="senha">
                 </div>
                 <div class="secao-botoes-salvar-cancelar">
                     <button class="botao botao-cancelar" type="button" onclick="cancelarEdicaoDeUsuario('#modal-edicao-usuarios<?= $usuario->id ?>')">Cancelar</button>
