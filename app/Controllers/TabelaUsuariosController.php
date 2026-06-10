@@ -63,22 +63,31 @@ class TabelaUsuariosController {
     
     public function editarUsuarios() {
 
-        $fotoDePerfilTemporaria = $_FILES['foto-de-perfil']['tmp_name'];
+        $id = $_POST['id'];
 
-        $nomeDaFotoDePerfil = sha1(uniqid($_FILES['foto-de-perfil']['name'], true)) . "." . pathinfo($_FILES['foto-de-perfil']['name'], PATHINFO_EXTENSION);
+        $usuarioAtual = App::get('database')->selectById('usuarios', $id);
 
-        $caminhoDaImagem = $_SERVER['DOCUMENT_ROOT'] . "/public/assets/fotos-de-perfil-dos-usuarios/" . $nomeDaFotoDePerfil;
+        if (!empty($_FILES['foto-de-perfil']['tmp_name'])) {
 
-        move_uploaded_file($fotoDePerfilTemporaria, $caminhoDaImagem);
+            $fotoDePerfilTemporaria = $_FILES['foto-de-perfil']['tmp_name'];
+    
+            $nomeDaFotoDePerfil = sha1(uniqid($_FILES['foto-de-perfil']['name'], true)) . "." . pathinfo($_FILES['foto-de-perfil']['name'], PATHINFO_EXTENSION);
+    
+            $caminhoDaImagem = $_SERVER['DOCUMENT_ROOT'] . "/public/assets/fotos-de-perfil-dos-usuarios/" . $nomeDaFotoDePerfil;
+    
+            move_uploaded_file($fotoDePerfilTemporaria, $caminhoDaImagem);
+
+        }
+        else {
+            $caminhoDaImagem = $usuarioAtual->foto;
+        }
 
         $parametros = [
-            'nome' => $_POST['nome'],
-            'email' => $_POST['email'],
-            'senha' => $_POST['senha'],
+            'nome' => !empty($_POST['nome']) ? $_POST['nome'] : $usuarioAtual->nome,
+            'email' => !empty($_POST['email']) ? $_POST['email'] : $usuarioAtual->email,
+            'senha' => !empty($_POST['senha']) ? $_POST['senha'] : $usuarioAtual->senha,
             'foto' => $caminhoDaImagem,
             ];  
-
-        $id = $_POST['id'];
 
         App::get('database') -> update('usuarios', $id, $parametros);
 
