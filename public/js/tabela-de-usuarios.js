@@ -2,48 +2,41 @@
 // *Seleciona icones de edicao de usuário da tabela de usuários, o modal de edição de usuários e o filtro ao abrir o modal da tabela de usuários
 
 const filtroAoAbrirModalDaTabelaDeUsuarios = document.querySelector('.filtro-ao-abrir-modal-da-tabela-de-usuarios');
-const modalDeEdicaoDeUsuario = document.querySelector('#modal-edicao-usuarios');
 let estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
 
-document.querySelectorAll('.tabela .bi-pencil-square').forEach((icone) => {
-    icone.addEventListener('click', function () {
-        document.getElementById('id-usuario-edicao').value = this.dataset.id;
-        document.querySelector('#modal-edicao-usuarios input[name="nome"]').value = this.dataset.nome;
-        document.querySelector('#modal-edicao-usuarios input[name="email"]').value = this.dataset.email;
+// *Função ao abrir modal de edição de usuario 
+function abrirModalDeEdicaoDeUsuario(idModalEdicaoDeUsuario){
+        const modalDeEdicaoDeUsuario = document.querySelector(idModalEdicaoDeUsuario);
         modalDeEdicaoDeUsuario.style.display = 'flex';
         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'flex';
         estadoAtualDoModalDeEdicaoDeUsuario = 'aberto';
-    });
-});
-
-// *Seleciona o botão de editar e o input de escolher a foto de perfil do usuário:
-const botaoEditaFotoDePerfil = document.querySelector('.botao-alterar-foto-de-perfil');
-const inputsEscolherFotoDePerfil = document.querySelectorAll('.foto-de-perfil-escolhida');
-const inputEscolherFotoDePerfilDoModalDeEditar = inputsEscolherFotoDePerfil[1];
+}
 
 // *Aciona o input de escolher foto de perfil ao clicar no botão de adicionar foto de perfil do usuário:
-botaoEditaFotoDePerfil.addEventListener('click', function() {
+function editarFotoDePerfil (idFotoDePerfilEscolhida) {
+        const inputEscolherFotoDePerfilDoModalDeEditar = document.querySelector(idFotoDePerfilEscolhida);
         inputEscolherFotoDePerfilDoModalDeEditar.click();
-});
+};
 
-// *Seleciona o botão de cancelar e de fechar do modal de edição de usuários 
+// *Implementa as funções que fecham o modal de edição de usuários ao clicar no botão cancelar, no botão de fechar e no botão de salvar
+ 
+function salvarEdicaoDeUsuario() {
+        estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
+};
 
-const botaoCancelarEdicaoDeUsuario = document.querySelector('#modal-edicao-usuarios .botao-cancelar');
-const botaoFecharEdicaoDeUsuario = document.querySelector('#modal-edicao-usuarios .botao-fechar-modal');
-
-// *Implementa as funções que fecham o modal de edição de usuários ao clicar no botão cancelar ou no botão de fechar
-
-botaoCancelarEdicaoDeUsuario.addEventListener('click', function () {
+function cancelarEdicaoDeUsuario(idModalEdicaoDeUsuario){
+        const modalDeEdicaoDeUsuario = document.querySelector(idModalEdicaoDeUsuario);
         modalDeEdicaoDeUsuario.style.display = 'none';
         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'none';
         estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
-});
+};
 
-botaoFecharEdicaoDeUsuario.addEventListener('click', function () {
+function fecharEdicaoDeUsuario(idModalEdicaoDeUsuario){
+        const modalDeEdicaoDeUsuario = document.querySelector(idModalEdicaoDeUsuario);
         modalDeEdicaoDeUsuario.style.display = 'none';
         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'none';
         estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
-});
+};
 
 // ! FIM 
 

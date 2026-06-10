@@ -145,7 +145,7 @@
 
                         <td class="colunageral">
                             <i class="acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user<?= $usuario->id ?>', '#fundoV')"></i>
-                            <i class="acao bi bi-pencil-square" data-id="<?= $usuario->id ?>" data-nome="<?= $usuario->nome ?> "data-email="<?= $usuario->email ?>"></i>
+                            <i class="acao bi bi-pencil-square" onclick="abrirModalDeEdicaoDeUsuario('#modal-edicao-usuarios<?= $usuario->id ?>')"></i>
                             <i class="acao bi bi-trash" onclick="abrirModal('#modal-excluir-user<?= $usuario->id ?>', '#fundoE')"></i>
                         </td>
 
@@ -207,7 +207,8 @@
     </section>
 
     <!--* MODAL DE EDIÇÃO DE USUÁRIOS  -->
-     <div id="modal-edicao-usuarios">
+    <?php foreach($usuarios as $usuario): ?>
+     <div id="modal-edicao-usuarios<?= $usuario->id ?>" class="modal-edicao-usuarios">
         <section class="secao-texto-foto-fechar-modal">
             <div class="container-texto">
                 <h1>Editar perfil</h1>
@@ -217,24 +218,24 @@
                 <i class="icone-foto-de-perfil bi bi-person-circle"></i>
             </figure>
             <div class="container-botao-fechar-modal">
-                <button class="botao-fechar-modal">
+                <button class="botao-fechar-modal" onclick="fecharEdicaoDeUsuario('#modal-edicao-usuarios<?= $usuario->id ?>')">
                     <i class="icone-fechar-modal bi bi-x"></i>
                 </button>
             </div>    
         </section>
         <form class="secao-edicao-dados-do-usuario" method="POST" action="/tabelaUsuarios/editar" enctype="multipart/form-data">
-            <input type="hidden" name="id" id="id-usuario-edicao">
+            <input type="hidden" name="id" value="<?= $usuario->id ?>">
             <section class="secao-instrucao-editar-foto-de-perfil">
                 <div class="container-instrucao-editar-foto-de-perfil">
                     <div class="container-texto-instrucao-editar-foto-de-perfil">    
                         <h2>Foto de perfil</h2>
                         <p>Recomendamos uma imagem quadrada de pelo menos 500x500px</p>
                     </div>
-                    <button type="button" class="botao-alterar-foto-de-perfil">
+                    <button type="button" class="botao-alterar-foto-de-perfil" onclick="editarFotoDePerfil('#foto-de-perfil-escolhida<?= $usuario->id ?>')">
                         <i class="icone-alterar-foto-de-perfil bi bi-box-arrow-up"></i>
                         <span>Alterar foto</span>
                     </button>
-                    <input type="file" name="foto-de-perfil" class="foto-de-perfil-escolhida" accept="image/*">
+                    <input type="file" name="foto-de-perfil" id="foto-de-perfil-escolhida<?= $usuario->id ?>" class="foto-de-perfil-escolhida" accept="image/*">
                 </div>
             </section>
             <section class="secao-editar-nome-email-senha">
@@ -251,13 +252,14 @@
                     <input class="editar-dado" type="password" placeholder="Senha" name="senha">
                 </div>
                 <div class="secao-botoes-salvar-cancelar">
-                    <button class="botao botao-cancelar" type="button">Cancelar</button>
-                    <button class="botao botao-salvar" type="submit">Salvar</button>
+                    <button class="botao botao-cancelar" type="button" onclick="cancelarEdicaoDeUsuario('#modal-edicao-usuarios<?= $usuario->id ?>')">Cancelar</button>
+                    <button class="botao botao-salvar" type="submit" onclick="salvarEdicaoDeUsuario()">Salvar</button>
                 </div>
             </section>
         </form>
     </div>
-
+    <?php endforeach; ?>    
+    
     <!--* MODAL DE VISUALIZAR USUÁRIOS -->
     <div class="fundo" id="fundoV" onclick="fecharModal('#modal-visu-user<?= $usuario->id ?>', '#fundoV')">
      <?php foreach($usuarios as $usuario): ?>
