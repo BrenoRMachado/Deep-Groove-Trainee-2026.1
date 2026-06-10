@@ -29,6 +29,20 @@ class QueryBuilder
         }
     }
 
+    public function selectById($tabela, $id) {
+        $sql = sprintf('SELECT * FROM %s WHERE id = %s', $tabela, $id);
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchObject();
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
     public function insert($tabela, $parametros) {
         $sql = sprintf('INSERT INTO %s (%s) VALUES(:%s)', 
         $tabela, 
