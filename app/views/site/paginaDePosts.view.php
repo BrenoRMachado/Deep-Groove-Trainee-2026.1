@@ -221,7 +221,7 @@
                 <?php endif; ?>    
                 <?php for ($i = $comeco; $i <= $final; $i++): ?>
                     <li>
-                        <a href="?pagina=<? $i ?>" class="<?= $paginaAtual == $i ? 'ativo' : ''?> botao botao-numerado"><?= $i ?></a>
+                        <a href="?pagina=<?= $i ?>" class="<?= $paginaAtual == $i ? 'ativo' : ''?> botao botao-numerado"><?= $i ?></a>
                     </li>
                 <?php endfor; ?>    
                 <?php if ($final < $totalDePaginas - 1): ?>
