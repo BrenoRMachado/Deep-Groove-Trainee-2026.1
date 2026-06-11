@@ -338,18 +338,10 @@
     text-decoration: none;
 }
 
-#pagina-de-posts #container-de-mudanca-de-pagina .container-botoes .ativo {
-    background-color: var(--cor-laranja-200);
-    color: var(--cor-branco-100) !important;
-}
-
-#pagina-de-posts #container-de-mudanca-de-pagina.existe-mais-paginas {
+#pagina-de-posts #container-de-mudanca-de-pagina .existe-mais-paginas {
     display: flex; 
     align-items: flex-end;
-    height: 2.6rem;
-}
-
-#pagina-de-posts #container-de-mudanca-de-pagina .existe-mais-paginas {
+    height: 2.5rem;
     font-size: 1.5rem;
     color: var(--cor-branco-100);
 }
@@ -370,6 +362,19 @@
 
 #pagina-de-posts #container-de-mudanca-de-pagina .botao-numerado:visited {
     color: currentColor;
+}
+
+/* *Estilo do botão ativo da página atual */
+#pagina-de-posts #container-de-mudanca-de-pagina .container-botoes .ativo {
+    background-color: var(--cor-laranja-200);
+    color: var(--cor-branco-100);
+}
+
+/* *Estilo do botão desabilitado da paginação (não existe mais páginas para passar com a seta) */
+#pagina-de-posts #container-de-mudanca-de-pagina .container-botoes .desabilitado {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: default; 
 }
 
 /* *Animações */
