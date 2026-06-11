@@ -25,13 +25,13 @@
 
 <body id="tbuser">
 
-    <div class="filtro-ao-abrir-modal-da-tabela-de-usuarios"></div>
-
+    <div class="fundo" id="fundo" onclick="fecharFundo()"></div>
+   
     <!-- MODAL DE CRIAR POSTS -->
 
     <!-- Parte de cima do modal, onde fica a imagem de capa  -->
 
-    <form id="modal-criar-usuarios" method="POST" action="/tabelaUsuarios/criar" enctype="multipart/form-data">
+    <form id="modal-criar-usuarios" class="modalfundo" method="POST" action="/tabelaUsuarios/criar" enctype="multipart/form-data">
         <div class="alto-modal-criar">
             <div class="um-terco-alto-modal-criar parte-esquerda-alto-modal">
                 <h2>Criar usuário</h2>
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="um-terco-alto-modal-criar parte-direita-alto-modal">
-                <button class="container-x" type="button" onclick="fecharModalCriar()">
+                <button class="container-x" type="button" onclick="fecharModal('#modal-criar-usuarios')">
                     <i class="sair-da-pagina bi bi-x fill"></i>
                 </button>
             </div>
@@ -82,7 +82,7 @@
 
 
     <section class="topoTabelaUser">
-        <button class="botao-novo-post" onclick="abrirModalCriar()">
+        <button class="botao-novo-post" onclick="abrirModal('#modal-criar-usuarios')">
             <div class="addUser">
                 <i class="icone bi bi-plus"></i>
                 <p class="textop">Novo usuário</p>
@@ -145,9 +145,9 @@
                         <td class="colunageral"><?= $usuario->is_admin ? 'Administrador' : 'Usuário' ?></td>
 
                         <td class="colunageral">
-                            <i class="acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user<?= $usuario->id ?>', '#fundoV')"></i>
-                            <i class="acao bi bi-pencil-square" onclick="abrirModalDeEdicaoDeUsuario('#modal-edicao-usuarios<?= $usuario->id ?>')"></i>
-                            <i class="acao bi bi-trash" onclick="abrirModal('#modal-excluir-user<?= $usuario->id ?>', '#fundoE')"></i>
+                            <i class="acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user<?= $usuario->id ?>')"></i>
+                            <i class="acao bi bi-pencil-square" onclick="abrirModal('#modal-edicao-usuarios<?= $usuario->id ?>')"></i>
+                            <i class="acao bi bi-trash" onclick="abrirModal('#modal-excluir-user<?= $usuario->id ?>')"></i>
                         </td>
 
                     </tr>
@@ -207,9 +207,9 @@
         </table>
     </section>
 
+<?php foreach($usuarios as $usuario): ?>
     <!--* MODAL DE EDIÇÃO DE USUÁRIOS  -->
-    <?php foreach($usuarios as $usuario): ?>
-     <div id="modal-edicao-usuarios<?= $usuario->id ?>" class="modal-edicao-usuarios">
+     <div id="modal-edicao-usuarios<?= $usuario->id ?>" class="modal-edicao-usuarios modalfundo">
         <section class="secao-texto-foto-fechar-modal">
             <div class="container-texto">
                 <h1>Editar perfil</h1>
@@ -219,7 +219,7 @@
                 <i class="icone-foto-de-perfil bi bi-person-circle"></i>
             </figure>
             <div class="container-botao-fechar-modal">
-                <button class="botao-fechar-modal" onclick="fecharEdicaoDeUsuario('#modal-edicao-usuarios<?= $usuario->id ?>')">
+                <button class="botao-fechar-modal" onclick="fecharModal('#modal-edicao-usuarios<?= $usuario->id ?>')">
                     <i class="icone-fechar-modal bi bi-x"></i>
                 </button>
             </div>    
@@ -259,13 +259,10 @@
             </section>
         </form>
     </div>
-    <?php endforeach; ?>    
     
     <!--* MODAL DE VISUALIZAR USUÁRIOS -->
-    <div class="fundo" id="fundoV" onclick="fecharModal('#modal-visu-user<?= $usuario->id ?>', '#fundoV')">
-     <?php foreach($usuarios as $usuario): ?>
         <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
-        <div id="modal-visu-user<?= $usuario->id ?>" class="des-modal-vi" onclick="event.stopPropagation()">
+        <div id="modal-visu-user<?= $usuario->id ?>" class="des-modal-vi modalfundo" onclick="event.stopPropagation()">
             <div class="imagemV">
                 
                 <!-- <img class="fundoModalIMG" src="../../../public/assets/fundo modal.png" alt="Fundo"> -->
@@ -282,7 +279,7 @@
                 <section class="x">
 
                     <img class="xis" src="../../../public/assets/XCircleFill.svg" alt="x"
-                        onclick="fecharModal('#modal-visu-user<?= $usuario->id?>', '#fundoV')">
+                        onclick="fecharModal('#modal-visu-user<?= $usuario->id?>')">
 
                 </section>
 
@@ -320,18 +317,11 @@
 
         </div>
 
-     <?php endforeach; ?>
-    </div>
-
     <!--* MODAL DE EXCLUIR USÚARIOS -->
-
-    <div class="fundo" id="fundoE" onclick="fecharModal('#modal-excluir-user<?= $usuario->id ?>', '#fundoE')">
-        
-     <?php foreach($usuarios as $usuario): ?>
 
 
         <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
-        <div id="modal-excluir-user<?= $usuario->id ?>" class="des-modal-ex" onclick="event.stopPropagation()">
+        <div id="modal-excluir-user<?= $usuario->id ?>" class="des-modal-ex modalfundo" onclick="event.stopPropagation()">
             <div class="imagemE">
 
                 <section class="oqmodalEX">
@@ -347,7 +337,7 @@
 
                 <section class="X">
                     <img class="xis" src="../../../public/assets/XCircleFill.svg" alt="x"
-                        onclick="fecharModal('#modal-excluir-user<?= $usuario->id?>', '#fundoE')">
+                        onclick="fecharModal('#modal-excluir-user<?= $usuario->id?>')">
                 </section>
 
                 <div class="caixamensagem">
@@ -364,7 +354,7 @@
 
                 <section class="containerbotoes">
 
-                <button class="botao cancelar" onclick="fecharModal('#modal-excluir-user<?= $usuario->id?>', '#fundoE')">CANCELAR</button>
+                <button class="botao cancelar" onclick="fecharModal('#modal-excluir-user<?= $usuario->id?>')">CANCELAR</button>
 
                 <form action="tabelaUsuarios/excluir" method="POST">
                     <!-- hidden = nn aperece para o user
@@ -378,8 +368,7 @@
             </div>
      </div>
 
-  <?php endforeach; ?>
-    </div>
+<?php endforeach; ?>
 
 
     <script src="../../../public/js/tabela-de-usuarios.js"></script>

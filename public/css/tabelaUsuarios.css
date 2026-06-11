@@ -1265,3 +1265,8 @@
 .escrita-inputs-modal-criar {
     color: #6D3534
 }
+
+/** PAGINAÇÃO */
+.containerPaginacao{
+    display: flex;
+}
