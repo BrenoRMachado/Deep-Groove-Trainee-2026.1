@@ -157,14 +157,14 @@
             </tbody>
 
             <tfoot>
-                <tr>
+                <td>
                     <!-- paginaçao -->
                     <?php if ($totalPaginas > 1): ?>
                     
                         <div class="containerPaginacao">
                             <ul class="paginacao">
                                 <li>
-                                    <a heref="?pagina=<?= max(1, $paginaAtual - 1) ?>" class="<?= $paginaAtual <= 1 ? 'disabled' : ''?>">&laquo; Anterior</a>
+                                    <a href="?pagina=<?= max(1, $paginaAtual - 1) ?>" class="<?= $paginaAtual <= 1 ? 'disabled' : ''?>">&laquo; Anterior</a>
                                 </li>
 
                                 <?php 
@@ -173,36 +173,36 @@
                                 ?>
 
                                 <li>
-                                    <a heref="?pagina=1" class="<?= $paginaAtual == 1 ? 'active' : ''?>">1</a>
+                                    <a href="?pagina=1" class="<?= $paginaAtual == 1 ? 'active' : ''?>">1</a>
                                 </li>
 
                                 <?php if ($start > 2):?>
-                                    <li><span class="dots">...</span>
+                                    <li><span class="dots">...</span></li>
                                 <?php endif; ?>
 
                                 <?php for ($i = $start; $i <= $end; $i++): ?>
                                     <li>
-                                        <a heref="?pagina=<?= $i ?>" class="<?= $paginaAtual == $i ? 'active' : ''?>"> <?= $i ?></a>
+                                        <a href="?pagina=<?= $i ?>" class="<?= $paginaAtual == $i ? 'active' : ''?>"> <?= $i ?></a>
                                     </li>
                                 <?php endfor; ?>
 
                                 <?php if ($end < $totalPaginas - 1):?>
-                                    <li><span class="dots">...</span>
+                                    <li><span class="dots">...</span></li>
                                 <?php endif; ?>
 
                                 <li>
-                                    <a heref="?pagina=<?= $totalPaginas ?>" class="<?= $paginaAtual == $totalPaginas ? 'active' : ''?>"> <?= $totalPaginas ?></a>
+                                    <a href="?pagina=<?= $totalPaginas ?>" class="<?= $paginaAtual == $totalPaginas ? 'active' : ''?>"> <?= $totalPaginas ?></a>
                                 </li>
 
                                 <li>
-                                    <a heref="?pagina=<?= min($totalPaginas, $paginaAtual + 1) ?>" class="<?= $paginaAtual >= $totalPaginas ? 'disabled' : ''?>">Próximo &raquo;</a>
+                                    <a href="?pagina=<?= min($totalPaginas, $paginaAtual + 1) ?>" class="<?= $paginaAtual >= $totalPaginas ? 'disabled' : ''?>">Próximo &raquo;</a>
                                 </li>
                                 
                             </ul>
                         </div>
                     <?php endif; ?>
 
-                </tr>
+                </td>
             </tfoot>
         </table>
     </section>
