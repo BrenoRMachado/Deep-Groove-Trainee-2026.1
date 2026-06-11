@@ -61,13 +61,15 @@ h2, input, button, h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;    
+    flex-direction: column;  
+    margin: 0;
 }
 
 .container-inputs {
     display: flex;
     flex-direction: column;
-    gap: 8%;
+    gap: 10%;
+    align-items: center;
 }
 
 .container-elemento-input {
@@ -90,6 +92,7 @@ h2, input, button, h3 {
     height: 100%;
     align-items: center;
     flex-direction: column;
+    gap: 5%;
 }
 
 .formulario {
@@ -113,7 +116,6 @@ input, button {
 
 .botao-login{
     background: linear-gradient(#F09859, #C06850);
-    margin-top: 5%;
     border-radius: 2rem;
     color: white;
     font-size: large;

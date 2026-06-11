@@ -22,7 +22,7 @@
                 </div>
             </div>
             <form class="container-form">
-                <div class="container-inputs">
+                <div class="container-inputs"></div>
                     <div class="container-elemento-input">
                         <h2>Email:</h2>
                         <input placeholder="Digite seu email">
@@ -31,11 +31,10 @@
                         <h2>Senha:</h2>
                         <input placeholder="Digite sua senha">
                     </div>
-                </div>
-                <div class="container-botao">
-                    <button class="botao-login">Entre</button>
-                    <h3>Não possui uma conta? <button class="texto-sublinhado" type="button" style="color: #F09859; text-decoration: underline;" onclick="moverImagem()">Cadastre-se</button></h3>            
-                </div>
+                    <div class="container-botao">
+                        <button class="botao-login">Entrar</button>
+                        <h3>Não possui uma conta? <button class="texto-sublinhado" type="button" style="color: #F09859; text-decoration: underline;" onclick="moverImagem()">Cadastre-se</button></h3>  
+                    </div>
             </form>
             <div class="container-logo">
                 <img class="logo-login" src="../../../public/assets/LogoTextoIcone (1).png">
