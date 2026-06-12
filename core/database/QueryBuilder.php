@@ -47,7 +47,10 @@ class QueryBuilder
 
     public function paginatePosts($tabela, $limite, $offset) {
 
-        $sql = "SELECT * FROM {$tabela} LIMIT {$limite} OFFSET {$offset}";
+        $sql = "SELECT publicacoes.*, usuarios.nome AS autor_nome
+            FROM {$tabela}
+            JOIN usuarios ON publicacoes.id_usuario = usuarios.id
+            LIMIT {$limite} OFFSET {$offset}";
 
         try {
             $stmt = $this->pdo->prepare($sql);
