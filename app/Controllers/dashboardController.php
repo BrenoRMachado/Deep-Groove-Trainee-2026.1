@@ -9,6 +9,17 @@ use Exception;
 
 class dashboardController {
     public function index() {
-        return view('admin/dashboard');
+
+        $bancoDeDados = App::get('database');
+
+        $totalDePosts = $bancoDeDados -> contarNumeroDeLinhasDaTabela('publicacoes');
+
+        $totalDeUsuarios = $bancoDeDados -> contarNumeroDeLinhasDaTabela('usuarios');
+
+        return view('admin/dashboard', [
+            'totalDePosts' => $totalDePosts,
+            'totalDeUsuarios' => $totalDeUsuarios
+        ]);
+
     }
 }

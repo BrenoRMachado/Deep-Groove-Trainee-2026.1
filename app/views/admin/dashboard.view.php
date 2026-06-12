@@ -39,7 +39,7 @@
                         <i class="icone-usuarios-tabelas icone-usuarios bi bi-people-fill"></i>
                         <span class="texto-dados-totais texto-dados-usuarios">
                             Total de Usuários: 
-                            <span class="quantidade-total-de-usuarios">X</span>
+                            <span class="quantidade-total-de-usuarios"><?= $totalDeUsuarios ?></span>
                         </span>
                     </div>
                     <button class="botao-navegar-para-paginas-administrativas botao-navegar-para-tabela-de-usuarios">
@@ -52,7 +52,7 @@
                         <i class="icone-usuarios-tabelas icone-publicacoes bi bi-disc"></i>
                         <span class="texto-dados-totais texto-dados-publicacoes">
                             Total de Publicações:
-                            <span class="quantidade-total-de-publicacoes">X</span>
+                            <span class="quantidade-total-de-publicacoes"><?= $totalDePosts ?></span>
                         </span>
                     </div>
                     <button class="botao-navegar-para-paginas-administrativas botao-navegar-para-tabela-de-publicacoes">
