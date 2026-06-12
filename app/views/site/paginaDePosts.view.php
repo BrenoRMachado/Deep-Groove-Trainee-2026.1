@@ -29,7 +29,7 @@
                         <i class="icone de pesquisa bi bi-search"></i>
                     </button>
                 </div>
-                <select name="filtro" class="botao-filtro-de-pesquisa">
+                <select name="filtro" class="botao-filtro-de-pesquisa" onchange="this.form.submit()">
                     <option class="titulo-do-filtro" value="" hidden>Filtrar</option>
                     <option class="opcao-do-filtro" value="pop">Pop</option>
                     <option class="opcao-do-filtro"  value="rock">Rock</option>
