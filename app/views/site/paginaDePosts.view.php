@@ -31,6 +31,7 @@
                 </div>
                 <select name="filtro" class="botao-filtro-de-pesquisa" onchange="this.form.submit()">
                     <option class="titulo-do-filtro" value="" hidden>Filtrar</option>
+                    <option class="titulo-do-filtro" value="">Todos</option>
                     <option class="opcao-do-filtro" value="pop" <?= $filtro == 'pop' ? 'selected' : ''?>>Pop</option>
                     <option class="opcao-do-filtro" value="rock" <?= $filtro == 'rock' ? 'selected' : ''?>>Rock</option>
                     <option class="opcao-do-filtro" value="rap" <?= $filtro == 'rap' ? 'selected' : ''?>>Rap</option>
@@ -88,15 +89,18 @@
             <?php
                 $comeco = max(2, $paginaAtual - 1);
                 $final = min($totalDePaginas - 1, $paginaAtual + 1);
+                $parametrosDeBuscaEfiltro = '';
+                if ($textoDeBusca) $parametrosDeBuscaEfiltro .= 'pesquisar=' . $textoDeBusca . '&';
+                if ($filtro)       $parametrosDeBuscaEfiltro .= 'filtro=' . $filtro . '&';
             ?>
             <ul class="container-botoes">
                 <li>
-                    <a href="?pagina=<?=  max(1, $paginaAtual - 1) ?>" class="<?= $paginaAtual <= 1 ? 'desabilitado' : ''?> botao seta-esquerda-mudar-para-pagina-anterior">
+                    <a href="?<?= $parametrosDeBuscaEfiltro ?>&pagina=<?=  max(1, $paginaAtual - 1) ?>" class="<?= $paginaAtual <= 1 ? 'desabilitado' : ''?> botao seta-esquerda-mudar-para-pagina-anterior">
                         <i class="bi bi-chevron-left"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="?pagina=1" class="<?= $paginaAtual == 1 ? 'ativo' : ''?> botao botao-numerado">1</a>
+                    <a href="?<?= $parametrosDeBuscaEfiltro ?>pagina=1" class="<?= $paginaAtual == 1 ? 'ativo' : ''?> botao botao-numerado">1</a>
                 </li>
                 <?php if ($comeco > 2): ?>
                     <li>
@@ -105,7 +109,7 @@
                 <?php endif; ?>    
                 <?php for ($i = $comeco; $i <= $final; $i++): ?>
                     <li>
-                        <a href="?pagina=<?= $i ?>" class="<?= $paginaAtual == $i ? 'ativo' : ''?> botao botao-numerado"><?= $i ?></a>
+                        <a href="?<?= $parametrosDeBuscaEfiltro ?>pagina=<?= $i ?>" class="<?= $paginaAtual == $i ? 'ativo' : ''?> botao botao-numerado"><?= $i ?></a>
                     </li>
                 <?php endfor; ?>    
                 <?php if ($final < $totalDePaginas - 1): ?>
@@ -115,11 +119,11 @@
                 <?php endif; ?> 
                 <?php if ($totalDePaginas > 1): ?>
                 <li>
-                    <a href="?pagina=<?= $totalDePaginas ?>" class="<?= $paginaAtual == $totalDePaginas ? 'ativo' : ''?> botao botao-numerado"><?= $totalDePaginas ?></a>
+                    <a href="?<?= $parametrosDeBuscaEfiltro ?>pagina=<?= $totalDePaginas ?>" class="<?= $paginaAtual == $totalDePaginas ? 'ativo' : ''?> botao botao-numerado"><?= $totalDePaginas ?></a>
                 </li>
                 <?php endif; ?>
                 <li>
-                    <a href="?pagina=<?=  min($totalDePaginas, $paginaAtual + 1) ?>" class="<?= $paginaAtual >= $totalDePaginas ? 'desabilitado' : ''?> botao seta-direita-mudar-para-proxima-pagina">
+                    <a href="?<?= $parametrosDeBuscaEfiltro ?>pagina=<?=  min($totalDePaginas, $paginaAtual + 1) ?>" class="<?= $paginaAtual >= $totalDePaginas ? 'desabilitado' : ''?> botao seta-direita-mudar-para-proxima-pagina">
                         <i class="bi bi-chevron-right"></i>
                     </a>
                 </li>
