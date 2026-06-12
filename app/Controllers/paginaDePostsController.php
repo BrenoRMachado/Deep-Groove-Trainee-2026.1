@@ -11,7 +11,7 @@ class PaginaDePostsController {
 
         $bancoDeDados = App::get('database');
 
-        $limite = 6;
+        $limite = 9;
 
         $paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
         if ($paginaAtual < 1){
