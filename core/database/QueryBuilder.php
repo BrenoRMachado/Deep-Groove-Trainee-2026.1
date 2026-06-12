@@ -43,7 +43,7 @@ class QueryBuilder
         //* Parâmetros de filtro e de texto de busca sendo adicionados
 
         if ($textoDeBusca && $colunaDeBusca){
-            $whereClauses[] .= "($colunaDeBusca[0] LIKE :textoDeBusca OR $colunaDeBusca[1] LIKE :textoDeBusca)";
+            $whereClauses[] = "($colunaDeBusca[0] LIKE :textoDeBusca OR $colunaDeBusca[1] LIKE :textoDeBusca)";
             $parametros['textoDeBusca'] = '%' . $textoDeBusca . '%';
         }
 
@@ -53,7 +53,7 @@ class QueryBuilder
         }
 
         if (!empty($whereClauses)){
-            $sql .= " WHERE " . implode(' and ', $whereClauses);
+            $sql .= " WHERE " . implode(' AND ', $whereClauses);
         }
 
         try {
@@ -79,7 +79,7 @@ class QueryBuilder
         //* Parâmetros de filtro e de texto de busca sendo adicionados
 
         if ($textoDeBusca && $colunaDeBusca){
-            $whereClauses = "($colunaDeBusca[0] LIKE :textoDeBusca OR $colunaDeBusca[1] LIKE :textoDeBusca)";
+            $whereClauses[] = "($colunaDeBusca[0] LIKE :textoDeBusca OR $colunaDeBusca[1] LIKE :textoDeBusca)";
             $parametros['textoDeBusca'] = '%' . $textoDeBusca . '%';
         }
 
@@ -89,7 +89,7 @@ class QueryBuilder
         }
 
         if (!empty($whereClauses)){
-            $whereSql .= " WHERE " . implode(' and ', $whereClauses);
+            $whereSql .= " WHERE " . implode(' AND ', $whereClauses);
         }
 
         //* Une tabela de usuários a tabela de posts, adicionando o nome do autor na tabela de posts a partir do id do usuário da tabela de posts que seja igual ao da tabela de usuários
