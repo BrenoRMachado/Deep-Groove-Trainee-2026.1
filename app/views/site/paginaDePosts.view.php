@@ -31,7 +31,8 @@
                 </div>
                 <select name="filtro" class="botao-filtro-de-pesquisa" onchange="this.form.submit()">
                     <option class="titulo-do-filtro" value="" hidden>Filtrar</option>
-                    <option class="titulo-do-filtro" value="">Todos</option>
+                    <option class="opcao
+                    -do-filtro" value="">Remover filtro</option>
                     <option class="opcao-do-filtro" value="pop" <?= $filtro == 'pop' ? 'selected' : ''?>>Pop</option>
                     <option class="opcao-do-filtro" value="rock" <?= $filtro == 'rock' ? 'selected' : ''?>>Rock</option>
                     <option class="opcao-do-filtro" value="rap" <?= $filtro == 'rap' ? 'selected' : ''?>>Rap</option>
