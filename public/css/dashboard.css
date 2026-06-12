@@ -114,14 +114,15 @@
     width: 100%;
 }
 
-#dashboard #area-navegacao-e-estatisticas .container-usuarios-publicacoes {
+#dashboard #area-navegacao-e-estatisticas .container-usuarios-publicacoes-recentes {
     padding: var(--espacamento-padding-menor) var(--espacamento-padding-menor);
     border-radius: 16px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
-    width: 47%;
+    width: 22%;
     background: linear-gradient(
             135deg,
             rgba(255, 255, 255, 0.08),
@@ -138,20 +139,15 @@
 }
 
 /* *Estilo do container que mostra o número total de usuários e do container do número de publicações */
-#dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes {
+#dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes-e-recente {
     display: flex;
     align-items: center;
     gap: 1rem;
-    width: 50%;
-}
-
-/* *Estilo do texto de informação do número de usuários e publicações */
-#dashboard #area-navegacao-e-estatisticas .texto-dados-totais {
-
+    width: 95%;
 }
 
 /* *Estilo do ícone de usuários e publicações */
-#dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas {
+#dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas-e-recentes {
     font-size: 2rem;
     line-height: 1;
     background-color: var(--cor-marrom-100);
@@ -163,7 +159,7 @@
 }
 
 /* *Estilo do botão da dashboard de navegar para as páginas administrativas */
-#dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
+#dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas, #dashboard #area-navegacao-e-estatisticas .informacao-recente {
     color: var(--cor-branco-100);
     background-color: var(--cor-laranja-100);
     border: none;
@@ -171,7 +167,7 @@
     padding: var(--espacamento-padding-pequeno) var(--espacamento-padding-medio);
     font-family: var(--fonte-primaria);
     font-size: 1rem;
-    width: 50%;
+    width: 95%;
 }
 
 /* *Animação dos botões da dashboard de navegar para as páginas administrativas */
@@ -280,7 +276,7 @@
         font-size: 2rem;
     }
     
-    #dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas {
+    #dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas-e-recentes {
         font-size: 4rem;
     }
     
@@ -299,7 +295,7 @@
         --espacamento-padding-maior: 2rem;
     }
 
-    #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes {
+    #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes-e-recente {
         width: 60%;
     }
 
@@ -310,7 +306,7 @@
 
 /* !Tablet em pé */
 @media (max-width: 769px) {
-    #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes {
+    #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes-e-recente {
         width: 70%;
     }
 
@@ -350,11 +346,11 @@
         gap: 1rem;
     }
     
-    #dashboard #area-navegacao-e-estatisticas .container-usuarios-publicacoes {
+    #dashboard #area-navegacao-e-estatisticas .container-usuarios-publicacoes-recentes {
         width: 100%;
     }
     
-    #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes {
+    #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes-e-recente {
         padding: var(--espacamento-padding-menor) var(--espacamento-padding-menor);
         border-radius: 16px;
         width: 75%;
@@ -368,7 +364,7 @@
         font-size: 1rem;
     }
     
-    #dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas {
+    #dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas-e-recentes {
         font-size: 1.7rem;
     }
     
