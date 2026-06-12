@@ -14,8 +14,11 @@ class QueryBuilder
         $this->pdo = $pdo;
     }
 
-    public function selectAll($table)
+    public function selecionarTodos($table)
     {
+
+        //* Seleciona todos os elementos da tabela
+
         $sql = "select * from {$table}";
 
         try {
@@ -29,15 +32,28 @@ class QueryBuilder
         }
     }
 
-    public function countAllPosts($tabela, $textoDeBusca, $colunaDeBusca){
+    public function selecionarTodosOsPosts($tabela, $textoDeBusca, $colunaDeBusca, $filtro){
 
         $sql = "SELECT COUNT(*) AS total FROM {$tabela}";
 
         $parametros = [];
 
+        $whereClauses = [];
+
+        //* Parâmetros de filtro e de texto de busca sendo adicionados
+
         if ($textoDeBusca && $colunaDeBusca){
-            $sql .= " WHERE $colunaDeBusca[0] LIKE :textoDeBusca OR $colunaDeBusca[1] LIKE :textoDeBusca";
+            $whereClauses[] .= "($colunaDeBusca[0] LIKE :textoDeBusca OR $colunaDeBusca[1] LIKE :textoDeBusca)";
             $parametros['textoDeBusca'] = '%' . $textoDeBusca . '%';
+        }
+
+        if ($filtro){
+            $whereClauses[] = "(genero = :filtro)";
+            $parametros['filtro'] = $filtro;
+        }
+
+        if (!empty($whereClauses)){
+            $sql .= " WHERE " . implode(' and ', $whereClauses);
         }
 
         try {
@@ -52,15 +68,31 @@ class QueryBuilder
 
     }
 
-    public function paginatePosts($tabela, $limite, $offset, $textoDeBusca, $colunaDeBusca) {
+    public function paginacaoPosts($tabela, $limite, $offset, $textoDeBusca, $colunaDeBusca, $filtro) {
 
-    $parametros = [];
-    $whereSql = '';
+        $parametros = [];
+
+        $whereClauses = [];
+
+        $whereSql = '';
+
+        //* Parâmetros de filtro e de texto de busca sendo adicionados
 
         if ($textoDeBusca && $colunaDeBusca){
-            $whereSql = "WHERE $colunaDeBusca[0] LIKE :textoDeBusca OR $colunaDeBusca[1] LIKE :textoDeBusca";
+            $whereClauses = "($colunaDeBusca[0] LIKE :textoDeBusca OR $colunaDeBusca[1] LIKE :textoDeBusca)";
             $parametros['textoDeBusca'] = '%' . $textoDeBusca . '%';
         }
+
+        if ($filtro){
+            $whereClauses[] = "(genero = :filtro)";
+            $parametros['filtro'] = $filtro;
+        }
+
+        if (!empty($whereClauses)){
+            $whereSql .= " WHERE " . implode(' and ', $whereClauses);
+        }
+
+        //* Une tabela de usuários a tabela de posts, adicionando o nome do autor na tabela de posts a partir do id do usuário da tabela de posts que seja igual ao da tabela de usuários
 
         $sql = "SELECT publicacoes.*, usuarios.nome AS autor_nome
             FROM {$tabela}
