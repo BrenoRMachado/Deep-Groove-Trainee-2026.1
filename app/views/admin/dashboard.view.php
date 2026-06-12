@@ -34,9 +34,9 @@
         </header>
         <nav id="area-navegacao-e-estatisticas">
             <ul class="lista-area-navegacao-e-estatisticas">
-                <li class="container-usuarios-publicacoes container-usuarios">
-                    <div class="numero-de-usuarios-publicacoes numero-de-usuarios">
-                        <i class="icone-usuarios-tabelas icone-usuarios bi bi-people-fill"></i>
+                <li class="container-usuarios-publicacoes-recentes container-usuarios">
+                    <div class="numero-de-usuarios-publicacoes-e-recente numero-de-usuarios">
+                        <i class="icone-usuarios-tabelas-e-recentes icone-usuarios bi bi-people-fill"></i>
                         <span class="texto-dados-totais texto-dados-usuarios">
                             Total de Usuários: 
                             <span class="quantidade-total-de-usuarios"><?= $totalDeUsuarios ?></span>
@@ -47,9 +47,31 @@
                         <i class="icone-navegar bi bi-chevron-right"></i>
                     </button>
                 </li>
-                <li class="container-usuarios-publicacoes container-publicacoes">
-                    <div class="numero-de-usuarios-publicacoes numero-de-publicacoes">
-                        <i class="icone-usuarios-tabelas icone-publicacoes bi bi-disc"></i>
+                <li class="container-usuarios-publicacoes-recentes container-ultima-atividade">
+                    <div class="numero-de-usuarios-publicacoes-e-recente ultima-atividade">
+                        <i class="icone-usuarios-tabelas-e-recentes icone-ultima-atividade bi bi-activity"></i>
+                        <span class="texto-dados-totais texto-dados-ultima-atividade">
+                            Última atividade: 
+                        </span>
+                    </div>
+                    <div class="informacao-ultima-atividade informacao-recente">
+                        <span>Novo usuário cadastrado</span>
+                    </div>
+                </li>
+                <li class="container-usuarios-publicacoes-recentes container-ultima-publicacao">
+                    <div class="numero-de-usuarios-publicacoes-e-recente ultima-publicacao">
+                        <i class="icone-usuarios-tabelas-e-recentes icone-ultima-publicacao bi bi-images"></i>
+                        <span class="texto-dados-totais texto-dados-ultima-publicacao">
+                            Última publicação: 
+                        </span>
+                    </div>
+                    <div class="informacao-ultima-publicacao informacao-recente">
+                        <span>Publicação mais recente</span>
+                    </div>
+                </li>
+                <li class="container-usuarios-publicacoes-recentes container-publicacoes">
+                    <div class="numero-de-usuarios-publicacoes-e-recente numero-de-publicacoes">
+                        <i class="icone-usuarios-tabelas-e-recentes icone-publicacoes bi bi-disc"></i>
                         <span class="texto-dados-totais texto-dados-publicacoes">
                             Total de Publicações:
                             <span class="quantidade-total-de-publicacoes"><?= $totalDePosts ?></span>
