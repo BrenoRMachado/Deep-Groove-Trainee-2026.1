@@ -30,7 +30,7 @@
                     </button>
                 </div>
                 <select name="filtro" class="botao-filtro-de-pesquisa">
-                    <option class="titulo-do-filtro" value="" hidden>Gêneros</option>
+                    <option class="titulo-do-filtro" value="" hidden>Filtrar</option>
                     <option class="opcao-do-filtro" value="pop">Pop</option>
                     <option class="opcao-do-filtro"  value="rock">Rock</option>
                     <option class="opcao-do-filtro"  value="rap">Rap</option>
