@@ -45,105 +45,19 @@
         <!-- !INÍCIO DA ÁREA DE POSTS PARA DESKTOP -->
 
         <section id="container-posts-desktop">
-            <div class="album-container album-container1">
-                <div class="album album1">
-                    <img src="../../../public/assets/michael-jackson-thriller.png" class="capa-album" alt="Capa do álbum 1">
+            <?php foreach ($posts as $post): ?>
+            <div class="album-container">
+                <div class="album">
+                    <img src="<?= $post -> foto ?>" class="capa-album" alt="Capa do álbum de id <?= $post -> id ?>">
                     <div class="informacoes-do-album">
-                        <h2 class="titulo-do-album">Título</h2>
-                        <p class="descricao-autor-do-album descricao-do-album">Ano</p>
-                        <p class="descricao-autor-do-album autor-da-musica">Autor</p>
+                        <h2 class="titulo-do-album"><?= $post -> titulo ?></h2>
+                        <p class="descricao-autor-do-album descricao-do-album"><?= $post -> ano ?></p>
+                        <p class="descricao-autor-do-album autor-da-musica"><?= $post -> autor_nome?></p>
                     </div>
                 </div>
                 <img src="../../../public/assets/disco-de-vinil-pagina-de-posts.png" class="disco-de-vinil">    
             </div>
-            <div class="album-container album-container2">
-                <div class="album album2">
-                    <img src="../../../public/assets/michael-jackson-thriller.png" class="capa-album" alt="Capa do álbum 2">
-                    <div class="informacoes-do-album">
-                        <h2 class="titulo-do-album">Título</h2>
-                        <p class="descricao-autor-do-album descricao-do-album">Ano</p>
-                        <p class="descricao-autor-do-album autor-da-musica">Autor</p>
-                    </div>
-                </div>    
-                <img src="../../../public/assets/disco-de-vinil-pagina-de-posts.png" class="disco-de-vinil"> 
-            </div>
-            <div class="album-container album-container3">
-                <div class="album album3">
-                    <img src="../../../public/assets/michael-jackson-thriller.png" class="capa-album" alt="Capa do álbum 3">
-                    <div class="informacoes-do-album">
-                        <h2 class="titulo-do-album">Título</h2>
-                        <p class="descricao-autor-do-album descricao-do-album">Ano</p>
-                        <p class="descricao-autor-do-album autor-da-musica">Autor</p>
-                    </div>
-                </div> 
-                <img src="../../../public/assets/disco-de-vinil-pagina-de-posts.png" class="disco-de-vinil">    
-            </div>
-            <div class="album-container album-container4">
-                <div class="album album4">
-                    <img src="../../../public/assets/michael-jackson-thriller.png" class="capa-album" alt="Capa do álbum 4">
-                    <div class="informacoes-do-album">
-                        <h2 class="titulo-do-album">Título</h2>
-                        <p class="descricao-autor-do-album descricao-do-album">Ano</p>
-                        <p class="descricao-autor-do-album autor-da-musica">Autor</p>
-                    </div>
-                </div>
-                <img src="../../../public/assets/disco-de-vinil-pagina-de-posts.png" class="disco-de-vinil">     
-            </div>
-            <div class="album-container album-container5">
-                <div class="album album5">
-                    <img src="../../../public/assets/michael-jackson-thriller.png" class="capa-album" alt="Capa do álbum 5">
-                    <div class="informacoes-do-album">
-                        <h2 class="titulo-do-album">Título</h2>
-                        <p class="descricao-autor-do-album descricao-do-album">Ano</p>
-                        <p class="descricao-autor-do-album autor-da-musica">Autor</p>
-                    </div>
-                </div>
-                <img src="../../../public/assets/disco-de-vinil-pagina-de-posts.png" class="disco-de-vinil">     
-            </div>
-            <div class="album-container album-container6">
-                <div class="album album6">
-                    <img src="../../../public/assets/michael-jackson-thriller.png" class="capa-album" alt="Capa do álbum 6">
-                    <div class="informacoes-do-album">
-                        <h2 class="titulo-do-album">Título</h2>
-                        <p class="descricao-autor-do-album descricao-do-album">Ano</p>
-                        <p class="descricao-autor-do-album autor-da-musica">Autor</p>
-                    </div>
-                </div>
-                <img src="../../../public/assets/disco-de-vinil-pagina-de-posts.png" class="disco-de-vinil">     
-            </div>
-            <div class="album-container album-container7">
-                <div class="album album6">
-                    <img src="../../../public/assets/michael-jackson-thriller.png" class="capa-album" alt="Capa do álbum 7">
-                    <div class="informacoes-do-album">
-                        <h2 class="titulo-do-album">Título</h2>
-                        <p class="descricao-autor-do-album descricao-do-album">Ano</p>
-                        <p class="descricao-autor-do-album autor-da-musica">Autor</p>
-                    </div>
-                </div>
-                <img src="../../../public/assets/disco-de-vinil-pagina-de-posts.png" class="disco-de-vinil">     
-            </div>
-            <div class="album-container album-container8">
-                <div class="album album6">
-                    <img src="../../../public/assets/michael-jackson-thriller.png" class="capa-album" alt="Capa do álbum 8">
-                    <div class="informacoes-do-album">
-                        <h2 class="titulo-do-album">Título</h2>
-                        <p class="descricao-autor-do-album descricao-do-album">Ano</p>
-                        <p class="descricao-autor-do-album autor-da-musica">Autor</p>
-                    </div>
-                </div>
-                <img src="../../../public/assets/disco-de-vinil-pagina-de-posts.png" class="disco-de-vinil">     
-            </div>
-            <div class="album-container album-container9">
-                <div class="album album6">
-                    <img src="../../../public/assets/michael-jackson-thriller.png" class="capa-album" alt="Capa do álbum 9">
-                    <div class="informacoes-do-album">
-                        <h2 class="titulo-do-album">Título</h2>
-                        <p class="descricao-autor-do-album descricao-do-album">Ano</p>
-                        <p class="descricao-autor-do-album autor-da-musica">Autor</p>
-                    </div>
-                </div>
-                <img src="../../../public/assets/disco-de-vinil-pagina-de-posts.png" class="disco-de-vinil">     
-            </div>
+            <?php endforeach; ?>
         </section>
 
         <!-- !FIM DA ÁREA DE POSTS PARA DESKTOP -->
@@ -151,58 +65,21 @@
         <!-- !INÍCIO ÁREA DE POSTS PARA TABLET / MOBILE -->
 
         <section id="container-posts-mobile">
-            <div class="album-container album-container1">
-                <div class="capa-texto-album-container capa-texto-album-container1">
+            <?php foreach ($posts as $post): ?>
+            <div class="album-container">
+                <div class="capa-texto-album-container">
                     <div class="album album1">
-                        <img src="../../../public/assets/michael-jackson-thriller.png" class="capa-album" alt="Capa do álbum 1">
+                        <img src="../../../public/assets/michael-jackson-thriller.png" class="capa-album" alt="Capa do álbum de id <?= $post -> id ?>">
                     </div>
                     <div class="informacoes-do-album">
-                        <h2 class="titulo-do-album">Título</h2>
-                        <p class="descricao-autor-do-album descricao-do-album">Ano</p>
-                        <p class="descricao-autor-do-album autor-da-musica">Autor</p>
+                        <h2 class="titulo-do-album"><?= $post -> titulo ?></h2>
+                        <p class="descricao-autor-do-album descricao-do-album"><?= $post -> ano ?></p>
+                        <p class="descricao-autor-do-album autor-da-musica"><?= $post -> autor_nome ?></p>
                     </div>
                 </div>
                 <img src="../../../public/assets/disco-de-vinil-pagina-de-posts.png" class="disco-de-vinil">    
             </div>
-            <div class="album-container album-container2">
-                <div class="capa-texto-album-container capa-texto-album-container2">
-                    <div class="album album2">
-                        <img src="../../../public/assets/michael-jackson-thriller.png" class="capa-album" alt="Capa do álbum 2">
-                    </div>
-                    <div class="informacoes-do-album">
-                        <h2 class="titulo-do-album">Título</h2>
-                        <p class="descricao-autor-do-album descricao-do-album">Ano</p>
-                        <p class="descricao-autor-do-album autor-da-musica">Autor</p>
-                    </div>
-                </div>  
-                <img src="../../../public/assets/disco-de-vinil-pagina-de-posts.png" class="disco-de-vinil"> 
-            </div>
-            <div class="album-container album-container3">
-                <div class="capa-texto-album-container capa-texto-album-container3">
-                    <div class="album album3">
-                        <img src="../../../public/assets/michael-jackson-thriller.png" class="capa-album" alt="Capa do álbum 3">
-                    </div>
-                    <div class="informacoes-do-album">
-                        <h2 class="titulo-do-album">Título</h2>
-                        <p class="descricao-autor-do-album descricao-do-album">Ano</p>
-                        <p class="descricao-autor-do-album autor-da-musica">Autor</p>
-                    </div>
-                </div>
-                <img src="../../../public/assets/disco-de-vinil-pagina-de-posts.png" class="disco-de-vinil">    
-            </div>
-            <div class="album-container album-container4">
-                <div class="capa-texto-album-container capa-texto-album-container4">
-                    <div class="album album4">
-                        <img src="../../../public/assets/michael-jackson-thriller.png" class="capa-album" alt="Capa do álbum 4">
-                    </div>
-                    <div class="informacoes-do-album">
-                        <h2 class="titulo-do-album">Título</h2>
-                        <p class="descricao-autor-do-album descricao-do-album">Ano</p>
-                        <p class="descricao-autor-do-album autor-da-musica">Autor</p>
-                    </div>
-                </div>
-                <img src="../../../public/assets/disco-de-vinil-pagina-de-posts.png" class="disco-de-vinil">     
-            </div>
+            <?php endforeach; ?>
         </section>
 
         <!-- !FIM DA ÁREA DE POSTS PARA TABLET / MOBILE -->
@@ -236,9 +113,11 @@
                         <span class="existe-mais-paginas">...</span>
                     </li>
                 <?php endif; ?> 
+                <?php if ($totalDePaginas > 1): ?>
                 <li>
                     <a href="?pagina=<?= $totalDePaginas ?>" class="<?= $paginaAtual == $totalDePaginas ? 'ativo' : ''?> botao botao-numerado"><?= $totalDePaginas ?></a>
                 </li>
+                <?php endif; ?>
                 <li>
                     <a href="?pagina=<?=  min($totalDePaginas, $paginaAtual + 1) ?>" class="<?= $paginaAtual >= $totalDePaginas ? 'desabilitado' : ''?> botao seta-direita-mudar-para-proxima-pagina">
                         <i class="bi bi-chevron-right"></i>
