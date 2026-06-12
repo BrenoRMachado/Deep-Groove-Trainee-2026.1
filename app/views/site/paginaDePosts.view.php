@@ -24,7 +24,7 @@
         <form id="container-de-pesquisa-filtro-e-selecao" action="/posts" method="GET">
             <div class="container-pesquisa-e-filtro">
                 <div class="barra-de-pesquisa">
-                    <input type="text" name="pesquisar" placeholder="Nome do álbum..." class="pesquisar">
+                    <input type="text" name="pesquisar" placeholder="Nome do álbum..." class="pesquisar" value="<?= $textoDeBusca ?>">
                     <button class="botao-de-pesquisa" type="submit">
                         <i class="icone de pesquisa bi bi-search"></i>
                     </button>
