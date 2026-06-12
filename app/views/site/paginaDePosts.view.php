@@ -20,19 +20,30 @@
 </head>
 <body>
     <main id="pagina-de-posts">
-        <h1 class="titulo">Publicações</h1>
+        <section class="cabecalho">
+            <div class="container-icone-titulo-convite">
+                <div class="container-icone-titulo">
+                    <i class="icone-disco bi bi-disc"></i>
+                    <h1 class="titulo">Publicações</h1>
+                </div>
+                <div class="container-convite">
+                    <i class="icone-musica bi bi-music-note"></i>
+                    <p class="convite">Entre no Ritmo</p>
+                    <i class="icone-musica bi bi-music-note-beamed"></i>
+                </div>
+            </div>
+        </section>
         <form id="container-de-pesquisa-filtro-e-selecao" action="/posts" method="GET">
             <div class="container-pesquisa-e-filtro">
                 <div class="barra-de-pesquisa">
-                    <input type="text" name="pesquisar" placeholder="Nome do álbum..." class="pesquisar" value="<?= $textoDeBusca ?>">
+                    <input type="text" name="pesquisar" placeholder="Buscar álbum..." class="pesquisar" value="<?= $textoDeBusca ?>">
                     <button class="botao-de-pesquisa" type="submit">
                         <i class="icone de pesquisa bi bi-search"></i>
                     </button>
                 </div>
                 <select name="filtro" class="botao-filtro-de-pesquisa" onchange="this.form.submit()">
                     <option class="titulo-do-filtro" value="" hidden>Filtrar</option>
-                    <option class="opcao
-                    -do-filtro" value="">Remover filtro</option>
+                    <option class="opcao-do-filtro" value="">Sem filtro</option>
                     <option class="opcao-do-filtro" value="pop" <?= $filtro == 'pop' ? 'selected' : ''?>>Pop</option>
                     <option class="opcao-do-filtro" value="rock" <?= $filtro == 'rock' ? 'selected' : ''?>>Rock</option>
                     <option class="opcao-do-filtro" value="rap" <?= $filtro == 'rap' ? 'selected' : ''?>>Rap</option>
