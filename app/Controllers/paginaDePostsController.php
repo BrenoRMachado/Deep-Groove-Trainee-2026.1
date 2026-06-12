@@ -11,6 +11,10 @@ class PaginaDePostsController {
 
         $bancoDeDados = App::get('database');
 
+        $textoDeBusca = isset($_GET['pesquisar']) ? $_GET['pesquisar'] : '';
+
+        $colunaDeBusca = $textoDeBusca !== '' ? ['titulo', 'ano'] : null;
+
         //* Detecta mobile pelo User-Agent
         $ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
         $isMobile = (bool) preg_match('/Mobile|Android|iPhone|iPad|webOS|BlackBerry/i', $ua);
@@ -23,14 +27,15 @@ class PaginaDePostsController {
 
         $offset = ($paginaAtual - 1) * $limite;
 
-        $totalDePosts = $bancoDeDados -> countAllPosts('publicacoes');
+        $totalDePosts = $bancoDeDados -> countAllPosts('publicacoes', $textoDeBusca, $colunaDeBusca);
 
         $totalDePaginas = ceil($totalDePosts / $limite);
 
-        $posts = $bancoDeDados -> paginatePosts('publicacoes', $limite, $offset);
+        $posts = $bancoDeDados -> paginatePosts('publicacoes', $limite, $offset, $textoDeBusca, $colunaDeBusca);
 
         return view('site/paginaDePosts', [
             'posts' => $posts,
+            'textoDeBusca' => $textoDeBusca,
             'paginaAtual' => $paginaAtual,
             'totalDePaginas' => $totalDePaginas
         ]);
