@@ -34,7 +34,11 @@ class QueryBuilder
 
     public function selecionarTodosOsPosts($tabela, $textoDeBusca, $colunaDeBusca, $filtro){
 
-        $sql = "SELECT COUNT(*) AS total FROM {$tabela}";
+        //* Conta total de posts e une tabela de usuários a tabela de posts
+
+        $sql = "SELECT COUNT(*) AS total
+        FROM {$tabela}
+        JOIN usuarios ON publicacoes.id_usuario = usuarios.id";
 
         $parametros = [];
 
@@ -43,7 +47,7 @@ class QueryBuilder
         //* Parâmetros de filtro e de texto de busca sendo adicionados
 
         if ($textoDeBusca && $colunaDeBusca){
-            $whereClauses[] = "($colunaDeBusca[0] LIKE :textoDeBusca OR $colunaDeBusca[1] LIKE :textoDeBusca)";
+            $whereClauses[] = "($colunaDeBusca[0] LIKE :textoDeBusca OR $colunaDeBusca[1] LIKE :textoDeBusca OR $colunaDeBusca[2] LIKE :textoDeBusca)";
             $parametros['textoDeBusca'] = '%' . $textoDeBusca . '%';
         }
 
@@ -79,7 +83,7 @@ class QueryBuilder
         //* Parâmetros de filtro e de texto de busca sendo adicionados
 
         if ($textoDeBusca && $colunaDeBusca){
-            $whereClauses[] = "($colunaDeBusca[0] LIKE :textoDeBusca OR $colunaDeBusca[1] LIKE :textoDeBusca)";
+            $whereClauses[] = "($colunaDeBusca[0] LIKE :textoDeBusca OR $colunaDeBusca[1] LIKE :textoDeBusca OR $colunaDeBusca[2] LIKE :textoDeBusca)";
             $parametros['textoDeBusca'] = '%' . $textoDeBusca . '%';
         }
 

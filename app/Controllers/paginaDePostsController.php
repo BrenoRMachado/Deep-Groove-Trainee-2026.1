@@ -15,7 +15,7 @@ class PaginaDePostsController {
 
         $textoDeBusca = isset($_GET['pesquisar']) ? $_GET['pesquisar'] : '';
 
-        $colunaDeBusca = $textoDeBusca !== '' ? ['titulo', 'ano'] : null;
+        $colunaDeBusca = $textoDeBusca !== '' ? ['titulo', 'ano', 'usuarios.nome'] : null;
 
         $filtro = isset($_GET['filtro']) ? $_GET['filtro'] : '';
 
