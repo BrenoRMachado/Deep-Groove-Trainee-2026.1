@@ -68,8 +68,8 @@
             <?php foreach ($posts as $post): ?>
             <div class="album-container">
                 <div class="capa-texto-album-container">
-                    <div class="album album1">
-                        <img src="../../../public/assets/michael-jackson-thriller.png" class="capa-album" alt="Capa do álbum de id <?= $post -> id ?>">
+                    <div class="album">
+                        <img src="<?= $post -> foto ?>" class="capa-album" alt="Capa do álbum de id <?= $post -> id ?>">
                     </div>
                     <div class="informacoes-do-album">
                         <h2 class="titulo-do-album"><?= $post -> titulo ?></h2>
