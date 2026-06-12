@@ -47,6 +47,7 @@ class PaginaDePostsController {
         return view('site/paginaDePosts', [
             'posts' => $posts,
             'textoDeBusca' => $textoDeBusca,
+            'filtro' => $filtro,
             'paginaAtual' => $paginaAtual,
             'totalDePaginas' => $totalDePaginas
         ]);

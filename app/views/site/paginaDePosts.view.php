@@ -31,13 +31,13 @@
                 </div>
                 <select name="filtro" class="botao-filtro-de-pesquisa" onchange="this.form.submit()">
                     <option class="titulo-do-filtro" value="" hidden>Filtrar</option>
-                    <option class="opcao-do-filtro" value="pop">Pop</option>
-                    <option class="opcao-do-filtro"  value="rock">Rock</option>
-                    <option class="opcao-do-filtro"  value="rap">Rap</option>
-                    <option class="opcao-do-filtro"  value="eletronica">Eletrônica</option>
-                    <option class="opcao-do-filtro"  value="jazz">Jazz</option>
-                    <option class="opcao-do-filtro"  value="classica">Clássica</option>
-                    <option class="opcao-do-filtro"  value="metal">Metal</option>
+                    <option class="opcao-do-filtro" value="pop" <?= $filtro == 'pop' ? 'selected' : ''?>>Pop</option>
+                    <option class="opcao-do-filtro" value="rock" <?= $filtro == 'rock' ? 'selected' : ''?>>Rock</option>
+                    <option class="opcao-do-filtro" value="rap" <?= $filtro == 'rap' ? 'selected' : ''?>>Rap</option>
+                    <option class="opcao-do-filtro" value="eletronica" <?= $filtro == 'eletronica' ? 'selected' : ''?>>Eletrônica</option>
+                    <option class="opcao-do-filtro" value="jazz" <?= $filtro == 'jazz' ? 'selected' : ''?>>Jazz</option>
+                    <option class="opcao-do-filtro" value="classica" <?= $filtro == 'classica' ? 'selected' : ''?>>Clássica</option>
+                    <option class="opcao-do-filtro" value="metal" <?= $filtro == 'metal' ? 'selected' : ''?>>Metal</option>
                 </select>
             </div>
         </form>
