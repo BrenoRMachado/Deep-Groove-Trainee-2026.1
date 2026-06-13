@@ -14,3 +14,6 @@ $router->post('tabela-de-posts/create', 'TabelaPostsController@store');
 
 // Método para editar as informações
 $router->post('tabela-de-posts/edit', 'TabelaPostsController@edit');
+
+//Método para deletar o post
+$router->post('tabela-de-posts/delete', 'TabelaPostsController@delete');

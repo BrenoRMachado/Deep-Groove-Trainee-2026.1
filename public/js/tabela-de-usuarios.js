@@ -30,52 +30,26 @@ botaoCancelarEdicaoDeUsuario.addEventListener('click', function () {
 });
 // ! FIM 
 
-//! jsmodalvisu
 
-function abrirModalVisu(idModalVisu) {
-        //let - var q pode mudar dps
-        //const - var constante nn muda dps
-        const modalvisu = document.querySelector('#modal-visu-user');
-        modalvisu.style.display = "flex";
+//! jsmodais
 
-        //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
-        const fundomodal = document.querySelector('.fundoV');
-        fundomodal.style.display = "flex"
+function abrirModal(idModal, idFundo) {
+    const modal = document.querySelector(idModal);
+    const fundo = document.querySelector(idFundo);
+    
+    if (modal && fundo) {
+        fundo.style.display = 'flex'; 
+        modal.style.display = 'flex';
+    }
 }
 
-function fecharModalVisu(idModalVisu) {
-        //let - var q pode mudar dps
-        //const - var constante nn muda dps
-        const modalvisu = document.querySelector('#modal-visu-user');
-        modalvisu.style.display = "none";
-
-        //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
-        const fundomodal = document.querySelector('.fundoV');
-        fundomodal.style.display = "none"
-}
-
-//? O FUNDO NN PODE SER A MESMA CLASS PQ O JS PEGA A PRIMEIRA CLASS E SE FOR A MSM SEMPRE ESTARIA PEGANDO O DE VISU E ASSIM NN APARECE O RESTO
-
-//! jsmodalexcluir
-
-function abrirModalExcluir(idModalExcluir) {
-        //let - var q pode mudar dps
-        //const - var constante nn muda dps
-        const modalexcluir = document.querySelector('#modal-excluir-user');
-        modalexcluir.style.display = "flex";
-
-        //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
-        const fundomodal = document.querySelector('.fundoE');
-        fundomodal.style.display = "flex"
-}
-
-function fecharModalExcluir(idModalExcluir) {
-        //let - var q pode mudar dps
-        //const - var constante nn muda dps
-        const modalexcluir = document.querySelector('#modal-excluir-user');
-        modalexcluir.style.display = "none";
-
-        //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
-        const fundomodal = document.querySelector('.fundoE');
-        fundomodal.style.display = "none"
+// Função para fechar o modal (esconde os elementos)
+function fecharModal(idModal, idFundo) {
+    const modal = document.querySelector(idModal);
+    const fundo = document.querySelector(idFundo);
+    
+    if (modal && fundo) {
+        fundo.style.display = 'none';
+        modal.style.display = 'none';
+    }
 }

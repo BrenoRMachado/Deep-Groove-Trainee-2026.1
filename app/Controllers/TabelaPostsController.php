@@ -52,4 +52,13 @@ class TabelaPostsController
 
         header('Location: /tabela-de-posts');
     }
+
+    public function delete()
+    {
+        $id = $_POST('id');
+
+        App::get('database')->delete('publicacoes', $id);
+
+        header('Location: /tabela-de-posts');
+    }
 }
