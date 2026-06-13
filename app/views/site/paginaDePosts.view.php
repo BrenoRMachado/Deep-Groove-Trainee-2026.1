@@ -21,16 +21,9 @@
 <body>
     <main id="pagina-de-posts">
         <section class="cabecalho">
-            <div class="container-icone-titulo-convite">
-                <div class="container-icone-titulo">
-                    <i class="icone-disco bi bi-disc"></i>
-                    <h1 class="titulo">Publicações</h1>
-                </div>
-                <div class="container-convite">
-                    <i class="icone-musica bi bi-music-note"></i>
-                    <p class="convite">Entre no Ritmo</p>
-                    <i class="icone-musica bi bi-music-note-beamed"></i>
-                </div>
+            <div class="container-icone-titulo">
+                <i class="icone-disco bi bi-disc"></i>
+                <h1 class="titulo">Publicações</h1>
             </div>
         </section>
         <form id="container-de-pesquisa-filtro-e-selecao" action="/posts" method="GET">

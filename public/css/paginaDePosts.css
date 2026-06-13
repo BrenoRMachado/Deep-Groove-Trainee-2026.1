@@ -40,20 +40,12 @@
     justify-content: space-between;
 }
 
-#pagina-de-posts .container-icone-titulo-convite {
-    width: 93.5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.1rem;
-}
-
 /* *Estilo do container do ícone de disco e do título do cabeçalho */
 #pagina-de-posts .container-icone-titulo {
     display: flex;
-    justify-content: space-between;
     gap: 1rem;
     align-items: center;
+    width: 93.5%;
 }
 
 /* *Estilo do ícone do disco do cabecalho */
@@ -65,38 +57,14 @@
 
 /* * Estilo do título da página de posts */
 #pagina-de-posts .icone-disco {
-    color: var(--cor-laranja-200);
-    background-color: var(--cor-preto-100);
-    border: 2px solid var(--cor-laranja-200);
+    color: var(--cor-branco-100);
+    background-color: var(--cor-laranja-200);
     font-size: 1.7rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
-}
-
-/* *Estilo do texto "Entre no Ritmo" do cabecalho e seus ícones */
-#pagina-de-posts .container-convite {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-#pagina-de-posts .icone-musica {
-    font-size: 1.7rem;
-    color: var(--cor-laranja-200);
-    text-shadow: 
-        0.5px 0.5px 0 var(--cor-preto-100),
-        0.5px -0.5px 0 var(--cor-preto-100),
-        -0.5px 0.5px 0 var(--cor-preto-100),
-        -0.5px -0.5px 0 var(--cor-preto-100);    
-}
-
-#pagina-de-posts .convite {
-    color: var(--cor-branco-100);
-    font-size: 2rem;
-    font-family: var(--fonte-titulo);
 }
 
 /* *Estilo do container de pesquisa, filtro e seleção */
