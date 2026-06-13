@@ -4,5 +4,10 @@ namespace App\Controllers;
 use App\Controllers\ExampleController;
 use App\Core\Router;
 
+//! Sempre que mexer no routes tem que dar composer dump-autoload
+
 $router->get('', 'ExampleController@index');
+$router->get('login', 'LoginController@index');
+$router->get('instrucoes', 'InstrucoesController@index');
+$router->get('posts', 'PaginaDePostsController@index');
 $router->get('dashboard', 'dashboardController@index');
