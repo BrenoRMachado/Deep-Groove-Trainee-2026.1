@@ -6,6 +6,7 @@
     --cor-preto-50: #2b2121;
     --cor-preto-100: #000000;
     --cor-vinho-100: #5B162D;
+    --espacamento-padding-grande: 5rem;
     --espacamento-padding-medio: 2rem;
     --espacamento-padding-pequeno: 1rem;
     --fonte-primaria: "Montserrat", sans-serif;
@@ -184,7 +185,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     width: 65%;
-    height: 110vh;
+    min-height: 110vh;
 }
 
 /* *Estilo do container dos álbuns da página de posts */
@@ -292,39 +293,29 @@
     width: 100%;
     justify-content: space-between;
     gap: 5rem;
-    padding: var(--espacamento-padding-medio) 0;
-}
-
-/* *Estilo do container dos álbuns da página de posts */
-#pagina-de-posts #container-posts-mobile .album-container {
-    width: 52%;
-    height: 48rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    position: relative;
+    padding: var(--espacamento-padding-grande) 0;
 }
 
 /* *Estilo do container do texto e da capa do álbum da página de posts */ 
 #pagina-de-posts #container-posts-mobile .capa-texto-album-container {
-    background-color: var(--cor-branco-100);
-    border: 1.5px solid var(--cor-preto-100);
     border-radius: 16px;
-    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
-    height: 80%;
+    height: 35rem;
     display: flex;
     flex-direction: column;
     z-index: 2;
-}
-
-/* *Estilo do disco de vinil dos àlbuns da páginas de posts */
-#pagina-de-posts #container-posts-mobile .disco-de-vinil {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    position: absolute;
-    top: 0%;
-    z-index: 1; /* !Menor que o álbum (z-index: 2) para que fique atrás dele */
-    animation: disco-de-vinil-girando-infinitamente-mobile 2s linear infinite;
+    background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.03)
+        );
+    /* *EFEITO VIDRO */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* * */
+    border: 1px solid var(--cor-laranja-200);
+    box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.08),
+        0 8px 32px rgba(0,0,0,0.35);
 }
 
 /* *Estilo dos álbuns da página de posts */
@@ -354,17 +345,17 @@
     align-items: center;
     justify-content: center;
     gap: 0.1rem;
+    color: var(--cor-branco-100);
+    font-family: var(--fonte-primaria);
 }
 
 #pagina-de-posts #container-posts-mobile .titulo-do-album {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: var(--cor-preto-100);
 }
 
 #pagina-de-posts #container-posts-mobile .descricao-autor-do-album {
-    font-size: 1.6rem;
-    color: var(--cor-preto-100);
+    font-size: 1.4rem;
     font-weight: 300;
 }
 
@@ -448,15 +439,6 @@
     pointer-events: none;
     opacity: 0.5;
     cursor: default; 
-}
-
-@keyframes disco-de-vinil-girando-infinitamente-mobile {
-    0% {
-        transform: rotate(0deg);  /* !Usa translateY(-50%) pra manter o disco de vinil centralizado; vem antes do rotate */
-    }
-    100% {
-        transform: rotate(360deg);
-    }
 }
 
 /* *Responsividade */

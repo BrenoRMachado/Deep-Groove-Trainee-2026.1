@@ -72,19 +72,16 @@
 
         <section id="container-posts-mobile">
             <?php foreach ($posts as $post): ?>
-            <div class="album-container">
-                <div class="capa-texto-album-container">
-                    <div class="album">
-                        <img src="<?= $post -> foto ?>" class="capa-album" alt="Capa do álbum de id <?= $post -> id ?>">
-                    </div>
-                    <div class="informacoes-do-album">
-                        <h2 class="titulo-do-album"><?= $post -> titulo ?></h2>
-                        <p class="descricao-autor-do-album descricao-do-album"><?= $post -> ano ?></p>
-                        <p class="descricao-autor-do-album autor-da-musica"><?= $post -> autor_nome ?></p>
-                    </div>
+            <div class="capa-texto-album-container">
+                <div class="album">
+                    <img src="<?= $post -> foto ?>" class="capa-album" alt="Capa do álbum de id <?= $post -> id ?>">
                 </div>
-                <img src="../../../public/assets/disco-de-vinil-pagina-de-posts.png" class="disco-de-vinil">    
-            </div>
+                <div class="informacoes-do-album">
+                    <h2 class="titulo-do-album"><?= $post -> titulo ?></h2>
+                    <p class="descricao-autor-do-album descricao-do-album"><?= $post -> ano ?></p>
+                        <p class="descricao-autor-do-album autor-da-musica"><?= $post -> artista ?></p>
+                    </div>
+                </div>  
             <?php endforeach; ?>
         </section>
 
