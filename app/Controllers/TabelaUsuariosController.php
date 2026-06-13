@@ -40,13 +40,21 @@ class TabelaUsuariosController {
 
     public function criarUsuarios() {
 
-        $fotoDePerfilTemporaria = $_FILES['foto-de-perfil']['tmp_name'];
+        if (!empty($_FILES['foto-de-perfil']['tmp_name'])) {
 
-        $nomeDaFotoDePerfil = sha1(uniqid($_FILES['foto-de-perfil']['name'], true)) . "." . pathinfo($_FILES['foto-de-perfil']['name'], PATHINFO_EXTENSION);
+            $fotoDePerfilTemporaria = $_FILES['foto-de-perfil']['tmp_name'];
+    
+            $nomeDaFotoDePerfil = sha1(uniqid($_FILES['foto-de-perfil']['name'], true)) . "." . pathinfo($_FILES['foto-de-perfil']['name'], PATHINFO_EXTENSION);
+    
+            $caminhoDaImagem = "public/assets/fotos-de-perfil-dos-usuarios/" . $nomeDaFotoDePerfil;
+    
+            move_uploaded_file($fotoDePerfilTemporaria, $caminhoDaImagem);
 
-        $caminhoDaImagem = "public/assets/fotos-de-perfil-dos-usuarios/" . $nomeDaFotoDePerfil;
+        } else {
 
-        move_uploaded_file($fotoDePerfilTemporaria, $caminhoDaImagem);
+            $caminhoDaImagem = "public/assets/fotos-de-perfil-dos-usuarios/foto-de-perfil-padrao.png";
+
+        }
 
         $parametros = [
             'nome' => $_POST['nome'],
@@ -70,8 +78,10 @@ class TabelaUsuariosController {
         if (!empty($_FILES['foto-de-perfil']['tmp_name'])) {
 
             $fotoAntiga = $usuarioAtual->foto;
-
-            unlink($_SERVER['DOCUMENT_ROOT'] . '/' . $fotoAntiga);
+            
+            if ($fotoAntiga !== 'public/assets/fotos-de-perfil-dos-usuarios/foto-de-perfil-padrao.png') {
+                unlink($_SERVER['DOCUMENT_ROOT'] . '/' . $fotoAntiga);
+            }
 
             $fotoDePerfilTemporaria = $_FILES['foto-de-perfil']['tmp_name'];
     
@@ -107,7 +117,11 @@ class TabelaUsuariosController {
 
         $fotoAtual = $usuarioAtual->foto;
 
-        unlink($_SERVER['DOCUMENT_ROOT'] . '/' . $fotoAtual);
+        if ($fotoAtual !== 'public/assets/fotos-de-perfil-dos-usuarios/foto-de-perfil-padrao.png'){
+
+            unlink($_SERVER['DOCUMENT_ROOT'] . '/' . $fotoAtual);
+
+        }
         
         App::get('database') -> delete('usuarios', $id);
 
