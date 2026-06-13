@@ -16,19 +16,24 @@
 /* *Estilo da sidebar */
 #sidebar {
     align-items: center;
-    background: linear-gradient(to top, #6D3534 39%, #9A4E45 75%, #C66E57 94%, #E08E60 100%);
+     background-color: whitesmoke;/*linear-gradient(135deg,rgba(255, 255, 255, 0.08),rgba(255, 255, 255, 0.03)); */
+    /* *EFEITO VIDRO */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 4.5rem;
-    height: 100vh;
+    height: 80vh;
+    margin: 6rem 0 6rem 1rem;
     width: fit-content;
-    padding: 0.625rem 1rem;
+    padding: 0.625rem;
 }
 
 /* *Estilo do container da logo e do botão de abrir e fechar a sidebar */
 #sidebar .container-logo-icone-abrir-fechar-sidebar {
-    align-items: flex-start;
+    align-items: center;
     display: flex;
     flex-shrink: 0;
     justify-content: center;
@@ -37,7 +42,7 @@
 
 /* *Estilo da logo principal da sidebar */
 #sidebar .logo-principal-deep-groove {
-    height: 8.9rem;
+    height: 6rem;
     width: 100%;
 }
 
@@ -45,7 +50,7 @@
 #sidebar .botao-abrir-fechar-sidebar {
     background: none;
     border: none;
-    height: fit-content;
+    /* height: fit-content; */
     cursor: pointer;
 }
 
@@ -53,7 +58,7 @@
 #sidebar .navegar-para-paginas-administrativas {
     align-items: center;
     align-self: stretch;
-    color: #fff;
+    /* color: #fff; */
     display: flex;
     flex-direction: column;
     gap: 2.75rem;
@@ -74,7 +79,7 @@
     align-items: center;
     background: none;
     border: none;
-    color: #FFF;
+    /* color: #FFF; */
     display: flex;
     justify-content: space-evenly;
     width: 100%;
