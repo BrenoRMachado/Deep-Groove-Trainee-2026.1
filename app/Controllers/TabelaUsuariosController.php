@@ -44,7 +44,7 @@ class TabelaUsuariosController {
 
         $nomeDaFotoDePerfil = sha1(uniqid($_FILES['foto-de-perfil']['name'], true)) . "." . pathinfo($_FILES['foto-de-perfil']['name'], PATHINFO_EXTENSION);
 
-        $caminhoDaImagem = $_SERVER['DOCUMENT_ROOT'] . "/public/assets/fotos-de-perfil-dos-usuarios/" . $nomeDaFotoDePerfil;
+        $caminhoDaImagem = "public/assets/fotos-de-perfil-dos-usuarios/" . $nomeDaFotoDePerfil;
 
         move_uploaded_file($fotoDePerfilTemporaria, $caminhoDaImagem);
 
@@ -71,13 +71,13 @@ class TabelaUsuariosController {
 
             $fotoAntiga = $usuarioAtual->foto;
 
-            unlink($fotoAntiga);
+            unlink($_SERVER['DOCUMENT_ROOT'] . '/' . $fotoAntiga);
 
             $fotoDePerfilTemporaria = $_FILES['foto-de-perfil']['tmp_name'];
     
             $nomeDaFotoDePerfil = sha1(uniqid($_FILES['foto-de-perfil']['name'], true)) . "." . pathinfo($_FILES['foto-de-perfil']['name'], PATHINFO_EXTENSION);
     
-            $caminhoDaImagem = $_SERVER['DOCUMENT_ROOT'] . "/public/assets/fotos-de-perfil-dos-usuarios/" . $nomeDaFotoDePerfil;
+            $caminhoDaImagem = "public/assets/fotos-de-perfil-dos-usuarios/" . $nomeDaFotoDePerfil;
     
             move_uploaded_file($fotoDePerfilTemporaria, $caminhoDaImagem);
 
@@ -107,7 +107,7 @@ class TabelaUsuariosController {
 
         $fotoAtual = $usuarioAtual->foto;
 
-        unlink($fotoAtual);
+        unlink($_SERVER['DOCUMENT_ROOT'] . '/' . $fotoAtual);
         
         App::get('database') -> delete('usuarios', $id);
 
