@@ -58,7 +58,7 @@
                     <div class="informacoes-do-album">
                         <h2 class="titulo-do-album"><?= $post -> titulo ?></h2>
                         <p class="descricao-autor-do-album descricao-do-album"><?= $post -> ano ?></p>
-                        <p class="descricao-autor-do-album autor-da-musica"><?= $post -> autor_nome?></p>
+                        <p class="descricao-autor-do-album autor-da-musica"><?= $post -> artista?></p>
                     </div>
                 </div>
                 <img src="../../../public/assets/disco-de-vinil-pagina-de-posts.png" class="disco-de-vinil">    
