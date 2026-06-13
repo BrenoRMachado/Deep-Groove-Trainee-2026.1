@@ -109,6 +109,9 @@
             </form>
         </div>
 
+    <?php endforeach; ?>
+
+    <?php foreach ($publicacoes as $publicacao): ?>
 
         <!--* MODAL DE VISUALIZAR POSTS -->
         <div class="fundo" id="fundoV-post" onclick="fecharModal('#modal-visu-post<?=$publicacao->id ?>', '#fundoV-post')">
@@ -190,7 +193,10 @@
             </div>
             
         </div>     
+    <?php endforeach; ?>
 
+    <?php foreach ($publicacoes as $publicacao): ?>
+        
         <!--* MODAL DE EXCLUIR POSTS -->
         <div class="fundo" id="fundoE-post" onclick="fecharModal('#modal-excluir-post<?=$publicacao->id ?>', '#fundoE-post')">
             
@@ -217,7 +223,7 @@
                             <div class="avisotextop">
                                 <!--* o span é inline entt continua ja td na mesma linha -->
                                 <p class="avisoSEMdestaquep">Tem certeza que deseja excluir esse post?
-                                    <span class="avisoCOMdestaquep"> <?= $usuario->nome ?> </span>?
+                                    <span class="avisoCOMdestaquep"> <?= $publicacao->titulo ?> </span>?
                                 </p>
                             </div>
                             <p class="rodapeavisop">Você não pode desfazer essa ação.</p>
