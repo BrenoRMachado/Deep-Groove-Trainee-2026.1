@@ -130,6 +130,91 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
-     //FIM paginação
+
+
+
+    public function paginacaoPosts($tabela, $limite, $offset, $textoDeBusca, $colunaDeBusca, $filtro) {
+
+        $parametros = [];
+
+        $whereClauses = [];
+
+        $whereSql = '';
+
+        //* Parâmetros de filtro e de texto de busca sendo adicionados
+
+        if ($textoDeBusca && $colunaDeBusca){
+            $whereClauses[] = "($colunaDeBusca[0] LIKE :textoDeBusca OR $colunaDeBusca[1] LIKE :textoDeBusca OR $colunaDeBusca[2] LIKE :textoDeBusca)";
+            $parametros['textoDeBusca'] = '%' . $textoDeBusca . '%';
+        }
+
+        if ($filtro){
+            $whereClauses[] = "(genero = :filtro)";
+            $parametros['filtro'] = $filtro;
+        }
+
+        if (!empty($whereClauses)){
+            $whereSql .= " WHERE " . implode(' AND ', $whereClauses);
+        }
+
+        //* Une tabela de usuários a tabela de posts, adicionando o nome do autor na tabela de posts a partir do id do usuário da tabela de posts que seja igual ao da tabela de usuários
+
+        $sql = "SELECT publicacoes.*, usuarios.nome AS autor_nome
+            FROM {$tabela}
+            JOIN usuarios ON publicacoes.id_usuario = usuarios.id
+            {$whereSql}
+            LIMIT {$limite} OFFSET {$offset}";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute($parametros);
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+    //FIM paginação
+
+    public function selecionarTodosOsPosts($tabela, $textoDeBusca, $colunaDeBusca, $filtro){
+
+        //* Conta total de posts e une tabela de usuários a tabela de posts
+
+        $sql = "SELECT COUNT() AS total
+        FROM {$tabela}
+        JOIN usuarios ON publicacoes.id_usuario = usuarios.id";
+
+        $parametros = [];
+
+        $whereClauses = [];
+
+        // Parâmetros de filtro e de texto de busca sendo adicionados
+
+        if ($textoDeBusca && $colunaDeBusca){
+            $whereClauses[] = "($colunaDeBusca[0] LIKE :textoDeBusca OR $colunaDeBusca[1] LIKE :textoDeBusca OR $colunaDeBusca[2] LIKE :textoDeBusca)";
+            $parametros['textoDeBusca'] = '%' . $textoDeBusca . '%';
+        }
+
+        if ($filtro){
+            $whereClauses[] = "(genero = :filtro)";
+            $parametros['filtro'] = $filtro;
+        }
+
+        if (!empty($whereClauses)){
+            $sql .= " WHERE " . implode(' AND ', $whereClauses);
+        }
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute($parametros);
+
+            return $stmt->fetch(PDO::FETCH_ASSOC)['total'];
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
 
 }

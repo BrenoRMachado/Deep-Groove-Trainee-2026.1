@@ -7,6 +7,10 @@ use App\Controllers\ExampleController;
 use App\Core\Router;
 
 $router->get('', 'ExampleController@index');
+$router->get('login', 'LoginController@index');
+$router->get('instrucoes', 'InstrucoesController@index');
+$router->get('posts', 'PaginaDePostsController@index');
+$router->get('dashboard', 'dashboardController@index');
 
 $router->get('tabelaUsuarios', 'TabelaUsuariosController@index');
 $router->post('tabelaUsuarios/criar', 'TabelaUsuariosController@criarUsuarios');
