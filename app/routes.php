@@ -9,3 +9,7 @@ use App\Core\Router;
 $router->get('', 'ExampleController@index');
 $router->get('login', 'LoginController@index');
 $router->get('instrucoes', 'InstrucoesController@index');
+// !composer dump-autoload reconstrói as rotas
+
+$router->get('', 'ExampleController@index');
+$router->get('posts', 'PaginaDePostsController@index');
