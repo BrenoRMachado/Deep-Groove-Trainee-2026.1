@@ -19,8 +19,8 @@
                 Publicações
             </div></a>
             <div class="botoes container-perfil">
-                <a href="login.html">
-                    <i class="bi bi-person-fill fs-4" style="color: #F09859;"></i>
+                <a href="login">
+                    <i class="bi bi-person-fill fs-4" style="color: white;"></i>
                 </a>
             </div>
         </div>
