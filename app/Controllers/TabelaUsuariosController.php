@@ -79,7 +79,7 @@ class TabelaUsuariosController {
 
             $fotoAntiga = $usuarioAtual->foto;
             
-            if ($fotoAntiga !== 'public/assets/fotos-de-perfil-dos-usuarios/foto-de-perfil-padrao.png') {
+            if ($fotoAntiga !== 'public/assets/fotos-de-perfil-dos-usuarios/foto-de-perfil-padrao.png' && file_exists($fotoAntiga)) {
                 unlink($_SERVER['DOCUMENT_ROOT'] . '/' . $fotoAntiga);
             }
 
@@ -117,7 +117,7 @@ class TabelaUsuariosController {
 
         $fotoAtual = $usuarioAtual->foto;
 
-        if ($fotoAtual !== 'public/assets/fotos-de-perfil-dos-usuarios/foto-de-perfil-padrao.png'){
+        if ($fotoAtual !== 'public/assets/fotos-de-perfil-dos-usuarios/foto-de-perfil-padrao.png'  && file_exists($fotoAtual)){
 
             unlink($_SERVER['DOCUMENT_ROOT'] . '/' . $fotoAtual);
 
