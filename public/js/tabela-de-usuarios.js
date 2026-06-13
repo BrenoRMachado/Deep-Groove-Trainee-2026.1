@@ -28,9 +28,19 @@ inputsObrigatoriosDosModais.forEach(input => {
 // }
 
 // // *Aciona o input de escolher foto de perfil ao clicar no botão de adicionar foto de perfil do usuário:
-function editarFotoDePerfil (idFotoDePerfilEscolhida) {
+function editarFotoDePerfil (idFotoDePerfilEscolhida, idPreviewFotoDePerfilAoEditarUsuario) {
+
+        // *Input é acionado ao clicar no botão de alterar foto
         const inputEscolherFotoDePerfilDoModalDeEditar = document.querySelector(idFotoDePerfilEscolhida);
         inputEscolherFotoDePerfilDoModalDeEditar.click();
+
+        // *Ao selecionar a foto, um endereço temporário local é criado para a imagem selecionada e exibe-a, sem precisar do servidor
+        inputEscolherFotoDePerfilDoModalDeEditar.onchange = () => {
+        const previewDaFotoDePerfilDoModalDeEditar = document.querySelector(idPreviewFotoDePerfilAoEditarUsuario);
+        if (previewDaFotoDePerfilDoModalDeEditar && inputEscolherFotoDePerfilDoModalDeEditar.files[0]) {
+            previewDaFotoDePerfilDoModalDeEditar.src = URL.createObjectURL(inputEscolherFotoDePerfilDoModalDeEditar.files[0]);
+        }
+    };
 };
 
 // // *Implementa as funções que fecham o modal de edição de usuários ao clicar no botão cancelar, no botão de fechar e no botão de salvar
@@ -93,6 +103,12 @@ const inputEscolherFotoDePerfilDoModalDeCriar = document.querySelector('#modal-c
 // *Aciona o input de escolher foto de perfil ao clicar no botão de adicionar foto de perfil do usuário:
 function adicionarFotoDePerfil() {
         inputEscolherFotoDePerfilDoModalDeCriar.click();
+        inputEscolherFotoDePerfilDoModalDeCriar.onchange = () => {
+        const previewDaFotoDePerfilDoModalDeCriar = document.getElementById('preview-foto-de-perfil-ao-criar-usuario');
+        if (previewDaFotoDePerfilDoModalDeCriar && inputEscolherFotoDePerfilDoModalDeCriar.files[0]) {
+            previewDaFotoDePerfilDoModalDeCriar.src = URL.createObjectURL(inputEscolherFotoDePerfilDoModalDeCriar.files[0]);
+        }
+    };
 };
 
 // const modalCriar = document.getElementById("modal-criar-usuarios")

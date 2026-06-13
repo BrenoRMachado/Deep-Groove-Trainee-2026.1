@@ -38,7 +38,7 @@
             </div>
             <div class="um-terco-alto-modal-criar">
                 <div class="parte-media-alto-modal">
-                    <i class="imagem-placeholder-capa-criar-post bi bi-person-circle"></i>
+                    <img id="preview-foto-de-perfil-ao-criar-usuario" class="foto-de-perfil-do-usuario-no-modal" src="../../../public/assets/fotos-de-perfil-dos-usuarios/foto-de-perfil-padrao.png">
                 </div>
             </div>
             <div class="um-terco-alto-modal-criar parte-direita-alto-modal">
@@ -216,7 +216,7 @@
                 <p>Atualize as informações do seu perfil</p>
             </div>
             <figure class="container-foto-de-perfil">
-                <img class="foto-de-perfil-do-usuario-no-modal" src="<?= $usuario -> foto ?>">
+                <img id="preview-foto-de-perfil-ao-editar-usuario<?= $usuario->id ?>" class="foto-de-perfil-do-usuario-no-modal" src="<?= $usuario -> foto ?>">
             </figure>
             <div class="container-botao-fechar-modal">
                 <button class="botao-fechar-modal" onclick="fecharModal('#modal-edicao-usuarios<?= $usuario->id ?>')">
@@ -232,7 +232,7 @@
                         <h2>Foto de perfil</h2>
                         <p>Recomendamos uma imagem quadrada de pelo menos 500x500px</p>
                     </div>
-                    <button type="button" class="botao-alterar-foto-de-perfil" onclick="editarFotoDePerfil('#foto-de-perfil-escolhida<?= $usuario->id ?>')">
+                    <button type="button" class="botao-alterar-foto-de-perfil" onclick="editarFotoDePerfil('#foto-de-perfil-escolhida<?= $usuario->id ?>', '#preview-foto-de-perfil-ao-editar-usuario<?= $usuario->id ?>')">
                         <i class="icone-alterar-foto-de-perfil bi bi-box-arrow-up"></i>
                         <span>Alterar foto</span>
                     </button>

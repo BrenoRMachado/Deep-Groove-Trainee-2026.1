@@ -270,7 +270,7 @@
 }
 
 /* *Estilo da foto de perfil da pessoa no modal */
-.modal-edicao-usuarios .foto-de-perfil-do-usuario-no-modal {
+.foto-de-perfil-do-usuario-no-modal {
     width: 100%;
     height: 100%;
     object-fit: cover;
