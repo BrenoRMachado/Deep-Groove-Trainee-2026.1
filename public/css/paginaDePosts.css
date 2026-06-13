@@ -1,0 +1,541 @@
+/* *Variáveis */
+
+:root {
+    --cor-laranja-200: #F09859;
+    --cor-branco-100: #ffffff;
+    --cor-preto-50: #2b2121;
+    --cor-preto-100: #000000;
+    --cor-vinho-100: #5B162D;
+    --espacamento-padding-grande: 5rem;
+    --espacamento-padding-medio: 2rem;
+    --espacamento-padding-pequeno: 1rem;
+    --fonte-primaria: "Montserrat", sans-serif;
+    --fonte-titulo: "EB Garamond", serif;
+}
+
+/* * Reset CSS da página de posts*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* * Estilo da página de posts */
+#pagina-de-posts {
+    background: linear-gradient(to bottom, var(--cor-vinho-100), var(--cor-preto-100));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* *Estilo do cabecalho da página de posts */
+#pagina-de-posts .cabecalho {
+    width: 65%;
+    display: flex;
+    align-items: flex-end;
+    padding: var(--espacamento-padding-pequeno) 0;
+    justify-content: space-between;
+}
+
+/* *Estilo do container do ícone de disco e do título do cabeçalho */
+#pagina-de-posts .container-icone-titulo {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: 93.5%;
+}
+
+/* *Estilo do ícone do disco do cabecalho */
+#pagina-de-posts .titulo {
+    color: var(--cor-branco-100);
+    font-family: var(--fonte-titulo);
+    font-size: 2.5rem;
+}
+
+/* * Estilo do título da página de posts */
+#pagina-de-posts .icone-disco {
+    color: var(--cor-branco-100);
+    background-color: var(--cor-laranja-200);
+    font-size: 1.7rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+/* *Estilo do container de pesquisa, filtro e seleção */
+#pagina-de-posts #container-de-pesquisa-filtro-e-selecao {
+    width: 65%;
+}
+
+#pagina-de-posts .container-pesquisa-e-filtro {
+    display: flex;
+    width: 93.5%;
+    justify-content: space-between;
+    gap: 0.1rem;
+}
+
+/* *Estilo da barra de pesquisa da página de posts */
+#pagina-de-posts .barra-de-pesquisa {
+    background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.03)
+        );
+    /* *EFEITO VIDRO */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* * */
+    border: 1px solid var(--cor-laranja-200);
+    box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.08),
+        0 8px 32px rgba(0,0,0,0.35);
+    border-radius: 10px;
+    width: 85%;
+    display: flex;
+    align-items: center;
+}
+
+#pagina-de-posts .pesquisar {
+    all: unset;
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    color: var(--cor-branco-100);
+}
+
+#pagina-de-posts .pesquisar::placeholder {
+    color: var(--cor-branco-100);
+    opacity: 0.5;
+    font-family: var(--fonte-primaria);
+}
+
+#pagina-de-posts .pesquisar:focus::placeholder {
+    opacity: 0;
+}
+
+/* *Estilo do botão de pesquisa da página de posts*/
+#pagina-de-posts .botao-de-pesquisa {
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--cor-branco-100);
+}
+
+/* *Estilo do botão de filtro de pesquisa da página de posts */
+#pagina-de-posts .botao-filtro-de-pesquisa {
+    color: var(--cor-branco-100);
+    background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.03)
+        );
+    /* *EFEITO VIDRO */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* * */
+    border: 1px solid var(--cor-laranja-200);
+    box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.08),
+        0 8px 32px rgba(0,0,0,0.35);
+    width: 12%;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    font-family: var(--fonte-primaria);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* *Animação do botão de filtro de pesquisa ao passar o mouse por cima */ 
+#pagina-de-posts .botao-filtro-de-pesquisa:hover {
+    transform: scale(1.015);
+    cursor: pointer;
+    opacity: 0.95;
+    background-color: var(--cor-laranja-200);
+}    
+
+/* *Estilo do botão de filtro de pesquisa ao ser selecionado */
+#pagina-de-posts .botao-filtro-de-pesquisa:focus {
+    border-radius: 10px 10px 0 0;
+    background-color: var(--cor-laranja-200);
+}
+
+/* *Estilo das opções do filtro de pesquisa */
+#pagina-de-posts .opcao-do-filtro {
+    color: var(--cor-laranja-200);
+    background-color: var(--cor-branco-100);
+}
+
+/* !INÍCIO ÁREA DE POSTS DA PÁGINA DE POSTS PARA DESKTOP */
+
+/* *Estilo do container de posts da página de posts */
+#pagina-de-posts #container-posts-desktop {
+    display: flex;
+    align-content: space-evenly;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 65%;
+    min-height: 110vh;
+}
+
+/* *Estilo do container dos álbuns da página de posts */
+#pagina-de-posts #container-posts-desktop .album-container {
+    width: 30%;
+    height: 25%;
+    display: flex;
+    position: relative;
+}
+
+/* *Estilo do disco de vinil dos àlbuns da páginas de posts */
+#pagina-de-posts #container-posts-desktop .disco-de-vinil {
+    height: 98%;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    top: 50%;
+    right: 23%;
+    transform: translateY(-50%);
+    transition: right 0.5s linear;
+    z-index: 1; /* !Menor que o álbum (z-index: 2) para que fique atrás dele */
+}
+
+/* *Animação do disco de vinil ao passar o mouse por cima da capa do álbum */
+#pagina-de-posts #container-posts-desktop .album:hover ~ .disco-de-vinil {
+    right: 0;
+}
+
+/* *Estilo dos álbuns da página de posts */
+#pagina-de-posts #container-posts-desktop .album {
+    width: 77%;
+    height: 100%;
+    background-color: var(--cor-preto-100);
+    border-radius: 8px;
+    box-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.3), -1.5px -1.5px 3px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+    transition: transform 0.5s linear;
+}
+
+/* *Animação do cursor ao passar o mouse por cima da foto da capa do álbum da página de posts */
+#pagina-de-posts #container-posts-desktop .album:hover {
+    cursor: pointer;
+    transform: scale(1.025);
+}
+
+/* *Foto da capa dos álbuns da página de posts */
+#pagina-de-posts #container-posts-desktop .capa-album {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+
+/* *Animação da foto do álbum e do disco de vinil ao passar o mouse por cima da foto (página-de-posts) */
+#pagina-de-posts #container-posts-desktop .album:hover .capa-album {
+    opacity: 0.25; 
+}
+
+/* *Estilo das informações contidas no álbum da página de posts */
+#pagina-de-posts #container-posts-desktop .informacoes-do-album {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    inset: 0;
+    padding: 0.1rem;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+}
+
+#pagina-de-posts #container-posts-desktop .titulo-do-album {
+    color: var(--cor-branco-100);
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: var(--fonte-titulo);
+}
+
+#pagina-de-posts #container-posts-desktop .descricao-autor-do-album {
+    font-size: 0.8rem;
+    color: var(--cor-branco-100);
+    font-family: var(--fonte-primaria);
+    font-weight: 300;
+}
+
+/* *Animação do texto escrito na foto do álbum ao passar o mouse por cima da foto e do disco de vinil (página de posts) */
+#pagina-de-posts #container-posts-desktop .album:hover .informacoes-do-album, #pagina-de-posts #container-posts-desktop .disco-de-vinil:hover ~ .album  .informacoes-do-album {
+    opacity: 1;
+}
+
+/* !FIM DA ÁREA DE POSTS DA PÁGINA DE POSTS PARA DESKTOP */
+
+/* !INÍCIO DA ÁREA DE POSTS DA PÁGINA DE POSTS PARA TABLET / MOBILE */
+
+/* *Estilo do container de posts da página de posts */
+#pagina-de-posts #container-posts-mobile {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    gap: 5rem;
+    padding: var(--espacamento-padding-grande) 0;
+}
+
+/* *Estilo do container do texto e da capa do álbum da página de posts */ 
+#pagina-de-posts #container-posts-mobile .capa-texto-album-container {
+    border-radius: 16px;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.03)
+        );
+    /* *EFEITO VIDRO */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* * */
+    border: 1px solid var(--cor-laranja-200);
+    box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.08),
+        0 8px 32px rgba(0,0,0,0.35);
+}
+
+/* *Estilo dos álbuns da página de posts */
+#pagina-de-posts #container-posts-mobile .album {
+    width: 100%;
+    height: 55%;
+    border: 1.5px solid var(--cor-preto-100);
+    border-radius: 16px;
+    box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 2;
+}
+
+/* *Foto da capa dos álbuns da página de posts */
+#pagina-de-posts #container-posts-mobile .capa-album {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+}
+
+/* *Estilo das informações dos álbuns da página de posts */ 
+#pagina-de-posts #container-posts-mobile .informacoes-do-album {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.1rem;
+    color: var(--cor-branco-100);
+    font-family: var(--fonte-primaria);
+}
+
+#pagina-de-posts #container-posts-mobile .titulo-do-album {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#pagina-de-posts #container-posts-mobile .descricao-autor-do-album {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+/* !FIM DA ÁREA DE POSTS DA PÁGINA DE POSTS PARA TABLET / MOBILE */
+
+/* *Estilo do container de mudança de página da página de posts */
+#pagina-de-posts #container-de-mudanca-de-pagina {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+#pagina-de-posts #container-de-mudanca-de-pagina .container-botoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+/* *Estilo dos botões de mudança de página da página de posts */
+#pagina-de-posts #container-de-mudanca-de-pagina .seta-esquerda-mudar-para-pagina-anterior, #pagina-de-posts #container-de-mudanca-de-pagina .seta-direita-mudar-para-proxima-pagina {
+    font-size: 1.7rem;
+    color: var(--cor-branco-100);
+    border: none;
+    background: none;
+    display: flex;
+}
+
+#pagina-de-posts #container-de-mudanca-de-pagina .botao-numerado {
+    border-radius: 50%;
+    padding: 1rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    border: none;
+    background-color: var(--cor-branco-100);
+    color: var(--cor-preto-100);
+    text-decoration: none;
+}
+
+#pagina-de-posts #container-de-mudanca-de-pagina .existe-mais-paginas {
+    display: flex; 
+    align-items: flex-end;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    color: var(--cor-branco-100);
+}
+
+/* *Animação dos botões de mudança de página da página de posts*/
+#pagina-de-posts #container-de-mudanca-de-pagina .botao {
+    transition: transform 0.4s ease;
+}
+
+#pagina-de-posts #container-de-mudanca-de-pagina .botao:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+#pagina-de-posts #container-de-mudanca-de-pagina .botao-numerado:active {
+    color: currentColor;
+}
+
+#pagina-de-posts #container-de-mudanca-de-pagina .botao-numerado:visited {
+    color: currentColor;
+}
+
+/* *Estilo do botão ativo da página atual */
+#pagina-de-posts #container-de-mudanca-de-pagina .container-botoes .ativo {
+    background-color: var(--cor-laranja-200);
+    color: var(--cor-branco-100);
+}
+
+/* *Estilo do botão desabilitado da paginação (não existe mais páginas para passar com a seta) */
+#pagina-de-posts #container-de-mudanca-de-pagina .container-botoes .desabilitado {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: default; 
+}
+
+/* *Responsividade */
+
+/* !Tablet */
+@media (max-width: 769px) {
+    #pagina-de-posts {
+        align-items: center;
+    
+    }
+    #pagina-de-posts > .titulo {
+        justify-content: center;
+        font-size: 4rem;
+    }
+
+    #pagina-de-posts #container-de-pesquisa {
+        width: 87%;
+    }
+
+    #pagina-de-posts #container-de-pesquisa .barra-de-pesquisa {
+        padding: 0.2rem;
+        width: 87%;
+    }
+
+    #pagina-de-posts #container-de-pesquisa .pesquisar {
+        font-size: 1.4rem;
+    }
+
+    #pagina-de-posts #container-de-pesquisa .botao-de-pesquisa {
+        font-size: 1.7rem;
+    }
+
+    #pagina-de-posts #container-de-pesquisa .container-botao-filtro-de-pesquisa {
+        width: 12%;
+    }
+
+    #pagina-de-posts #container-de-pesquisa .botao-filtro-de-pesquisa {
+        font-size: 3rem;
+        height: 2.2rem;
+        width: 2.2rem;;
+    }
+
+    #pagina-de-posts #container-de-mudanca-de-pagina .seta-esquerda-mudar-para-pagina-anterior, #pagina-de-posts #container-de-mudanca-de-pagina .seta-direita-mudar-para-proxima-pagina {
+        font-size: 3rem;
+    }
+
+    #pagina-de-posts #container-de-mudanca-de-pagina .botao-numerado {
+        font-size: 2.3rem;
+        width: 3.4rem;
+        height: 3.4rem;
+    }
+
+    #pagina-de-posts #container-posts-desktop {
+        display: none;
+    }
+
+    #pagina-de-posts #container-posts-mobile {
+        display: flex;
+    }
+}
+
+/* !Mobile Grande*/
+@media (max-width: 624px) {
+    #pagina-de-posts > .titulo {
+        font-size: 3.5rem;
+    }
+    #pagina-de-posts #container-de-pesquisa {
+        padding: 0 1.1rem;
+        width: 95%;
+    }
+    #pagina-de-posts #container-de-pesquisa .barra-de-pesquisa {
+        width: 80%;
+    }
+    #pagina-de-posts .pesquisar {
+        font-size: 0.9rem;
+    }
+
+    #pagina-de-posts #container-de-pesquisa .container-botao-filtro-de-pesquisa {
+        width: 18%;
+    }
+
+    #pagina-de-posts #container-posts-mobile {
+        row-gap: 4rem;
+    }
+    #pagina-de-posts #container-posts-mobile .album-container {
+        width: 55%;
+        height: 40rem;
+    }
+    #pagina-de-posts #container-posts-mobile .titulo-do-album {
+        font-size: 2rem;
+    }
+}
+
+/* !Mobile Pequeno*/
+@media (max-width: 490px) {
+    #pagina-de-posts #container-posts-mobile .album-container {
+        width: 70%;
+        height: 37rem;
+    }
+}
