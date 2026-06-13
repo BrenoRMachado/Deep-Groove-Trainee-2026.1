@@ -16,13 +16,18 @@
   box-sizing: border-box;
 }
 
-body {
+/* .corpoFooter {
     background-color: #431223;
     display: flex;
+    flex-direction: column;
 
-            /* cima/baixo (MESMO) esquerda/direita(MESMO) */
+        
     padding: 8rem 1rem;
-}
+} */
+
+/*.informacoesfooter{
+    display: flex;
+} */
 
 .logos {
     display: flex;
