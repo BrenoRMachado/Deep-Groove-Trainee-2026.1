@@ -59,13 +59,16 @@
     <section class="carroussel">
 
         <!--! titulo do carroussel -->
-        <h1 class="titulo_carroussel">MAIS VENDIDOS</h1>
-
+        <div class="titulo-total1">
+            <img class="titulo_carroussel_img" src="../../../public/assets/soudwaves.png">
+            <h1 class="titulo_carroussel">MAIS VENDIDOS</h1>
+            <img class="titulo_carroussel_img" src="../../../public/assets/soudwaves.png">
+        </div>
         <!--! contem as imagems, setas e bolinhas do carroussel  -->
         <div class="slider">
 
             <!--! seta esquerda -->
-            <div class="nav-arrow" id="seta_esquerda">&#10094</div>
+            <div class="nav-arrow seta_esquerda" id="seta_esquerda">&#10094</div>
 
             <!--! imagens que vão estar passando no carroussel -->
             <div class="slider-conteudo">
@@ -79,23 +82,28 @@
             </div>
 
             <!--! bolinhas quantificadoras de "página" -->
-            <div class="radio-auto">
-                <label class="radio-label"></label>
-            </div>
+            <div class="radio-auto"></div>
 
             <!--! seta direita -->
-            <div class="nav-arrow" id="seta_direita">&#10095</div>
+            <div class="nav-arrow seta_direita" id="seta_direita">&#10095</div>
 
         </div>
 
     </section>
+    <!-- JAVA SCRIPT DO CARROUSSEL  -->
+    <script src="../../../public/js/landingpage.js"></script>
+
 
     <!-- MOSAICO -->
     <!--? o mosaico como um todo -->
     <section class="mosaico">
 
         <!--? titulo do mosaico -->
-        <h1 class="titulo-mosaico">ÚLTIMOS PUBLICADOS</h1>
+        <div class="titulo-total2">
+            <img class="titulo_mosaico_img" src="../../../public/assets/soudwaves.png">
+            <h1 class="titulo-mosaico">ÚLTIMOS PUBLICADOS</h1>
+            <img class="titulo_mosaico_img" src="../../../public/assets/soudwaves.png">
+        </div>
 
         <!--? contem os posts -->
         <div class="elementos-post">
@@ -107,18 +115,18 @@
             <div class="postsPquenos">
 
                 <div class="p1">
-                    <img id="i1" src="../../../public/assets/IOI- Loop.jpg">
-                    <p id="t1">It is a long established fact that a reader when looking at its layout.</p>
+                    <img class="i1" src="../../../public/assets/IOI- Loop.jpg">
+                    <p class="t1">It is a long established fact that a reader when looking at its layout.</p>
                 </div>
 
                 <div class="p2">
-                    <img id="i2" src="../../../public/assets/Wyld.jpg">
-                    <p id="t2">It is a long established fact that a reader when looking at its layout.</p>
+                    <img class="i2" src="../../../public/assets/Wyld.jpg">
+                    <p class="t2">It is a long established fact that a reader when looking at its layout.</p>
                 </div>
 
                 <div class="p3">
-                    <img id="i3" src="../../../public/assets/Gongbu.jpg">
-                    <p id="t3">It is a long established fact that a reader when looking at its layout.</p>
+                    <img class="i3" src="../../../public/assets/Gongbu.jpg">
+                    <p class="t3">It is a long established fact that a reader when looking at its layout.</p>
                 </div>
 
             </div>
@@ -127,8 +135,6 @@
 
     </section>
 
-    <!-- JAVA SCRIPT DO CARROUSSEL  -->
-    <script src="../../../public/js/landingpage.js"></script>
 </body>
 
 </html>

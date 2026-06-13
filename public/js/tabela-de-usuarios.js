@@ -1,33 +1,68 @@
-// ! INÍCIO DO CÓDIGO DO MODAL DE EDIÇÃO DE USUÁRIOS DA TABELA DE USUÁRIOS
-// *Seleciona icones de edicao de usuário da tabela de usuários, o modal de edição de usuários e o filtro ao abrir o modal da tabela de usuários
+//* Todos os campos com 'required' no input exibiram a seguinte mensagem: */
+const fundomodal = document.getElementById("fundo");
+const inputsObrigatoriosDosModais = document.querySelectorAll('input[required]');
 
-const filtroAoAbrirModalDaTabelaDeUsuarios = document.querySelector('.filtro-ao-abrir-modal-da-tabela-de-usuarios');
-const iconesDeEdicaoDeUsuario = document.querySelectorAll('.tabela .bi-pencil-square');
-const modalDeEdicaoDeUsuario = document.querySelector('#modal-edicao-usuarios');
-let estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
-
-// *Implementa função que ativa o modal de edição de usuários
-
-iconesDeEdicaoDeUsuario.forEach((iconeDeEdicaoDeUsuario) => {
-        iconeDeEdicaoDeUsuario.addEventListener('click', function () {
-                modalDeEdicaoDeUsuario.style.display = 'grid';
-                filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'flex';
-                estadoAtualDoModalDeEdicaoDeUsuario = 'aberto';
+inputsObrigatoriosDosModais.forEach(input => {
+        input.addEventListener('invalid', function() {
+                if (this.value === ''){
+                        this.setCustomValidity('Este campo é obrigatório');
+                }
+        });
+        input.addEventListener('input', function() {
+                this.setCustomValidity('');
         });
 });
 
-// *Seleciona o botão de cancelar do modal de edição de usuários 
+// // ! INÍCIO DO CÓDIGO DO MODAL DE EDIÇÃO DE USUÁRIOS DA TABELA DE USUÁRIOS
+// // *Seleciona icones de edicao de usuário da tabela de usuários, o modal de edição de usuários e o filtro ao abrir o modal da tabela de usuários
 
-const botaoCancelarEdicaoDeUsuario = document.querySelector('#modal-edicao-usuarios .botao-cancelar');
+// const filtroAoAbrirModalDaTabelaDeUsuarios = document.querySelector('.filtro-ao-abrir-modal-da-tabela-de-usuarios');
+// let estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
 
-botaoCancelarEdicaoDeUsuario.addEventListener('click', function () {
+// // *Função ao abrir modal de edição de usuario 
+// function abrirModalDeEdicaoDeUsuario(idModalEdicaoDeUsuario){
+//         const modalDeEdicaoDeUsuario = document.querySelector(idModalEdicaoDeUsuario);
+//         modalDeEdicaoDeUsuario.style.display = 'flex';
+//         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'flex';
+//         estadoAtualDoModalDeEdicaoDeUsuario = 'aberto';
+// }
 
-// *Implementa função que fecha o modal de edição de usuários ao clicar no botão cancelar
+// // *Aciona o input de escolher foto de perfil ao clicar no botão de adicionar foto de perfil do usuário:
+function editarFotoDePerfil (idFotoDePerfilEscolhida, idPreviewFotoDePerfilAoEditarUsuario) {
 
-        modalDeEdicaoDeUsuario.style.display = 'none';
-        filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'none';
-        estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
-});
+        // *Input é acionado ao clicar no botão de alterar foto
+        const inputEscolherFotoDePerfilDoModalDeEditar = document.querySelector(idFotoDePerfilEscolhida);
+        inputEscolherFotoDePerfilDoModalDeEditar.click();
+
+        // *Ao selecionar a foto, um endereço temporário local é criado para a imagem selecionada e exibe-a, sem precisar do servidor
+        inputEscolherFotoDePerfilDoModalDeEditar.onchange = () => {
+        const previewDaFotoDePerfilDoModalDeEditar = document.querySelector(idPreviewFotoDePerfilAoEditarUsuario);
+        if (previewDaFotoDePerfilDoModalDeEditar && inputEscolherFotoDePerfilDoModalDeEditar.files[0]) {
+            previewDaFotoDePerfilDoModalDeEditar.src = URL.createObjectURL(inputEscolherFotoDePerfilDoModalDeEditar.files[0]);
+        }
+    };
+};
+
+// // *Implementa as funções que fecham o modal de edição de usuários ao clicar no botão cancelar, no botão de fechar e no botão de salvar
+ 
+// function salvarEdicaoDeUsuario() {
+//         estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
+// };
+
+// function cancelarEdicaoDeUsuario(idModalEdicaoDeUsuario){
+//         const modalDeEdicaoDeUsuario = document.querySelector(idModalEdicaoDeUsuario);
+//         modalDeEdicaoDeUsuario.style.display = 'none';
+//         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'none';
+//         estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
+// };
+
+// function fecharEdicaoDeUsuario(idModalEdicaoDeUsuario){
+//         const modalDeEdicaoDeUsuario = document.querySelector(idModalEdicaoDeUsuario);
+//         modalDeEdicaoDeUsuario.style.display = 'none';
+//         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'none';
+//         estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
+// };
+
 // ! FIM 
 
 
@@ -53,3 +88,60 @@ function fecharModal(idModal, idFundo) {
         modal.style.display = 'none';
     }
 }
+//! jsmodal
+
+function fecharFundo (){
+        const modais = document.querySelectorAll(".modalfundo");
+        modais.forEach(modal => {
+                 modal.style.display = "none";
+        });
+        fundomodal.style.display = "none";
+}
+
+function abrirModal(idModal) {
+        //let - var q pode mudar dps
+        //const - var constante nn muda dps
+        const modal = document.querySelector(idModal);
+        modal.style.display = "flex";
+
+        //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
+        fundomodal.style.display = "flex";
+}
+
+function fecharModal(idModal) {
+        //let - var q pode mudar dps
+        //const - var constante nn muda dps
+        const modal = document.querySelector(idModal);
+        modal.style.display = "none";
+
+        //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
+        fundomodal.style.display = "none";
+}
+
+// *CÓDIGO DO MODAL DE ADICIONAR USUÁRIO
+
+// *Seleciona o input de adicionar a foto de perfil do usuário:
+const inputEscolherFotoDePerfilDoModalDeCriar = document.querySelector('#modal-criar-usuarios .foto-de-perfil-escolhida');
+
+// *Aciona o input de escolher foto de perfil ao clicar no botão de adicionar foto de perfil do usuário:
+function adicionarFotoDePerfil() {
+        inputEscolherFotoDePerfilDoModalDeCriar.click();
+        inputEscolherFotoDePerfilDoModalDeCriar.onchange = () => {
+        const previewDaFotoDePerfilDoModalDeCriar = document.getElementById('preview-foto-de-perfil-ao-criar-usuario');
+        if (previewDaFotoDePerfilDoModalDeCriar && inputEscolherFotoDePerfilDoModalDeCriar.files[0]) {
+            previewDaFotoDePerfilDoModalDeCriar.src = URL.createObjectURL(inputEscolherFotoDePerfilDoModalDeCriar.files[0]);
+        }
+    };
+};
+
+// const modalCriar = document.getElementById("modal-criar-usuarios")
+
+// function abrirModalCriar(){
+//         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = "flex"
+//         modalCriar.style.display = "flex"
+// }
+
+// function fecharModalCriar(){
+//         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = "none"
+//         modalCriar.style.display = "none"
+// }
