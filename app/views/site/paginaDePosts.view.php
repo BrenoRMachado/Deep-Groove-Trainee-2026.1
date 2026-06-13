@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <!-- *CSS -->
-    <link rel="stylesheet" href="../../../public/css/pagina-de-posts.css">
+    <link rel="stylesheet" href="../../../public/css/paginaDePosts.css">
 
     <!-- *ÍCONES -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
