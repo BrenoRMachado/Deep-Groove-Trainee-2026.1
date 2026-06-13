@@ -2,8 +2,8 @@
 const slider = document.querySelector('.slider');
 const sliderContent = document.querySelector('.slider-conteudo');
 const radioAuto = document.querySelector('.radio-auto');
-const leftArrow = document.querySelector("seta_esquerda");
-const rigthArrow = document.querySelector("seta_direita");
+const leftArrow = document.querySelector("#seta_esquerda");
+const rigthArrow = document.querySelector("#seta_direita");
 
 // declarando variaveis globais
 let currentPage = 0;
@@ -14,20 +14,18 @@ let autoSlideInterval;
 // criação/organização do carroussel
 function updateCarroussel()
 {
-    const sliderWidth = slider.offsetwidth;
+    const sliderWidth = slider.offsetWidth;
     const itemWidth = sliderContent.children[0].getBoundingClientRect().width;
 
     itemsPerView = (sliderWidth / itemWidth);
-    totalPages = Math.ceil((sliderContent.children.length / itemsPerView) - 2*((sliderWidth / itemWidth)/100));
-
+    totalPages = Math.ceil(sliderContent.children.length / itemsPerView);
     createRadioLabel();
-    updateRadiolabel();
+    updateRadioLabel();
 }
 
 // RADIO LABEL
 function createRadioLabel()
 {
-    radioAuto.innerHTML = " ";
     for(let i = 0; i < totalPages; i++)
     {
         const label = document.createElement('div');
@@ -41,21 +39,20 @@ function createRadioLabel()
             scrollToPage();
         })
         radioAuto.appendChild(label);
-    
     }
 }
 function updateRadioLabel()
 {
     const labels = document.querySelectorAll('.radio-label');
     labels.forEach( (l,i) => {
-        classList.toggle('active', i === currentPage)
+        l.classList.toggle('active', i === currentPage)
     });
 }
 
 // MOVIMENTAÇÃO
 function scrollToPage()
 {
-    const newPosition = slider.offsetwidth * currentPage;
+    const newPosition = slider.offsetWidth * currentPage;
     sliderContent.scrollTo({left:newPosition, behavior: 'smooth'});
     updateRadioLabel();
     resetAutoSlide();
@@ -88,7 +85,7 @@ function startAutoSlide()
         moveRigth()
     }, 4000)
 }
-function resetAuroSlide()
+function resetAutoSlide()
 {
     clearInterval(autoSlideInterval);
     startAutoSlide();

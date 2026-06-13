@@ -125,11 +125,12 @@ html, .tudolanding {
     gap: 0.625rem;
     justify-content: center;
     padding: 0.625rem;
-    width: 35vw;
+    width: 20vw;
 
     /*todo: aparência da caixa */
     background-color: #FFA96B;
     border-radius: 2.31vw;
+    border: none;
 
     /*todo: tipografia */
     color: #000;
@@ -164,69 +165,63 @@ html, .tudolanding {
 /* CARROUSSEL */
 /*! a box do carroussel como um todo */
 .carroussel {
-    align-items: flex-start;
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    gap: 1.25rem;
-    overflow: hidden;
-    padding: 1.75rem 0 0 0;
-    max-width: 100%;
-    width: 100%;
     background-color: #FFF;
+    overflow: hidden;
+    padding: 1.5625rem clamp(1.5rem, 5vw, 5rem);
+    position: relative;
+    width: 100%;
 }
 
-/*! titulo do carroussel-texto */
+.titulo-total1{
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 0 0 1rem 0;
+
+}
+/* ! titulo do carroussel-texto*/
 .titulo_carroussel {
-    color: #000;
+    color: #5B162D;
     font-family: Montserrat;
     font-size: clamp(1.2rem, 2.96vw, 2.5rem);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: normal;
-    padding: 0 clamp(1.5rem, 5vw, 5rem);
+    margin: 2vh 0 3vh 0;
+    padding: 1rem 0 0 0;
+}
+
+/* ! titulo do carroussel-imagem*/
+.titulo_carroussel_img{
+    width: 10%;
 }
 
 /*! contem as divs onde estam as imagens */
 .slider-conteudo {
     display: flex;
-    gap: 1.5rem;
-    height: 100%;
-    max-width: 100%;
-    overflow-x: auto;
-    padding: 0 clamp(1.5rem, 5vw, 5rem);
-    scroll-behavior: smooth;
-    width: 100%;
-   
+    overflow: hidden;
 }
 
 /*! onde está as imagens */
 .slider-item {
-    display: block;
-    flex-shrink: 0;
-    height: 100%;
-    image-rendering: auto;
-    width: 30vw;
-    
+  min-width: 30%;
 }
 
 /*! as imagens */
 .slider-item img {
-    align-items: flex-start;
     border-radius: 4.16vw;
-    display: block;
-    height: 24.16vh;
+    height: 35vh;
     object-fit: cover;
     transition: transform 0.3s;
-    width: 100%;
+    width: 25vw;
 }
 
 /*! as setas do carroussel */
 .nav-arrow {
     position: absolute;
-    top: 125%;
-    transform: translateY(-90%);
+    top: 50%;
+    transform: translateY(+30%);
     background-color: rgba(225, 225, 225, 0, 9);
     color: black;
     width: 3vw;
@@ -243,15 +238,15 @@ html, .tudolanding {
 
 /*! efeito das setas quando o cursor passa em cima */
 .nav-arrow:hover {
-    background-color: #2d8b33;
+    background-color: #FFA96B;
     color: white;
 }
 
-#seta_esquerda {left: 0.9vw;}
-#seta_direita {right: 0.9vw;}
+.seta_esquerda {left: 0.9vw;}
+.seta_direita {right: 0.9vw;}
 
 /*! area onde fica as bolinhas */
-.radio-auto {
+/* .radio-auto {
     align-items: center;
     display: flex;
     gap: 0.5vw;
@@ -259,22 +254,22 @@ html, .tudolanding {
     justify-content: center;
     margin: 1vw 0;
     width: 100vw;
-}
+} */
 
 /*! bolinhas */
-.radio-label {
+/* .radio-label {
     border: 0.10vw solid white;
     padding: 0.4vw;
     border-radius: 50%;
     background-color: #ccc;
     cursor: pointer;
     transition: background-color 0.3s;
-}
+} */
 
 /*! efeito das bolinhas quando o cursor passa em cima */
-.radio-label.active {
-    background-color: #2d8b33;
-}
+/* .radio-label.active {
+    background-color: #FFA96B;
+} */
 
 /* MOSAICO */
 .mosaico {
@@ -284,41 +279,54 @@ html, .tudolanding {
     display: flex;
     flex-direction: column;
     height: auto;
-    min-height: auto;
+    min-height: 100%;
     padding: 1.5625rem clamp(1.5rem, 5vw, 5rem);
     width: 100%;
 }
 
+/*? contem as imagens e o texto */
+.titulo-total2{
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+/*? titulo do mosaico-texto */
 .titulo-mosaico {
-    color: #000;
+    color: #5B162D;
     font-family: Montserrat;
     font-size: clamp(1.2rem, 2.96vw, 2.5rem);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: normal;
 }
 
+/* ? titulo do mosaico-imagem*/
+.titulo_mosaico_img{
+    width: 10%;
+}
+
+/*? contem o post grande e os posts pequenos */
 .elementos-post {
     align-items: center;
     display: flex;
     flex-shrink: 0;
-    gap: 2rem;
-    height: 60.27vh;
-    justify-content: space-between;
+    gap: 5rem;
+    height: auto;
+    justify-content: center;
     width: 100%;
 }
 
-/*? coluna da esquerda: post grande */
+/*? coluna da esquerda: conteiner da imagem */
 .postGrande {
     /*? layout */
     align-items: flex-start;
     display: flex;
-    flex: 1;
     flex-direction: column;
-    gap: 0.625rem;
-    height: 55.46vh;
+    height: 60vh;
     image-rendering: auto;
-    min-width: 300px;
 
     /*? aparencia */
     background-color: #FFF;
@@ -326,10 +334,10 @@ html, .tudolanding {
     box-shadow: -15px 15px 10px 0 rgba(0, 0, 0, 0.20);
 }
 
+/*? imagem do .postGrande */
 .postGrande img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     border-radius: 2.31vw;
 }
 
@@ -338,12 +346,9 @@ html, .tudolanding {
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     height: auto;
-    image-rendering: auto;
     justify-content: center;
-    min-height: 57.87vh;
-    min-width: 300px;
     width: 50%;
 }
 
@@ -352,32 +357,32 @@ html, .tudolanding {
     align-items: center;
     align-self: stretch;
     background-color: #FFF;
-    border-radius: 2.77vw;
+    border-radius: 1.5vw;
     display: flex;
     flex-direction: row;
     flex-shrink: 0;
     gap: 0.9375rem;
     height: 17.87vh;
-    padding: 1.25rem;
 }
 
-#i1 {
+/*? imagem 1 */
+.i1 {
     /*? layout */
     display: flex;
-    flex: 1;
     flex-shrink: 0;
-    height: 16.5vh;
+    height: 18.5vh;
     justify-content: center;
-    object-fit: cover;
     transform: translateZ(0);
-    width: 40%;
+    object-fit: cover;
+    width: 36%;
 
     /*? aparencia */
-    border-radius: 2.77vw;
+    border-radius: 1.5vw;
     box-shadow: -10px 10px 10px 0 rgba(0, 0, 0, 0.20);
 }
 
-#t1 {
+/*? texto 1 */
+.t1 {
     /*? layout */
     display: flex;
     flex: 1;
@@ -401,32 +406,35 @@ html, .tudolanding {
     align-items: center;
     align-self: stretch;
     background-color: #FFF;
-    border-radius: 2.77vw;
+    border-radius: 1.5vw;
     display: flex;
     flex-direction: row;
     flex-shrink: 0;
     gap: 0.9375rem;
     height: 17.87vh;
-    padding: 1.25rem;
 }
 
-#i2 {
+.teste{
+    width: 200px;
+}
+
+/*? imagem 2 */
+.i2 {
     /*? layout */
     display: flex;
-    flex: 1;
     flex-shrink: 0;
-    height: 16.5vh;
+    height: 18.5vh;
     justify-content: center;
-    object-fit: cover;
     transform: translateZ(0);
-    width: 40%;
+    width: 36%;
 
     /*? aparencia */
-    border-radius: 2.77vw;
+    border-radius: 1.5vw;
     box-shadow: -10px 10px 10px 0 rgba(0, 0, 0, 0.20);
 }
 
-#t2 {
+/*? texto 2 */
+.t2 {
     /*? layout */
     display: flex;
     flex: 1;
@@ -450,32 +458,31 @@ html, .tudolanding {
     align-items: center;
     align-self: stretch;
     background-color: #FFF;
-    border-radius: 2.77vw;
+    border-radius: 1.5vw;
     display: flex;
     flex-direction: row;
     flex-shrink: 0;
     gap: 0.9375rem;
     height: 17.87vh;
-    padding: 1.25rem;
 }
 
-#i3 {
+/*? imagem 3 */
+.i3 {
     /*? layout */
     display: flex;
-    flex: 1;
     flex-shrink: 0;
-    height: 16.5vh;
+    height: 18.5vh;
     justify-content: center;
-    object-fit: cover;
     transform: translateZ(0);
-    width: 40%;
+    width: 36%;
 
     /*? aparencia */
-    border-radius: 2.77vw;
+    border-radius: 1.5vw;
     box-shadow: -10px 10px 10px 0 rgba(0, 0, 0, 0.20);
 }
 
-#t3 {
+/*? texto 3 */
+.t3 {
     /*? layout */
     display: flex;
     flex: 1;
