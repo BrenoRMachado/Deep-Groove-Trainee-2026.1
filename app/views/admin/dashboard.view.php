@@ -42,10 +42,10 @@
                             <span class="quantidade-total-de-usuarios"><?= $totalDeUsuarios ?></span>
                         </span>
                     </div>
-                    <button class="botao-navegar-para-paginas-administrativas botao-navegar-para-tabela-de-usuarios">
+                    <a class="botao-navegar-para-paginas-administrativas botao-navegar-para-tabela-de-usuarios" href="/tabelaUsuarios">
                         Tabela de Usuários
                         <i class="icone-navegar bi bi-chevron-right"></i>
-                    </button>
+                    </a>
                 </li>
                 <li class="container-usuarios-publicacoes-recentes container-ultima-atividade">
                     <div class="numero-de-usuarios-publicacoes-e-recente ultima-atividade">
@@ -77,10 +77,10 @@
                             <span class="quantidade-total-de-publicacoes"><?= $totalDePosts ?></span>
                         </span>
                     </div>
-                    <button class="botao-navegar-para-paginas-administrativas botao-navegar-para-tabela-de-publicacoes">
+                    <a class="botao-navegar-para-paginas-administrativas botao-navegar-para-tabela-de-publicacoes" href="/tabelaPosts">
                         Tabela de Publicações
                         <i class="icone-navegar bi bi-chevron-right"></i>
-                    </button>
+                    </a>
                 </li>
             </ul>
         </nav>  
@@ -88,12 +88,12 @@
             <h1 class="titulo-de-fundo">DEEPGROOVE</h1>
         </div>
         <footer id="rodape">
-            <button class="botao botao-home">
+            <a class="botao botao-home" href="/">
                 <i class="icone-home bi bi-house-door-fill"></i>
-            </button>
-            <button class="botao botao-sign-out">
+            </a>
+            <a class="botao botao-sign-out" href="/logout">
                 <i class="icone-sign-out bi bi-box-arrow-right"></i>
-            </button>
+            </a>
         </footer>
         <div class="container-imagem-disco-de-vinil-fundo">
             <img class="imagem-disco-de-vinil-fundo" src="../../../public/assets/disco-de-vinil-cortado-ao-meio.png" alt="Disco de vinil no fundo">

@@ -16,6 +16,7 @@
 </head>
 
 <body class="tudolanding">
+    <?php require "navbar.view.php"; ?>
 
     <!-- HERO SECTION -->
     <!--todo: hero section como um todo -->
@@ -42,7 +43,7 @@
 
                 <p class="texto_hs">Mergulhar na essência da música e tornar-se o santuário digital respeitando acultura e identidade artística.</p>
 
-                <button class="botão">Informações de compra</button>
+                <a class="botão" href="/instrucoes">Informações de compra</a>
             </div>
 
             <!--todo: contem a logo dos teltáculos saindo do instrumento -->
@@ -134,6 +135,8 @@
         </div>
 
     </section>
+
+    <?php require "footer.view.php"; ?>
 
 </body>
 

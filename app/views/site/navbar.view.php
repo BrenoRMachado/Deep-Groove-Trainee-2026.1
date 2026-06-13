@@ -10,11 +10,11 @@
 </head>
 <body>
     <div class="navbar-desktop">
-        <div class="metade-navbar">
+        <a class="metade-navbar" href="/">
             <img class="logo" src="../../../public/assets/LogoTextoIcone (1).png">
-        </div>
+</a>
         <div class="metade-navbar segunda-metade">
-            <a><div class="botoes">
+            <a href="/posts"><div class="botoes">
                 <i class="bi bi-stack fs-3" style="color: white"></i>
                 Publicações
             </div></a>

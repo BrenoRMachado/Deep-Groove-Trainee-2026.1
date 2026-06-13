@@ -17,7 +17,7 @@
 
 <body id="tbposts">
 
-    <div class="filtro-ao-abrir-modal-da-tabela-de-posts"></div>
+    <div class="filtro-ao-abrir-modal-da-tabelaPosts"></div>
 
     <section class="topoTabelaPosts">
         <button class="botao-novo-post" onclick="abrirModal('modal-criar-posts')">
@@ -56,7 +56,7 @@
                     </button>
                 </div>
             </section>
-            <form class="secao-edicao-dados-do-album" action="/tabela-de-posts/edit" method="POST">
+            <form class="secao-edicao-dados-do-album" action="/tabelaPosts/edit" method="POST">
                 <section class="secao-instrucao-editar-foto-capa-do-album">
                     <div class="container-instrucao-editar-foto-capa-do-album">
                         <div class="container-texto-instrucao-editar-foto-capa-do-album">
@@ -109,9 +109,7 @@
             </form>
         </div>
 
-    <?php endforeach; ?>
-
-    <?php foreach ($publicacoes as $publicacao): ?>
+    
 
         <!--* MODAL DE VISUALIZAR POSTS -->
         <div class="fundo" id="fundoV-post" onclick="fecharModal('#modal-visu-post<?=$publicacao->id ?>', '#fundoV-post')">
@@ -193,9 +191,7 @@
             </div>
             
         </div>     
-    <?php endforeach; ?>
-
-    <?php foreach ($publicacoes as $publicacao): ?>
+   
         
         <!--* MODAL DE EXCLUIR POSTS -->
         <div class="fundo" id="fundoE-post" onclick="fecharModal('#modal-excluir-post<?=$publicacao->id ?>', '#fundoE-post')">
@@ -253,7 +249,7 @@
 
     <!-- Parte de cima do modal, onde fica a imagem de capa  -->
 
-    <form method="POST" action="/tabela-de-posts/create" id="modal-criar-posts">
+    <form method="POST" action="/tabelaPosts/create" id="modal-criar-posts">
         <div class="alto-modal-criar">
             <div class="um-terco-alto-modal-criar parte-esquerda-alto-modal">
                 <h2>Criar postagem</h2>

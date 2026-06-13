@@ -29,7 +29,7 @@ class TabelaPostsController
 
         App::get('database')->insert('publicacoes', $parameters);
 
-        header('Location: /tabela-de-posts');
+        header('Location: /tabelaPosts');
     }
 
     public function edit() 
@@ -50,7 +50,7 @@ class TabelaPostsController
 
         App::get('database')->update('publicacoes', $id, $parameters);
 
-        header('Location: /tabela-de-posts');
+        header('Location: /tabelaPosts');
     }
 
     public function delete()
@@ -59,6 +59,6 @@ class TabelaPostsController
 
         App::get('database')->delete('publicacoes', $id);
 
-        header('Location: /tabela-de-posts');
+        header('Location: /tabelaPosts');
     }
 }

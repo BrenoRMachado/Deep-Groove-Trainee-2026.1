@@ -14,9 +14,9 @@
     <div class="container-login">
         <div class="metade-tela-login formulario">
             <div class="container-titulo">
-                <div class="container-seta">
+                <button class="container-seta" onclick="history.back()">
                     <i class="bi bi-arrow-left-circle-fill seta"></i>
-                </div>
+                </button>
                 <div>
                      <h1 class="titulo-login">Entrar</h1>           
                 </div>
@@ -42,9 +42,9 @@
         </div>
         <div class="metade-tela-login formulario">
             <div class="container-titulo">
-                <div class="container-seta">
+                <button class="container-seta" onclick="history.back()">
                     <i class="bi bi-arrow-left-circle-fill seta"></i>
-                </div>
+                </button>
                 <div>
                     <h1 class="titulo-login">Cadastro</h1>
                 </div>

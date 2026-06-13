@@ -12,9 +12,9 @@ class dashboardController {
 
         $bancoDeDados = App::get('database');
 
-        $totalDePosts = $bancoDeDados -> contarNumeroDeLinhasDaTabela('publicacoes');
+        $totalDePosts = $bancoDeDados -> countAll('publicacoes');
 
-        $totalDeUsuarios = $bancoDeDados -> contarNumeroDeLinhasDaTabela('usuarios');
+        $totalDeUsuarios = $bancoDeDados -> countAll('usuarios');
 
         return view('admin/dashboard', [
             'totalDePosts' => $totalDePosts,

@@ -182,7 +182,7 @@ class QueryBuilder
 
         //* Conta total de posts e une tabela de usuários a tabela de posts
 
-        $sql = "SELECT COUNT() AS total
+        $sql = "SELECT COUNT(*) AS total
         FROM {$tabela}
         JOIN usuarios ON publicacoes.id_usuario = usuarios.id";
 

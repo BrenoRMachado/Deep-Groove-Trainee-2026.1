@@ -25,6 +25,9 @@
 
 <body id="tbuser">
 
+    <?php require "sidebar.html"; ?>
+    
+
     <div class="fundo" id="fundo" onclick="fecharFundo()"></div>
    
     <!-- MODAL DE CRIAR POSTS -->
@@ -109,103 +112,106 @@
         <input type="text" class="pesqUser" placeholder="Pesquisar usuário...">
     </section>
 
-    <section class="tabela">
-        <table class="tabeladentro">
-            <!-- cabeçalho -->
-            <thead class="tabelacabe">
-                <!-- linha -->
-                <tr class="linha linhaCab">
-                    <!-- coluna -->
-                    <th class="coluna colunaCab">ID</th>
+        
 
-                    <th class="coluna colunaCab">Perfil</th>
-
-                    <th class="coluna colunaCab">Nome</th>
-
-                    <th class="coluna colunaCab">Email</th>
-
-                    <th class="coluna colunaCab">Tipo</th>
-
-                    <th class="coluna colunaCab">Ações</th>
-
-                </tr>
-
-            </thead>
-
-            <tbody class="tabelageral">
-
-                <?php foreach($usuarios as $usuario): ?>
-
+        <section class="tabela">
+            <table class="tabeladentro">
+                <!-- cabeçalho -->
+                <thead class="tabelacabe">
                     <!-- linha -->
-                    <tr class="linha linhaTab">
-                        <td class="colunageral"><?= $usuario->id ?></td>
-                        <td class="colunageral"><img class="foto-de-cada-usuario-na-tabela" src="<?= $usuario->foto ?>"></td>
-                        <td class="colunageral"><?= $usuario->nome ?></td>
-                        <td class="colunageral"><?= $usuario->email ?></td>
-                        <td class="colunageral"><?= $usuario->is_admin ? 'Administrador' : 'Usuário' ?></td>
+                    <tr class="linha linhaCab">
+                        <!-- coluna -->
+                        <th class="coluna colunaCab">ID</th>
 
-                        <td class="colunageral">
-                            <i class="acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user<?= $usuario->id ?>')"></i>
-                            <i class="acao bi bi-pencil-square" onclick="abrirModal('#modal-edicao-usuarios<?= $usuario->id ?>')"></i>
-                            <i class="acao bi bi-trash" onclick="abrirModal('#modal-excluir-user<?= $usuario->id ?>')"></i>
-                        </td>
+                        <th class="coluna colunaCab">Perfil</th>
+
+                        <th class="coluna colunaCab">Nome</th>
+
+                        <th class="coluna colunaCab">Email</th>
+
+                        <th class="coluna colunaCab">Tipo</th>
+
+                        <th class="coluna colunaCab">Ações</th>
 
                     </tr>
 
-                <?php endforeach; ?>
+                </thead>
 
-            </tbody>
+                <tbody class="tabelageral">
 
-            <tfoot>
-                <td>
-                    <!-- paginaçao -->
-                    <?php if ($totalPaginas > 1): ?>
-                    
-                        <div class="containerPaginacao">
-                            <ul class="paginacao">
-                                <li>
-                                    <a href="?pagina=<?= max(1, $paginaAtual - 1) ?>" class="<?= $paginaAtual <= 1 ? 'disabled' : ''?>">&laquo; Anterior</a>
-                                </li>
+                    <?php foreach($usuarios as $usuario): ?>
 
-                                <?php 
-                                    $start = max(2, $paginaAtual - 1);
-                                    $end = min($totalPaginas - 1, $paginaAtual + 1);
-                                ?>
+                        <!-- linha -->
+                        <tr class="linha linhaTab">
+                            <td class="colunageral"><?= $usuario->id ?></td>
+                            <td class="colunageral"><img class="foto-de-cada-usuario-na-tabela" src="<?= $usuario->foto ?>"></td>
+                            <td class="colunageral"><?= $usuario->nome ?></td>
+                            <td class="colunageral"><?= $usuario->email ?></td>
+                            <td class="colunageral"><?= $usuario->is_admin ? 'Administrador' : 'Usuário' ?></td>
 
-                                <li>
-                                    <a href="?pagina=1" class="<?= $paginaAtual == 1 ? 'active' : ''?>">1</a>
-                                </li>
+                            <td class="colunageral">
+                                <i class="acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user<?= $usuario->id ?>')"></i>
+                                <i class="acao bi bi-pencil-square" onclick="abrirModal('#modal-edicao-usuarios<?= $usuario->id ?>')"></i>
+                                <i class="acao bi bi-trash" onclick="abrirModal('#modal-excluir-user<?= $usuario->id ?>')"></i>
+                            </td>
 
-                                <?php if ($start > 2):?>
-                                    <li><span class="dots">...</span></li>
-                                <?php endif; ?>
+                        </tr>
 
-                                <?php for ($i = $start; $i <= $end; $i++): ?>
+                    <?php endforeach; ?>
+
+                </tbody>
+
+                <tfoot>
+                    <td>
+                        <!-- paginaçao -->
+                        <?php if ($totalPaginas > 1): ?>
+                        
+                            <div class="containerPaginacao">
+                                <ul class="paginacao">
                                     <li>
-                                        <a href="?pagina=<?= $i ?>" class="<?= $paginaAtual == $i ? 'active' : ''?>"> <?= $i ?></a>
+                                        <a href="?pagina=<?= max(1, $paginaAtual - 1) ?>" class="<?= $paginaAtual <= 1 ? 'disabled' : ''?>">&laquo; Anterior</a>
                                     </li>
-                                <?php endfor; ?>
 
-                                <?php if ($end < $totalPaginas - 1):?>
-                                    <li><span class="dots">...</span></li>
-                                <?php endif; ?>
+                                    <?php 
+                                        $start = max(2, $paginaAtual - 1);
+                                        $end = min($totalPaginas - 1, $paginaAtual + 1);
+                                    ?>
 
-                                <li>
-                                    <a href="?pagina=<?= $totalPaginas ?>" class="<?= $paginaAtual == $totalPaginas ? 'active' : ''?>"> <?= $totalPaginas ?></a>
-                                </li>
+                                    <li>
+                                        <a href="?pagina=1" class="<?= $paginaAtual == 1 ? 'active' : ''?>">1</a>
+                                    </li>
 
-                                <li>
-                                    <a href="?pagina=<?= min($totalPaginas, $paginaAtual + 1) ?>" class="<?= $paginaAtual >= $totalPaginas ? 'disabled' : ''?>">Próximo &raquo;</a>
-                                </li>
-                                
-                            </ul>
-                        </div>
-                    <?php endif; ?>
+                                    <?php if ($start > 2):?>
+                                        <li><span class="dots">...</span></li>
+                                    <?php endif; ?>
 
-                </td>
-            </tfoot>
-        </table>
-    </section>
+                                    <?php for ($i = $start; $i <= $end; $i++): ?>
+                                        <li>
+                                            <a href="?pagina=<?= $i ?>" class="<?= $paginaAtual == $i ? 'active' : ''?>"> <?= $i ?></a>
+                                        </li>
+                                    <?php endfor; ?>
+
+                                    <?php if ($end < $totalPaginas - 1):?>
+                                        <li><span class="dots">...</span></li>
+                                    <?php endif; ?>
+
+                                    <li>
+                                        <a href="?pagina=<?= $totalPaginas ?>" class="<?= $paginaAtual == $totalPaginas ? 'active' : ''?>"> <?= $totalPaginas ?></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="?pagina=<?= min($totalPaginas, $paginaAtual + 1) ?>" class="<?= $paginaAtual >= $totalPaginas ? 'disabled' : ''?>">Próximo &raquo;</a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        <?php endif; ?>
+
+                    </td>
+                </tfoot>
+            </table>
+        </section>
+    
 
 <?php foreach($usuarios as $usuario): ?>
     <!--* MODAL DE EDIÇÃO DE USUÁRIOS  -->
