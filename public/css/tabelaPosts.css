@@ -10,6 +10,14 @@
     --pesopesq: 500;
     --cortextopesq: #773B36;
 
+    /*! CORES PADRÃO DOS MODAIS */
+
+    --cor-branco-300: #F4D8D2;
+    --cor-branco-400: #E7C6BE;
+    --cor-vinho-100: #5D1D2D;
+    --cor-vermelho-50: #A62C3A;
+    --cor-laranja-200: #AC432B;
+
     /** var modal editar */
     --cor-branco-200: #FEECE8;
     --cor-branco-100: #FFFFFF;
@@ -59,14 +67,13 @@
         #C66E57 94%,
         #E08E6D 100%
     );
+
+    position: relative;
     
 }
 
 .addUser {
-    display: flex;
-
-    align-items: center;
-    justify-items: center;
+    color: #000000;
 }
 
 .infoUser {
@@ -132,8 +139,8 @@
 }
 
 .capa-thriller {
-    height: 4rem;
-    width: 4rem;
+    height: 3rem;
+    width: 3rem;
 }
 
 .colunaCab {
@@ -203,161 +210,257 @@
     cursor: pointer;
 }
 
-/* *ESTILO DO MODAL DE EDIÇÃO DE USUÁRIOS */
+/* *ESTILO DO MODAL DE EDIÇÃO DE POSTS */
 #modal-edicao-posts {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 35rem;
-    height: 25rem;
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    width: 45%;
+    height: 85%;
+    box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(255, 255, 255, 0.5);
     border-radius: 30px;
     display: none;
-    grid-template-columns: 40% 60%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: url(../assets/fundo-modais-editada.jpeg);
+    background-size: cover;
 }    
 
-/* *Estilo da seção de edição da foto de perfil do usuário */
-#modal-edicao-posts .secao-edicao-capa-do-album {
-    height: 100%;
-    width: 100%;
-    background-image:url(../assets/fundo-album-disco-de-vinil.png);
-    background-size: cover;
-    background-position: 70% 0%;
-    border-radius: 30px 0 0 30px;
+/* *Estilo da secao do texto, da foto, e do ícone de fechar o modal */
+#modal-edicao-posts .secao-texto-foto-fechar-modal {
+    width: 90%;
+    height: 23%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-/* *Estilo do container de edicao da capa do álbum */
-#modal-edicao-posts .container-edicao-capa-do-album {
+/* *Estilo do texto de editar foto da capa do álbum */
+#modal-edicao-posts .container-texto {
+    font-size: 0.6rem;
+    width: 35%;
+    color: var(--cor-branco-300);
+    font-family: var(--fonteaviso);
+}
+
+/* *Estilo do container da foto da capa do álbum */
+#modal-edicao-posts .container-foto-capa-do-album {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
-    height: 44%;
-    width: 57%;
-}
-
-#modal-edicao-posts .container-edicao-capa-do-album .container-capa-do-album {
-    position: relative;
-    width: 100%;
     height: 100%;
-    border: 2px solid var(--cor-preto-100);
+    width: 30%;
     border-radius: 10px;
-    background-color: var(--cor-branco-200);
+    background-color: var(--cor-branco-300);
 }
 
-#modal-edicao-posts .container-edicao-capa-do-album .instrucao-editar-capa-do-album {
-    color: var(--cor-branco-100);
-    font-size: 1.2rem;
-    border-radius: 10px;
-    font-family: "Roboto", sans-serif;
-}
-
-#modal-edicao-posts .container-edicao-capa-do-album .botao-editar-capa-do-album {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* *Estilo do ícone da foto da capa do álbum */
+#modal-edicao-posts .container-foto-capa-do-album .icone-foto-capa-do-album {
     font-size: 3rem;
     border: none;
     background: none;
 }
 
-/* *Animação ao passar o mouse por cima do botão de editar capa do álbum */
-#modal-edicao-posts .container-edicao-capa-do-album .botao-editar-capa-do-album:hover {
-    transform: translate(-50%, -50%) scale(1.05);
-    transition: transform 0.2s;
+/* *Estilo do container do botão de fechar modal*/
+#modal-edicao-posts .container-botao-fechar-modal {
+    display: flex;
+    justify-content: flex-end;
+    width: 35%;
+}
+
+/* *Estilo do botão de fechar modal*/
+#modal-edicao-posts .botao-fechar-modal {
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    padding: 0.1rem;
+    line-height: 1;
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+}
+
+/* *Animação ao passar o mouse por cima do botão de fechar modal*/
+#modal-edicao-posts .botao-fechar-modal:hover {
+    transform: scale(1.015);
+    transition: transform 0.2;
     cursor: pointer;
+    opacity: 0.95;
 }
 
 /* *Estilo da seção de edição das informações do usuário */
 #modal-edicao-posts .secao-edicao-dados-do-album {
-    background-color: var(--cor-branco-200);
-    border-radius: 0 30px 30px 0;
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 67%;
+    width: 100%;
+}
+
+/* *Estilo da secao de instruções e de editar foto da capa do álbum */
+#modal-edicao-posts .secao-instrucao-editar-foto-capa-do-album {
+    width: 80%;
+    height: 20%;
+    border-radius: 30px;
+    font-family: "Roboto", sans-serif;
+    background-color: var(--cor-branco-300);
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* *Estilo do container de instruções de editar foto da capa do álbum */
+#modal-edicao-posts .container-instrucao-editar-foto-capa-do-album {
+    width: 90%;
+    height: 100%;
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-#modal-edicao-posts .container-editar-titulo-descricao-autor {
+/* *Estilo do texto de instruções de editar foto da capa do álbum */
+#modal-edicao-posts .container-texto-instrucao-editar-foto-capa-do-album {
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    width: 80%;
-    height: 82%;
+    color: var(--cor-vinho-100);
 }
 
-#modal-edicao-posts .container-editar-dado {
+/* *Estilo do botão de editar foto da capa do álbum */
+#modal-edicao-posts .botao-alterar-foto-capa-do-album {
+    color: var(--cor-branco-300);
+    width: 35%;
+    height: 45%;
+    border: none;
+    background-color: var(--cor-vinho-100);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* *Animacao ao o mouse por cima do botão de editar foto da capa do álbum */
+#modal-edicao-posts .botao-alterar-foto-capa-do-album:hover {
+    transform: scale(1.015);
+    transition: transform 0.2;
+    cursor: pointer;
+    opacity: 0.95;
+}
+
+/* *Estilo da secao de editar informações do álbum e de salvar e cancelar */
+#modal-edicao-posts .secao-editar-titulo-ano-autor {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    height: 70%;
+    background-color: var(--cor-branco-300);
+    border-radius: 30px;
+}
+
+/* *Estilo do container de editar o dado da publicação*/
+#modal-edicao-posts .container-editar-dado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 16.5%;
+    width: 90%;
 }
 
 /* *Estilo do título do dado a ser editado do usuário (Nome, E-mail, Senha) */
 #modal-edicao-posts .titulo-dado {
-    color: var(--cor-marrom-100);
+    color: var(--cor-branco-300);
     font-weight: bold;
     font-family: "Roboto", sans-serif;
+    border-radius: 30px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    font-size: 0.8rem;
+}
+
+#modal-edicao-posts .titulo-titulo {
+    background-color: var(--cor-vinho-100);
+}
+
+#modal-edicao-posts .titulo-ano {
+    background-color: var(--cor-laranja-200);
+}
+
+#modal-edicao-posts .titulo-autor {
+    background-color: var(--cor-vermelho-50);
 }
 
 /* *Estilo do input de digitar o dado do usuário */
 #modal-edicao-posts .editar-dado {
-    border-radius: 5px;
-    padding: 0.4rem;
+    border-radius: 10px;
+    height: 100%;
+    width: 75%;
+    padding: 0 0.4rem;
     background: none;
-    border: 2px solid var(--cor-preto-100);
+    border: 2px solid var(--cor-branco-400);
     font-family: "Roboto", sans-serif;
+    color: var(--cor-vinho-100);
 }
 
-#modal-edicao-posts .editar-descricao {
-    height: 8rem;
-    resize: none;
+/* *Estilo do placeholder de editar dado */
+#modal-edicao-posts .editar-dado::placeholder {
+    color: var(--cor-vinho-100);
+    opacity: 0.5;
+}
+
+/* *Estilo da borda do input ao clicar nele */
+#modal-edicao-posts .editar-dado:focus {
+    outline: none;
 }
 
 /* *Estilo do container dos botões de salvar e cancelar */
-#modal-edicao-posts .container-botoes-salvar-cancelar {
-    width: 80%;
-    height: 18%;
+#modal-edicao-posts .secao-botoes-salvar-cancelar {
+    width: 90%;
+    height: 15%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
 }
 
 /* *Estilo dos botões de salvar e cancelar */
-#modal-edicao-posts .container-botoes-salvar-cancelar .botao {
-    padding: 0.5rem;
-    height: fit-content;
-    border-radius: 5px;
+#modal-edicao-posts .secao-botoes-salvar-cancelar .botao {
+    border-radius: 30px;
     border: none;
-    color: var(--cor-branco-100);
     font-family: "Roboto", sans-serif;
-    min-width: 40%;
+    width: 40%;
+    height: 85%;
 }
 
-#modal-edicao-posts .container-botoes-salvar-cancelar .botao-salvar {
-    background-color: var(--cor-verde-100);
+#modal-edicao-posts .secao-botoes-salvar-cancelar .botao-salvar {
+    background-color: var(--cor-vermelho-50);
+    color: var(--cor-branco-300);
 }
 
-#modal-edicao-posts .container-botoes-salvar-cancelar .botao-cancelar {
-    background-color: var(--cor-vermelho-100);
+#modal-edicao-posts .secao-botoes-salvar-cancelar .botao-cancelar {
+    border: 1px solid var(--cor-vinho-100);
+    background-color: transparent;
+    color: var(--cor-vinho-100);
 }
 
-#modal-edicao-posts .container-botoes-salvar-cancelar .botao:hover {
-    transform: scale(1.05);
+/* *Animação ao passar o mouse por cima dos botões e cancelar e salvar a edição do post */
+#modal-edicao-posts .secao-botoes-salvar-cancelar .botao:hover {
+    transform: scale(1.015);
     transition: transform 0.2;
     cursor: pointer;
+    opacity: 0.95;
 }
 
 /* *Estilo do filtro ao abrir o modal */
-.filtro-ao-abrir-modal-da-tabela-de-posts {
+.filtro-ao-abrir-modal-da-tabela-de-usuarios {
     position: fixed;
     inset: 0;
     display: none;
@@ -366,40 +469,26 @@
 }
 
 /* !INÍCIO da responsividade PARA MODAL DE EDIÇÃO DE POSTS*/
-@media (max-width: 769px){
+/* *Tablet deitado/Laptop pequeno */
+@media (max-width: 1025px){
     #modal-edicao-posts {
-        display: flex;
-        flex-direction: column;
-        height: 35rem;
-        width: 22rem;
-    }
-    #modal-edicao-posts .secao-edicao-capa-do-album {
-        height: 35%;
-        border-radius: 30px 30px 0 0;
-        background-size: 110%;
-    }
-    #modal-edicao-posts .container-edicao-capa-do-album {
-        height: 70%;
-        width: 45%;
-    }
-    #modal-edicao-posts .container-edicao-capa-do-album .icone-foto-de-perfil {
-        font-size: 8rem;
-    }
-    #modal-edicao-posts .container-edicao-capa-do-album .instrucao-editar-capa-do-album {
-        font-size: 1rem;
-    }
-    #modal-edicao-posts .secao-edicao-dados-do-album {
-        border-radius: 0 0 30px 30px;
-        height: 65%;
-        padding: 0;
-        justify-content: space-evenly;
+        width: 65%;
     }
 }
 
-@media (max-width: 426px){
+/* *Tablet na vertical */
+@media (max-width: 769px){
     #modal-edicao-posts {
-        width: 20rem;
+        width: 80%;
     }
+}
+
+/* *Celulares */
+@media (max-width: 600px){
+    #modal-edicao-posts {
+            width: 95%;
+            height: 95%;
+        }
 }
 
 /* TODO: Acho melhor a tela de edição de usuário ocupar a tela inteira no mobile, vou obter essa opinião e se for aceita realizo depois, terei que meio que desativar o resto da página 
@@ -717,4 +806,178 @@
     flex-direction: column;
     gap: 2.5rem;
     align-items: center;
+}
+
+.botao-novo-post {
+    text-decoration: none;
+    border: none;
+    outline: none;
+    color: inherit;
+    background-color: inherit;
+}
+
+.botao-novo-post:hover {   
+    cursor: pointer;
+}
+
+/* Modal de criar posts */
+
+#modal-criar-posts{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    width: 40%;
+    background-color: white;
+    flex-direction: row;
+}
+
+.metade-modal-criar {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imagem-modal-criar {
+    background-image: url(../assets/fundo-modais-editada.jpeg);
+    background-size: cover;
+    background-position: center;
+    gap: 2%;
+}
+
+.area-lapis-editar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 20%;
+}
+
+.container-lapis-editar {
+    display: flex;
+    background-color: white;
+    padding: 3%;
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+}
+
+.botao-lapis-modal-criar {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    background-color: inherit;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.botao-lapis-modal-criar:hover {
+    cursor: pointer;
+}
+
+.imagem-capa-modal-criar {
+    background-color: white;
+    border-radius: 5px;
+    width: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario-modal-criar {
+    padding-top: 5%;
+    justify-content: flex-start;
+    background-color: #CA998F;
+    color: white;
+    font-family: var(--fonte);
+}
+
+.container-formulario-criar {
+    display: flex;
+    height: 85%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5%;
+    justify-content: flex-start;
+}
+
+.area-input-modal-criar {
+    width: 70%;
+}
+
+.input-criar-post {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    height: 60%;
+    font-size: 1rem;
+    padding-left: 2%;
+}
+
+.input-criar-post::placeholder {
+    color: #CA998F;
+}
+
+.textarea-descricao {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding-left: 2%;
+}
+
+.textarea-descricao::placeholder {
+    color: #CA998F;
+    font-family: var(--fonte);
+}
+
+.container-botoes-criar {
+    display: flex;
+    height: 15%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 30%;
+    padding-left: 5%;
+    padding-right: 10%;
+}
+
+.botao-modal-criar {
+    height: fit-content;
+    font-size: large;
+    height: 50%;
+    width: 40%;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.botao-modal-criar:hover {
+    cursor: pointer;
+}
+
+.botao-modal-criar.cancelar {
+    background-color: #6D3534;
+}
+
+.botao-modal-criar.salvar {
+    background-color: #387736;
+}
+
+#dataPostCriado {
+    color: #CA998F;
+}
+
+.escrita-inputs-modal-criar {
+    color: #6D3534
 }
