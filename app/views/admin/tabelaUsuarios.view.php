@@ -139,7 +139,7 @@
                     <!-- linha -->
                     <tr class="linha linhaTab">
                         <td class="colunageral"><?= $usuario->id ?></td>
-                        <td class="colunageral"><img src="<?= $usuario->foto ?>"></td>
+                        <td class="colunageral"><img class="foto-de-cada-usuario-na-tabela" src="<?= $usuario->foto ?>"></td>
                         <td class="colunageral"><?= $usuario->nome ?></td>
                         <td class="colunageral"><?= $usuario->email ?></td>
                         <td class="colunageral"><?= $usuario->is_admin ? 'Administrador' : 'Usuário' ?></td>
@@ -216,7 +216,7 @@
                 <p>Atualize as informações do seu perfil</p>
             </div>
             <figure class="container-foto-de-perfil">
-                <i class="icone-foto-de-perfil bi bi-person-circle"></i>
+                <img class="foto-de-perfil-do-usuario-no-modal" src="<?= $usuario -> foto ?>">
             </figure>
             <div class="container-botao-fechar-modal">
                 <button class="botao-fechar-modal" onclick="fecharModal('#modal-edicao-usuarios<?= $usuario->id ?>')">

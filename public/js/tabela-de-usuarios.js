@@ -1,6 +1,6 @@
 //* Todos os campos com 'required' no input exibiram a seguinte mensagem: */
 const fundomodal = document.getElementById("fundo");
-// const inputsObrigatoriosDosModais = document.querySelectorAll('input[required]');
+const inputsObrigatoriosDosModais = document.querySelectorAll('input[required]');
 
 inputsObrigatoriosDosModais.forEach(input => {
         input.addEventListener('invalid', function() {
@@ -85,15 +85,15 @@ function fecharModal(idModal) {
         fundomodal.style.display = "none";
 }
 
-// // *CÓDIGO DO MODAL DE ADICIONAR USUÁRIO
+// *CÓDIGO DO MODAL DE ADICIONAR USUÁRIO
 
-// // *Seleciona o input de adicionar a foto de perfil do usuário:
-// const inputEscolherFotoDePerfilDoModalDeCriar = document.querySelector('#modal-criar-usuarios .foto-de-perfil-escolhida');
+// *Seleciona o input de adicionar a foto de perfil do usuário:
+const inputEscolherFotoDePerfilDoModalDeCriar = document.querySelector('#modal-criar-usuarios .foto-de-perfil-escolhida');
 
-// // *Aciona o input de escolher foto de perfil ao clicar no botão de adicionar foto de perfil do usuário:
-// function adicionarFotoDePerfil() {
-//         inputEscolherFotoDePerfilDoModalDeCriar.click();
-// };
+// *Aciona o input de escolher foto de perfil ao clicar no botão de adicionar foto de perfil do usuário:
+function adicionarFotoDePerfil() {
+        inputEscolherFotoDePerfilDoModalDeCriar.click();
+};
 
 // const modalCriar = document.getElementById("modal-criar-usuarios")
 
