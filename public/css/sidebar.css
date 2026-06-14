@@ -69,16 +69,16 @@
     font-size: 2rem;
 }
 #sidebar .icone-pagina-inicial.bi.bi-house-door {
-    color: black;
+    color: #C06850;
 }
 #sidebar .icone-pagina-lista-de-usuarios.bi.bi-person-square {
-    color: black;
+    color: #C06850;
 }
-#sidebar .icone-pagina-dashboard.bi.bi-house-door {
-    color: black;
+#sidebar .icone-pagina-dashboard.bi.bi-grid-1x2 {
+    color: #C06850;
 }
 #sidebar .icone-pagina-tabela-de-publicacoes.bi.bi-window-stack {
-    color: black;
+    color: #C06850;
 }
 
 #sidebar .sidebar-fechada {

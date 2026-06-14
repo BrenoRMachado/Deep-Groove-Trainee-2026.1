@@ -11,11 +11,14 @@ botaoAbrirFecharSidebar.addEventListener('click', function(){
         });
         estadoBotaoAbrirFecharSidebar = 'aberto';
 
+        document.getElementById("icones-admin").style.alignItems="flex-start";
     }
     else if (estadoBotaoAbrirFecharSidebar === 'aberto'){
         nomeIconesPaginasAdministrativasSidebar.forEach((nomeIconesPaginasAdministrativasSidebar) => {
             nomeIconesPaginasAdministrativasSidebar.classList.add('sidebar-fechada');
         });
         estadoBotaoAbrirFecharSidebar = 'fechado';
+
+        document.getElementById("icones-admin").style.alignItems="center";
     }
 });
