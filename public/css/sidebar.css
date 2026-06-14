@@ -16,17 +16,16 @@
 /* *Estilo da sidebar */
 #sidebar {
     align-items: center;
-     background-color: whitesmoke;/*linear-gradient(135deg,rgba(255, 255, 255, 0.08),rgba(255, 255, 255, 0.03)); */
-    /* *EFEITO VIDRO */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: #F7DBD4;
+    /* backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); */ */
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 4.5rem;
-    height: 80vh;
-    margin: 6rem 0 6rem 1rem;
+    height: 100vh;
+    /* margin: 6rem 0 6rem 1rem; */
     width: fit-content;
     padding: 0.625rem;
 }
