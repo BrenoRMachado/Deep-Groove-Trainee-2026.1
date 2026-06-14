@@ -25,7 +25,7 @@
 
 <body id="tbuser">
 
-    <?php require "sidebar.html"; ?>
+    
     
 
     <div class="fundo" id="fundo" onclick="fecharFundo()"></div>
@@ -360,7 +360,7 @@
 
                 <section class="containerbotoes">
 
-                <button class="botao cancelar" onclick="fecharModal('#modal-excluir-user<?= $usuario->id?>')">CANCELAR</button>
+                <button class="botao cancelar-excluir" onclick="fecharModal('#modal-excluir-user<?= $usuario->id?>')">CANCELAR</button>
 
                 <form action="tabelaUsuarios/excluir" method="POST">
                     <!-- hidden = nn aperece para o user

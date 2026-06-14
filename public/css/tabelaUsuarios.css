@@ -841,7 +841,7 @@
 .sim{
     background-color: var(--colorsim);
 }
-.cancelar{
+.cancelar-excluir{
     border: 0.1rem solid var(--colorcancelar);
     color: var(--colorcancelar);
 }
