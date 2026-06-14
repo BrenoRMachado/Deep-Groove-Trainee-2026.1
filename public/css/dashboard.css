@@ -120,9 +120,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
+    justify-content: space-evenly;
+    gap: 1rem;
     width: 22%;
+    aspect-ratio: 1 / 0.65;
     background: linear-gradient(
             135deg,
             rgba(255, 255, 255, 0.08),
@@ -168,6 +169,10 @@
     font-family: var(--fonte-primaria);
     font-size: 1rem;
     width: 95%;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* *Animação dos botões da dashboard de navegar para as páginas administrativas */
@@ -280,7 +285,7 @@
         font-size: 4rem;
     }
     
-    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
+    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas, #dashboard #area-navegacao-e-estatisticas .informacao-recente {
         font-size: 2rem;
     }
     
@@ -289,41 +294,86 @@
     }
 }
 
-/* !Laptop pequeno / Tablet deitado */
-@media (max-width: 1025px) {
+@media (min-width: 1919px) {
     :root {
-        --espacamento-padding-maior: 2rem;
+        --espacamento-padding-maior: 4rem;
+        --espacamento-padding-medio: 2rem;
+        --espacamento-padding-pequeno: 1.4rem;
+        --espacamento-padding-menor: 1rem;
     }
-
-    #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes-e-recente {
-        width: 60%;
+    #dashboard #cabecalho {
+        padding-bottom: 1.4rem;
     }
+    
+    #dashboard #cabecalho .titulo-cabecalho {
+        font-size: 4.2rem;
+    }
+    
+    #dashboard #cabecalho .dados-do-admin {
+        font-size: 1.4rem;
+    }
+    
+    #dashboard #cabecalho .icone-perfil {
+        font-size: 4rem;
+        width: 6rem;
+        height: 6rem;
+    }
+    
+    #dashboard #area-navegacao-e-estatisticas .texto-dados-totais {
+        font-size: 1.4rem;
+    }
+    
+    #dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas-e-recentes {
+        font-size: 3rem;
+    }
+    
+    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas, #dashboard #area-navegacao-e-estatisticas .informacao-recente {
+        font-size: 1.4rem;
+    }
+    
+    #dashboard #rodape .botao {
+        font-size: 3.5rem;
+    }
+}
 
-    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
-        width: 40%;
+@media (max-width: 1025px) {
+    #dashboard .imagem-disco-de-vinil-fundo {
+        height: 85%;
     }
 }
 
 /* !Tablet em pé */
 @media (max-width: 769px) {
-    #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes-e-recente {
-        width: 70%;
+    #dashboard #area-navegacao-e-estatisticas .lista-area-navegacao-e-estatisticas {
+        flex-wrap: wrap;
+        row-gap: 2rem;
+        margin-top: 2rem;
     }
-
-    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
-        width: 30%;
+    #dashboard #area-navegacao-e-estatisticas .container-usuarios-publicacoes-recentes {
+        width: 45%;
     }
-
     #dashboard .imagem-disco-de-vinil-fundo {
         height: auto;
+    }
+    #dashboard #container-titulo-de-fundo {
+        align-items: flex-end;
+        margin-bottom: 2rem;
+    }
+
+    #dashboard #container-titulo-de-fundo .titulo-de-fundo {
+        font-size: 13vw;
     }
 }
 
 /* !Celular - GRANDES MUDANÇAS */
-@media (max-width: 652px) {
+@media (max-width: 530px) {
     :root {
         --espacamento-padding-maior: 1.2rem;
         --espacamento-padding-medio: 0.7rem;
+    }
+
+    #dashboard #cabecalho {
+        padding-top: 1rem;
     }
     
     #dashboard #cabecalho .titulo-cabecalho {
@@ -346,24 +396,35 @@
     
     #dashboard #area-navegacao-e-estatisticas .lista-area-navegacao-e-estatisticas {
         flex-direction: column;
-        gap: 1rem;
-
+        gap: 1.5rem;
+        margin-top: 0.5rem;
     }
     
     #dashboard #area-navegacao-e-estatisticas .container-usuarios-publicacoes-recentes {
         flex-direction: row;
         padding: 0 var(--espacamento-padding-menor);
         width: 100%;
+        aspect-ratio: 0;
     }
     
     #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes-e-recente {
         padding: var(--espacamento-padding-menor) var(--espacamento-padding-menor);
         border-radius: 16px;
-        width: 75%;
+        width: 53%;
     }
     
+    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas, #dashboard #area-navegacao-e-estatisticas .informacao-recente {
+        width: 47%;
+        font-size: 1rem;
+    }
+
     #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
-        width: 25%;
+        justify-content: space-evenly;
+    }
+
+    #dashboard #area-navegacao-e-estatisticas .informacao-recente {
+        height: 4rem;
+        margin: 0.8rem 0;
     }
     
     #dashboard #area-navegacao-e-estatisticas .texto-dados-totais {
@@ -373,14 +434,10 @@
     #dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas-e-recentes {
         font-size: 1.7rem;
     }
-    
-    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
-        font-size: 1rem;
-    }
 
     #dashboard #container-titulo-de-fundo {
         align-items: flex-end;
-        padding-bottom: 1rem;
+        margin: 0;
     }
 
     #dashboard #container-titulo-de-fundo .titulo-de-fundo {

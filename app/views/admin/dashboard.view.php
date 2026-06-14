@@ -51,7 +51,7 @@
                     <div class="numero-de-usuarios-publicacoes-e-recente ultima-atividade">
                         <i class="icone-usuarios-tabelas-e-recentes icone-ultima-atividade bi bi-activity"></i>
                         <span class="texto-dados-totais texto-dados-ultima-atividade">
-                            Última atividade: 
+                            Último Cadastro: 
                         </span>
                     </div>
                     <div class="informacao-ultima-atividade informacao-recente">
@@ -62,7 +62,7 @@
                     <div class="numero-de-usuarios-publicacoes-e-recente ultima-publicacao">
                         <i class="icone-usuarios-tabelas-e-recentes icone-ultima-publicacao bi bi-images"></i>
                         <span class="texto-dados-totais texto-dados-ultima-publicacao">
-                            Última publicação: 
+                            Último Post: 
                         </span>
                     </div>
                     <div class="informacao-ultima-publicacao informacao-recente">
@@ -73,7 +73,7 @@
                     <div class="numero-de-usuarios-publicacoes-e-recente numero-de-publicacoes">
                         <i class="icone-usuarios-tabelas-e-recentes icone-publicacoes bi bi-disc"></i>
                         <span class="texto-dados-totais texto-dados-publicacoes">
-                            Total de Publicações:
+                            Total de Posts:
                             <span class="quantidade-total-de-publicacoes"><?= $totalDePosts ?></span>
                         </span>
                     </div>
