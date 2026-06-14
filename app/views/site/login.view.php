@@ -97,8 +97,8 @@
                         <button class="botao-login">Entre</button>
                         <h3>Não possui uma conta? <button class="texto-sublinhado" type="button" style="color: #F09859; text-decoration: underline;" onclick="mostraElemento('cadastro-mobile', 'login-mobile')">Cadastre-se</button></h3>            
                     </div>
-                    <img class="logo-login-mobile" src="../../../public/assets/LogoTextoIcone (1).png">
                 </div>
+                <img class="logo-login-mobile" src="../../../public/assets/LogoTextoIcone (1).png">
             </form>
         </div>
     </div> 
