@@ -136,7 +136,7 @@
 
     </section>
 
-    <?php require "footer.view.php"; ?>
+    <?php require "footerLanding.view.php"; ?>
 
 </body>
 
