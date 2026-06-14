@@ -60,6 +60,9 @@
     gap: 2.75rem;
     height: 39.125rem;
 }
+.remove-padrao{
+    list-style-type: none;
+}
 
 /* *Estilo dos itens das páginas administrativas da sidebar */
 #sidebar .navegar-para-paginas-administrativas .icone {
