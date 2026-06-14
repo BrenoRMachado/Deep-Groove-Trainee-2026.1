@@ -16,6 +16,7 @@
 </head>
 
 <body id="tbposts">
+    <?php require "sidebar.html"; ?>
 
     <div class="filtro-ao-abrir-modal-da-tabelaPosts"></div>
 
