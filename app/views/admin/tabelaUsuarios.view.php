@@ -162,14 +162,14 @@
                 </tbody>
 
                 <tfoot>
-                    <td>
+                    <td colspan="6">
                         <!-- paginaçao -->
                         <?php if ($totalPaginas > 1): ?>
                         
                             <div class="containerPaginacao">
                                 <ul class="paginacao">
-                                    <li>
-                                        <a href="?pagina=<?= max(1, $paginaAtual - 1) ?>" class="<?= $paginaAtual <= 1 ? 'disabled' : ''?>">&laquo; Anterior</a>
+                                    <li >
+                                        <a href="?pagina=<?= max(1, $paginaAtual - 1) ?>" class="<?= $paginaAtual <= 1 ? 'disabledseta' : ''?>">&laquo;</a>
                                     </li>
 
                                     <?php 
@@ -200,7 +200,7 @@
                                     </li>
 
                                     <li>
-                                        <a href="?pagina=<?= min($totalPaginas, $paginaAtual + 1) ?>" class="<?= $paginaAtual >= $totalPaginas ? 'disabled' : ''?>">Próximo &raquo;</a>
+                                        <a href="?pagina=<?= min($totalPaginas, $paginaAtual + 1) ?>" class="<?= $paginaAtual >= $totalPaginas ? 'disabledseta' : ''?>">&raquo;</a>
                                     </li>
                                     
                                 </ul>

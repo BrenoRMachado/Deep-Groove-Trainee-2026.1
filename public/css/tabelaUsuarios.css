@@ -63,6 +63,9 @@
 
     --pesoexcluirbotao: 700;
 
+    --coractivepaginacao: #773B36;
+    --coloractive:#FEECE8;
+
 }
 
 * {
@@ -1275,4 +1278,57 @@
 /** PAGINAÇÃO */
 .containerPaginacao{
     display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.paginacao{
+    display: flex;
+    gap: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.active{
+    background-color: var(--coractivepaginacao);
+    color: var(--coloractive) !important;
+    width: 2rem;
+    height: 2rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.disabledseta {
+    opacity: 0.3;
+    pointer-events: none;
+     width: 2rem;
+    height: 2rem;
+}
+
+.paginacao a {
+    text-decoration: none;
+    color: var(--coractivepaginacao);
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: var(--fonte);
+
+    width: 2rem;
+    height: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dots{
+    color: var(--coractivepaginacao);
+    height: 100%;
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
 }
