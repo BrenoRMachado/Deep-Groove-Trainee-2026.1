@@ -16,6 +16,7 @@
 </head>
 
 <body class="postindividual">
+    <?php require "navbar.view.php"; ?>
     <main id="tudo-d">
 
         <section id="capa-d">
@@ -254,6 +255,8 @@
         </section>
 
     </main>
+    
+    <?php require "footer.view.php"; ?>
 </body>
 
 </html>
