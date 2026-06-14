@@ -210,6 +210,15 @@ button:hover {
     height: 100vh;
 }
 
+.cadastro-mobile {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
 .imagem-mobile {
     height: 30%;
     width: 100%;
@@ -219,11 +228,30 @@ button:hover {
     display: flex;
     height: 70%;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background: linear-gradient(#5B162D, black);
     color: white;
     flex-direction: column;
+    gap: 5%;
+    padding-top: 10%;
+}
+
+.container-inputs-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    font-size: 75%;
+    height: 100%;
+    width: 100%;
+}
+
+.container-elemento-input-mobile input{
+    height: 60%;
+}
+
+.container-botao-mobile button{
+    height: 40%;
 }
 
 .imagem-mobile {
@@ -235,10 +263,34 @@ button:hover {
     height: 30%;
 }
 
+.titulo-login-mobile {
+    font-family: 'Fonte-Titulo';
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.container-logo-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-login-mobile {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 20%;
+    width: 10%;
+
+}
+
    @media (max-width: 468px) {
-    .login-mobile {
+    .cadastro-mobile {
         display: flex;
     }
+
     .container-login {
         display: none;
     }

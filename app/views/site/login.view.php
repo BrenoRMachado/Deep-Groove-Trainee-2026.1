@@ -40,13 +40,14 @@
                 <img class="logo-login" src="../../../public/assets/LogoTextoIcone (1).png">
             </div>
         </div>
+
         <div class="metade-tela-login formulario">
             <div class="container-titulo">
                 <button class="container-seta" onclick="history.back()">
                     <i class="bi bi-arrow-left-circle-fill seta"></i>
                 </button>
                 <div>
-                    <h1 class="titulo-login">Cadastro</h1>
+                    <h1 class="titulo-login">Cadastrar</h1>
                 </div>
             </div>
             <form class="container-form">
@@ -64,7 +65,7 @@
                         <input placeholder="Digite sua senha">
                     </div>
                     <div class="container-botao">
-                        <button class="botao-login">Cadastrar</button>
+                        <button class="botao-login">Cadastre-se</button>
                         <h3>Já possui uma conta? <button class="texto-sublinhado" type="button" style="color: #F09859; text-decoration: underline;" onclick="moverImagem()">Faça login</button></h3>  
                     </div>
             </form>
@@ -75,11 +76,12 @@
         <div class="imagem-cadastro" id="imagem-login-cadastro">
         </div>        
     </div>
-    <div class="login-mobile">
+
+    <div class="login-mobile" id="login-mobile">
         <div class="imagem-mobile"></div>
         <div class="inputs-mobile">
             <div class="titulo-mobile">
-                <h1 class="titulo-login mobile">Entrar</h1>
+                <h1 class="titulo-login-mobile">Entrar</h1>
             </div>
             <form class="container-form-mobile">
                 <div class="container-inputs-mobile">
@@ -91,11 +93,44 @@
                         <h2>Senha:</h2>
                         <input placeholder="Digite sua senha">
                     </div>
+                    <div class="container-botao-mobile">
+                        <button class="botao-login">Entre</button>
+                        <h3>Não possui uma conta? <button class="texto-sublinhado" type="button" style="color: #F09859; text-decoration: underline;" onclick="mostraElemento('cadastro-mobile', 'login-mobile')">Cadastre-se</button></h3>            
+                    </div>
+
                 </div>
-                <div class="container-botao">
-                    <button class="botao-login">Entre</button>
-                    <h3>Não possui uma conta? <button class="texto-sublinhado" type="button" style="color: #F09859; text-decoration: underline;" onclick="moverImagem()">Cadastre-se</button></h3>            
+            </form>
+        </div>
+    </div> 
+
+    <div class="cadastro-mobile" id="cadastro-mobile">
+        <div class="imagem-mobile"></div>
+        <div class="inputs-mobile">
+            <div class="titulo-mobile">
+                <h1 class="titulo-login-mobile">Cadastrar</h1>
+            </div>
+            <form class="container-form-mobile">
+                <div class="container-inputs-mobile">
+                    <div class="container-elemento-input-mobile">
+                        <h2>Nome:</h2>
+                        <input placeholder="Digite seu nome">
+                    </div>
+                    <div class="container-elemento-input-mobile">
+                        <h2>Email:</h2>
+                        <input placeholder="Digite seu email">
+                    </div>
+                    <div class="container-elemento-input-mobile">
+                        <h2>Senha:</h2>
+                        <input placeholder="Digite sua senha">
+                    </div>
+                    <div class="container-botao-mobile">
+                        <button class="botao-login">Cadastre-se</button>
+                        <h3>Já possui uma conta? <button class="texto-sublinhado" type="button" style="color: #F09859; text-decoration: underline;" onclick="mostraElemento('login-mobile', 'cadastro-mobile')">Faça login</button></h3>            
+                    </div>
                 </div>
+
+                <img class="logo-login-mobile" src="../../../public/assets/LogoTextoIcone (1).png">
+
             </form>
         </div>
     </div>  
