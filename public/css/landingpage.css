@@ -60,6 +60,7 @@ html, .tudolanding {
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .tdtitulo{
