@@ -134,7 +134,7 @@ function adicionarFotoDePerfil() {
     };
 };
 
-// const modalCriar = document.getElementById("modal-criar-usuarios")
+// const modalCriar = document.getElementById("modal-criar-usuarios");
 
 // function abrirModalCriar(){
 //         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = "flex"
@@ -142,6 +142,6 @@ function adicionarFotoDePerfil() {
 // }
 
 // function fecharModalCriar(){
-//         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = "none"
-//         modalCriar.style.display = "none"
+//         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = "none";
+//         modalCriar.style.display = "none";
 // }

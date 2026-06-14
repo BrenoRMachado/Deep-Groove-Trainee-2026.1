@@ -75,7 +75,7 @@
                 <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Email</div> <input placeholder="Digite o email" name="email" required></div>
                 <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Senha</div> <input placeholder="Digite a senha" name="senha" required></div>
                 <div class="quarto-da-area-informacoes">
-                    <button class="botao-modal-criar cancelar" type="button" onclick="fecharModalCriar()">Cancelar</button>
+                    <button class="botao-modal-criar cancelar" type="button" onclick="fecharModal('#modal-criar-usuarios')">Cancelar</button>
                     <button class="botao-modal-criar salva">Salvar</button>
                 </div>
             </div>
