@@ -13,7 +13,7 @@ return array(
     'App\\Controllers\\LoginController' => $baseDir . '/app/Controllers/LoginController.php',
     'App\\Controllers\\NavbarController' => $baseDir . '/app/Controllers/NavbarController.php',
     'App\\Controllers\\PaginaDePostsController' => $baseDir . '/app/Controllers/paginaDePostsController.php',
-    'App\\Controllers\\PaginaIndividual' => $baseDir . '/app/Controllers/PaginaIndividual.php',
+    'App\\Controllers\\PaginaIndividualController' => $baseDir . '/app/Controllers/PaginaIndividualController.php',
     'App\\Controllers\\TabelaPostsController' => $baseDir . '/app/Controllers/TabelaPostsController.php',
     'App\\Controllers\\TabelaUsuariosController' => $baseDir . '/app/Controllers/TabelaUsuariosController.php',
     'App\\Controllers\\dashboardController' => $baseDir . '/app/Controllers/dashboardController.php',

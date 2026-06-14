@@ -19,7 +19,7 @@ $router->post('tabelaPosts/edit', 'TabelaPostsController@edit');
 
 //Método para deletar o post
 $router->post('tabelaPosts/delete', 'TabelaPostsController@delete');
-$router->get('paginaindividual', 'PaginaIndividual@index');
+$router->get('paginaIndividual', 'PaginaIndividualController@index');
 $router->get('footer', 'Footer@index');
 $router->get('login', 'LoginController@index');
 $router->get('instrucoes', 'InstrucoesController@index');

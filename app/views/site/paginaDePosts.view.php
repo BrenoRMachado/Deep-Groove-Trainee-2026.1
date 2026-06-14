@@ -56,7 +56,7 @@
         <section id="container-posts-desktop">
             <?php foreach ($posts as $post): ?>
             <div class="album-container">
-                <a class="album" href="/paginaindividual">
+                <a class="album" href="/paginaIndividual?id=<?= $post->id ?>">
                     <img src="<?= $post -> foto ?>" class="capa-album" alt="Capa do álbum de id <?= $post -> id ?>">
                     <div class="informacoes-do-album">
                         <h2 class="titulo-do-album"><?= $post -> titulo ?></h2>
@@ -76,7 +76,7 @@
         <section id="container-posts-mobile">
             <?php foreach ($posts as $post): ?>
             <div class="capa-texto-album-container">
-                <a class="album" href="/paginaindividual">
+                <a class="album" href="/paginaIndividual">
                     <img src="<?= $post -> foto ?>" class="capa-album" alt="Capa do álbum de id <?= $post -> id ?>">
                 </a>
                 <div class="informacoes-do-album">
