@@ -72,7 +72,7 @@ html, .tudolanding {
 .titulo2 {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1vw;
     align-items: baseline;
 
 }
@@ -80,21 +80,23 @@ html, .tudolanding {
 .h1lan {
     font-family: "Anton", sans-serif;
     color: #FEECE8;
-    font-size: 7rem;
+    font-size: 7vw;
+    line-height: 1;
 }
 
 .h11lan {
     font-family: "Anton", sans-serif;
     color: #FEECE8;
-    font-size: 7rem;
+    font-size: 7vw;
     align-self: center;
-    padding-left: 4rem;
+    padding-left: 4vw;
 }
 
 .h3lan {
     font-family: "Anton", sans-serif;
-    font-size: 3rem;
+    font-size: 3vw;
     color: #FEECE8;
+    line-height: 1;
 }
 
 .texto_hs {
@@ -112,7 +114,7 @@ html, .tudolanding {
     font-size: clamp(1rem, 1.5vw, 2rem);
     font-style: normal;
     font-weight: 600;
-    line-height: 2.5rem;
+    line-height: 2;
     text-align: center;
 }
 
@@ -125,7 +127,7 @@ html, .tudolanding {
     gap: 0.625rem;
     justify-content: center;
     padding: 0.625rem;
-    width: 20vw;
+    width: 19vw;
 
     /*todo: aparência da caixa */
     background-color: #FFA96B;
@@ -135,10 +137,10 @@ html, .tudolanding {
     /*todo: tipografia */
     color: #000;
     font-family: Inter;
-    font-size: clamp(1.2rem, 1.75Svw, 2.5rem);
+    font-size: clamp(1.2rem, 1.75vw, 2.5rem);
     font-style: normal;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1;
     text-align: center;
 }
 
