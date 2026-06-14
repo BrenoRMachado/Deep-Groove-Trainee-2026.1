@@ -134,7 +134,7 @@ class QueryBuilder
 
 
 
-    public function paginacaoPosts($tabela, $limite, $offset, $textoDeBusca, $colunaDeBusca, $filtro) {
+    public function paginatePosts($tabela, $limite, $offset, $textoDeBusca, $colunaDeBusca, $filtro) {
 
         $parametros = [];
 
@@ -178,7 +178,7 @@ class QueryBuilder
     }
     //FIM paginação
 
-    public function selecionarTodosOsPosts($tabela, $textoDeBusca, $colunaDeBusca, $filtro){
+    public function selectAllPosts($tabela, $textoDeBusca, $colunaDeBusca, $filtro){
 
         //* Conta total de posts e une tabela de usuários a tabela de posts
 

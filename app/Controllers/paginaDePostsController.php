@@ -15,7 +15,7 @@ class PaginaDePostsController {
 
         $textoDeBusca = isset($_GET['pesquisar']) ? $_GET['pesquisar'] : '';
 
-        $colunaDeBusca = $textoDeBusca !== '' ? ['titulo', 'ano', 'usuarios.nome'] : null;
+        $colunaDeBusca = $textoDeBusca !== '' ? ['titulo', 'ano', 'artista'] : null;
 
         $filtro = isset($_GET['filtro']) ? $_GET['filtro'] : '';
 
@@ -36,11 +36,11 @@ class PaginaDePostsController {
 
         $offset = ($paginaAtual - 1) * $limite;
 
-        $totalDePosts = $bancoDeDados -> selecionarTodosOsPosts('publicacoes', $textoDeBusca, $colunaDeBusca, $filtro);
+        $totalDePosts = $bancoDeDados -> selectAllPosts('publicacoes', $textoDeBusca, $colunaDeBusca, $filtro);
 
         $totalDePaginas = ceil($totalDePosts / $limite);
 
-        $posts = $bancoDeDados -> paginacaoPosts('publicacoes', $limite, $offset, $textoDeBusca, $colunaDeBusca, $filtro);
+        $posts = $bancoDeDados -> paginatePosts('publicacoes', $limite, $offset, $textoDeBusca, $colunaDeBusca, $filtro);
 
         //* Variáveis enviadas para a view
 
