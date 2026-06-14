@@ -213,6 +213,7 @@
 /* *Estilo da foto de perfil de cada usuário na coluna da tabela */
 .tabelageral .foto-de-cada-usuario-na-tabela {
     height: 2rem;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
 }
 
@@ -864,7 +865,7 @@
 
 #modal-criar-usuarios{
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -950,6 +951,10 @@
     font-size: 3.5vh;
 }
 
+.sair-da-pagina:hover {
+    cursor: pointer;
+}
+
 .baixo-modal-criar {
     display: flex;
     height: 67%;
@@ -1000,6 +1005,14 @@
     flex-direction: column;
 }
 
+.primeira-parte-do-container-informacoes-foto h1 {
+    font-size: 0.7rem;
+}
+
+.primeira-parte-do-container-informacoes-foto p {
+    font-size: 0.7rem;
+}
+
 .segunda-parte-do-container-informacoes-foto {
     display: flex;
     width: 30%;
@@ -1023,6 +1036,9 @@
     gap: 5%
 }
 
+.botao-anexar-foto-modal-criar:hover {
+    cursor: pointer;
+}
 
 /* *Input de escolher a foto de perfil escondido */
 #modal-criar-usuarios .foto-de-perfil-escolhida {
@@ -1331,4 +1347,33 @@ ul {
     display: flex;
     justify-content: baseline;
     align-items: baseline;
+}
+
+/* !Responsividade MODAL DE CRIAR USUÁRIOS */
+
+/* *Tablet */
+
+@media (max-width: 769px){
+    #modal-criar-usuarios {
+            width: 80%;
+        }
+}
+
+/* *Mobile */
+
+
+@media (max-width: 600px){
+    #modal-criar-usuarios {
+            width: 95%;
+            height: 95%;
+        }
+    #modal-criar-usuarios .area-de-colocar-informacoes {
+        width: 90%;
+    }
+    #modal-criar-usuarios .container-informacoes-foto {
+        gap: 0.1rem;
+    }
+    #modal-criar-usuarios .segunda-parte-do-container-informacoes-foto {
+        width: 43%;
+    }
 }
