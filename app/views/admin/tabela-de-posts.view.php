@@ -19,7 +19,10 @@
     <?php require "sidebar.html"; ?>
 
     <div class="filtro-ao-abrir-modal-da-tabelaPosts"></div>
- <div class="pagecontainer">
+    <div class="pagecontainer">
+
+        <!-- Topo da tabela -->
+         
         <section class="topoTabelaPosts">
             <button class="botao-novo-post" onclick="abrirModal('modal-criar-posts')">
                 <div class="addPost">
@@ -39,8 +42,51 @@
             </div>
         </section>
 
-        <?php foreach ($publicacoes as $publicacao): ?>
+        <!-- Página -->
 
+        <section class="titulo">
+            <h1 class="textoTitulo">POSTAGENS</h1>
+        </section>
+
+        <section class="pesquisar">
+            <input type="text" class="pesqUser" placeholder="Pesquisar postagem...">
+        </section>
+
+        <section class="tabela">
+            <table>
+                <thead class="tabelacabe">
+                    <tr class="linha linhaCab">
+                        <th class="coluna colunaCab">ID</th>
+
+                        <th class="coluna colunaCab">Álbum</th>
+
+                        <th class="coluna colunaCab">Artista</th>
+
+                        <th class="coluna colunaCab">Título</th>
+
+                        <th class="coluna colunaCab">Ações</th>
+
+                    </tr>
+
+                </thead>
+                <?php foreach ($publicacoes as $publicacao): ?>
+                    <tr class="linha linhaTab">
+                        <td class="colunageral"><?= $publicacao->id ?></td>
+                        <td class="colunageral"><img class="capa-thriller" src="../../../public/assets/capa-thriller.jpg"></td>
+                        <td class="colunageral"><?= $publicacao->artista ?></td>
+                        <td class="colunageral"><?= $publicacao->titulo ?></td>
+
+                        <td class="colunageral">
+                            <i class="acao bi bi-eye-fill" onclick="abrirModal('modal-visu-post<?= $publicacao->id ?>')"></i>
+                            <i class="acao bi bi-pencil-square" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
+                            <i class="acao bi bi-trash" onclick="abrirModal('modal-excluir-post<?= $publicacao->id ?>')"></i>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
+            </table>
+        </section>
+
+        <?php foreach ($publicacoes as $publicacao): ?>
             <!-- *MODAL DE EDIÇÃO DE POSTS  -->
             <div class="modal-edicao-posts" id="modal-edicao-posts<?= $publicacao->id ?>">
                 <section class="secao-texto-foto-fechar-modal">
@@ -113,10 +159,9 @@
         
 
             <!--* MODAL DE VISUALIZAR POSTS -->
-            <div class="fundo" id="fundoV-post" onclick="fecharModal('#modal-visu-post<?=$publicacao->id ?>', '#fundoV-post')">
 
                 <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
-                <div id="modal-visu-post<?= $publicacao->id ?>" class="des-modal-vi-post" onclick="event.stopPropagation()">
+                <div id="modal-visu-post<?= $publicacao->id ?>" class="des-modal-vi-post">
                     <div class="imagemV-post">
 
                         <section class="oqmodalVI-post">
@@ -130,7 +175,7 @@
 
                         <section class="X">
                             <img class="xisp" src="../../../public/assets/XCircleFill.svg" alt="x"
-                            onclick="fecharModal('#modal-visu-post<?= $publicacao->id ?>', '#fundoV-post')">
+                            onclick="fecharModal('modal-visu-post<?= $publicacao->id ?>')">
                         </section>
 
                         <section id="container-dados-visu-post">
@@ -195,10 +240,9 @@
     
             
             <!--* MODAL DE EXCLUIR POSTS -->
-            <div class="fundo" id="fundoE-post" onclick="fecharModal('#modal-excluir-post<?=$publicacao->id ?>', '#fundoE-post')">
                 
                 <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
-                <div id="modal-excluir-post<?= $publicacao->id ?>" class="des-modal-ex-post" onclick="event.stopPropagation()">
+                <div id="modal-excluir-post<?= $publicacao->id ?>" class="des-modal-ex-post">
                     <div class="caixaclara">
 
                         <section class="oqmodalEX-post">
@@ -212,7 +256,7 @@
 
                         <section class="X">
                             <img class="xisp" src="../../../public/assets/XCircleFill.svg" alt="x"
-                            onclick="fecharModal('#modal-excuir-post<?= $publicacao->id ?>', '#fundoE-post')">
+                            onclick="fecharModal('modal-excuir-post<?= $publicacao->id ?>')">
                         </section>
 
                         <div class="mensagem-botao">
@@ -228,7 +272,7 @@
 
                             <section class="containerbotoesp">
                                 
-                                <button class="botao cancelarp" onclick="fecharModal('#modal-excluir-post<?= $publicacao->id?>', '#fundoE-post')">CANCELAR</button>
+                                <button class="botao cancelarp" onclick="fecharModal('modal-excluir-post<?= $publicacao->id?>')">CANCELAR</button>
                                 
                                 <form action="tabelaPosts/excluir" method="POST">
                                     <!-- hidden = nn aperece para o user
@@ -323,50 +367,6 @@
                 </div>
             </div>
         </form>
-
-        <!-- Página -->
-
-        <section class="titulo">
-            <h1 class="textoTitulo">POSTAGENS</h1>
-        </section>
-
-        <section class="pesquisar">
-            <input type="text" class="pesqUser" placeholder="Pesquisar postagem...">
-        </section>
-
-        <section class="tabela">
-            <table>
-                <thead class="tabelacabe">
-                    <tr class="linha linhaCab">
-                        <th class="coluna colunaCab">ID</th>
-
-                        <th class="coluna colunaCab">Álbum</th>
-
-                        <th class="coluna colunaCab">Artista</th>
-
-                        <th class="coluna colunaCab">Título</th>
-
-                        <th class="coluna colunaCab">Ações</th>
-
-                    </tr>
-
-                </thead>
-                <?php foreach ($publicacoes as $publicacao): ?>
-                    <tr class="linha linhaTab">
-                        <td class="colunageral"><?= $publicacao->id ?></td>
-                        <td class="colunageral"><img class="capa-thriller" src="../../../public/assets/capa-thriller.jpg"></td>
-                        <td class="colunageral"><?= $publicacao->artista ?></td>
-                        <td class="colunageral"><?= $publicacao->titulo ?></td>
-
-                        <td class="colunageral">
-                            <i class="acao bi bi-eye-fill" onclick="abrirModal('modal-visu-user<?= $publicacao->id ?>')"></i>
-                            <i class="acao bi bi-pencil-square" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
-                            <i class="acao bi bi-trash" onclick="abrirModal('modal-excluir-user<?= $publicacao->id ?>')"></i>
-                        </td>
-                    </tr>
-                <?php endforeach ?>
-            </table>
-        </section>
     </div>
     <script src="../../../public/js/tabelaPosts.js"></script>
 </body>
