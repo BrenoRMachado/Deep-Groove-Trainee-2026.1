@@ -78,6 +78,9 @@
     </div>
 
     <div class="login-mobile" id="login-mobile">
+        <button class="container-seta-mobile" onclick="history.back()">
+            <i class="bi bi-arrow-left-circle-fill seta" style="color: white"></i>
+        </button>
         <div class="imagem-mobile"></div>
         <div class="inputs-mobile">
             <div class="titulo-mobile">
@@ -104,6 +107,9 @@
     </div> 
 
     <div class="cadastro-mobile" id="cadastro-mobile">
+        <button class="container-seta-mobile" onclick="history.back()">
+            <i class="bi bi-arrow-left-circle-fill seta" style="color: white"></i>
+        </button>
         <div class="imagem-mobile"></div>
         <div class="inputs-mobile">
             <div class="titulo-mobile">

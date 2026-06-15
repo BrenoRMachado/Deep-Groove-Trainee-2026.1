@@ -283,7 +283,16 @@ button:hover {
     width: 35%;
     left: 50%;
     transform: translateX(-50%);
-
+}
+.container-seta-mobile{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 5%;
+    padding-top: 2%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
    @media (max-width: 468px) {
