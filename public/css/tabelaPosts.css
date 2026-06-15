@@ -78,8 +78,6 @@
         #C66E57 94%,
         #E08E6D 100%
     );
-
-    position: relative;
     
 }
 .pagecontainer{
@@ -230,7 +228,7 @@
 
 /* *ESTILO DO MODAL DE EDIÇÃO DE POSTS */
 .modal-edicao-posts {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -779,7 +777,7 @@
 
 #modal-criar-posts{
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -939,7 +937,7 @@
 
 #modal-criar-posts{
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1007,8 +1005,10 @@
     padding-right: 5%;
 }
 
-.imagem-placeholder-capa-criar-post {
-    font-size: 7vh;
+.foto-album-criar-modal {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
 
 .container-x {
