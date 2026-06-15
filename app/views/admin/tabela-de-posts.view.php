@@ -87,6 +87,7 @@
         </section>
 
         <?php foreach ($publicacoes as $publicacao): ?>
+
             <!-- *MODAL DE EDIÇÃO DE POSTS  -->
             <div class="modal-edicao-posts" id="modal-edicao-posts<?= $publicacao->id ?>">
                 <section class="secao-texto-foto-fechar-modal">
@@ -149,7 +150,7 @@
                             <textarea rows="10" placeholder="Digite a descrição" name="conceito"><?= $publicacao->conceito ?></textarea>
                         </div>
                         <div class="quarto-da-area-informacoes">
-                            <button class="botao-modal-criar cancelar" type="button" onclick="fecharModal('modal-criar-posts')">Cancelar</button>
+                            <button class="botao-modal-criar cancelar" type="button" onclick="fecharModal('modal-edicao-posts<?= $publicacao->id ?>')">Cancelar</button>
                             <button class="botao-modal-criar salva">Salvar</button>
                         </div>
                     </div>
@@ -255,8 +256,7 @@
                         </section>
 
                         <section class="X">
-                            <img class="xisp" src="../../../public/assets/XCircleFill.svg" alt="x"
-                            onclick="fecharModal('modal-excuir-post<?= $publicacao->id ?>')">
+                            <img class="xisp" src="../../../public/assets/XCircleFill.svg" alt="x" onclick="fecharModal('modal-excuir-post<?= $publicacao->id ?>')">
                         </section>
 
                         <div class="mensagem-botao">

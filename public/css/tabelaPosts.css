@@ -563,6 +563,7 @@
     background-position: 37% 30%;
     background-size: 130vh;
     height: 100%;
+    border-radius: 50px;
 }
 /*! visu e excluir */
 .fundo{
