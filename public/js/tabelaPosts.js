@@ -113,3 +113,48 @@ function fecharModal(id){
         const modal = document.getElementById(id)
         modal.style.display = "none"
 }
+
+//* Função para buscar dados do álbum da API 
+async function buscarAlbum() {
+        const input = document.getElementById("id_deezer_album");
+
+        try {
+                const resposta = await fetch(
+                `https://corsproxy.io/?https://api.deezer.com/album/${input.value}`
+                );
+
+                if (!resposta.ok) {
+                throw new Error(`HTTP ${resposta.status}`);
+                }
+
+                const dados = await resposta.json();
+
+                console.log(dados);
+
+                document.getElementById("titulo_album").value = dados.title || "";
+                document.getElementById("titulo_album").readOnly = true;
+
+                if (dados.release_date) {
+                document.getElementById("ano_album").value = new Date(dados.release_date).getFullYear();
+                document.getElementById("ano_album").readOnly = true;
+                }
+                
+                document.getElementById("artista_album").value = dados.artist?.name || "";
+                document.getElementById("artista_album").readOnly = true;
+                
+                document.getElementById("genero_album").value = dados.genres.data[0].name || "";
+                document.getElementById("genero_album").readOnly = true;
+
+                document.getElementById("foto_album").value = dados.cover_xl || dados.cover_big || "";
+                document.getElementById("foto_album").readOnly = true;
+                document.getElementById("foto_renderizada").src = dados.cover_xl || dados.cover_big || "";
+                document.getElementById("foto_renderizada").style.display = "block";
+
+                document.getElementById("duracao_album").value = dados.duration || "";
+                document.getElementById("duracao_album").readOnly = true;
+
+        } catch (erro) {
+                console.error("Erro de conexão:", erro);
+                alert("Não foi possível consultar o álbum.");
+        }
+}

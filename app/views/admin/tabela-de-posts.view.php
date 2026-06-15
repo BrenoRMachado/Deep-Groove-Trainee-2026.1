@@ -72,7 +72,7 @@
                 <?php foreach ($publicacoes as $publicacao): ?>
                     <tr class="linha linhaTab">
                         <td class="colunageral"><?= $publicacao->id ?></td>
-                        <td class="colunageral"><img class="capa-thriller" src="../../../public/assets/capa-thriller.jpg"></td>
+                        <td class="colunageral"><img class="capa-thriller" src="<?= $publicacao -> foto?>"></td>
                         <td class="colunageral"><?= $publicacao->artista ?></td>
                         <td class="colunageral"><?= $publicacao->titulo ?></td>
 
@@ -118,7 +118,7 @@
                         </div>
                     </section>
                     <div class="area-de-colocar-informacoes">
-                        <input type="hidden" name="id" value=<?= $publicacao->id ?>>
+                        <input type="hidden" name="id" value="<?= $publicacao->id ?>">
                         <div class="quarto-da-area-informacoes">
                             <div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Título</div> <input placeholder="Digite o título" name="titulo" value=<?= $publicacao->titulo ?> required>
                         </div>
@@ -301,7 +301,7 @@
                 </div>
                 <div class="um-terco-alto-modal-criar">
                     <div class="parte-media-alto-modal">
-                        <i class="imagem-placeholder-capa-criar-post bi bi-image"></i>
+                        <img class="foto-album-criar-modal" id="foto_renderizada">
                     </div>
                 </div>
                 <div class="um-terco-alto-modal-criar parte-direita-alto-modal">
@@ -331,34 +331,37 @@
 
                 <div class="area-de-colocar-informacoes">
                     <div class="quarto-da-area-informacoes">
-                        <div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Título</div> <input placeholder="Digite o título" name="titulo">
+                        <div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Título</div> <input id="titulo_album" placeholder="Digite o título" name="titulo">
                     </div>
                     <div class="quarto-da-area-informacoes">
-                        <div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Ano de lançamento</div> <input placeholder="Digite o ano" name="ano">
+                        <div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Ano de lançamento</div> <input id="ano_album" placeholder="Digite o ano" name="ano">
                     </div>
                     <div class="quarto-da-area-informacoes">
-                        <div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Artista</div> <input placeholder="Digite o nome do artista" name="artista">
+                        <div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Artista</div> <input id="artista_album" placeholder="Digite o nome do artista" name="artista">
                     </div>
                     <div class="quarto-da-area-informacoes">
-                        <div class="container-dado-a-criar" style="background-color: green;">Gênero</div> <input name="genero">
+                        <div class="container-dado-a-criar" style="background-color: green;">Gênero</div> <input id="genero_album" name="genero">
                     </div>
                     <div class="quarto-da-area-informacoes">
-                        <div class="container-dado-a-criar" style="background-color: blue;">Foto</div> <input name="foto">
+                        <div class="container-dado-a-criar" style="background-color: blue;">Foto</div> <input id="foto_album" name="foto">
                     </div>
                     <div class="quarto-da-area-informacoes">
-                        <div class="container-dado-a-criar" style="background-color: purple;">Duração</div> <input name="duracao">
+                        <div class="container-dado-a-criar" style="background-color: purple;">Duração</div> <input id="duracao_album" name="duracao">
                     </div>
                     <div class="quarto-da-area-informacoes">
-                        <div class="container-dado-a-criar" style="background-color: black;">Id usuário</div> <input name="id_usuario">
+                        <div class="container-dado-a-criar" style="background-color: black;">Id usuário</div> <input id="id_usuario_album" name="id_usuario">
                     </div>
                     <div class="quarto-da-area-informacoes">
-                        <div class="container-dado-a-criar" style="background-color: cyan;">Id deezer</div> <input name="id_deezer">
+                        <div class="container-dado-a-criar" style="background-color: cyan;">Id deezer</div> <input id="id_deezer_album" name="id_deezer">
+                    </div>
+                    <div class="quarto-da-area-informacoes">
+                        <div class="container-dado-a-criar" style="background-color: cyan;">Id deezer</div> <button type="button" class="botao-modal-criar salva" onclick="buscarAlbum()" >Salvar</button>
                     </div>
                     <div class="container-textarea">
                         <div class="container-dado-a-criar" style="background-color: var(--cor-amarelo);">
                             Descrição
                         </div>
-                        <textarea rows="10" placeholder="Digite a descrição" name="conceito"></textarea>
+                        <textarea id="conceito_album" rows="10" placeholder="Digite a descrição" name="conceito"></textarea>
                     </div>
                     <div class="quarto-da-area-informacoes">
                         <button class="botao-modal-criar cancelar" type="button" onclick="fecharModal('modal-criar-posts')">Cancelar</button>
