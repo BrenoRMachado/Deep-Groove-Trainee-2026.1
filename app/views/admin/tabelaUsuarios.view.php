@@ -73,10 +73,10 @@
             <div class="area-de-colocar-informacoes">
                 <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Nome</div> <input placeholder="Digite o nome" type="text" name="nome" required></div>
                 <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Email</div> <input placeholder="Digite o email" type="email" name="email" required></div>
-                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Senha</div> <input placeholder="Digite a senha" type="password" name="senha" required> <button class="visualizar-senha-no-modal-de-criar"> <i class="bi bi-eye-fill"></i> </button> </div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Senha</div> <input class="input-criar-senha" placeholder="Digite a senha" type="password" name="senha" required> <button class="botao-de-visualizar-senha-no-modal-de-criar" type="button" onclick="alternarVisualizacaoDaSenhaAoCriarUsuario()" > <i class="icone-visualizar-senha-no-modal-de-criar bi bi-eye-slash-fill"></i> </button> </div>
                 <div class="quarto-da-area-informacoes">
-                    <button class="botao-modal-criar cancelar" type="button" onclick="fecharModal('#modal-criar-usuarios')">Cancelar</button>
-                    <button class="botao-modal-criar salva">Salvar</button>
+                    <button class="botao-modal-criar cancelar" type="reset" onclick="fecharModal('#modal-criar-usuarios')">Cancelar</button>
+                    <button class="botao-modal-criar salva" type="submit">Salvar</button>
                 </div>
             </div>
         </div>
@@ -248,15 +248,15 @@
             <section class="secao-editar-nome-email-senha">
                 <div class="container-editar-dado container-editar-nome">
                     <span class="titulo-dado titulo-nome">Nome</span>
-                    <input class="editar-dado" type="text" placeholder="Nome" name="nome"> 
+                    <input class="editar-dado" type="text" placeholder="Novo nome" name="nome"> 
                 </div>
                 <div class="container-editar-dado container-editar-email">
                     <span class="titulo-dado titulo-email">Email</span>
-                    <input class="editar-dado editar-email" placeholder="Email" type="email" name="email"></input>
+                    <input class="editar-dado editar-email" placeholder="Novo email" type="email" name="email"></input>
                 </div>
                 <div class="container-editar-dado container-editar-senha">
                     <span class="titulo-dado titulo-senha">Senha</span>
-                    <input class="editar-dado" type="password" placeholder="Senha" name="senha">
+                    <input class="editar-dado" type="password" placeholder="Nova senha" name="senha">
                 </div>
                 <div class="secao-botoes-salvar-cancelar">
                     <button class="botao botao-cancelar" type="button" onclick="cancelarEdicaoDeUsuario('#modal-edicao-usuarios<?= $usuario->id ?>')">Cancelar</button>
@@ -377,7 +377,7 @@
 <?php endforeach; ?>
 
 
-    <script src="../../../public/js/tabela-de-usuarios.js"></script>
+    <script src="../../../public/js/tabelaUsuarios.js"></script>
 
 </body>
 
