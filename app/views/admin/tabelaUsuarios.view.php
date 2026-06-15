@@ -71,9 +71,9 @@
         <!-- Parte onde fica o formulario com as informações a serem preenchidas -->
 
             <div class="area-de-colocar-informacoes">
-                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Nome</div> <input placeholder="Digite o nome" name="nome" required></div>
-                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Email</div> <input placeholder="Digite o email" name="email" required></div>
-                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Senha</div> <input placeholder="Digite a senha" name="senha" required></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Nome</div> <input placeholder="Digite o nome" type="text" name="nome" required></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Email</div> <input placeholder="Digite o email" type="email" name="email" required></div>
+                <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Senha</div> <input placeholder="Digite a senha" type="password" name="senha" required> <button class="visualizar-senha-no-modal-de-criar"> <i class="bi bi-eye-fill"></i> </button> </div>
                 <div class="quarto-da-area-informacoes">
                     <button class="botao-modal-criar cancelar" type="button" onclick="fecharModal('#modal-criar-usuarios')">Cancelar</button>
                     <button class="botao-modal-criar salva">Salvar</button>
