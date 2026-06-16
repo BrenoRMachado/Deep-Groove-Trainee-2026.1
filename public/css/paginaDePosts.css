@@ -301,25 +301,19 @@
 /* *Estilo do container do texto e da capa do álbum da página de posts */ 
 #pagina-de-posts #container-posts-mobile .capa-texto-album-container {
     border-radius: 16px;
-    height: 31rem;
+    height: 29rem;
     display: flex;
     flex-direction: column;
     z-index: 2;
-    background: linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.08),
-            rgba(255, 255, 255, 0.03)
-        );
-    box-shadow:
-    inset 0 1px 1px rgba(255,255,255,0.08),
-    0 8px 32px rgba(0,0,0,0.35);
+    background: #481123;
     border: 1px solid var(--cor-laranja-200);
 }
 
 /* *Estilo dos álbuns da página de posts */
 #pagina-de-posts #container-posts-mobile .album {
     width: 100%;
-    height: 60%;
+    height: auto;
+    aspect-ratio: 1 / 1;
     border: 1.5px solid var(--cor-preto-100);
     border-radius: 16px;
     box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.25);
