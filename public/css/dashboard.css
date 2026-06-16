@@ -110,11 +110,13 @@
 #dashboard #area-navegacao-e-estatisticas .lista-area-navegacao-e-estatisticas {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     list-style: none;
     width: 100%;
 }
 
 #dashboard #area-navegacao-e-estatisticas .container-usuarios-publicacoes-recentes {
+    z-index: 3;
     padding: var(--espacamento-padding-menor) var(--espacamento-padding-menor);
     border-radius: 16px;
     display: flex;
@@ -123,7 +125,7 @@
     justify-content: space-evenly;
     gap: 1rem;
     width: 22%;
-    aspect-ratio: 1 / 0.65;
+    aspect-ratio: 1 / 0.55;
     background: linear-gradient(
             135deg,
             rgba(255, 255, 255, 0.08),
@@ -160,11 +162,11 @@
 }
 
 /* *Estilo do botão da dashboard de navegar para as páginas administrativas */
-#dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas, #dashboard #area-navegacao-e-estatisticas .informacao-recente {
+#dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
     color: var(--cor-branco-100);
     background-color: var(--cor-laranja-100);
     border: none;
-    border-radius: 16px;
+    border-radius: 12px;
     padding: var(--espacamento-padding-pequeno) var(--espacamento-padding-medio);
     font-family: var(--fonte-primaria);
     font-size: 1rem;
@@ -183,6 +185,49 @@
     opacity: 0.95;
 }
 
+/* *Estilo da SEÇÃO das informações recentes */
+#dashboard #area-navegacao-e-estatisticas .informacao-recente {
+    width: 92.5%;
+    color: var(--cor-branco-100);
+    display: flex;
+    height: 40%;
+    gap: 1rem;
+}
+
+#dashboard #area-navegacao-e-estatisticas .foto-da-publicacao-recente {
+    aspect-ratio: 1 / 1;
+}
+
+#dashboard #area-navegacao-e-estatisticas .texto-da-publicacao-recente {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* *Estilo das linhas de divisão */
+#dashboard #area-navegacao-e-estatisticas .linha-dividindo-informacoes-recentes {
+    border: none;
+    border: 1px solid var(--cor-laranja-200);
+    opacity: 0.5;
+    width: 92.5%;
+}
+
+/* *Estilo e animação dos botões de ver mais e ver menos atividades e publicações recentes */
+#dashboard #area-navegacao-e-estatisticas .botao-ver-mais-informacoes-recentes {
+    width: 95%;
+    border: none;
+    background: none;
+    font-size: 1.2rem;
+    color: var(--cor-laranja-100);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#dashboard #area-navegacao-e-estatisticas .botao-ver-mais-informacoes-recentes:hover {
+    cursor: pointer;
+    opacity: 0.95;
+}
+
 /* *Estilo do título de fundo da dashboard */
 #dashboard #container-titulo-de-fundo {
     display: flex;
@@ -195,7 +240,7 @@
 #dashboard #container-titulo-de-fundo .titulo-de-fundo {
     color: var(--cor-branco-100);
     font-family: var(--fonte-titulo);
-    font-size: 10vw;
+    font-size: 7.5vw;
 }
 
 /* *Estilo para rodapé do dashboard */ 
@@ -234,7 +279,7 @@
 /* *Estilo do container do disco de vinil como imagem de fundo */
 #dashboard .container-imagem-disco-de-vinil-fundo {
     position: absolute;
-    height: 50%;
+    height: 40%;
     width: 100%;
     bottom: 0;
     display: flex;
@@ -285,7 +330,7 @@
         font-size: 4rem;
     }
     
-    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas, #dashboard #area-navegacao-e-estatisticas .informacao-recente {
+    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
         font-size: 2rem;
     }
     
@@ -327,7 +372,7 @@
         font-size: 3rem;
     }
     
-    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas, #dashboard #area-navegacao-e-estatisticas .informacao-recente {
+    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
         font-size: 1.4rem;
     }
     
@@ -407,7 +452,7 @@
         aspect-ratio: 0;
     }
 
-    #dashboard #area-navegacao-e-estatisticas .container-ultima-atividade, #dashboard #area-navegacao-e-estatisticas .container-ultima-publicacao {
+    #dashboard #area-navegacao-e-estatisticas .container-atividades-recentes, #dashboard #area-navegacao-e-estatisticas .container-publicacoes-recentes {
         display: none;
     }
     
@@ -417,18 +462,13 @@
         width: 70%;
     }
     
-    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas, #dashboard #area-navegacao-e-estatisticas .informacao-recente {
+    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
         width: 30%;
         font-size: 1rem;
     }
 
     #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
         justify-content: space-evenly;
-    }
-
-    #dashboard #area-navegacao-e-estatisticas .informacao-recente {
-        height: 4rem;
-        margin: 0.8rem 0;
     }
     
     #dashboard #area-navegacao-e-estatisticas .texto-dados-totais {
