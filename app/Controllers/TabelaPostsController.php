@@ -11,7 +11,7 @@ class TabelaPostsController
     {
         $database = App::get('database');
 
-        $limit = 6;
+        $limit = 5;
 
         $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
         if ( $currentPage < 1) {

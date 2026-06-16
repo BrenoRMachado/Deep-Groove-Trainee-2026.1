@@ -122,7 +122,10 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-   
+
+    /* Para não ter a barra de arrastar para baixo */
+    overflow-y: hidden;
+
     margin-top: 3rem;
  
     justify-content: center;
