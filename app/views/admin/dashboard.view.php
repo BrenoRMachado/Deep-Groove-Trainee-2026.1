@@ -34,6 +34,31 @@
         </header>
         <nav id="area-navegacao-e-estatisticas">
             <ul class="lista-area-navegacao-e-estatisticas">
+                <li class="container-usuarios-publicacoes-recentes container-atividades-recentes">
+                    <div class="numero-de-usuarios-publicacoes-e-recente atividades-recentes">
+                        <i class="icone-usuarios-tabelas-e-recentes icone-atividades-recentes bi bi-activity"></i>
+                        <span class="texto-dados-totais texto-dados-atividades-recentes">
+                            Atividades Recentes: 
+                        </span>
+                    </div>
+                    <div class="informacao-atividades-recentes-1 informacao-recente">
+                        <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-da-publicacao-recente">
+                        <div class="texto-da-publicacao-recente">
+                            <span class="atividade-no-site">
+                                Fulano se cadastrou
+                            </span>
+                            <span class="data-e-hora">
+                                Data e Hora
+                            </span>
+                        </div>
+                    </div>
+                    <hr class="linha-dividindo-informacoes-recentes">
+                    <button class="botao-ver-mais-atividades-recentes botao-ver-mais-informacoes-recentes">
+                        <span>
+                            Ver mais atividades
+                        </span>
+                        <i class="icone-ver-mais-publicacoes-recentes icone-ver-mais-informacoes-recentes bi bi-chevron-down"></i>
+                    </button>
                 <li class="container-usuarios-publicacoes-recentes container-usuarios">
                     <div class="numero-de-usuarios-publicacoes-e-recente numero-de-usuarios">
                         <i class="icone-usuarios-tabelas-e-recentes icone-usuarios bi bi-people-fill"></i>
@@ -47,27 +72,6 @@
                         <i class="icone-navegar bi bi-chevron-right"></i>
                     </a>
                 </li>
-                <li class="container-usuarios-publicacoes-recentes container-ultima-atividade">
-                    <div class="numero-de-usuarios-publicacoes-e-recente ultima-atividade">
-                        <i class="icone-usuarios-tabelas-e-recentes icone-ultima-atividade bi bi-activity"></i>
-                        <span class="texto-dados-totais texto-dados-ultima-atividade">
-                            Último Cadastro: 
-                        </span>
-                    </div>
-                    <div class="informacao-ultima-atividade informacao-recente">
-                        <span>Novo usuário cadastrado</span>
-                    </div>
-                </li>
-                <li class="container-usuarios-publicacoes-recentes container-ultima-publicacao">
-                    <div class="numero-de-usuarios-publicacoes-e-recente ultima-publicacao">
-                        <i class="icone-usuarios-tabelas-e-recentes icone-ultima-publicacao bi bi-images"></i>
-                        <span class="texto-dados-totais texto-dados-ultima-publicacao">
-                            Último Post: 
-                        </span>
-                    </div>
-                    <div class="informacao-ultima-publicacao informacao-recente">
-                        <span>Publicação mais recente</span>
-                    </div>
                 </li>
                 <li class="container-usuarios-publicacoes-recentes container-publicacoes">
                     <div class="numero-de-usuarios-publicacoes-e-recente numero-de-publicacoes">
@@ -81,6 +85,32 @@
                         Tabela de Publicações
                         <i class="icone-navegar bi bi-chevron-right"></i>
                     </a>
+                </li>
+                <li class="container-usuarios-publicacoes-recentes container-publicacoes-recentes">
+                    <div class="numero-de-usuarios-publicacoes-e-recente publicacoes-recentes">
+                        <i class="icone-usuarios-tabelas-e-recentes icone-publicacoes-recentes bi bi-images"></i>
+                        <span class="texto-dados-totais texto-dados-publicacoes-recentes">
+                            Publicações recentes: 
+                        </span>
+                    </div>
+                    <div class="informacao-publicacoes-recentes-1 informacao-recente">
+                        <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-da-publicacao-recente">
+                        <div class="texto-da-publicacao-recente">
+                            <span class="titulo-e-autor">
+                                Titulo e Autor
+                            </span>
+                            <span class="data-e-hora">
+                                Data e Hora
+                            </span>
+                        </div>
+                    </div>
+                    <hr class="linha-dividindo-informacoes-recentes">
+                    <button class="botao-ver-mais-publicacoes-recentes botao-ver-mais-informacoes-recentes">
+                        <span>
+                            Ver mais publicações
+                        </span>
+                        <i class="icone-ver-mais-publicacoes-recentes icone-ver-mais-informacoes-recentes bi bi-chevron-down"></i>
+                    </button>
                 </li>
             </ul>
         </nav>  
