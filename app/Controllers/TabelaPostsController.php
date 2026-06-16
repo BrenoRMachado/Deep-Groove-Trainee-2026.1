@@ -46,10 +46,28 @@ class TabelaPostsController
             'id_deezer' => $_POST['id_deezer'],
         ];
 
+        $faixas = json_decode($_POST['faixas']); 
+
         App::get('database')->insert('publicacoes', $parameters);
 
+        $post = App::get('database')->selectLast('publicacoes');
+
+        foreach ($faixas as $faixa){
+            $parameters = [
+                'id' => $faixa -> id,
+                'titulo' => $faixa -> title,
+                'duracao' => $faixa -> duration,
+                'id_publicacao' => $post -> id,
+                'id_deezer' => $post -> id_deezer,
+            ];
+            App::get('database')->insert('faixas', $parameters);
+            
+        }
+            
+        
         header('Location: /tabelaPosts');
     }
+
 
     public function edit() 
     {

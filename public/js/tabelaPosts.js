@@ -131,6 +131,9 @@ async function buscarAlbum() {
 
                 console.log(dados);
 
+                const faixas = JSON.stringify(dados.tracks.data);
+                document.getElementById("faixas").value = faixas;
+
                 document.getElementById("titulo_album").value = dados.title || "";
                 document.getElementById("titulo_album").readOnly = true;
 

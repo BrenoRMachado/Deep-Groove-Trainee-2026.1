@@ -293,6 +293,9 @@
         <!-- Parte de cima do modal, onde fica a imagem de capa  -->
 
         <form method="POST" action="/tabelaPosts/create" id="modal-criar-posts">
+
+        <input type="hidden" name="faixas" id="faixas">
+
             <div class="alto-modal-criar">
                 <div class="um-terco-alto-modal-criar parte-esquerda-alto-modal">
                     <h2>Criar postagem</h2>
@@ -355,6 +358,7 @@
                     <div class="quarto-da-area-informacoes">
                         <div class="container-dado-a-criar" style="background-color: cyan;">Id deezer</div> <button type="button" class="botao-modal-criar salva" onclick="buscarAlbum()" >Salvar</button>
                     </div>
+                     
                     <div class="container-textarea">
                         <div class="container-dado-a-criar" style="background-color: var(--cor-amarelo);">
                             Descrição

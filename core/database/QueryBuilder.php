@@ -63,6 +63,20 @@ class QueryBuilder
         }
     }
 
+    public function selectLast($tabela) {
+        $sql = sprintf('SELECT * FROM %s ORDER BY id DESC LIMIT 1', $tabela);
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchObject();
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
     public function update($table, $id, $parameters){
         $sql = sprintf(
             'UPDATE %s SET %s WHERE id = %s',
