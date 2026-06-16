@@ -25,3 +25,57 @@ function trocaTextoParaTelasDeTamanhoMenorQue1025px() {
 trocaTextoParaTelasDeTamanhoMenorQue1025px();
 
 window.addEventListener('resize', trocaTextoParaTelasDeTamanhoMenorQue1025px);
+
+// *Seleciona as atividades recentes, linha de divisão e os botões de ver mais e ver menos 
+const botaoDeVerMaisAtividadesRecentes = document.querySelector(".botao-ver-mais-atividades-recentes");
+const segundaAtividadeMaisRecente = document.querySelector(".informacao-atividades-recentes-2");
+const segundaLinhaDividindoAtividadesRecentes = document.querySelector(".linha-dividindo-atividades-recentes-2");
+const terceiraAtividadeMaisRecentes = document.querySelector(".informacao-atividades-recentes-3");
+const terceiraLinhaDividindoAtividadesRecentes = document.querySelector(".linha-dividindo-atividades-recentes-3");
+const botaoVerMenosAtividadesRecentes = document.querySelector(".botao-ver-menos-atividades-recentes");
+
+// *Função que mostra mais atividades recentes ao clicar no botão
+function verMaisAtividadesRecentes(){
+    botaoDeVerMaisAtividadesRecentes.style.display = 'none';
+    segundaAtividadeMaisRecente.style.display = 'flex';
+    segundaLinhaDividindoAtividadesRecentes.style.display = 'flex';
+    terceiraAtividadeMaisRecentes.style.display = 'flex';
+    terceiraLinhaDividindoAtividadesRecentes.style.display = 'flex';
+    botaoVerMenosAtividadesRecentes.style.display = 'flex';
+}
+
+function verMenosAtividadesRecentes() {
+    botaoDeVerMaisAtividadesRecentes.style.display = 'flex';
+    segundaAtividadeMaisRecente.style.display = 'none';
+    segundaLinhaDividindoAtividadesRecentes.style.display = 'none';
+    terceiraAtividadeMaisRecentes.style.display = 'none';
+    terceiraLinhaDividindoAtividadesRecentes.style.display = 'none';
+    botaoVerMenosAtividadesRecentes.style.display = 'none';
+}
+
+// *Seleciona as atividades recentes, linha de divisão e os botões de ver mais e ver menos 
+const botaoDeVerMaisPublicacoesRecentes = document.querySelector(".botao-ver-mais-publicacoes-recentes");
+const segundaPublicacaoMaisRecente = document.querySelector(".informacao-publicacoes-recentes-2");
+const segundaLinhaDividindoPublicacoesRecentes = document.querySelector(".linha-dividindo-publicacoes-recentes-2");
+const terceiraPublicacoesMaisRecentes = document.querySelector(".informacao-publicacoes-recentes-3");
+const terceiraLinhaDividindoPublicacoesRecentes = document.querySelector(".linha-dividindo-publicacoes-recentes-3");
+const botaoVerMenosPublicacoesRecentes = document.querySelector(".botao-ver-menos-publicacoes-recentes");
+
+// *Função que mostra mais atividades recentes ao clicar no botão
+function verMaisPublicacoesRecentes(){
+    botaoDeVerMaisPublicacoesRecentes.style.display = 'none';
+    segundaPublicacaoMaisRecente.style.display = 'flex';
+    segundaLinhaDividindoPublicacoesRecentes.style.display = 'flex';
+    terceiraPublicacoesMaisRecentes.style.display = 'flex';
+    terceiraLinhaDividindoPublicacoesRecentes.style.display = 'flex';
+    botaoVerMenosPublicacoesRecentes.style.display = 'flex';
+}
+
+function verMenosPublicacoesRecentes() {
+    botaoDeVerMaisPublicacoesRecentes.style.display = 'flex';
+    segundaPublicacaoMaisRecente.style.display = 'none';
+    segundaLinhaDividindoPublicacoesRecentes.style.display = 'none';
+    terceiraPublicacoesMaisRecentes.style.display = 'none';
+    terceiraLinhaDividindoPublicacoesRecentes.style.display = 'none';
+    botaoVerMenosPublicacoesRecentes.style.display = 'none';
+}
