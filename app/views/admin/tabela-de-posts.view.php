@@ -236,9 +236,6 @@
 
                     </div>
                 </div>
-                
-            </div>     
-    
             
             <!--* MODAL DE EXCLUIR POSTS -->
                 
@@ -256,7 +253,7 @@
                         </section>
 
                         <section class="X">
-                            <img class="xisp" src="../../../public/assets/XCircleFill.svg" alt="x" onclick="fecharModal('modal-excuir-post<?= $publicacao->id ?>')">
+                            <img class="xisp" src="../../../public/assets/XCircleFill.svg" alt="x" onclick="fecharModal('modal-excluir-post<?= $publicacao->id ?>')">
                         </section>
 
                         <div class="mensagem-botao">
@@ -287,7 +284,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         <?php endforeach; ?>
 
         <!-- MODAL DE CRIAR POSTS -->
