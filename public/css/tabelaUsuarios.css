@@ -398,7 +398,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 16.5%;
+    height: 15.5%;
     width: 90%;
 }
 
@@ -440,7 +440,11 @@
     color: var(--cor-vinho-100);
 }
 
-/* *Estilo do placeholder de editar dado */
+.modal-edicao-usuarios .editar-senha.digitando-sem-ver-senha {
+    font-size: 1.8rem;
+}
+
+/* *Estilo do placeholder de editar dado */ 
 .modal-edicao-usuarios .editar-dado::placeholder {
     color: var(--cor-vinho-100);
     opacity: 0.5;
@@ -1072,7 +1076,7 @@
 
 .quarto-da-area-informacoes input {
     border-radius: 10px;
-    height: 70%;
+    height: 60%;
     width: 80%;
     padding: 0 0.4rem;
     background: none;
@@ -1081,8 +1085,13 @@
     color: var(--cor-vinho-100);
 }
 
+/* *Estilo do input de criar senha no  modal */
 .quarto-da-area-informacoes .input-criar-senha{
     padding-right: 7%;
+}
+
+.criar-senha.digitando-sem-ver-senha {
+    font-size: 1.8rem;
 }
 
 .quarto-da-area-informacoes .botao-de-visualizar-senha-no-modal-de-criar {
