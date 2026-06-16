@@ -46,17 +46,18 @@ class LoginController
         exit();
     }
 
-    // public function cadastro()
-    // {
-    //     $parameters = [
-    //         'nome' => $_POST['nome'],
-    //         'email' => $_POST['email'],
-    //         'senha' => $_POST['senha'],
-    //         'foto' => 'default'
-    //     ];
+    public function cadastro()
+    {
+        $parameters = [
+            'nome' => $_POST['nome'],
+            'email' => $_POST['email'],
+            'senha' => $_POST['senha'],
+            'foto' => 'default',
+            'is_admin' => 0
+        ];
 
-    //     App::get('database')->insert('usuarios', $parameters);
+        App::get('database')->insert('usuarios', $parameters);
 
-    //     header('Location: /login');
-    // }
+        header('Location: /login');
+    }
 }

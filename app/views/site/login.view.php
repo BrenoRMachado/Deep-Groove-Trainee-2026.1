@@ -61,19 +61,19 @@
                     <h1 class="titulo-login">Cadastrar</h1>
                 </div>
             </div>
-            <form class="container-form">
+            <form class="container-form" action="/cadastro" method="POST">
                 <div class="container-inputs"></div>
                     <div class="container-elemento-input">
                         <h2>Nome:</h2>
-                        <input placeholder="Digite seu nome">
+                        <input placeholder="Digite seu nome" name="nome">
                     </div>
                     <div class="container-elemento-input">
                         <h2>Email:</h2>
-                        <input placeholder="Digite seu email">
+                        <input placeholder="Digite seu email" name="email">
                     </div>
                     <div class="container-elemento-input">
                         <h2>Senha:</h2>
-                        <input placeholder="Digite sua senha">
+                        <input placeholder="Digite sua senha" name="senha" type="password">
                     </div>
                     <div class="container-botao">
                         <button class="botao-login">Cadastre-se</button>

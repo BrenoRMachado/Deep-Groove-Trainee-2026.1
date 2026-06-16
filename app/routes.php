@@ -37,3 +37,6 @@ $router->post('login', 'LoginController@efetuaLogin');
 
 //Rota para efetuar o logout
 $router->post('logout', 'LoginController@logout');
+
+//Rota para efetuar o cadastro
+$router->post('cadastro', 'LoginController@cadastro');
