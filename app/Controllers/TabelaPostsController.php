@@ -9,8 +9,27 @@ class TabelaPostsController
 {
     public function index()
     {
-        $publicacoes = App::get('database')->selectAll('publicacoes');
-        return view('admin/tabela-de-posts', compact('publicacoes'));
+        $database = App::get('database');
+
+        $limit = 6;
+
+        $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        if ( $currentPage < 1) {
+            $currentPage = 1;
+        }
+
+        $offset = ($currentPage - 1) * $limit;
+
+        $totalPublicacoes = $database->countAll('publicacoes');
+        $totalPages = ceil($totalPublicacoes/$limit);
+
+        $publicacoes = $database->paginate('publicacoes', $limit, $offset);
+
+        return view('admin/tabela-de-posts', [
+            'publicacoes' => $publicacoes,
+            'currentPage'=> $currentPage,
+            'totalPages' => $totalPages
+        ]);
     }
 
     public function store()

@@ -1,0 +1,34 @@
+.pagination-container {
+    justify-content: center;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination a {
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    color: blue;
+    border-radius: 4px;
+}
+
+.pagination a.active {
+    background-color: blue;
+    color: white;
+    border-color: blue;
+}
+
+.pagination a.disabled {
+    color: #ccc;
+    pointer-events: none;
+}
