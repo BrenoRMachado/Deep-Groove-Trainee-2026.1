@@ -373,7 +373,7 @@
     }
 
     #dashboard #cabecalho {
-        padding-top: 1rem;
+        padding-top: 1.5rem;
     }
     
     #dashboard #cabecalho .titulo-cabecalho {
@@ -391,7 +391,7 @@
     }
 
     #dashboard #area-navegacao-e-estatisticas {
-        margin-top: 0;
+        margin-top: 1rem;
     }
     
     #dashboard #area-navegacao-e-estatisticas .lista-area-navegacao-e-estatisticas {
@@ -406,15 +406,19 @@
         width: 100%;
         aspect-ratio: 0;
     }
+
+    #dashboard #area-navegacao-e-estatisticas .container-ultima-atividade, #dashboard #area-navegacao-e-estatisticas .container-ultima-publicacao {
+        display: none;
+    }
     
     #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes-e-recente {
         padding: var(--espacamento-padding-menor) var(--espacamento-padding-menor);
         border-radius: 16px;
-        width: 53%;
+        width: 70%;
     }
     
     #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas, #dashboard #area-navegacao-e-estatisticas .informacao-recente {
-        width: 47%;
+        width: 30%;
         font-size: 1rem;
     }
 
@@ -437,7 +441,6 @@
 
     #dashboard #container-titulo-de-fundo {
         align-items: flex-end;
-        margin: 0;
     }
 
     #dashboard #container-titulo-de-fundo .titulo-de-fundo {

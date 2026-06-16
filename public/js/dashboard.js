@@ -10,7 +10,7 @@ const textoBotaoIrParaTabelaDePublicacoes = document.querySelector('.botao-naveg
 function trocaTextoParaTelasDeTamanhoMenorQue1025px() {
     if (window.matchMedia('(max-width: 530px)').matches) {
         textoTotalDeUsuarios.childNodes[0].nodeValue = 'Usuários: ';
-        textoTotalDePublicacoes.childNodes[0].nodeValue = 'Posts: ';
+        textoTotalDePublicacoes.childNodes[0].nodeValue = 'Publicações: ';
         textoBotaoIrParaTabelaDeUsuarios.innerHTML = 'Ver <i class="icone-navegar bi bi-chevron-right"></i>';
         textoBotaoIrParaTabelaDePublicacoes.innerHTML = 'Ver <i class="icone-navegar bi bi-chevron-right"></i>';
     }
