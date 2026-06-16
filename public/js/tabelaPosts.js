@@ -1,6 +1,6 @@
 // // ! INÍCIO DO CÓDIGO DO MODAL DE EDIÇÃO DE USUÁRIOS DA TABELA DE USUÁRIOS
 // // *Seleciona icones de edicao de posts da tabela de posts, o modal de edição de usuários e o filtro ao abrir o modal da tabela de posts
-
+console.log("Arquvo carregado!")
 const filtroAoAbrirModalDaTabelaDePosts = document.querySelector('.filtro-ao-abrir-modal-da-tabelaPosts');
 // const iconesDeEdicaoDePost = document.querySelectorAll('.tabela .bi-pencil-square');
 // const modalDeEdicaoDePosts = document.querySelector('#modal-edicao-posts');
@@ -112,4 +112,52 @@ function fecharModal(id){
         filtroAoAbrirModalDaTabelaDePosts.style.display = "none"
         const modal = document.getElementById(id)
         modal.style.display = "none"
+}
+
+//* Função para buscar dados do álbum da API 
+async function buscarAlbum() {
+        const input = document.getElementById("id_deezer_album");
+
+        try {
+                const resposta = await fetch(
+                `https://corsproxy.io/?https://api.deezer.com/album/${input.value}`
+                );
+
+                if (!resposta.ok) {
+                throw new Error(`HTTP ${resposta.status}`);
+                }
+
+                const dados = await resposta.json();
+
+                console.log(dados);
+
+                const faixas = JSON.stringify(dados.tracks.data);
+                document.getElementById("faixas").value = faixas;
+
+                document.getElementById("titulo_album").value = dados.title || "";
+                document.getElementById("titulo_album").readOnly = true;
+
+                if (dados.release_date) {
+                document.getElementById("ano_album").value = new Date(dados.release_date).getFullYear();
+                document.getElementById("ano_album").readOnly = true;
+                }
+                
+                document.getElementById("artista_album").value = dados.artist?.name || "";
+                document.getElementById("artista_album").readOnly = true;
+                
+                document.getElementById("genero_album").value = dados.genres.data[0].name || "";
+                document.getElementById("genero_album").readOnly = true;
+
+                document.getElementById("foto_album").value = dados.cover_xl || dados.cover_big || "";
+                document.getElementById("foto_album").readOnly = true;
+                document.getElementById("foto_renderizada").src = dados.cover_xl || dados.cover_big || "";
+                document.getElementById("foto_renderizada").style.display = "block";
+
+                document.getElementById("duracao_album").value = dados.duration || "";
+                document.getElementById("duracao_album").readOnly = true;
+
+        } catch (erro) {
+                console.error("Erro de conexão:", erro);
+                alert("Não foi possível consultar o álbum.");
+        }
 }

@@ -68,7 +68,7 @@
 }
 
 #tbposts{
-    padding: 1rem 2rem;
+    padding: 0 2rem 0 0;
     min-height: 100vh;
 
    
@@ -78,9 +78,14 @@
         #C66E57 94%,
         #E08E6D 100%
     );
-
-    position: relative;
     
+}
+.pagecontainer{
+    /* display: flex;
+    justify-content: end; */
+    padding-top: 1rem;
+    margin-left: 10%;
+    width: 90%;
 }
 
 .addUser {
@@ -117,7 +122,10 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-   
+
+    /* Para não ter a barra de arrastar para baixo */
+    overflow-y: hidden;
+
     margin-top: 3rem;
  
     justify-content: center;
@@ -223,7 +231,7 @@
 
 /* *ESTILO DO MODAL DE EDIÇÃO DE POSTS */
 .modal-edicao-posts {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -471,7 +479,7 @@
 }
 
 /* *Estilo do filtro ao abrir o modal */
-.filtro-ao-abrir-modal-da-tabela-de-usuarios {
+.filtro-ao-abrir-modal-da-tabelaPosts {
     position: fixed;
     inset: 0;
     display: none;
@@ -556,6 +564,7 @@
     background-position: 37% 30%;
     background-size: 130vh;
     height: 100%;
+    border-radius: 50px;
 }
 /*! visu e excluir */
 .fundo{
@@ -771,7 +780,7 @@
 
 #modal-criar-posts{
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -919,6 +928,416 @@
 
 .botao-modal-criar.salvar {
     background-color: #387736;
+}
+
+#dataPostCriado {
+    color: #CA998F;
+}
+
+.escrita-inputs-modal-criar {
+    color: #6D3534
+}
+
+#modal-criar-posts{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45%;
+    height: 85%;
+    background-color: white;
+    flex-direction: column;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: url(../assets/fundo-modais-editada.jpeg);
+    background-position: 50% 80%;
+    background-size: cover;
+}
+
+#modal-criar-posts button:hover {
+    transform: scale(1.025);
+    cursor: pointer;
+}
+
+.alto-modal-criar {
+    display: flex;
+    height: 23%;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--fonte-modal);
+}
+
+.um-terco-alto-modal-criar {
+    display: flex;
+    width: 33%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.um-terco-alto-modal-criar h2 {
+    font-size: 3vh;
+    color: var(--cor-branco-300);
+
+}
+
+.parte-esquerda-alto-modal {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.parte-media-alto-modal {
+    display: flex;
+    background-color: var(--cor-branco-300);
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.parte-direita-alto-modal {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-right: 5%;
+}
+
+.foto-album-criar-modal {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.container-x {
+    background-color: var(--cor-branco-300);
+    display: flex;
+    height: 20%;
+    aspect-ratio: 1/1;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    border: none;
+}
+
+.sair-da-pagina {
+    font-size: 3.5vh;
+}
+
+.baixo-modal-criar {
+    display: flex;
+    height: 67%;
+    width: 100%;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.area-de-colocar-informacoes {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 70%;
+    background-color: var(--cor-branco-300);
+    border-radius: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.container-informacoes-foto {
+    height: 20%;
+    gap: 5%;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+    font-family: var(--fonte-modal);
+}
+
+.container-informacoes-foto p {
+    font-size: 2vh;
+}
+
+.container-informacoes-foto h2 {
+    font-size: 3vh;
+    color: var(--cor-vinho-100);
+}
+
+.primeira-parte-do-container-informacoes-foto{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 5%;
+    width: 70%;
+    flex-direction: column;
+}
+
+.segunda-parte-do-container-informacoes-foto {
+    display: flex;
+    width: 30%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    padding: 0;
+}
+
+.botao-anexar-foto-modal-criar {
+    border: none;
+    height: 50%;
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: var(--cor-vinho-100);
+    color: var(--cor-branco-100);
+    gap: 5%
+}
+
+.area-de-colocar-informacoes::-webkit-scrollbar {
+    width: 7px; 
+}
+
+.area-de-colocar-informacoes::-webkit-scrollbar-track {
+    background: transparent;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.area-de-colocar-informacoes::-webkit-scrollbar-thumb {
+    background-color: var(--cor-vinho-100);
+    border-radius: 30px;
+}
+
+.quarto-da-area-informacoes {
+    display: flex;
+    min-height: 25%;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 5%;
+}
+
+.quarto-da-area-informacoes input {
+    border-radius: 10px;
+    height: 50%;
+    width: 75%;
+    padding: 0 0.4rem;
+    background: none;
+    border: 2px solid var(--cor-branco-400);
+    font-family: var(--fonte-modal);
+    color: var(--cor-vinho-100);
+}
+
+.container-textarea {
+    padding-top: 1rem;
+    display: flex;
+    width: 90%;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-grow: 1;
+    gap: 5%;
+}
+
+.container-textarea textarea {
+    resize: vertical;
+    border-radius: 10px;
+    width: 75%;
+    padding: 0.4rem;
+    background: none;
+    border: 2px solid var(--cor-branco-400);
+    font-family: var(--fonte-modal);
+    color: var(--cor-vinho-100);
+}
+
+.container-dado-a-criar {
+    padding-right: 5%;
+    padding-left: 5%;
+    color: var(--cor-branco-300);
+    font-weight: bold;
+    border-radius: 30px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    font-size: 0.8rem;
+    font-family: var(--fonte-modal);
+    text-align: center;
+}
+
+#modal-criar-posts button {
+    text-decoration: none;
+    outline: none;
+}
+
+.botao-modal-criar {
+    height: fit-content;
+    font-size: large;
+    height: 60%;
+    width: 40%;
+    border: none;
+    border-radius: 30px;
+    color: white;
+}
+
+.salva {
+    background-color: var(--cor-vermelho-50);
+    color: var(--cor-branco-300);
+}
+
+.cancelar {
+    border: 3px solid var(--cor-vinho-100);
+    background-color: transparent;
+    color: var(--cor-vinho-100);
+}
+
+.imagem-modal-criar {
+    background-image: url(../assets/fundo-modais-editada.jpeg);
+    background-size: cover;
+    background-position: center;
+    gap: 2%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.area-lapis-editar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 20%;
+}
+
+.container-lapis-editar {
+    display: flex;
+    background-color: white;
+    padding: 3%;
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+}
+
+.botao-lapis-modal-criar {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    background-color: inherit;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.botao-lapis-modal-criar:hover {
+    cursor: pointer;
+}
+
+.imagem-capa-modal-criar {
+    background-color: white;
+    border-radius: 5px;
+    width: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario-modal-criar {
+    padding-top: 5%;
+    justify-content: flex-start;
+    background-color: #CA998F;
+    color: white;
+    font-family: var(--fonte);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.container-formulario-criar {
+    display: flex;
+    height: 85%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5%;
+    justify-content: flex-start;
+}
+
+.area-input-modal-criar {
+    width: 70%;
+}
+
+.input-criar-post {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    height: 60%;
+    font-size: 1rem;
+    padding-left: 2%;
+}
+
+.input-criar-post::placeholder {
+    color: #CA998F;
+}
+
+.textarea-descricao {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding-left: 2%;
+}
+
+.textarea-descricao::placeholder {
+    color: #CA998F;
+    font-family: var(--fonte);
+}
+
+.container-botoes-criar {
+    display: flex;
+    height: 15%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 30%;
+    padding-left: 5%;
+    padding-right: 10%;
+}
+
+.botao-modal-criar {
+    height: fit-content;
+    font-size: large;
+    height: 50%;
+    width: 40%;
+    border: none;
+    border-radius: 30px;
+    color: white;
+}
+
+.botao-modal-criar:hover {
+    cursor: pointer;
+}
+
+.botao-modal-criar.cancelar {
+    border: 1px solid var(--cor-vinho-100);
+    background-color: transparent;
+    color: var(--cor-vinho-100);
+}
+
+.botao-modal-criar.salvar {
+    background-color: var(--cor-vermelho-50);
+    color: var(--cor-branco-300);
 }
 
 #dataPostCriado {

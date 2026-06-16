@@ -9,8 +9,27 @@ class TabelaPostsController
 {
     public function index()
     {
-        $publicacoes = App::get('database')->selectAll('publicacoes');
-        return view('admin/tabela-de-posts', compact('publicacoes'));
+        $database = App::get('database');
+
+        $limit = 5;
+
+        $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        if ( $currentPage < 1) {
+            $currentPage = 1;
+        }
+
+        $offset = ($currentPage - 1) * $limit;
+
+        $totalPublicacoes = $database->countAll('publicacoes');
+        $totalPages = ceil($totalPublicacoes/$limit);
+
+        $publicacoes = $database->paginate('publicacoes', $limit, $offset);
+
+        return view('admin/tabela-de-posts', [
+            'publicacoes' => $publicacoes,
+            'currentPage'=> $currentPage,
+            'totalPages' => $totalPages
+        ]);
     }
 
     public function store()
@@ -27,10 +46,28 @@ class TabelaPostsController
             'id_deezer' => $_POST['id_deezer'],
         ];
 
+        $faixas = json_decode($_POST['faixas']); 
+
         App::get('database')->insert('publicacoes', $parameters);
 
+        $post = App::get('database')->selectLast('publicacoes');
+
+        foreach ($faixas as $faixa){
+            $parameters = [
+                'id' => $faixa -> id,
+                'titulo' => $faixa -> title,
+                'duracao' => $faixa -> duration,
+                'id_publicacao' => $post -> id,
+                'id_deezer' => $post -> id_deezer,
+            ];
+            App::get('database')->insert('faixas', $parameters);
+            
+        }
+            
+        
         header('Location: /tabelaPosts');
     }
+
 
     public function edit() 
     {
