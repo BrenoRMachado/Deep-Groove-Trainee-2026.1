@@ -15,7 +15,7 @@
         <div class="metade-tela-login formulario">
             <div class="mensagem-erro">
                 <?php 
-                    // session_start();
+                    //session_start(); Comentado pois estava dando erro no navegador
 
                     if(isset($_SESSION['mensagem-erro'])){
                         echo $_SESSION['mensagem-erro'];

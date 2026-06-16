@@ -27,7 +27,7 @@ class LoginController
 
             $_SESSION['id'] = $usuario->id;
 
-            header('Location: /');
+            header('Location: /dashboard');
             exit();
         } else {
             
@@ -35,6 +35,28 @@ class LoginController
             $_SESSION['mensagem-erro'] = "Usuário ou senha incorretos!";
             header('Location: /login');
         }
-
     }
+    public function logout()
+    {
+        session_start();
+        session_unset();
+        session_destroy();
+
+        header('Location: /login');
+        exit();
+    }
+
+    // public function cadastro()
+    // {
+    //     $parameters = [
+    //         'nome' => $_POST['nome'],
+    //         'email' => $_POST['email'],
+    //         'senha' => $_POST['senha'],
+    //         'foto' => 'default'
+    //     ];
+
+    //     App::get('database')->insert('usuarios', $parameters);
+
+    //     header('Location: /login');
+    // }
 }

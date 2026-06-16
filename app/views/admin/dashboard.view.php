@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['id'])) {
+        header('Location: /login');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -91,9 +99,11 @@
             <a class="botao botao-home" href="/">
                 <i class="icone-home bi bi-house-door-fill"></i>
             </a>
-            <a class="botao botao-sign-out" href="/logout">
-                <i class="icone-sign-out bi bi-box-arrow-right"></i>
-            </a>
+            <form action="/logout" method="POST">
+                <button class="botao botao-sign-out">
+                    <i class="icone-sign-out bi bi-box-arrow-right"></i>
+                </button>
+            </form>
         </footer>
         <div class="container-imagem-disco-de-vinil-fundo">
             <img class="imagem-disco-de-vinil-fundo" src="../../../public/assets/disco-de-vinil-cortado-ao-meio.png" alt="Disco de vinil no fundo">

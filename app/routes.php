@@ -32,5 +32,8 @@ $router->post('tabelaUsuarios/criar', 'TabelaUsuariosController@criarUsuarios');
 $router->post('tabelaUsuarios/editar', 'TabelaUsuariosController@editarUsuarios');
 $router->post('tabelaUsuarios/excluir', 'TabelaUsuariosController@excluirUsuarios');
 
-//Método para efetuar o login
+//Rota para efetuar o login
 $router->post('login', 'LoginController@efetuaLogin');
+
+//Rota para efetuar o logout
+$router->post('logout', 'LoginController@logout');
