@@ -32,7 +32,7 @@
             <h1 class="titulo-cabecalho">Dashboard</h1>
             <div class="container-perfil">
                 <div class="container-dados-do-admin">
-                    <span class="dados-do-admin nome-admin">Nome do administrador</span>
+                    <span class="dados-do-admin nome-admin"><?= $_SESSION['nome'] ?></span>
                     <span class="dados-do-admin cargo-admin">Administrador</span>
                 </div>
                 <button class="icone-perfil">

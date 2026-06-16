@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['id'])) {
+        header('Location: /login');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -96,7 +104,7 @@
             <img src="../../../public/assets/ícone usuário.svg" alt="User">
 
             <div class="infos">
-                <h3 class="textoh3">Fulano</h3>
+                <h3 class="textoh3"><?= $_SESSION['nome'] ?></h3>
                 <h3 class="textoh3">Administrador</h3>
             </div>
 

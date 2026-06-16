@@ -26,6 +26,8 @@ class LoginController
             session_start();
 
             $_SESSION['id'] = $usuario->id;
+            $_SESSION['email'] = $usuario->email;
+            $_SESSION['nome'] = $usuario->nome;
 
             header('Location: /dashboard');
             exit();
