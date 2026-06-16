@@ -42,8 +42,8 @@
                         </span>
                     </div>
                     <div class="informacao-atividades-recentes-1 informacao-recente">
-                        <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-da-publicacao-recente">
-                        <div class="texto-da-publicacao-recente">
+                        <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-do-usuario-da-atividade-recente">
+                        <div class="texto-da-informacao-recente">
                             <span class="atividade-no-site">
                                 Fulano se cadastrou
                             </span>
@@ -53,11 +53,41 @@
                         </div>
                     </div>
                     <hr class="linha-dividindo-informacoes-recentes">
-                    <button class="botao-ver-mais-atividades-recentes botao-ver-mais-informacoes-recentes">
+                    <button class="botao-ver-mais-atividades-recentes botao-ver-mais-informacoes-recentes" type="button" onclick="verMaisAtividadesRecentes()">
                         <span>
                             Ver mais atividades
                         </span>
                         <i class="icone-ver-mais-publicacoes-recentes icone-ver-mais-informacoes-recentes bi bi-chevron-down"></i>
+                    </button>
+                    <div class="informacao-atividades-recentes-2 informacao-recente">
+                        <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-do-usuario-da-atividade-recente">
+                        <div class="texto-da-informacao-recente">
+                            <span class="atividade-no-site">
+                                Fulano se cadastrou
+                            </span>
+                            <span class="data-e-hora">
+                                Data e Hora
+                            </span>
+                        </div>
+                    </div>
+                    <hr class="linha-dividindo-informacoes-recentes linha-dividindo-atividades-recentes-2">
+                    <div class="informacao-atividades-recentes-3 informacao-recente">
+                        <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-do-usuario-da-atividade-recente">
+                        <div class="texto-da-informacao-recente">
+                            <span class="atividade-no-site">
+                                Fulano se cadastrou
+                            </span>
+                            <span class="data-e-hora">
+                                Data e Hora
+                            </span>
+                        </div>
+                    </div>
+                    <hr class="linha-dividindo-informacoes-recentes linha-dividindo-atividades-recentes-3">
+                    <button class="botao-ver-menos-atividades-recentes botao-ver-menos-informacoes-recentes" type="button" onclick="verMenosAtividadesRecentes()">
+                        <span>
+                            Ver menos atividades
+                        </span>
+                        <i class="icone-ver-menos-atividades-recentes icone-ver-menos-informacoes-recentes bi bi-chevron-up"></i>
                     </button>
                 <li class="container-usuarios-publicacoes-recentes container-usuarios">
                     <div class="numero-de-usuarios-publicacoes-e-recente numero-de-usuarios">
@@ -95,7 +125,7 @@
                     </div>
                     <div class="informacao-publicacoes-recentes-1 informacao-recente">
                         <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-da-publicacao-recente">
-                        <div class="texto-da-publicacao-recente">
+                        <div class="texto-da-informacao-recente">
                             <span class="titulo-e-autor">
                                 Titulo e Autor
                             </span>
@@ -105,11 +135,41 @@
                         </div>
                     </div>
                     <hr class="linha-dividindo-informacoes-recentes">
-                    <button class="botao-ver-mais-publicacoes-recentes botao-ver-mais-informacoes-recentes">
+                    <button class="botao-ver-mais-publicacoes-recentes botao-ver-mais-informacoes-recentes" type="button" onclick="verMaisPublicacoesRecentes()">
                         <span>
                             Ver mais publicações
                         </span>
                         <i class="icone-ver-mais-publicacoes-recentes icone-ver-mais-informacoes-recentes bi bi-chevron-down"></i>
+                    </button>
+                    <div class="informacao-publicacoes-recentes-2 informacao-recente">
+                        <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-da-publicacao-recente">
+                        <div class="texto-da-informacao-recente">
+                            <span class="titulo-e-autor">
+                                Titulo e Autor
+                            </span>
+                            <span class="data-e-hora">
+                                Data e Hora
+                            </span>
+                        </div>
+                    </div>
+                    <hr class="linha-dividindo-informacoes-recentes linha-dividindo-publicacoes-recentes-2">
+                    <div class="informacao-publicacoes-recentes-3 informacao-recente">
+                        <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-da-publicacao-recente">
+                        <div class="texto-da-informacao-recente">
+                            <span class="titulo-e-autor">
+                                Titulo e Autor
+                            </span>
+                            <span class="data-e-hora">
+                                Data e Hora
+                            </span>
+                        </div>
+                    </div>
+                    <hr class="linha-dividindo-informacoes-recentes linha-dividindo-publicacoes-recentes-3">
+                    <button class="botao-ver-menos-publicacoes-recentes botao-ver-menos-informacoes-recentes" type="button" onclick="verMenosPublicacoesRecentes()">
+                        <span>
+                            Ver menos Publicações
+                        </span>
+                        <i class="icone-ver-menos-publicacoes-recentes icone-ver-menos-informacoes-recentes bi bi-chevron-up"></i>
                     </button>
                 </li>
             </ul>
