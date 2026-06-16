@@ -13,6 +13,17 @@
 <body>
     <div class="container-login">
         <div class="metade-tela-login formulario">
+            <div class="mensagem-erro">
+                <?php 
+                    // session_start();
+
+                    if(isset($_SESSION['mensagem-erro'])){
+                        echo $_SESSION['mensagem-erro'];
+
+                    unset($_SESSION['mensagem-erro']);
+                    }
+                 ?>
+            </div>
             <div class="container-titulo">
                 <button class="container-seta" onclick="history.back()">
                     <i class="bi bi-arrow-left-circle-fill seta"></i>
@@ -21,15 +32,15 @@
                      <h1 class="titulo-login">Entrar</h1>           
                 </div>
             </div>
-            <form class="container-form">
+            <form class="container-form" action="/login" method="POST">
                 <div class="container-inputs"></div>
                     <div class="container-elemento-input">
                         <h2>Email:</h2>
-                        <input placeholder="Digite seu email">
+                        <input placeholder="Digite seu email" name="email" id="email">
                     </div>
                     <div class="container-elemento-input">
                         <h2>Senha:</h2>
-                        <input placeholder="Digite sua senha">
+                        <input placeholder="Digite sua senha" type="password" name="senha" id="senha">
                     </div>
                     <div class="container-botao">
                         <button class="botao-login">Entrar</button>
