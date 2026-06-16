@@ -1,3 +1,9 @@
+:root {
+    --coractivepaginacao: #773B36;
+    --coloractive:#FEECE8;
+    --cor-branco-300: #F4D8D2;
+}
+
 /* .pagination-container {
     justify-content: center;
 }
