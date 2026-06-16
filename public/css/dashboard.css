@@ -105,6 +105,8 @@
     padding: 0 var(--espacamento-padding-maior);
     color: var(--cor-branco-100);
     font-family: var(--fonte-primaria);
+    position: absolute;
+    top: 17.5%;
 }
 
 #dashboard #area-navegacao-e-estatisticas .lista-area-navegacao-e-estatisticas {
@@ -194,11 +196,21 @@
     gap: 1rem;
 }
 
-#dashboard #area-navegacao-e-estatisticas .foto-da-publicacao-recente {
-    aspect-ratio: 1 / 1;
+#dashboard #area-navegacao-e-estatisticas .informacao-atividades-recentes-2, #dashboard #area-navegacao-e-estatisticas .informacao-atividades-recentes-3, #dashboard #area-navegacao-e-estatisticas .informacao-publicacoes-recentes-2, #dashboard #area-navegacao-e-estatisticas .informacao-publicacoes-recentes-3 {
+    display: none;
 }
 
-#dashboard #area-navegacao-e-estatisticas .texto-da-publicacao-recente {
+#dashboard #area-navegacao-e-estatisticas .foto-da-publicacao-recente {
+    aspect-ratio: 1 / 1;
+    border-radius: 5px;
+}
+
+#dashboard #area-navegacao-e-estatisticas .foto-do-usuario-da-atividade-recente {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+#dashboard #area-navegacao-e-estatisticas .texto-da-informacao-recente {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -212,8 +224,12 @@
     width: 92.5%;
 }
 
+#dashboard #area-navegacao-e-estatisticas .linha-dividindo-atividades-recentes-2, #dashboard #area-navegacao-e-estatisticas .linha-dividindo-atividades-recentes-3, #dashboard #area-navegacao-e-estatisticas .linha-dividindo-publicacoes-recentes-2, #dashboard #area-navegacao-e-estatisticas .linha-dividindo-publicacoes-recentes-3 {
+    display: none;
+}
+
 /* *Estilo e animação dos botões de ver mais e ver menos atividades e publicações recentes */
-#dashboard #area-navegacao-e-estatisticas .botao-ver-mais-informacoes-recentes {
+#dashboard #area-navegacao-e-estatisticas .botao-ver-mais-informacoes-recentes, #dashboard #area-navegacao-e-estatisticas .botao-ver-menos-informacoes-recentes {
     width: 95%;
     border: none;
     background: none;
@@ -223,7 +239,11 @@
     justify-content: space-evenly;
 }
 
-#dashboard #area-navegacao-e-estatisticas .botao-ver-mais-informacoes-recentes:hover {
+#dashboard #area-navegacao-e-estatisticas .botao-ver-menos-informacoes-recentes {
+    display: none;
+}
+
+#dashboard #area-navegacao-e-estatisticas .botao-ver-mais-informacoes-recentes:hover, #dashboard #area-navegacao-e-estatisticas .botao-ver-menos-informacoes-recentes:hover {
     cursor: pointer;
     opacity: 0.95;
 }
