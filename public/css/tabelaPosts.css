@@ -194,6 +194,12 @@
 
 }
 
+.pesquisar {
+    width: 100vw;
+    padding-left: 0;
+    /* background-color: red; */
+}
+
 
 .pesqUser {
 
@@ -204,7 +210,7 @@
     background-repeat: no-repeat;
 
     border-radius: 3rem;
-    border: 1rem solid #6D3534;
+    /* border: 1rem solid #6D3534; */
 
     /* cima direita baixo esquerda */
     padding: 1rem 1rem 1rem 3rem;
