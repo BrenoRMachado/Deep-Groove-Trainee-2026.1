@@ -33,7 +33,7 @@
             <div class="container-perfil">
                 <div class="container-dados-do-admin">
                     <span class="dados-do-admin nome-admin"><?= $_SESSION['nome'] ?></span>
-                    <span class="dados-do-admin cargo-admin">Administrador</span>
+                    <span class="dados-do-admin cargo-admin"><?= $_SESSION['is_admin'] ? 'Administrador' : "Usuário" ?></span>
                 </div>
                 <button class="icone-perfil">
                     <i class="bi bi-person-check"></i>

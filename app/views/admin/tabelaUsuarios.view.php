@@ -106,7 +106,7 @@
 
             <div class="infos">
                 <h3 class="textoh3"><?= $_SESSION['nome'] ?></h3>
-                <h3 class="textoh3">Administrador</h3>
+                <h3 class="textoh3"><?= $_SESSION['is_admin'] ? 'Administrador' : "Usuário" ?></h3>
             </div>
 
         </div>
