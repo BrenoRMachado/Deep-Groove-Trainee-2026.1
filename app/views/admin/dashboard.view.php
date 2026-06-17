@@ -45,13 +45,24 @@
                         <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-do-usuario-da-atividade-recente">
                         <div class="texto-da-informacao-recente">
                             <span class="atividade-no-site">
-                                <?= $usuariosRecentes[0] -> nome ?> se cadastrou
+                                <?= $usuariosRecentes[0] -> nome ?>
+                                <?php
+                                if ($usuariosRecentes[0] -> ultima_acao === 'login') {
+                                    echo 'fez login';
+                                } else if ($usuariosRecentes[0] -> ultima_acao === 'cadastro') {
+                                    echo 'se cadastrou';
+                                } else if ($usuariosRecentes[0] -> ultima_acao === 'criar') {
+                                    echo 'foi criado';
+                                } else {
+                                    echo 'foi editado';
+                                }
+                                ?>    
                             </span>
                             <span class="email">
-                                <?= $usuariosRecentes[0] -> email ?>        
+                                <?= $usuariosRecentes[0] -> email ?>         
                             </span>
                             <span class="data-e-hora">
-                                <?= $usuariosRecentes[0] -> data_da_criacao ?>
+                                <?= $usuariosRecentes[0] -> data_ultima_acao ?>
                             </span>
                         </div>
                     </div>
@@ -67,13 +78,24 @@
                             <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-do-usuario-da-atividade-recente">
                             <div class="texto-da-informacao-recente">
                                 <span class="atividade-no-site">
-                                    <?= $usuariosRecentes[$i - 1] -> nome ?> se cadastrou
+                                    <?= $usuariosRecentes[$i - 1] -> nome ?> 
+                                    <?php
+                                    if ($usuariosRecentes[$i - 1] -> ultima_acao === 'login') {
+                                        echo 'fez login';
+                                    } else if ($usuariosRecentes[$i - 1] -> ultima_acao === 'cadastro') {
+                                        echo 'se cadastrou';
+                                    } else if ($usuariosRecentes[$i - 1] -> ultima_acao === 'criar') {
+                                        echo 'foi criado';
+                                    } else {
+                                        echo 'foi editado';
+                                    }
+                                    ?>
                                 </span>
                                 <span class="email">
-                                    <?= $usuariosRecentes[$i - 1] -> email ?>        
+                                    <?= $usuariosRecentes[$i - 1] -> email ?>     
                                 </span>
                                 <span class="data-e-hora">
-                                    <?= $usuariosRecentes[$i - 1] -> data_da_criacao ?>
+                                    <?= $usuariosRecentes[$i - 1] -> data_ultima_acao ?>
                                 </span>
                             </div>
                         </div>
