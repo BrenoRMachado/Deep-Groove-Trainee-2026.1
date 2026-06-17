@@ -59,30 +59,20 @@
                         </span>
                         <i class="icone-ver-mais-publicacoes-recentes icone-ver-mais-informacoes-recentes bi bi-chevron-down"></i>
                     </button>
-                    <div class="informacao-atividades-recentes-2 informacao-recente">
-                        <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-do-usuario-da-atividade-recente">
-                        <div class="texto-da-informacao-recente">
-                            <span class="atividade-no-site">
-                                Fulano se cadastrou
-                            </span>
-                            <span class="data-e-hora">
-                                Data e Hora
-                            </span>
+                    <?php for($i = 2; $i <= 3; $i++): ?>
+                        <div class="informacao-atividades-recentes-<?= $i ?> informacao-recente">
+                            <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-do-usuario-da-atividade-recente">
+                            <div class="texto-da-informacao-recente">
+                                <span class="atividade-no-site">
+                                    Fulano se cadastrou
+                                </span>
+                                <span class="data-e-hora">
+                                    Data e Hora
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                    <hr class="linha-dividindo-informacoes-recentes linha-dividindo-atividades-recentes-2">
-                    <div class="informacao-atividades-recentes-3 informacao-recente">
-                        <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-do-usuario-da-atividade-recente">
-                        <div class="texto-da-informacao-recente">
-                            <span class="atividade-no-site">
-                                Fulano se cadastrou
-                            </span>
-                            <span class="data-e-hora">
-                                Data e Hora
-                            </span>
-                        </div>
-                    </div>
-                    <hr class="linha-dividindo-informacoes-recentes linha-dividindo-atividades-recentes-3">
+                        <hr class="linha-dividindo-informacoes-recentes linha-dividindo-atividades-recentes-<?= $i ?>">
+                    <?php endfor; ?>
                     <button class="botao-ver-menos-atividades-recentes botao-ver-menos-informacoes-recentes" type="button" onclick="verMenosAtividadesRecentes()">
                         <span>
                             Ver menos atividades
@@ -124,50 +114,46 @@
                         </span>
                     </div>
                     <div class="informacao-publicacoes-recentes-1 informacao-recente">
-                        <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-da-publicacao-recente">
+                        <img src="<?= $publicacoesRecentes[0] -> foto ?>" class="foto-da-publicacao-recente">
                         <div class="texto-da-informacao-recente">
-                            <span class="titulo-e-autor">
-                                Titulo e Autor
+                            <span class="titulo">
+                                <?= $publicacoesRecentes[0] -> titulo ?>
+                            </span>
+                            <span class="artista">
+                                <?= $publicacoesRecentes[0] -> artista ?>
                             </span>
                             <span class="data-e-hora">
-                                Data e Hora
+                                <?= $publicacoesRecentes[0] -> data_da_publicacao ?>
                             </span>
                         </div>
                     </div>
-                    <hr class="linha-dividindo-informacoes-recentes">
+                    <hr class="linha-dividindo-informacoes-recentes linha-dividindo-informacoes-recentes-1">
                     <button class="botao-ver-mais-publicacoes-recentes botao-ver-mais-informacoes-recentes" type="button" onclick="verMaisPublicacoesRecentes()">
                         <span>
                             Ver mais publicações
                         </span>
                         <i class="icone-ver-mais-publicacoes-recentes icone-ver-mais-informacoes-recentes bi bi-chevron-down"></i>
                     </button>
-                    <div class="informacao-publicacoes-recentes-2 informacao-recente">
-                        <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-da-publicacao-recente">
+                    <?php for($i = 2; $i <= 3; $i++): ?>
+                    <div class="informacao-publicacoes-recentes-<?= $i ?> informacao-recente">
+                        <img src="<?= $publicacoesRecentes[$i - 1] -> foto ?>" class="foto-da-publicacao-recente">
                         <div class="texto-da-informacao-recente">
-                            <span class="titulo-e-autor">
-                                Titulo e Autor
+                            <span class="titulo">
+                                <?= $publicacoesRecentes[$i - 1] -> titulo ?>
+                            </span>
+                            <span class="artista">
+                                <?= $publicacoesRecentes[$i - 1] -> artista ?>
                             </span>
                             <span class="data-e-hora">
-                                Data e Hora
+                                <?= $publicacoesRecentes[$i - 1] -> data_da_publicacao ?>
                             </span>
                         </div>
                     </div>
-                    <hr class="linha-dividindo-informacoes-recentes linha-dividindo-publicacoes-recentes-2">
-                    <div class="informacao-publicacoes-recentes-3 informacao-recente">
-                        <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-da-publicacao-recente">
-                        <div class="texto-da-informacao-recente">
-                            <span class="titulo-e-autor">
-                                Titulo e Autor
-                            </span>
-                            <span class="data-e-hora">
-                                Data e Hora
-                            </span>
-                        </div>
-                    </div>
-                    <hr class="linha-dividindo-informacoes-recentes linha-dividindo-publicacoes-recentes-3">
+                    <hr class="linha-dividindo-informacoes-recentes linha-dividindo-publicacoes-recentes-<?= $i ?>">
+                    <?php endfor; ?>
                     <button class="botao-ver-menos-publicacoes-recentes botao-ver-menos-informacoes-recentes" type="button" onclick="verMenosPublicacoesRecentes()">
                         <span>
-                            Ver menos Publicações
+                            Ver menos publicações
                         </span>
                         <i class="icone-ver-menos-publicacoes-recentes icone-ver-menos-informacoes-recentes bi bi-chevron-up"></i>
                     </button>
