@@ -28,7 +28,7 @@
     <div class="filtro-ao-abrir-modal-da-tabelaPosts"></div>
 
     <section class="topoTabelaPosts">
-        <button disabled class="botao-novo-post" onclick="abrirModal('modal-criar-posts')">
+        <button <?= $_SESSION['is_admin'] ? '' : 'disabled' ?> class="botao-novo-post" onclick="abrirModal('modal-criar-posts')">
             <div class="addPost">
                 <i class="icone bi bi-plus" style="font-size: x-large;"></i>
                 <p class="textop">Novo Post</p>
@@ -40,7 +40,7 @@
 
             <div class="infos">
                 <h3 class="textoh3"><?= $_SESSION['nome'] ?></h3>
-                <h3 class="textoh3">Administrador</h3>
+                <h3 class="textoh3"><?= $_SESSION['is_admin'] ? 'Administrador' : "Usuário" ?></h3>
             </div>
         </div>
     </section>
