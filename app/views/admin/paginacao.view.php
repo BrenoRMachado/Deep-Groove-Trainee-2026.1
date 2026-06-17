@@ -32,7 +32,7 @@
                 </li>
             <?php endfor; ?>
 
-            <?php if ($end > $totalPages - 1):?>
+            <?php if ($end < $totalPages - 1):?>
                 <li><span class="dots">...</span></li>
             <?php endif; ?>
 
