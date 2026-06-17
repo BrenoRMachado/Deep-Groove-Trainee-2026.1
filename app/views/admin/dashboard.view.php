@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['id'])) {
+        header('Location: /login');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -24,8 +32,8 @@
             <h1 class="titulo-cabecalho">Dashboard</h1>
             <div class="container-perfil">
                 <div class="container-dados-do-admin">
-                    <span class="dados-do-admin nome-admin">Nome do administrador</span>
-                    <span class="dados-do-admin cargo-admin">Administrador</span>
+                    <span class="dados-do-admin nome-admin"><?= $_SESSION['nome'] ?></span>
+                    <span class="dados-do-admin cargo-admin"><?= $_SESSION['is_admin'] ? 'Administrador' : "Usuário" ?></span>
                 </div>
                 <button class="icone-perfil">
                     <i class="bi bi-person-check"></i>
@@ -195,9 +203,11 @@
             <a class="botao botao-home" href="/">
                 <i class="icone-home bi bi-house-door-fill"></i>
             </a>
-            <a class="botao botao-sign-out" href="/logout">
-                <i class="icone-sign-out bi bi-box-arrow-right"></i>
-            </a>
+            <form action="/logout" method="POST">
+                <button class="botao botao-sign-out">
+                    <i class="icone-sign-out bi bi-box-arrow-right"></i>
+                </button>
+            </form>
         </footer>
         <div class="container-imagem-disco-de-vinil-fundo">
             <img class="imagem-disco-de-vinil-fundo" src="../../../public/assets/disco-de-vinil-cortado-ao-meio.png" alt="Disco de vinil no fundo">
