@@ -218,9 +218,9 @@ class QueryBuilder
 
     }
 
-    public function selecionaUltimos3PostsPublicados(){
+    public function selecionaUltimas3LinhasDaTabela($tabela){
 
-        $sql = "SELECT * FROM publicacoes
+        $sql = "SELECT * FROM {$tabela}
             ORDER BY id DESC
             LIMIT 3";
         
