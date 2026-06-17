@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +17,14 @@
 <body>
     <div class="container-login">
         <div class="metade-tela-login formulario">
+            <div class="container-titulo">
+                <button class="container-seta" onclick="history.back()">
+                    <i class="bi bi-arrow-left-circle-fill seta"></i>
+                </button>
+                <div>
+                     <h1 class="titulo-login">Entrar</h1>           
+                </div>
+            </div>
             <div class="mensagem-erro">
                 <?php 
                     //session_start(); Comentado pois estava dando erro no navegador
@@ -24,14 +35,6 @@
                     unset($_SESSION['mensagem-erro']);
                     }
                  ?>
-            </div>
-            <div class="container-titulo">
-                <button class="container-seta" onclick="history.back()">
-                    <i class="bi bi-arrow-left-circle-fill seta"></i>
-                </button>
-                <div>
-                     <h1 class="titulo-login">Entrar</h1>           
-                </div>
             </div>
             <form class="container-form" action="/login" method="POST">
                 <div class="container-inputs"></div>
