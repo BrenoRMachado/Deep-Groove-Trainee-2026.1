@@ -325,49 +325,6 @@
 
 /* !Monitor 2K */
 
-@media (min-width: 2559px) {
-    :root {
-        --espacamento-padding-maior: 4rem;
-        --espacamento-padding-medio: 2rem;
-        --espacamento-padding-pequeno: 1.4rem;
-        --espacamento-padding-menor: 1rem;
-    }
-    
-    #dashboard #cabecalho {
-        padding-bottom: 2rem;
-    }
-    
-    #dashboard #cabecalho .titulo-cabecalho {
-        font-size: 6rem;
-    }
-    
-    #dashboard #cabecalho .dados-do-admin {
-        font-size: 2rem;
-    }
-    
-    #dashboard #cabecalho .icone-perfil {
-        font-size: 5rem;
-        width: 7rem;
-        height: 6.8rem;
-    }
-    
-    #dashboard #area-navegacao-e-estatisticas .texto-dados-totais {
-        font-size: 2rem;
-    }
-    
-    #dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas-e-recentes {
-        font-size: 4rem;
-    }
-    
-    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
-        font-size: 2rem;
-    }
-    
-    #dashboard #rodape .botao {
-        font-size: 5rem;
-    }
-}
-
 @media (min-width: 1919px) {
     :root {
         --espacamento-padding-maior: 4rem;
@@ -378,33 +335,35 @@
     #dashboard #cabecalho {
         padding-bottom: 1.4rem;
     }
-    
     #dashboard #cabecalho .titulo-cabecalho {
         font-size: 4.2rem;
     }
-    
     #dashboard #cabecalho .dados-do-admin {
         font-size: 1.4rem;
     }
-    
     #dashboard #cabecalho .icone-perfil {
         font-size: 4rem;
         width: 6rem;
         height: 6rem;
     }
-    
-    #dashboard #area-navegacao-e-estatisticas .texto-dados-totais {
-        font-size: 1.4rem;
+    #dashboard #area-navegacao-e-estatisticas .container-atividades-recentes, #dashboard #area-navegacao-e-estatisticas .container-publicacoes-recentes {
+        gap: 2.5rem;
     }
-    
     #dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas-e-recentes {
         font-size: 3rem;
     }
-    
-    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
+    #dashboard #area-navegacao-e-estatisticas .texto-dados-totais, #dashboard #area-navegacao-e-estatisticas .texto-da-informacao-recente, #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
         font-size: 1.4rem;
     }
-    
+    #dashboard #area-navegacao-e-estatisticas .texto-da-informacao-recente {
+        font-size: 1.4rem;
+    }
+    #dashboard #area-navegacao-e-estatisticas .data-e-hora {
+        font-size: 1rem;
+    }
+    #dashboard #area-navegacao-e-estatisticas .botao-ver-mais-informacoes-recentes, #dashboard #area-navegacao-e-estatisticas .botao-ver-menos-informacoes-recentes {
+        font-size: 1.7rem;
+    } 
     #dashboard #rodape .botao {
         font-size: 3.5rem;
     }
@@ -480,7 +439,7 @@
     }
 
     #dashboard #area-navegacao-e-estatisticas {
-        margin-top: 1rem;
+        top: 15%;
         width: 100%;
     }
     
