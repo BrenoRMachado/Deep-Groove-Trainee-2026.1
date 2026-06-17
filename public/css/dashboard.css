@@ -196,24 +196,30 @@
     gap: 1rem;
 }
 
-#dashboard #area-navegacao-e-estatisticas .informacao-atividades-recentes-2, #dashboard #area-navegacao-e-estatisticas .informacao-atividades-recentes-3, #dashboard #area-navegacao-e-estatisticas .informacao-publicacoes-recentes-2, #dashboard #area-navegacao-e-estatisticas .informacao-publicacoes-recentes-3 {
-    display: none;
-}
-
+/* *Estilo da foto da publicacao recente */
 #dashboard #area-navegacao-e-estatisticas .foto-da-publicacao-recente {
     aspect-ratio: 1 / 1;
     border-radius: 5px;
+    width: 25%;
 }
 
+/* *Estilo da foto do usuário da atividade recente */
 #dashboard #area-navegacao-e-estatisticas .foto-do-usuario-da-atividade-recente {
     aspect-ratio: 1 / 1;
     border-radius: 50%;
+    width: 25%;
 }
 
+/* *Estilo do texto das informações recentes */
 #dashboard #area-navegacao-e-estatisticas .texto-da-informacao-recente {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+#dashboard #area-navegacao-e-estatisticas .data-e-hora {
+    font-size: 0.75rem;
+    opacity: 0.9;
 }
 
 /* *Estilo das linhas de divisão */
@@ -224,9 +230,6 @@
     width: 92.5%;
 }
 
-#dashboard #area-navegacao-e-estatisticas .linha-dividindo-atividades-recentes-2, #dashboard #area-navegacao-e-estatisticas .linha-dividindo-atividades-recentes-3, #dashboard #area-navegacao-e-estatisticas .linha-dividindo-publicacoes-recentes-2, #dashboard #area-navegacao-e-estatisticas .linha-dividindo-publicacoes-recentes-3 {
-    display: none;
-}
 
 /* *Estilo e animação dos botões de ver mais e ver menos atividades e publicações recentes */
 #dashboard #area-navegacao-e-estatisticas .botao-ver-mais-informacoes-recentes, #dashboard #area-navegacao-e-estatisticas .botao-ver-menos-informacoes-recentes {
@@ -239,13 +242,17 @@
     justify-content: space-evenly;
 }
 
-#dashboard #area-navegacao-e-estatisticas .botao-ver-menos-informacoes-recentes {
-    display: none;
-}
-
 #dashboard #area-navegacao-e-estatisticas .botao-ver-mais-informacoes-recentes:hover, #dashboard #area-navegacao-e-estatisticas .botao-ver-menos-informacoes-recentes:hover {
     cursor: pointer;
     opacity: 0.95;
+}
+
+/* *INFORMAÇÕES A MAIS, LINHAS DE DIVISÃO E BOTÃO DE VER MAIS ESCONDIDOS */
+#dashboard #area-navegacao-e-estatisticas .informacao-atividades-recentes-2, #dashboard #area-navegacao-e-estatisticas .informacao-atividades-recentes-3, 
+#dashboard #area-navegacao-e-estatisticas .informacao-publicacoes-recentes-2, #dashboard #area-navegacao-e-estatisticas .informacao-publicacoes-recentes-3,
+#dashboard #area-navegacao-e-estatisticas .linha-dividindo-atividades-recentes-2, #dashboard #area-navegacao-e-estatisticas .linha-dividindo-atividades-recentes-3, #dashboard #area-navegacao-e-estatisticas .linha-dividindo-publicacoes-recentes-2, #dashboard #area-navegacao-e-estatisticas .linha-dividindo-publicacoes-recentes-3,
+#dashboard #area-navegacao-e-estatisticas .botao-ver-menos-informacoes-recentes {
+    display: none;
 }
 
 /* *Estilo do título de fundo da dashboard */
@@ -253,7 +260,7 @@
     display: flex;
     flex: 1;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     z-index: 2;
 }
 
@@ -261,6 +268,23 @@
     color: var(--cor-branco-100);
     font-family: var(--fonte-titulo);
     font-size: 7.5vw;
+    margin-bottom: 6.7%;
+}
+
+/* *Estilo do container do disco de vinil como imagem de fundo */
+#dashboard .container-imagem-disco-de-vinil-fundo {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* *Estilo do disco de vinil como imagem de fundo */
+#dashboard .imagem-disco-de-vinil-fundo {
+    height: 100%;
 }
 
 /* *Estilo para rodapé do dashboard */ 
@@ -294,22 +318,6 @@
     transition: transform 0.3s;
     cursor: pointer;
     opacity: 0.95;
-}
-
-/* *Estilo do container do disco de vinil como imagem de fundo */
-#dashboard .container-imagem-disco-de-vinil-fundo {
-    position: absolute;
-    height: 40%;
-    width: 100%;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-/* *Estilo do disco de vinil como imagem de fundo */
-#dashboard .imagem-disco-de-vinil-fundo {
-    height: 100%;
 }
 
 /* *Responsividade */
@@ -479,11 +487,11 @@
     #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes-e-recente {
         padding: var(--espacamento-padding-menor) var(--espacamento-padding-menor);
         border-radius: 16px;
-        width: 70%;
+        width: 75%;
     }
     
     #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
-        width: 30%;
+        width: 25%;
         font-size: 1rem;
     }
 
@@ -501,10 +509,12 @@
 
     #dashboard #container-titulo-de-fundo {
         align-items: flex-end;
+        margin-bottom: 0;
     }
 
     #dashboard #container-titulo-de-fundo .titulo-de-fundo {
         font-size: 13vw;
+        margin-bottom: 0;
     }
     
     #dashboard #rodape .botao {
