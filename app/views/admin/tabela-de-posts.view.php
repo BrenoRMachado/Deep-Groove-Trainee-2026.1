@@ -187,52 +187,52 @@
                         readonly- nn deixa editar mas pode clicar e copiar o texto -->
                         <div class="dados-visu-post">
                             <div class="destaque-dados-visup id" style="background-color: brown;">Id</div>
-                            <input class="dado-visu-post" value=<?= $publicacao->id ?>>                     
+                            <input class="dado-visu-post" value=<?= $publicacao->id ?> readonly>                     
                         </div>
 
                         <div class="dados-visu-post">
                             <div class="destaque-dados-visup titulo" style="background-color: var(--cor-vinho-100);">Título</div>
-                            <input class="dado-visu-post" value=<?= $publicacao->titulo ?>>
+                            <input class="dado-visu-post" value=<?= $publicacao->titulo ?> readonly>
                         </div>
                             
                         <div class="dados-visu-post">
                             <div class="destaque-dados-visup ano" style="background-color: var(--cor-laranja-200);">Ano de lançamento</div>
-                            <input class="dado-visu-post" value=<?= $publicacao->ano ?>>                     
+                            <input class="dado-visu-post" value=<?= $publicacao->ano ?> readonly>                     
                         </div>
 
                         <div class="dados-visu-post">
                             <div class="destaque-dados-visup artista" style="background-color: var(--cor-vermelho-50);">Artista</div>
-                            <input class="dado-visu-post" value=<?= $publicacao->artista ?>>
+                            <input class="dado-visu-post" value=<?= $publicacao->artista ?> readonly>
                         </div>
 
                         <div class="dados-visu-post">
                             <div class="destaque-dados-visup genero" style="background-color: green;">Gênero</div>
-                            <input class="dado-visu-post" value=<?= $publicacao->genero ?>>
+                            <input class="dado-visu-post" value=<?= $publicacao->genero ?> readonly>
                         </div>
 
                         <div class="dados-visu-post">
                             <div class="destaque-dados-visup foto" style="background-color: blue;">Foto</div>
-                            <input class="dado-visu-post" value=<?= $publicacao->foto ?>>
+                            <input class="dado-visu-post" value=<?= $publicacao->foto ?> readonly>
                         </div>
 
                         <div class="dados-visu-post">
                             <div class="destaque-dados-visup duracao" style="background-color: purple;">Duração</div>
-                            <input class="dado-visu-post" value=<?= $publicacao->duracao ?>>
+                            <input class="dado-visu-post" value=<?= $publicacao->duracao ?> readonly>
                         </div>
 
                         <div class="dados-visu-post">
                             <div class="destaque-dados-visup idUsuario" style="background-color: black;">Id usuário</div>
-                            <input class="dado-visu-post" value=<?= $publicacao->id_usuario ?>>
+                            <input class="dado-visu-post" value=<?= $publicacao->id_usuario ?> readonly>
                         </div>
 
                         <div class="dados-visu-post">
                             <div class="destaque-dados-visup idDeezer" style="background-color: cyan;">Id deezer</div>
-                            <input class="dado-visu-post" value=<?= $publicacao->id_deezer ?>>
+                            <input class="dado-visu-post" value=<?= $publicacao->id_deezer ?> readonly>
                         </div>
 
                         <div class="container-textarea-vi">
                             <div class="destaque-dados-visup descricao" style="background-color: var(--cor-amarelo);">Descrição</div>
-                            <textarea rows="10" name="conceito"><?= $publicacao->conceito ?></textarea>
+                            <textarea rows="10" name="conceito" readonly><?= $publicacao->conceito ?></textarea>
                         </div>
 
                     </section>
