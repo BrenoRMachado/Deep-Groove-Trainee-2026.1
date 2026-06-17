@@ -366,8 +366,8 @@
 
                     <td class="colunageral">
                         <i class="acao bi bi-eye-fill" onclick="abrirModal('modal-visu-user<?= $publicacao->id ?>')"></i>
-                        <i class="acao bi bi-pencil-square <?= $_SESSION['is_admin'] == 1 ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
-                        <i class="acao bi bi-trash <?= $_SESSION['is_admin'] == 1 ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-excluir-user<?= $publicacao->id ?>')"></i>
+                        <i class="acao bi bi-pencil-square <?= $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
+                        <i class="acao bi bi-trash <?= $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-excluir-user<?= $publicacao->id ?>')"></i>
                     </td>
                 </tr>
             <?php endforeach ?>
