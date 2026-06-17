@@ -15,17 +15,17 @@ class dashboardController {
 
         $totalDeUsuarios = $bancoDeDados -> countAll('usuarios');
 
-        $usuariosRecentes = $bancoDeDados -> selecionaUltimas3LinhasDaTabela('usuarios');
+        $usuariosRecentes = $bancoDeDados -> selecionaUltimos3UsuariosAtivos();
 
         foreach($usuariosRecentes as $usuarioRecente){
-            $data = new DateTime($usuarioRecente -> data_da_criacao);
+            $data = new DateTime($usuarioRecente -> data_ultima_acao);
             $data -> modify('-3 hours');
-            $usuarioRecente -> data_da_publicacao = $data -> format('d/m/Y H:i');
+            $usuarioRecente -> data_ultima_acao = $data -> format('d/m/Y H:i');
         }
 
         $totalDePosts = $bancoDeDados -> countAll('publicacoes');
 
-        $publicacoesRecentes = $bancoDeDados -> selecionaUltimas3LinhasDaTabela('publicacoes');
+        $publicacoesRecentes = $bancoDeDados -> selecionaUltimas3Publicacoes();
 
         foreach($publicacoesRecentes as $publicacaoRecente){
             $data = new DateTime($publicacaoRecente -> data_da_publicacao);
