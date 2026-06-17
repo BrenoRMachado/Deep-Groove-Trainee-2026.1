@@ -165,125 +165,126 @@
 
                 <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
                 <div id="modal-visu-post<?= $publicacao->id ?>" class="des-modal-vi-post">
-                    <div class="imagemV-post">
-
-                        <section class="oqmodalVI-post">
+                    
+                    <section class="text-img-boX">
+                        <div class="oqmodalVI-post">
                             <h3 class="textpostvih3">Visualizar post</h3>
                             <p class="textpostvip">Visualize as informações do post</p>
-                        </section>
+                        </div>
 
-                        <section class="fotodopostvi">
-                            <img class="imgpostvi" src="../../../public/assets/deepgroove-logo.png<?= $publicacao->foto ?>" alt="Foto do post">
-                        </section>
+                        <figure class="imgpostvi">
+                            <i class="icone-capap bi bi-image"></i>
+                        </figure>
 
-                        <section class="X">
-                            <img class="xisp" src="../../../public/assets/XCircleFill.svg" alt="x"
-                            onclick="fecharModal('modal-visu-post<?= $publicacao->id ?>')">
-                        </section>
+                        <div class="X">
+                            <button class="xisp" type="button" onclick="fecharModal('modal-visu-post<?= $publicacao->id ?>')">
+                                <i class="icone-fechar-modal bi bi-x"></i>
+                            </button>
+                        </div>
+                    </section>
+                    <section class="container-dados-visu-post">
+                        <!-- disabled- desbilita total 
+                        readonly- nn deixa editar mas pode clicar e copiar o texto -->
+                        <div class="dados-visu-post">
+                            <div class="destaque-dados-visup id" style="background-color: brown;">Id</div>
+                            <input class="dado-visu-post" value=<?= $publicacao->id ?>>                     
+                        </div>
 
-                        <section id="container-dados-visu-post">
-                            <!-- disabled- desbilita total 
-                            readonly- nn deixa editar mas pode clicar e copiar o texto -->
-                            <div class="dados-visu-post">
-                                <div class="destaque-dados-visup id" style="background-color: var(--coloid);">Id</div>
-                                <div class="dado-visu-post"> <?= $publicacao->id ?> </div>                     
-                            </div>
+                        <div class="dados-visu-post">
+                            <div class="destaque-dados-visup titulo" style="background-color: var(--cor-vinho-100);">Título</div>
+                            <input class="dado-visu-post" value=<?= $publicacao->titulo ?>>
+                        </div>
+                            
+                        <div class="dados-visu-post">
+                            <div class="destaque-dados-visup ano" style="background-color: var(--cor-laranja-200);">Ano de lançamento</div>
+                            <input class="dado-visu-post" value=<?= $publicacao->ano ?>>                     
+                        </div>
 
-                            <div class="dados-visu-post">
-                                <div class="destaque-dados-visup titulo" style="background-color: var(--cor-vinho-100);">Título</div>
-                                <div class="dado-visu"> <?= $publicacao->titulo ?> </div>
-                            </div>
-                                
-                            <div class="dados-visu-post">
-                                <div class="destaque-dados-visup ano" style="background-color: var(--cor-laranja-200);">Ano de lançamento</div>
-                                <div class="dado-visu-post"> <?= $publicacao->ano ?> </div>                     
-                            </div>
+                        <div class="dados-visu-post">
+                            <div class="destaque-dados-visup artista" style="background-color: var(--cor-vermelho-50);">Artista</div>
+                            <input class="dado-visu-post" value=<?= $publicacao->artista ?>>
+                        </div>
 
-                            <div class="dados-visu-post">
-                                <div class="destaque-dados-visup artista" style="background-color: var(--cor-vermelho-50);">Artista</div>
-                                <div class="dado-visu-post"> <?= $publicacao->artista ?> </div>
-                            </div>
+                        <div class="dados-visu-post">
+                            <div class="destaque-dados-visup genero" style="background-color: green;">Gênero</div>
+                            <input class="dado-visu-post" value=<?= $publicacao->genero ?>>
+                        </div>
 
-                            <div class="dados-visu-post">
-                                <div class="destaque-dados-visup genero" style="background-color: green;">Gênero</div>
-                                <div class="dado-visu-post"> <?= $publicacao->genero ?> </div>
-                            </div>
+                        <div class="dados-visu-post">
+                            <div class="destaque-dados-visup foto" style="background-color: blue;">Foto</div>
+                            <input class="dado-visu-post" value=<?= $publicacao->foto ?>>
+                        </div>
 
-                            <div class="dados-visu-post">
-                                <div class="destaque-dados-visup foto" style="background-color: blue;">FOTO</div>
-                                <div class="dado-visu-post"> <?= $publicacao->foto ?> </div>
-                            </div>
+                        <div class="dados-visu-post">
+                            <div class="destaque-dados-visup duracao" style="background-color: purple;">Duração</div>
+                            <input class="dado-visu-post" value=<?= $publicacao->duracao ?>>
+                        </div>
 
-                            <div class="dados-visu-post">
-                                <div class="destaque-dados-visup duracao" style="background-color: purple;">Duração</div>
-                                <div class="dado-visu-post"> <?= $publicacao->duracao ?> </div>
-                            </div>
+                        <div class="dados-visu-post">
+                            <div class="destaque-dados-visup idUsuario" style="background-color: black;">Id usuário</div>
+                            <input class="dado-visu-post" value=<?= $publicacao->id_usuario ?>>
+                        </div>
 
-                            <div class="dados-visu-post">
-                                <div class="destaque-dados-visup idUsuario" style="background-color: black;">Id usuário</div>
-                                <div class="dado-visu-post"> <?= $publicacao->id_usuario ?> </div>
-                            </div>
+                        <div class="dados-visu-post">
+                            <div class="destaque-dados-visup idDeezer" style="background-color: cyan;">Id deezer</div>
+                            <input class="dado-visu-post" value=<?= $publicacao->id_deezer ?>>
+                        </div>
 
-                            <div class="dados-visu-post">
-                                <div class="destaque-dados-visup idDeezer" style="background-color: cyan;">Id deezer</div>
-                                <div class="dado-visu-post"> <?= $publicacao->id_deezer ?> </div>
-                            </div>
+                        <div class="container-textarea-vi">
+                            <div class="destaque-dados-visup descricao" style="background-color: var(--cor-amarelo);">Descrição</div>
+                            <textarea rows="10" name="conceito"><?= $publicacao->conceito ?></textarea>
+                        </div>
 
-                            <div class="container-textarea-vi">
-                                <div class="destaque-dados-visup descricao" style="background-color: var(--cor-amarelo);">Descrição</div>
-                                <textarea rows="10" name="conceito"><?= $publicacao->conceito ?></textarea>
-                            </div>
+                    </section>
 
-                        </section>
-
-                    </div>
                 </div>
             
-            <!--* MODAL DE EXCLUIR POSTS -->
-                
-                <!--* onclick="event.stopPropagation()" nn deixa fechar o modal quando clica nele, ou seja, para o onclick nessa div -->
-                <div id="modal-excluir-post<?= $publicacao->id ?>" class="des-modal-ex-post">
-                    <div class="caixaclara">
 
+            <!-- MODAL DE EXCLUIR POSTS -->
+                <div id="modal-excluir-post<?= $publicacao->id ?>" class="des-modal-ex-post">
+
+                    <section class="text-img-boX-ex">
                         <section class="oqmodalEX-post">
                             <h3 class="textpostexh3">Excluir post</h3>
                             <p class="textpostexp">Excluir as informações do post</p>
                         </section>
 
-                        <section class="fotodopostex">
-                            <img class="imgpostex" src="../../../public/assets/deepgroov-logo.png<?= $publicacao->foto ?>" alt="Foto do post">
-                        </section>
+                        <figure class="imgpostex">
+                            <i class="icone-capap bi bi-image"></i>
+                        </figure>
 
-                        <section class="X">
-                            <img class="xisp" src="../../../public/assets/XCircleFill.svg" alt="x" onclick="fecharModal('modal-excluir-post<?= $publicacao->id ?>')">
-                        </section>
-
-                        <div class="mensagem-botao">
-                            <section class="containeravisop">
-                                <div class="avisotextop">
-                                    <!--* o span é inline entt continua ja td na mesma linha -->
-                                    <p class="avisoSEMdestaquep">Tem certeza que deseja excluir esse post?
-                                        <span class="avisoCOMdestaquep"> <?= $publicacao->titulo ?> </span>?
-                                    </p>
-                                </div>
-                                <p class="rodapeavisop">Você não pode desfazer essa ação.</p>
-                            </section>
-
-                            <section class="containerbotoesp">
-                                
-                                <button class="botao cancelarp" onclick="fecharModal('modal-excluir-post<?= $publicacao->id?>')">CANCELAR</button>
-                                
-                                <form action="tabelaPosts/excluir" method="POST">
-                                    <!-- hidden = nn aperece para o user
-                                    ai manda o id para o submit da função de excluir -->
-                                    <input type="hidden" name="id" value="<?= $publicacao->id ?>">
-                        
-                                    <button class="botao simp" type="submit">SIM</button>
-                                </form>                        
-                            
-                            </section>
-                                
+                        <div class="X">
+                            <button class="xisp" type="button" onclick="fecharModal('modal-excluir-post<?= $publicacao->id ?>')">
+                                <i class="icone-fechar-modal bi bi-x"></i>
+                            </button>
                         </div>
+                    </section>
+
+                    <div class="mensagem-botao">
+                        <section class="containeravisop">
+                            <div class="avisotextop">
+                                <!--* o span é inline entt continua ja td na mesma linha -->
+                                <p class="avisoSEMdestaquep">Tem certeza que deseja excluir esse post
+                                    <span class="avisoCOMdestaquep"> <?= $publicacao->titulo ?> </span>?
+                                </p>
+                            </div>
+                            <p class="rodapeavisop">Você não pode desfazer essa ação.</p>
+                        </section>
+
+                        <section class="containerbotoesp">
+                            
+                            <button class="botao cancelarp" onclick="fecharModal('modal-excluir-post<?= $publicacao->id?>')">CANCELAR</button>
+                            
+                            <form action="tabelaPosts/excluir" method="POST">
+                                <!-- hidden = nn aperece para o user
+                                ai manda o id para o submit da função de excluir -->
+                                <input type="hidden" name="id" value="<?= $publicacao->id ?>">
+                    
+                                <button class="botao simp" type="submit">SIM</button>
+                            </form>                        
+                        
+                        </section>
+                            
                     </div>
                 </div>
         <?php endforeach; ?>
