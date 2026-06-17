@@ -36,6 +36,17 @@
                     }
                  ?>
             </div>
+            <div class="mensagem-erro">
+                <?php 
+                    //session_start(); Comentado pois estava dando erro no navegador
+
+                    if(isset($_SESSION['mensagem-erro-email'])){
+                        echo $_SESSION['mensagem-erro-email'];
+
+                    unset($_SESSION['mensagem-erro-email']);
+                    }
+                 ?>
+            </div>
             <form class="container-form" action="/login" method="POST">
                 <div class="container-inputs"></div>
                     <div class="container-elemento-input">

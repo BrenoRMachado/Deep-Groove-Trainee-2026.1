@@ -237,4 +237,20 @@ class QueryBuilder
         }
     }
 
+    public function verificaEmail($email){
+        $sql = sprintf('SELECT * FROM usuarios WHERE email = :email');
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([
+                'email' => $email,
+            ]);
+            
+            $user = $stmt->fetch(PDO::FETCH_OBJ);
+
+            return $user;
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
 }

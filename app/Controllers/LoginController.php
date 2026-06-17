@@ -50,6 +50,8 @@ class LoginController
 
     public function cadastro()
     {
+        $email = $_POST['email'];
+
         $parameters = [
             'nome' => $_POST['nome'],
             'email' => $_POST['email'],
@@ -58,8 +60,16 @@ class LoginController
             'is_admin' => 0
         ];
 
-        App::get('database')->insert('usuarios', $parameters);
+        $usuario = App::get('database')->verificaEmail($email);
 
-        header('Location: /login');
+        if ($usuario == false) {
+            App::get('database')->insert('usuarios', $parameters);
+
+            header('Location: /login');
+        } 
+        else {
+            $_SESSION['mensagem-erro-email'] = "Email já cadastrado";
+            header('Location: /login');
+        }
     }
 }
