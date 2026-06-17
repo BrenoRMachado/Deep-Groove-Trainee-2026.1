@@ -218,4 +218,22 @@ class QueryBuilder
 
     }
 
+    public function selecionaUltimos3PostsPublicados(){
+
+        $sql = "SELECT * FROM publicacoes
+            ORDER BY id DESC
+            LIMIT 3";
+        
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
+
 }
