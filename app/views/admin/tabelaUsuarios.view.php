@@ -94,13 +94,14 @@
 
 
     <section class="topoTabelaUser">
-        <button class="botao-novo-post" onclick="abrirModal('#modal-criar-usuarios')">
-            <div class="addUser">
-                <i class="icone bi bi-plus"></i>
-                <p class="textop">Novo usuário</p>
-            </div>
-        </button>
-
+        <?php if ($_SESSION['is_admin']): ?>
+            <button class="botao-novo-post" onclick="abrirModal('#modal-criar-usuarios')">
+                <div class="addUser">
+                    <i class="icone bi bi-plus"></i>
+                    <p class="textop">Novo usuário</p>
+                </div>
+            </button>
+        <?php endif; ?>    
         <div class="infoUser">
             <img src="../../../public/assets/ícone usuário.svg" alt="User">
 
