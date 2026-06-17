@@ -28,7 +28,7 @@
     <div class="filtro-ao-abrir-modal-da-tabelaPosts"></div>
 
     <section class="topoTabelaPosts">
-        <button <?= $_SESSION['is_admin'] ? '' : 'disabled' ?> class="botao-novo-post" onclick="abrirModal('modal-criar-posts')">
+        <button class="botao-novo-post" onclick="abrirModal('modal-criar-posts')">
             <div class="addPost">
                 <i class="icone bi bi-plus" style="font-size: x-large;"></i>
                 <p class="textop">Novo Post</p>
@@ -96,9 +96,7 @@
                     <div class="quarto-da-area-informacoes">
                         <div class="container-dado-a-criar" style="background-color: purple;">Duração</div> <input name="duracao" value=<?= $publicacao->duracao ?> required>
                     </div>
-                    <div class="quarto-da-area-informacoes">
-                        <div class="container-dado-a-criar" style="background-color: black;">Id usuário</div> <input name="id_usuario" value=<?= $publicacao->id_usuario ?> required>
-                    </div>
+                    <input type="hidden" name="id_usuario" value=<?= $publicacao->id_usuario ?>>                    
                     <div class="quarto-da-area-informacoes">
                         <div class="container-dado-a-criar" style="background-color: cyan;">Id deezer</div> <input name="id_deezer" value=<?= $publicacao->id_deezer ?> required>
                     </div>
@@ -310,9 +308,7 @@
                 <div class="quarto-da-area-informacoes">
                     <div class="container-dado-a-criar" style="background-color: purple;">Duração</div> <input name="duracao">
                 </div>
-                <div class="quarto-da-area-informacoes">
-                    <div class="container-dado-a-criar" style="background-color: black;">Id usuário</div> <input name="id_usuario">
-                </div>
+                <input type="hidden" name="id_usuario" value="<?= $_SESSION['id'] ?>">
                 <div class="quarto-da-area-informacoes">
                     <div class="container-dado-a-criar" style="background-color: cyan;">Id deezer</div> <input name="id_deezer">
                 </div>
