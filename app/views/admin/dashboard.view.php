@@ -45,13 +45,13 @@
                         <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-do-usuario-da-atividade-recente">
                         <div class="texto-da-informacao-recente">
                             <span class="atividade-no-site">
-                                Fulano se cadastrou
+                                <?= $usuariosRecentes[0] -> nome ?> se cadastrou
                             </span>
                             <span class="email">
-                                    exemplo@gmail.com
-                                </span>
+                                <?= $usuariosRecentes[0] -> email ?>        
+                            </span>
                             <span class="data-e-hora">
-                                Data e Hora
+                                <?= $usuariosRecentes[0] -> data_da_criacao ?>
                             </span>
                         </div>
                     </div>
@@ -67,13 +67,13 @@
                             <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-do-usuario-da-atividade-recente">
                             <div class="texto-da-informacao-recente">
                                 <span class="atividade-no-site">
-                                    Fulano se cadastrou
+                                    <?= $usuariosRecentes[$i - 1] -> nome ?> se cadastrou
                                 </span>
                                 <span class="email">
-                                    exemplo@gmail.com
+                                    <?= $usuariosRecentes[$i - 1] -> email ?>        
                                 </span>
                                 <span class="data-e-hora">
-                                    Data e Hora
+                                    <?= $usuariosRecentes[$i - 1] -> data_da_criacao ?>
                                 </span>
                             </div>
                         </div>
