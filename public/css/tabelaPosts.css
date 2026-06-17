@@ -767,6 +767,23 @@
     cursor: pointer;
 }
 
+/* Efeito visual para mostrar que não é possível clicar no botão se for usuário não administrador */
+
+.botao-novo-post:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.botao-novo-post:disabled:hover {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.desabilitado {
+    opacity: 0.5;
+    pointer-events: none;   
+}
+
 /* Modal de criar posts */
 
 #modal-criar-posts{

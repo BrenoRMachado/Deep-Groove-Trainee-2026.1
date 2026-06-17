@@ -28,7 +28,7 @@
     <div class="filtro-ao-abrir-modal-da-tabelaPosts"></div>
 
     <section class="topoTabelaPosts">
-        <button class="botao-novo-post" onclick="abrirModal('modal-criar-posts')">
+        <button disabled class="botao-novo-post" onclick="abrirModal('modal-criar-posts')">
             <div class="addPost">
                 <i class="icone bi bi-plus" style="font-size: x-large;"></i>
                 <p class="textop">Novo Post</p>
@@ -366,8 +366,8 @@
 
                     <td class="colunageral">
                         <i class="acao bi bi-eye-fill" onclick="abrirModal('modal-visu-user<?= $publicacao->id ?>')"></i>
-                        <i class="acao bi bi-pencil-square" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
-                        <i class="acao bi bi-trash" onclick="abrirModal('modal-excluir-user<?= $publicacao->id ?>')"></i>
+                        <i class="acao bi bi-pencil-square <?= $_SESSION['is_admin'] == 1 ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
+                        <i class="acao bi bi-trash <?= $_SESSION['is_admin'] == 1 ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-excluir-user<?= $publicacao->id ?>')"></i>
                     </td>
                 </tr>
             <?php endforeach ?>

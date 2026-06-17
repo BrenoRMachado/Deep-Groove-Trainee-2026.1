@@ -28,6 +28,7 @@ class LoginController
             $_SESSION['id'] = $usuario->id;
             $_SESSION['email'] = $usuario->email;
             $_SESSION['nome'] = $usuario->nome;
+            $_SESSION['is_admin'] = $usuario->is_admin;
 
             header('Location: /dashboard');
             exit();
