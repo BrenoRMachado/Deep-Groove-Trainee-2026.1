@@ -47,6 +47,9 @@
                             <span class="atividade-no-site">
                                 Fulano se cadastrou
                             </span>
+                            <span class="email">
+                                    exemplo@gmail.com
+                                </span>
                             <span class="data-e-hora">
                                 Data e Hora
                             </span>
@@ -65,6 +68,9 @@
                             <div class="texto-da-informacao-recente">
                                 <span class="atividade-no-site">
                                     Fulano se cadastrou
+                                </span>
+                                <span class="email">
+                                    exemplo@gmail.com
                                 </span>
                                 <span class="data-e-hora">
                                     Data e Hora
