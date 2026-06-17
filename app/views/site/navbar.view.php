@@ -19,7 +19,7 @@
                 Publicações
             </div></a>
             <div class="botoes container-perfil">
-                <a href="login">
+                <a href="<?= isset($_SESSION['id']) ? '/dashboard' : '/login' ?>">
                     <i class="bi bi-person-fill fs-4" style="color: white;"></i>
                 </a>
             </div>

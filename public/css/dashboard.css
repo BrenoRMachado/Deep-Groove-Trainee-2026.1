@@ -105,24 +105,29 @@
     padding: 0 var(--espacamento-padding-maior);
     color: var(--cor-branco-100);
     font-family: var(--fonte-primaria);
+    position: absolute;
+    top: 17.5%;
 }
 
 #dashboard #area-navegacao-e-estatisticas .lista-area-navegacao-e-estatisticas {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     list-style: none;
     width: 100%;
 }
 
 #dashboard #area-navegacao-e-estatisticas .container-usuarios-publicacoes-recentes {
+    z-index: 3;
     padding: var(--espacamento-padding-menor) var(--espacamento-padding-menor);
     border-radius: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
+    justify-content: space-evenly;
+    gap: 1rem;
     width: 22%;
+    aspect-ratio: 1 / 0.55;
     background: linear-gradient(
             135deg,
             rgba(255, 255, 255, 0.08),
@@ -159,15 +164,19 @@
 }
 
 /* *Estilo do botão da dashboard de navegar para as páginas administrativas */
-#dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas, #dashboard #area-navegacao-e-estatisticas .informacao-recente {
+#dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
     color: var(--cor-branco-100);
     background-color: var(--cor-laranja-100);
     border: none;
-    border-radius: 16px;
+    border-radius: 12px;
     padding: var(--espacamento-padding-pequeno) var(--espacamento-padding-medio);
     font-family: var(--fonte-primaria);
     font-size: 1rem;
     width: 95%;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* *Animação dos botões da dashboard de navegar para as páginas administrativas */
@@ -178,19 +187,106 @@
     opacity: 0.95;
 }
 
+/* *Estilo da SEÇÃO das informações recentes */
+#dashboard #area-navegacao-e-estatisticas .informacao-recente {
+    width: 92.5%;
+    color: var(--cor-branco-100);
+    display: flex;
+    height: 40%;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+/* *Estilo da foto da publicacao recente */
+#dashboard #area-navegacao-e-estatisticas .foto-da-publicacao-recente {
+    aspect-ratio: 1 / 1;
+    border-radius: 5px;
+    width: 22%;
+}
+
+/* *Estilo da foto do usuário da atividade recente */
+#dashboard #area-navegacao-e-estatisticas .foto-do-usuario-da-atividade-recente {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    width: 22%;
+}
+
+/* *Estilo do texto das informações recentes */
+#dashboard #area-navegacao-e-estatisticas .texto-da-informacao-recente {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 75%;
+}
+
+#dashboard #area-navegacao-e-estatisticas .data-e-hora {
+    font-size: 0.75rem;
+    opacity: 0.9;
+}
+
+/* *Estilo das linhas de divisão */
+#dashboard #area-navegacao-e-estatisticas .linha-dividindo-informacoes-recentes {
+    border: none;
+    border: 1px solid var(--cor-laranja-200);
+    opacity: 0.5;
+    width: 92.5%;
+}
+
+
+/* *Estilo e animação dos botões de ver mais e ver menos atividades e publicações recentes */
+#dashboard #area-navegacao-e-estatisticas .botao-ver-mais-informacoes-recentes, #dashboard #area-navegacao-e-estatisticas .botao-ver-menos-informacoes-recentes {
+    width: 95%;
+    border: none;
+    background: none;
+    font-size: 1.2rem;
+    color: var(--cor-laranja-100);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#dashboard #area-navegacao-e-estatisticas .botao-ver-mais-informacoes-recentes:hover, #dashboard #area-navegacao-e-estatisticas .botao-ver-menos-informacoes-recentes:hover {
+    cursor: pointer;
+    opacity: 0.95;
+}
+
+/* *INFORMAÇÕES A MAIS, LINHAS DE DIVISÃO E BOTÃO DE VER MAIS ESCONDIDOS */
+#dashboard #area-navegacao-e-estatisticas .informacao-atividades-recentes-2, #dashboard #area-navegacao-e-estatisticas .informacao-atividades-recentes-3, 
+#dashboard #area-navegacao-e-estatisticas .informacao-publicacoes-recentes-2, #dashboard #area-navegacao-e-estatisticas .informacao-publicacoes-recentes-3,
+#dashboard #area-navegacao-e-estatisticas .linha-dividindo-atividades-recentes-2, #dashboard #area-navegacao-e-estatisticas .linha-dividindo-atividades-recentes-3, #dashboard #area-navegacao-e-estatisticas .linha-dividindo-publicacoes-recentes-2, #dashboard #area-navegacao-e-estatisticas .linha-dividindo-publicacoes-recentes-3,
+#dashboard #area-navegacao-e-estatisticas .botao-ver-menos-informacoes-recentes {
+    display: none;
+}
+
 /* *Estilo do título de fundo da dashboard */
 #dashboard #container-titulo-de-fundo {
     display: flex;
     flex: 1;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     z-index: 2;
 }
 
 #dashboard #container-titulo-de-fundo .titulo-de-fundo {
     color: var(--cor-branco-100);
     font-family: var(--fonte-titulo);
-    font-size: 10vw;
+    font-size: 7.5vw;
+    margin-bottom: 6.7%;
+}
+
+/* *Estilo do container do disco de vinil como imagem de fundo */
+#dashboard .container-imagem-disco-de-vinil-fundo {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* *Estilo do disco de vinil como imagem de fundo */
+#dashboard .imagem-disco-de-vinil-fundo {
+    height: 100%;
 }
 
 /* *Estilo para rodapé do dashboard */ 
@@ -226,104 +322,107 @@
     opacity: 0.95;
 }
 
-/* *Estilo do container do disco de vinil como imagem de fundo */
-#dashboard .container-imagem-disco-de-vinil-fundo {
-    position: absolute;
-    height: 50%;
-    width: 100%;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-/* *Estilo do disco de vinil como imagem de fundo */
-#dashboard .imagem-disco-de-vinil-fundo {
-    height: 100%;
-}
-
 /* *Responsividade */
 
 /* !Monitor 2K */
 
-@media (min-width: 2559px) {
+@media (min-width: 1919px) {
     :root {
         --espacamento-padding-maior: 4rem;
         --espacamento-padding-medio: 2rem;
         --espacamento-padding-pequeno: 1.4rem;
         --espacamento-padding-menor: 1rem;
     }
-    
     #dashboard #cabecalho {
-        padding-bottom: 2rem;
+        padding-bottom: 1.4rem;
     }
-    
     #dashboard #cabecalho .titulo-cabecalho {
-        font-size: 6rem;
+        font-size: 4.2rem;
     }
-    
     #dashboard #cabecalho .dados-do-admin {
-        font-size: 2rem;
+        font-size: 1.4rem;
     }
-    
     #dashboard #cabecalho .icone-perfil {
-        font-size: 5rem;
-        width: 7rem;
-        height: 6.8rem;
-    }
-    
-    #dashboard #area-navegacao-e-estatisticas .texto-dados-totais {
-        font-size: 2rem;
-    }
-    
-    #dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas-e-recentes {
         font-size: 4rem;
+        width: 6rem;
+        height: 6rem;
     }
-    
-    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
-        font-size: 2rem;
+    #dashboard #area-navegacao-e-estatisticas .container-atividades-recentes, #dashboard #area-navegacao-e-estatisticas .container-publicacoes-recentes {
+        gap: 2.5rem;
     }
-    
+    #dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas-e-recentes {
+        font-size: 3rem;
+    }
+    #dashboard #area-navegacao-e-estatisticas .texto-dados-totais, #dashboard #area-navegacao-e-estatisticas .texto-da-informacao-recente, #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
+        font-size: 1.4rem;
+    }
+    #dashboard #area-navegacao-e-estatisticas .texto-da-informacao-recente {
+        font-size: 1.4rem;
+    }
+    #dashboard #area-navegacao-e-estatisticas .data-e-hora {
+        font-size: 1rem;
+    }
+    #dashboard #area-navegacao-e-estatisticas .botao-ver-mais-informacoes-recentes, #dashboard #area-navegacao-e-estatisticas .botao-ver-menos-informacoes-recentes {
+        font-size: 1.7rem;
+    } 
     #dashboard #rodape .botao {
-        font-size: 5rem;
+        font-size: 3.5rem;
     }
 }
 
-/* !Laptop pequeno / Tablet deitado */
 @media (max-width: 1025px) {
-    :root {
-        --espacamento-padding-maior: 2rem;
-    }
-
-    #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes-e-recente {
-        width: 60%;
-    }
-
-    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
-        width: 40%;
+    #dashboard .imagem-disco-de-vinil-fundo {
+        height: 85%;
     }
 }
 
 /* !Tablet em pé */
 @media (max-width: 769px) {
-    #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes-e-recente {
-        width: 70%;
+    #dashboard #area-navegacao-e-estatisticas {
+        top: 12%;
     }
-
-    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
-        width: 30%;
+    #dashboard #area-navegacao-e-estatisticas .lista-area-navegacao-e-estatisticas {
+        flex-wrap: wrap;
+        row-gap: 2rem;
     }
-
+    #dashboard #area-navegacao-e-estatisticas .container-usuarios-publicacoes-recentes {
+        width: 45%;
+    }
+    #dashboard #area-navegacao-e-estatisticas .container-usuarios {
+        order: 1;
+    }
+    #dashboard #area-navegacao-e-estatisticas .container-publicacoes {
+        order: 2;
+    }
+    #dashboard #area-navegacao-e-estatisticas .container-atividades-recentes {
+        order: 3;
+    }
+    #dashboard #area-navegacao-e-estatisticas .container-publicacoes-recentes {
+        order: 4;
+    }
     #dashboard .imagem-disco-de-vinil-fundo {
         height: auto;
+    }
+    #dashboard #container-titulo-de-fundo {
+        align-items: flex-end;
+        margin-bottom: 1rem;
+    }
+
+    #dashboard #container-titulo-de-fundo .titulo-de-fundo {
+        font-size: 13vw;
+        margin-bottom: 0;
     }
 }
 
 /* !Celular - GRANDES MUDANÇAS */
-@media (max-width: 652px) {
+@media (max-width: 530px) {
     :root {
         --espacamento-padding-maior: 1.2rem;
         --espacamento-padding-medio: 0.7rem;
+    }
+
+    #dashboard #cabecalho {
+        padding-top: 1.5rem;
     }
     
     #dashboard #cabecalho .titulo-cabecalho {
@@ -341,19 +440,25 @@
     }
 
     #dashboard #area-navegacao-e-estatisticas {
-        margin-top: 0;
+        top: 15%;
+        width: 100%;
     }
     
     #dashboard #area-navegacao-e-estatisticas .lista-area-navegacao-e-estatisticas {
         flex-direction: column;
-        gap: 1rem;
-
+        gap: 1.5rem;
+        margin-top: 0.5rem;
     }
     
     #dashboard #area-navegacao-e-estatisticas .container-usuarios-publicacoes-recentes {
         flex-direction: row;
         padding: 0 var(--espacamento-padding-menor);
         width: 100%;
+        aspect-ratio: 0;
+    }
+
+    #dashboard #area-navegacao-e-estatisticas .container-atividades-recentes, #dashboard #area-navegacao-e-estatisticas .container-publicacoes-recentes {
+        display: none;
     }
     
     #dashboard #area-navegacao-e-estatisticas .numero-de-usuarios-publicacoes-e-recente {
@@ -364,6 +469,11 @@
     
     #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
         width: 25%;
+        font-size: 1rem;
+    }
+
+    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
+        justify-content: space-evenly;
     }
     
     #dashboard #area-navegacao-e-estatisticas .texto-dados-totais {
@@ -373,18 +483,15 @@
     #dashboard #area-navegacao-e-estatisticas .icone-usuarios-tabelas-e-recentes {
         font-size: 1.7rem;
     }
-    
-    #dashboard #area-navegacao-e-estatisticas .botao-navegar-para-paginas-administrativas {
-        font-size: 1rem;
-    }
 
     #dashboard #container-titulo-de-fundo {
         align-items: flex-end;
-        padding-bottom: 1rem;
+        margin-bottom: 0;
     }
 
     #dashboard #container-titulo-de-fundo .titulo-de-fundo {
         font-size: 13vw;
+        margin-bottom: 0;
     }
     
     #dashboard #rodape .botao {

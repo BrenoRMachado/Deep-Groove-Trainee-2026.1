@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Core\App;
 use Exception;
+use DateTime;
 
 // !composer dump-autoload reconstrói as rotas
 
@@ -12,13 +13,31 @@ class dashboardController {
 
         $bancoDeDados = App::get('database');
 
-        $totalDePosts = $bancoDeDados -> countAll('publicacoes');
-
         $totalDeUsuarios = $bancoDeDados -> countAll('usuarios');
 
+        $usuariosRecentes = $bancoDeDados -> selecionaUltimos3UsuariosAtivos();
+
+        foreach($usuariosRecentes as $usuarioRecente){
+            $data = new DateTime($usuarioRecente -> data_ultima_acao);
+            $data -> modify('-3 hours');
+            $usuarioRecente -> data_ultima_acao = $data -> format('d/m/Y H:i');
+        }
+
+        $totalDePosts = $bancoDeDados -> countAll('publicacoes');
+
+        $publicacoesRecentes = $bancoDeDados -> selecionaUltimas3Publicacoes();
+
+        foreach($publicacoesRecentes as $publicacaoRecente){
+            $data = new DateTime($publicacaoRecente -> data_da_publicacao);
+            $data -> modify('-3 hours');
+            $publicacaoRecente -> data_da_publicacao = $data -> format('d/m/Y H:i');
+        }
+
         return view('admin/dashboard', [
+            'totalDeUsuarios' => $totalDeUsuarios,
+            'usuariosRecentes' => $usuariosRecentes,
             'totalDePosts' => $totalDePosts,
-            'totalDeUsuarios' => $totalDeUsuarios
+            'publicacoesRecentes' => $publicacoesRecentes
         ]);
 
     }

@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    
+    if(!isset($_SESSION['id'])) {
+        header('Location: /login');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +28,7 @@
     <div class="filtro-ao-abrir-modal-da-tabelaPosts"></div>
 
     <section class="topoTabelaPosts">
-        <button class="botao-novo-post" onclick="abrirModal('modal-criar-posts')">
+        <button <?= $_SESSION['is_admin'] ? '' : 'disabled' ?> class="botao-novo-post" onclick="abrirModal('modal-criar-posts')">
             <div class="addPost">
                 <i class="icone bi bi-plus" style="font-size: x-large;"></i>
                 <p class="textop">Novo Post</p>
@@ -31,10 +39,9 @@
             <img src="../../../public/assets/ícone usuário.svg" alt="User">
 
             <div class="infos">
-                <h3 class="textoh3">Fulano</h3>
-                <h3 class="textoh3">Administrador</h3>
+                <h3 class="textoh3"><?= $_SESSION['nome'] ?></h3>
+                <h3 class="textoh3"><?= $_SESSION['is_admin'] ? 'Administrador' : "Usuário" ?></h3>
             </div>
-
         </div>
     </section>
 
@@ -359,8 +366,8 @@
 
                     <td class="colunageral">
                         <i class="acao bi bi-eye-fill" onclick="abrirModal('modal-visu-user<?= $publicacao->id ?>')"></i>
-                        <i class="acao bi bi-pencil-square" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
-                        <i class="acao bi bi-trash" onclick="abrirModal('modal-excluir-user<?= $publicacao->id ?>')"></i>
+                        <i class="acao bi bi-pencil-square <?= $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
+                        <i class="acao bi bi-trash <?= $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-excluir-user<?= $publicacao->id ?>')"></i>
                     </td>
                 </tr>
             <?php endforeach ?>
