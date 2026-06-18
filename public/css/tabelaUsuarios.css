@@ -1146,6 +1146,65 @@
     text-align: center;
 }
 
+/* *Estilo e animacao do botão de selecionar se é ou não administrador ao criar usuário */
+
+#modal-criar-usuarios .botao-toggle {
+    border-radius: 10px;
+    width: 80%;
+    height: 1.7rem;
+    background: none;
+    border: 2px solid var(--cor-branco-400);
+    font-family: var(--fonte-modal);
+    color: var(--cor-vinho-100);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0.4rem;
+}
+
+#modal-criar-usuarios .botao-toggle:hover {
+    cursor: pointer;
+}
+
+#modal-criar-usuarios .fundo-toggle {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    height: 1.25rem;
+    width: 2.25rem;
+    border-radius: 10px;
+    background-color: #262626;
+}
+
+#modal-criar-usuarios .pin-toggle {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--cor-branco-100);
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+#modal-criar-usuarios .pin-ativo .pin-toggle {
+    transform: translateX(1.1rem);
+}
+
+#modal-criar-usuarios .pin-inativo .pin-toggle {
+    transform: translateX(0.1rem);
+}
+
+#modal-criar-usuarios .pin-ativo .fundo-toggle {
+    background-color: var(--cor-laranja-200);
+}
+
+#modal-criar-usuarios .pin-inativo .fundo-toggle {
+    background-color: var(--cor-vinho-100);
+}
+
+/* *FIM BOTÃO TOGGLE */
+
 #modal-criar-usuarios button {
     text-decoration: none;
     outline: none;
@@ -1346,10 +1405,15 @@ ul {
     border-radius: 1rem;
 }
 
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
 .disabledseta {
     opacity: 0.3;
     pointer-events: none;
-     width: 2rem;
+    width: 2rem;
     height: 2rem;
 }
 
