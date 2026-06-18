@@ -7,6 +7,7 @@ use App\Controllers\ExampleController;
 use App\Core\Router;
 
 $router->get('', 'LandingPageController@index');
+$router->get('posts', 'LandingPageController@getPosts');
 
 // Método para chegar na página
 $router->get('tabelaPosts', 'TabelaPostsController@index');
@@ -19,6 +20,7 @@ $router->post('tabelaPosts/edit', 'TabelaPostsController@edit');
 
 //Método para deletar o post
 $router->post('tabelaPosts/delete', 'TabelaPostsController@delete');
+
 $router->get('paginaIndividual', 'PaginaIndividualController@index');
 $router->get('footer', 'Footer@index');
 $router->get('login', 'LoginController@index');

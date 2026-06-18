@@ -45,9 +45,12 @@
                     <h1 class="h11lan">RITMO</h1>
                 </div>
 
-                <p class="texto_hs">Mergulhar na essência da música e tornar-se o santuário digital respeitando acultura e identidade artística.</p>
+                <div class="espaco">
+                    <p class="texto_hs">Mergulhar na essência da música e tornar-se o santuário digital respeitando acultura e identidade artística.</p>
 
-                <a class="botão" href="/instrucoes">Informações de compra</a>
+                    <a class="botão" href="/instrucoes">Instruções de compra</a>
+                </div>
+                
             </div>
 
             <!--todo: contem a logo dos teltáculos saindo do instrumento -->
@@ -75,15 +78,12 @@
             <!--! seta esquerda -->
             <div class="nav-arrow seta_esquerda" id="seta_esquerda">&#10094</div>
 
-            <!--! imagens que vão estar passando no carroussel -->
-            <div class="slider-conteudo">
-                <div class="slider-item"><a href="/paginaindividual"><img src="../../../public/assets/1989 (Taylors Version).jpg"></a></div>
-                <div class="slider-item"><a href="/paginaindividual"><img src="../../../public/assets/HIT ME HARD AND SOFT- billy.jpg"></a></div>
-                <div class="slider-item"><a href="/paginaindividual"><img src="../../../public/assets/Short n Sweet-sabrina.jpg"></a></div>
-                <div class="slider-item"><a href="/paginaindividual"><img src="../../../public/assets/Taylor-Swift-The-Tortured-Poets-Department-2.jpg"></a></div>
-                <div class="slider-item"><a href="/paginaindividual"><img src="../../../public/assets/The Rise and Fall of a Midwest Princess-chappel.jpg"></a></div>
-            </div>
-
+                <!--! imagens que vão estar passando no carroussel -->
+                <div class="slider-conteudo">
+                    <?php foreach ($posts as $post): ?>
+                    <div class="slider-item"><a href="/paginaIndividual?id=<?= $post->id ?>"><img src="<?= $post->foto ?>"></a></div>
+                    <?php endforeach; ?>
+                </div>
             <!--! bolinhas quantificadoras de "página" -->
             <div class="radio-auto"></div>
 
@@ -140,7 +140,7 @@
 
     <?php require "footer.view.php"; ?>
 
-
+    
 </body>
 
 </html>

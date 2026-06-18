@@ -10,6 +10,23 @@ class LandingPageController
 
     public function index()
     {
-        return view('site/landingpage');
+        // Busca os posts utilizando o método que você já criou
+        $posts = $this->getPosts();
+
+        // Passa os posts para a view através de um array associativo
+        return view('site/landingpage', [
+            'posts' => $posts
+        ]);
+    }
+
+    public function getPosts()
+    {
+        try {
+            $posts = App::get('database')->selectAll('publicacoes');
+            return $posts;
+        } 
+        catch (Exception $e) {
+            die($e->getMessage());
+        }
     }
 }
