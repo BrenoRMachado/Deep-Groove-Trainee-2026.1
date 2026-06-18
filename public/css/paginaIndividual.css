@@ -24,34 +24,34 @@
     display: flex; /*acho q inline faz a msm coisa */
     width: 80%;
     align-items: center;
+    gap: 13rem;
 }
 
 .album-d {
     position: relative;
     padding: /*TETO*/2rem /*LADO*/0px;
+    display: flex;
+    align-items: center;
 }
 
 /* quadrado vermelho em cima do disco */
+
+
+
 .capa-album-d {
-    /* largura */
-    width: 15rem;
-    /* altura */
-    height: 28vh;
-    background-color: #5B162D;
-    border-radius: 1rem;
+    width: 20rem;
+    height: 40vh;
 
-    /*! px- grossura da borda solido-tipo, pq pode ser blur, etc e a cor */
-    border: 0.3rem solid #F09859;
+    border-radius: 0.7rem;
 
-    position: absolute;
-    z-index: 2;
 }
 
 .disco-d {
-    width: 12.5rem;  /* 200px */
-    height: 12.5rem; /* 200px */
-    padding: 0.4rem 10rem;
-
+    height: 18rem; 
+    position: absolute;
+    z-index: -2;
+    left: 12rem;
+    /* padding: 0.4rem 4rem; */
     /*! nome da função - tempo para completar a volta - velocidade cte - por tempo infinito */
     animation: girar 3s linear infinite;
 }
@@ -323,11 +323,7 @@
         align-items: center;
    }
 
-    .disco-d {
-        width: 10rem;  /* 200px */
-        height: 10rem; /* 200px */
-        padding: 0.4rem 9rem;
-    }
+   
 
     .containerEstrelas{
         width: 100%;
