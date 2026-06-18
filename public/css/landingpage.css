@@ -18,7 +18,7 @@ html, .tudolanding {
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: auto;
+    overflow-x: hidden;
     background: linear-gradient(to bottom, #5B162D 25%, #000 78%);
 }
 

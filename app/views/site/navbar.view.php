@@ -39,7 +39,7 @@
         </div>
     </div>
     <div class="sidebar" id="sidebar">
-        <div class="container-perfil-mobile"><i class="bi bi-person-fill fs-5" style="color: #bd7746;"></i></div>
+        <div class="container-perfil-mobile"><i class="bi bi-person-fill fs-5" style="color: white;"></i></div>
         <div class="container-posts-mobile"><i class="bi bi-stack fs-5" style="color: #fbe6b3"></i></div>
     </div>
     <script src="../../../public/js/navbar.js"></script>

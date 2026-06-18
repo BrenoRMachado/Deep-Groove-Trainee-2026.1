@@ -46,6 +46,12 @@ h3 {
     min-height: 50vh;
 }
 
+.metade-do-inicio-instrucoes h2 {
+    font-family: 'Inter'; 
+    font-size: 300%; 
+    margin: 0;
+}
+
 .bem-vindo {
     font-size: 700%;
     text-align: center;
@@ -77,4 +83,48 @@ h3 {
 
 .amarelo {
     color: #F09859;
+}
+
+.container-instrucoes-mobile {
+    align-items: center;
+    color: white;
+    display: none;
+    flex-direction: column;
+    width: 100vw;
+    /* faz com que a tela possa crescer quando scrollamos */
+    min-height: 100vh;
+    background-color: #591025;
+}
+
+.inicio-instrucoes-mobile {
+    width: 80vw;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (max-width: 468px){
+    .container-instrucoes {
+        display: none;
+    }
+
+    .container-instrucoes-mobile {
+        display: flex;
+    }
+
+    .inicio-instrucoes-mobile h2 {
+        font-size: 300%;
+    }
+
+    .bem-vindo {
+        font-size: 500%;
+    }
+
+    .inicio-instrucoes {
+        background-size: 300%;
+        width: 100vw;   
+    }
 }

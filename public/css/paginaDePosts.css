@@ -22,6 +22,10 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 /* * Estilo da página de posts */
 #pagina-de-posts {
     background: linear-gradient(to bottom, var(--cor-vinho-100), var(--cor-preto-100));
