@@ -3,6 +3,8 @@ body {
     padding: 0;
     font-family: 'Inter';
     overflow-x: hidden;
+
+    background-color: #591025 !important; 
 }
 
 h1, h2 {
