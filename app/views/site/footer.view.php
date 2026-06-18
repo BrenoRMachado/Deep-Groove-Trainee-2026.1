@@ -21,7 +21,7 @@
     <div class="corpoFooter">
 
         <section class="containerOnda">
-            <img src="../../../public/assets/onda.png" alt="onda" class="onda">
+            <img src="../../../public/assets/ondacolorida.png" alt="onda" class="onda">
         </section>
 
 
