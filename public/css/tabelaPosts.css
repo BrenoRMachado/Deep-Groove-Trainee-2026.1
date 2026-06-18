@@ -68,7 +68,7 @@
 }
 
 #tbposts{
-    padding: 1rem 2rem;
+    padding: 0 2rem 0 0;
     min-height: 100vh;
 
    
@@ -81,6 +81,13 @@
 
     position: relative;
     
+}
+.pagecontainer{
+    /* display: flex;
+    justify-content: end; */
+    padding-top: 1rem;
+    margin-left: 10%;
+    width: 90%;
 }
 
 .addUser {
@@ -765,6 +772,23 @@
 
 .botao-novo-post:hover{   
     cursor: pointer;
+}
+
+/* Efeito visual para mostrar que não é possível clicar no botão se for usuário não administrador */
+
+.botao-novo-post:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.botao-novo-post:disabled:hover {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.desabilitado {
+    opacity: 0.5;
+    pointer-events: none;   
 }
 
 /* Modal de criar posts */

@@ -19,6 +19,7 @@ $router->post('tabelaPosts/edit', 'TabelaPostsController@edit');
 
 //Método para deletar o post
 $router->post('tabelaPosts/delete', 'TabelaPostsController@delete');
+
 $router->get('paginaindividual', 'PaginaIndividual@index');
 $router->get('footer', 'Footer@index');
 $router->get('login', 'LoginController@index');
@@ -31,3 +32,12 @@ $router->post('tabelaUsuarios/criar', 'TabelaUsuariosController@criarUsuarios');
 $router->post('tabelaUsuarios/editar', 'TabelaUsuariosController@editarUsuarios');
 $router->post('tabelaUsuarios/excluir', 'TabelaUsuariosController@excluirUsuarios');
 $router->get('footerLanding', 'FooterLanding@index');
+
+//Rota para efetuar o login
+$router->post('login', 'LoginController@efetuaLogin');
+
+//Rota para efetuar o logout
+$router->post('logout', 'LoginController@logout');
+
+//Rota para efetuar o cadastro
+$router->post('cadastro', 'LoginController@cadastro');
