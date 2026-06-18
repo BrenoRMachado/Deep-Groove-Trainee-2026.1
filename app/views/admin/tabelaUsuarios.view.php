@@ -78,7 +78,7 @@
                 <?php if($_SESSION['is_admin']): ?>
                     <div class="quarto-da-area-informacoes">
                         <div class="container-dado-a-criar" style="background-color: var(--cor-laranja-100);">
-                            Admin
+                            Acesso
                         </div> 
                         <button type="button" class="botao-toggle pin-inativo" id="botao-toggle" onclick="acionarBotaoToggle('#botao-toggle', '#texto-permissao-admin', '#is-admin-input')">
                             <span class="texto-permissao-admin" id="texto-permissao-admin">
@@ -384,7 +384,7 @@
                 </div>
                 <?php if($_SESSION['is_admin']): ?>
                     <div class="container-editar-dado container-editar-admin">
-                        <span class="titulo-dado titulo-admin">Admin</span>
+                        <span class="titulo-dado titulo-admin">Acesso</span>
                         <button type="button" class="botao-toggle pin-inativo" id="botao-toggle<?= $usuario -> id ?>" onclick="acionarBotaoToggle('#botao-toggle<?= $usuario -> id ?>', '#texto-permissao-admin<?= $usuario -> id ?>', '#is-admin-input<?= $usuario -> id ?>')">
                             <span class="texto-permissao-admin" id="texto-permissao-admin<?= $usuario -> id ?>">Acesso padrão</span>
                             <span class="fundo-toggle">
