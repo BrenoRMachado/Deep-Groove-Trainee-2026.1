@@ -73,13 +73,11 @@
 
             <!--! imagens que vão estar passando no carroussel -->
             <div class="slider-conteudo">
-                <div class="slider-item"><img src="../../../public/assets/1989 (Taylors Version).jpg"></div>
-                <div class="slider-item"><img src="../../../public/assets/HIT ME HARD AND SOFT- billy.jpg"></div>
-                <div class="slider-item"><img src="../../../public/assets/Short n Sweet-sabrina.jpg"></div>
-                <div class="slider-item"><img
-                        src="../../../public/assets/Taylor-Swift-The-Tortured-Poets-Department-2.jpg"></div>
-                <div class="slider-item"><img
-                        src="../../../public/assets/The Rise and Fall of a Midwest Princess-chappel.jpg"></div>
+                <div class="slider-item"><a href="/paginaindividual"><img src="../../../public/assets/1989 (Taylors Version).jpg"></a></div>
+                <div class="slider-item"><a href="/paginaindividual"><img src="../../../public/assets/HIT ME HARD AND SOFT- billy.jpg"></a></div>
+                <div class="slider-item"><a href="/paginaindividual"><img src="../../../public/assets/Short n Sweet-sabrina.jpg"></a></div>
+                <div class="slider-item"><a href="/paginaindividual"><img src="../../../public/assets/Taylor-Swift-The-Tortured-Poets-Department-2.jpg"></a></div>
+                <div class="slider-item"><a href="/paginaindividual"><img src="../../../public/assets/The Rise and Fall of a Midwest Princess-chappel.jpg"></a></div>
             </div>
 
             <!--! bolinhas quantificadoras de "página" -->
@@ -116,17 +114,17 @@
             <div class="postsPquenos">
 
                 <div class="p1">
-                    <img class="i1" src="../../../public/assets/IOI- Loop.jpg">
+                    <div class="im"><img class="i1" src="../../../public/assets/IOI- Loop.jpg"></div>
                     <p class="t1">It is a long established fact that a reader when looking at its layout.</p>
                 </div>
 
                 <div class="p2">
-                    <img class="i2" src="../../../public/assets/Wyld.jpg">
+                    <div class="im"><img class="i2" src="../../../public/assets/Wyld.jpg"></div>
                     <p class="t2">It is a long established fact that a reader when looking at its layout.</p>
                 </div>
 
                 <div class="p3">
-                    <img class="i3" src="../../../public/assets/Gongbu.jpg">
+                    <div class="im"><img class="i3" src="../../../public/assets/Gongbu.jpg"></div>
                     <p class="t3">It is a long established fact that a reader when looking at its layout.</p>
                 </div>
 
