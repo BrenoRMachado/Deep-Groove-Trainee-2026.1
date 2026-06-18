@@ -90,5 +90,6 @@
 
         <div class="container-texto background-opaco"><h3 class="amarelo">​Se tiver qualquer dúvida, não hesite em nos chamar para uma conversa. Coloque um bom café para passar e ligue para nós, ou venha nos visitar para bater um papo sobre música.</h3></div>
     </div>
+    <?php require "footer.view.php"; ?>
 </body>
 </html>

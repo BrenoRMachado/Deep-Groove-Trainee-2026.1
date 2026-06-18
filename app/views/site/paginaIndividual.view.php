@@ -27,9 +27,8 @@
                 
                     <div class="album-d">
 
-                        <div class="capa-album-d">
                             <img class="capa-album-d" src="<?= $post->foto?>" alt="album">
-                        </div>
+                   
 
                         <img class="disco-d" src="../../../public/assets/disco.png" alt="Disco">
 
@@ -82,25 +81,7 @@
 
                 <div class="conceito">
                     <h2 class="h2-sobre-d">CONCEITO</h2>
-                    <p class="textinhos-sobre">O conceito do álbum está na história do garoto cego, surdo e
-                        mudo, Tommy Walker, que passa a ter essa condição depois
-                        de ver seu pai sendo morto pelo amante da mãe. Pesado, né?
-                        Tommy, quarto álbum da banda inglesa, apresenta o que se
-                        sucede na vida do garoto depois do acontecimento, que vira
-                        mestre em jogo de pinball e é encarado como sendo um novo
-                        Messias. O conceito do álbum está na história do garoto cego, surdo e
-                        mudo, Tommy Walker, que passa a ter essa condição depois
-                        de ver seu pai sendo morto pelo amante da mãe. Pesado, né?
-                        Tommy, quarto álbum da banda inglesa, apresenta o que se
-                        sucede na vida do garoto depois do acontecimento, que vira
-                        mestre em jogo de pinball e é encarado como sendo um novo
-                        Messias. O conceito do álbum está na história do garoto cego, surdo e
-                        mudo, Tommy Walker, que passa a ter essa condição depois
-                        de ver seu pai sendo morto pelo amante da mãe. Pesado, né?
-                        Tommy, quarto álbum da banda inglesa, apresenta o que se
-                        sucede na vida do garoto depois do acontecimento, que vira
-                        mestre em jogo de pinball e é encarado como sendo um novo
-                        Messias.</p>
+                    <p class="textinhos-sobre"><?= $post->conceito?></p>
                 </div>
             </section>
 

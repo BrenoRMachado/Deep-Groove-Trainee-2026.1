@@ -264,6 +264,7 @@ html {
     padding: 0.1rem;
     opacity: 0;
     transition: opacity 0.5s linear;
+    text-align: center;
 }
 
 #pagina-de-posts #container-posts-desktop .titulo-do-album {
@@ -306,6 +307,7 @@ html {
 #pagina-de-posts #container-posts-mobile .capa-texto-album-container {
     border-radius: 16px;
     height: 29rem;
+    width: 40%;
     display: flex;
     flex-direction: column;
     z-index: 2;
@@ -340,6 +342,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     justify-content: center;
     gap: 0.1rem;
     color: var(--cor-branco-100);
@@ -416,7 +419,7 @@ html {
 }
 
 #pagina-de-posts #container-de-mudanca-de-pagina .botao:hover {
-    transform: scale(1.15);
+    transform: scale(1.05);
     cursor: pointer;
 }
 
@@ -538,7 +541,7 @@ html {
     #pagina-de-posts .botao-filtro-de-pesquisa {
         flex: 1;
     }
-    #pagina-de-posts .capa-texto-album-container {
+    #pagina-de-posts #container-posts-mobile .capa-texto-album-container {
         width: 70%;
     }
 }
