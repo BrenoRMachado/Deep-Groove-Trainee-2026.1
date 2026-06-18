@@ -11,7 +11,8 @@ class TabelaPostsController
     {
         $database = App::get('database');
 
-        $limit = 5;
+        // Número definido no documento de requisitos
+        $limit = 5; 
 
         $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
         if ( $currentPage < 1) {
@@ -92,7 +93,7 @@ class TabelaPostsController
 
     public function delete()
     {
-        $id = $_POST('id');
+        $id = $_POST['id'];
 
         App::get('database')->delete('publicacoes', $id);
 

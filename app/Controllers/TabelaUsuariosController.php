@@ -11,23 +11,36 @@ class TabelaUsuariosController {
 
         $database = App::get('database');
 
-        $limite = 6;
-
-        //* verifica a pagina atual e retorna ela se for null retorna a pagina 1
-        $paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
-        if ($paginaAtual < 1){
-            $paginaAtual = 1;
+        session_start();
+            if(!isset($_SESSION['id'])) {
+            header('Location: /login');
         }
 
-        $salto = ($paginaAtual - 1) * $limite;
+        if ($_SESSION['is_admin']){
+            $limite = 6;
 
-        $totalUsuarios = $database -> countAll('usuarios');
-        // ceil pega o teto(arrendoda pra cima)
-        $totalPaginas = ceil($totalUsuarios/$limite);
+            //* verifica a pagina atual e retorna ela se for null retorna a pagina 1
+            $paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+            if ($paginaAtual < 1){
+                $paginaAtual = 1;
+            }
 
-        $usuarios = $database->paginate('usuarios', $limite, $salto);
+            $salto = ($paginaAtual - 1) * $limite;
 
-        // $usuarios = App::get('database') -> selectAll('usuarios');
+            $totalUsuarios = $database -> countAll('usuarios');
+            // ceil pega o teto(arrendoda pra cima)
+            $totalPaginas = ceil($totalUsuarios/$limite);
+
+            $usuarios = $database->paginate('usuarios', $limite, $salto);
+
+            // $usuarios = App::get('database') -> selectAll('usuarios');
+        } else {
+            $paginaAtual = 1;
+            $totalPaginas = 1;
+            $usuarios = [
+                (object) $_SESSION
+            ];
+        }
     
         //* esse compact pega as info de ususrios de trasforma em um array
         return view('admin/tabelaUsuarios', [
@@ -39,6 +52,11 @@ class TabelaUsuariosController {
     }
 
     public function criarUsuarios() {
+
+        session_start();
+            if(!isset($_SESSION['id'])) {
+            header('Location: /login');
+        }
 
         if (!empty($_FILES['foto-de-perfil']['tmp_name'])) {
 
@@ -61,7 +79,9 @@ class TabelaUsuariosController {
             'email' => $_POST['email'],
             'senha' => $_POST['senha'],
             'foto' => $caminhoDaImagem,
-            'ultima_acao' => 'criar'
+            'is_admin' => (int)$_POST['is_admin'],
+            'ultima_acao' => 'criar',
+            'criado_por' => $_SESSION['id']
             ];    
 
         App::get('database') -> insert('usuarios', $parametros);
@@ -102,6 +122,7 @@ class TabelaUsuariosController {
             'email' => !empty($_POST['email']) ? $_POST['email'] : $usuarioAtual->email,
             'senha' => !empty($_POST['senha']) ? $_POST['senha'] : $usuarioAtual->senha,
             'foto' => $caminhoDaImagem,
+            'is_admin' => (int)$_POST['is_admin'],
             'ultima_acao' => 'editar'
             ];  
 

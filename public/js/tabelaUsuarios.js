@@ -1,0 +1,200 @@
+// *CÓDIGO DO MODAL DE ADICIONAR USUÁRIO
+
+//* *Aciona o botão toggle ao clicar nele
+function acionarBotaoToggle(idBotaoToggle, idTextoPermissaoAdmin, idIsAdminInput){
+    const botaoToggle = document.querySelector(idBotaoToggle);
+    const textoPermissaoAdmin = document.querySelector(idTextoPermissaoAdmin);
+    const isAdminInput = document.querySelector(idIsAdminInput);
+    botaoToggle.classList.toggle('pin-ativo');
+    botaoToggle.classList.toggle('pin-inativo');
+    if (botaoToggle.classList.contains('pin-ativo')){
+        textoPermissaoAdmin.textContent = 'Acesso administrativo';
+        isAdminInput.value = '1';
+    }
+    else {
+        textoPermissaoAdmin.textContent = 'Acesso padrão';
+        isAdminInput.value = '0';
+    }
+}
+
+// *Seleciona o input de adicionar a foto de perfil do usuário:
+const inputEscolherFotoDePerfilDoModalDeCriar = document.querySelector('#modal-criar-usuarios .foto-de-perfil-escolhida');
+
+// *Aciona o input de escolher foto de perfil ao clicar no botão de adicionar foto de perfil do usuário:
+function adicionarFotoDePerfil() {
+        inputEscolherFotoDePerfilDoModalDeCriar.click();
+        inputEscolherFotoDePerfilDoModalDeCriar.onchange = () => {
+        const previewDaFotoDePerfilDoModalDeCriar = document.getElementById('preview-foto-de-perfil-ao-criar-usuario');
+        if (previewDaFotoDePerfilDoModalDeCriar && inputEscolherFotoDePerfilDoModalDeCriar.files[0]) {
+            previewDaFotoDePerfilDoModalDeCriar.src = URL.createObjectURL(inputEscolherFotoDePerfilDoModalDeCriar.files[0]);
+        }
+    };
+};
+
+//* Função que alterna entre visualizar senha e não visualizar nos modais de criar e editar usuário
+
+const inputDeCriarSenha = document.querySelector(".criar-senha"); 
+const iconeDeVisualizarSenhaNoModalDeCriar = document.querySelector(".icone-visualizar-senha-no-modal-de-criar");
+let estadoDeVisualizacaoDaSenhaAoCriar = 'desativado';
+
+function alternarVisualizacaoDaSenhaAoCriarUsuario() {
+    if (estadoDeVisualizacaoDaSenhaAoCriar === 'desativado') {
+        inputDeCriarSenha.type = '';
+        iconeDeVisualizarSenhaNoModalDeCriar.classList.replace('bi-eye-slash-fill', 'bi-eye-fill');
+        estadoDeVisualizacaoDaSenhaAoCriar = 'ativado';
+    }
+    else {
+        inputDeCriarSenha.type = 'password';
+        iconeDeVisualizarSenhaNoModalDeCriar.classList.replace('bi-eye-fill', 'bi-eye-slash-fill');
+        estadoDeVisualizacaoDaSenhaAoCriar = 'desativado';
+    }
+    // *Dispara evento do input de criar senha
+    inputDeCriarSenha.dispatchEvent(new Event('input'));
+}
+
+//* Mudança do tamanho da fonte do texto ao digitar a senha sem visualização e com visualização ao criar usuário
+inputDeCriarSenha.addEventListener('input', function () {
+    inputDeCriarSenha.classList.toggle('digitando-sem-ver-senha', inputDeCriarSenha.value.length > 0 && iconeDeVisualizarSenhaNoModalDeCriar.classList.contains('bi-eye-slash-fill'));
+});
+
+// *CÓDIGO DO MODAL DE ADICIONAR USUÁRIO
+
+//* Mudança do tamanho da fonte do texto ao digitar a senha sem visualização e com visualização ao editar usuário
+document.querySelectorAll('.editar-senha').forEach(input => {
+    input.addEventListener('input', () => {
+        input.classList.toggle('digitando-sem-ver-senha', input.value.length > 0);
+    });
+});
+
+
+//* Todos os campos com 'required' no input exibirão a seguinte mensagem: 
+const fundomodal = document.getElementById("fundo");
+const inputsObrigatoriosDosModais = document.querySelectorAll('input[required]');
+
+inputsObrigatoriosDosModais.forEach(input => {
+        input.addEventListener('invalid', function() {
+                if (this.value === ''){
+                        this.setCustomValidity('Este campo é obrigatório');
+                }
+        });
+        input.addEventListener('input', function() {
+                this.setCustomValidity('');
+        });
+    });
+    
+// *Aciona o input de escolher foto de perfil ao clicar no botão de adicionar foto de perfil do usuário e preview implementada:
+function editarFotoDePerfil (idFotoDePerfilEscolhida, idPreviewFotoDePerfilAoEditarUsuario) {
+
+        // *Input é acionado ao clicar no botão de alterar foto
+        const inputEscolherFotoDePerfilDoModalDeEditar = document.querySelector(idFotoDePerfilEscolhida);
+        inputEscolherFotoDePerfilDoModalDeEditar.click();
+
+        // *Ao selecionar a foto, um endereço temporário local é criado para a imagem selecionada e exibe-a, sem precisar do servidor
+        inputEscolherFotoDePerfilDoModalDeEditar.onchange = () => {
+        const previewDaFotoDePerfilDoModalDeEditar = document.querySelector(idPreviewFotoDePerfilAoEditarUsuario);
+        if (previewDaFotoDePerfilDoModalDeEditar && inputEscolherFotoDePerfilDoModalDeEditar.files[0]) {
+            previewDaFotoDePerfilDoModalDeEditar.src = URL.createObjectURL(inputEscolherFotoDePerfilDoModalDeEditar.files[0]);
+        }
+    };
+};
+    
+// // ! INÍCIO DO CÓDIGO DO MODAL DE EDIÇÃO DE USUÁRIOS DA TABELA DE USUÁRIOS
+// // *Seleciona icones de edicao de usuário da tabela de usuários, o modal de edição de usuários e o filtro ao abrir o modal da tabela de usuários
+
+// const filtroAoAbrirModalDaTabelaDeUsuarios = document.querySelector('.filtro-ao-abrir-modal-da-tabela-de-usuarios');
+// let estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
+
+// // *Função ao abrir modal de edição de usuario 
+// function abrirModalDeEdicaoDeUsuario(idModalEdicaoDeUsuario){
+//         const modalDeEdicaoDeUsuario = document.querySelector(idModalEdicaoDeUsuario);
+//         modalDeEdicaoDeUsuario.style.display = 'flex';
+//         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'flex';
+//         estadoAtualDoModalDeEdicaoDeUsuario = 'aberto';
+// }
+
+// // *Implementa as funções que fecham o modal de edição de usuários ao clicar no botão cancelar, no botão de fechar e no botão de salvar
+ 
+// function salvarEdicaoDeUsuario() {
+//         estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
+// };
+
+// function cancelarEdicaoDeUsuario(idModalEdicaoDeUsuario){
+//         const modalDeEdicaoDeUsuario = document.querySelector(idModalEdicaoDeUsuario);
+//         modalDeEdicaoDeUsuario.style.display = 'none';
+//         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'none';
+//         estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
+// };
+
+// function fecharEdicaoDeUsuario(idModalEdicaoDeUsuario){
+//         const modalDeEdicaoDeUsuario = document.querySelector(idModalEdicaoDeUsuario);
+//         modalDeEdicaoDeUsuario.style.display = 'none';
+//         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'none';
+//         estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
+// };
+
+// ! FIM 
+
+
+//! jsmodais
+
+function abrirModal(idModal, idFundo) {
+    const modal = document.querySelector(idModal);
+    const fundo = document.querySelector(idFundo);
+    
+    if (modal && fundo) {
+        fundo.style.display = 'flex'; 
+        modal.style.display = 'flex';
+    }
+}
+
+// Função para fechar o modal (esconde os elementos)
+function fecharModal(idModal, idFundo) {
+    const modal = document.querySelector(idModal);
+    const fundo = document.querySelector(idFundo);
+    
+    if (modal && fundo) {
+        fundo.style.display = 'none';
+        modal.style.display = 'none';
+    }
+}
+//! jsmodal
+
+function fecharFundo (){
+        const modais = document.querySelectorAll(".modalfundo");
+        modais.forEach(modal => {
+                 modal.style.display = "none";
+        });
+        fundomodal.style.display = "none";
+}
+
+function abrirModal(idModal) {
+        //let - var q pode mudar dps
+        //const - var constante nn muda dps
+        const modal = document.querySelector(idModal);
+        modal.style.display = "flex";
+
+        //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
+        fundomodal.style.display = "flex";
+}
+
+function fecharModal(idModal) {
+        //let - var q pode mudar dps
+        //const - var constante nn muda dps
+        const modal = document.querySelector(idModal);
+        modal.style.display = "none";
+
+        //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
+        fundomodal.style.display = "none";
+}
+
+// const modalCriar = document.getElementById("modal-criar-usuarios");
+
+// function abrirModalCriar(){
+//         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = "flex"
+//         modalCriar.style.display = "flex"
+// }
+
+// function fecharModalCriar(){
+//         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = "none";
+//         modalCriar.style.display = "none";
+// }

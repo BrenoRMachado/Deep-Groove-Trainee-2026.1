@@ -17,6 +17,7 @@
     --cor-vinho-100: #5D1D2D;
     --cor-vermelho-50: #A62C3A;
     --cor-laranja-200: #AC432B;
+    --cor-laranja-100: #F09859;
 
     /** var modal editar */
     --cor-branco-200: #FEECE8;
@@ -63,6 +64,9 @@
 
     --pesoexcluirbotao: 700;
 
+    --coractivepaginacao: #773B36;
+    --coloractive:#FEECE8;
+
 }
 
 * {
@@ -85,11 +89,34 @@
     
 }
 
-.addUser {
+.addUserdesktop {
     display: flex;
     align-items: center;
     justify-items: center;
+    background-color: #AE5E48;
+    height: 3rem;
+    width: 9rem;
+    border-radius: 2rem;
+    align-items: center;
+    justify-content: center;
+
 }
+
+.textop{
+    font-size: 1rem;
+}
+
+.addUsermobile{
+    display: none;
+    align-items: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    justify-content: center;
+    background-color: #AE5E48;
+    
+    border-radius: 1.2rem;
+}
+
 
 .infoUser {
     display: flex;
@@ -182,34 +209,53 @@
 
 }
 
+.pesquisar {
+    width: 100%;
+    padding-left: 0;
+    /* background-color: red; */
+}
+
 
 .pesqUser {
-
-    background-color: var(--corclara);
-
-    background-image: url(../assets/Frame\ 90.svg);
+    
+    /* background-color: var(--corclara); */
+    background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.03)
+        );
+    background-image: url(../assets/Frame94.svg); 
     /*! pra img nn repitir no fundo td */
     background-repeat: no-repeat;
 
-    border-radius: 3rem;
-    border: 1rem solid #6D3534;
+    /* border-radius: 3rem;
+    border: 1rem solid #6D3534; */
 
     /* cima direita baixo esquerda */
     padding: 1rem 1rem 1rem 3rem;
 
     /*! coloca o o back 1 p/ laterais e no centro de td */
-    background-position: 1rem center;
+    background-position: 1rem center; 
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--cor-laranja-200);
+    box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.08),
+        0 8px 32px rgba(0,0,0,0.35);
+    border-radius: 50px;
 }
 
 .pesqUser::placeholder {
-    color: var(--cortextopesq);
-    font-weight: var(--pesopesq);
-    font-family: var(--fonte);
+    color: var(--cor-branco-100);
+    opacity: 0.5;
+    font-family: var(--fonte-primaria);
 }
 
 /* *Estilo da foto de perfil de cada usuário na coluna da tabela */
 .tabelageral .foto-de-cada-usuario-na-tabela {
     height: 2rem;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
 }
 
@@ -231,7 +277,6 @@
     transform: translate(-50%, -50%);
     width: 45%;
     height: 85%;
-    box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(255, 255, 255, 0.5);
     border-radius: 30px;
     display: none;
     flex-direction: column;
@@ -395,7 +440,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 16.5%;
+    height: 14%;
     width: 90%;
 }
 
@@ -409,7 +454,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60%;
+    height: 61.5%;
     font-size: 0.8rem;
 }
 
@@ -425,6 +470,10 @@
     background-color: var(--cor-vermelho-50);
 }
 
+.modal-edicao-usuarios .titulo-admin {
+    background-color: var(--cor-laranja-100);
+}
+
 /* *Estilo do input de digitar o dado do usuário */
 .modal-edicao-usuarios .editar-dado {
     border-radius: 10px;
@@ -437,7 +486,11 @@
     color: var(--cor-vinho-100);
 }
 
-/* *Estilo do placeholder de editar dado */
+.modal-edicao-usuarios .editar-senha.digitando-sem-ver-senha {
+    font-size: 1.8rem;
+}
+
+/* *Estilo do placeholder de editar dado */ 
 .modal-edicao-usuarios .editar-dado::placeholder {
     color: var(--cor-vinho-100);
     opacity: 0.5;
@@ -447,6 +500,70 @@
 .modal-edicao-usuarios .editar-dado:focus {
     outline: none;
 }
+
+/* *Estilo e animacao do botão de selecionar se é ou não administrador ao criar usuário */
+
+.modal-edicao-usuarios .botao-toggle,
+ #modal-criar-usuarios .botao-toggle {
+    border-radius: 10px;
+    width: 75%;
+    height: 1.7rem;
+    background: none;
+    border: 2px solid var(--cor-branco-400);
+    font-family: var(--fonte-modal);
+    color: var(--cor-vinho-100);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0.4rem;
+}
+
+#modal-criar-usuarios .botao-toggle {
+    width: 80%;
+}
+
+.modal-edicao-usuarios .botao-toggle:hover, #modal-criar-usuarios .botao-toggle:hover {
+    cursor: pointer;
+}
+
+.modal-edicao-usuarios .fundo-toggle, #modal-criar-usuarios .fundo-toggle {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    height: 1.25rem;
+    width: 2.25rem;
+    border-radius: 10px;
+    background-color: #262626;
+}
+
+.modal-edicao-usuarios .pin-toggle, #modal-criar-usuarios .pin-toggle {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--cor-branco-100);
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.modal-edicao-usuarios .pin-ativo .pin-toggle, #modal-criar-usuarios .pin-ativo .pin-toggle {
+    transform: translateX(1.1rem);
+}
+
+.modal-edicao-usuarios .pin-inativo .pin-toggle, #modal-criar-usuarios .pin-inativo .pin-toggle {
+    transform: translateX(0.1rem);
+}
+
+.modal-edicao-usuarios .pin-ativo .fundo-toggle, #modal-criar-usuarios .pin-ativo .fundo-toggle {
+    background-color: var(--cor-laranja-100);
+}
+
+.modal-edicao-usuarios .pin-inativo .fundo-toggle, #modal-criar-usuarios .pin-inativo .fundo-toggle {
+    background-color: var(--cor-vinho-100);
+}
+
+/* *FIM BOTÃO TOGGLE */
 
 /* *Estilo do container dos botões de salvar e cancelar */
 .modal-edicao-usuarios .secao-botoes-salvar-cancelar {
@@ -837,7 +954,7 @@
 .sim{
     background-color: var(--colorsim);
 }
-.cancelar{
+.cancelar-excluir{
     border: 0.1rem solid var(--colorcancelar);
     color: var(--colorcancelar);
 }
@@ -861,7 +978,7 @@
 
 #modal-criar-usuarios{
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -877,7 +994,7 @@
     background-size: cover;
 }
 
-#modal-criar-usuarios button:hover {
+#modal-criar-usuarios button.cresce:hover {
     transform: scale(1.025);
 }
 
@@ -947,6 +1064,10 @@
     font-size: 3.5vh;
 }
 
+.sair-da-pagina:hover {
+    cursor: pointer;
+}
+
 .baixo-modal-criar {
     display: flex;
     height: 67%;
@@ -997,6 +1118,14 @@
     flex-direction: column;
 }
 
+.primeira-parte-do-container-informacoes-foto h1 {
+    font-size: 0.7rem;
+}
+
+.primeira-parte-do-container-informacoes-foto p {
+    font-size: 0.7rem;
+}
+
 .segunda-parte-do-container-informacoes-foto {
     display: flex;
     width: 30%;
@@ -1020,6 +1149,9 @@
     gap: 5%
 }
 
+.botao-anexar-foto-modal-criar:hover {
+    cursor: pointer;
+}
 
 /* *Input de escolher a foto de perfil escondido */
 #modal-criar-usuarios .foto-de-perfil-escolhida {
@@ -1049,17 +1181,41 @@
     justify-content: space-between;
     flex-direction: row;
     gap: 5%;
+    position: relative;
 }
 
 .quarto-da-area-informacoes input {
     border-radius: 10px;
-    height: 50%;
-    width: 75%;
+    height: 60%;
+    width: 80%;
     padding: 0 0.4rem;
     background: none;
     border: 2px solid var(--cor-branco-400);
     font-family: var(--fonte-modal);
     color: var(--cor-vinho-100);
+}
+
+/* *Estilo do input de criar senha no  modal */
+.quarto-da-area-informacoes .input-criar-senha{
+    padding-right: 7%;
+}
+
+.criar-senha.digitando-sem-ver-senha {
+    font-size: 1.8rem;
+}
+
+.quarto-da-area-informacoes .botao-de-visualizar-senha-no-modal-de-criar {
+    color: var(--colorinfo);
+    border: none;
+    background: none;
+    transition: transform 0.3s ease;
+    position: absolute;
+    right: 3%;
+    font-size: 1.1rem;
+}
+
+.quarto-da-area-informacoes .botao-de-visualizar-senha-no-modal-de-criar:hover {
+    cursor: pointer;
 }
 
 .container-textarea {
@@ -1090,11 +1246,11 @@
     color: var(--cor-branco-300);
     font-weight: bold;
     border-radius: 30px;
-    width: 30%;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 2rem;
+    height: 1.7rem;
     font-size: 0.8rem;
     font-family: var(--fonte-modal);
     text-align: center;
@@ -1275,4 +1431,237 @@
 /** PAGINAÇÃO */
 .containerPaginacao{
     display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.paginacao{
+    display: flex;
+    gap: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.active{
+    background-color: var(--coractivepaginacao);
+    color: var(--coloractive) !important;
+    width: 2rem;
+    height: 2rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.disabledseta {
+    opacity: 0.3;
+    pointer-events: none;
+    width: 2rem;
+    height: 2rem;
+}
+
+.paginacao a {
+    text-decoration: none;
+    color: var(--coractivepaginacao);
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: var(--fonte);
+
+    width: 2rem;
+    height: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dots{
+    color: var(--coractivepaginacao);
+    height: 100%;
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
+}
+
+/* !Responsividade MODAL DE CRIAR USUÁRIOS */
+
+/* *Tablet */
+
+@media (max-width: 769px){
+    #modal-criar-usuarios {
+            width: 80%;
+        }
+}
+
+/* *Mobile */
+
+
+@media (max-width: 600px){
+    #modal-criar-usuarios {
+            width: 95%;
+            height: 95%;
+        }
+    #modal-criar-usuarios .area-de-colocar-informacoes {
+        width: 90%;
+    }
+    #modal-criar-usuarios .container-informacoes-foto {
+        gap: 0.1rem;
+    }
+    #modal-criar-usuarios .segunda-parte-do-container-informacoes-foto {
+        width: 43%;
+    }
+}
+
+.tabelaMobile{
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.tabeladentroMobile{
+    background-color: #FEECE8;
+    width: 100%;
+    height: 25vh;
+    border-radius: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 1rem;
+}
+
+.destaqueInfosMobile{
+    color: #C06850;
+    font-family: var(--fonte);
+    font-weight: 700;
+}
+
+.infosMobile{
+    font-family: var(--fonte);
+    font-weight: 500;
+}
+
+.parte1, .parte2, .parte3{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.parte2 {
+    border-right: 0.1rem solid #C06850;
+    border-left: 0.1rem solid #C06850;
+    height: 90%;
+    padding: 0 0.4rem;
+    width: 60%;
+}
+
+.containerId, .containerPerfil{
+    align-items: center;
+}
+
+.quebra {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: transparent;
+    max-width: 10rem; /* Ajuste o valor de acordo com o espaço disponível no seu card */
+}
+
+
+
+@media (max-width: 600px){
+    .tabela{
+        display: none;
+    }
+
+    .tabelaMobile{
+        display: flex;
+    }
+
+
+    .userimg{
+        width: 2.5rem;
+    }
+
+    .textoh3{
+        font-size: 1rem;
+    }
+
+    .addUserdesktop {
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .addUserdesktop {
+        display: none;
+    }
+
+    .addUsermobile{
+        display: flex;
+    }
+
+    .espacom{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .pesqUser{
+        width: 100%;
+    }
+
+    .active{
+    background-color: #FEECE8;
+    color: #D68164 !important;
+    width: 2rem;
+    height: 2rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.disabledseta {
+    opacity: 0.3;
+    pointer-events: none;
+     width: 2rem;
+    height: 2rem;
+}
+
+.paginacao a {
+    text-decoration: none;
+    color: var(--coractivepaginacao);
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: var(--fonte);
+
+    width: 2rem;
+    height: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dots{
+    color: var(--coractivepaginacao);
+    height: 100%;
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
+}
+
+    
 }

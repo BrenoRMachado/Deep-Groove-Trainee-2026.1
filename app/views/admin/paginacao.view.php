@@ -10,7 +10,7 @@
 
         <ul class="pagination">
             <li>
-                <a href="?page=<?= max(1, $currentPage - 1 ) ?>" class="<?= $currentPage <= 1 ? 'disabled' : ''?>">&laquo; Anterior</a>
+                <a href="?page=<?= max(1, $currentPage - 1 ) ?>" class="<?= $currentPage <= 1 ? 'disabled' : ''?>">&laquo;</a>
             </li>
             
             <?php
@@ -32,7 +32,7 @@
                 </li>
             <?php endfor; ?>
 
-            <?php if ($end > $totalPages - 1):?>
+            <?php if ($end < $totalPages - 1):?>
                 <li><span class="dots">...</span></li>
             <?php endif; ?>
 
@@ -41,7 +41,7 @@
             </li>
 
             <li>
-                <a href="?page=<?= min($totalPages, $currentPage + 1 ) ?>" class="<?= $currentPage >= $totalPages ? 'disabled' : ''?>">Próximo &raquo;</a>
+                <a href="?page=<?= min($totalPages, $currentPage + 1 ) ?>" class="<?= $currentPage >= $totalPages ? 'disabled' : ''?>">&raquo;</a>
             </li>
         </ul>
     </div>
