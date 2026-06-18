@@ -122,6 +122,7 @@ class TabelaUsuariosController {
             'email' => !empty($_POST['email']) ? $_POST['email'] : $usuarioAtual->email,
             'senha' => !empty($_POST['senha']) ? $_POST['senha'] : $usuarioAtual->senha,
             'foto' => $caminhoDaImagem,
+            'is_admin' => (int)$_POST['is_admin'],
             'ultima_acao' => 'editar'
             ];  
 
