@@ -11,11 +11,18 @@ botaoAbrirFecharSidebar.addEventListener('click', function(){
         });
         estadoBotaoAbrirFecharSidebar = 'aberto';
 
+        document.getElementById("icones-admin").style.alignItems="flex-start";
+        document.getElementById("sidebar").style.width="10%";
+        document.getElementsByClassName(logo-principal-deep-groove).style.src="../../../public/assets/LogoIcone2.png";
     }
     else if (estadoBotaoAbrirFecharSidebar === 'aberto'){
         nomeIconesPaginasAdministrativasSidebar.forEach((nomeIconesPaginasAdministrativasSidebar) => {
             nomeIconesPaginasAdministrativasSidebar.classList.add('sidebar-fechada');
         });
         estadoBotaoAbrirFecharSidebar = 'fechado';
+
+        document.getElementById("icones-admin").style.alignItems="center";
+        document.getElementById("sidebar").style.width="fit-content";
+        document.getElementsByClassName(logo-principal-deep-groove).style.src="../../../public/assets/LogoTextoIcone";
     }
 });

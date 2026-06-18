@@ -31,8 +31,6 @@
             </div>
             <div class="mensagem-erro">
                 <?php 
-                    //session_start(); Comentado pois estava dando erro no navegador
-
                     if(isset($_SESSION['mensagem-erro'])){
                         echo $_SESSION['mensagem-erro'];
 
@@ -42,8 +40,6 @@
             </div>
             <div class="mensagem-erro">
                 <?php 
-                    //session_start(); Comentado pois estava dando erro no navegador
-
                     if(isset($_SESSION['mensagem-erro-email'])){
                         echo $_SESSION['mensagem-erro-email'];
 
