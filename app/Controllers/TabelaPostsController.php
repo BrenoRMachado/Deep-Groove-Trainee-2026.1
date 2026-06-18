@@ -93,7 +93,7 @@ class TabelaPostsController
 
     public function delete()
     {
-        $id = $_POST('id');
+        $id = $_POST['id'];
 
         App::get('database')->delete('publicacoes', $id);
 

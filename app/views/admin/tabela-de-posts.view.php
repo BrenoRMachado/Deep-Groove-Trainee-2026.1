@@ -275,7 +275,7 @@
                             
                             <button class="botao cancelarp" onclick="fecharModal('modal-excluir-post<?= $publicacao->id?>')">CANCELAR</button>
                             
-                            <form action="tabelaPosts/excluir" method="POST">
+                            <form action="tabelaPosts/delete" method="POST">
                                 <!-- hidden = nn aperece para o user
                                 ai manda o id para o submit da função de excluir -->
                                 <input type="hidden" name="id" value="<?= $publicacao->id ?>">
