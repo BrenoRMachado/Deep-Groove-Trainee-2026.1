@@ -1,5 +1,24 @@
 // *CÓDIGO DO MODAL DE ADICIONAR USUÁRIO
 
+//* Seleciona texto e valor do input de selecionar se é admin ou não
+const textoPermissaoAdmin = document.querySelector('.texto-permissao-admin');
+const valorDoInputAdmin = document.querySelector('#is-admin-input');
+
+
+//* *Aciona o botão toggle ao clicar nele
+function acionarBotaoToggle(botaoToggle){
+    botaoToggle.classList.toggle('pin-ativo');
+    botaoToggle.classList.toggle('pin-inativo');
+    if (botaoToggle.classList.contains('pin-ativo')){
+        textoPermissaoAdmin.textContent = 'Acesso administrativo';
+        valorDoInputAdmin.value = '1';
+    }
+    else {
+        textoPermissaoAdmin.textContent = 'Acesso padrão';
+        valorDoInputAdmin.value = '0';
+    }
+}
+
 // *Seleciona o input de adicionar a foto de perfil do usuário:
 const inputEscolherFotoDePerfilDoModalDeCriar = document.querySelector('#modal-criar-usuarios .foto-de-perfil-escolhida');
 
