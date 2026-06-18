@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    
+    if(!isset($_SESSION['id'])) {
+        header('Location: /login');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,28 +28,25 @@
     <?php require "sidebar.html"; ?>
 
     <div class="filtro-ao-abrir-modal-da-tabelaPosts"></div>
-    <div class="pagecontainer">
 
-        <!-- Topo da tabela -->
-         
-        <section class="topoTabelaPosts">
-            <button class="botao-novo-post" onclick="abrirModal('modal-criar-posts')">
-                <div class="addPost">
-                    <i class="icone bi bi-plus" style="font-size: x-large;"></i>
-                    <p class="textop">Novo Post</p>
-                </div>
-            </button>
-
-            <div class="infoUser">
-                <img src="../../../public/assets/ícone usuário.svg" alt="User">
-
-                <div class="infos">
-                    <h3 class="textoh3">Fulano</h3>
-                    <h3 class="textoh3">Administrador</h3>
-                </div>
-
+ <div class="pagecontainer">
+    <section class="topoTabelaPosts">
+        <button class="botao-novo-post" onclick="abrirModal('modal-criar-posts')">
+            <div class="addPost">
+                <i class="icone bi bi-plus" style="font-size: x-large;"></i>
+                <p class="textop">Novo Post</p>
             </div>
-        </section>
+        </button>
+
+        <div class="infoUser">
+            <img src="../../../public/assets/ícone usuário.svg" alt="User">
+
+            <div class="infos">
+                <h3 class="textoh3"><?= $_SESSION['nome'] ?></h3>
+                <h3 class="textoh3"><?= $_SESSION['is_admin'] ? 'Administrador' : "Usuário" ?></h3>
+            </div>
+        </div>
+    </section>
 
         <!-- Página -->
 
@@ -350,9 +355,7 @@
                     <div class="quarto-da-area-informacoes">
                         <div class="container-dado-a-criar" style="background-color: purple;">Duração</div> <input id="duracao_album" name="duracao">
                     </div>
-                    <div class="quarto-da-area-informacoes">
-                        <div class="container-dado-a-criar" style="background-color: black;">Id usuário</div> <input id="id_usuario_album" name="id_usuario">
-                    </div>
+                    <input type="hidden" name="id_usuario" value=<?= $publicacao->id_usuario ?>>                    
                     <div class="quarto-da-area-informacoes">
                         <div class="container-dado-a-criar" style="background-color: cyan;">Id deezer</div> <input id="id_deezer_album" name="id_deezer">
                     </div>
@@ -373,6 +376,129 @@
                 </div>
             </div>
         </form>
+
+        <!-- Página -->
+
+        <section class="titulo">
+            <h1 class="textoTitulo">POSTAGENS</h1>
+        </section>
+
+        <section class="pesquisar">
+            <input type="text" class="pesqUser" placeholder="Pesquisar postagem...">
+        </section>
+
+        <section class="tabela">
+            <table>
+                <thead class="tabelacabe">
+                    <tr class="linha linhaCab">
+                        <th class="coluna colunaCab">ID</th>
+
+                        <th class="coluna colunaCab">Álbum</th>
+
+                        <th class="coluna colunaCab">Artista</th>
+
+                        <th class="coluna colunaCab">Título</th>
+
+                        <th class="coluna colunaCab">Ações</th>
+
+                    </tr>
+
+        <div class="baixo-modal-criar">
+            <div class="area-de-colocar-informacoes container-informacoes-foto">
+                <div class="primeira-parte-do-container-informacoes-foto">
+                    <h2>Capa do álbum</h2>
+                    <p>Recomendamos uma imagem quadrada de pelo menos 500 por 500 pixels</p>
+                </div>
+                <div class="segunda-parte-do-container-informacoes-foto">
+                    <button type="button" class="botao-anexar-foto-modal-criar">
+                        <i class="bi bi-box-arrow-up"></i>
+                        Anexar foto
+                    </button>
+                </div>
+            </div>
+
+            <!-- Parte onde fica o formulario com as informações a serem preenchidas -->
+
+            <div class="area-de-colocar-informacoes">
+                <div class="quarto-da-area-informacoes">
+                    <div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Título</div> <input placeholder="Digite o título" name="titulo">
+                </div>
+                <div class="quarto-da-area-informacoes">
+                    <div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Ano de lançamento</div> <input placeholder="Digite o ano" name="ano">
+                </div>
+                <div class="quarto-da-area-informacoes">
+                    <div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Artista</div> <input placeholder="Digite o nome do artista" name="artista">
+                </div>
+                <div class="quarto-da-area-informacoes">
+                    <div class="container-dado-a-criar" style="background-color: green;">Gênero</div> <input name="genero">
+                </div>
+                <div class="quarto-da-area-informacoes">
+                    <div class="container-dado-a-criar" style="background-color: blue;">Foto</div> <input name="foto">
+                </div>
+                <div class="quarto-da-area-informacoes">
+                    <div class="container-dado-a-criar" style="background-color: purple;">Duração</div> <input name="duracao">
+                </div>
+                <input type="hidden" name="id_usuario" value="<?= $_SESSION['id'] ?>">
+                <div class="quarto-da-area-informacoes">
+                    <div class="container-dado-a-criar" style="background-color: cyan;">Id deezer</div> <input name="id_deezer">
+                </div>
+                <div class="container-textarea">
+                    <div class="container-dado-a-criar" style="background-color: var(--cor-amarelo);">
+                        Descrição
+                    </div>
+                    <textarea rows="10" placeholder="Digite a descrição" name="conceito"></textarea>
+                </div>
+                <div class="quarto-da-area-informacoes">
+                    <button class="botao-modal-criar cancelar" type="button" onclick="fecharModal('modal-criar-posts')">Cancelar</button>
+                    <button class="botao-modal-criar salva">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Página -->
+
+    <section class="titulo">
+        <h1 class="textoTitulo">POSTAGENS</h1>
+    </section>
+
+    <section class="pesquisar">
+        <input type="text" class="pesqUser" placeholder="Pesquisar postagem...">
+    </section>
+
+    <section class="tabela">
+        <table>
+            <thead class="tabelacabe">
+                <tr class="linha linhaCab">
+                    <th class="coluna colunaCab">ID</th>
+
+                    <th class="coluna colunaCab">Álbum</th>
+
+                    <th class="coluna colunaCab">Artista</th>
+
+                    <th class="coluna colunaCab">Título</th>
+
+                    <th class="coluna colunaCab">Ações</th>
+
+                </tr>
+
+            </thead>
+            <?php foreach ($publicacoes as $publicacao): ?>
+                <tr class="linha linhaTab">
+                    <td class="colunageral"><?= $publicacao->id ?></td>
+                    <td class="colunageral"><img class="capa-thriller" src="../../../public/assets/capa-thriller.jpg"></td>
+                    <td class="colunageral"><?= $publicacao->artista ?></td>
+                    <td class="colunageral"><?= $publicacao->titulo ?></td>
+
+                    <td class="colunageral">
+                        <i class="acao bi bi-eye-fill" onclick="abrirModal('modal-visu-user<?= $publicacao->id ?>')"></i>
+                        <i class="acao bi bi-pencil-square <?= $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
+                        <i class="acao bi bi-trash <?= $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-excluir-user<?= $publicacao->id ?>')"></i>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        </table>
+    </section>
     </div>
     <script src="../../../public/js/tabelaPosts.js"></script>
 </body>

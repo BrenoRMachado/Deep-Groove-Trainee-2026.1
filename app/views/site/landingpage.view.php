@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -136,7 +140,7 @@
 
     </section>
 
-    <?php require "footer.view.php"; ?>
+    <?php require "footerLanding.view.php"; ?>
 
 </body>
 
