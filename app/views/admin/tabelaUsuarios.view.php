@@ -88,14 +88,18 @@
     <section class="topoTabelaUser">
         <?php if ($_SESSION['is_admin']): ?>
             <button class="botao-novo-post" onclick="abrirModal('#modal-criar-usuarios')">
-                <div class="addUser">
+                <div class="addUserdesktop ">
                     <i class="icone bi bi-plus"></i>
                     <p class="textop">Novo usuário</p>
+                </div>
+
+                <div class="addUsermobile ">
+                    <img src="../../../public/assets/addMobile.svg" alt="add" class="addm">
                 </div>
             </button>
         <?php endif; ?>    
         <div class="infoUser">
-            <img src="../../../public/assets/ícone usuário.svg" alt="User">
+            <img src="../../../public/assets/ícone usuário.svg" alt="User" class="userimg">
 
             <div class="infos">
                 <h3 class="textoh3"><?= $_SESSION['nome'] ?></h3>
@@ -212,6 +216,104 @@
                     </td>
                 </tfoot>
             </table>
+        </section>
+
+        <section class="tabelaMobile">
+
+                <?php foreach($usuarios as $usuario): ?>
+                    <div class="tabeladentroMobile">
+                    
+                        <div class="parte1">
+                            <div class="containerId"> 
+                                <p class="destaqueInfosMobile">ID</p>
+                                <p class="infosMobile"><?= $usuario->id ?></p>
+                            </div>
+
+                            <div class="containerPerfil"> 
+                                <p class="destaqueInfosMobile">Perfil</p>
+                                <img class="foto-de-cada-usuario-na-tabela" src="<?= $usuario->foto ?>">
+                            </div>
+                        </div>
+
+                        <div class="parte2">
+                            <div class="containerNome"> 
+                                <p class="destaqueInfosMobile quebra">Nome</p>
+                                <p class="infosMobile"><?= $usuario->nome ?></p>
+                            </div>
+
+                            <div class="containerPerfil"> 
+                                <p class="destaqueInfosMobile">Email</p>
+                                <p class="infosMobile quebra"><?= $usuario->email ?></p>
+                            </div>
+
+                            <div class="containerTipo"> 
+                                <p class="destaqueInfosMobile">Tipo</p>
+                                <p class="infosMobile"><?= $usuario->is_admin ? 'Administrador' : 'Usuário' ?></p>
+                            </div>
+                        </div>
+
+                        <div class="parte3">
+                            <p class="destaqueInfosMobile">AÇÕES</p>
+                            <div class="botoesAcao">
+                                    <i class="acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user<?= $usuario->id ?>')"></i>
+                                    <i class="acao bi bi-pencil-square" onclick="abrirModal('#modal-edicao-usuarios<?= $usuario->id ?>')"></i>
+                                    <i class="acao bi bi-trash" onclick="abrirModal('#modal-excluir-user<?= $usuario->id ?>')"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                <?php endforeach; ?>
+
+
+                <section>
+                    <div>
+                        <!-- paginaçao -->
+                        <?php if ($totalPaginas > 1): ?>
+                        
+                            <div class="containerPaginacao">
+                                <ul class="paginacao">
+                                    <li >
+                                        <a href="?pagina=<?= max(1, $paginaAtual - 1) ?>" class="<?= $paginaAtual <= 1 ? 'disabledseta' : ''?>">&laquo;</a>
+                                    </li>
+
+                                    <?php 
+                                        $start = max(2, $paginaAtual - 1);
+                                        $end = min($totalPaginas - 1, $paginaAtual + 1);
+                                    ?>
+
+                                    <li>
+                                        <a href="?pagina=1" class="<?= $paginaAtual == 1 ? 'active' : ''?>">1</a>
+                                    </li>
+
+                                    <?php if ($start > 2):?>
+                                        <li><span class="dots">...</span></li>
+                                    <?php endif; ?>
+
+                                    <?php for ($i = $start; $i <= $end; $i++): ?>
+                                        <li>
+                                            <a href="?pagina=<?= $i ?>" class="<?= $paginaAtual == $i ? 'active' : ''?>"> <?= $i ?></a>
+                                        </li>
+                                    <?php endfor; ?>
+
+                                    <?php if ($end < $totalPaginas - 1):?>
+                                        <li><span class="dots">...</span></li>
+                                    <?php endif; ?>
+
+                                    <li>
+                                        <a href="?pagina=<?= $totalPaginas ?>" class="<?= $paginaAtual == $totalPaginas ? 'active' : ''?>"> <?= $totalPaginas ?></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="?pagina=<?= min($totalPaginas, $paginaAtual + 1) ?>" class="<?= $paginaAtual >= $totalPaginas ? 'disabledseta' : ''?>">&raquo;</a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        <?php endif; ?>
+
+                    </div>
+                </section>
+
         </section>
     
 

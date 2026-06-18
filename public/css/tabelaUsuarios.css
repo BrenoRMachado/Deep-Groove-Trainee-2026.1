@@ -88,11 +88,34 @@
     
 }
 
-.addUser {
+.addUserdesktop {
     display: flex;
     align-items: center;
     justify-items: center;
+    background-color: #AE5E48;
+    height: 3rem;
+    width: 9rem;
+    border-radius: 2rem;
+    align-items: center;
+    justify-content: center;
+
 }
+
+.textop{
+    font-size: 1rem;
+}
+
+.addUsermobile{
+    display: none;
+    align-items: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    justify-content: center;
+    background-color: #AE5E48;
+    
+    border-radius: 1.2rem;
+}
+
 
 .infoUser {
     display: flex;
@@ -1403,4 +1426,99 @@ ul {
     #modal-criar-usuarios .segunda-parte-do-container-informacoes-foto {
         width: 43%;
     }
+}
+
+.tabelaMobile{
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.tabeladentroMobile{
+    background-color: #FEECE8;
+    width: 100%;
+    height: 25vh;
+    border-radius: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 1rem;
+}
+
+.destaqueInfosMobile{
+    color: #C06850;
+    font-family: var(--fonte);
+    font-weight: 700;
+}
+
+.infosMobile{
+    font-family: var(--fonte);
+    font-weight: 500;
+}
+
+.parte1, .parte2, .parte3{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.parte2 {
+    border-right: 0.1rem solid #C06850;
+    border-left: 0.1rem solid #C06850;
+    height: 90%;
+    padding: 0 0.4rem;
+    width: 60%;
+}
+
+.containerId, .containerPerfil{
+    align-items: center;
+}
+
+.quebra {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: transparent;
+    max-width: 10rem; /* Ajuste o valor de acordo com o espaço disponível no seu card */
+}
+
+
+
+@media (max-width: 600px){
+    .tabela{
+        display: none;
+    }
+
+    .tabelaMobile{
+        display: flex;
+    }
+
+
+    .userimg{
+        width: 2.5rem;
+    }
+
+    .textoh3{
+        font-size: 1rem;
+    }
+
+    .addUserdesktop {
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .addUserdesktop {
+        display: none;
+    }
+
+    .addUsermobile{
+        display: flex;
+    }
+
+    
 }
