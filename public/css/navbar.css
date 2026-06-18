@@ -4,8 +4,6 @@ body {
     padding: 0;
 }
 
-
-
 a {
     text-decoration: none !important; /* Uso do !important para garantir que a propriedade não seja quebrada */
     color: inherit !important;
@@ -151,6 +149,7 @@ button {
     gap: 4vh;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    position: absolute;
 }
 
 @media (max-width: 480px) {
