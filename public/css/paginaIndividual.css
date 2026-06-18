@@ -149,7 +149,8 @@
 }
 
 .conteudo-faixas-d {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
     gap: 2rem;
 }

@@ -14,8 +14,11 @@ class PaginaIndividualController
 
     $buscar = App::get('database')->selectById('publicacoes', $id);
 
+    $faixas = App::get('database')-> selectSearch('faixas', 'id_publicacao', $id);
+
     return view('site/paginaIndividual', [
-        'post' =>  $buscar
+        'post' =>  $buscar,
+        'faixas' => $faixas,
     ]);
 }
 }

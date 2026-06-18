@@ -63,6 +63,20 @@ class QueryBuilder
         }
     }
 
+    public function selectSearch($tabela, $campo, $valor) {
+        $sql = sprintf('SELECT * FROM %s WHERE %s = %s', $tabela, $campo, $valor);
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
     public function selectLast($tabela) {
         $sql = sprintf('SELECT * FROM %s ORDER BY id DESC LIMIT 1', $tabela);
 
