@@ -53,6 +53,11 @@ class TabelaUsuariosController {
 
     public function criarUsuarios() {
 
+        session_start();
+            if(!isset($_SESSION['id'])) {
+            header('Location: /login');
+        }
+
         if (!empty($_FILES['foto-de-perfil']['tmp_name'])) {
 
             $fotoDePerfilTemporaria = $_FILES['foto-de-perfil']['tmp_name'];
@@ -74,7 +79,9 @@ class TabelaUsuariosController {
             'email' => $_POST['email'],
             'senha' => $_POST['senha'],
             'foto' => $caminhoDaImagem,
-            'ultima_acao' => 'criar'
+            'is_admin' => (int)$_POST['is_admin'],
+            'ultima_acao' => 'criar',
+            'criado_por' => $_SESSION['id']
             ];    
 
         App::get('database') -> insert('usuarios', $parametros);
