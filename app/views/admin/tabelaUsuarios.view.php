@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="um-terco-alto-modal-criar parte-direita-alto-modal">
-                <button class="container-x" type="button" onclick="fecharModal('#modal-criar-usuarios')">
+                <button class="cresce container-x" type="button" onclick="fecharModal('#modal-criar-usuarios')">
                     <i class="sair-da-pagina bi bi-x fill"></i>
                 </button>
             </div>
@@ -61,7 +61,7 @@
                     <p>Recomendamos uma imagem quadrada de pelo menos 500 por 500 pixels</p>
                 </div>
                 <div class="segunda-parte-do-container-informacoes-foto">
-                    <button type="button" class="botao-anexar-foto-modal-criar" onclick="adicionarFotoDePerfil()">
+                    <button type="button" class="cresce botao-anexar-foto-modal-criar" onclick="adicionarFotoDePerfil()">
                         <i class="bi bi-box-arrow-up"></i>
                         Anexar foto
                     </button>
@@ -76,15 +76,15 @@
                 <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Email</div> <input placeholder="Digite o email" type="email" name="email" required></div>
                 <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Senha</div> <input class="criar-senha" placeholder="Digite a senha" type="password" name="senha" required> <button class="botao-de-visualizar-senha-no-modal-de-criar" type="button" onclick="alternarVisualizacaoDaSenhaAoCriarUsuario()" > <i class="icone-visualizar-senha-no-modal-de-criar bi bi-eye-slash-fill"></i> </button> </div>
                 <div class="quarto-da-area-informacoes">
-                    <div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">
+                    <div class="container-dado-a-criar" style="background-color: var(--cor-laranja-100);">
                         Admin
                     </div> 
-                    <button type="button" class="botao-toggle pin-inativo" onclick="acionarBotaoToggle(this)">
-                        <span class="texto-permissao-admin">
+                    <button type="button" class="botao-toggle pin-inativo" id="botao-toggle" onclick="acionarBotaoToggle('#botao-toggle', '#texto-permissao-admin', '#is-admin-input')">
+                        <span class="texto-permissao-admin" id="texto-permissao-admin">
                             Acesso padrão
                         </span>
                         <span class="fundo-toggle">
-                            <span class="pin-toggle" id="pin-toggle">
+                            <span class="pin-toggle">
     
                             </span>
                         </span>
@@ -92,8 +92,8 @@
                     <input type="hidden" name="is_admin" id="is-admin-input" value="0">
                 </div>
                 <div class="quarto-da-area-informacoes">
-                    <button class="botao-modal-criar cancelar" type="reset" onclick="fecharModal('#modal-criar-usuarios')">Cancelar</button>
-                    <button class="botao-modal-criar salva" type="submit">Salvar</button>
+                    <button class="botao-modal-criar cancelar cresce" type="reset" onclick="fecharModal('#modal-criar-usuarios')">Cancelar</button>
+                    <button class="botao-modal-criar salva cresce" type="submit">Salvar</button>
                 </div>
             </div>
         </div>
@@ -379,6 +379,16 @@
                 <div class="container-editar-dado container-editar-senha">
                     <span class="titulo-dado titulo-senha">Senha</span>
                     <input class="editar-dado editar-senha" type="password" placeholder="Nova senha" name="senha">
+                </div>
+                <div class="container-editar-dado container-editar-admin">
+                    <span class="titulo-dado titulo-admin">Admin</span>
+                    <button type="button" class="botao-toggle pin-inativo" id="botao-toggle<?= $usuario -> id ?>" onclick="acionarBotaoToggle('#botao-toggle<?= $usuario -> id ?>', '#texto-permissao-admin<?= $usuario -> id ?>', '#is-admin-input<?= $usuario -> id ?>')">
+                        <span class="texto-permissao-admin" id="texto-permissao-admin<?= $usuario -> id ?>">Acesso padrão</span>
+                        <span class="fundo-toggle">
+                            <span class="pin-toggle"></span>
+                        </span>
+                    </button>
+                    <input type="hidden" name="is_admin" id="is-admin-input<?= $usuario -> id ?>" value="0">
                 </div>
                 <div class="secao-botoes-salvar-cancelar">
                     <button class="botao botao-cancelar" type="reset" onclick="fecharModal('#modal-edicao-usuarios<?= $usuario->id ?>')">Cancelar</button>
