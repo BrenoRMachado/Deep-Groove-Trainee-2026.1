@@ -13,6 +13,13 @@
     }
 }
 
+@font-face {
+    font-family: 'Fonte-Titulo';
+    src: url('../assets/fontes/TAN\ St.\ Canard\ Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /*todo: Corta qualquer transbordo horizontal invisível */
 html, .tudolanding {
     width: 100%;
@@ -63,10 +70,10 @@ html, .tudolanding {
 }
 
 h1{
-    line-height: 0.9 !important;
+    line-height: 1 !important;
 }
 h3{
-    line-height: 0.9 !important;
+    line-height: 1 !important;
 }
 
 .tdtitulo{
@@ -86,23 +93,23 @@ h3{
 }
 
 .h1lan {
-    font-family: "Anton", sans-serif;
+    font-family: 'Fonte-Titulo';
     color: #FEECE8;
-    font-size: 7vw;
+    font-size: 6vw;
     font-weight: 700;
 }
 
 .h11lan {
-    font-family: "Anton", sans-serif;
+    font-family: 'Fonte-Titulo';
     color: #FEECE8;
-    font-size: 7vw;
+    font-size: 6vw;
     align-self: center;
-    padding-left: 4vw;
+    padding-left: 5vw;
     font-weight: 700;
 }
 
 .h3lan {
-    font-family: "Anton", sans-serif;
+    font-family: 'Fonte-Titulo';
     font-size: 3vw;
     color: #FEECE8;
     font-weight: 700;
