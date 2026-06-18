@@ -134,7 +134,7 @@ class QueryBuilder
 
 
 
-    public function paginacaoPosts($tabela, $limite, $offset, $textoDeBusca, $colunaDeBusca, $filtro) {
+    public function paginatePosts($tabela, $limite, $offset, $textoDeBusca, $colunaDeBusca, $filtro) {
 
         $parametros = [];
 
@@ -178,7 +178,7 @@ class QueryBuilder
     }
     //FIM paginação
 
-    public function selecionarTodosOsPosts($tabela, $textoDeBusca, $colunaDeBusca, $filtro){
+    public function selectAllPosts($tabela, $textoDeBusca, $colunaDeBusca, $filtro){
 
         //* Conta total de posts e une tabela de usuários a tabela de posts
 
@@ -216,6 +216,38 @@ class QueryBuilder
             die($e->getMessage());
         }
 
+    }
+
+    public function selecionaUltimas3Publicacoes(){
+
+        $sql = "SELECT * FROM publicacoes
+            ORDER BY id DESC
+            LIMIT 3";
+        
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
+
+    public function selecionaUltimos3UsuariosAtivos(){
+        $sql = "SELECT * FROM usuarios
+            ORDER BY data_ultima_acao DESC
+            LIMIT 3";
+        
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
     }
 
     public function verificaLogin($email, $senha)

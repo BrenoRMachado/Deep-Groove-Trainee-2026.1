@@ -30,6 +30,11 @@ class LoginController
             $_SESSION['nome'] = $usuario->nome;
             $_SESSION['is_admin'] = $usuario->is_admin;
 
+            App::get('database')->update('usuarios', $usuario->id, [
+                'ultima_acao' => 'login',
+                'data_ultima_acao' => date('Y-m-d H:i:s')
+            ]);
+
             header('Location: /dashboard');
             exit();
         } else {

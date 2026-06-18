@@ -42,6 +42,79 @@
         </header>
         <nav id="area-navegacao-e-estatisticas">
             <ul class="lista-area-navegacao-e-estatisticas">
+                <li class="container-usuarios-publicacoes-recentes container-atividades-recentes">
+                    <div class="numero-de-usuarios-publicacoes-e-recente atividades-recentes">
+                        <i class="icone-usuarios-tabelas-e-recentes icone-atividades-recentes bi bi-activity"></i>
+                        <span class="texto-dados-totais texto-dados-atividades-recentes">
+                            Atividades Recentes: 
+                        </span>
+                    </div>
+                    <div class="informacao-atividades-recentes-1 informacao-recente">
+                        <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-do-usuario-da-atividade-recente">
+                        <div class="texto-da-informacao-recente">
+                            <span class="atividade-no-site">
+                                <?= $usuariosRecentes[0] -> nome ?>
+                                <?php
+                                if ($usuariosRecentes[0] -> ultima_acao === 'login') {
+                                    echo 'fez login';
+                                } else if ($usuariosRecentes[0] -> ultima_acao === 'cadastro') {
+                                    echo 'se cadastrou';
+                                } else if ($usuariosRecentes[0] -> ultima_acao === 'criar') {
+                                    echo 'foi criado';
+                                } else {
+                                    echo 'foi editado';
+                                }
+                                ?>    
+                            </span>
+                            <span class="email">
+                                <?= $usuariosRecentes[0] -> email ?>         
+                            </span>
+                            <span class="data-e-hora">
+                                <?= $usuariosRecentes[0] -> data_ultima_acao ?>
+                            </span>
+                        </div>
+                    </div>
+                    <hr class="linha-dividindo-informacoes-recentes">
+                    <button class="botao-ver-mais-atividades-recentes botao-ver-mais-informacoes-recentes" type="button" onclick="verMaisAtividadesRecentes()">
+                        <span>
+                            Ver mais atividades
+                        </span>
+                        <i class="icone-ver-mais-publicacoes-recentes icone-ver-mais-informacoes-recentes bi bi-chevron-down"></i>
+                    </button>
+                    <?php for($i = 2; $i <= 3; $i++): ?>
+                        <div class="informacao-atividades-recentes-<?= $i ?> informacao-recente">
+                            <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-do-usuario-da-atividade-recente">
+                            <div class="texto-da-informacao-recente">
+                                <span class="atividade-no-site">
+                                    <?= $usuariosRecentes[$i - 1] -> nome ?> 
+                                    <?php
+                                    if ($usuariosRecentes[$i - 1] -> ultima_acao === 'login') {
+                                        echo 'fez login';
+                                    } else if ($usuariosRecentes[$i - 1] -> ultima_acao === 'cadastro') {
+                                        echo 'se cadastrou';
+                                    } else if ($usuariosRecentes[$i - 1] -> ultima_acao === 'criar') {
+                                        echo 'foi criado';
+                                    } else {
+                                        echo 'foi editado';
+                                    }
+                                    ?>
+                                </span>
+                                <span class="email">
+                                    <?= $usuariosRecentes[$i - 1] -> email ?>     
+                                </span>
+                                <span class="data-e-hora">
+                                    <?= $usuariosRecentes[$i - 1] -> data_ultima_acao ?>
+                                </span>
+                            </div>
+                        </div>
+                        <hr class="linha-dividindo-informacoes-recentes linha-dividindo-atividades-recentes-<?= $i ?>">
+                    <?php endfor; ?>
+                    <button class="botao-ver-menos-atividades-recentes botao-ver-menos-informacoes-recentes" type="button" onclick="verMenosAtividadesRecentes()">
+                        <span>
+                            Ver menos atividades
+                        </span>
+                        <i class="icone-ver-menos-atividades-recentes icone-ver-menos-informacoes-recentes bi bi-chevron-up"></i>
+                    </button>
                 <li class="container-usuarios-publicacoes-recentes container-usuarios">
                     <div class="numero-de-usuarios-publicacoes-e-recente numero-de-usuarios">
                         <i class="icone-usuarios-tabelas-e-recentes icone-usuarios bi bi-people-fill"></i>
@@ -55,33 +128,12 @@
                         <i class="icone-navegar bi bi-chevron-right"></i>
                     </a>
                 </li>
-                <li class="container-usuarios-publicacoes-recentes container-ultima-atividade">
-                    <div class="numero-de-usuarios-publicacoes-e-recente ultima-atividade">
-                        <i class="icone-usuarios-tabelas-e-recentes icone-ultima-atividade bi bi-activity"></i>
-                        <span class="texto-dados-totais texto-dados-ultima-atividade">
-                            Última atividade: 
-                        </span>
-                    </div>
-                    <div class="informacao-ultima-atividade informacao-recente">
-                        <span>Novo usuário cadastrado</span>
-                    </div>
-                </li>
-                <li class="container-usuarios-publicacoes-recentes container-ultima-publicacao">
-                    <div class="numero-de-usuarios-publicacoes-e-recente ultima-publicacao">
-                        <i class="icone-usuarios-tabelas-e-recentes icone-ultima-publicacao bi bi-images"></i>
-                        <span class="texto-dados-totais texto-dados-ultima-publicacao">
-                            Última publicação: 
-                        </span>
-                    </div>
-                    <div class="informacao-ultima-publicacao informacao-recente">
-                        <span>Publicação mais recente</span>
-                    </div>
                 </li>
                 <li class="container-usuarios-publicacoes-recentes container-publicacoes">
                     <div class="numero-de-usuarios-publicacoes-e-recente numero-de-publicacoes">
                         <i class="icone-usuarios-tabelas-e-recentes icone-publicacoes bi bi-disc"></i>
                         <span class="texto-dados-totais texto-dados-publicacoes">
-                            Total de Publicações:
+                            Total de Posts:
                             <span class="quantidade-total-de-publicacoes"><?= $totalDePosts ?></span>
                         </span>
                     </div>
@@ -89,6 +141,58 @@
                         Tabela de Publicações
                         <i class="icone-navegar bi bi-chevron-right"></i>
                     </a>
+                </li>
+                <li class="container-usuarios-publicacoes-recentes container-publicacoes-recentes">
+                    <div class="numero-de-usuarios-publicacoes-e-recente publicacoes-recentes">
+                        <i class="icone-usuarios-tabelas-e-recentes icone-publicacoes-recentes bi bi-images"></i>
+                        <span class="texto-dados-totais texto-dados-publicacoes-recentes">
+                            Publicações recentes: 
+                        </span>
+                    </div>
+                    <div class="informacao-publicacoes-recentes-1 informacao-recente">
+                        <img src="<?= $publicacoesRecentes[0] -> foto ?>" class="foto-da-publicacao-recente">
+                        <div class="texto-da-informacao-recente">
+                            <span class="titulo">
+                                <?= $publicacoesRecentes[0] -> titulo ?>
+                            </span>
+                            <span class="artista">
+                                <?= $publicacoesRecentes[0] -> artista ?>
+                            </span>
+                            <span class="data-e-hora">
+                                <?= $publicacoesRecentes[0] -> data_da_publicacao ?>
+                            </span>
+                        </div>
+                    </div>
+                    <hr class="linha-dividindo-informacoes-recentes linha-dividindo-informacoes-recentes-1">
+                    <button class="botao-ver-mais-publicacoes-recentes botao-ver-mais-informacoes-recentes" type="button" onclick="verMaisPublicacoesRecentes()">
+                        <span>
+                            Ver mais publicações
+                        </span>
+                        <i class="icone-ver-mais-publicacoes-recentes icone-ver-mais-informacoes-recentes bi bi-chevron-down"></i>
+                    </button>
+                    <?php for($i = 2; $i <= 3; $i++): ?>
+                    <div class="informacao-publicacoes-recentes-<?= $i ?> informacao-recente">
+                        <img src="<?= $publicacoesRecentes[$i - 1] -> foto ?>" class="foto-da-publicacao-recente">
+                        <div class="texto-da-informacao-recente">
+                            <span class="titulo">
+                                <?= $publicacoesRecentes[$i - 1] -> titulo ?>
+                            </span>
+                            <span class="artista">
+                                <?= $publicacoesRecentes[$i - 1] -> artista ?>
+                            </span>
+                            <span class="data-e-hora">
+                                <?= $publicacoesRecentes[$i - 1] -> data_da_publicacao ?>
+                            </span>
+                        </div>
+                    </div>
+                    <hr class="linha-dividindo-informacoes-recentes linha-dividindo-publicacoes-recentes-<?= $i ?>">
+                    <?php endfor; ?>
+                    <button class="botao-ver-menos-publicacoes-recentes botao-ver-menos-informacoes-recentes" type="button" onclick="verMenosPublicacoesRecentes()">
+                        <span>
+                            Ver menos publicações
+                        </span>
+                        <i class="icone-ver-menos-publicacoes-recentes icone-ver-menos-informacoes-recentes bi bi-chevron-up"></i>
+                    </button>
                 </li>
             </ul>
         </nav>  
