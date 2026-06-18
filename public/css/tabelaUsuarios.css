@@ -17,6 +17,7 @@
     --cor-vinho-100: #5D1D2D;
     --cor-vermelho-50: #A62C3A;
     --cor-laranja-200: #AC432B;
+    --cor-laranja-100: #F09859;
 
     /** var modal editar */
     --cor-branco-200: #FEECE8;
@@ -439,7 +440,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 15.5%;
+    height: 14%;
     width: 90%;
 }
 
@@ -453,7 +454,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60%;
+    height: 61.5%;
     font-size: 0.8rem;
 }
 
@@ -467,6 +468,10 @@
 
 .modal-edicao-usuarios .titulo-senha {
     background-color: var(--cor-vermelho-50);
+}
+
+.modal-edicao-usuarios .titulo-admin {
+    background-color: var(--cor-laranja-100);
 }
 
 /* *Estilo do input de digitar o dado do usuário */
@@ -495,6 +500,70 @@
 .modal-edicao-usuarios .editar-dado:focus {
     outline: none;
 }
+
+/* *Estilo e animacao do botão de selecionar se é ou não administrador ao criar usuário */
+
+.modal-edicao-usuarios .botao-toggle,
+ #modal-criar-usuarios .botao-toggle {
+    border-radius: 10px;
+    width: 75%;
+    height: 1.7rem;
+    background: none;
+    border: 2px solid var(--cor-branco-400);
+    font-family: var(--fonte-modal);
+    color: var(--cor-vinho-100);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0.4rem;
+}
+
+#modal-criar-usuarios .botao-toggle {
+    width: 80%;
+}
+
+.modal-edicao-usuarios .botao-toggle:hover, #modal-criar-usuarios .botao-toggle:hover {
+    cursor: pointer;
+}
+
+.modal-edicao-usuarios .fundo-toggle, #modal-criar-usuarios .fundo-toggle {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    height: 1.25rem;
+    width: 2.25rem;
+    border-radius: 10px;
+    background-color: #262626;
+}
+
+.modal-edicao-usuarios .pin-toggle, #modal-criar-usuarios .pin-toggle {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--cor-branco-100);
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.modal-edicao-usuarios .pin-ativo .pin-toggle, #modal-criar-usuarios .pin-ativo .pin-toggle {
+    transform: translateX(1.1rem);
+}
+
+.modal-edicao-usuarios .pin-inativo .pin-toggle, #modal-criar-usuarios .pin-inativo .pin-toggle {
+    transform: translateX(0.1rem);
+}
+
+.modal-edicao-usuarios .pin-ativo .fundo-toggle, #modal-criar-usuarios .pin-ativo .fundo-toggle {
+    background-color: var(--cor-laranja-100);
+}
+
+.modal-edicao-usuarios .pin-inativo .fundo-toggle, #modal-criar-usuarios .pin-inativo .fundo-toggle {
+    background-color: var(--cor-vinho-100);
+}
+
+/* *FIM BOTÃO TOGGLE */
 
 /* *Estilo do container dos botões de salvar e cancelar */
 .modal-edicao-usuarios .secao-botoes-salvar-cancelar {
@@ -925,7 +994,7 @@
     background-size: cover;
 }
 
-#modal-criar-usuarios button:hover {
+#modal-criar-usuarios button.cresce:hover {
     transform: scale(1.025);
 }
 
@@ -1186,65 +1255,6 @@
     font-family: var(--fonte-modal);
     text-align: center;
 }
-
-/* *Estilo e animacao do botão de selecionar se é ou não administrador ao criar usuário */
-
-#modal-criar-usuarios .botao-toggle {
-    border-radius: 10px;
-    width: 80%;
-    height: 1.7rem;
-    background: none;
-    border: 2px solid var(--cor-branco-400);
-    font-family: var(--fonte-modal);
-    color: var(--cor-vinho-100);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 0.4rem;
-}
-
-#modal-criar-usuarios .botao-toggle:hover {
-    cursor: pointer;
-}
-
-#modal-criar-usuarios .fundo-toggle {
-    display: inline-flex;
-    flex-shrink: 0;
-    align-items: center;
-    height: 1.25rem;
-    width: 2.25rem;
-    border-radius: 10px;
-    background-color: #262626;
-}
-
-#modal-criar-usuarios .pin-toggle {
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background-color: var(--cor-branco-100);
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-}
-
-#modal-criar-usuarios .pin-ativo .pin-toggle {
-    transform: translateX(1.1rem);
-}
-
-#modal-criar-usuarios .pin-inativo .pin-toggle {
-    transform: translateX(0.1rem);
-}
-
-#modal-criar-usuarios .pin-ativo .fundo-toggle {
-    background-color: var(--cor-laranja-200);
-}
-
-#modal-criar-usuarios .pin-inativo .fundo-toggle {
-    background-color: var(--cor-vinho-100);
-}
-
-/* *FIM BOTÃO TOGGLE */
 
 #modal-criar-usuarios button {
     text-decoration: none;
