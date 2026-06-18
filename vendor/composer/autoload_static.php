@@ -33,7 +33,7 @@ class ComposerStaticInit90bbf95869b4e88bf0dc5022e708a458
         'App\\Controllers\\LoginController' => __DIR__ . '/../..' . '/app/Controllers/LoginController.php',
         'App\\Controllers\\NavbarController' => __DIR__ . '/../..' . '/app/Controllers/NavbarController.php',
         'App\\Controllers\\PaginaDePostsController' => __DIR__ . '/../..' . '/app/Controllers/paginaDePostsController.php',
-        'App\\Controllers\\PaginaIndividual' => __DIR__ . '/../..' . '/app/Controllers/PaginaIndividual.php',
+        'App\\Controllers\\PaginaIndividualController' => __DIR__ . '/../..' . '/app/Controllers/PaginaIndividualController.php',
         'App\\Controllers\\TabelaPostsController' => __DIR__ . '/../..' . '/app/Controllers/TabelaPostsController.php',
         'App\\Controllers\\TabelaUsuariosController' => __DIR__ . '/../..' . '/app/Controllers/TabelaUsuariosController.php',
         'App\\Controllers\\dashboardController' => __DIR__ . '/../..' . '/app/Controllers/dashboardController.php',
