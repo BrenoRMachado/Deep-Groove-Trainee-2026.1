@@ -76,6 +76,22 @@
                 <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Email</div> <input placeholder="Digite o email" type="email" name="email" required></div>
                 <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Senha</div> <input class="criar-senha" placeholder="Digite a senha" type="password" name="senha" required> <button class="botao-de-visualizar-senha-no-modal-de-criar" type="button" onclick="alternarVisualizacaoDaSenhaAoCriarUsuario()" > <i class="icone-visualizar-senha-no-modal-de-criar bi bi-eye-slash-fill"></i> </button> </div>
                 <div class="quarto-da-area-informacoes">
+                    <div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">
+                        Admin
+                    </div> 
+                    <button type="button" class="botao-toggle pin-inativo" onclick="acionarBotaoToggle(this)">
+                        <span class="texto-permissao-admin">
+                            Acesso padrão
+                        </span>
+                        <span class="fundo-toggle">
+                            <span class="pin-toggle" id="pin-toggle">
+    
+                            </span>
+                        </span>
+                    </button>
+                    <input type="hidden" name="is_admin" id="is-admin-input" value="0">
+                </div>
+                <div class="quarto-da-area-informacoes">
                     <button class="botao-modal-criar cancelar" type="reset" onclick="fecharModal('#modal-criar-usuarios')">Cancelar</button>
                     <button class="botao-modal-criar salva" type="submit">Salvar</button>
                 </div>
@@ -152,9 +168,9 @@
                             <td class="colunageral"><?= $usuario->is_admin ? 'Administrador' : 'Usuário' ?></td>
 
                             <td class="colunageral">
-                                <i class="acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user<?= $usuario->id ?>')"></i>
-                                <i class="acao bi bi-pencil-square" onclick="abrirModal('#modal-edicao-usuarios<?= $usuario->id ?>')"></i>
-                                <i class="acao bi bi-trash" onclick="abrirModal('#modal-excluir-user<?= $usuario->id ?>')"></i>
+                                <i class="<?= $usuario -> criado_por === $_SESSION['id'] || $usuario -> id === $_SESSION['id'] ? '' : 'disabled' ?> acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user<?= $usuario->id ?>')"></i>
+                                <i class="<?= $usuario -> criado_por === $_SESSION['id'] || $usuario -> id === $_SESSION['id'] ? '' : 'disabled' ?>  acao bi bi-pencil-square" onclick="abrirModal('#modal-edicao-usuarios<?= $usuario->id ?>')"></i>
+                                <i class="<?= $usuario -> criado_por === $_SESSION['id'] || $usuario -> id === $_SESSION['id'] ? '' : 'disabled' ?>  acao bi bi-trash" onclick="abrirModal('#modal-excluir-user<?= $usuario->id ?>')"></i>
                             </td>
 
                         </tr>
