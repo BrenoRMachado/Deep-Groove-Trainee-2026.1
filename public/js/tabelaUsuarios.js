@@ -1,21 +1,19 @@
 // *CÓDIGO DO MODAL DE ADICIONAR USUÁRIO
 
-//* Seleciona texto e valor do input de selecionar se é admin ou não
-const textoPermissaoAdmin = document.querySelector('.texto-permissao-admin');
-const valorDoInputAdmin = document.querySelector('#is-admin-input');
-
-
 //* *Aciona o botão toggle ao clicar nele
-function acionarBotaoToggle(botaoToggle){
+function acionarBotaoToggle(idBotaoToggle, idTextoPermissaoAdmin, idIsAdminInput){
+    const botaoToggle = document.querySelector(idBotaoToggle);
+    const textoPermissaoAdmin = document.querySelector(idTextoPermissaoAdmin);
+    const isAdminInput = document.querySelector(idIsAdminInput);
     botaoToggle.classList.toggle('pin-ativo');
     botaoToggle.classList.toggle('pin-inativo');
     if (botaoToggle.classList.contains('pin-ativo')){
         textoPermissaoAdmin.textContent = 'Acesso administrativo';
-        valorDoInputAdmin.value = '1';
+        isAdminInput.value = '1';
     }
     else {
         textoPermissaoAdmin.textContent = 'Acesso padrão';
-        valorDoInputAdmin.value = '0';
+        isAdminInput.value = '0';
     }
 }
 
