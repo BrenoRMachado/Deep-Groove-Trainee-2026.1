@@ -138,7 +138,8 @@
 
     </section>
 
-    <?php require "footerLanding.view.php"; ?>
+    <?php require "footer.view.php"; ?>
+
 
 </body>
 
