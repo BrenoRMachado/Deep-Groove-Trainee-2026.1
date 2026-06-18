@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['id'])) {
+        header('Location: /login');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../public/css/tabelaUsuarios.css">
+
 
     <!--* impotando fontes google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,8 +105,8 @@
             <img src="../../../public/assets/ícone usuário.svg" alt="User">
 
             <div class="infos">
-                <h3 class="textoh3">Fulano</h3>
-                <h3 class="textoh3">Administrador</h3>
+                <h3 class="textoh3"><?= $_SESSION['nome'] ?></h3>
+                <h3 class="textoh3"><?= $_SESSION['is_admin'] ? 'Administrador' : "Usuário" ?></h3>
             </div>
 
         </div>

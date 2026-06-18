@@ -61,6 +61,7 @@ class TabelaUsuariosController {
             'email' => $_POST['email'],
             'senha' => $_POST['senha'],
             'foto' => $caminhoDaImagem,
+            'ultima_acao' => 'criar'
             ];    
 
         App::get('database') -> insert('usuarios', $parametros);
@@ -101,6 +102,7 @@ class TabelaUsuariosController {
             'email' => !empty($_POST['email']) ? $_POST['email'] : $usuarioAtual->email,
             'senha' => !empty($_POST['senha']) ? $_POST['senha'] : $usuarioAtual->senha,
             'foto' => $caminhoDaImagem,
+            'ultima_acao' => 'editar'
             ];  
 
         App::get('database') -> update('usuarios', $id, $parametros);
