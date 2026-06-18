@@ -84,39 +84,40 @@
     </form>
 
 
+    <div class="espacom">
+        <section class="topoTabelaUser">
+            <?php if ($_SESSION['is_admin']): ?>
+                <button class="botao-novo-post" onclick="abrirModal('#modal-criar-usuarios')">
+                    <div class="addUserdesktop ">
+                        <i class="icone bi bi-plus"></i>
+                        <p class="textop">Novo usuário</p>
+                    </div>
 
-    <section class="topoTabelaUser">
-        <?php if ($_SESSION['is_admin']): ?>
-            <button class="botao-novo-post" onclick="abrirModal('#modal-criar-usuarios')">
-                <div class="addUserdesktop ">
-                    <i class="icone bi bi-plus"></i>
-                    <p class="textop">Novo usuário</p>
+                    <div class="addUsermobile ">
+                        <img src="../../../public/assets/addMobile.svg" alt="add" class="addm">
+                    </div>
+                </button>
+            <?php endif; ?>    
+            <div class="infoUser">
+                <img src="../../../public/assets/ícone usuário.svg" alt="User" class="userimg">
+
+                <div class="infos">
+                    <h3 class="textoh3"><?= $_SESSION['nome'] ?></h3>
+                    <h3 class="textoh3"><?= $_SESSION['is_admin'] ? 'Administrador' : "Usuário" ?></h3>
                 </div>
 
-                <div class="addUsermobile ">
-                    <img src="../../../public/assets/addMobile.svg" alt="add" class="addm">
-                </div>
-            </button>
-        <?php endif; ?>    
-        <div class="infoUser">
-            <img src="../../../public/assets/ícone usuário.svg" alt="User" class="userimg">
-
-            <div class="infos">
-                <h3 class="textoh3"><?= $_SESSION['nome'] ?></h3>
-                <h3 class="textoh3"><?= $_SESSION['is_admin'] ? 'Administrador' : "Usuário" ?></h3>
             </div>
 
-        </div>
+        </section>
 
-    </section>
+        <section class="titulo">
+            <h1 class="textoTitulo">USUÁRIOS CADASTRADOS</h1>
+        </section>
 
-    <section class="titulo">
-        <h1 class="textoTitulo">USUÁRIOS CADASTRADOS</h1>
-    </section>
-
-    <section class="pesquisar">
-        <input type="text" class="pesqUser" placeholder="Pesquisar usuário...">
-    </section>
+        <section class="pesquisar">
+            <input type="text" class="pesqUser" placeholder="Pesquisar usuário...">
+        </section>
+    
 
         
 
@@ -315,6 +316,7 @@
                 </section>
 
         </section>
+    </div>
     
 
 <?php foreach($usuarios as $usuario): ?>
