@@ -28,7 +28,7 @@ html {
 
 /* * Estilo da página de posts */
 #pagina-de-posts {
-    background: linear-gradient(to bottom, var(--cor-vinho-100) 20%, var(--cor-preto-100) 100%);
+    background: linear-gradient(to bottom, var(--cor-vinho-100) 40%, var(--cor-preto-100) 100%);
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
@@ -307,8 +307,8 @@ html {
 /* *Estilo do container do texto e da capa do álbum da página de posts */ 
 #pagina-de-posts #container-posts-mobile .capa-texto-album-container {
     border-radius: 16px;
-    height: 29rem;
-    width: 40%;
+    height: 32rem;
+    width: 32%;
     display: flex;
     flex-direction: column;
     z-index: 2;
@@ -512,6 +512,11 @@ html {
 
     #pagina-de-posts .container-pesquisa-e-filtro {
         width: 100%;
+    }
+
+    #pagina-de-posts #container-posts-mobile .capa-texto-album-container {
+        height: 29rem;
+        width: 40%;
     }
 
     #pagina-de-posts #container-de-mudanca-de-pagina .seta-esquerda-mudar-para-pagina-anterior, #pagina-de-posts #container-de-mudanca-de-pagina .seta-direita-mudar-para-proxima-pagina {

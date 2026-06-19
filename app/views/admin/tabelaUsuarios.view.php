@@ -175,9 +175,9 @@
                             <td class="colunageral"><?= $usuario->is_admin ? 'Administrador' : 'Usuário' ?></td>
 
                             <td class="colunageral">
-                                <i class="<?= $usuario -> criado_por === $_SESSION['id'] || $usuario -> id === $_SESSION['id'] ? '' : 'disabled' ?> acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user<?= $usuario->id ?>')"></i>
-                                <i class="<?= $usuario -> criado_por === $_SESSION['id'] || $usuario -> id === $_SESSION['id'] ? '' : 'disabled' ?>  acao bi bi-pencil-square" onclick="abrirModal('#modal-edicao-usuarios<?= $usuario->id ?>')"></i>
-                                <i class="<?= $usuario -> criado_por === $_SESSION['id'] || $usuario -> id === $_SESSION['id'] ? '' : 'disabled' ?>  acao bi bi-trash" onclick="abrirModal('#modal-excluir-user<?= $usuario->id ?>')"></i>
+                                <i class="acao bi bi-eye-fill" onclick="abrirModal('#modal-visu-user<?= $usuario->id ?>')"></i>
+                                <i class="acao bi bi-pencil-square" onclick="abrirModal('#modal-edicao-usuarios<?= $usuario->id ?>')"></i>
+                                <i class="acao bi bi-trash" onclick="abrirModal('#modal-excluir-user<?= $usuario->id ?>')"></i>
                             </td>
 
                         </tr>
@@ -380,7 +380,10 @@
                 </div>
                 <div class="container-editar-dado container-editar-senha">
                     <span class="titulo-dado titulo-senha">Senha</span>
-                    <input class="editar-dado editar-senha" type="password" placeholder="Nova senha" name="senha">
+                    <input class="editar-dado editar-senha" id="editar-senha<?= $usuario -> id ?>" type="password" placeholder="Nova senha" name="senha">
+                <button class="botao-de-visualizar-senha-no-modal-de-editar" type="button" onclick="alternarVisualizacaoDaSenhaAoEditarUsuario('#editar-senha<?= $usuario -> id ?>', '#icone-visualizar-senha-no-modal-de-editar<?= $usuario -> id ?>')"> 
+                        <i id="icone-visualizar-senha-no-modal-de-editar<?= $usuario -> id ?>" class="icone-visualizar-senha-no-modal-de-editar bi bi-eye-slash-fill"></i> 
+                    </button>
                 </div>
                 <?php if($_SESSION['is_admin']): ?>
                     <div class="container-editar-dado container-editar-admin">

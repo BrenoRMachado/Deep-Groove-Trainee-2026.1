@@ -31,11 +31,13 @@ function adicionarFotoDePerfil() {
     };
 };
 
-//* Função que alterna entre visualizar senha e não visualizar nos modais de criar e editar usuário
+//* Funções que alternam entre visualizar senha e não visualizar nos modais de criar e editar usuário ------------------------------------------------
 
 const inputDeCriarSenha = document.querySelector(".criar-senha"); 
 const iconeDeVisualizarSenhaNoModalDeCriar = document.querySelector(".icone-visualizar-senha-no-modal-de-criar");
 let estadoDeVisualizacaoDaSenhaAoCriar = 'desativado';
+
+let estadoDeVisualizacaoDaSenhaAoEditar = 'desativado';
 
 function alternarVisualizacaoDaSenhaAoCriarUsuario() {
     if (estadoDeVisualizacaoDaSenhaAoCriar === 'desativado') {
@@ -54,15 +56,39 @@ function alternarVisualizacaoDaSenhaAoCriarUsuario() {
 
 //* Mudança do tamanho da fonte do texto ao digitar a senha sem visualização e com visualização ao criar usuário
 inputDeCriarSenha.addEventListener('input', function () {
-    inputDeCriarSenha.classList.toggle('digitando-sem-ver-senha', inputDeCriarSenha.value.length > 0 && iconeDeVisualizarSenhaNoModalDeCriar.classList.contains('bi-eye-slash-fill'));
+    inputDeCriarSenha.classList.toggle('digitando-sem-ver-senha', iconeDeVisualizarSenhaNoModalDeCriar.classList.contains('bi-eye-slash-fill'));
 });
+
+function alternarVisualizacaoDaSenhaAoEditarUsuario(inputId, iconeId) {
+    const inputDeEditarSenha = document.querySelector(inputId); 
+    const iconeDeVisualizarSenhaNoModalDeEditar = document.querySelector(iconeId);
+    if (estadoDeVisualizacaoDaSenhaAoEditar === 'desativado') {
+        inputDeEditarSenha.type = '';
+        iconeDeVisualizarSenhaNoModalDeEditar.classList.replace('bi-eye-slash-fill', 'bi-eye-fill');
+        estadoDeVisualizacaoDaSenhaAoEditar = 'ativado';
+    }
+    else {
+        inputDeEditarSenha.type = 'password';
+        iconeDeVisualizarSenhaNoModalDeEditar.classList.replace('bi-eye-fill', 'bi-eye-slash-fill');
+        estadoDeVisualizacaoDaSenhaAoEditar = 'desativado';
+    }
+    // *Dispara evento do input de editar senha
+    inputDeEditarSenha.dispatchEvent(new Event('input'));
+    //* Mudança do tamanho da fonte do texto ao digitar a senha sem visualização e com visualização ao editar usuário
+    inputDeEditarSenha.addEventListener('input', function () {
+        inputDeEditarSenha.classList.toggle('digitando-sem-ver-senha', iconeDeVisualizarSenhaNoModalDeEditar.classList.contains('bi-eye-slash-fill'));
+    });
+}
+
+//* ------------------------------------------------------------------------------------------------------------------------------------------------
 
 // *CÓDIGO DO MODAL DE ADICIONAR USUÁRIO
 
 //* Mudança do tamanho da fonte do texto ao digitar a senha sem visualização e com visualização ao editar usuário
 document.querySelectorAll('.editar-senha').forEach(input => {
     input.addEventListener('input', () => {
-        input.classList.toggle('digitando-sem-ver-senha', input.value.length > 0);
+        const icone = input.closest('.container-editar-senha').querySelector('.icone-visualizar-senha-no-modal-de-editar');
+        input.classList.toggle('digitando-sem-ver-senha', icone.classList.contains('bi-eye-slash-fill'));
     });
 });
 
@@ -151,7 +177,7 @@ function abrirModal(idModal, idFundo) {
 function fecharModal(idModal, idFundo) {
     const modal = document.querySelector(idModal);
     const fundo = document.querySelector(idFundo);
-    
+
     if (modal && fundo) {
         fundo.style.display = 'none';
         modal.style.display = 'none';
@@ -185,6 +211,31 @@ function fecharModal(idModal) {
 
         //o all pega tds q tenham essa classe, se nn tivesse pegaria so no primeiro
         fundomodal.style.display = "none";
+
+    resetarVisualizacaoDeSenhaAoFecharModal(idModal);
+}
+
+// *Função que retorna a visualização de senha para o estado desativado, sem ver, ao fechar o modal atual
+function resetarVisualizacaoDeSenhaAoFecharModal(idModal){
+
+    const iconeDeVisualizarSenhaNoModalDeCriar = document.querySelector(idModal + ' .icone-visualizar-senha-no-modal-de-criar');
+    const inputDeCriarSenha = document.querySelector(idModal + ' .criar-senha');
+    if (iconeDeVisualizarSenhaNoModalDeCriar && inputDeCriarSenha && iconeDeVisualizarSenhaNoModalDeCriar.classList.contains('bi-eye-fill')){
+        iconeDeVisualizarSenhaNoModalDeCriar.classList.replace('bi-eye-fill', 'bi-eye-slash-fill');
+        inputDeCriarSenha.type = 'password';
+        estadoDeVisualizacaoDaSenhaAoCriar = 'desativado';
+        inputDeCriarSenha.classList.add('digitando-sem-ver-senha');
+    }
+        
+    const iconeDeVisualizarSenhaNoModalDeEditar = document.querySelector(idModal + ' .icone-visualizar-senha-no-modal-de-editar');
+    const inputDeEditarSenha = document.querySelector(idModal + ' .editar-senha');
+    if (iconeDeVisualizarSenhaNoModalDeEditar && inputDeEditarSenha && iconeDeVisualizarSenhaNoModalDeEditar.classList.contains('bi-eye-fill')){
+        iconeDeVisualizarSenhaNoModalDeEditar.classList.replace('bi-eye-fill', 'bi-eye-slash-fill');
+        inputDeEditarSenha.type = 'password';
+        estadoDeVisualizacaoDaSenhaAoEditar = 'desativado';
+        inputDeEditarSenha.classList.add('digitando-sem-ver-senha');
+    }
+
 }
 
 // const modalCriar = document.getElementById("modal-criar-usuarios");
