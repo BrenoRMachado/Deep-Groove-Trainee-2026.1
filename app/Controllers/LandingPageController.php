@@ -9,13 +9,18 @@ class LandingPageController
 {
 
     public function index()
-    {
+    {   
+        $bancoDeDados = App::get('database');
+
+        $publicacoesRecentes = $bancoDeDados -> selecionaUltimas4publicacoes();
+
         // Busca os posts utilizando o método que você já criou
         $posts = $this->getPosts();
 
         // Passa os posts para a view através de um array associativo
         return view('site/landingpage', [
-            'posts' => $posts
+            'posts' => $posts,
+            'publicacoesRecentes' => $publicacoesRecentes
         ]);
     }
 
@@ -29,4 +34,6 @@ class LandingPageController
             die($e->getMessage());
         }
     }
+
+    
 }

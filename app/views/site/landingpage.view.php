@@ -68,9 +68,9 @@
 
         <!--! titulo do carroussel -->
         <div class="titulo-total1">
-            <img class="titulo_carroussel_img" src="../../../public/assets/soudwaves.png">
+            <img class="titulo_carroussel_img" src="../../../public/assets/onda nova s-background.png">
             <h1 class="titulo_carroussel">MAIS VENDIDOS</h1>
-            <img class="titulo_carroussel_img im2" src="../../../public/assets/soudwaves.png">
+            <img class="titulo_carroussel_img im2" src="../../../public/assets/onda nova s-background.png">
         </div>
         <!--! contem as imagems, setas e bolinhas do carroussel  -->
         <div class="slider">
@@ -81,17 +81,17 @@
                 <!--! imagens que vão estar passando no carroussel -->
                 <div class="slider-conteudo">
                     <?php foreach ($posts as $post): ?>
-                    <div class="slider-item">
-                        <a href="/paginaIndividual?id=<?= $post->id ?>" class="slider-link">
-                            <img src="<?= $post->foto ?>">
+                        <div class="slider-item">
+                            <a href="/paginaIndividual?id=<?= $post->id ?>" class="slider-link">
+                                <img src="<?= $post->foto ?>">
 
-                            <div class="slider-informacoes">
-                                <h2 class="slider-titulo"><?= $post->titulo ?></h2>
-                                <p class="slider-texto"><?= $post->ano ?></p>
-                                <p class="slider-texto"><?= $post->artista ?></p>
-                            </div>
-                        </a>
-                    </div>
+                                <div class="slider-informacoes">
+                                    <h2 class="slider-titulo"><?= $post->titulo ?></h2>
+                                    <p class="slider-texto"><?= $post->ano ?></p>
+                                    <p class="slider-texto"><?= $post->artista ?></p>
+                                </div>
+                            </a>
+                        </div>
                     <?php endforeach; ?>
                 </div>
             <!--! bolinhas quantificadoras de "página" -->
@@ -113,35 +113,31 @@
 
         <!--? titulo do mosaico -->
         <div class="titulo-total2">
-            <img class="titulo_mosaico_img" src="../../../public/assets/soudwaves.png">
+            <img class="titulo_mosaico_img" src="../../../public/assets/onda nova s-background.png">
             <h1 class="titulo-mosaico">ÚLTIMOS PUBLICADOS</h1>
-            <img class="titulo_mosaico_img im2" src="../../../public/assets/soudwaves.png">
+            <img class="titulo_mosaico_img im2m" src="../../../public/assets/onda nova s-background.png">
         </div>
 
         <!--? contem os posts -->
         <div class="elementos-post">
-
+            
             <!--? o poste quadrado grandão -->
-            <div class="postGrande"><img src="../../../public/assets/routezero-the ora-xikers.jpg"></div>
+            <div class="postGrande">
+                <img src="<?= $publicacoesRecentes[0]->foto?>">
+
+                <div class="mosaico-informacoes">
+                    <h2 class="mosaico-conceito"><?= $publicacoesRecentes[0]->conceito ?></h2>
+                </div>
+            </div>
 
             <!--? a lista de posts pequena -->
             <div class="postsPquenos">
-
+                <?php for($i = 1; $i <= 3; $i++): ?>
                 <div class="p1">
-                    <div class="im"><img class="i1" src="../../../public/assets/IOI- Loop.jpg"></div>
-                    <p class="t1">It is a long established fact that a reader when looking at its layout.</p>
+                    <div class="im"><img class="i1" src="<?= $publicacoesRecentes[$i]->foto?>"></div>
+                    <p class="t1"><?= $publicacoesRecentes[$i]->conceito?></p>
                 </div>
-
-                <div class="p2">
-                    <div class="im"><img class="i2" src="../../../public/assets/Wyld.jpg"></div>
-                    <p class="t2">It is a long established fact that a reader when looking at its layout.</p>
-                </div>
-
-                <div class="p3">
-                    <div class="im"><img class="i3" src="../../../public/assets/Gongbu.jpg"></div>
-                    <p class="t3">It is a long established fact that a reader when looking at its layout.</p>
-                </div>
-
+                <?php endfor; ?>         
             </div>
 
         </div>
