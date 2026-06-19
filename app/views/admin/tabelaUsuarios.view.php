@@ -477,7 +477,7 @@
 
 
                 <section class="fotodeperfilex">
-                    <img class="imgperfilex" src="../../../public/assets/fotodeperfil.jpg" alt="Foto de perfil">
+                    <img class="imgperfilex" src="<?= $usuario->foto?>" alt="Foto de perfil">
                 </section>
 
                 <section class="X">
