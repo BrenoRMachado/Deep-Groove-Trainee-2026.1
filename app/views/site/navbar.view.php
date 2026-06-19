@@ -15,7 +15,7 @@
 </a>
         <div class="metade-navbar segunda-metade">
             <a href="/posts"><div class="botoes">
-                <i class="bi bi-stack fs-3" style="color: white"></i>
+                <i class="bi bi-stack fs-3"></i>
                 Publicações
             </div></a>
             <div class="botoes container-perfil">
