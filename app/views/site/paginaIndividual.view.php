@@ -60,7 +60,13 @@
 
                             <div class="coisas-sobre-d">
                                 <h3 class="h3-pagPost-d">DURAÇÃO</h3>
-                                <p class="textinhos"><?= $post->duracao?></p>
+                                <p class="textinhos">
+                                    <?php 
+                                        $minutos = floor($post -> duracao / 60);
+                                        $segundos = $post -> duracao % 60;
+                                        echo $minutos . ':' . str_pad($segundos, 2, '0', STR_PAD_LEFT);
+                                    ?>
+                                </p>
                             </div>
                         </div>
 
@@ -99,11 +105,17 @@
                          <div class="musica-d">
 
                             <div class="dados-faixa-d">
-                                <img src="../../../public/assets/img/Play.svg" alt="play" class="play" onclick="playPreview(<?= $faixa -> id ?>)">
+                                <i alt="play" id="playPause<?= $faixa -> id ?>" class="play bi bi-play-circle-fill" onclick="playPreview(<?= $faixa -> id ?>)"></i>
                                 <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
                                 <div class="nome-tempo">
                                     <h4 class="nome-faixa-d"><?= $faixa -> titulo ?></h4>
-                                    <p class="textinhos"><?= $faixa -> duracao ?></p>
+                                    <p class="textinhos">
+                                        <?php 
+                                            $minutos = floor($faixa -> duracao / 60);
+                                            $segundos = $faixa -> duracao % 60;
+                                            echo $minutos . ':' . str_pad($segundos, 2, '0', STR_PAD_LEFT);
+                                        ?>
+                                    </p>
                                 </div>
                                 
                             </div>

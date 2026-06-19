@@ -66,10 +66,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 #tbposts{
-    padding: 0 2rem 4rem 0;
+    /* padding: 0 2rem 4rem 0; */
     min-height: 100vh;
     background: linear-gradient(
         #6D3534 39%, 
@@ -80,8 +81,9 @@
     overflow-x: hidden;
 }
 .pagecontainer{
-    /* display: flex;
-    justify-content: end; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding-top: 1rem;
     margin-left: 10%;
     width: 90%;
@@ -261,6 +263,7 @@
     justify-content: space-evenly;
     background-image: url(../assets/fundo-modais-editada.jpeg);
     background-size: cover;
+    font-family: var(--fonte);
 }    
 
 /* *Estilo da secao do texto, da foto, e do ícone de fechar o modal */
@@ -269,6 +272,10 @@
     height: 23%;
     display: flex;
     justify-content: space-between;
+}
+
+.modal-edicao-posts .secao-texto-foto-fechar-modal h1 {
+    font-size: 3vh;
 }
 
 /* *Estilo do texto de editar foto da capa do álbum */
@@ -355,6 +362,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.modal-edicao-posts .container-instrucao-editar-foto-capa-do-album p{
+    font-size: 2vh;
+}
+
+.modal-edicao-posts .container-instrucao-editar-foto-capa-do-album h2{
+    font-size: 3vh;
 }
 
 /* *Estilo do texto de instruções de editar foto da capa do álbum */
@@ -1276,6 +1291,30 @@
     font-size: 0.8rem;
     font-family: var(--fonte-modal);
     text-align: center;
+    border: none;
+}
+
+.container-input-e-botao{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid var(--cor-branco-400);
+    width: 75%;
+    height: 50%;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.container-input-e-botao input{
+    border: none;
+    padding: 0 0.4rem;
+    background: none;
+    font-family: var(--fonte-modal);
+    color: var(--cor-vinho-100);
+    height: 100%;
+}
+
+.botao-container-com-input{
+    border-radius: 10px;
 }
 
 #modal-criar-posts button {
@@ -1448,4 +1487,188 @@
 
 .escrita-inputs-modal-criar {
     color: #6D3534
+}
+
+/* *Tablet */
+
+@media (max-width: 769px){
+    #modal-criar-usuarios {
+            width: 80%;
+        }
+}
+
+/* *Mobile */
+
+
+@media (max-width: 600px){
+    #modal-criar-usuarios {
+            width: 95%;
+            height: 95%;
+        }
+    #modal-criar-usuarios .area-de-colocar-informacoes {
+        width: 90%;
+    }
+    #modal-criar-usuarios .container-informacoes-foto {
+        gap: 0.1rem;
+    }
+    #modal-criar-usuarios .segunda-parte-do-container-informacoes-foto {
+        width: 43%;
+    }
+}
+
+.tabelaMobile{
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    width: 80%;
+}
+
+.tabeladentroMobile{
+    background-color: #FEECE8;
+    width: 100%;
+    height: 25vh;
+    border-radius: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 1rem;
+}
+
+.destaqueInfosMobile{
+    color: #C06850;
+    font-family: var(--fonte);
+    font-weight: 700;
+}
+
+.infosMobile{
+    font-family: var(--fonte);
+    font-weight: 500;
+}
+
+.parte1, .parte2, .parte3{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
+    text-align: center;
+}
+
+.parte2 {
+    border-right: 0.1rem solid #C06850;
+    border-left: 0.1rem solid #C06850;
+    height: 90%;
+    padding: 0 0.4rem;
+}
+
+.containerId, .containerPerfil{
+    align-items: center;
+}
+
+.quebra {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: transparent;
+    max-width: 10rem; /* Ajuste o valor de acordo com o espaço disponível no seu card */
+}
+
+.foto-de-cada-usuario-na-tabela {
+    height: 2rem;
+    aspect-ratio: 1 / 1;
+}
+
+
+
+@media (max-width: 600px){
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; 
+        align-items: center;
+    }   
+    .tabela{
+        display: none;
+    }
+
+    .pagecontainer {
+        margin-left: 0;
+    }
+
+    #tbposts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pesquisar{
+        margin-top: 5%;
+        margin-bottom: 10%;
+        padding-left: 0;
+        width: 80%;
+    }
+
+    .pesqUser {
+    }
+
+    .tabelaMobile{
+        display: flex;
+    }
+
+
+    .userimg{
+        width: 2.5rem;
+    }
+
+    .textoh3{
+        font-size: 1rem;
+    }
+
+    .addUserdesktop {
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .addUserdesktop {
+        display: none;
+    }
+
+    .addUsermobile{
+        display: flex;
+    }
+
+    .espacom{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .pesqUser{
+        width: 100%;
+    }
+
+    .active{
+    background-color: #FEECE8;
+    color: #D68164 !important;
+    width: 2rem;
+    height: 2rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.disabledseta {
+    opacity: 0.3;
+    pointer-events: none;
+     width: 2rem;
+    height: 2rem;
 }

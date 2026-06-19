@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
+    /* border: 1px solid red; */
 }
 
 /* ANTI-ESTOURO GLOBAL */
@@ -37,7 +38,7 @@ html, .tudolanding {
     display: flex;
     height: 100vh;
     padding: 0 clamp(1.5rem, 5vw, 5rem);
-    min-height: 92vh;
+    min-height: 90vh;
     width: 100%;
 }
 
@@ -95,42 +96,49 @@ h3{
 .h1lan {
     font-family: 'Fonte-Titulo';
     color: #FEECE8;
-    font-size: 6vw;
+    font-size: 8vw;
     font-weight: 700;
 }
 
 .h11lan {
     font-family: 'Fonte-Titulo';
     color: #FEECE8;
-    font-size: 6vw;
+    font-size: 8vw;
     align-self: center;
-    padding-left: 5vw;
+    padding-left: 8vw;
     font-weight: 700;
 }
 
 .h3lan {
     font-family: 'Fonte-Titulo';
-    font-size: 3vw;
+    font-size: 5vw;
     color: #FEECE8;
     font-weight: 700;
 }
-
+.espaco{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
 .texto_hs {
 
     /*todo: layout da caixa de texto */
-    align-self: stretch;
+    align-self: center;
     display: flex;
     flex-direction: column;
     flex: 1 0 0;
     justify-content: center;
+    width: 80%;
 
     /*todo: tipografia */
     color: #FFF;
     font-family: Montserrat;
-    font-size: clamp(1rem, 1.5vw, 2rem);
+    font-size: 1.2rem;
     font-style: normal;
     font-weight: 600;
-    line-height: 1.5;
+    /* line-height: 1.2; */
     text-align: center;
 }
 
@@ -142,21 +150,21 @@ h3{
     flex-direction: column;
     gap: 0.625rem;
     justify-content: center;
-    padding: 0.625rem;
-    width: 19vw;
+    padding: 0.7rem 0 0.7rem 0;
+    width: 16vw;
 
     /*todo: aparência da caixa */
-    background-color: #FFA96B;
+    background-color: #D8854A;
     border-radius: 2.31vw;
     border: none;
 
     /*todo: tipografia */
-    color: #000;
+    color: #FFF !important;
     font-family: Inter;
-    font-size: clamp(1.2rem, 1.75vw, 2.5rem);
+    font-size: 1.3rem;
     font-style: normal;
     font-weight: 600;
-    line-height: 1;
+    /* line-height: 1; */
     text-align: center;
 }
 
@@ -165,7 +173,7 @@ h3{
     align-items: center;
     display: flex;
     flex: 1;
-    height: 50.55vh;
+    height: 70vh;
     image-rendering: auto;
     justify-content: center;
     padding: 0.625rem;
@@ -215,13 +223,19 @@ h3{
 
 /* ! titulo do carroussel-imagem*/
 .titulo_carroussel_img{
-    width: 10%;
+    width: 6%;
+}
+
+ /*! contem todo o carroussel menos o título */
+.slider{
+    padding: 0 1rem;
 }
 
 /*! contem as divs onde estam as imagens */
 .slider-conteudo {
     display: flex;
     overflow: hidden;
+    gap: 2rem;
 }
 
 /*! onde está as imagens */
@@ -229,13 +243,63 @@ h3{
   min-width: 30%;
 }
 
+/* Torna o link a base para o posicionamento absoluto do texto */
+.slider-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 4.16vw;
+}
+
+/*! Escurece a imagem quando passa o mouse */
+.slider-link:hover .slider-item img {
+    opacity: 0.25;
+    transform: scale(1.025);
+}
+
 /*! as imagens */
 .slider-item img {
     border-radius: 4.16vw;
     height: 35vh;
     object-fit: cover;
-    transition: transform 0.3s;
-    width: 25vw;
+    transition: transform 0.3s, opacity 0.5s linear; /* Adicionado transição de opacidade */
+    width: 100%;
+}
+
+/*! Container de informações inicialmente invisível */
+.slider-informacoes {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 1rem;
+    text-align: center;
+    opacity: 0; /* Escondido por padrão */
+    transition: opacity 0.5s linear;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo escuro para melhorar leitura */
+}
+
+/*! Faz o texto aparecer no hover */
+.slider-link:hover .slider-informacoes {
+    opacity: 1;
+}
+
+/*! Estilização básica dos textos do carrossel */
+.slider-titulo {
+    color: #FBF1E8;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+.slider-texto {
+    color: #FBF1E8;
+    font-size: 1rem;
+    margin: 0;
 }
 
 /*! as setas do carroussel */
@@ -243,10 +307,10 @@ h3{
     position: absolute;
     top: 50%;
     transform: translateY(+30%);
-    background-color: rgba(225, 225, 225, 0, 9);
-    color: black;
+    /* background-color: rgba(225, 225, 225, 0, 9); */
+    color: #FBF1E8;
     width: 3vw;
-    height: 8vh;
+    height: 6vh;
     border-radius: 2vw;
     display: flex;
     justify-content: center;
@@ -292,6 +356,10 @@ h3{
     background-color: #FFA96B;
 } */
 
+.im2{
+    transform: scaleX(-1);
+}
+
 /* MOSAICO */
 .mosaico {
     align-items: flex-start;
@@ -302,6 +370,7 @@ h3{
     display: flex;
     flex-direction: column;
     height: 83vh;
+    margin: 0 0 9rem 0;
     min-height: 100%;
     padding: 1.5625rem clamp(1.5rem, 5vw, 5rem);
     width: 95%;
@@ -328,7 +397,7 @@ h3{
 
 /* ? titulo do mosaico-imagem*/
 .titulo_mosaico_img{
-    width: 10%;
+    width: 6%;
 }
 
 /*? contem o post grande e os posts pequenos */
