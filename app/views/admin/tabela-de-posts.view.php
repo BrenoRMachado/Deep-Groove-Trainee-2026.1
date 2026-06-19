@@ -25,7 +25,6 @@
 </head>
 
 <body id="tbposts">
-    <?php require "sidebar.html"; ?>
 
     <div class="filtro-ao-abrir-modal-da-tabelaPosts"></div>
 
@@ -92,6 +91,45 @@
             </table>
             <?php require "paginacao.view.php" ?>
         </section>
+
+        <section class="tabelaMobile">
+
+                <?php foreach($publicacoes as $publicacao): ?>
+                    <div class="tabeladentroMobile">
+                    
+                        <div class="parte1">
+                            <div class="containerId"> 
+                                <p class="destaqueInfosMobile">ID</p>
+                                <p class="infosMobile"><?= $publicacao->id ?></p>
+                            </div>
+                        </div>
+
+                        <div class="parte2">
+                            <div class="containerNome"> 
+                                <p class="destaqueInfosMobile quebra">Nome</p>
+                                <p class="infosMobile"><?= $publicacao->artista ?></p>
+                            </div>
+
+                            <div class="containerPerfil"> 
+                                <p class="destaqueInfosMobile">Email</p>
+                                <p class="infosMobile quebra"><?= $publicacao->titulo ?></p>
+                            </div>
+
+                        </div>
+
+                        <div class="parte3">
+                            <p class="destaqueInfosMobile">AÇÕES</p>
+
+                        </div>
+
+                    </div>
+                <?php endforeach; ?>
+                <?php require "paginacao.view.php" ?>
+
+                
+
+        </section>
+    </div>
 
         <?php foreach ($publicacoes as $publicacao): ?>
 
