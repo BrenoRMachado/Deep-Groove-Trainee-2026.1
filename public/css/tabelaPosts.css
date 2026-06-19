@@ -1276,6 +1276,30 @@
     font-size: 0.8rem;
     font-family: var(--fonte-modal);
     text-align: center;
+    border: none;
+}
+
+.container-input-e-botao{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid var(--cor-branco-400);
+    width: 75%;
+    height: 50%;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.container-input-e-botao input{
+    border: none;
+    padding: 0 0.4rem;
+    background: none;
+    font-family: var(--fonte-modal);
+    color: var(--cor-vinho-100);
+    height: 100%;
+}
+
+.botao-container-com-input{
+    border-radius: 10px;
 }
 
 #modal-criar-posts button {

@@ -338,6 +338,9 @@
 
                 <div class="area-de-colocar-informacoes">
                     <div class="quarto-da-area-informacoes">
+                        <div class="container-dado-a-criar" style="background-color: #773B36;">Id deezer</div> <div class="container-input-e-botao"><input placeholder="Digite o id do deezer" class="input-container-com-botao" id="id_deezer_album" name="id_deezer"><button type="button" class="container-dado-a-criar botao-container-com-input" style="background-color: #773B36;" onclick="buscarAlbum()" >Salvar</button></div>
+                    </div>
+                    <div class="quarto-da-area-informacoes">
                         <div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Título</div> <input id="titulo_album" placeholder="Digite o título" name="titulo">
                     </div>
                     <div class="quarto-da-area-informacoes">
@@ -347,24 +350,16 @@
                         <div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Artista</div> <input id="artista_album" placeholder="Digite o nome do artista" name="artista">
                     </div>
                     <div class="quarto-da-area-informacoes">
-                        <div class="container-dado-a-criar" style="background-color: green;">Gênero</div> <input id="genero_album" name="genero">
+                        <div class="container-dado-a-criar" style="background-color: #792B3C;">Gênero</div> <input placeholder="Digite o gênero" id="genero_album" name="genero">
                     </div>
+                    <input type="hidden" id="foto_album" name="foto">
                     <div class="quarto-da-area-informacoes">
-                        <div class="container-dado-a-criar" style="background-color: blue;">Foto</div> <input id="foto_album" name="foto">
-                    </div>
-                    <div class="quarto-da-area-informacoes">
-                        <div class="container-dado-a-criar" style="background-color: purple;">Duração</div> <input id="duracao_album" name="duracao">
+                        <div class="container-dado-a-criar" style="background-color: #A94752;">Duração</div> <input placeholder="Digite a duração" id="duracao_album" name="duracao">
                     </div>
                     <input type="hidden" name="id_usuario" value=<?= $publicacao->id_usuario ?>>                    
-                    <div class="quarto-da-area-informacoes">
-                        <div class="container-dado-a-criar" style="background-color: cyan;">Id deezer</div> <input id="id_deezer_album" name="id_deezer">
-                    </div>
-                    <div class="quarto-da-area-informacoes">
-                        <div class="container-dado-a-criar" style="background-color: cyan;">Id deezer</div> <button type="button" class="botao-modal-criar salva" onclick="buscarAlbum()" >Salvar</button>
-                    </div>
                      
                     <div class="container-textarea">
-                        <div class="container-dado-a-criar" style="background-color: var(--cor-amarelo);">
+                        <div class="container-dado-a-criar" style="background-color: #D55955;">
                             Descrição
                         </div>
                         <textarea id="conceito_album" rows="10" placeholder="Digite a descrição" name="conceito"></textarea>
