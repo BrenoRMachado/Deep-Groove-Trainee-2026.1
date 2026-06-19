@@ -1534,7 +1534,6 @@
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
     padding: 0 1rem;
 }
@@ -1556,8 +1555,9 @@
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    width: 100% !important;
     text-align: center;
+    flex: 1;
+    min-width: 0;
 }
 
 .parte2 {
