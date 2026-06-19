@@ -163,9 +163,12 @@ h3{
     font-style: normal;
     font-weight: 600;
     text-align: center;
+
+    transition: transform 0.3s ease;
 }
 .botão:hover{
     transform: scale(1.1);
+    background-color: #e89b64;
 }
 
 /*todo: box que contem a imangem logo  */
