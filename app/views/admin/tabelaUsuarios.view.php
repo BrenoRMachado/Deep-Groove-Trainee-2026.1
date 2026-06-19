@@ -394,9 +394,9 @@
                                 <span class="pin-toggle"></span>
                             </span>
                         </button>
-                        <input type="hidden" name="is_admin" id="is-admin-input<?= $usuario -> id ?>" value="0">
                     </div>
                 <?php endif; ?>
+                <input type="hidden" name="is_admin" id="is-admin-input<?= $usuario -> id ?>" value="0">
                 <div class="secao-botoes-salvar-cancelar">
                     <button class="botao botao-cancelar" type="reset" onclick="fecharModal('#modal-edicao-usuarios<?= $usuario->id ?>')">Cancelar</button>
                     <button class="botao botao-salvar" type="submit">Salvar</button>
