@@ -29,7 +29,7 @@
     border-top-right-radius: 3rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 4.5rem;
     height: 100vh;
     padding: 0.625rem;
@@ -39,7 +39,7 @@
 }
 
 /* *Estilo do container da logo e do botão de abrir e fechar a sidebar */
-#sidebar .container-logo-icone-abrir-fechar-sidebar {
+#sidebar .container-logo-icone-abrir-fechar-sidebar{
     align-items: center;
     display: flex;
     flex-shrink: 0;
@@ -47,66 +47,105 @@
     width: 100%;
 }
 
+#sidebar .icone-abrir-fechar-sidebar{
+    display: inline-block;
+    color: #FEECE8;
+    height: 1.3rem;
+    width: 1.1rem;
+    border-radius: 0.5rem;
+    padding-top: 0.1rem;
+}
+
+.icone-abrir-fechar-sidebar:hover{
+    background-color: #6D3534;
+}
+
+#sidebar .botao-abrir-fechar-sidebar.ativo, .icone-abrir-fechar-sidebar{
+    transform: rotate(180deg);
+}
+
 /* *Estilo da logo principal da sidebar */
-#sidebar .logo-principal-deep-groove {
+#sidebar .logo-principal-deep-groove{
     height: 4rem;
-    width: 100%;
+    max-width: 10rem;
+    object-fit: contain;
+    width: auto;
 }
 
 /* *Estilo do botão de abrir e fechar a sidebar */
-#sidebar .botao-abrir-fechar-sidebar {
+#sidebar .botao-abrir-fechar-sidebar{
     background: none;
     border: none;
     cursor: pointer;
 }
 
 /* *Estilo do container dos itens para navegar para páginas administrativas da sidebar */
-#sidebar .navegar-para-paginas-administrativas {
+#sidebar .navegar-para-paginas-administrativas{
     align-items: center;
-    align-self: stretch;
+    align-self: flex-start;
     display: flex;
     flex-direction: column;
     gap: 2.75rem;
-    height: 39.125rem;
+    height: 35rem;
 }
+#sidebar .navegar-para-paginas-administrativas li, .botao-sign-out{
+    width: 100%;
+    display: flex;
+}
+
+#sidebar .navegar-para-paginas-administrativas a, .botao-sign-out{
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #FEECE8;
+    cursor: pointer;
+    font-size: 1.25rem;
+    gap: 1rem;
+    padding-left: 1rem;
+    text-decoration: none;
+    width: 100%;
+}
+
 .remove-padrao{
     list-style-type: none;
 }
 
 /* *Estilo dos itens das páginas administrativas da sidebar */
-#sidebar .navegar-para-paginas-administrativas .icone {
+#sidebar .icone, .icone-sign-out{
+    display: flex;
     font-size: 2rem;
+    flex-shrink: 0;
+    justify-content: center;
+    width: 2rem;
 }
-#sidebar .icone-pagina-inicial.bi.bi-house-door {
+
+.bi-chevron-right{
+    font-size: larger;
+    /* font-weight: bold; */
+}
+#sidebar .bi-house-door{
     color: #FEECE8;
     font-size: 2.30rem;
 }
-#sidebar .icone-pagina-lista-de-usuarios.bi.bi-person-square {
+#sidebar .bi-person-square{
     color: #FEECE8;
 }
-#sidebar .icone-pagina-dashboard.bi.bi-grid-1x2 {
+#sidebar .bi-grid-1x2{
     color: #FEECE8;
 }
-#sidebar .icone-pagina-tabela-de-publicacoes.bi.bi-window-stack {
+#sidebar .bi-window-stack{
     color: #FEECE8;
 }
-
-#sidebar .sidebar-fechada {
+#sidebar .bi-box-arrow-left{
+    font-size: 2rem;
+}
+#sidebar .sidebar-fechada{
     display: none;
 }
 
-.nome-da-pagina-administrativa{
+.nome-da-pagina-administrativa, .texto-sign-out{
     color: #FEECE8;
-}
-
-/* *Estilo do botão de sign out da sidebar */
-#sidebar .botao-sign-out {
-    align-items: center;
-    background: none;
-    border: none;
-    color: #FEECE8;
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    font-size: 1.25rem;
+    margin-left: 1rem;
+    white-space: nowrap;
 }
