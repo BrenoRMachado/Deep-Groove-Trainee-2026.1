@@ -25,7 +25,6 @@
     width: 80%;
     align-items: center;
     justify-content: space-between;
-    gap: 5rem;
 }
 
 .album-d {
@@ -51,7 +50,7 @@
     height: 100%; 
     position: absolute;
     z-index: -2;
-    left: 11rem;
+    left: 7rem;
     /* padding: 0.4rem 4rem; */
     /*! nome da função - tempo para completar a volta - velocidade cte - por tempo infinito */
     transition: right 1s;
@@ -378,7 +377,7 @@
    .disco-d {
         height: 14rem; 
       
-        left: 7.5rem;
+        left: 5rem;
         
     }
 
@@ -476,7 +475,7 @@
    .disco-d {
         height: 14rem; 
       
-        left: 7.5rem;
+        left: 5rem;
         
     }
 
