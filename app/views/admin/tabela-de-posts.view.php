@@ -102,6 +102,10 @@
                                 <p class="destaqueInfosMobile">ID</p>
                                 <p class="infosMobile"><?= $publicacao->id ?></p>
                             </div>
+                            <div class="containerId"> 
+                                <p class="destaqueInfosMobile">Foto</p>
+                                <img class="foto-de-cada-usuario-na-tabela" src="<?= $publicacao->foto ?>">
+                            </div>
                         </div>
 
                         <div class="parte2">
@@ -111,7 +115,7 @@
                             </div>
 
                             <div class="containerPerfil"> 
-                                <p class="destaqueInfosMobile">Email</p>
+                                <p class="destaqueInfosMobile">Título</p>
                                 <p class="infosMobile quebra"><?= $publicacao->titulo ?></p>
                             </div>
 
@@ -119,7 +123,9 @@
 
                         <div class="parte3">
                             <p class="destaqueInfosMobile">AÇÕES</p>
-
+                            <i class="acao bi bi-eye-fill" onclick="abrirModal('modal-visu-post<?= $publicacao->id ?>')"></i>
+                            <i class="acao bi bi-pencil-square" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
+                            <i class="acao bi bi-trash" onclick="abrirModal('modal-excluir-post<?= $publicacao->id ?>')"></i>
                         </div>
 
                     </div>
