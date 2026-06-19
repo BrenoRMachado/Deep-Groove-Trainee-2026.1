@@ -261,6 +261,7 @@
     justify-content: space-evenly;
     background-image: url(../assets/fundo-modais-editada.jpeg);
     background-size: cover;
+    font-family: var(--fonte);
 }    
 
 /* *Estilo da secao do texto, da foto, e do ícone de fechar o modal */
@@ -269,6 +270,10 @@
     height: 23%;
     display: flex;
     justify-content: space-between;
+}
+
+.modal-edicao-posts .secao-texto-foto-fechar-modal h1 {
+    font-size: 3vh;
 }
 
 /* *Estilo do texto de editar foto da capa do álbum */
@@ -355,6 +360,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.modal-edicao-posts .container-instrucao-editar-foto-capa-do-album p{
+    font-size: 2vh;
+}
+
+.modal-edicao-posts .container-instrucao-editar-foto-capa-do-album h2{
+    font-size: 3vh;
 }
 
 /* *Estilo do texto de instruções de editar foto da capa do álbum */
