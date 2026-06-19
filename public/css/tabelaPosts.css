@@ -1531,11 +1531,11 @@
     width: 100%;
     height: 25vh;
     border-radius: 2rem;
-
+    justify-content: space-between;
     display: flex;
     align-items: center;
 
-    padding: 0 1rem;
+    padding: 0;
 }
 
 .destaqueInfosMobile{
@@ -1583,9 +1583,63 @@
 
 }
 
+.infoUser {
+
+}
+
+.topoTabelaPosts {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.container-icones-crud-mobile {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
 .foto-de-cada-usuario-na-tabela {
     height: 2rem;
     aspect-ratio: 1 / 1;
+}
+
+.topoTabelaUser {
+    width: 100%;
+    display: flex;
+    /* o justify sempre mexe no eixo principal nesse caso row */
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.addUserdesktop {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background-color: #AE5E48;
+    height: 3rem;
+    width: 9rem;
+    border-radius: 2rem;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.textop{
+    font-size: 1rem;
+}
+
+.addUsermobile{
+    display: none;
+    align-items: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    justify-content: center;
+    background-color: #AE5E48;
+    
+    border-radius: 1.2rem;
 }
 
 
