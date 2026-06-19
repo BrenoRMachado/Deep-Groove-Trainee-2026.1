@@ -24,14 +24,16 @@
     display: flex; /*acho q inline faz a msm coisa */
     width: 80%;
     align-items: center;
-    gap: 13rem;
+    gap: 1rem;
 }
 
 .album-d {
     position: relative;
-    padding: /*TETO*/2rem /*LADO*/0px;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
+    width: 57vw;
+    height: 22vw;
 }
 
 /* quadrado vermelho em cima do disco */
@@ -39,23 +41,26 @@
 
 
 .capa-album-d {
-    width: 20rem;
-    height: 40vh;
-
     border-radius: 0.7rem;
-
+    height: 100%;
+    aspect-ratio: 1 / 1;
 }
 
 .disco-d {
-    height: 18rem; 
+    height: 100%; 
     position: absolute;
     z-index: -2;
-    left: 12rem;
+    right: 10%;
     /* padding: 0.4rem 4rem; */
     /*! nome da função - tempo para completar a volta - velocidade cte - por tempo infinito */
-    animation: girar 3s linear infinite;
+    transition: right 1s;
 }
 
+/* *Animação do disco deslocando e girando */
+.disco-deslocando-e-girando {
+    animation: girar 3s linear 1s infinite;
+    right: 0;
+}
 
 /*? SEGUNDA DIV DA SECTION 1 */
 
@@ -173,8 +178,6 @@
     width: 80%;
 }
 
-
-
 #faixas-d {
     text-align: center;
     display: flex;
@@ -187,15 +190,17 @@
 }
 
 .play {
-    width: 3vw;
+    font-size: 2rem;
+    color: #F09859;
+}
+
+.play:hover {
+    cursor: pointer;
 }
 
 .faixa {
     width: 4.2vw;
 }
-
-
-
 
 /*! funçao q faz o disco rodar */
 @keyframes girar {
@@ -207,13 +212,6 @@
     transform: rotate(360deg);
   }
 }
-
-
-
-
-
-
-
 
 .h2-sobre-d {
     font-family: "Inter", sans-serif;
@@ -351,8 +349,7 @@
     }
 
     .play {
-        width: 12vw;
-    }
+        font-size: 8rem;
 
     .faixa {
         width: 15vw;
