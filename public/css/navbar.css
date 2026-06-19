@@ -50,6 +50,7 @@ a {
 .botoes:hover {
     transform: scale(1.05);
     cursor: pointer;
+    color: #F09859;
 }
 
 .logo {
@@ -150,6 +151,7 @@ button {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     position: absolute;
+    top: 10vh;
 }
 
 @media (max-width: 480px) {

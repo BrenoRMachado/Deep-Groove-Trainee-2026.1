@@ -29,23 +29,30 @@
     <div class="filtro-ao-abrir-modal-da-tabelaPosts"></div>
 
  <div class="pagecontainer">
-    <section class="topoTabelaPosts">
-        <button class="botao-novo-post" onclick="abrirModal('modal-criar-posts')">
-            <div class="addPost">
-                <i class="icone bi bi-plus" style="font-size: x-large;"></i>
-                <p class="textop">Novo Post</p>
-            </div>
-        </button>
+        <section class="topoTabelaUser">
+            <?php if ($_SESSION['is_admin']): ?>
+                <button class="botao-novo-post" onclick="abrirModal('modal-criar-usuarios')">
+                    <div class="addUserdesktop ">
+                        <i class="icone bi bi-plus"></i>
+                        <p class="textop">Novo usuário</p>
+                    </div>
 
-        <div class="infoUser">
-            <img src="../../../public/assets/ícone usuário.svg" alt="User">
+                    <div class="addUsermobile ">
+                        <img src="../../../public/assets/addMobile.svg" alt="add" class="addm">
+                    </div>
+                </button>
+            <?php endif; ?>    
+            <div class="infoUser">
+                <img src="../../../public/assets/ícone usuário.svg" alt="User" class="userimg">
 
-            <div class="infos">
-                <h3 class="textoh3"><?= $_SESSION['nome'] ?></h3>
-                <h3 class="textoh3"><?= $_SESSION['is_admin'] ? 'Administrador' : "Usuário" ?></h3>
+                <div class="infos">
+                    <h3 class="textoh3"><?= $_SESSION['nome'] ?></h3>
+                    <h3 class="textoh3"><?= $_SESSION['is_admin'] ? 'Administrador' : "Usuário" ?></h3>
+                </div>
+
             </div>
-        </div>
-    </section>
+
+        </section>
 
         <!-- Página -->
 
@@ -123,9 +130,11 @@
 
                         <div class="parte3">
                             <p class="destaqueInfosMobile">AÇÕES</p>
-                            <i class="acao bi bi-eye-fill" onclick="abrirModal('modal-visu-post<?= $publicacao->id ?>')"></i>
-                            <i class="acao bi bi-pencil-square" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
-                            <i class="acao bi bi-trash" onclick="abrirModal('modal-excluir-post<?= $publicacao->id ?>')"></i>
+                            <div class="container-icones-crud-mobile">
+                                <i class="acao bi bi-eye-fill" onclick="abrirModal('modal-visu-post<?= $publicacao->id ?>')"></i>
+                                <i class="acao bi bi-pencil-square" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
+                                <i class="acao bi bi-trash" onclick="abrirModal('modal-excluir-post<?= $publicacao->id ?>')"></i>
+                            </div>
                         </div>
 
                     </div>
@@ -171,39 +180,36 @@
                     <div class="area-de-colocar-informacoes">
                         <input type="hidden" name="id" value="<?= $publicacao->id ?>">
                         <div class="quarto-da-area-informacoes">
-                            <div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Título</div> <input placeholder="Digite o título" name="titulo" value=<?= $publicacao->titulo ?> required>
+                            <div class="container-dado-a-criar" style="background-color: #773B36;">Id deezer</div> <div class="container-input-e-botao"><input placeholder="Digite o id do deezer" class="input-container-com-botao" name="id_deezer" value="<?= $publicacao->id_deezer ?>"><button type="button" class="container-dado-a-criar botao-container-com-input" style="background-color: #773B36;" onclick="buscarAlbum()" >Salvar</button></div>
                         </div>
                         <div class="quarto-da-area-informacoes">
-                            <div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Ano de lançamento</div> <input placeholder="Digite o ano" name="ano" value=<?= $publicacao->ano ?> required>
+                            <div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Título</div> <input placeholder="Digite o título" name="titulo" value="<?= $publicacao->titulo ?>">
                         </div>
                         <div class="quarto-da-area-informacoes">
-                            <div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Artista</div> <input placeholder="Digite o nome do artista" name="artista" value=<?= $publicacao->artista ?> required>
+                            <div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Ano de lançamento</div> <input placeholder="Digite o ano" name="ano" value="<?= $publicacao->ano ?>">
                         </div>
                         <div class="quarto-da-area-informacoes">
-                            <div class="container-dado-a-criar" style="background-color: green;">Gênero</div> <input name="genero" value=<?= $publicacao->genero ?> required>
+                            <div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Artista</div> <input placeholder="Digite o nome do artista" name="artista" value="<?= $publicacao->artista ?>">
                         </div>
                         <div class="quarto-da-area-informacoes">
-                            <div class="container-dado-a-criar" style="background-color: blue;">Foto</div> <input name="foto" value=<?= $publicacao->foto ?> required>
+                        <div class="container-dado-a-criar" style="background-color: #792B3C;">Gênero</div> <input placeholder="Digite o gênero"name="genero" value="<?= $publicacao->genero ?>">
+                    </div>
+                    <input type="hidden" id="foto_album" name="foto">
+                    <div class="quarto-da-area-informacoes">
+                        <div class="container-dado-a-criar" style="background-color: #A94752;">Duração</div> <input value="<?= $publicacao->duracao ?>" placeholder="Digite a duração"name="duracao">
+                    </div>
+                    <input type="hidden" name="id_usuario" value=<?= $publicacao->id_usuario ?>>                    
+                     
+                    <div class="container-textarea">
+                        <div class="container-dado-a-criar" style="background-color: #D55955;">
+                            Descrição
                         </div>
-                        <div class="quarto-da-area-informacoes">
-                            <div class="container-dado-a-criar" style="background-color: purple;">Duração</div> <input name="duracao" value=<?= $publicacao->duracao ?> required>
-                        </div>
-                        <div class="quarto-da-area-informacoes">
-                            <div class="container-dado-a-criar" style="background-color: black;">Id usuário</div> <input name="id_usuario" value=<?= $publicacao->id_usuario ?> required>
-                        </div>
-                        <div class="quarto-da-area-informacoes">
-                            <div class="container-dado-a-criar" style="background-color: cyan;">Id deezer</div> <input name="id_deezer" value=<?= $publicacao->id_deezer ?> required>
-                        </div>
-                        <div class="container-textarea">
-                            <div class="container-dado-a-criar" style="background-color: var(--cor-amarelo);">
-                                Descrição
-                            </div>
-                            <textarea rows="10" placeholder="Digite a descrição" name="conceito"><?= $publicacao->conceito ?></textarea>
-                        </div>
-                        <div class="quarto-da-area-informacoes">
-                            <button class="botao-modal-criar cancelar" type="button" onclick="fecharModal('modal-edicao-posts<?= $publicacao->id ?>')">Cancelar</button>
-                            <button class="botao-modal-criar salva">Salvar</button>
-                        </div>
+                        <textarea rows="10" placeholder="Digite a descrição" name="conceito"><?= $publicacao->titulo ?></textarea>
+                    </div>
+                    <div class="quarto-da-area-informacoes">
+                        <button class="botao-modal-criar cancelar" type="button" onclick="fecharModal('modal-criar-posts')">Cancelar</button>
+                        <button class="botao-modal-criar salva">Salvar</button>
+                    </div>
                     </div>
                 </form>
             </div>
@@ -380,7 +386,7 @@
 
                 <!-- Parte onde fica o formulario com as informações a serem preenchidas -->
 
-                                <div class="area-de-colocar-informacoes">
+                <div class="area-de-colocar-informacoes">
                     <div class="quarto-da-area-informacoes">
                         <div class="container-dado-a-criar" style="background-color: #773B36;">Id deezer</div> <div class="container-input-e-botao"><input placeholder="Digite o id do deezer" class="input-container-com-botao" id="id_deezer_album" name="id_deezer"><button type="button" class="container-dado-a-criar botao-container-com-input" style="background-color: #773B36;" onclick="buscarAlbum()" >Salvar</button></div>
                     </div>
@@ -388,7 +394,7 @@
                         <div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Título</div> <input id="titulo_album" placeholder="Digite o título" name="titulo">
                     </div>
                     <div class="quarto-da-area-informacoes">
-                        <div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Ano de lançamento</div> <input id="ano_album" placeholder="Digite o ano" name="ano">
+                        <div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Ano</div> <input id="ano_album" placeholder="Digite o ano" name="ano">
                     </div>
                     <div class="quarto-da-area-informacoes">
                         <div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Artista</div> <input id="artista_album" placeholder="Digite o nome do artista" name="artista">

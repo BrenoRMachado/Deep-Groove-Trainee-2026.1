@@ -29,6 +29,7 @@ class LoginController
             $_SESSION['email'] = $usuario->email;
             $_SESSION['nome'] = $usuario->nome;
             $_SESSION['is_admin'] = $usuario->is_admin;
+            $_SESSION['foto'] = $usuario -> foto;
 
             App::get('database')->update('usuarios', $usuario->id, [
                 'ultima_acao' => 'login',
@@ -62,7 +63,6 @@ class LoginController
             'nome' => $_POST['nome'],
             'email' => $_POST['email'],
             'senha' => $_POST['senha'],
-            'foto' => 'default',
             'is_admin' => 0
         ];
 

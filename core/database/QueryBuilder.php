@@ -313,4 +313,21 @@ class QueryBuilder
         }
 
     }
+
+    // PARA O MOSAICO DA LANDING PAGE
+    public function selecionaUltimas4publicacoes(){
+        $sql = "SELECT * FROM publicacoes
+            ORDER BY id DESC
+            LIMIT 4";
+        
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 }
