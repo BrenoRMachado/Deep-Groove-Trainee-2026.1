@@ -193,11 +193,8 @@
     gap: 1rem;
 }
 
-@media (max-width:721px){
 
-}
-
-@media (max-width:431px) {
+@media (max-width:1053px) {
 
     .onda{
         width: 100%;

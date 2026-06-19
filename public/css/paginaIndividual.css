@@ -24,7 +24,8 @@
     display: flex; /*acho q inline faz a msm coisa */
     width: 80%;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
+    gap: 5rem;
 }
 
 .album-d {
@@ -32,7 +33,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 57vw;
+    width: 70vw;
     height: 22vw;
 }
 
@@ -50,7 +51,7 @@
     height: 100%; 
     position: absolute;
     z-index: -2;
-    right: 10%;
+    left: 11rem;
     /* padding: 0.4rem 4rem; */
     /*! nome da função - tempo para completar a volta - velocidade cte - por tempo infinito */
     transition: right 1s;
@@ -87,6 +88,12 @@
     display: flex;
     align-items: center;
     gap: 1vw;
+}
+.nota{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .vetor-nota-d {
@@ -256,9 +263,6 @@
     height: 2px;
 }
 
-.some {
-    display: none;
-}
 
 .linha-d {
     background-color: #792B3C;
@@ -266,27 +270,126 @@
     height: 0.1rem;
 }
 
+@media (max-width:1238px){
+    .capa-album-d{
+        width: 20rem;
+    height: 45vh;
 
-@media (max-width:721px){
+    border-radius: 0.7rem;
+    }
 
+    
+   .disco-d {
+        height: 18rem; 
+      
+        left: 11rem;
+        
+    }
+   
 }
 
-@media (max-width:431px) {
-
-   #capa-d {
+@media (max-width:1132px){
+    #capa-d {
     flex-direction: column;
-    gap: 0;
-    
+    gap: 4rem;
    }
 
    .album-d{
     width: 100%;
-    padding: 2rem 0 0 0;
+    top: 3rem;
+   }
+
+  
+   .album-foto{
+     width: 13rem;
+    height: 24.3vh;
+   }
+
+   .conteudo-capa-d {
+    padding-left: 0;
+   }
+
+   .dados-capa-d {
+    gap: 1rem;
+   }
+
+   #sobre-d {
+    display: flex;
+    flex-direction: column;
+   }
+
+   .conteudo-faixas-d {
+        flex-direction: column;
+    }
+
+   
+
+   .musica-d {
+        gap: 15%;
+        justify-content: center;
+        align-items: center;
+   }
+    
+    .nome-album {
+        font-size: 2.1rem;
+        width: 100%;
+    }
+
+    .conceito {
+        background-color: #3B111F;
+        border-radius: 10px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        border: 5px solid #792B3C;
+        text-align: justify;
+        padding: /*TETO*/3vh /*LADO*/3vw;
+    }
+
+    .musica-d{
+        width: 80%;
+    }
+
+    .play {
+        width: 12vw;
+    }
+
+    .faixa {
+        width: 15vw;
+    }
+
+    .nome-faixa-d {
+        font-size: 1rem;
+    }
+
+    #faixas-d {
+        gap: 2rem;
+    }
+}
+
+@media (max-width:950px) {
+
+    #capa-d {
+    flex-direction: column;
+    gap: 4rem;
+   }
+   
+   .disco-d {
+        height: 14rem; 
+      
+        left: 7.5rem;
+        
+    }
+
+    .album-d{
+    width: 100%;
+    top: 3rem;
    }
 
    .capa-album-d {
-     width: 13rem;
-    height: 24.3vh;
+     width: 14.5rem;
+    height: 35vh;
    }
 
    .album-foto{
@@ -311,9 +414,7 @@
         flex-direction: column;
     }
 
-    .some {
-    display: flex;
-}
+  
 
    .musica-d {
         gap: 15%;
@@ -350,6 +451,105 @@
 
     .play {
         font-size: 8rem;
+    }
+
+    .faixa {
+        width: 15vw;
+    }
+
+    .nome-faixa-d {
+        font-size: 1rem;
+    }
+
+    #faixas-d {
+        gap: 2rem;
+    }
+
+}
+
+@media (max-width:585px) {
+
+    #capa-d {
+    flex-direction: column;
+    gap: 9rem;
+   }
+   .disco-d {
+        height: 14rem; 
+      
+        left: 7.5rem;
+        
+    }
+
+    .album-d{
+    width: 100%;
+    top: 5rem;
+   }
+
+   .capa-album-d {
+     width: 14.5rem;
+    height: 35vh;
+   }
+
+   .album-foto{
+     width: 13rem;
+    height: 24.3vh;
+   }
+
+   .conteudo-capa-d {
+    padding-left: 0;
+   }
+
+   .dados-capa-d {
+    gap: 1rem;
+   }
+
+   #sobre-d {
+    display: flex;
+    flex-direction: column;
+   }
+
+   .conteudo-faixas-d {
+        flex-direction: column;
+    }
+
+  
+
+   .musica-d {
+        gap: 15%;
+        justify-content: center;
+        align-items: center;
+   }
+
+   
+
+    .containerEstrelas{
+        width: 100%;
+    }
+    
+    .nome-album {
+        font-size: 2.1rem;
+        width: 100%;
+    }
+
+    .conceito {
+        background-color: #3B111F;
+        border-radius: 10px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        border: 5px solid #792B3C;
+        text-align: justify;
+        padding: /*TETO*/3vh /*LADO*/3vw;
+    }
+
+    .musica-d{
+        width: 80%;
+    }
+
+    .play {
+        font-size: 8rem;
+    }
 
     .faixa {
         width: 15vw;
