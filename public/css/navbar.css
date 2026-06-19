@@ -150,6 +150,7 @@ button {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     position: absolute;
+    top: 10vh;
 }
 
 @media (max-width: 480px) {
