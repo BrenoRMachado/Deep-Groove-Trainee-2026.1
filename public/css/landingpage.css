@@ -125,11 +125,12 @@ h3{
 .texto_hs {
 
     /*todo: layout da caixa de texto */
-    align-self: stretch;
+    align-self: center;
     display: flex;
     flex-direction: column;
     flex: 1 0 0;
     justify-content: center;
+    width: 80%;
 
     /*todo: tipografia */
     color: #FFF;
@@ -137,7 +138,7 @@ h3{
     font-size: 1.2rem;
     font-style: normal;
     font-weight: 600;
-    line-height: 1.2;
+    /* line-height: 1.2; */
     text-align: center;
 }
 
@@ -149,7 +150,7 @@ h3{
     flex-direction: column;
     gap: 0.625rem;
     justify-content: center;
-    padding:  0 0.8rem 0 0.8rem !important;
+    padding: 0.7rem 0 0.7rem 0;
     width: 16vw;
 
     /*todo: aparência da caixa */
@@ -160,10 +161,10 @@ h3{
     /*todo: tipografia */
     color: #FFF !important;
     font-family: Inter;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-style: normal;
     font-weight: 600;
-    line-height: 1;
+    /* line-height: 1; */
     text-align: center;
 }
 
@@ -222,11 +223,14 @@ h3{
 
 /* ! titulo do carroussel-imagem*/
 .titulo_carroussel_img{
-    width: 10%;
+    width: 6%;
 }
+
+ /*! contem todo o carroussel menos o título */
 .slider{
     padding: 0 1rem;
 }
+
 /*! contem as divs onde estam as imagens */
 .slider-conteudo {
     display: flex;
@@ -239,13 +243,63 @@ h3{
   min-width: 30%;
 }
 
+/* Torna o link a base para o posicionamento absoluto do texto */
+.slider-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 4.16vw;
+}
+
+/*! Escurece a imagem quando passa o mouse */
+.slider-link:hover .slider-item img {
+    opacity: 0.25;
+    transform: scale(1.025);
+}
+
 /*! as imagens */
 .slider-item img {
     border-radius: 4.16vw;
     height: 35vh;
     object-fit: cover;
-    transition: transform 0.3s;
-    width: 25vw;
+    transition: transform 0.3s, opacity 0.5s linear; /* Adicionado transição de opacidade */
+    width: 100%;
+}
+
+/*! Container de informações inicialmente invisível */
+.slider-informacoes {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 1rem;
+    text-align: center;
+    opacity: 0; /* Escondido por padrão */
+    transition: opacity 0.5s linear;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo escuro para melhorar leitura */
+}
+
+/*! Faz o texto aparecer no hover */
+.slider-link:hover .slider-informacoes {
+    opacity: 1;
+}
+
+/*! Estilização básica dos textos do carrossel */
+.slider-titulo {
+    color: #FBF1E8;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+.slider-texto {
+    color: #FBF1E8;
+    font-size: 1rem;
+    margin: 0;
 }
 
 /*! as setas do carroussel */
@@ -302,6 +356,10 @@ h3{
     background-color: #FFA96B;
 } */
 
+.im2{
+    transform: scaleX(-1);
+}
+
 /* MOSAICO */
 .mosaico {
     align-items: flex-start;
@@ -339,7 +397,7 @@ h3{
 
 /* ? titulo do mosaico-imagem*/
 .titulo_mosaico_img{
-    width: 10%;
+    width: 6%;
 }
 
 /*? contem o post grande e os posts pequenos */

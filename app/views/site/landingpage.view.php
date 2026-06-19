@@ -70,7 +70,7 @@
         <div class="titulo-total1">
             <img class="titulo_carroussel_img" src="../../../public/assets/soudwaves.png">
             <h1 class="titulo_carroussel">MAIS VENDIDOS</h1>
-            <img class="titulo_carroussel_img" src="../../../public/assets/soudwaves.png">
+            <img class="titulo_carroussel_img im2" src="../../../public/assets/soudwaves.png">
         </div>
         <!--! contem as imagems, setas e bolinhas do carroussel  -->
         <div class="slider">
@@ -81,7 +81,17 @@
                 <!--! imagens que vão estar passando no carroussel -->
                 <div class="slider-conteudo">
                     <?php foreach ($posts as $post): ?>
-                    <div class="slider-item"><a href="/paginaIndividual?id=<?= $post->id ?>"><img src="<?= $post->foto ?>"></a></div>
+                    <div class="slider-item">
+                        <a href="/paginaIndividual?id=<?= $post->id ?>" class="slider-link">
+                            <img src="<?= $post->foto ?>">
+
+                            <div class="slider-informacoes">
+                                <h2 class="slider-titulo"><?= $post->titulo ?></h2>
+                                <p class="slider-texto"><?= $post->ano ?></p>
+                                <p class="slider-texto"><?= $post->artista ?></p>
+                            </div>
+                        </a>
+                    </div>
                     <?php endforeach; ?>
                 </div>
             <!--! bolinhas quantificadoras de "página" -->
@@ -105,7 +115,7 @@
         <div class="titulo-total2">
             <img class="titulo_mosaico_img" src="../../../public/assets/soudwaves.png">
             <h1 class="titulo-mosaico">ÚLTIMOS PUBLICADOS</h1>
-            <img class="titulo_mosaico_img" src="../../../public/assets/soudwaves.png">
+            <img class="titulo_mosaico_img im2" src="../../../public/assets/soudwaves.png">
         </div>
 
         <!--? contem os posts -->
