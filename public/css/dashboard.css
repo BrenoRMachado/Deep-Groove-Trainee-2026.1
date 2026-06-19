@@ -94,7 +94,7 @@
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    background: var(--cor-marrom-100);
+    background: var(--cor-laranja-150);
 }
 
 #dashboard #cabecalho .foto-de-perfil {
@@ -219,7 +219,7 @@
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
-    background-color: var(--cor-marrom-100);
+    background-color: var(--cor-laranja-150);
 }
 
 /* *Estilo do texto das informações recentes */

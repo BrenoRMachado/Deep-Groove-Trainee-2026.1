@@ -240,11 +240,18 @@ h3{
     display: flex;
     overflow: hidden;
     gap: 2rem;
+    padding: 1rem;
 }
 
 /*! onde está as imagens */
 .slider-item {
   min-width: 30%;
+  transition: transform 0.3s ease;
+}
+
+.slider-item:hover {
+    cursor: pointer;
+    transform: scale(1.02);
 }
 
 /* Torna o link a base para o posicionamento absoluto do texto */
@@ -412,6 +419,10 @@ h3{
     position: relative;
 }
 
+.postGrande:hover{
+    cursor: pointer;
+}
+
 /*? imagem do postGrande */
 .postGrande img{
     border-radius: 2.31vw;
@@ -420,10 +431,14 @@ h3{
     transition: transform 0.5s, opacity 0.7s linear;
     width: 100%;
 }
-
+.postGrande {
+    transition: transform 0.3s ease;
+}
 /*? Escurece a imagem e dá zoom quando passa o mouse no post grande */
-.postGrande:hover img{
-    transform: scale(1.025);
+.postGrande:hover {
+    transform: scale(1.015);
+    box-shadow: none;
+
 }
 
 /*? Container de informações inicialmente invisível (Copiado do slider) */
