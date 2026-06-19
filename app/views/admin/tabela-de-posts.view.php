@@ -110,8 +110,8 @@
 
                         <div class="parte2">
                             <div class="containerNome"> 
-                                <p class="destaqueInfosMobile quebra">Nome</p>
-                                <p class="infosMobile"><?= $publicacao->artista ?></p>
+                                <p class="destaqueInfosMobile">Nome</p>
+                                <p class="infosMobile quebra"><?= $publicacao->artista ?></p>
                             </div>
 
                             <div class="containerPerfil"> 
