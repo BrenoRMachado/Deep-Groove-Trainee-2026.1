@@ -35,9 +35,9 @@
                     <span class="dados-do-admin nome-admin"><?= $_SESSION['nome'] ?></span>
                     <span class="dados-do-admin cargo-admin"><?= $_SESSION['is_admin'] ? 'Administrador' : "Usuário" ?></span>
                 </div>
-                <button class="icone-perfil">
-                    <i class="bi bi-person-check"></i>
-                </button>
+                <div class="container-foto-de-perfil">
+                    <img class="foto-de-perfil" src="<?= $_SESSION['foto'] ?>"></img>
+                </div>
             </div>
         </header>
         <nav id="area-navegacao-e-estatisticas">
@@ -50,7 +50,7 @@
                         </span>
                     </div>
                     <div class="informacao-atividades-recentes-1 informacao-recente">
-                        <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-do-usuario-da-atividade-recente">
+                        <img src="<?= $usuariosRecentes[0] -> foto ?>" class="foto-do-usuario-da-atividade-recente">
                         <div class="texto-da-informacao-recente">
                             <span class="atividade-no-site">
                                 <?= $usuariosRecentes[0] -> nome ?>
@@ -83,7 +83,7 @@
                     </button>
                     <?php for($i = 2; $i <= 3; $i++): ?>
                         <div class="informacao-atividades-recentes-<?= $i ?> informacao-recente">
-                            <img src="../../../public/assets/michael-jackson-thriller.png" class="foto-do-usuario-da-atividade-recente">
+                            <img src="<?= $usuariosRecentes[$i - 1] -> foto ?>" class="foto-do-usuario-da-atividade-recente">
                             <div class="texto-da-informacao-recente">
                                 <span class="atividade-no-site">
                                     <?= $usuariosRecentes[$i - 1] -> nome ?> 

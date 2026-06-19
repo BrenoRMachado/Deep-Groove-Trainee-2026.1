@@ -86,18 +86,21 @@
     font-size: 0.85rem;
 }
 
-#dashboard #cabecalho .icone-perfil {
-    font-size: 2.8rem;
-    padding: var(--espacamento-padding-menor);
+#dashboard #cabecalho .container-foto-de-perfil {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 4rem;
-    height: 3.8rem;
+    height: 4rem;
     border-radius: 50%;
-    color: var(--cor-preto-100);
     background: var(--cor-branco-100);
-    border: none;
+}
+
+#dashboard #cabecalho .foto-de-perfil {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 /* *Estilo da área de dados sobre o número de publicações e usuários do site */
@@ -198,7 +201,7 @@
     justify-content: flex-start;
     gap: 1rem;
     font-size: 0.9rem;
-    word-break: break-all;
+    overflow-wrap: break-word;
 }
 
 /* *Estilo da foto da publicacao recente */
@@ -215,6 +218,7 @@
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
+    background-color: var(--cor-branco-100);
 }
 
 /* *Estilo do texto das informações recentes */
@@ -349,7 +353,7 @@
     #dashboard #cabecalho .dados-do-admin {
         font-size: 1.4rem;
     }
-    #dashboard #cabecalho .icone-perfil {
+    #dashboard #cabecalho .container-foto-de-perfil {
         font-size: 4rem;
         width: 6rem;
         height: 6rem;
@@ -445,7 +449,7 @@
         display: none;
     }
     
-    #dashboard #cabecalho .icone-perfil {
+    #dashboard #cabecalho .container-foto-de-perfil {
         font-size: 2.8rem;
         width: 3.6rem;
         height: 3.4rem;
