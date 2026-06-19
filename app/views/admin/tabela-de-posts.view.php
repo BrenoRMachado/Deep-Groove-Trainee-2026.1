@@ -29,23 +29,30 @@
     <div class="filtro-ao-abrir-modal-da-tabelaPosts"></div>
 
  <div class="pagecontainer">
-    <section class="topoTabelaPosts">
-        <button class="botao-novo-post" onclick="abrirModal('modal-criar-posts')">
-            <div class="addPost">
-                <i class="icone bi bi-plus" style="font-size: x-large;"></i>
-                <p class="textop">Novo Post</p>
-            </div>
-        </button>
+        <section class="topoTabelaUser">
+            <?php if ($_SESSION['is_admin']): ?>
+                <button class="botao-novo-post" onclick="abrirModal('#modal-criar-usuarios')">
+                    <div class="addUserdesktop ">
+                        <i class="icone bi bi-plus"></i>
+                        <p class="textop">Novo usuário</p>
+                    </div>
 
-        <div class="infoUser">
-            <img src="../../../public/assets/ícone usuário.svg" alt="User">
+                    <div class="addUsermobile ">
+                        <img src="../../../public/assets/addMobile.svg" alt="add" class="addm">
+                    </div>
+                </button>
+            <?php endif; ?>    
+            <div class="infoUser">
+                <img src="../../../public/assets/ícone usuário.svg" alt="User" class="userimg">
 
-            <div class="infos">
-                <h3 class="textoh3"><?= $_SESSION['nome'] ?></h3>
-                <h3 class="textoh3"><?= $_SESSION['is_admin'] ? 'Administrador' : "Usuário" ?></h3>
+                <div class="infos">
+                    <h3 class="textoh3"><?= $_SESSION['nome'] ?></h3>
+                    <h3 class="textoh3"><?= $_SESSION['is_admin'] ? 'Administrador' : "Usuário" ?></h3>
+                </div>
+
             </div>
-        </div>
-    </section>
+
+        </section>
 
         <!-- Página -->
 
@@ -123,9 +130,11 @@
 
                         <div class="parte3">
                             <p class="destaqueInfosMobile">AÇÕES</p>
-                            <i class="acao bi bi-eye-fill" onclick="abrirModal('modal-visu-post<?= $publicacao->id ?>')"></i>
-                            <i class="acao bi bi-pencil-square" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
-                            <i class="acao bi bi-trash" onclick="abrirModal('modal-excluir-post<?= $publicacao->id ?>')"></i>
+                            <div class="container-icones-crud-mobile">
+                                <i class="acao bi bi-eye-fill" onclick="abrirModal('modal-visu-post<?= $publicacao->id ?>')"></i>
+                                <i class="acao bi bi-pencil-square" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
+                                <i class="acao bi bi-trash" onclick="abrirModal('modal-excluir-post<?= $publicacao->id ?>')"></i>
+                            </div>
                         </div>
 
                     </div>
