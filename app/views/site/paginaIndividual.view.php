@@ -38,8 +38,8 @@
                         <h1 class="nome-album"><?= $post->titulo?></h1>
 
                         <div class="nota-d">
-                            <p class="textinhos">3/5</p>
                             <img src="../../../public/assets/img/Vector.svg" alt="Estrela" class="vetor-nota-d">
+                            <div class="textinhos nota">3/5</div>
                         </div>
 
                         <div class="coisas-sobre-d">
@@ -112,25 +112,11 @@
                         
                         <?php endforeach; ?>
 
-                        <div class="linha-d some"></div>
-
-                        <!-- <div class="musica-d">
-
-                            <div class="dados-faixa-d">
-                                <img src="../../../public/assets/img/Play.svg" alt="play" class="play">
-                                <img src="../../../public/assets/img/Capa.svg" alt="faixa" class="faixa">
-                                <div class="nome-tempo">
-                                    <h4 class="nome-faixa-d">NOME DA FAIXA</h4>
-                                    <p class="textinhos">03:45</p>
-                                </div>
-                                
-                            </div>
-
-                        </div> -->
 
                     </div>
+                    
+                        <div class="linha-d"></div>
 
-                    <div class="linha-d"></div>
                  
                 </div>
 
