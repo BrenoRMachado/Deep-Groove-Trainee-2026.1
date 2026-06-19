@@ -100,7 +100,7 @@
 
                     <div class="conteudo-faixas-d">
 
-                       <?php foreach($faixas as $faixa) :?>
+                       <?php foreach($faixas as $index => $faixa) :?>
 
                          <div class="musica-d">
 
@@ -121,6 +121,11 @@
                             </div>
                         
                         </div>
+
+                          <!-- adiciona linha a cada 2 músicas -->
+                            <?php if(($index + 1) % 2 == 0): ?>
+                                <div class="linha-d"></div>
+                            <?php endif; ?>
                         
                         <?php endforeach; ?>
 
