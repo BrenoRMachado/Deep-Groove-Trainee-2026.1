@@ -1456,11 +1456,6 @@ ul {
     border-radius: 1rem;
 }
 
-.disabled {
-    opacity: 0.5;
-    pointer-events: none;
-}
-
 .disabledseta {
     opacity: 0.3;
     pointer-events: none;
