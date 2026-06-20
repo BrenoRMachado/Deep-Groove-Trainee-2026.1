@@ -38,7 +38,7 @@ class TabelaUsuariosController {
             $paginaAtual = 1;
             $totalPaginas = 1;
             $usuarios = [
-                (object) $_SESSION
+                $database -> selectById('usuarios', $_SESSION['id'])
             ];
         }
     
@@ -112,9 +112,9 @@ class TabelaUsuariosController {
         }
 
         $parametros = [
-            'nome' => !empty($_POST['nome']) ? $_POST['nome'] : $usuarioAtual->nome,
-            'email' => !empty($_POST['email']) ? $_POST['email'] : $usuarioAtual->email,
-            'senha' => !empty($_POST['senha']) ? $_POST['senha'] : $usuarioAtual->senha,
+            'nome' => !empty($_POST['nome']) ? $_POST['nome'] : $usuarioAtual -> nome,
+            'email' => !empty($_POST['email']) ? $_POST['email'] : $usuarioAtual -> email,
+            'senha' => !empty($_POST['senha']) ? $_POST['senha'] : $usuarioAtual -> senha,
             'foto' => $caminhoDaImagem,
             'is_admin' => (int)$_POST['is_admin'],
             'ultima_acao' => 'editar'

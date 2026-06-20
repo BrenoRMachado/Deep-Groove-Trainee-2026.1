@@ -253,7 +253,7 @@
 
                                 <div class="containerPerfil"> 
                                     <p class="destaqueInfosMobile">Perfil</p>
-                                    <img class="foto-de-cada-usuario-na-tabela" src="<?= $usuario->foto ?>">
+                                    <img class="foto-de-cada-usuario-na-tabela" src="<?= $usuario -> foto ?>">
                                 </div>
                             </div>
 
