@@ -25,23 +25,24 @@
 </head>
 
 <body id="tbposts">
+    <?php 
+        require 'sidebar.html';
+    ?>
 
     <div class="filtro-ao-abrir-modal-da-tabelaPosts"></div>
 
- <div class="pagecontainer">
+    <div class="pagecontainer">
         <section class="topoTabelaUser">
-            <?php if ($_SESSION['is_admin']): ?>
                 <button class="botao-novo-post" onclick="abrirModal('modal-criar-posts')">
                     <div class="addUserdesktop ">
-                        <i class="icone bi bi-plus"></i>
-                        <p class="textop">Nova postagem</p>
+                        <i class="icone bi bi-plus" style="font-size: 3.5vh;"></i>
+                        <p class="textop">Novo post</p>
                     </div>
 
                     <div class="addUsermobile ">
                         <img src="../../../public/assets/addMobile.svg" alt="add" class="addm">
                     </div>
-                </button>
-            <?php endif; ?>    
+                </button>  
             <div class="infoUser">
                 <img src="../../../public/assets/ícone usuário.svg" alt="User" class="userimg">
 
@@ -87,11 +88,10 @@
                         <td class="colunageral"><img class="capa-thriller" src="<?= $publicacao -> foto?>"></td>
                         <td class="colunageral"><?= $publicacao->artista ?></td>
                         <td class="colunageral"><?= $publicacao->titulo ?></td>
-
                         <td class="colunageral">
                             <i class="acao bi bi-eye-fill" onclick="abrirModal('modal-visu-post<?= $publicacao->id ?>')"></i>
-                            <i class="acao bi bi-pencil-square" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
-                            <i class="acao bi bi-trash" onclick="abrirModal('modal-excluir-post<?= $publicacao->id ?>')"></i>
+                            <i class="acao bi bi-pencil-square <?= $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
+                            <i class="acao bi bi-trash <?= $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-excluir-post<?= $publicacao->id ?>')"></i>
                         </td>
                     </tr>
                 <?php endforeach ?>
@@ -131,9 +131,9 @@
                         <div class="parte3">
                             <p class="destaqueInfosMobile">AÇÕES</p>
                             <div class="container-icones-crud-mobile">
-                                <i class="acao bi bi-eye-fill" onclick="abrirModal('modal-visu-post<?= $publicacao->id ?>')"></i>
-                                <i class="acao bi bi-pencil-square" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
-                                <i class="acao bi bi-trash" onclick="abrirModal('modal-excluir-post<?= $publicacao->id ?>')"></i>
+                                <i class="acao bi bi-eye-fill" onclick="abrirModal('modal-visu-post<?= $publicacao->id ?>')"></i>                                              
+                                <i class="acao bi bi-pencil-square <?= $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
+                                <i class="acao bi bi-trash <?= $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-excluir-post<?= $publicacao->id ?>')"></i>
                             </div>
                         </div>
 

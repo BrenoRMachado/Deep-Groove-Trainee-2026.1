@@ -79,14 +79,19 @@
         #E08E6D 100%
     );
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 .pagecontainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-top: 1rem;
-    margin-left: 10%;
-    width: 90%;
+    width: 90vw;
+    align-items: center;
+    padding-bottom: 1.5rem;
 }
 
 .addUser {
@@ -113,6 +118,7 @@
     color: var(--corclara);
     font-family: var(--fontetitulo);
     font-weight: var(--pesotitulo);
+    font-size: 7.5vh;
 }
 
 .titulo {
@@ -122,7 +128,7 @@
 .tabela{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
 
     /* Para não ter a barra de arrastar para baixo */
     overflow-y: hidden;
@@ -196,9 +202,10 @@
 }
 
 .pesquisar {
-    width: 100vw;
+    width: 80%;
     padding-left: 0;
     /* background-color: red; */
+    padding-top: 3vh;
 }
 
 
@@ -1605,7 +1612,7 @@
 }
 
 .topoTabelaUser {
-    width: 100%;
+    width: 80%;
     display: flex;
     /* o justify sempre mexe no eixo principal nesse caso row */
     justify-content: space-between;
@@ -1650,13 +1657,14 @@
         padding: 0;
         box-sizing: border-box; 
         align-items: center;
+        padding-right: 10%;
     }   
     .tabela{
         display: none;
     }
 
     .pagecontainer {
-        margin-left: 0;
+        padding-right: 10%;
     }
 
     #tbposts {

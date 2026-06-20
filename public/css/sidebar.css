@@ -15,6 +15,7 @@
 
 /* *Estilo da sidebar */
 #sidebar {
+    z-index: 9999999;
     align-items: center;
     /* background-color: #FEECE8;
     background-color:#585555; */
@@ -33,7 +34,8 @@
     gap: 4.5rem;
     height: 100vh;
     padding: 0.625rem;
-    position: fixed;
+    position: absolute;
+    left: 0;
     width: fit-content;
     
 }
@@ -148,4 +150,10 @@
     color: #FEECE8;
     margin-left: 1rem;
     white-space: nowrap;
+}
+
+@media (max-width: 460px) {
+    #sidebar {
+        display: none;
+    }
 }
