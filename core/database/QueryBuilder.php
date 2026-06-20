@@ -330,4 +330,17 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
+
+    public function emailJaExiste(string $email): bool {
+        $sql = "SELECT COUNT(*) FROM usuarios WHERE email = :email";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([':email' => $email]);  // passa o parâmetro aqui
+            return $stmt->fetchColumn() > 0;       // pega só o COUNT(*)
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 }
