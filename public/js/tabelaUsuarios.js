@@ -95,12 +95,15 @@ document.querySelectorAll('.editar-senha').forEach(input => {
 
 //* Todos os campos com 'required' no input exibirão a seguinte mensagem: 
 const fundomodal = document.getElementById("fundo");
-const inputsObrigatoriosDosModais = document.querySelectorAll('input[required]');
+const inputsObrigatoriosDosModais = document.querySelectorAll('input');
 
 inputsObrigatoriosDosModais.forEach(input => {
         input.addEventListener('invalid', function() {
-                if (this.value === ''){
-                        this.setCustomValidity('Este campo é obrigatório');
+                if (this.validity.valueMissing){
+                    this.setCustomValidity('Este campo é obrigatório');
+                }
+                else if (this.validity.typeMismatch) {
+                    this.setCustomValidity('Digite um endereço de email válido');
                 }
         });
         input.addEventListener('input', function() {
