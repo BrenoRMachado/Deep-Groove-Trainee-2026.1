@@ -165,7 +165,7 @@
                     </div>
                 </section>
                 <form class="secao-edicao-dados-do-album" action="/tabelaPosts/edit" method="POST">
-                    <section class="secao-instrucao-editar-foto-capa-do-album">
+                    <!-- <section class="secao-instrucao-editar-foto-capa-do-album">
                         <div class="container-instrucao-editar-foto-capa-do-album">
                             <div class="container-texto-instrucao-editar-foto-capa-do-album">
                                 <h2>Capa do álbum</h2>
@@ -176,7 +176,7 @@
                                 <span>Alterar foto</span>
                             </button>
                         </div>
-                    </section>
+                    </section> -->
                     <div class="area-de-colocar-informacoes">
                         <input type="hidden" name="id" value="<?= $publicacao->id ?>">
                         <div class="quarto-da-area-informacoes">
@@ -357,7 +357,7 @@
             <!-- Parte onde fica a opção de selecionar a foto -->
 
             <div class="baixo-modal-criar">
-                <div class="area-de-colocar-informacoes container-informacoes-foto">
+                <!-- <div class="area-de-colocar-informacoes container-informacoes-foto">
                     <div class="primeira-parte-do-container-informacoes-foto">
                         <h2>Capa do álbum</h2>
                         <p>Recomendamos uma imagem quadrada de pelo menos 500 por 500 pixels</p>
@@ -368,7 +368,7 @@
                             Anexar foto
                         </button>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Parte onde fica o formulario com as informações a serem preenchidas -->
 
