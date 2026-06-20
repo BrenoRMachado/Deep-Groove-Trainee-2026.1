@@ -25,16 +25,19 @@
 </head>
 
 <body id="tbposts">
+    <?php 
+        require 'sidebar.html';
+    ?>
 
     <div class="filtro-ao-abrir-modal-da-tabelaPosts"></div>
 
  <div class="pagecontainer">
         <section class="topoTabelaUser">
             <?php if ($_SESSION['is_admin']): ?>
-                <button class="botao-novo-post" onclick="abrirModal('modal-criar-usuarios')">
+                <button class="botao-novo-post" onclick="abrirModal('modal-criar-posts')">
                     <div class="addUserdesktop ">
                         <i class="icone bi bi-plus"></i>
-                        <p class="textop">Novo usuário</p>
+                        <p class="textop">Novo post</p>
                     </div>
 
                     <div class="addUsermobile ">

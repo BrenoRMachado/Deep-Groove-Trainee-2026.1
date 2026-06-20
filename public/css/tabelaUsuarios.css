@@ -78,7 +78,7 @@
 #tbuser{
     padding: 1rem 2rem;
     min-height: 100vh;
-
+    padding-left: 8%;
    
     background: linear-gradient(
         #6D3534 39%, 

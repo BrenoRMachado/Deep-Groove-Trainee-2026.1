@@ -1650,13 +1650,14 @@
         padding: 0;
         box-sizing: border-box; 
         align-items: center;
+        padding-right: 10%;
     }   
     .tabela{
         display: none;
     }
 
     .pagecontainer {
-        margin-left: 0;
+        padding-right: 10%;
     }
 
     #tbposts {
