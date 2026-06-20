@@ -4,7 +4,7 @@ body {
     font-family: 'Inter';
     overflow-x: hidden;
 
-    background-color: #591025 !important; 
+    background: linear-gradient(to bottom, #591025 50%, #000000 100%)  !important; 
 }
 
 h1, h2 {
@@ -23,8 +23,6 @@ h3 {
     width: 100vw;
     /* faz com que a tela possa crescer quando scrollamos */
     min-height: 100vh;
-    /* background-color: #591025; */
-    background: linear-gradient(to bottom, #591025 50%, #000000 100%);
 }
 
 .inicio-instrucoes {
