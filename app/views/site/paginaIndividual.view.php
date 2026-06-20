@@ -23,6 +23,9 @@
     <?php require "navbar.view.php"; ?>
     <main id="tudo-d">
 
+            <a class="seta" href="/posts"> 
+                <img class="setaDentro" src="../../../public/assets/seta.svg" alt="Seta">
+            </a>
             <a id="capa-d" href="/paginaIndividual?id=<?= $post->id ?>">
                 
                     <div class="album-d">

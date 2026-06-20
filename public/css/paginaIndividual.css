@@ -244,16 +244,14 @@
 }
 
 .postindividual{
+     width: 100%;
     margin: 0;
     padding: 0;
-    width: 100%;
     overflow-x: hidden;
-    
-    background: linear-gradient(
-        #691B35,
-        #461525,
-        #190A0F
-    );
+   
+    background: linear-gradient(to bottom, #5B162D 25%, #000 78%);
+    background-attachment: fixed; /* Fixa apenas a imagem/gradiente de fundo */
+    background-size: cover;
 }
 
 .linha-princ {
@@ -277,6 +275,17 @@
     display:flex;
 }
 
+.seta{
+    width: 80%;
+    display: flex;
+    align-items: start;
+    position: relative;
+    top: 2rem;
+}
+
+.setaDentro {
+    width: 3rem;
+}
 @media (max-width:1238px){
     .capa-album-d{
         width: 16rem;
@@ -318,6 +327,15 @@
     .faixa {
         width: 5vw;
     }
+
+    .seta{
+        top: 1rem;
+    }
+
+    .conteudo-capa{
+        padding: 0;
+    }
+
 }
 
 @media (max-width:1132px){
@@ -385,6 +403,12 @@
     .faixa {
         width: 5vw;
     }
+
+    .nome-album{
+        width: 80%;
+    }
+
+
 
 }
 
@@ -545,5 +569,10 @@
     .linha-d {
         width:80%;
     }
+
+    .setaDentro {
+        width: 2.5rem;
+    }
+    
 
 }
