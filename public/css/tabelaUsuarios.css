@@ -273,6 +273,7 @@
     height: 2rem;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
+    background-color: var(--cor-marrom-50);
 }
 
 /* *Animação ao passar o mouse por cima dos ícones de ação da tabela de usuários */
