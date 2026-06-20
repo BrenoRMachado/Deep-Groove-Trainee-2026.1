@@ -52,14 +52,7 @@
 #sidebar .icone-abrir-fechar-sidebar{
     display: inline-block;
     color: #FEECE8;
-    height: 1.3rem;
-    width: 1.1rem;
-    border-radius: 0.5rem;
     padding-top: 0.1rem;
-}
-
-.icone-abrir-fechar-sidebar:hover{
-    background-color: #6D3534;
 }
 
 #sidebar .botao-abrir-fechar-sidebar.ativo, .icone-abrir-fechar-sidebar{
@@ -152,8 +145,168 @@
     white-space: nowrap;
 }
 
-@media (max-width: 460px) {
+
+/*! RESPONSIVIDADE 4K */ 
+@media (min-width: 1921px) 
+{
+    #sidebar{
+        justify-content: space-around;
+        gap: 6rem;
+        padding: 1.5rem;
+        border-bottom-right-radius: 4rem;
+        border-top-right-radius: 4rem;
+    }
+    #sidebar .container-logo-icone-abrir-fechar-sidebar{
+        gap: 1rem;
+    }
+    #sidebar .logo-principal-deep-groove{
+        height: 7rem;
+        max-width: 17rem;
+    }
+
+    #sidebar .botao-abrir-fechar-sidebar{
+        font-size: 1.5rem;
+        align-self: center;
+        display: flex;
+    }
+
+    #sidebar .navegar-para-paginas-administrativas{
+        gap: 4rem;
+        height: 65vh;
+    }
+
+    #sidebar .navegar-para-paginas-administrativas a, .botao-sign-out{
+        font-size: 2.2rem;
+    }
+
+    #sidebar .icone, .icone-sign-out{
+        font-size: 3.5rem;
+        width: 2.8rem;
+        margin-left: 1.7rem;
+    }
+
+    #sidebar .bi-box-arrow-left{
+        font-size: 3.5rem;
+    }
+    
+    #sidebar .bi-house-door{
+        font-size: 4.1rem;
+    }
+}
+
+/*! RESPONSIVIDADE TABLET  E LAPTOP */
+@media (min-width: 768px) and (max-width: 1024px) 
+{
+    #sidebar{
+        gap: 3rem;
+        padding: 0.5rem;
+    }
+
+    #sidebar .logo-principal-deep-groove{
+        height: 3.5rem;
+    }
+
+    #sidebar .navegar-para-paginas-administrativas{
+        gap: 2rem;
+        height: 65vh;
+    }
+
+    #sidebar .navegar-para-paginas-administrativas a, .botao-sign-out{
+        font-size: 1.1rem;
+        padding-left: 0.5rem;
+        gap: 0;
+    }
+
+    #sidebar .icone, .icone-sign-out{
+        font-size: 2rem;
+        width: 2.8rem;
+        margin-left: 0.2rem;
+    }
+}
+
+/*! RESPONSIVIDADE MOBILE L */ 
+@media (min-width: 377px) and (max-width: 765px) 
+{
+    #sidebar{
+        gap: 2.5rem;
+        padding: 0.5rem;
+        border-bottom-right-radius: 1.5rem;
+        border-top-right-radius: 1.5rem;
+    }
+
+    #sidebar .logo-principal-deep-groove{
+        height: 2.8rem;
+        max-width: 7rem;
+    }
+
+    #sidebar .navegar-para-paginas-administrativas{
+        gap: 1.8rem;
+        height: 70vh;
+    }
+
+    #sidebar .navegar-para-paginas-administrativas a, .botao-sign-out{
+        font-size: 1rem;
+        gap: 0.5rem;
+        padding-left: 0.3rem;
+    }
+
+    #sidebar .icone, .icone-sign-out{
+        font-size: 1.6rem;
+        width: 1.6rem;
+        padding-left: 1.2rem;
+    }
+
+    #sidebar .bi-house-door{
+        font-size: 1.8rem;
+    }
+
+    #sidebar .bi-box-arrow-left{
+        font-size: 1.6rem;
+    }
+}
+
+/*! RESPONSIVIDADE MOBILI M E S */ 
+@media (min-width: 320px) and (max-width: 375px)
+{
     #sidebar {
-        display: none;
+        gap: 2rem;
+        padding: 0.4rem;
+        border-bottom-right-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+
+    /* Oculta o botão de abrir/fechar ou diminui drasticamente a logo */
+    #sidebar .logo-principal-deep-groove{
+        height: 2.2rem;
+        max-width: 6rem;
+    }
+
+    #sidebar .botao-abrir-fechar-sidebar{
+        transform: scale(0.8);
+    }
+
+    #sidebar .navegar-para-paginas-administrativas{
+        gap: 1.5rem;
+        height: 70vh;
+    }
+
+    #sidebar .navegar-para-paginas-administrativas a, .botao-sign-out{
+        font-size: 0.9rem;
+        gap: 0.4rem;
+        padding-left: 0.2rem;
+    }
+
+    #sidebar .icone, .icone-sign-out{
+        font-size: 1.4rem;
+        width: 1.4rem;
+        padding-left: 1.4rem;
+    }
+
+    #sidebar .bi-house-door{
+        font-size: 1.6rem;
+    }
+
+    #sidebar .bi-box-arrow-left{
+        font-size: 1.4rem;
     }
 }

@@ -149,7 +149,7 @@ h3{
     gap: 0.625rem;
     justify-content: center;
     padding: 0.7rem 0 0.7rem 0;
-    width: 16vw;
+    width: 18vw;
 
     /*todo: aparência da caixa */
     background-color: #D8854A;
@@ -542,10 +542,9 @@ h3{
 }
 
 
-/*! RESPONSIVIDADE MOBILE S e (M, L)*/
+/*! RESPONSIVIDADE MOBILE S e M */
 @media (min-width: 320px) and (max-width: 375px)
 {
-    /* ANTI-ESTOURO GLOBAL AJUSTADO */
     html, .tudolanding{
         width: 100%;
         overflow-x: hidden;
@@ -553,34 +552,31 @@ h3{
 
     /*TODO:  HERO SECTION */
     .hero-section{
-        height: auto; /* Deixa o conteúdo ditar a altura */
+        height: auto; 
         min-height: 90vh;
-        padding: 2rem 1rem; /* Mais espaçamento interno */
+        padding: 2rem 1rem; 
         justify-content: center;
     }
 
     .elementos-hs{
-        flex-direction: column; /* Coloca logo e texto um sobre o outro */
-        gap: 1.5rem; /* Menor espaço entre os blocos */
+        flex-direction: column; 
+        gap: 1.5rem;
     }
 
-    /* Coluna da Logo (Muda de posição para o topo) */
     .metade-logo{
-        height: auto; /* Altura automática */
+        height: auto; 
         flex: 0 0 auto;
-        order: -1; /* !!! Isso joga a logo para CIMA do texto !!! */
+        order: -1; /*  Isso joga a logo para CIMA do texto */
         margin-bottom: 2rem;
-        width: 50%; /* Define uma largura máxima para a logo */
+        width: 50%;
         
     }
 
     #logopolvo{
-        max-width: 250px; /* Impede que a logo fique gigante */
+        max-width: 250px; 
         height: auto;
-        margin: 0 auto; /* Centraliza */
     }
 
-    /* Coluna do Texto (Fica abaixo da logo) */
     .metade-texto{
         height: auto;
         flex: 1 1 auto;
@@ -590,17 +586,17 @@ h3{
     }
     
     .tdtitulo{
-        align-items: center; /* Centraliza todo o bloco de título */
-        letter-spacing: 0.1rem; /* Menos espaçamento */
+        align-items: center; 
+        letter-spacing: 0.1rem; 
     }
    
     .titulo2{
-        gap: 2vw; /* Ajusta o gap entre "ENTRE" e "NO" */
+        gap: 2vw; 
         justify-content: center;
     }
     
     .h1lan, .h11lan{
-        font-size: 15vw; /* Aumenta a fonte para mobile */
+        font-size: 15vw; 
         text-align: center;
     }
    
@@ -609,7 +605,7 @@ h3{
     }
     
     .h3lan{
-        font-size: 8vw; /* Fonte maior para mobile */
+        font-size: 8vw; /
     }
 
     .espaco{
@@ -617,7 +613,7 @@ h3{
     }
   
     .texto_hs{
-        width: 90%; /* Ocupa toda a largura */
+        width: 90%; 
         font-size: 0.9rem;
     }
 
@@ -626,15 +622,15 @@ h3{
         max-width: 320px; 
         font-size: 1rem;
         padding: 0.5rem;
-        border-radius: 50px; /* Raio de borda fixo para mobile */
+        border-radius: 50px; 
     }
 
     /*! CARROUSSEL */
     .carroussel{
-        width: 100%; /* Ocupa toda a largura */
+        width: 100%; 
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
-        padding: 2rem 1rem;
+        padding: 0.5rem 1rem;
     }
 
     .titulo-total1{
@@ -655,19 +651,21 @@ h3{
     .slider{
         height: 27vh;
     }
+    .slider-conteudo{
+        padding: 0;
+    }
 
     .slider-item{
-        min-width: 85%; /* Um slide quase cheio na tela */
-        width: 85%;
+        min-width: 100%; 
         height: 27vh;
     }
 
     .slider-link{
-        border-radius: 15px; /* Arredondamento mobile */
+        border-radius: 15px; 
     }
 
     .slider-item img{
-        height: 40vh; /* Imagem mais alta no mobile */
+        height: 25vh; 
         border-radius: 15px;
     }
     
@@ -682,7 +680,7 @@ h3{
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
         margin: 0 0 2rem 0; /* Menos margem inferior */
-        padding: 2rem 1rem;
+        padding: 0.5rem 1rem;
         height: 143vh;
     }
    
@@ -745,9 +743,9 @@ h3{
     }
 }
 
-@media (min-width: 377px) and (max-width: 600px)
+/*! RESPONSIVIDADE MOBILE L */
+@media (min-width: 377px) and (max-width: 765px)
 {
-    /* ANTI-ESTOURO GLOBAL AJUSTADO */
     html, .tudolanding{
         width: 100%;
         overflow-x: hidden;
@@ -755,34 +753,32 @@ h3{
 
     /*TODO:  HERO SECTION */
     .hero-section{
-        height: auto; /* Deixa o conteúdo ditar a altura */
+        height: auto; /
         min-height: 90vh;
-        padding: 2rem 1rem; /* Mais espaçamento interno */
+        padding: 2rem 1rem; 
         justify-content: center;
     }
 
     .elementos-hs{
-        flex-direction: column; /* Coloca logo e texto um sobre o outro */
-        gap: 1.5rem; /* Menor espaço entre os blocos */
+        flex-direction: column; 
+        gap: 1.5rem;
     }
 
-    /* Coluna da Logo (Muda de posição para o topo) */
     .metade-logo{
-        height: auto; /* Altura automática */
+        height: auto; 
         flex: 0 0 auto;
-        order: -1; /* !!! Isso joga a logo para CIMA do texto !!! */
+        order: -1;
         margin-bottom: 2rem;
-        width: 50%; /* Define uma largura máxima para a logo */
+        width: 50%; 
         
     }
 
     #logopolvo{
-        max-width: 250px; /* Impede que a logo fique gigante */
+        max-width: 250px; 
         height: auto;
-        margin: 0 auto; /* Centraliza */
+        margin: 0 auto; 
     }
 
-    /* Coluna do Texto (Fica abaixo da logo) */
     .metade-texto{
         height: auto;
         flex: 1 1 auto;
@@ -792,17 +788,17 @@ h3{
     }
     
     .tdtitulo{
-        align-items: center; /* Centraliza todo o bloco de título */
-        letter-spacing: 0.1rem; /* Menos espaçamento */
+        align-items: center;
+        letter-spacing: 0.1rem;
     }
    
     .titulo2{
-        gap: 2vw; /* Ajusta o gap entre "ENTRE" e "NO" */
+        gap: 2vw; 
         justify-content: center;
     }
     
     .h1lan, .h11lan{
-        font-size: 15vw; /* Aumenta a fonte para mobile */
+        font-size: 15vw; 
         text-align: center;
     }
    
@@ -811,7 +807,7 @@ h3{
     }
     
     .h3lan{
-        font-size: 8vw; /* Fonte maior para mobile */
+        font-size: 8vw; 
     }
 
     .espaco{
@@ -819,7 +815,7 @@ h3{
     }
   
     .texto_hs{
-        width: 90%; /* Ocupa toda a largura */
+        width: 90%; 
         font-size: 0.9rem;
     }
 
@@ -828,15 +824,15 @@ h3{
         max-width: 320px; 
         font-size: 1rem;
         padding: 0.5rem;
-        border-radius: 50px; /* Raio de borda fixo para mobile */
+        border-radius: 50px; 
     }
 
     /*! CARROUSSEL */
     .carroussel{
-        width: 100%; /* Ocupa toda a largura */
+        width: 100%; 
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
-        padding: 2rem 1rem;
+        padding: 1rem 1rem 2rem 1rem;;
     }
 
     .titulo-total1{
@@ -858,22 +854,25 @@ h3{
         height: 30vh;
     }
 
+    .slider-conteudo{
+        padding: 0;
+    }
+
     .slider-item{
-        min-width: 85%; /* Um slide quase cheio na tela */
+        min-width: 85%; 
         width: 85%;
         height: 30vh;
     }
 
     .slider-link{
-        border-radius: 15px; /* Arredondamento mobile */
+        border-radius: 15px; 
     }
 
     .slider-item img{
-        height: 40vh; /* Imagem mais alta no mobile */
+        height: 40vh; 
         border-radius: 15px;
     }
     
-    /* Mostrar as informações sempre ou em toque */
     .slider-link:active .slider-informacoes{
         opacity: 1;
     }
@@ -883,8 +882,8 @@ h3{
         width: 100%;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
-        margin: 0 0 2rem 0; /* Menos margem inferior */
-        padding: 2rem 1rem;
+        margin: 0 0 2rem 0;
+        padding:  1rem 2rem 1rem;
         height: 143vh;
     }
    
@@ -894,7 +893,7 @@ h3{
     }
 
     .titulo-mosaico{
-       font-size: 1.4rem;
+       font-size: 1.3rem;
     }
 
     .titulo_mosaico_img{
@@ -925,6 +924,8 @@ h3{
         border-radius: 15px;
         gap: 1rem;
         align-items: flex-start;
+        align-self: center;
+        width: 90%;
     }
 
     .im{
@@ -943,13 +944,13 @@ h3{
         width: 100%;
         font-size: 1.1rem;
         line-height: 1.5;
-        text-align: left; /* Alinhamento padrão mobile */
+        text-align: left;
     }
 }
 
 
 /*! RESPONSIVIDADE TABLET */
-@media (min-width: 768px) and (max-width: 1024px)
+@media (min-width: 768px) and (max-width: 1023px)
 {
     /*todo: HERO SECTION */
     .hero-section{
@@ -960,7 +961,7 @@ h3{
 
     .elementos-hs{
         flex-direction: column;
-        gap: 2rem; /* Reduz o espaço entre texto e logo */
+        gap: 2rem; 
     }
 
     .metade-logo{
@@ -970,16 +971,15 @@ h3{
     }
 
     #logopolvo{
-        max-width: 310px; /* Impede que a logo fique gigante */
+        max-width: 310px;
         height: auto;
-        margin: 0 auto; /* Centraliza */
+        margin: 0 auto;
     }
 
     .metade-texto{
         gap: 3rem;
     }
 
-    /* Ajuste de Fontes para não estourarem no Tablet */
     .h1lan, .h11lan{
         font-size: 13vw;
     }
@@ -1000,9 +1000,8 @@ h3{
     .botão{
         width: 34vw; 
         font-size: 1.2rem;
-        border-radius: 20px;
+        border-radius: 25px;
     }
-
 
     /*! CARROUSSEL */
     .carroussel{
@@ -1010,21 +1009,25 @@ h3{
         padding: 2rem;
     }
 
+    .titulo-total1{
+        margin: 0;
+    }
+
     .slider{
         height: 35vh;
     }
 
     .slider-item{
-        min-width: 46%; /* Exibe praticamente 2 itens por vez na tela */
+        min-width: 55%; 
         height: 35vh;
     }
 
     .slider-item img{
-        height: 100%; /* Ajusta a altura da foto */
+        height: 100%; 
     }
 
     .titulo_carroussel_img{
-        width: 10%; /* Onda um pouco maior que no desktop */
+        width: 10%; 
     }
 
     .nav-arrow{
@@ -1034,13 +1037,13 @@ h3{
     /*? MOSAICO */
     .mosaico{
         width: 95%;
-        height: auto;
+        height: 90vh;
         padding: 2rem;
         margin-bottom: 5rem;
     }
 
     .elementos-post{
-        gap: 2rem; /* Aproxima o post grande dos pequenos */
+        gap: 2rem; 
         align-items: stretch;
     }
 
@@ -1053,11 +1056,10 @@ h3{
     }
 
     .postsPquenos{
-        width: 100%; /* Dá mais espaço para a lista da direita */
+        width: 100%; 
         gap: 1rem;
     }
 
-    /* Ajuste estrutural dos posts horizontais menores */
     .p1{
         height: 23vh; 
         padding: 0.5rem;
@@ -1076,7 +1078,7 @@ h3{
 
     .t1{
         width: 70%;
-        font-size: 1rem; /* Diminui a fonte do texto para caber ao lado da foto */
+        font-size: 1rem;
     }
     
     .titulo_mosaico_img{
@@ -1084,122 +1086,243 @@ h3{
     }
 }
 
+/*! RESPONSIVIDADE LAPTOP */
+@media (min-width: 1024px) and (max-width: 1439px)
+{
+    /*todo: HERO SECTION */
+    .hero-section{
+        height: auto;
+        min-height: 91vh;
+        padding: 4rem 2rem;
+    }
+
+    .elementos-hs{
+        flex-direction: column;
+        gap: 2rem; 
+    }
+
+    .metade-logo{
+        order: -1;
+        height: 20vh;
+    }
+
+    #logopolvo{
+        width: 60%;
+        height: auto;
+    }
+
+    .metade-texto{
+        gap: 3rem;
+    }
+
+    .h1lan, .h11lan{
+        font-size: 10vw;
+    }
+
+    .h11lan{
+        padding-left: 10vw;
+    }
+
+    .h3lan{
+        font-size: 5vw;
+    }
+
+    .texto_hs{
+        width: 80%;
+        font-size: 1.2rem;
+    }
+
+    .botão{
+        width: 25vw; 
+        font-size: 1.2rem;
+        border-radius: 25px;
+    }
+
+    /*! CARROUSSEL */
+    .carroussel{
+        width: 95%;
+        padding: 2rem;
+    }
+
+    .titulo-total1{
+        margin: 0;
+    }
+
+    .slider{
+        height: 35vh;
+    }
+
+    .slider-item{
+        min-width: 55%; 
+        height: 35vh;
+    }
+
+    .slider-item img{
+        height: 100%; 
+    }
+
+    .titulo_carroussel_img{
+        width: 10%; 
+    }
+
+    /*? MOSAICO */
+    .mosaico{
+        width: 95%;
+        height: 90vh;
+        padding: 2rem;
+        margin-bottom: 5rem;
+    }
+
+    .elementos-post{
+        gap: 2rem; 
+        align-items: stretch;
+    }
+
+    .postGrande{
+       display: none;
+    }
+
+    .postGrande img{
+        display: none;
+    }
+
+    .postsPquenos{
+        width: 100%; 
+        gap: 1rem;
+    }
+
+    .p1{
+        height: 23vh; 
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .im{
+        width: 30%;
+        height: 100%;
+    }
+
+    .i1{
+        height: 100%;
+        width: 100%;
+    }
+
+    .t1{
+        width: 70%;
+        font-size: 1rem; 
+    }
+    
+    .titulo_mosaico_img{
+        width: 10%;
+    }
+}
 
 /*! RESPONSIVIDADE 4K */
-@media (min-width: 1921px) 
+@media (min-width: 1921px)
 {
-    /* --- LIMITADOR GLOBAL DE CONTEÚDO --- */
-    /* Impede que o site estique infinitamente para as bordas em 2560px */
-    .elementos-hs,
-    .carroussel,
-    .mosaico {
+    /* LIMITADOR GLOBAL DE CONTEÚDO */
+    .elementos-hs, .carroussel, .mosaico{
         margin-left: auto;
         margin-right: auto;
     }
 
     /* TODO: HERO SECTION */
-    .hero-section {
-        height: 85vh; /* Ajusta a proporção da dobra da página */
+    .hero-section{
+        height: 85vh;
         padding: 0 10rem;
     }
 
-    .elementos-hs {
-        gap: 8rem; /* Aumenta o espaço entre o texto e a logo */
+    .elementos-hs{
+        gap: 8rem; 
     }
 
-    .metade-texto {
+    .metade-texto{
         gap: 4rem;
     }
 
-    /* Ajuste tipográfico proporcional para telas gigantes */
-    .h1lan, .h11lan {
+    .h1lan, .h11lan{
         font-size: 11rem;
     }
 
-    .h11lan {
+    .h11lan{
         padding-left: 6rem;
     }
 
-    .h3lan {
+    .h3lan{
         font-size: 6rem;
     }
 
     .espaco{
         gap: 4rem;
     }
-    .texto_hs {
+    .texto_hs{
         font-size: 2.2rem;
         line-height: 1.6;
         width: 35vw;
     }
 
-    .botão {
+    .botão{
         width: 29rem;
-        font-size: 1.6rem;
-        padding: 2.3rem 0;
-        border-radius: 40px;
+        font-size: 2.2rem;
+        border-radius: 60px;
     }
 
-    .metade-logo {
+    .metade-logo{
         height: 60vh;
         width: 50vw;
     }
 
-    #logopolvo {
+    #logopolvo{
         width: 100%;
     }
 
     /*! CARROUSSEL */
-    .carroussel {
+    .carroussel{
         width: 95%;
         border-top-left-radius: 3rem;
         border-top-right-radius: 3rem;
         padding: 4rem 5rem;
     }
 
-    .titulo_carroussel {
+    .titulo_carroussel{
         font-size: 5rem;
         margin-bottom: 4vh;
     }
 
-    .titulo_carroussel_img {
+    .titulo_carroussel_img{
         width: 7%; 
         margin-bottom: 2rem;
     }
 
-    .slider-conteudo {
-        gap: 17rem; /* Mais espaço entre os itens do carrossel */
+    .slider-conteudo{
+        gap: 2rem; 
     }
 
-    .slider-item {
-        min-width: 23%; /* Mostra mais itens simultaneamente na tela gigante (cerca de 4) */
+    .slider-item{
+        min-width: 38%;
     }
 
-    .slider-item img {
-        height: 40vh; /* Mantém as capas dos álbuns grandes e imponentes */
+    .slider-item img{
+        height: 40vh; 
         border-radius: 2rem;
     }
 
-    .slider-link{
-        width: 50%;
-    }
-    .slider-titulo {
+    .slider-titulo{
         font-size: 2rem;
     }
 
-    .slider-texto {
+    .slider-texto{
         font-size: 1.3rem;
     }
 
-    /* Setas de navegação maiores */
-    .nav-arrow {
+    .nav-arrow{
         font-size: 40px;
         width: 4vw;
         height: 8vh;
     }
 
     /*? MOSAICO */
-    .mosaico {
+    .mosaico{
         border-bottom-left-radius: 3rem;
         border-bottom-right-radius: 3rem;
         padding: 4rem 5rem;
@@ -1210,57 +1333,55 @@ h3{
         align-self: center;
     }
 
-    .titulo-mosaico {
+    .titulo-mosaico{
         font-size: 5rem;
     }
 
-    .titulo_mosaico_img {
+    .titulo_mosaico_img{
         width: 7%;
     }
 
-    .elementos-post {
+    .elementos-post{
         gap: 6rem;
     }
 
-    /* O Post Grande volta a aparecer e ganha destaque máximo */
-    .postGrande {
+    .postGrande{
         display: flex;
         width: 45%;
         height: 65vh;
         border-radius: 2rem;
     }
 
-    .postGrande img {
+    .postGrande img{
         display: block;
         border-radius: 2rem;
     }
 
-    .mosaico-conceito {
+    .mosaico-conceito{
         font-size: 2.5rem;
     }
 
-    /* Coluna da direita ajustada */
-    .postsPquenos {
+    .postsPquenos{
         width: 55%;
         gap: 2rem;
     }
 
-    .p1 {
+    .p1{
         height: 20vh;
         padding: 1.5rem;
         border-radius: 2rem;
         gap: 2rem;
     }
 
-    .im {
+    .im{
         width: 25%;
     }
 
-    .i1 {
+    .i1{
         border-radius: 1.5rem;
     }
 
-    .t1 {
+    .t1{
         font-size: 1.5rem;
         line-height: 1.5;
     }
