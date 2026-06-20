@@ -63,7 +63,8 @@ class LoginController
             'nome' => $_POST['nome'],
             'email' => $_POST['email'],
             'senha' => $_POST['senha'],
-            'is_admin' => 0
+            'is_admin' => 0,
+            'foto' => 'default'
         ];
 
         $usuario = App::get('database')->verificaEmail($email);
