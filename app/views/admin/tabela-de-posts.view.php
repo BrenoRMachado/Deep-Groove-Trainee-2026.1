@@ -238,11 +238,11 @@
                         </div>
                     </section>
                     <section class="container-dados-visu-post">
-                        <!-- disabled- desbilita total 
-                        readonly- nn deixa editar mas pode clicar e copiar o texto -->
+
+                        
                         <div class="dados-visu-post">
-                            <div class="destaque-dados-visup id" style="background-color: brown;">Id</div>
-                            <input class="dado-visu-post" value=<?= $publicacao->id ?> readonly>                     
+                            <div class="destaque-dados-visup idDeezer" style="background-color: #773B36;">Id deezer</div>
+                            <input class="dado-visu-post" value=<?= $publicacao->id_deezer ?> readonly>
                         </div>
 
                         <div class="dados-visu-post">
@@ -251,7 +251,7 @@
                         </div>
                             
                         <div class="dados-visu-post">
-                            <div class="destaque-dados-visup ano" style="background-color: var(--cor-laranja-200);">Ano de lançamento</div>
+                            <div class="destaque-dados-visup ano" style="background-color: var(--cor-laranja-200);">Ano</div>
                             <input class="dado-visu-post" value=<?= $publicacao->ano ?> readonly>                     
                         </div>
 
@@ -261,32 +261,18 @@
                         </div>
 
                         <div class="dados-visu-post">
-                            <div class="destaque-dados-visup genero" style="background-color: green;">Gênero</div>
+                            <div class="destaque-dados-visup genero" style="background-color: #792B3C;">Gênero</div>
                             <input class="dado-visu-post" value=<?= $publicacao->genero ?> readonly>
                         </div>
-
+                    
                         <div class="dados-visu-post">
-                            <div class="destaque-dados-visup foto" style="background-color: blue;">Foto</div>
-                            <input class="dado-visu-post" value=<?= $publicacao->foto ?> readonly>
-                        </div>
-
-                        <div class="dados-visu-post">
-                            <div class="destaque-dados-visup duracao" style="background-color: purple;">Duração</div>
+                            <div class="destaque-dados-visup duracao" style="background-color: #A94752;">Duração</div>
                             <input class="dado-visu-post" value=<?= $publicacao->duracao ?> readonly>
                         </div>
 
-                        <div class="dados-visu-post">
-                            <div class="destaque-dados-visup idUsuario" style="background-color: black;">Id usuário</div>
-                            <input class="dado-visu-post" value=<?= $publicacao->id_usuario ?> readonly>
-                        </div>
-
-                        <div class="dados-visu-post">
-                            <div class="destaque-dados-visup idDeezer" style="background-color: cyan;">Id deezer</div>
-                            <input class="dado-visu-post" value=<?= $publicacao->id_deezer ?> readonly>
-                        </div>
 
                         <div class="container-textarea-vi">
-                            <div class="destaque-dados-visup descricao" style="background-color: var(--cor-amarelo);">Descrição</div>
+                            <div class="destaque-dados-visup descricao" style="background-color: #D55955">Descrição</div>
                             <textarea rows="10" name="conceito" readonly><?= $publicacao->conceito ?></textarea>
                         </div>
 

@@ -582,7 +582,6 @@
     width: 35%;
     color: var(--cor-branco-300);
     font-family: var(--fonteaviso);
-  
 }
 
 /* .textpostvih3, .textpostexh3{
@@ -644,17 +643,17 @@
     justify-content: flex-start;
     align-items: center;
     overflow-y: auto;
-   
+    padding-top: 1rem;
+
 }
 .dados-visu-post{
     display: flex;
-    min-height: 20%;
+    min-height: 13%;
     width: 90%;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
     gap: 5%;
-
 }
 .dado-visu-post{
     border-radius: 10px;
@@ -665,7 +664,6 @@
     border: 2px solid var(--cor-branco-400);
     font-family: var(--fonte-modal);
     color: var(--cor-vinho-100);
-    
 }
 
 /** isso tira a borda do input e coloca um corzinha nele
@@ -689,7 +687,6 @@
     font-family: var(--fonte-modal)
     "Montserrat", sans-serif;
     text-align: center;
-    
 }
 
 .container-textarea-vi{
@@ -711,16 +708,9 @@
     background: none;
     border: 2px solid var(--cor-branco-400);
     font-size: 1rem;
-    font-family: var(--fonte-modal)
-    "Montserrat", sans-serif;
+    font-family: var(--fonte-modal);
     color: var(--cor-vinho-100);
 }
-/* .fotodopostvi, .fotodopostex{
-    left: 50%;
-    position: absolute;
-    top: 10%;
-    transform: translateX(-50%)  
-} */
 
 .imgpostvi, .imgpostex{
 
@@ -880,6 +870,351 @@
     cursor: pointer;
 }
 
+/*todo: INÍCIO DA RESPONSIVIDADE DOS MODAIS DE VISUALIZAR E EXCLUIR POSTS */
+
+/*! RESPONSIVIDADE 4K */ 
+@media (min-width: 1921px) 
+{
+    .des-modal-vi-post{
+        width: 50%;
+        height: 75%;
+        border-radius: 40px;
+    }
+
+    .des-modal-ex-post{
+        width: 50%;
+        height: 65%;
+        gap: 6rem;
+    }
+
+    .oqmodalVI-post, .oqmodalEX-post{
+        font-size: 1.8rem;
+    }
+
+    .xisp{
+        font-size: 3rem;
+    }
+
+    .mensagem-botao{
+        height: 50%;
+    }
+
+    .containeravisop{
+        height: 15vh;
+        justify-content: center;
+        width: 50vh;
+    }
+    .avisoSEMdestaquep{
+        font-size: 2rem;
+    }
+    .avisoCOMdestaquep{
+        font-size: 2rem;
+    }
+    .rodapeavisop{
+        font-size: 1.7rem;
+    }
+    .destaque-dados-visup{
+        font-size: 1.5rem;
+        height: 3.5rem;
+    }
+
+    .dado-visu-post, .container-textarea-vi textarea{
+        font-size: 1.5rem;
+    }
+
+    .botao {
+        width: 8vw;
+        height: 4.5vh;
+        font-size: 1.5rem;
+        border-radius: 45px;
+    }
+}
+
+/*! RESPONSIVIDADE LAPTOP */
+@media (min-width: 769px) and (max-width: 1024px)
+{
+    .des-modal-vi-post{
+        width: 65%;
+        height: 80%;
+    }
+
+    .des-modal-ex-post{
+        width: 65%;
+        height: 55%;
+        gap: 3rem;
+    }
+
+    .text-img-boX-ex{
+        height: 35%;
+    }
+
+    .mensagem-botao{
+        height: 50%;
+    }
+
+    .container-dados-visu-post{
+        width: 90%; 
+    }
+
+    .botao{
+        width: 15vw; 
+        height: 4.5vh;
+    }
+}
+
+/*! RESPONSIVIDADE TABLET */
+@media (min-width: 766px) and (max-width: 768px)
+{
+    .des-modal-vi-post{
+        width: 75%;
+        height: 80%;
+    }
+
+    .des-modal-ex-post{
+        width: 70%;
+        height: 55%;
+        gap: 3rem;
+    }
+
+    .text-img-boX-ex{
+        height: 35%;
+    }
+
+    .mensagem-botao{
+        height: 50%;
+    }
+
+    .container-dados-visu-post{
+        width: 90%; 
+    }
+
+    .destaque-dados-visup{
+        height: 4.5vh;
+    }
+
+    .botao{
+        width: 15vw; 
+        height: 4.5vh;
+    }
+}
+
+/*! RESPONSIVIDADE MOBILE L */
+@media (min-width: 377px) and (max-width: 765px) 
+{
+    .des-modal-vi-post{
+        width: 90%; 
+        height: 90%; 
+        border-radius: 20px;
+    }
+
+    .des-modal-ex-post{
+        width: 90%;
+        height: 55%;
+        gap: 2rem;
+        padding: 1rem 0;
+    }
+
+    .text-img-boX, .text-img-boX-ex{
+        flex-direction: row;
+        width: 92%;
+        height: 20vh;
+    }
+
+    .oqmodalVI-post, .oqmodalEX-post{
+        width: 40%;
+        height: 80%;
+        font-size: 0.85rem;
+    }
+
+    .imgpostvi, .imgpostex{
+        width: 50%;
+        height: 90%;
+    }
+
+    .icone-capap{
+        font-size: 2rem;
+    }
+
+    .X{
+        display: flex;
+        justify-content: flex-end;
+        width: 30%;
+        align-self: baseline;
+        margin-top: 1rem;
+    }
+    .xisp{
+        font-size: 1.7rem;    
+    }
+    .container-dados-visu-post{
+        width: 92%;
+        height: 70%;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    .dados-visu-post{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    .destaque-dados-visup{
+        width: auto;
+        padding: 0 1rem;
+        height:2.2rem;
+        font-size: 0.85rem;
+    }
+
+    .dado-visu-post{
+        width: 100%;
+        height: 2.2rem;
+    }
+
+    .container-textarea-vi{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    .container-textarea-vi textarea{
+        width: 100%;
+    }
+
+    .mensagem-botao{
+        width: 90%;
+        height: 50%;
+        gap: 1.5rem;
+    }
+
+    .containeravisop{
+        width: 80%;
+    }
+    .containerbotoesp{
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .botao{
+        width: 25vw;
+        height: 4vh;
+    }
+}
+
+/*! RESPONSIVIDADE MOBILI M E S */ 
+@media (min-width: 320px) and (max-width: 375px) 
+{
+    .des-modal-vi-post{
+        width: 95%;
+        height: 95%;
+        border-radius: 15px;
+    }
+
+    .des-modal-ex-post{
+        width: 95%;
+        height: 55%;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    .text-img-boX, .text-img-boX-ex{
+        width: 92%;
+        height: 20vh;
+    }
+
+    .oqmodalVI-post, .oqmodalEX-post{
+        width: 30%;
+        height: 20vh;
+    }
+
+    .oqmodalVI-post h3, .oqmodalEX-post h3{
+        font-size: 1rem;
+    }
+
+    .oqmodalVI-post p, .oqmodalEX-post p{
+        font-size: 0.75rem;
+    }
+
+    .imgpostvi, .imgpostex{
+        width: 50%;
+        height: 20vh;
+    }
+
+    .icone-capap{
+        font-size: 1.6rem;
+    }
+
+    .X{
+        display: flex;
+        justify-content: flex-end;
+        width: 30%;
+        align-self: baseline;
+    }
+    .xisp{
+        font-size: 1.7rem;    
+    }
+
+    .container-dados-visu-post{
+        width: 92%;
+        gap: 0.8rem;
+    }
+
+    .dados-visu-post{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+        justify-content: center;
+    }
+
+    .destaque-dados-visup{
+        width: auto;
+        padding: 0 0.8rem;
+        height: 1.6rem;
+        font-size: 0.8rem;
+    }
+
+    .dado-visu-post{
+        width: 100%;
+        height: 2rem;
+        font-size: 0.9rem;
+    }
+
+    .container-textarea-vi{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+
+    .container-textarea-vi textarea{
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .mensagem-botao{
+        width: 92%;
+        height: 55%;
+        gap: 1.2rem;
+    }
+
+    .containeravisop{
+        width: 85%;
+        height: 11vh;
+    }
+    .avisoSEMdestaquep, .avisoCOMdestaquep{
+        font-size: 1rem;
+    }
+
+    .rodapeavisop{
+        font-size: 0.9rem;
+    }
+
+    .botao{
+        width: 27vw;
+        height: 4vh;
+        font-size: 0.9rem;
+    }
+}
+/*todo: FIM DA RESPONSIVIDADE DOS MODAIS DE VISUALIZAR E EXCLUIR POSTS */
 
 /*! MODAL DE CRIAR POSTS */
 /* Efeito visual para mostrar que não é possível clicar no botão se for usuário não administrador */
