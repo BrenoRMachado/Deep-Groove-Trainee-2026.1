@@ -124,16 +124,16 @@
 
                           <!-- adiciona linha a cada 2 músicas -->
                             <?php if(($index + 1) % 2 == 0): ?>
-                                <div class="linha-d"></div>
+                                <div class="linha-d desk"></div>
                             <?php endif; ?>
+
+                             <!-- linha mobile a cada 1 -->
+                            <div class="linha-d mobile"></div>
                         
                         <?php endforeach; ?>
 
 
                     </div>
-                    
-                        <div class="linha-d"></div>
-
                  
                 </div>
 
