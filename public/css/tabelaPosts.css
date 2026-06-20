@@ -89,7 +89,7 @@
     flex-direction: column;
     justify-content: center;
     padding-top: 1rem;
-    width: 90%;
+    width: 90vw;
     align-items: center;
     padding-bottom: 1.5rem;
 }
@@ -205,6 +205,7 @@
     width: 80%;
     padding-left: 0;
     /* background-color: red; */
+    padding-top: 3vh;
 }
 
 

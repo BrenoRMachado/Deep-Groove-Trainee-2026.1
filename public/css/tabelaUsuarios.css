@@ -71,23 +71,31 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    align-items: center; 
 }
 
 #tbuser{
-    padding: 1rem 2rem;
     min-height: 100vh;
-    padding-left: 8%;
-   
     background: linear-gradient(
         #6D3534 39%, 
         #9A4E45 75%,
         #C66E57 94%,
         #E08E6D 100%
     );
-    
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 100vw;
+    padding-top: 1rem;
+}
+
+.espacom {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
 }
 
 .addUserdesktop {
@@ -130,8 +138,9 @@
     display: flex;
     /* o justify sempre mexe no eixo principal nesse caso row */
     justify-content: space-between;
-
+    width: 80%;
     align-items: center;
+    text-align: center;
 
 }
 
@@ -139,6 +148,7 @@
     color: var(--corclara);
     font-family: var(--fontetitulo);
     font-weight: var(--pesotitulo);
+    font-size: 7.5vh;
 }
 
 .titulo {
@@ -148,7 +158,7 @@
 .tabela{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
    
     margin-top: 3rem;
  
@@ -163,6 +173,10 @@
     border-radius: 1rem;
 
     background-color: var(--corclara);
+}
+
+.tabeladentro {
+    width: 100%;
 }
 
 /*? colunas das tabelas coluna cabeçalho e coluna body */
@@ -211,9 +225,10 @@
 }
 
 .pesquisar {
-    width: 100%;
+    width: 80%;
     padding-left: 0;
     /* background-color: red; */
+    padding-top: 3vh;
 }
 
 
