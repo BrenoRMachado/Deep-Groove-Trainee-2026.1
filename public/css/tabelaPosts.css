@@ -26,6 +26,7 @@
     --cor-marrom-100: #6D3534;
     --cor-vermelho-100: #FF0000;
     --cor-verde-100: #22C55E;
+    --cor-marrom-50: #AE5E48;
 
     /** var modal visualizar e excluir */
      --fundodecorcontainerdados: #F7DBD4; 
@@ -88,10 +89,17 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 1rem;
     width: 90vw;
     align-items: center;
-    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+}
+
+.userimg{
+    width: 3rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;   
+    background-color: var(--cor-marrom-50);
+
 }
 
 .addUser {
@@ -133,7 +141,7 @@
     /* Para não ter a barra de arrastar para baixo */
     overflow-y: hidden;
 
-    margin-top: 3rem;
+    margin-top: 1rem;
  
     justify-content: center;
 
@@ -157,6 +165,11 @@
 
     font-family: var(--fonte);
 
+}
+
+
+.mais{
+    width: 1rem;
 }
 
 .colunageral {
@@ -205,7 +218,6 @@
     width: 80%;
     padding-left: 0;
     /* background-color: red; */
-    padding-top: 3vh;
 }
 
 
@@ -1957,6 +1969,7 @@
 .topoTabelaPosts {
     justify-content: space-between;
     width: 100%;
+    justify-content: space-between;
 }
 
 .container-icones-crud-mobile {
@@ -1978,7 +1991,7 @@
     /* o justify sempre mexe no eixo principal nesse caso row */
     justify-content: space-between;
     align-items: center;
-
+    height: fit-content;
 }
 
 .addUserdesktop {
@@ -1991,6 +2004,7 @@
     border-radius: 2rem;
     align-items: center;
     justify-content: center;
+    gap: 0.4rem;
 
 }
 
@@ -2025,7 +2039,7 @@
     }
 
     .pagecontainer {
-        padding-right: 10%;
+
     }
 
     #tbposts {

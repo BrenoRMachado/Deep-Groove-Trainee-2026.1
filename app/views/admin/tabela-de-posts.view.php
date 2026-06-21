@@ -36,16 +36,16 @@
         <section class="topoTabelaUser">
                 <button class="botao-novo-post" onclick="abrirModal('modal-criar-posts')">
                     <div class="addUserdesktop ">
-                        <i class="icone bi bi-plus" style="font-size: 3.5vh;"></i>
+                        <img src="../../../public/assets/mais.svg" class="mais" alt="mais">
                         <p class="textop">Novo post</p>
                     </div>
 
                     <div class="addUsermobile ">
-                        <img src="../../../public/assets/addMobile.svg" alt="add" class="addm">
+                        <img src="../../../public/assets/window-plus.svg" alt="add" class="addm">
                     </div>
                 </button>  
             <div class="infoUser">
-                <img src="../../../public/assets/ícone usuário.svg" alt="User" class="userimg">
+                <img src="<?= $_SESSION['foto'] ?>" alt="User" class="userimg">
 
                 <div class="infos">
                     <h3 class="textoh3"><?= $_SESSION['nome'] ?></h3>
