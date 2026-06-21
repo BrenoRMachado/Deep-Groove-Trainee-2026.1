@@ -113,15 +113,24 @@
             <div class="titulo-mobile">
                 <h1 class="titulo-login-mobile">Entrar</h1>
             </div>
-            <form class="container-form-mobile">
+            <div class="mensagem-erro">
+                <?php 
+                    if(isset($_SESSION['mensagem-erro'])){
+                        echo $_SESSION['mensagem-erro'];
+
+                    unset($_SESSION['mensagem-erro']);
+                    }
+                 ?>
+            </div>
+            <form class="container-form-mobile" action="/login" method="POST">
                 <div class="container-inputs-mobile">
                     <div class="container-elemento-input-mobile">
                         <h2>Email:</h2>
-                        <input placeholder="Digite seu email">
+                        <input placeholder="Digite seu email" name="email" id="email">
                     </div>
                     <div class="container-elemento-input-mobile">
                         <h2>Senha:</h2>
-                        <input placeholder="Digite sua senha">
+                        <input placeholder="Digite sua senha" type="password" name="senha" id="senha">
                     </div>
                     <div class="container-botao-mobile">
                         <button class="botao-login">Entre</button>
@@ -142,19 +151,28 @@
             <div class="titulo-mobile">
                 <h1 class="titulo-login-mobile">Cadastrar</h1>
             </div>
-            <form class="container-form-mobile">
+            <div class="mensagem-erro">
+                <?php 
+                    if(isset($_SESSION['mensagem-erro-email'])){
+                        echo $_SESSION['mensagem-erro-email'];
+
+                    unset($_SESSION['mensagem-erro-email']);
+                    }
+                 ?>
+            </div>
+            <form class="container-form-mobile" action="/cadastro" method="POST">
                 <div class="container-inputs-mobile">
                     <div class="container-elemento-input-mobile">
                         <h2>Nome:</h2>
-                        <input placeholder="Digite seu nome">
+                        <input placeholder="Digite seu nome" name="nome">
                     </div>
                     <div class="container-elemento-input-mobile">
                         <h2>Email:</h2>
-                        <input placeholder="Digite seu email">
+                        <input placeholder="Digite seu email" name="email">
                     </div>
                     <div class="container-elemento-input-mobile">
                         <h2>Senha:</h2>
-                        <input placeholder="Digite sua senha">
+                        <input placeholder="Digite sua senha" name="senha" type="password">
                     </div>
                     <div class="container-botao-mobile">
                         <button class="botao-login">Cadastre-se</button>

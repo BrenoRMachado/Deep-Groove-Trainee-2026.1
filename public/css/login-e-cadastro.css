@@ -318,7 +318,7 @@ button:hover {
 }
 
    @media (max-width: 468px) {
-    .cadastro-mobile {
+    .login-mobile {
         display: flex;
     }
 
