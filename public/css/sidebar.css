@@ -30,15 +30,30 @@
     padding: 0.625rem;
     position: absolute;
     left: 0;
-    width: fit-content;
+    width: 4vw;
     z-index: 1;
 
-    /* opacity: 0;
-    transition: opacity 0.3s ease; */
+    transition: width 0.5s ease-in-out;
+
+    .nome-pg-adm{
+        width: 0;
+        color: transparent;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+       
+    }
 }
-/* .sidebar:hover{
-    opacity: 1;
-} */
+.sidebar:hover{
+    .nome-pg-adm{
+        display: block;
+        width: auto;
+        color: #FEECE8;
+        opacity: 1;
+    }
+    width: 9vw;
+    overflow: hidden;
+
+}
 
 #icones-admin{
     align-items: center;
@@ -105,8 +120,7 @@
     color: #FEECE8;
     cursor: pointer;
     font-size: 1.25rem;
-    gap: 1rem;
-    padding-left: 1rem;
+    padding-left: 0.5rem;
     text-decoration: none;
     width: 100%;
 }
@@ -126,7 +140,6 @@
 
 .bi-chevron-right{
     font-size: larger;
-    /* font-weight: bold; */
 }
  .bi-house-door{
     color: #FEECE8;
@@ -200,8 +213,8 @@
     }
 }
 
-/*! RESPONSIVIDADE TABLET  E LAPTOP */
-@media (min-width: 768px) and (max-width: 1024px) 
+/*! RESPONSIVIDADE LAPTOP */
+@media (min-width: 1024px) and (max-width: 1439px) 
 {
     .sidebar-mobile{
         gap: 3rem;
@@ -230,8 +243,38 @@
     }
 }
 
+/*! RESPONSIVIDADE TABLET E MOBILEs */
+@media (min-width: 320) and (max-width: 1023px) 
+{
+    .sidebar-mobile{
+        gap: 3rem;
+        padding: 0.5rem;
+    }
+
+    .sidebar-mobile{
+        height: 3.5rem;
+    }
+
+    .sidebar-mobile .nav-pg-adm-mobile{
+        gap: 2rem;
+        height: 65vh;
+    }
+
+    .sidebar-mobile .nav-pg-adm-mobile a, .botao-sign-out{
+        font-size: 1.1rem;
+        padding-left: 0.5rem;
+        gap: 0;
+    }
+
+    .sidebar-mobile .icone{
+        font-size: 2rem;
+        width: 2.8rem;
+        margin-left: 0.2rem;
+    }
+}
+
 /*! RESPONSIVIDADE MOBILE L */ 
-@media (min-width: 377px) and (max-width: 765px) 
+/* @media (min-width: 377px) and (max-width: 765px) 
 {
     .sidebar-mobile{
         gap: 2.5rem;
@@ -269,10 +312,10 @@
     .sidebar-mobile .bi-box-arrow-left{
         font-size: 1.6rem;
     }
-}
+} */
 
 /*! RESPONSIVIDADE MOBILI M E S */ 
-@media (min-width: 320px) and (max-width: 375px)
+/* @media (min-width: 320px) and (max-width: 375px)
 {
     .sidebar-mobile{
         gap: 2rem;
@@ -310,4 +353,4 @@
     .sidebar-mobile .bi-house-door{
         font-size: 1.6rem;
     }
-}
+} */
