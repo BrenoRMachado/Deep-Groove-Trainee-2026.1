@@ -79,13 +79,15 @@ h2, input, button, h3 {
 }
 
 .mensagem-erro {
-    font-size: 2vw;
-    border-radius: 20px;
-    background-color: #92415c;
-    color: #5B162D;
-    font-family: "Inter", sans-serif;
-    padding: 2%;
-    font-weight: bold;
+    font-size: 1.5vw;
+    background-color: #ffffff;
+    color: black;
+    padding: 1%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+
 }
 
 .sem-erro {

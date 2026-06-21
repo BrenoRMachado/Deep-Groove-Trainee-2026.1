@@ -375,6 +375,19 @@ class QueryBuilder
         }
     }
 
+    public function senhaJaExiste(string $senha): bool {
+        $sql = "SELECT COUNT(*) FROM usuarios WHERE senha = :senha";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([':senha' => $senha]);  // passa o parâmetro aqui
+            return $stmt->fetchColumn() > 0;       // pega só o COUNT(*)
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
     private function verifyavaliacao(int $id_usuario, int $id_publicacao){
         $sql="SELECT EXISTS(SELECT 1 FROM avaliacoes WHERE id_usuario = :id_usuario AND id_publicacao = :id_publicacao)";
         

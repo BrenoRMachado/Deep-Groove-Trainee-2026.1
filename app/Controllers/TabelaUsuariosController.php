@@ -181,4 +181,21 @@ class TabelaUsuariosController {
         exit();
     }
 
+
+    public function verificarSenha() {
+        session_start();
+        header('Content-Type: application/json');
+
+        $senha = $_POST['senha'] ?? '';
+        $idAtual = $_POST['id'] ?? null;
+
+        $jaExiste = App::get('database') -> senhaJaExiste($senha);
+
+        if (!$jaExiste) {
+            
+        }
+
+        echo json_encode(['jaExiste' => $jaExiste]);
+        exit();
+    }
 }

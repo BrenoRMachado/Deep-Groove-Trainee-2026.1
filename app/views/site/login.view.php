@@ -13,11 +13,6 @@
         $classe_erro = null;
         unset($_SESSION['mensagem-erro']);
     }
-    else if(isset($_SESSION['mensagem-erro-email'])){
-        $mensagem_erro = $_SESSION['mensagem-erro-email'];
-        $classe_erro = null;
-        unset($_SESSION['mensagem-erro-email']);
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,13 +39,12 @@
                 </div>
             </div>
             <div class="mensagem-erro <?= $classe_erro ?>">
+                <i class="bi bi-exclamation-square-fill" style="color: #ED5D00"></i>
                 <?php 
-                    if($mensagem_erro){
-                        echo $mensagem_erro;
-                    }
+                    echo $mensagem_erro;
                  ?>
             </div>
-            <form class="container-form" action="/login" method="POST">
+            <form id="login-form" class="container-form" action="/login" method="POST">
                 <div class="container-inputs"></div>
                     <div class="container-elemento-input">
                         <h2>Email:</h2>
@@ -79,7 +73,7 @@
                     <h1 class="titulo-login">Cadastrar</h1>
                 </div>
             </div>
-            <form class="container-form" action="/cadastro" method="POST">
+            <form id="cadastro-form" class="container-form" action="/cadastro" method="POST">
                 <div class="container-inputs"></div>
                     <div class="container-elemento-input">
                         <h2>Nome:</h2>
@@ -115,13 +109,6 @@
             <div class="titulo-mobile">
                 <h1 class="titulo-login-mobile">Entrar</h1>
             </div>
-            <div class="mensagem-erro <?= $classe_erro ?>">
-                <?php 
-                    if($mensagem_erro){
-                        echo $mensagem_erro;
-                    }
-                 ?>
-            </div>
             <form class="container-form-mobile" action="/login" method="POST">
                 <div class="container-inputs-mobile">
                     <div class="container-elemento-input-mobile">
@@ -150,13 +137,6 @@
         <div class="inputs-mobile">
             <div class="titulo-mobile">
                 <h1 class="titulo-login-mobile">Cadastrar</h1>
-            </div>
-            <div class="mensagem-erro <?= $classe_erro ?>">
-                <?php 
-                    if($mensagem_erro){
-                        echo $mensagem_erro;
-                    }
-                 ?>
             </div>
             <form class="container-form-mobile" action="/cadastro" method="POST">
                 <div class="container-inputs-mobile">
