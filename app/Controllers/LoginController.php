@@ -71,12 +71,15 @@ class LoginController
 
         if ($usuario == false) {
             App::get('database')->insert('usuarios', $parameters);
-
+            session_start();
             header('Location: /login');
+            exit();
         } 
         else {
+            session_start();
             $_SESSION['mensagem-erro-email'] = "Email já cadastrado";
             header('Location: /login');
+            exit();
         }
     }
 }

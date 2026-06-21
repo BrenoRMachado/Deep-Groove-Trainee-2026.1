@@ -3,6 +3,7 @@
 
     if(isset($_SESSION['id'])){
         header('Location: /dashboard');
+        exit();
     }
 ?>
 <!DOCTYPE html>

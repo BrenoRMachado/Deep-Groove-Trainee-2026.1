@@ -3,6 +3,7 @@
     
     if(!isset($_SESSION['id'])) {
         header('Location: /login');
+        exit();
     }
 ?>
 
@@ -207,7 +208,7 @@
                         <textarea rows="10" placeholder="Digite a descrição" name="conceito"><?= $publicacao->titulo ?></textarea>
                     </div>
                     <div class="quarto-da-area-informacoes">
-                        <button class="botao-modal-criar cancelar" type="button" onclick="fecharModal('modal-criar-posts')">Cancelar</button>
+                        <button class="botao-modal-criar cancelar" type="button" onclick="fecharModal('modal-editar-posts')">Cancelar</button>
                         <button class="botao-modal-criar salva">Salvar</button>
                     </div>
                     </div>
