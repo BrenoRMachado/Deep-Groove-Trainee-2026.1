@@ -11,6 +11,10 @@ class TabelaUsuariosController {
 
         $database = App::get('database');
 
+        // função de busca
+        $textoBusca = isset($_GET['busca']) ? $_GET['busca'] : '';
+        $colunaBusca = $textoBusca !== '' ? ['nome', 'email'] : null;
+
         session_start();
             if(!isset($_SESSION['id'])) {
             header('Location: /login');
@@ -27,11 +31,11 @@ class TabelaUsuariosController {
 
             $salto = ($paginaAtual - 1) * $limite;
 
-            $totalUsuarios = $database -> countAll('usuarios');
+            $totalUsuarios = $database -> countAll('usuarios', $textoBusca, $colunaBusca);
             // ceil pega o teto(arrendoda pra cima)
             $totalPaginas = ceil($totalUsuarios/$limite);
 
-            $usuarios = $database->paginate('usuarios', $limite, $salto);
+            $usuarios = $database->paginate('usuarios', $limite, $salto, $textoBusca, $colunaBusca);
 
             // $usuarios = App::get('database') -> selectAll('usuarios');
         } else {
@@ -46,7 +50,8 @@ class TabelaUsuariosController {
         return view('admin/tabelaUsuarios', [
             'usuarios' => $usuarios,
             'paginaAtual' => $paginaAtual,
-            'totalPaginas' => $totalPaginas
+            'totalPaginas' => $totalPaginas,
+            'textoBusca' => $textoBusca
         ]);
 
     }

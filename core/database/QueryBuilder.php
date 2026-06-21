@@ -135,10 +135,19 @@ class QueryBuilder
     public function countAll($tabela, $textoBusca=null, $colunaBusca=null){
         $sql = "SELECT COUNT(*) AS total FROM {$tabela}";
         $parameters = [];
-
+        
         if($textoBusca && $colunaBusca){
-            $sql .= " where $colunaBusca[0] like :textoBusca OR $colunaBusca[1] like :textoBusca OR $colunaBusca[2] like :textoBusca OR $colunaBusca[3] like :textoBusca";
-            $parameters['textoBusca'] = '%' . $textoBusca . '%';
+
+            $condicoes = []; // um array separado APENAS para os textos do SQL
+        
+            foreach ($colunaBusca as $index => $coluna) {
+                $token = "textoBusca_" . $index;
+                $condicoes[] = "$coluna like :$token"; // Guarda o texto do SQL aqui
+            
+                $parameters[$token] = '%' . $textoBusca . '%';
+            }
+            // Junta as condições com OR no SQL
+            $sql .= " where " . implode(' OR ', $condicoes);
         }
 
         try {
@@ -157,8 +166,16 @@ class QueryBuilder
         $wheresql = '';
 
         if($textoBusca && $colunaBusca){
-            $wheresql = " where $colunaBusca[0] like :textoBusca OR $colunaBusca[1] like :textoBusca OR $colunaBusca[2] like :textoBusca";
-            $parameters['textoBusca'] = '%' . $textoBusca . '%';
+           $condicoes = [];
+        
+            foreach ($colunaBusca as $index => $coluna){
+                $token = "textoBusca_" . $index;
+                $condicoes[] = "$coluna like :$token";
+            
+                $parameters[$token] = '%' . $textoBusca . '%'; 
+            }
+
+            $wheresql = " where " . implode(' OR ', $condicoes);
         }
 
         $sql = "SELECT * FROM {$tabela}{$wheresql} LIMIT {$limite} OFFSET {$salto} ";
