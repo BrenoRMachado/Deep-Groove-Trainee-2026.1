@@ -392,7 +392,7 @@
                     <div class="quarto-da-area-informacoes">
                         <div class="container-dado-a-criar" style="background-color: #A94752;">Duração</div> <input placeholder="Digite a duração" id="duracao_album" name="duracao">
                     </div>
-                    <input type="hidden" name="id_usuario" value=<?= $publicacao->id_usuario ?>>                    
+                    <input type="hidden" name="id_usuario" value=<?= $_SESSION['id'] ?>>                    
                      
                     <div class="container-textarea">
                         <div class="container-dado-a-criar" style="background-color: #D55955;">
