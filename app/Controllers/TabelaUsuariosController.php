@@ -115,6 +115,8 @@ class TabelaUsuariosController {
 
             $_SESSION['mensagem-erro-email-ao-editar-usuario'] = "Este email já está em uso";
 
+            $_SESSION['id_usuario_com_erro_email'] = $id;
+
             header('Location: /tabelaUsuarios');
             
             exit();

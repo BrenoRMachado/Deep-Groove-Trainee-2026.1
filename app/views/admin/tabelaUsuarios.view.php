@@ -84,7 +84,7 @@
                                     unset($_SESSION['mensagem-erro-email-ao-criar-usuario']);
                                 }    
                             ?>
-                        </span>
+                    </span>
                     </div>
                     <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Senha</div> <input class="criar-senha" placeholder="Digite a senha" type="password" name="senha" required> <button class="botao-de-visualizar-senha-no-modal-de-criar" type="button" onclick="alternarVisualizacaoDaSenhaAoCriarUsuario()" > <i class="icone-visualizar-senha-no-modal-de-criar bi bi-eye-slash-fill"></i> </button> </div>
                     <?php if($_SESSION['is_admin']): ?>
@@ -348,6 +348,10 @@
             </section>
         </div>
         
+    <?php 
+        $erroEmailEditar = $_SESSION['mensagem-erro-email-ao-editar-usuario'] ?? '';
+        unset($_SESSION['mensagem-erro-email-ao-editar-usuario']);
+    ?>    
 
     <?php foreach($usuarios as $usuario): ?>
         <!--* MODAL DE EDIÇÃO DE USUÁRIOS  -->
@@ -390,12 +394,9 @@
                         <span class="titulo-dado titulo-email">Email</span>
                         <input class="editar-dado editar-email" placeholder="<?= $usuario -> email ?>" type="email" name="email"></input>
                         <span class="mensagem-email-ja-existe-ao-editar-usuario">
-                            <?php 
-                                if(isset($_SESSION['mensagem-erro-email-ao-editar-usuario'])) {
-                                    echo $_SESSION['mensagem-erro-email-ao-editar-usuario'];
-                                    unset($_SESSION['mensagem-erro-email-ao-editar-usuario']);
-                                }    
-                            ?>
+                            <?php if($usuario -> id == ($_SESSION['id_usuario_com_erro_email'] ?? null)): ?>
+                                <?= $erroEmailEditar ?>
+                            <?php endif; ?>
                         </span>
                     </div>
                     <div class="container-editar-dado container-editar-senha">
