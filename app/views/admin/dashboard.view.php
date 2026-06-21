@@ -41,8 +41,8 @@
                 </div>
             </div>
         </header>
-        <nav id="area-navegacao-e-estatisticas">
-            <ul class="lista-area-navegacao-e-estatisticas">
+        <nav id="area-navegacao-e-estatisticas" class="<?= $_SESSION['is_admin'] ? '' : 'semInformacoesRecentes' ?>">
+            <ul class="lista-area-navegacao-e-estatisticas <?= $_SESSION['is_admin'] ? '' : 'semInformacoesRecentes' ?>">
                 <?php if($_SESSION['is_admin']): ?>
                     <li class="container-usuarios-publicacoes-recentes container-atividades-recentes">
                         <div class="numero-de-usuarios-publicacoes-e-recente atividades-recentes">
@@ -118,7 +118,7 @@
                             <i class="icone-ver-menos-atividades-recentes icone-ver-menos-informacoes-recentes bi bi-chevron-up"></i>
                         </button>
                 <?php endif; ?>    
-                <li class="container-usuarios-publicacoes-recentes container-usuarios">
+                <li class="container-usuarios-publicacoes-recentes container-usuarios <?= $_SESSION['is_admin'] ? '' : 'semInformacoesRecentes' ?>">
                     <div class="numero-de-usuarios-publicacoes-e-recente numero-de-usuarios">
                         <i class="icone-usuarios-tabelas-e-recentes icone-usuarios bi bi-people-fill"></i>
                         <span class="texto-dados-totais texto-dados-usuarios">
@@ -132,7 +132,7 @@
                     </a>
                 </li>
                 </li>
-                <li class="container-usuarios-publicacoes-recentes container-publicacoes">
+                <li class="container-usuarios-publicacoes-recentes container-publicacoes <?= $_SESSION['is_admin'] ? '' : 'semInformacoesRecentes' ?>">
                     <div class="numero-de-usuarios-publicacoes-e-recente numero-de-publicacoes">
                         <i class="icone-usuarios-tabelas-e-recentes icone-publicacoes bi bi-disc"></i>
                         <span class="texto-dados-totais texto-dados-publicacoes">
