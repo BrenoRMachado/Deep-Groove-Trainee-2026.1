@@ -129,7 +129,7 @@
                     </button>
                 <?php endif; ?>    
                 <div class="infoUser">
-                    <img src="../../../public/assets/ícone usuário.svg" alt="User" class="userimg">
+                    <img src="<?= $_SESSION['foto'] ?>" alt="User" class="userimg">
 
                     <div class="infos">
                         <h3 class="textoh3"><?= $_SESSION['nome'] ?></h3>
@@ -409,7 +409,7 @@
                     <?php if($_SESSION['is_admin']): ?>
                         <div class="container-editar-dado container-editar-admin">
                             <span class="titulo-dado titulo-admin">Acesso</span>
-                            <button type="button" class="botao-toggle pin-inativo" id="botao-toggle<?= $usuario -> id ?>" onclick="acionarBotaoToggle('#botao-toggle<?= $usuario -> id ?>', '#texto-permissao-admin<?= $usuario -> id ?>', '#is-admin-input<?= $usuario -> id ?>')">
+                            <button type="button" class="botao-toggle <?= $usuario -> is_admin ? 'pin-ativo' : 'pin-inativo' ?>" id="botao-toggle<?= $usuario -> id ?>" onclick="acionarBotaoToggle('#botao-toggle<?= $usuario -> id ?>', '#texto-permissao-admin<?= $usuario -> id ?>', '#is-admin-input<?= $usuario -> id ?>')">
                                 <span class="texto-permissao-admin" id="texto-permissao-admin<?= $usuario -> id ?>">Acesso padrão</span>
                                 <span class="fundo-toggle">
                                     <span class="pin-toggle"></span>
