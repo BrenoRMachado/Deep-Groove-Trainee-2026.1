@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -61,7 +61,7 @@
                 <div class="area-de-colocar-informacoes container-informacoes-foto">
                     <div class="primeira-parte-do-container-informacoes-foto">
                         <h2>Foto de perfil</h2>
-                        <p>Recomendamos uma imagem quadrada de pelo menos 500 por 500 pixels</p>
+                        <p>Recomendamos uma imagem quadrada menor que 2 MB</p>
                     </div>
                     <div class="segunda-parte-do-container-informacoes-foto">
                         <button type="button" class="cresce botao-anexar-foto-modal-criar" onclick="adicionarFotoDePerfil()">
@@ -76,7 +76,16 @@
 
                 <div class="area-de-colocar-informacoes">
                     <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Nome</div> <input placeholder="Digite o nome" type="text" name="nome" required></div>
-                    <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Email</div> <input placeholder="Digite o email" type="email" name="email" required></div>
+                    <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Email</div> <input placeholder="Digite o email" type="email" name="email" required>
+                    <span class="mensagem-email-ja-existe-ao-criar-usuario">
+                            <?php 
+                                if(isset($_SESSION['mensagem-erro-email-ao-criar-usuario'])) {
+                                    echo $_SESSION['mensagem-erro-email-ao-criar-usuario'];
+                                    unset($_SESSION['mensagem-erro-email-ao-criar-usuario']);
+                                }    
+                            ?>
+                        </span>
+                    </div>
                     <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Senha</div> <input class="criar-senha" placeholder="Digite a senha" type="password" name="senha" required> <button class="botao-de-visualizar-senha-no-modal-de-criar" type="button" onclick="alternarVisualizacaoDaSenhaAoCriarUsuario()" > <i class="icone-visualizar-senha-no-modal-de-criar bi bi-eye-slash-fill"></i> </button> </div>
                     <?php if($_SESSION['is_admin']): ?>
                         <div class="quarto-da-area-informacoes">
@@ -363,7 +372,7 @@
                     <div class="container-instrucao-editar-foto-de-perfil">
                         <div class="container-texto-instrucao-editar-foto-de-perfil">    
                             <h2>Foto de perfil</h2>
-                            <p>Recomendamos uma imagem quadrada de pelo menos 500x500px</p>
+                            <p>Recomendamos uma imagem quadrada menor que 2 MB</p>
                         </div>
                         <button type="button" class="botao-alterar-foto-de-perfil" onclick="editarFotoDePerfil('#foto-de-perfil-escolhida<?= $usuario->id ?>', '#preview-foto-de-perfil-ao-editar-usuario<?= $usuario->id ?>')">
                             <i class="icone-alterar-foto-de-perfil bi bi-box-arrow-up"></i>
@@ -375,16 +384,24 @@
                 <section class="secao-editar-nome-email-senha">
                     <div class="container-editar-dado container-editar-nome">
                         <span class="titulo-dado titulo-nome">Nome</span>
-                        <input class="editar-dado editar-nome" type="text" placeholder="Novo nome" name="nome"> 
+                        <input class="editar-dado editar-nome" type="text" placeholder="<?= $usuario -> nome ?>" name="nome"> 
                     </div>
                     <div class="container-editar-dado container-editar-email">
                         <span class="titulo-dado titulo-email">Email</span>
-                        <input class="editar-dado editar-email" placeholder="Novo email" type="email" name="email"></input>
+                        <input class="editar-dado editar-email" placeholder="<?= $usuario -> email ?>" type="email" name="email"></input>
+                        <span class="mensagem-email-ja-existe-ao-editar-usuario">
+                            <?php 
+                                if(isset($_SESSION['mensagem-erro-email-ao-editar-usuario'])) {
+                                    echo $_SESSION['mensagem-erro-email-ao-editar-usuario'];
+                                    unset($_SESSION['mensagem-erro-email-ao-editar-usuario']);
+                                }    
+                            ?>
+                        </span>
                     </div>
                     <div class="container-editar-dado container-editar-senha">
                         <span class="titulo-dado titulo-senha">Senha</span>
                         <input class="editar-dado editar-senha" id="editar-senha<?= $usuario -> id ?>" type="password" placeholder="Nova senha" name="senha">
-                    <button class="botao-de-visualizar-senha-no-modal-de-editar" type="button" onclick="alternarVisualizacaoDaSenhaAoEditarUsuario('#editar-senha<?= $usuario -> id ?>', '#icone-visualizar-senha-no-modal-de-editar<?= $usuario -> id ?>')"> 
+                        <button class="botao-de-visualizar-senha-no-modal-de-editar" type="button" onclick="alternarVisualizacaoDaSenhaAoEditarUsuario('#editar-senha<?= $usuario -> id ?>', '#icone-visualizar-senha-no-modal-de-editar<?= $usuario -> id ?>')"> 
                             <i id="icone-visualizar-senha-no-modal-de-editar<?= $usuario -> id ?>" class="icone-visualizar-senha-no-modal-de-editar bi bi-eye-slash-fill"></i> 
                         </button>
                     </div>

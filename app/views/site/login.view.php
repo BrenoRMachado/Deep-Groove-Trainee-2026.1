@@ -60,7 +60,7 @@
                     </div>
                     <div class="container-botao">
                         <button class="botao-login">Entrar</button>
-                        <h3>Não possui uma conta? <button class="texto-sublinhado" type="button" style="color: #F09859; text-decoration: underline;" onclick="moverImagem()">Cadastre-se</button></h3>  
+                        <h3>Não possui uma conta? <button class="texto-sublinhado" type="button" onclick="moverImagem()">Cadastre-se</button></h3>  
                     </div>
             </form>
             <div class="container-logo">
@@ -93,7 +93,7 @@
                     </div>
                     <div class="container-botao">
                         <button class="botao-login">Cadastre-se</button>
-                        <h3>Já possui uma conta? <button class="texto-sublinhado" type="button" style="color: #F09859; text-decoration: underline;" onclick="moverImagem()">Faça login</button></h3>  
+                        <h3>Já possui uma conta? <button class="texto-sublinhado" type="button" onclick="moverImagem()">Faça login</button></h3>  
                     </div>
             </form>
             <div class="container-logo">
@@ -125,7 +125,7 @@
                     </div>
                     <div class="container-botao-mobile">
                         <button class="botao-login">Entre</button>
-                        <h3>Não possui uma conta? <button class="texto-sublinhado" type="button" style="color: #F09859; text-decoration: underline;" onclick="mostraElemento('cadastro-mobile', 'login-mobile')">Cadastre-se</button></h3>            
+                        <h3>Não possui uma conta? <button class="texto-sublinhado" type="button" onclick="mostraElemento('cadastro-mobile', 'login-mobile')">Cadastre-se</button></h3>            
                     </div>
                 </div>
                 <img class="logo-login-mobile" src="../../../public/assets/LogoTextoIcone (1).png">
@@ -158,7 +158,7 @@
                     </div>
                     <div class="container-botao-mobile">
                         <button class="botao-login">Cadastre-se</button>
-                        <h3>Já possui uma conta? <button class="texto-sublinhado" type="button" style="color: #F09859; text-decoration: underline;" onclick="mostraElemento('login-mobile', 'cadastro-mobile')">Faça login</button></h3>            
+                        <h3>Já possui uma conta? <button class="texto-sublinhado" type="button" onclick="mostraElemento('login-mobile', 'cadastro-mobile')">Faça login</button></h3>            
                     </div>
                 </div>
                 <img class="logo-login-mobile" src="../../../public/assets/LogoTextoIcone (1).png">

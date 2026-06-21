@@ -115,7 +115,7 @@ input, button {
 }
 
 .botao-login{
-    background: linear-gradient(#F09859, #C06850);
+    background-color: #f18d45;
     border-radius: 2rem;
     color: white;
     font-size: large;
@@ -124,6 +124,12 @@ input, button {
     padding-right: 3%;
     width: 20rem;
     box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.botao-login:hover{
+    transform: scale(1.035);
+    background-color: #e89b64;
 }
 
 input {
@@ -191,6 +197,22 @@ button {
 
 .seta {
     font-size: 3rem;
+    transition: transform 0.3s ease;
+}
+
+.seta:hover{
+    transform: scale(1.075);
+}
+
+.texto-sublinhado {
+    color: #F09859;
+    text-decoration: underline;
+    transition: transform 0.3s ease;
+}
+
+.texto-sublinhado:hover{
+    transform: scale(1.05);
+    color: #e89b64;
 }
 
 .seta:hover {
