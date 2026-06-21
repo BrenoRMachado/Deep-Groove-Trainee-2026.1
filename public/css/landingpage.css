@@ -649,12 +649,15 @@ h3{
     }
 
     .slider{
+
         height: 27vh;
     }
     .slider-conteudo{
+        overflow-x: auto;
+        scroll-behavior: smooth;
         padding: 0;
     }
-
+    .slider-conteudo::-webkit-scrollbar{display: none;}
     .slider-item{
         min-width: 100%; 
         height: 27vh;
@@ -672,6 +675,9 @@ h3{
     /* Mostrar as informações sempre ou em toque */
     .slider-link:active .slider-informacoes{
         opacity: 1;
+    }
+    .nav-arrow{
+        display: none;
     }
 
     /*? MOSAICO */
@@ -855,8 +861,11 @@ h3{
     }
 
     .slider-conteudo{
+        overflow-x: auto;
+        scroll-behavior: smooth;
         padding: 0;
     }
+    .slider-conteudo::-webkit-scrollbar{display: none;}
 
     .slider-item{
         min-width: 85%; 
@@ -875,6 +884,10 @@ h3{
     
     .slider-link:active .slider-informacoes{
         opacity: 1;
+    }
+
+    .nav-arrow{
+        display: none;
     }
 
     /*? MOSAICO */
@@ -1016,6 +1029,13 @@ h3{
     .slider{
         height: 35vh;
     }
+
+    .slider-conteudo{
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 0;
+    }
+    .slider-conteudo::-webkit-scrollbar{display: none;}
 
     .slider-item{
         min-width: 55%; 
