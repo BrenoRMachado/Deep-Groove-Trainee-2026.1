@@ -62,7 +62,9 @@
         </section>
 
         <section class="pesquisar">
-            <input type="text" class="pesqUser" placeholder="Pesquisar postagem...">
+            <form action="/tabelaPosts" method="GET" class="pesq">
+                <input type="text" name="busca" class="busca" placeholder="Pesquisar postagem..." value="<?= $textoBusca ?? '' ?>">
+            </form>
         </section>
 
         <section class="tabela">

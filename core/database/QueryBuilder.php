@@ -132,12 +132,18 @@ class QueryBuilder
 
     //paginação
     //usa pra ver o total de elementos da tabela
-    public function countAll($tabela){
+    public function countAll($tabela, $textoBusca=null, $colunaBusca=null){
         $sql = "SELECT COUNT(*) AS total FROM {$tabela}";
+        $parameters = [];
 
-         try {
+        if($textoBusca && $colunaBusca){
+            $sql .= " where $colunaBusca[0] like :textoBusca OR $colunaBusca[1] like :textoBusca OR $colunaBusca[2] like :textoBusca OR $colunaBusca[3] like :textoBusca";
+            $parameters['textoBusca'] = '%' . $textoBusca . '%';
+        }
+
+        try {
             $stmt = $this->pdo->prepare($sql);
-            $stmt->execute();
+            $stmt->execute($parameters);
 
             return $stmt->fetch(PDO::FETCH_ASSOC)['total'];
 
@@ -146,12 +152,20 @@ class QueryBuilder
         }
     }
 
-    public function paginate($tabela, $limite, $salto){
-        $sql = "SELECT * FROM {$tabela} LIMIT {$limite} OFFSET {$salto}";
+    public function paginate($tabela, $limite, $salto, $textoBusca=null, $colunaBusca=null){
+        $parameters = [];
+        $wheresql = '';
+
+        if($textoBusca && $colunaBusca){
+            $wheresql = " where $colunaBusca[0] like :textoBusca OR $colunaBusca[1] like :textoBusca OR $colunaBusca[2] like :textoBusca";
+            $parameters['textoBusca'] = '%' . $textoBusca . '%';
+        }
+
+        $sql = "SELECT * FROM {$tabela}{$wheresql} LIMIT {$limite} OFFSET {$salto} ";
 
         try {
             $stmt = $this->pdo->prepare($sql);
-            $stmt->execute();
+            $stmt->execute($parameters);
 
             return $stmt->fetchAll(PDO::FETCH_CLASS);
 
