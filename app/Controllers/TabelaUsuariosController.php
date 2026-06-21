@@ -59,9 +59,13 @@ class TabelaUsuariosController {
 
         if (App::get('database') -> emailJaExiste($email)) {
 
+            session_start();
+
+            $_SESSION['mensagem-erro-email-ao-criar-usuario'] = "Este email já está em uso";
+
             header('Location: /tabelaUsuarios');
 
-            return;
+            exit();
         }
 
         if (!empty($_FILES['foto-de-perfil']['tmp_name'])) {
@@ -107,9 +111,13 @@ class TabelaUsuariosController {
 
         if (App::get('database') -> emailJaExiste($email) && $email !== $usuarioAtual -> email) {
 
+            session_start();
+
+            $_SESSION['mensagem-erro-email-ao-editar-usuario'] = "Este email já está em uso";
+
             header('Location: /tabelaUsuarios');
             
-            return;
+            exit();
         }
 
         if (!empty($_FILES['foto-de-perfil']['tmp_name'])) {
