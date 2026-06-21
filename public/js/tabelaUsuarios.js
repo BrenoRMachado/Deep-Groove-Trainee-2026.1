@@ -1,4 +1,51 @@
-// *CÓDIGO DO MODAL DE ADICIONAR USUÁRIO
+// *Exibe erros de email duplicado (vindos do PHP) como validação nativa do browser
+
+// *Ao criar usuário
+document.querySelector('#modal-criar-usuarios').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const inputEmail = this.querySelector('input[name="email"]');
+    inputEmail.setCustomValidity('');
+
+    const formData = new FormData();
+    formData.append('email', inputEmail.value);
+
+    const resposta = await fetch('/tabelaUsuarios/verificarEmail', { method: 'POST', body: formData });
+    const dados = await resposta.json();
+
+    if (dados.jaExiste) {
+        inputEmail.setCustomValidity('Este email já está em uso');
+        inputEmail.reportValidity();
+    } else {
+        this.submit();
+    }
+});
+
+// *Ao editar usuário
+document.querySelectorAll('.modal-edicao-usuarios form').forEach(form => {
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const inputEmail = this.querySelector('input[name="email"]');
+        inputEmail.setCustomValidity('');
+
+        const idUsuario = this.querySelector('input[name="id"]').value;
+
+        const formData = new FormData();
+        formData.append('email', inputEmail.value);
+        formData.append('id', idUsuario);
+
+        const resposta = await fetch('/tabelaUsuarios/verificarEmail', { method: 'POST', body: formData });
+        const dados = await resposta.json();
+
+        if (dados.jaExiste) {
+            inputEmail.setCustomValidity('Este email já está em uso');
+            inputEmail.reportValidity();
+        } else {
+            this.submit();
+        }
+    });
+});
 
 //* *Aciona o botão toggle ao clicar nele
 function acionarBotaoToggle(idBotaoToggle, idTextoPermissaoAdmin, idIsAdminInput){
@@ -57,6 +104,9 @@ function alternarVisualizacaoDaSenhaAoCriarUsuario() {
 //* Mudança do tamanho da fonte do texto ao digitar a senha sem visualização e com visualização ao criar usuário
 inputDeCriarSenha.addEventListener('input', function () {
     inputDeCriarSenha.classList.toggle('digitando-sem-ver-senha', iconeDeVisualizarSenhaNoModalDeCriar.classList.contains('bi-eye-slash-fill'));
+    if (inputDeCriarSenha.value.length == 0){
+        inputDeCriarSenha.classList.remove('digitando-sem-ver-senha');
+    }
 });
 
 function alternarVisualizacaoDaSenhaAoEditarUsuario(inputId, iconeId) {
@@ -77,12 +127,13 @@ function alternarVisualizacaoDaSenhaAoEditarUsuario(inputId, iconeId) {
     //* Mudança do tamanho da fonte do texto ao digitar a senha sem visualização e com visualização ao editar usuário
     inputDeEditarSenha.addEventListener('input', function () {
         inputDeEditarSenha.classList.toggle('digitando-sem-ver-senha', iconeDeVisualizarSenhaNoModalDeEditar.classList.contains('bi-eye-slash-fill'));
+        if (inputDeEditarSenha.value.length == 0){
+            inputDeEditarSenha.classList.remove('digitando-sem-ver-senha');
+        }
     });
 }
 
 //* ------------------------------------------------------------------------------------------------------------------------------------------------
-
-// *CÓDIGO DO MODAL DE ADICIONAR USUÁRIO
 
 //* Mudança do tamanho da fonte do texto ao digitar a senha sem visualização e com visualização ao editar usuário
 document.querySelectorAll('.editar-senha').forEach(input => {
@@ -92,24 +143,28 @@ document.querySelectorAll('.editar-senha').forEach(input => {
     });
 });
 
-
 //* Todos os campos com 'required' no input exibirão a seguinte mensagem: 
 const fundomodal = document.getElementById("fundo");
 const inputsObrigatoriosDosModais = document.querySelectorAll('input');
 
 inputsObrigatoriosDosModais.forEach(input => {
-        input.addEventListener('invalid', function() {
-                if (this.validity.valueMissing){
-                    this.setCustomValidity('Este campo é obrigatório');
-                }
-                else if (this.validity.typeMismatch) {
-                    this.setCustomValidity('Digite um endereço de email válido');
-                }
-        });
-        input.addEventListener('input', function() {
-                this.setCustomValidity('');
-        });
+    input.addEventListener('invalid', function() {
+            if (this.validity.valueMissing){
+                this.setCustomValidity('Este campo é obrigatório');
+            }
+            else if (this.validity.typeMismatch) {
+                this.setCustomValidity('Digite um endereço de email válido');
+            }
     });
+    input.addEventListener('input', function() {
+        if (this.validity.typeMismatch) {
+            this.setCustomValidity('Digite um endereço de email válido');
+        }
+        else {
+            this.setCustomValidity('');
+        }
+    });
+});
     
 // *Aciona o input de escolher foto de perfil ao clicar no botão de adicionar foto de perfil do usuário e preview implementada:
 function editarFotoDePerfil (idFotoDePerfilEscolhida, idPreviewFotoDePerfilAoEditarUsuario) {
@@ -126,43 +181,6 @@ function editarFotoDePerfil (idFotoDePerfilEscolhida, idPreviewFotoDePerfilAoEdi
         }
     };
 };
-    
-// // ! INÍCIO DO CÓDIGO DO MODAL DE EDIÇÃO DE USUÁRIOS DA TABELA DE USUÁRIOS
-// // *Seleciona icones de edicao de usuário da tabela de usuários, o modal de edição de usuários e o filtro ao abrir o modal da tabela de usuários
-
-// const filtroAoAbrirModalDaTabelaDeUsuarios = document.querySelector('.filtro-ao-abrir-modal-da-tabela-de-usuarios');
-// let estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
-
-// // *Função ao abrir modal de edição de usuario 
-// function abrirModalDeEdicaoDeUsuario(idModalEdicaoDeUsuario){
-//         const modalDeEdicaoDeUsuario = document.querySelector(idModalEdicaoDeUsuario);
-//         modalDeEdicaoDeUsuario.style.display = 'flex';
-//         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'flex';
-//         estadoAtualDoModalDeEdicaoDeUsuario = 'aberto';
-// }
-
-// // *Implementa as funções que fecham o modal de edição de usuários ao clicar no botão cancelar, no botão de fechar e no botão de salvar
- 
-// function salvarEdicaoDeUsuario() {
-//         estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
-// };
-
-// function cancelarEdicaoDeUsuario(idModalEdicaoDeUsuario){
-//         const modalDeEdicaoDeUsuario = document.querySelector(idModalEdicaoDeUsuario);
-//         modalDeEdicaoDeUsuario.style.display = 'none';
-//         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'none';
-//         estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
-// };
-
-// function fecharEdicaoDeUsuario(idModalEdicaoDeUsuario){
-//         const modalDeEdicaoDeUsuario = document.querySelector(idModalEdicaoDeUsuario);
-//         modalDeEdicaoDeUsuario.style.display = 'none';
-//         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = 'none';
-//         estadoAtualDoModalDeEdicaoDeUsuario = 'fechado';
-// };
-
-// ! FIM 
-
 
 //! jsmodais
 
@@ -240,15 +258,3 @@ function resetarVisualizacaoDeSenhaAoFecharModal(idModal){
     }
 
 }
-
-// const modalCriar = document.getElementById("modal-criar-usuarios");
-
-// function abrirModalCriar(){
-//         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = "flex"
-//         modalCriar.style.display = "flex"
-// }
-
-// function fecharModalCriar(){
-//         filtroAoAbrirModalDaTabelaDeUsuarios.style.display = "none";
-//         modalCriar.style.display = "none";
-// }

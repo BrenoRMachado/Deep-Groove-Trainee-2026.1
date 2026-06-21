@@ -235,7 +235,8 @@
     padding-left: 0;
 }
 
-.pesqUser {
+
+.busca {
     
     /* background-color: var(--corclara); */
     background: linear-gradient(
@@ -265,7 +266,7 @@
     border-radius: 50px;
 }
 
-.pesqUser::placeholder {
+.busca::placeholder {
     color: var(--cor-branco-100);
     opacity: 0.5;
     font-family: var(--fonte-primaria);
@@ -361,12 +362,12 @@
     height: fit-content;
     width: fit-content;
     background-color: var(--cor-branco-300);
+    transition: transform 0.2s;
 }
 
 /* *Animação ao passar o mouse por cima do botão de fechar modal*/
 .modal-edicao-usuarios .botao-fechar-modal:hover {
     transform: scale(1.015);
-    transition: transform 0.2;
     cursor: pointer;
     opacity: 0.95;
 }
@@ -425,6 +426,7 @@
     align-items: center;
     justify-content: space-evenly;
     font-family: var(--fonte-modal);;
+    transition: transform 0.2s;
 }
 
 .modal-edicao-usuarios .icone-alterar-foto-de-perfil {
@@ -434,7 +436,6 @@
 /* *Animacao ao o mouse por cima do botão de editar foto da capa do álbum */
 .modal-edicao-usuarios .botao-alterar-foto-de-perfil:hover {
     transform: scale(1.015);
-    transition: transform 0.2;
     cursor: pointer;
     opacity: 0.95;
 }
@@ -620,6 +621,7 @@
     width: 40%;
     height: 85%;
     font-size: 0.9rem;
+    transition: transform 0.2s;
 }
 
 .modal-edicao-usuarios .secao-botoes-salvar-cancelar .botao-salvar {
@@ -636,7 +638,6 @@
 /* *Animação ao passar o mouse por cima dos botões e cancelar e salvar a edição do post */
 .modal-edicao-usuarios .secao-botoes-salvar-cancelar .botao:hover {
     transform: scale(1.015);
-    transition: transform 0.2;
     cursor: pointer;
     opacity: 0.95;
 }
@@ -662,15 +663,18 @@
 @media (max-width: 769px){
     .modal-edicao-usuarios {
         width: 80%;
+        left: 55%;
     }
 }
 
 /* *Celulares */
 @media (max-width: 600px){
     .modal-edicao-usuarios {
-            width: 95%;
-            height: 95%;
-        }
+        width: 95%;
+        height: 90%;
+        top: 54%;
+        left: 50%;
+    }
     .modal-edicao-usuarios .secao-texto-foto-fechar-modal {
         height: 15%;
     }        
@@ -1031,10 +1035,16 @@
     background-image: url(../assets/fundo-modais-editada.jpeg);
     background-position: 50% 80%;
     background-size: cover;
+    z-index: 1;
+}
+
+#modal-criar-usuarios button.cresce {
+    transition: transform 0.2s;
 }
 
 #modal-criar-usuarios button.cresce:hover {
-    transform: scale(1.025);
+    transform: scale(1.015);
+    opacity: 0.95;
 }
 
 .alto-modal-criar {
@@ -1063,8 +1073,9 @@
 
 .parte-esquerda-alto-modal {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
+    padding-left: 5%;
 }
 
 .parte-media-alto-modal {
@@ -1109,20 +1120,20 @@
 
 .baixo-modal-criar {
     display: flex;
-    height: 67%;
+    height: 68%;
     width: 100%;
     border-radius: 30px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 5%;
+    gap: 3%;
 }
 
 .area-de-colocar-informacoes {
     display: flex;
     flex-direction: column;
     width: 80%;
-    height: 70%;
+    height: 72%;
     background-color: var(--cor-branco-300);
     border-radius: 30px;
     justify-content: flex-start;
@@ -1151,8 +1162,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 5%;
-    width: 70%;
+    padding: 3%;
+    width: 60%;
     flex-direction: column;
 }
 
@@ -1183,7 +1194,7 @@
     align-items: center;
     border-radius: 30px;
     background-color: var(--cor-vinho-100);
-    color: var(--cor-branco-100);
+    color: var(--cor-branco-300);
     gap: 5%
 }
 
@@ -1194,21 +1205,6 @@
 /* *Input de escolher a foto de perfil escondido */
 #modal-criar-usuarios .foto-de-perfil-escolhida {
     display: none;
-}
-
-.area-de-colocar-informacoes::-webkit-scrollbar {
-    width: 7px; 
-}
-
-.area-de-colocar-informacoes::-webkit-scrollbar-track {
-    background: transparent;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.area-de-colocar-informacoes::-webkit-scrollbar-thumb {
-    background-color: var(--cor-vinho-100);
-    border-radius: 30px;
 }
 
 .quarto-da-area-informacoes {
@@ -1224,7 +1220,7 @@
 
 .quarto-da-area-informacoes input {
     border-radius: 10px;
-    height: 65%;
+    height: 68%;
     width: 80%;
     padding: 0 0.4rem;
     background: none;
@@ -1306,7 +1302,7 @@
 .botao-modal-criar {
     height: fit-content;
     font-size: 0.5rem;
-    height: 60%;
+    height: 100%;
     width: 40%;
     border: none;
     border-radius: 30px;
@@ -1441,11 +1437,11 @@
 .botao-modal-criar {
     height: fit-content;
     font-size: 0.9rem;
-    height: 50%;
+    height: 57%;
     width: 40%;
     border: none;
     border-radius: 30px;
-    color: white;
+    color: var(--cor-branco-300);
     font-family: var(--fonte-modal);
     font-weight: var(--pesoexcluirbotao);
 }
@@ -1539,7 +1535,10 @@ ul {
 @media (max-width: 769px){
     #modal-criar-usuarios {
             width: 80%;
-        }
+    }
+    #modal-criar-usuarios {
+        left: 55%;
+    }
 }
 
 /* *Mobile */
@@ -1547,9 +1546,14 @@ ul {
 
 @media (max-width: 600px){
     #modal-criar-usuarios {
-            width: 95%;
-            height: 95%;
-        }
+        width: 95%;
+        height: 90%;
+        top: 54%;
+        left: 50%;
+    }
+    #modal-criar-usuarios .alto-modal-criar {
+        height: 18%;
+    }    
     #modal-criar-usuarios .area-de-colocar-informacoes {
         width: 90%;
     }
@@ -1789,11 +1793,7 @@ ul {
         gap: 1rem;
     }
 
-    .pesquisar{
-        width: 90%;
-    }
-
-    .pesqUser {
+    .busca{
         width: 100%;
     }
 

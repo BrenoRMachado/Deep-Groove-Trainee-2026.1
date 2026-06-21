@@ -78,6 +78,22 @@ h2, input, button, h3 {
     gap: 5%;
 }
 
+.mensagem-erro {
+    font-size: 2vw;
+    border-radius: 20px;
+    background-color: #92415c;
+    color: #5B162D;
+    font-family: "Inter", sans-serif;
+    padding: 2%;
+    font-weight: bold;
+}
+
+.sem-erro {
+    display: none;
+    padding: 0;
+    background-color: none;
+}
+
 .container-logo {
     height: 30%;
     display: flex;
@@ -255,7 +271,7 @@ button:hover {
     background: linear-gradient(#5B162D, black);
     color: white;
     flex-direction: column;
-    gap: 5%;
+    gap: 2%;
     padding-top: 10%;
 }
 
@@ -324,5 +340,9 @@ button:hover {
 
     .container-login {
         display: none;
+    }
+
+    .mensagem-erro {
+        font-size: 4vw;
     }
    }

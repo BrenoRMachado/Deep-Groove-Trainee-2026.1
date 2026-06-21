@@ -11,6 +11,10 @@ class TabelaUsuariosController {
 
         $database = App::get('database');
 
+        // função de busca
+        $textoBusca = isset($_GET['busca']) ? $_GET['busca'] : '';
+        $colunaBusca = $textoBusca !== '' ? ['nome', 'email'] : null;
+
         session_start();
             if(!isset($_SESSION['id'])) {
             header('Location: /login');
@@ -27,11 +31,11 @@ class TabelaUsuariosController {
 
             $salto = ($paginaAtual - 1) * $limite;
 
-            $totalUsuarios = $database -> countAll('usuarios');
+            $totalUsuarios = $database -> countAll('usuarios', $textoBusca, $colunaBusca);
             // ceil pega o teto(arrendoda pra cima)
             $totalPaginas = ceil($totalUsuarios/$limite);
 
-            $usuarios = $database->paginate('usuarios', $limite, $salto);
+            $usuarios = $database->paginate('usuarios', $limite, $salto, $textoBusca, $colunaBusca);
 
             // $usuarios = App::get('database') -> selectAll('usuarios');
         } else {
@@ -46,27 +50,15 @@ class TabelaUsuariosController {
         return view('admin/tabelaUsuarios', [
             'usuarios' => $usuarios,
             'paginaAtual' => $paginaAtual,
-            'totalPaginas' => $totalPaginas
+            'totalPaginas' => $totalPaginas,
+            'textoBusca' => $textoBusca
         ]);
 
     }
 
     public function criarUsuarios() {
 
-        // *Verifica se o email já existe
-
         $email = $_POST['email'];
-
-        if (App::get('database') -> emailJaExiste($email)) {
-
-            session_start();
-
-            $_SESSION['mensagem-erro-email-ao-criar-usuario'] = "Este email já está em uso";
-
-            header('Location: /tabelaUsuarios');
-
-            exit();
-        }
 
         if (!empty($_FILES['foto-de-perfil']['tmp_name'])) {
 
@@ -86,7 +78,7 @@ class TabelaUsuariosController {
 
         $parametros = [
             'nome' => $_POST['nome'],
-            'email' => $email,
+            'email' => $_POST['email'],
             'senha' => $_POST['senha'],
             'foto' => $caminhoDaImagem,
             'is_admin' => (int)$_POST['is_admin'],
@@ -101,26 +93,9 @@ class TabelaUsuariosController {
     
     public function editarUsuarios() {
 
-        //* Verifica se o email já existe e é diferente do atual
-
         $id = $_POST['id'];
 
         $usuarioAtual = App::get('database') -> selectById('usuarios', $id);
-
-        $email = $_POST['email'];
-
-        if (App::get('database') -> emailJaExiste($email) && $email !== $usuarioAtual -> email) {
-
-            session_start();
-
-            $_SESSION['mensagem-erro-email-ao-editar-usuario'] = "Este email já está em uso";
-
-            $_SESSION['id_usuario_com_erro_email'] = $id;
-
-            header('Location: /tabelaUsuarios');
-            
-            exit();
-        }
 
         if (!empty($_FILES['foto-de-perfil']['tmp_name'])) {
 
@@ -145,7 +120,7 @@ class TabelaUsuariosController {
 
         $parametros = [
             'nome' => !empty($_POST['nome']) ? $_POST['nome'] : $usuarioAtual -> nome,
-            'email' => !empty($_POST['email']) ? $email : $usuarioAtual -> email,
+            'email' => !empty($_POST['email']) ? $_POST['email'] : $usuarioAtual -> email,
             'senha' => !empty($_POST['senha']) ? $_POST['senha'] : $usuarioAtual -> senha,
             'foto' => $caminhoDaImagem,
             'is_admin' => (int)$_POST['is_admin'],
@@ -184,6 +159,26 @@ class TabelaUsuariosController {
         App::get('database') -> delete('usuarios', $id);
 
         header('Location: /tabelaUsuarios');
+    }
+
+    public function verificarEmailEmUso() {
+        session_start();
+        header('Content-Type: application/json');
+
+        $email = $_POST['email'] ?? '';
+        $idAtual = $_POST['id'] ?? null;
+
+        $jaExiste = App::get('database') -> emailJaExiste($email);
+
+        if ($jaExiste && $idAtual) {
+            $usuarioAtual = App::get('database') -> selectById('usuarios', $idAtual);
+            if ($usuarioAtual->email === $email) {
+                $jaExiste = false;
+            }
+        }
+
+        echo json_encode(['jaExiste' => $jaExiste]);
+        exit();
     }
 
 }

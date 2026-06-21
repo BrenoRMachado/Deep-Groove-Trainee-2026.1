@@ -209,7 +209,7 @@
 }
 
 
-.pesqUser {
+.busca {
     /* background-color: var(--corclara); */
     background: linear-gradient(
             135deg,
@@ -238,7 +238,7 @@
     border-radius: 50px;
 }
 
-.pesqUser::placeholder {
+.busca::placeholder {
     color: var(--cor-branco-100);
     opacity: 0.5;
     font-family: var(--fonte-primaria);
@@ -1114,7 +1114,7 @@
     }
 }
 
-/*! RESPONSIVIDADE MOBILI M E S */ 
+/*! RESPONSIVIDADE MOBILE M E S */ 
 @media (min-width: 320px) and (max-width: 375px) 
 {
     .des-modal-vi-post{
@@ -1250,6 +1250,7 @@
 /* Modal de criar posts */
 
 #modal-criar-posts{
+    z-index: 999999;
     display: none;
     position: fixed;
     top: 50%;
@@ -1864,18 +1865,21 @@
 
 
 @media (max-width: 600px){
-    #modal-criar-usuarios {
+    #modal-criar-posts {
             width: 95%;
             height: 95%;
         }
-    #modal-criar-usuarios .area-de-colocar-informacoes {
+    #modal-criar-posts .area-de-colocar-informacoes {
         width: 90%;
     }
-    #modal-criar-usuarios .container-informacoes-foto {
+    #modal-criar-posts .container-informacoes-foto {
         gap: 0.1rem;
     }
-    #modal-criar-usuarios .segunda-parte-do-container-informacoes-foto {
+    #modal-criar-posts .segunda-parte-do-container-informacoes-foto {
         width: 43%;
+    }
+    .container-dado-a-criar {
+        font-size: 3vw;
     }
 }
 
@@ -2037,9 +2041,6 @@
         width: 80%;
     }
 
-    .pesqUser {
-    }
-
     .tabelaMobile{
         display: flex;
     }
@@ -2073,7 +2074,7 @@
         gap: 1rem;
     }
 
-    .pesqUser{
+    .busca{
         width: 100%;
     }
 

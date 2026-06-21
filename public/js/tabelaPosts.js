@@ -148,9 +148,9 @@ async function buscarAlbum() {
                 document.getElementById("genero_album").value = dados.genres.data[0].name || "";
                 document.getElementById("genero_album").readOnly = true;
 
-                document.getElementById("foto_album").value = dados.cover_xl || dados.cover_big || "";
+                document.getElementById("foto_album").value = dados.cover_xl || dados.cover_big || "public/assets/foto-de-capa-padrao.png";
                 document.getElementById("foto_album").readOnly = true;
-                document.getElementById("foto_renderizada").src = dados.cover_xl || dados.cover_big || "";
+                document.getElementById("foto_renderizada").src = dados.cover_xl || dados.cover_big || "public/assets/foto-de-capa-padrao.png";
                 document.getElementById("foto_renderizada").style.display = "block";
 
                 document.getElementById("duracao_album").value = dados.duration || "";

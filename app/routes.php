@@ -32,6 +32,7 @@ $router->get('tabelaUsuarios', 'TabelaUsuariosController@index');
 $router->post('tabelaUsuarios/criar', 'TabelaUsuariosController@criarUsuarios');
 $router->post('tabelaUsuarios/editar', 'TabelaUsuariosController@editarUsuarios');
 $router->post('tabelaUsuarios/excluir', 'TabelaUsuariosController@excluirUsuarios');
+$router->post('tabelaUsuarios/verificarEmail', 'TabelaUsuariosController@verificarEmailEmUso');
 $router->get('footerLanding', 'FooterLanding@index');
 
 //Rota para efetuar o login
