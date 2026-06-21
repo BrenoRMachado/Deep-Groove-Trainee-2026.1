@@ -1623,6 +1623,7 @@ ul {
     width: 3rem;
     aspect-ratio: 1 / 1;
     border-radius: 50%;   
+    background-color: var(--cor-marrom-50);
 
 }
 
@@ -1635,6 +1636,17 @@ ul {
     object-fit: cover;      
 }
 
+.seta{
+    width: 80%;
+    display: flex;
+    align-items: start;
+    position: relative;
+    top: 2rem;
+}
+
+.setaDentro {
+    width: 3rem;
+}
 
 @media (max-width:1238px){
     .des-modal-vi, .des-modal-ex {
@@ -1719,6 +1731,12 @@ ul {
 @media (max-width: 837px){
     .textoTitulo {
         font-size: 5vh;
+    }
+}
+
+@media (max-width: 806px){
+    #container-dados-visu, .caixamensagem {
+        margin: 10rem 0 1rem 5rem;
     }
 }
 
