@@ -107,7 +107,12 @@
     border-radius: 2rem;
     align-items: center;
     justify-content: center;
+    gap: 0.4rem;
 
+}
+
+.mais{
+    width: 1rem;
 }
 
 .textop{
