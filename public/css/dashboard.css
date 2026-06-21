@@ -116,20 +116,12 @@
     width: 100%;
 }
 
-#dashboard #area-navegacao-e-estatisticas.semInformacoesRecentes {
-    justify-content: center;
-}
-
 #dashboard #area-navegacao-e-estatisticas .lista-area-navegacao-e-estatisticas {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     list-style: none;
     width: 100%;
-}
-
-#dashboard #area-navegacao-e-estatisticas .lista-area-navegacao-e-estatisticas.semInformacoesRecentes {
-    width: 54%;
 }
 
 #dashboard #area-navegacao-e-estatisticas .container-usuarios-publicacoes-recentes {
@@ -156,6 +148,16 @@
     box-shadow:
         inset 0 1px 1px rgba(255,255,255,0.08),
         0 8px 32px rgba(0,0,0,0.35);
+}
+
+/* !MUDANÇA DO LAYOUT DA ÁREA DE NAVEGAÇÃO QUANDO UM USUÁRIO QUE NÃO É ADMINISTRADOR ESTÁ LOGADO */
+
+#dashboard #area-navegacao-e-estatisticas.semInformacoesRecentes {
+    justify-content: center;
+}
+
+#dashboard #area-navegacao-e-estatisticas .lista-area-navegacao-e-estatisticas.semInformacoesRecentes {
+    width: 54%;
 }
 
 #dashboard #area-navegacao-e-estatisticas .container-usuarios-publicacoes-recentes.semInformacoesRecentes {

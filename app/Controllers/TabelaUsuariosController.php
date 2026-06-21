@@ -154,6 +154,15 @@ class TabelaUsuariosController {
 
         App::get('database') -> update('usuarios', $id, $parametros);
 
+        session_start(); 
+
+        if ((int)$id === (int)$_SESSION['id']) {
+            $_SESSION['nome'] = $parametros['nome'];
+            $_SESSION['email'] = $parametros['email'];
+            $_SESSION['foto'] = $parametros['foto'];
+            $_SESSION['is_admin'] = $parametros['is_admin'];
+        }
+
         header('Location: /tabelaUsuarios');
     }
 

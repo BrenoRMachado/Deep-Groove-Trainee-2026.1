@@ -1228,6 +1228,9 @@
     color: var(--cor-vinho-100);
 }
 
+.quarto-da-area-informacoes input:focus {
+    outline: none;
+}
 
 /* *Estilo do input de criar senha no  modal */
 .quarto-da-area-informacoes .input-criar-senha{
