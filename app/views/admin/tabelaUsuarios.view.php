@@ -384,11 +384,11 @@
                 <section class="secao-editar-nome-email-senha">
                     <div class="container-editar-dado container-editar-nome">
                         <span class="titulo-dado titulo-nome">Nome</span>
-                        <input class="editar-dado editar-nome" type="text" placeholder="Novo nome" name="nome"> 
+                        <input class="editar-dado editar-nome" type="text" placeholder="<?= $usuario -> nome ?>" name="nome"> 
                     </div>
                     <div class="container-editar-dado container-editar-email">
                         <span class="titulo-dado titulo-email">Email</span>
-                        <input class="editar-dado editar-email" placeholder="Novo email" type="email" name="email"></input>
+                        <input class="editar-dado editar-email" placeholder="<?= $usuario -> email ?>" type="email" name="email"></input>
                         <span class="mensagem-email-ja-existe-ao-editar-usuario">
                             <?php 
                                 if(isset($_SESSION['mensagem-erro-email-ao-editar-usuario'])) {
