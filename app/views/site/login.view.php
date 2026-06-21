@@ -5,6 +5,19 @@
         header('Location: /dashboard');
         exit();
     }
+
+    $mensagem_erro = null;
+    $classe_erro = 'sem-erro';
+    if(isset($_SESSION['mensagem-erro'])){
+        $mensagem_erro = $_SESSION['mensagem-erro'];
+        $classe_erro = null;
+        unset($_SESSION['mensagem-erro']);
+    }
+    else if(isset($_SESSION['mensagem-erro-email'])){
+        $mensagem_erro = $_SESSION['mensagem-erro-email'];
+        $classe_erro = null;
+        unset($_SESSION['mensagem-erro-email']);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,21 +43,10 @@
                      <h1 class="titulo-login">Entrar</h1>           
                 </div>
             </div>
-            <div class="mensagem-erro">
+            <div class="mensagem-erro <?= $classe_erro ?>">
                 <?php 
-                    if(isset($_SESSION['mensagem-erro'])){
-                        echo $_SESSION['mensagem-erro'];
-
-                    unset($_SESSION['mensagem-erro']);
-                    }
-                 ?>
-            </div>
-            <div class="mensagem-erro">
-                <?php 
-                    if(isset($_SESSION['mensagem-erro-email'])){
-                        echo $_SESSION['mensagem-erro-email'];
-
-                    unset($_SESSION['mensagem-erro-email']);
+                    if($mensagem_erro){
+                        echo $mensagem_erro;
                     }
                  ?>
             </div>
@@ -113,12 +115,10 @@
             <div class="titulo-mobile">
                 <h1 class="titulo-login-mobile">Entrar</h1>
             </div>
-            <div class="mensagem-erro">
+            <div class="mensagem-erro <?= $classe_erro ?>">
                 <?php 
-                    if(isset($_SESSION['mensagem-erro'])){
-                        echo $_SESSION['mensagem-erro'];
-
-                    unset($_SESSION['mensagem-erro']);
+                    if($mensagem_erro){
+                        echo $mensagem_erro;
                     }
                  ?>
             </div>
@@ -151,12 +151,10 @@
             <div class="titulo-mobile">
                 <h1 class="titulo-login-mobile">Cadastrar</h1>
             </div>
-            <div class="mensagem-erro">
+            <div class="mensagem-erro <?= $classe_erro ?>">
                 <?php 
-                    if(isset($_SESSION['mensagem-erro-email'])){
-                        echo $_SESSION['mensagem-erro-email'];
-
-                    unset($_SESSION['mensagem-erro-email']);
+                    if($mensagem_erro){
+                        echo $mensagem_erro;
                     }
                  ?>
             </div>

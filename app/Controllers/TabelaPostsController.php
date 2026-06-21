@@ -11,6 +11,10 @@ class TabelaPostsController
     {
         $database = App::get('database');
 
+        // função de busca
+        $textoBusca = isset($_GET['busca']) ? $_GET['busca'] : '';
+        $colunaBusca = $textoBusca !== '' ? ['titulo', 'ano', 'artista', 'genero'] : null;
+        
         // Número definido no documento de requisitos
         $limit = 5; 
 
@@ -21,15 +25,16 @@ class TabelaPostsController
 
         $offset = ($currentPage - 1) * $limit;
 
-        $totalPublicacoes = $database->countAll('publicacoes');
+        $totalPublicacoes = $database->countAll('publicacoes', $textoBusca, $colunaBusca);
         $totalPages = ceil($totalPublicacoes/$limit);
 
-        $publicacoes = $database->paginate('publicacoes', $limit, $offset);
+        $publicacoes = $database->paginate('publicacoes', $limit, $offset, $textoBusca, $colunaBusca);
 
         return view('admin/tabela-de-posts', [
             'publicacoes' => $publicacoes,
             'currentPage'=> $currentPage,
-            'totalPages' => $totalPages
+            'totalPages' => $totalPages,
+            'textoBusca' => $textoBusca
         ]);
     }
 
@@ -41,6 +46,7 @@ class TabelaPostsController
             'artista' => $_POST['artista'],
             'conceito' => $_POST['conceito'],
             'genero' => $_POST['genero'],
+            'foto' => $_POST['foto'],
             'duracao' => $_POST['duracao'],
             'id_usuario' => $_POST['id_usuario'],
             'id_deezer' => $_POST['id_deezer'],

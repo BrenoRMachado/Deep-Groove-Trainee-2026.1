@@ -63,7 +63,9 @@
         </section>
 
         <section class="pesquisar">
-            <input type="text" class="pesqUser" placeholder="Pesquisar postagem...">
+            <form action="/tabelaUsuarios" method="GET" class="pesq">
+                <input type="text" name="busca" class="busca" placeholder="Pesquisar postagem..." value="<?= $textoBusca ?? '' ?>">
+            </form>
         </section>
 
         <section class="tabela">
@@ -86,7 +88,7 @@
                 <?php foreach ($publicacoes as $publicacao): ?>
                     <tr class="linha linhaTab">
                         <td class="colunageral"><?= $publicacao->id ?></td>
-                        <td class="colunageral"><img class="capa-thriller" src="<?= $publicacao -> foto?>"></td>
+                        <td class="colunageral"><img class="capa-thriller" src="<?= $publicacao->foto?>"></td>
                         <td class="colunageral"><?= $publicacao->artista ?></td>
                         <td class="colunageral"><?= $publicacao->titulo ?></td>
                         <td class="colunageral">
@@ -157,7 +159,7 @@
                     </div>
                     <div class="um-terco-alto-modal-criar">
                         <div class="parte-media-alto-modal">
-                            <img class="foto-album-criar-modal" id="foto_renderizada" src="<?= $publicacao->foto ?>">
+                            <img class="foto-album-criar-modal" id="foto_renderizada<?= $publicacao->id ?>" src="<?= $publicacao->foto ?>">
                         </div>
                     </div>
                     <div class="um-terco-alto-modal-criar parte-direita-alto-modal">
@@ -196,7 +198,7 @@
                         <div class="quarto-da-area-informacoes">
                         <div class="container-dado-a-criar" style="background-color: #792B3C;">Gênero</div> <input placeholder="Digite o gênero"name="genero" value="<?= $publicacao->genero ?>">
                     </div>
-                    <input type="hidden" id="foto_album" name="foto">
+                    <input type="hidden" id="foto_album<?= $publicacao->id ?>" name="foto" value="<?= $publicacao->foto ?>">
                     <div class="quarto-da-area-informacoes">
                         <div class="container-dado-a-criar" style="background-color: #A94752;">Duração</div> <input value="<?= $publicacao->duracao ?>" placeholder="Digite a duração"name="duracao">
                     </div>
@@ -206,7 +208,7 @@
                         <div class="container-dado-a-criar" style="background-color: #D55955;">
                             Descrição
                         </div>
-                        <textarea rows="10" placeholder="Digite a descrição" name="conceito"><?= $publicacao->titulo ?></textarea>
+                        <textarea rows="10" placeholder="Digite a descrição" name="conceito"><?= $publicacao->conceito ?></textarea>
                     </div>
                     <div class="quarto-da-area-informacoes">
                         <button class="botao-modal-criar cancelar" type="button" onclick="fecharModal('modal-editar-posts')">Cancelar</button>
