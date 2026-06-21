@@ -41,7 +41,6 @@ class TabelaPostsController
             'artista' => $_POST['artista'],
             'conceito' => $_POST['conceito'],
             'genero' => $_POST['genero'],
-            'foto' => $_POST['foto'],
             'duracao' => $_POST['duracao'],
             'id_usuario' => $_POST['id_usuario'],
             'id_deezer' => $_POST['id_deezer'],

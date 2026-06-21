@@ -61,7 +61,7 @@
                 <div class="area-de-colocar-informacoes container-informacoes-foto">
                     <div class="primeira-parte-do-container-informacoes-foto">
                         <h2>Foto de perfil</h2>
-                        <p>Recomendamos uma imagem quadrada de pelo menos 500 por 500 pixels</p>
+                        <p>Recomendamos uma imagem quadrada menor que 2 MB</p>
                     </div>
                     <div class="segunda-parte-do-container-informacoes-foto">
                         <button type="button" class="cresce botao-anexar-foto-modal-criar" onclick="adicionarFotoDePerfil()">
@@ -84,7 +84,7 @@
                                     unset($_SESSION['mensagem-erro-email-ao-criar-usuario']);
                                 }    
                             ?>
-                        </span>
+                    </span>
                     </div>
                     <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Senha</div> <input class="criar-senha" placeholder="Digite a senha" type="password" name="senha" required> <button class="botao-de-visualizar-senha-no-modal-de-criar" type="button" onclick="alternarVisualizacaoDaSenhaAoCriarUsuario()" > <i class="icone-visualizar-senha-no-modal-de-criar bi bi-eye-slash-fill"></i> </button> </div>
                     <?php if($_SESSION['is_admin']): ?>
@@ -350,6 +350,10 @@
             </section>
         </div>
         
+    <?php 
+        $erroEmailEditar = $_SESSION['mensagem-erro-email-ao-editar-usuario'] ?? '';
+        unset($_SESSION['mensagem-erro-email-ao-editar-usuario']);
+    ?>    
 
     <?php foreach($usuarios as $usuario): ?>
         <!--* MODAL DE EDIÇÃO DE USUÁRIOS  -->
@@ -374,7 +378,7 @@
                     <div class="container-instrucao-editar-foto-de-perfil">
                         <div class="container-texto-instrucao-editar-foto-de-perfil">    
                             <h2>Foto de perfil</h2>
-                            <p>Recomendamos uma imagem quadrada de pelo menos 500x500px</p>
+                            <p>Recomendamos uma imagem quadrada menor que 2 MB</p>
                         </div>
                         <button type="button" class="botao-alterar-foto-de-perfil" onclick="editarFotoDePerfil('#foto-de-perfil-escolhida<?= $usuario->id ?>', '#preview-foto-de-perfil-ao-editar-usuario<?= $usuario->id ?>')">
                             <i class="icone-alterar-foto-de-perfil bi bi-box-arrow-up"></i>
@@ -386,18 +390,15 @@
                 <section class="secao-editar-nome-email-senha">
                     <div class="container-editar-dado container-editar-nome">
                         <span class="titulo-dado titulo-nome">Nome</span>
-                        <input class="editar-dado editar-nome" type="text" placeholder="Novo nome" name="nome"> 
+                        <input class="editar-dado editar-nome" type="text" placeholder="<?= $usuario -> nome ?>" name="nome"> 
                     </div>
                     <div class="container-editar-dado container-editar-email">
                         <span class="titulo-dado titulo-email">Email</span>
-                        <input class="editar-dado editar-email" placeholder="Novo email" type="email" name="email"></input>
+                        <input class="editar-dado editar-email" placeholder="<?= $usuario -> email ?>" type="email" name="email"></input>
                         <span class="mensagem-email-ja-existe-ao-editar-usuario">
-                            <?php 
-                                if(isset($_SESSION['mensagem-erro-email-ao-editar-usuario'])) {
-                                    echo $_SESSION['mensagem-erro-email-ao-editar-usuario'];
-                                    unset($_SESSION['mensagem-erro-email-ao-editar-usuario']);
-                                }    
-                            ?>
+                            <?php if($usuario -> id == ($_SESSION['id_usuario_com_erro_email'] ?? null)): ?>
+                                <?= $erroEmailEditar ?>
+                            <?php endif; ?>
                         </span>
                     </div>
                     <div class="container-editar-dado container-editar-senha">

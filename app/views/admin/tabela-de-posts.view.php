@@ -151,20 +151,21 @@
 
             <!-- *MODAL DE EDIÇÃO DE POSTS  -->
             <div class="modal-edicao-posts" id="modal-edicao-posts<?= $publicacao->id ?>">
-                <section class="secao-texto-foto-fechar-modal">
-                    <div class="container-texto">
-                        <h1>Editar álbum</h1>
-                        <p>Atualize as informações do álbum</p>
+                <div class="alto-modal-criar">
+                    <div class="um-terco-alto-modal-criar parte-esquerda-alto-modal">
+                        <h2>Editar publicação</h2>
                     </div>
-                    <figure class="container-foto-capa-do-album">
-                        <i class="icone-foto-capa-do-album bi bi-image"></i>
-                    </figure>
-                    <div class="container-botao-fechar-modal">
-                        <button class="botao-fechar-modal" type="button" onclick="fecharModal('modal-edicao-posts<?= $publicacao->id ?>')">
-                            <i class="icone-fechar-modal bi bi-x"></i>
+                    <div class="um-terco-alto-modal-criar">
+                        <div class="parte-media-alto-modal">
+                            <img class="foto-album-criar-modal" id="foto_renderizada" src="<?= $publicacao->foto ?>">
+                        </div>
+                    </div>
+                    <div class="um-terco-alto-modal-criar parte-direita-alto-modal">
+                        <button class="container-x" type="button" onclick="fecharModal('modal-edicao-posts<?= $publicacao->id ?>')">
+                            <i class="sair-da-pagina bi bi-x fill"></i>
                         </button>
                     </div>
-                </section>
+                </div>
                 <form class="secao-edicao-dados-do-album" action="/tabelaPosts/edit" method="POST">
                     <!-- <section class="secao-instrucao-editar-foto-capa-do-album">
                         <div class="container-instrucao-editar-foto-capa-do-album">
@@ -224,8 +225,7 @@
                     
                     <section class="text-img-boX">
                         <div class="oqmodalVI-post">
-                            <h3 class="textpostvih3">Visualizar post</h3>
-                            <p class="textpostvip">Visualize as informações do post</p>
+                            <h2 class="textpostvih3">Visualizar post</h2>
                         </div>
 
                         <figure class="imgpostvi">
@@ -287,8 +287,7 @@
 
                     <section class="text-img-boX-ex">
                         <section class="oqmodalEX-post">
-                            <h3 class="textpostexh3">Excluir post</h3>
-                            <p class="textpostexp">Excluir as informações do post</p>
+                            <h2 class="textpostexh3">Excluir post</h2>
                         </section>
 
                         <figure class="imgpostex">
@@ -341,7 +340,7 @@
 
             <div class="alto-modal-criar">
                 <div class="um-terco-alto-modal-criar parte-esquerda-alto-modal">
-                    <h2>Criar postagem</h2>
+                    <h2>Criar publicação</h2>
                 </div>
                 <div class="um-terco-alto-modal-criar">
                     <div class="parte-media-alto-modal">

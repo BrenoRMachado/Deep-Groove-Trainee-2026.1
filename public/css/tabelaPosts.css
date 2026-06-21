@@ -284,6 +284,10 @@
     font-size: 3vh;
 }
 
+.modal-edicao-posts .secao-texto-foto-fechar-modal h2 {
+    font-size: 3vh;
+}
+
 /* *Estilo do texto de editar foto da capa do álbum */
 .modal-edicao-posts .container-texto {
     font-size: 0.6rem;
@@ -627,6 +631,15 @@
     overflow-y: auto;
 }
 /* Pertence ao modal de excluir */
+.des-modal-ex-post, .des-modal-vi-post{
+    font-family: var(--fonte-modal);
+}
+.des-modal-ex-post h2, .des-modal-vi-post h2{
+    font-size: 3vh;
+    font-weight: bold;
+}
+
+
 .mensagem-botao{
     height: 40%;
     padding: 1rem;
@@ -683,7 +696,7 @@
     justify-content: center;
     align-items: center;
     height: 2rem;
-    font-size: 1rem;
+    font-size: 1vw;
     font-family: var(--fonte-modal)
     "Montserrat", sans-serif;
     text-align: center;
@@ -1641,6 +1654,7 @@
     font-family: var(--fonte-modal);
     text-align: center;
     border: none;
+    font-size: 1vw;
 }
 
 .container-input-e-botao{
