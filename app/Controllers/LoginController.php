@@ -67,12 +67,18 @@ class LoginController
             'foto' => 'default'
         ];
 
-        $usuario = App::get('database')->verificaEmail($email);
-
-        if ($usuario == false) {
+        $email_existe = App::get('database')->verificaEmail($email);
+        
+        if (!$email_existe) {
             App::get('database')->insert('usuarios', $parameters);
+            $usuario = App::get('database')->verificaLogin($_POST['email'], $_POST['senha']);
             session_start();
-            header('Location: /login');
+            $_SESSION['id'] = $usuario->id;
+            $_SESSION['email'] = $usuario->email;
+            $_SESSION['nome'] = $usuario->nome;
+            $_SESSION['is_admin'] = $usuario->is_admin;
+            $_SESSION['foto'] = $usuario -> foto;
+            header('Location: /dashboard');
             exit();
         } 
         else {
