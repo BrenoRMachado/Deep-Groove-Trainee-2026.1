@@ -132,12 +132,27 @@ class QueryBuilder
 
     //paginação
     //usa pra ver o total de elementos da tabela
-    public function countAll($tabela){
+    public function countAll($tabela, $textoBusca=null, $colunaBusca=null){
         $sql = "SELECT COUNT(*) AS total FROM {$tabela}";
+        $parameters = [];
+        
+        if($textoBusca && $colunaBusca){
 
-         try {
+            $condicoes = []; // um array separado APENAS para os textos do SQL
+        
+            foreach ($colunaBusca as $index => $coluna) {
+                $token = "textoBusca_" . $index;
+                $condicoes[] = "$coluna like :$token"; // Guarda o texto do SQL aqui
+            
+                $parameters[$token] = '%' . $textoBusca . '%';
+            }
+            // Junta as condições com OR no SQL
+            $sql .= " where " . implode(' OR ', $condicoes);
+        }
+
+        try {
             $stmt = $this->pdo->prepare($sql);
-            $stmt->execute();
+            $stmt->execute($parameters);
 
             return $stmt->fetch(PDO::FETCH_ASSOC)['total'];
 
@@ -146,12 +161,28 @@ class QueryBuilder
         }
     }
 
-    public function paginate($tabela, $limite, $salto){
-        $sql = "SELECT * FROM {$tabela} LIMIT {$limite} OFFSET {$salto}";
+    public function paginate($tabela, $limite, $salto, $textoBusca=null, $colunaBusca=null){
+        $parameters = [];
+        $wheresql = '';
+
+        if($textoBusca && $colunaBusca){
+           $condicoes = [];
+        
+            foreach ($colunaBusca as $index => $coluna){
+                $token = "textoBusca_" . $index;
+                $condicoes[] = "$coluna like :$token";
+            
+                $parameters[$token] = '%' . $textoBusca . '%'; 
+            }
+
+            $wheresql = " where " . implode(' OR ', $condicoes);
+        }
+
+        $sql = "SELECT * FROM {$tabela}{$wheresql} LIMIT {$limite} OFFSET {$salto} ";
 
         try {
             $stmt = $this->pdo->prepare($sql);
-            $stmt->execute();
+            $stmt->execute($parameters);
 
             return $stmt->fetchAll(PDO::FETCH_CLASS);
 

@@ -235,7 +235,8 @@
     padding-left: 0;
 }
 
-.pesqUser {
+
+.busca {
     
     /* background-color: var(--corclara); */
     background: linear-gradient(
@@ -265,7 +266,7 @@
     border-radius: 50px;
 }
 
-.pesqUser::placeholder {
+.busca::placeholder {
     color: var(--cor-branco-100);
     opacity: 0.5;
     font-family: var(--fonte-primaria);
@@ -1787,11 +1788,7 @@ ul {
         gap: 1rem;
     }
 
-    .pesquisar{
-        width: 90%;
-    }
-
-    .pesqUser {
+    .busca{
         width: 100%;
     }
 

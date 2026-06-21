@@ -144,7 +144,9 @@
             </section>
 
             <section class="pesquisar">
-                <input type="text" class="pesqUser" placeholder="Pesquisar usuário...">
+                <form action="/tabelaUsuarios" method="GET" class="pesq">
+                    <input type="text" name="busca" class="busca" placeholder="Pesquisar usuário..." value="<?= $textoBusca ?? '' ?>">
+                </form>
             </section>
         
 
