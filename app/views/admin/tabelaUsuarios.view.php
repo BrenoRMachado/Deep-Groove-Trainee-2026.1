@@ -29,8 +29,7 @@
         require 'sidebar.html';
     ?>
 
-    <div id="tbuser">
-    
+    <div id="tbuser">    
 
         <div class="fundo" id="fundo" onclick="fecharFundo()"></div>
     
