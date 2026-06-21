@@ -76,14 +76,6 @@
                 <div class="area-de-colocar-informacoes">
                     <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vinho-100);">Nome</div> <input placeholder="Digite o nome" type="text" name="nome" required></div>
                     <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-laranja-200);">Email</div> <input placeholder="Digite o email" type="email" name="email" required>
-                    <span class="mensagem-email-ja-existe-ao-criar-usuario">
-                            <?php 
-                                if(isset($_SESSION['mensagem-erro-email-ao-criar-usuario'])) {
-                                    echo $_SESSION['mensagem-erro-email-ao-criar-usuario'];
-                                    unset($_SESSION['mensagem-erro-email-ao-criar-usuario']);
-                                }    
-                            ?>
-                    </span>
                     </div>
                     <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Senha</div> <input class="criar-senha" placeholder="Digite a senha" type="password" name="senha" required> <button class="botao-de-visualizar-senha-no-modal-de-criar" type="button" onclick="alternarVisualizacaoDaSenhaAoCriarUsuario()" > <i class="icone-visualizar-senha-no-modal-de-criar bi bi-eye-slash-fill"></i> </button> </div>
                     <?php if($_SESSION['is_admin']): ?>
@@ -392,11 +384,6 @@
                     <div class="container-editar-dado container-editar-email">
                         <span class="titulo-dado titulo-email">Email</span>
                         <input class="editar-dado editar-email" placeholder="<?= $usuario -> email ?>" type="email" name="email"></input>
-                        <span class="mensagem-email-ja-existe-ao-editar-usuario">
-                            <?php if($usuario -> id == ($_SESSION['id_usuario_com_erro_email'] ?? null)): ?>
-                                <?= $erroEmailEditar ?>
-                            <?php endif; ?>
-                        </span>
                     </div>
                     <div class="container-editar-dado container-editar-senha">
                         <span class="titulo-dado titulo-senha">Senha</span>
