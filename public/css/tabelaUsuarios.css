@@ -1675,6 +1675,10 @@ a {
         height: 65vh;
     }
 
+    .espacom{
+        gap: 1rem;
+    }
+
     .botao {
         width: 10vw;
     }
