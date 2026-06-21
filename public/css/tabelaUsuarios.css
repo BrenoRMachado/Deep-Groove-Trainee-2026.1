@@ -670,10 +670,11 @@
 /* *Celulares */
 @media (max-width: 600px){
     .modal-edicao-usuarios {
-            width: 95%;
-            height: 95%;
-            left: 50%;
-        }
+        width: 95%;
+        height: 90%;
+        top: 54%;
+        left: 50%;
+    }
     .modal-edicao-usuarios .secao-texto-foto-fechar-modal {
         height: 15%;
     }        
@@ -1545,10 +1546,14 @@ ul {
 
 @media (max-width: 600px){
     #modal-criar-usuarios {
-            width: 95%;
-            height: 95%;
-            left: 50%;
-        }
+        width: 95%;
+        height: 90%;
+        top: 54%;
+        left: 50%;
+    }
+    #modal-criar-usuarios .alto-modal-criar {
+        height: 18%;
+    }    
     #modal-criar-usuarios .area-de-colocar-informacoes {
         width: 90%;
     }
