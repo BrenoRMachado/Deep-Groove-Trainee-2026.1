@@ -23,7 +23,7 @@
             </li>
 
             <?php if ($start > 2):?>
-                <li><span class="dots">...</span></li>
+                <li><span class="pontos">...</span></li>
             <?php endif; ?>
 
             <?php for ($i = $start; $i <= $end; $i++): ?>
@@ -33,7 +33,7 @@
             <?php endfor; ?>
 
             <?php if ($end < $totalPages - 1):?>
-                <li><span class="dots">...</span></li>
+                <li><span class="pontos">...</span></li>
             <?php endif; ?>
 
             <li>

@@ -90,11 +90,12 @@ ul {
     align-items: center;
 }
 
-.dots{
+.pontos{
     color: var(--coractivepaginacao);
     height: 100%;
+    width: 2rem;
     display: flex;
-    justify-content: baseline;
+    justify-content: center;
     align-items: baseline;
 }
 
@@ -137,7 +138,7 @@ ul {
 
     }
 
-    .dots{
+    .pontos{
         color: #FEECE8;
     }
 }
