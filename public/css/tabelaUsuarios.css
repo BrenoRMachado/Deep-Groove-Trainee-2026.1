@@ -95,6 +95,7 @@
     flex-direction: column;
     width: 90%;
     align-items: center;
+    gap: 0.8rem;
 }
 
 .addUserdesktop {
