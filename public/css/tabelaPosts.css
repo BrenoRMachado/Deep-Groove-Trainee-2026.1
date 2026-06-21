@@ -1907,7 +1907,7 @@
 
 .tabeladentroMobile{
     background-color: #FEECE8;
-    width: 100%;
+    width: 75%;
     height: 25vh;
     border-radius: 2rem;
     justify-content: space-between;
@@ -2039,7 +2039,17 @@
     }
 
     .pagecontainer {
+        width: 100%;
+    }
 
+    .topoTabelaUser {
+        width: 60%;
+        display: flex;
+        /* o justify sempre mexe no eixo principal nesse caso row */
+        justify-content: space-between;
+        align-items: center;
+        height: fit-content;
+        gap: 5%;
     }
 
     #tbposts {
@@ -2057,11 +2067,13 @@
 
     .tabelaMobile{
         display: flex;
+        width: 100%;
     }
 
 
     .userimg{
         width: 2.5rem;
+        height: 2.5;
     }
 
     .textoh3{

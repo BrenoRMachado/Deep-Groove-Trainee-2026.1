@@ -97,3 +97,47 @@ ul {
     justify-content: baseline;
     align-items: baseline;
 }
+
+@media (max-width: 600px){
+    .pagination {
+        gap: 0.1rem;
+    }
+
+    .pagination-container {
+        width: 100vw;
+    }
+    .active{
+    background-color: #FEECE8;
+    color: #D68164 !important;
+    width: 2rem;
+    height: 2rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    }
+
+    .disabled {
+        opacity: 0.3;
+        pointer-events: none;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .pagination a {
+        text-decoration: none;
+        color: #FEECE8;
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: var(--fonte);
+
+        width: 2rem;
+        height: 2rem;
+        border-radius: 2rem;
+
+    }
+
+    .dots{
+        color: #FEECE8;
+    }
+}
