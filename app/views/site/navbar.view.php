@@ -31,16 +31,16 @@
                 <i class="bi bi-list fs-1"></i>
             </button>
         </div>
-        <div class="mobile-centro">
+        <a class="mobile-centro" href="/">
             <img class="logo-mobile" src="../../../public/assets/LogoTextoIcone (1).png">
-        </div>
+        </a>
         <div class="mobile-direita">
             
         </div>
     </div>
     <div class="sidebar" id="sidebar">
-        <div class="container-perfil-mobile"><i class="bi bi-person-fill fs-5" style="color: white;"></i></div>
-        <div class="container-posts-mobile"><i class="bi bi-stack fs-5" style="color: #fbe6b3"></i></div>
+        <div class="container-perfil-mobile"><a href="/login"><i class="bi bi-person-fill fs-5" style="color: white;"></i></a></div>
+        <div class="container-posts-mobile"><a href="/posts"><i class="bi bi-stack fs-5" style="color: #fbe6b3"></i></a></div>
     </div>
     <script src="../../../public/js/navbar.js"></script>
 </body> 

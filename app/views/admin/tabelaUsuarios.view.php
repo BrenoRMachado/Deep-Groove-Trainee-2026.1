@@ -262,17 +262,17 @@
 
                                 <div class="containerPerfil"> 
                                     <p class="destaqueInfosMobile">Perfil</p>
-                                    <img class="foto-de-cada-usuario-na-tabela" src="<?= $usuario -> foto ?>">
+                                    <img class="foto-tabela-user" src="<?= $usuario -> foto ?>">
                                 </div>
                             </div>
 
                             <div class="parte2">
                                 <div class="containerNome"> 
-                                    <p class="destaqueInfosMobile quebra">Nome</p>
-                                    <p class="infosMobile"><?= $usuario->nome ?></p>
+                                    <p class="destaqueInfosMobile">Nome</p>
+                                    <p class="infosMobile quebra"><?= $usuario->nome ?></p>
                                 </div>
 
-                                <div class="containerPerfil"> 
+                                <div class="containerEmail"> 
                                     <p class="destaqueInfosMobile">Email</p>
                                     <p class="infosMobile quebra"><?= $usuario->email ?></p>
                                 </div>
