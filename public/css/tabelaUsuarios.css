@@ -281,12 +281,7 @@
 }
 
 /* *Animação ao passar o mouse por cima dos ícones de ação da tabela de usuários */
-.tabelageral .acao {
-    transition: transform 0.2s;
-}
-
 .tabelageral .acao:hover {
-    transform: scale(1.35);
     cursor: pointer;
 }
 
