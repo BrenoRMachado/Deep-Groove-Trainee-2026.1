@@ -128,7 +128,7 @@ input, button {
 }
 
 .botao-login:hover{
-    transform: scale(1.075);
+    transform: scale(1.035);
     background-color: #e89b64;
 }
 
@@ -211,7 +211,7 @@ button {
 }
 
 .texto-sublinhado:hover{
-    transform: scale(1.075);
+    transform: scale(1.05);
     color: #e89b64;
 }
 
