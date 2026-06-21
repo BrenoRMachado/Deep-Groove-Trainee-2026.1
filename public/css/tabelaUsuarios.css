@@ -95,6 +95,7 @@
     flex-direction: column;
     width: 90%;
     align-items: center;
+    gap: 0.8rem;
 }
 
 .addUserdesktop {
@@ -281,12 +282,7 @@
 }
 
 /* *Animação ao passar o mouse por cima dos ícones de ação da tabela de usuários */
-.tabelageral .acao {
-    transition: transform 0.2s;
-}
-
 .tabelageral .acao:hover {
-    transform: scale(1.35);
     cursor: pointer;
 }
 
@@ -670,10 +666,11 @@
 /* *Celulares */
 @media (max-width: 600px){
     .modal-edicao-usuarios {
-            width: 95%;
-            height: 95%;
-            left: 50%;
-        }
+        width: 95%;
+        height: 90%;
+        top: 54%;
+        left: 50%;
+    }
     .modal-edicao-usuarios .secao-texto-foto-fechar-modal {
         height: 15%;
     }        
@@ -1545,10 +1542,14 @@ ul {
 
 @media (max-width: 600px){
     #modal-criar-usuarios {
-            width: 95%;
-            height: 95%;
-            left: 50%;
-        }
+        width: 95%;
+        height: 90%;
+        top: 54%;
+        left: 50%;
+    }
+    #modal-criar-usuarios .alto-modal-criar {
+        height: 18%;
+    }    
     #modal-criar-usuarios .area-de-colocar-informacoes {
         width: 90%;
     }
