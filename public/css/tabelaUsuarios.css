@@ -86,8 +86,6 @@
     );
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    width: 100vw;
     padding-top: 1rem;
     align-items: center;
 }
@@ -95,7 +93,7 @@
 .espacom {
     display: flex;
     flex-direction: column;
-    width: 90vw;
+    width: 90%;
     align-items: center;
 }
 
@@ -161,7 +159,7 @@
     flex-direction: column;
     width: 80%;
    
-    margin-top: 3rem;
+    margin-top: 1rem;
  
     justify-content: center;
 
@@ -209,6 +207,8 @@
 .textoh3 {
     font-family: var(--fonte);
     color: var(--corclara);
+    display: flex;
+    align-items: start;
 }
 
 .icone {
@@ -228,10 +228,7 @@
 .pesquisar {
     width: 80%;
     padding-left: 0;
-    /* background-color: red; */
-    padding-top: 3vh;
 }
-
 
 .pesqUser {
     
@@ -1472,7 +1469,7 @@
 .containerPaginacao{
     display: flex;
     width: 100%;
-    height: 5rem;
+    height: 4rem;
     align-items: center;
     justify-content: center;
 }
@@ -1523,8 +1520,8 @@ ul {
     color: var(--coractivepaginacao);
     height: 100%;
     display: flex;
-    justify-content: baseline;
-    align-items: baseline;
+    justify-content: center;
+    align-items: center;
 }
 
 /* !Responsividade MODAL DE CRIAR USUÁRIOS */
@@ -1566,7 +1563,7 @@ ul {
 .tabeladentroMobile{
     background-color: #FEECE8;
     width: 100%;
-    height: 25vh;
+    height: 30vh;
     border-radius: 2rem;
 
     display: flex;
@@ -1585,6 +1582,9 @@ ul {
 .infosMobile{
     font-family: var(--fonte);
     font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 
 .parte1, .parte2, .parte3{
@@ -1607,16 +1607,125 @@ ul {
 }
 
 .quebra {
+    display: inline-block; /* Crucial para o max-width e ellipsis funcionarem em elementos inline */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     background: transparent;
-    max-width: 10rem; /* Ajuste o valor de acordo com o espaço disponível no seu card */
+    max-width: 10rem; 
+    vertical-align: bottom; /* Opcional: ajuda a alinhar o texto com outros elementos ao redor */
+}
+
+.userimg{
+    width: 3rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;   
+
+}
+
+
+
+.foto-tabela-user {
+    width: 3rem; 
+    height: 3rem;              
+    border-radius: 50%;        
+    object-fit: cover;      
+}
+
+
+@media (max-width:1238px){
+    .des-modal-vi, .des-modal-ex {
+      
+        width: 50vw;
+        height: 65vh;
+    }
+
+    .botao {
+        width: 10vw;
+    }
+
+    .containerPaginacao {
+        height: 3rem;
+    }
+}
+
+@media (max-width:1132px){
+
+    .userimg{
+        width: 2.5rem;
+    }
+
+    
+     .pesquisar{
+        display: flex;
+        align-items: center;
+        
+        
+    }
+
+    .pesqUser {
+        width: 100%;
+        height: 1.5rem;
+    }
+
+    .containerPaginacao{
+        display: flex;
+        width: 100%;
+        height: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .paginacao a {
+        font-size: 1rem;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .fotodeperfilvi, .fotodeperfilex {
+        top: 20%; 
+    }
+
+   
+}
+
+@media (max-width:950px) {
+
+    .textoTitulo {
+        font-size: 6.5vh;
+    }
+
+     .pesquisar{
+        display: flex;
+        align-items: center;
+        
+        
+    }
+
+    .pesqUser {
+        width: 100%;
+        height: 1.5rem;
+    }
+
+    #container-dados-visu, .caixamensagem {
+        margin: 10rem 0 1rem 6rem;
+    }
+ 
+}
+
+@media (max-width: 837px){
+    .textoTitulo {
+        font-size: 5vh;
+    }
 }
 
 
 
 @media (max-width: 600px){
+    .textoTitulo {
+        font-size: 6vh;
+    }
+
     .tabela{
         display: none;
     }
@@ -1654,8 +1763,16 @@ ul {
         gap: 1rem;
     }
 
-    .pesqUser{
+    .pesquisar{
+        width: 90%;
+    }
+
+    .pesqUser {
         width: 100%;
+    }
+
+    .containerPaginacao {
+        height: 5rem;
     }
 
     .active{
@@ -1667,37 +1784,76 @@ ul {
     justify-content: center;
     align-items: center;
     border-radius: 1rem;
-}
+    }
 
-.disabledseta {
-    opacity: 0.3;
-    pointer-events: none;
-     width: 2rem;
-    height: 2rem;
-}
+    .disabledseta {
+        opacity: 0.3;
+        pointer-events: none;
+        width: 2rem;
+        height: 2rem;
+    }
 
-.paginacao a {
-    text-decoration: none;
-    color: #FEECE8;
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-family: var(--fonte);
+    .paginacao a {
+        text-decoration: none;
+        color: #FEECE8;
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: var(--fonte);
 
-    width: 2rem;
-    height: 2rem;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 2rem;
 
-    display: flex;
-    align-items: center;
-    justify-content: baseline;
-}
+    }
 
-.dots{
-    color: #FEECE8;
-    height: 100%;
-    display: flex;
-    justify-content: baseline;
-    align-items: baseline;
-}
+    .dots{
+        color: #FEECE8;
+    }
 
+    .des-modal-vi, .des-modal-ex {
+      
+        width: 90vw;
+        height: 75vh;
+    }
+
+    #container-dados-visu, .caixamensagem {
+        margin: 14rem 0 1rem 1rem;
+         width: 90%;
+    }
     
+    .fotodeperfilvi, .fotodeperfilex {
+        top: 20%;   
+    }
+
+    .imgperfilvi, .imgperfilex {
+        width: 8rem;
+        height: 8rem;
+
+        /* corta a img */
+        object-fit: cover;
+
+        border-radius: 11rem;
+        border: 0.2rem solid var(--borderperfil);
+    }
+
+    .botao {
+        width: 25vw;
+        height: 4vh;
+
+        align-items: center;
+        justify-content: center;
+
+        /* tira a borda horrenda q vem no botao */
+        border: none; 
+        border-radius: 2rem;
+        cursor: pointer;
+
+        transition: 0.3s;
+    }
+
+    .cancelar-excluir{
+        border: 0.1rem solid var(--colorcancelar);
+    }
+
+
 }

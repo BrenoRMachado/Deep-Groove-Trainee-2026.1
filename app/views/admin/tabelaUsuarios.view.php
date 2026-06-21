@@ -84,7 +84,7 @@
                                     unset($_SESSION['mensagem-erro-email-ao-criar-usuario']);
                                 }    
                             ?>
-                        </span>
+                    </span>
                     </div>
                     <div class="quarto-da-area-informacoes"><div class="container-dado-a-criar" style="background-color: var(--cor-vermelho-50);">Senha</div> <input class="criar-senha" placeholder="Digite a senha" type="password" name="senha" required> <button class="botao-de-visualizar-senha-no-modal-de-criar" type="button" onclick="alternarVisualizacaoDaSenhaAoCriarUsuario()" > <i class="icone-visualizar-senha-no-modal-de-criar bi bi-eye-slash-fill"></i> </button> </div>
                     <?php if($_SESSION['is_admin']): ?>
@@ -129,7 +129,9 @@
                     </button>
                 <?php endif; ?>    
                 <div class="infoUser">
-                    <img src="../../../public/assets/ícone usuário.svg" alt="User" class="userimg">
+
+                    <img src="../../../public/assets/<?= $_SESSION['foto'] ?>" alt="User" class="userimg">
+                   
 
                     <div class="infos">
                         <h3 class="textoh3"><?= $_SESSION['nome'] ?></h3>
@@ -262,17 +264,17 @@
 
                                 <div class="containerPerfil"> 
                                     <p class="destaqueInfosMobile">Perfil</p>
-                                    <img class="foto-de-cada-usuario-na-tabela" src="<?= $usuario -> foto ?>">
+                                    <img class="foto-tabela-user" src="<?= $usuario -> foto ?>">
                                 </div>
                             </div>
 
                             <div class="parte2">
                                 <div class="containerNome"> 
-                                    <p class="destaqueInfosMobile quebra">Nome</p>
-                                    <p class="infosMobile"><?= $usuario->nome ?></p>
+                                    <p class="destaqueInfosMobile">Nome</p>
+                                    <p class="infosMobile quebra"><?= $usuario->nome ?></p>
                                 </div>
 
-                                <div class="containerPerfil"> 
+                                <div class="containerEmail"> 
                                     <p class="destaqueInfosMobile">Email</p>
                                     <p class="infosMobile quebra"><?= $usuario->email ?></p>
                                 </div>
@@ -348,6 +350,10 @@
             </section>
         </div>
         
+    <?php 
+        $erroEmailEditar = $_SESSION['mensagem-erro-email-ao-editar-usuario'] ?? '';
+        unset($_SESSION['mensagem-erro-email-ao-editar-usuario']);
+    ?>    
 
     <?php foreach($usuarios as $usuario): ?>
         <!--* MODAL DE EDIÇÃO DE USUÁRIOS  -->
@@ -390,12 +396,9 @@
                         <span class="titulo-dado titulo-email">Email</span>
                         <input class="editar-dado editar-email" placeholder="<?= $usuario -> email ?>" type="email" name="email"></input>
                         <span class="mensagem-email-ja-existe-ao-editar-usuario">
-                            <?php 
-                                if(isset($_SESSION['mensagem-erro-email-ao-editar-usuario'])) {
-                                    echo $_SESSION['mensagem-erro-email-ao-editar-usuario'];
-                                    unset($_SESSION['mensagem-erro-email-ao-editar-usuario']);
-                                }    
-                            ?>
+                            <?php if($usuario -> id == ($_SESSION['id_usuario_com_erro_email'] ?? null)): ?>
+                                <?= $erroEmailEditar ?>
+                            <?php endif; ?>
                         </span>
                     </div>
                     <div class="container-editar-dado container-editar-senha">
