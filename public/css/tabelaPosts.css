@@ -1250,6 +1250,7 @@
 /* Modal de criar posts */
 
 #modal-criar-posts{
+    z-index: 999999;
     display: none;
     position: fixed;
     top: 50%;
@@ -1864,18 +1865,21 @@
 
 
 @media (max-width: 600px){
-    #modal-criar-usuarios {
+    #modal-criar-posts {
             width: 95%;
             height: 95%;
         }
-    #modal-criar-usuarios .area-de-colocar-informacoes {
+    #modal-criar-posts .area-de-colocar-informacoes {
         width: 90%;
     }
-    #modal-criar-usuarios .container-informacoes-foto {
+    #modal-criar-posts .container-informacoes-foto {
         gap: 0.1rem;
     }
-    #modal-criar-usuarios .segunda-parte-do-container-informacoes-foto {
+    #modal-criar-posts .segunda-parte-do-container-informacoes-foto {
         width: 43%;
+    }
+    .container-dado-a-criar {
+        font-size: 3vw;
     }
 }
 
