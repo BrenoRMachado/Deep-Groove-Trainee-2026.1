@@ -61,7 +61,7 @@
                 <div class="area-de-colocar-informacoes container-informacoes-foto">
                     <div class="primeira-parte-do-container-informacoes-foto">
                         <h2>Foto de perfil</h2>
-                        <p>Recomendamos uma imagem quadrada de pelo menos 500 por 500 pixels</p>
+                        <p>Recomendamos uma imagem quadrada menor que 2 MB</p>
                     </div>
                     <div class="segunda-parte-do-container-informacoes-foto">
                         <button type="button" class="cresce botao-anexar-foto-modal-criar" onclick="adicionarFotoDePerfil()">
@@ -372,7 +372,7 @@
                     <div class="container-instrucao-editar-foto-de-perfil">
                         <div class="container-texto-instrucao-editar-foto-de-perfil">    
                             <h2>Foto de perfil</h2>
-                            <p>Recomendamos uma imagem quadrada de pelo menos 500x500px</p>
+                            <p>Recomendamos uma imagem quadrada menor que 2 MB</p>
                         </div>
                         <button type="button" class="botao-alterar-foto-de-perfil" onclick="editarFotoDePerfil('#foto-de-perfil-escolhida<?= $usuario->id ?>', '#preview-foto-de-perfil-ao-editar-usuario<?= $usuario->id ?>')">
                             <i class="icone-alterar-foto-de-perfil bi bi-box-arrow-up"></i>
