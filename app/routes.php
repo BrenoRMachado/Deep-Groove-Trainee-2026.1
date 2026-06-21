@@ -22,6 +22,7 @@ $router->post('tabelaPosts/edit', 'TabelaPostsController@edit');
 $router->post('tabelaPosts/delete', 'TabelaPostsController@delete');
 
 $router->get('paginaIndividual', 'PaginaIndividualController@index');
+$router->post('avaliar', 'PaginaIndividualController@avaliacoes');
 $router->get('footer', 'Footer@index');
 $router->get('login', 'LoginController@index');
 $router->get('instrucoes', 'InstrucoesController@index');

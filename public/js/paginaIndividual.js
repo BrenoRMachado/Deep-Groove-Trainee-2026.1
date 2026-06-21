@@ -41,3 +41,15 @@ function playPreview(id){
     document.querySelector(`#playPause${id}`).classList.toggle('bi-pause-circle-fill');
     document.querySelector(`#playPause${id}`).classList.toggle('bi-play-circle-fill');
 }
+
+function starhover(number){
+    for (let index = 1; index <= number; index++){
+        document.querySelector(`#estrela${index}`).src="../../../public/assets/img/estrelapreenchida.svg";
+    }
+}
+function starhoverexit(number){
+    for (let index = 1; index <= number; index++){
+        document.querySelector(`#estrela${index}`).src="../../../public/assets/img/estrela.svg";
+    }
+}
+

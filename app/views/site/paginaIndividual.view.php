@@ -28,60 +28,60 @@
             </a>
             <a id="capa-d" href="/paginaIndividual?id=<?= $post->id ?>">
                 
-                    <div class="album-d">
+                <div class="album-d">
 
-                            <img class="capa-album-d" src="<?= $post->foto?>" alt="album">
-                   
+                        <img class="capa-album-d" src="<?= $post->foto?>" alt="album">
+                
 
-                        <img class="disco-d" src="../../../public/assets/disco.png" alt="Disco">
+                    <img class="disco-d" src="../../../public/assets/disco.png" alt="Disco">
 
+                </div>
+
+                <div class="conteudo-capa">
+                    <h1 class="nome-album"><?= $post->titulo?></h1>
+
+                    <div class="nota-d">
+                        <img src="../../../public/assets/img/Vector.svg" alt="Estrela" class="vetor-nota-d">
+                        <div class="textinhos nota"><?= (int)$media?>/5</div>
                     </div>
 
-                    <div class="conteudo-capa">
-                        <h1 class="nome-album"><?= $post->titulo?></h1>
+                    <div class="coisas-sobre-d">
+                        <h3 class="h3-pagPost-d">ARTISTA</h3>
+                        <p class="textinhos"><?= $post->artista?></p>
+                    </div>
 
-                        <div class="nota-d">
-                            <img src="../../../public/assets/img/Vector.svg" alt="Estrela" class="vetor-nota-d">
-                            <div class="textinhos nota">3/5</div>
+                    <div class="dados-capa-d">
+                        <div class="coisas-sobre-d">
+                            <h3 class="h3-pagPost-d">ANO</h3>
+                            <p class="textinhos"><?= $post->ano?></p>
                         </div>
 
                         <div class="coisas-sobre-d">
-                            <h3 class="h3-pagPost-d">ARTISTA</h3>
-                            <p class="textinhos"><?= $post->artista?></p>
+                            <h3 class="h3-pagPost-d">GÊNERO</h3>
+                            <p class="textinhos"><?= $post->genero?></p>
                         </div>
 
-                        <div class="dados-capa-d">
-                            <div class="coisas-sobre-d">
-                                <h3 class="h3-pagPost-d">ANO</h3>
-                                <p class="textinhos"><?= $post->ano?></p>
-                            </div>
-
-                            <div class="coisas-sobre-d">
-                                <h3 class="h3-pagPost-d">GÊNERO</h3>
-                                <p class="textinhos"><?= $post->genero?></p>
-                            </div>
-
-                            <div class="coisas-sobre-d">
-                                <h3 class="h3-pagPost-d">DURAÇÃO</h3>
-                                <p class="textinhos">
-                                    <?php 
-                                        $minutos = floor($post -> duracao / 60);
-                                        $segundos = $post -> duracao % 60;
-                                        echo $minutos . ':' . str_pad($segundos, 2, '0', STR_PAD_LEFT);
-                                    ?>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="containerEstrelas">
-                            <img class="estrela" src="../../../public/assets/img/estrela.svg" alt="estrela">
-                            <img class="estrela" src="../../../public/assets/img/estrela.svg" alt="estrela">
-                            <img class="estrela" src="../../../public/assets/img/estrela.svg" alt="estrela">
-                            <img class="estrela" src="../../../public/assets/img/estrela.svg" alt="estrela">
-                            <img class="estrela" src="../../../public/assets/img/estrela.svg" alt="estrela">
+                        <div class="coisas-sobre-d">
+                            <h3 class="h3-pagPost-d">DURAÇÃO</h3>
+                            <p class="textinhos">
+                                <?php 
+                                    $minutos = floor($post -> duracao / 60);
+                                    $segundos = $post -> duracao % 60;
+                                    echo $minutos . ':' . str_pad($segundos, 2, '0', STR_PAD_LEFT);
+                                ?>
+                            </p>
                         </div>
                     </div>
 
+                    <div class="containerEstrelas">
+                        <img class="estrela" id="estrela1" src="../../../public/assets/img/estrela.svg" alt="estrela" onmouseover="starhover(1)" onmouseout="starhoverexit(1)" onclick="avaliate(1)">
+                        <img class="estrela" id="estrela2" src="../../../public/assets/img/estrela.svg" alt="estrela" onmouseover="starhover(2)" onmouseout="starhoverexit(2)" onclick="avaliate(2)">
+                        <img class="estrela" id="estrela3" src="../../../public/assets/img/estrela.svg" alt="estrela" onmouseover="starhover(3)" onmouseout="starhoverexit(3)" onclick="avaliate(3)">
+                        <img class="estrela" id="estrela4" src="../../../public/assets/img/estrela.svg" alt="estrela" onmouseover="starhover(4)" onmouseout="starhoverexit(4)" onclick="avaliate(4)">
+                        <img class="estrela" id="estrela5" src="../../../public/assets/img/estrela.svg" alt="estrela" onmouseover="starhover(5)" onmouseout="starhoverexit(5)" onclick="avaliate(5)">
+                    </div>
+                </div>
+                    
             </a>
 
             <div class="linha-princ"></div>
@@ -150,4 +150,35 @@
 </body>
 <script src="../../../public/js/paginaIndividual.js"></script>
 
+<?php if(isset($_SESSION['id'])): ?>  
+<script> 
+function avaliate(number){
+    for (let index = 1; index <= number; index++){
+        document.querySelector(`#estrela${index}`).src="../../../public/assets/img/estrelapreenchida.svg";
+    }
+    const dados={
+        id_usuario: <?=$_SESSION["id"]?>,
+        id_publicacao: <?=$post->id?>,
+        nota: number
+    }
+
+    fetch("/avaliar", {
+        method:"POST",
+        
+        body: new URLSearchParams({
+            id_usuario: <?=$_SESSION["id"]?>,
+            id_publicacao: <?=$post->id?>,
+            nota: number
+        })
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        alert(error);
+    });
+}
+</script>
+    <?php endif;?>
 </html>

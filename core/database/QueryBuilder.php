@@ -374,4 +374,57 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
+
+    private function verifyavaliacao(int $id_usuario, int $id_publicacao){
+        $sql="SELECT EXISTS(SELECT 1 FROM avaliacoes WHERE id_usuario = :id_usuario AND id_publicacao = :id_publicacao)";
+        
+        try{
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([":id_usuario"=>$id_usuario, ":id_publicacao"=>$id_publicacao]); 
+            return (bool) $stmt->fetchColumn();       
+
+        } 
+        catch (Exception $e){
+            return false;
+        }
+    }
+
+    public function avaliar(int $id_usuario, int $id_publicacao, int $nota){
+        $parameters = [
+            'valor'=> $nota, 
+            'id_publicacao'=>$id_publicacao,
+            'id_usuario'=>$id_usuario
+        ];
+        if($this->verifyavaliacao($id_usuario, $id_publicacao)){
+            $sql = sprintf(
+                'UPDATE avaliacoes SET valor = %s WHERE id_usuario = %s AND id_publicacao = %s',
+                $nota, $id_usuario, $id_publicacao
+            );
+        
+            try {
+                $stmt = $this->pdo->prepare($sql);
+                $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }
+        }
+        return $this->insert("avaliacoes", $parameters);
+    } 
+
+    public function mediaAvaliacoes(int $id){
+        $sql = "SELECT AVG(valor) FROM avaliacoes WHERE id_publicacao = :id";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([':id' => $id]);  
+            return $stmt->fetchColumn();       
+
+        } 
+        catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 }
