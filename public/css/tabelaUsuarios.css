@@ -74,7 +74,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    align-items: center; 
 }
 
 #tbuser{
@@ -90,12 +89,14 @@
     /* align-items: center; */
     width: 100vw;
     padding-top: 1rem;
+    align-items: center;
 }
 
 .espacom {
     display: flex;
     flex-direction: column;
     width: 90vw;
+    align-items: center;
 }
 
 .addUserdesktop {
