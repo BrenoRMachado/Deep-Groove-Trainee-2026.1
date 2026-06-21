@@ -29,8 +29,7 @@
         require 'sidebar.html';
     ?>
 
-    <div id="tbuser">
-    
+    <div id="tbuser">    
 
         <div class="fundo" id="fundo" onclick="fecharFundo()"></div>
     
@@ -119,7 +118,7 @@
                 <?php if ($_SESSION['is_admin']): ?>
                     <button class="botao-novo-post" onclick="abrirModal('#modal-criar-usuarios')">
                         <div class="addUserdesktop ">
-                            <i class="icone bi bi-plus"></i>
+                            <img src="../../../public/assets/mais.svg" class="mais" alt="mais">
                             <p class="textop">Novo usuário</p>
                         </div>
 
@@ -145,7 +144,9 @@
             </section>
 
             <section class="pesquisar">
-                <input type="text" class="pesqUser" placeholder="Pesquisar usuário...">
+                <form action="/tabelaUsuarios" method="GET" class="pesq">
+                    <input type="text" name="busca" class="busca" placeholder="Pesquisar usuário..." value="<?= $textoBusca ?? '' ?>">
+                </form>
             </section>
         
 

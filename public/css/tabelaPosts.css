@@ -209,7 +209,7 @@
 }
 
 
-.pesqUser {
+.busca {
     /* background-color: var(--corclara); */
     background: linear-gradient(
             135deg,
@@ -238,7 +238,7 @@
     border-radius: 50px;
 }
 
-.pesqUser::placeholder {
+.busca::placeholder {
     color: var(--cor-branco-100);
     opacity: 0.5;
     font-family: var(--fonte-primaria);
@@ -1114,7 +1114,7 @@
     }
 }
 
-/*! RESPONSIVIDADE MOBILI M E S */ 
+/*! RESPONSIVIDADE MOBILE M E S */ 
 @media (min-width: 320px) and (max-width: 375px) 
 {
     .des-modal-vi-post{
@@ -2037,9 +2037,6 @@
         width: 80%;
     }
 
-    .pesqUser {
-    }
-
     .tabelaMobile{
         display: flex;
     }
@@ -2073,7 +2070,7 @@
         gap: 1rem;
     }
 
-    .pesqUser{
+    .busca{
         width: 100%;
     }
 

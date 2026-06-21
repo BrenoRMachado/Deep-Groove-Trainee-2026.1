@@ -753,7 +753,7 @@ h3{
 
     /*TODO:  HERO SECTION */
     .hero-section{
-        height: auto; /
+        height: auto;
         min-height: 90vh;
         padding: 2rem 1rem; 
         justify-content: center;
