@@ -19,9 +19,9 @@
      ?>
     <div class="container-instrucoes">
         <div class="inicio-instrucoes">
-            <div class="metade-do-inicio-instrucoes">
+            <div class="metade-do-inicio-instrucoes primeira-metade">
                 <h1 class="amarelo bem-vindo">BEM VINDOS</h1>
-                <h2 class="amarelo">à nossa casa!</h2>
+                <h1 class="amarelo">à nossa casa!</h1>
             </div>
             <div class="metade-do-inicio-instrucoes">
                 

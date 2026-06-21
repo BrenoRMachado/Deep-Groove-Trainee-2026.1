@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Fonte-Titulo';
+    src: url('../assets/fontes/TAN\ St.\ Canard\ Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -8,7 +15,8 @@ body {
 }
 
 h1, h2 {
-    font-family: 'EB Garamond';
+    font-family: 'Fonte-Titulo';
+    font-size: smaller;
 }
 
 h3 {
@@ -94,7 +102,7 @@ h3 {
     width: 100vw;
     /* faz com que a tela possa crescer quando scrollamos */
     min-height: 100vh;
-    background-color: #591025;
+    background: linear-gradient(to bottom, #591025 50%, #000000 100%)  !important; 
 }
 
 .inicio-instrucoes-mobile {
@@ -114,6 +122,11 @@ h3 {
 
     .container-instrucoes-mobile {
         display: flex;
+    }
+
+    .inicio-instrucoes-mobile {
+        padding-top: 10%;
+        padding-bottom: 5%;
     }
 
     .inicio-instrucoes-mobile h2 {

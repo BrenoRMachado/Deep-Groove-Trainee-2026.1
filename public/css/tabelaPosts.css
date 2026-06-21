@@ -1477,6 +1477,7 @@
 #foto_renderizada {
     border: none;
     outline: none;
+    border-radius: 30px;
 }
 
 .container-x {
