@@ -699,7 +699,7 @@ h3{
         border-bottom-right-radius: 1rem;
         margin: 0 0 2rem 0; /* Menos margem inferior */
         padding: 0.5rem 1rem;
-        height: 143vh;
+        height: 170vh;
     }
    
     .titulo-total2{
@@ -909,7 +909,7 @@ h3{
         border-bottom-right-radius: 1rem;
         margin: 0 0 2rem 0;
         padding:  1rem 2rem 1rem;
-        height: 143vh;
+        height: 155vh;
     }
    
     .titulo-total2{
@@ -1111,137 +1111,6 @@ h3{
     .t1{
         width: 70%;
         font-size: 1rem;
-    }
-    
-    .titulo_mosaico_img{
-        width: 10%;
-    }
-}
-
-/*! RESPONSIVIDADE LAPTOP */
-@media (min-width: 1024px) and (max-width: 1439px)
-{
-    /*todo: HERO SECTION */
-    .hero-section{
-        height: auto;
-        min-height: 91vh;
-        padding: 4rem 2rem;
-    }
-
-    .elementos-hs{
-        flex-direction: column;
-        gap: 2rem; 
-    }
-
-    .metade-logo{
-        order: -1;
-        height: 20vh;
-    }
-
-    #logopolvo{
-        width: 60%;
-        height: auto;
-    }
-
-    .metade-texto{
-        gap: 3rem;
-    }
-
-    .h1lan, .h11lan{
-        font-size: 10vw;
-    }
-
-    .h11lan{
-        padding-left: 10vw;
-    }
-
-    .h3lan{
-        font-size: 5vw;
-    }
-
-    .texto_hs{
-        width: 80%;
-        font-size: 1.2rem;
-    }
-
-    .botão{
-        width: 25vw; 
-        font-size: 1.2rem;
-        border-radius: 25px;
-    }
-
-    /*! CARROUSSEL */
-    .carroussel{
-        width: 95%;
-        padding: 2rem;
-    }
-
-    .titulo-total1{
-        margin: 0;
-    }
-
-    .slider{
-        height: 35vh;
-    }
-
-    .slider-item{
-        min-width: 55%; 
-        height: 35vh;
-    }
-
-    .slider-item img{
-        height: 100%; 
-    }
-
-    .titulo_carroussel_img{
-        width: 10%; 
-    }
-
-    /*? MOSAICO */
-    .mosaico{
-        width: 95%;
-        height: 90vh;
-        padding: 2rem;
-        margin-bottom: 5rem;
-    }
-
-    .elementos-post{
-        gap: 2rem; 
-        align-items: stretch;
-    }
-
-    .postGrande{
-       display: none;
-    }
-
-    .postGrande img{
-        display: none;
-    }
-
-    .postsPquenos{
-        width: 100%; 
-        gap: 1rem;
-    }
-
-    .p1{
-        height: 23vh; 
-        padding: 0.5rem;
-        gap: 0.5rem;
-    }
-
-    .im{
-        width: 30%;
-        height: 100%;
-    }
-
-    .i1{
-        height: 100%;
-        width: 100%;
-    }
-
-    .t1{
-        width: 70%;
-        font-size: 1rem; 
     }
     
     .titulo_mosaico_img{
