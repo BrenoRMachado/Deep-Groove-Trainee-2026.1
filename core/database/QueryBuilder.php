@@ -440,4 +440,19 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
+
+    public function agrupaGeneros(){
+        $sql = "SELECT genero FROM `publicacoes` GROUP BY genero;";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();  
+            return $stmt->fetchAll(PDO::FETCH_CLASS);      
+
+        } 
+        catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+    
 }
