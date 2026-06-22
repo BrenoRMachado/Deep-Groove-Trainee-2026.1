@@ -93,8 +93,8 @@
                         <td class="colunageral"><?= $publicacao->titulo ?></td>
                         <td class="colunageral">
                             <i class="acao bi bi-eye-fill" onclick="abrirModal('modal-visu-post<?= $publicacao->id ?>')"></i>
-                            <i class="acao bi bi-pencil-square <?= $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
-                            <i class="acao bi bi-trash <?= $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-excluir-post<?= $publicacao->id ?>')"></i>
+                            <i class="acao bi bi-pencil-square <?= $_SESSION['is_admin'] == 1 || $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
+                            <i class="acao bi bi-trash <?= $_SESSION['is_admin'] == 1 || $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-excluir-post<?= $publicacao->id ?>')"></i>
                         </td>
                     </tr>
                 <?php endforeach ?>
@@ -134,8 +134,8 @@
                         <div class="parte3">
                             <p class="destaqueInfosMobile">AÇÕES</p>
                                 <i class="acao bi bi-eye-fill" onclick="abrirModal('modal-visu-post<?= $publicacao->id ?>')"></i>                                              
-                                <i class="acao bi bi-pencil-square <?= $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
-                                <i class="acao bi bi-trash <?= $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-excluir-post<?= $publicacao->id ?>')"></i>
+                                <i class="acao bi bi-pencil-square <?= $_SESSION['is_admin'] == 1 || $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
+                                <i class="acao bi bi-trash <?= $_SESSION['is_admin'] == 1 || $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-excluir-post<?= $publicacao->id ?>')"></i>
                         </div>
 
                     </div>
