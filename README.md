@@ -96,3 +96,5 @@ Não é necessário executar o build após a primeira vez, sendo assim execute a
 ```bash
 docker-compose up -d
 ```
+
+MANUAL DE USO: https://www.canva.com/design/DAHNQWK0QWc/KjTMqTvKixW-k3gc7najTQ/edit?ui=e30
