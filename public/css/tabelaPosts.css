@@ -626,11 +626,6 @@
 .des-modal-ex-post, .des-modal-vi-post{
     font-family: var(--fonte-modal);
 }
-.des-modal-ex-post h2, .des-modal-vi-post h2{
-    font-size: 3vh;
-    font-weight: bold;
-}
-
 
 .mensagem-botao{
     height: 40%;
@@ -1001,7 +996,7 @@
 {
     .des-modal-vi-post{
         width: 90%; 
-        height: 90%; 
+        height: 85%; 
         border-radius: 20px;
     }
 
@@ -1104,7 +1099,7 @@
 {
     .des-modal-vi-post{
         width: 95%;
-        height: 95%;
+        height: 90%;
         border-radius: 15px;
     }
 
@@ -1123,14 +1118,6 @@
     .oqmodalVI-post, .oqmodalEX-post{
         width: 30%;
         height: 20vh;
-    }
-
-    .oqmodalVI-post h3, .oqmodalEX-post h3{
-        font-size: 1rem;
-    }
-
-    .oqmodalVI-post p, .oqmodalEX-post p{
-        font-size: 0.75rem;
     }
 
     .imgpostvi, .imgpostex{
