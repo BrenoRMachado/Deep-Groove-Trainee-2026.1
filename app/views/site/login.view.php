@@ -109,6 +109,12 @@
             <div class="titulo-mobile">
                 <h1 class="titulo-login-mobile">Entrar</h1>
             </div>
+            <div class="mensagem-erro <?= $classe_erro ?>">
+                <i class="bi bi-exclamation-square-fill" style="color: #ED5D00"></i>
+                <?php 
+                    echo $mensagem_erro;
+                 ?>
+            </div>
             <form class="container-form-mobile" action="/login" method="POST">
                 <div class="container-inputs-mobile">
                     <div class="container-elemento-input-mobile">

@@ -215,6 +215,7 @@
 }
 
 .pesquisar {
+    z-index: 0;
     width: 80%;
     padding-left: 0;
     /* background-color: red; */
@@ -645,8 +646,23 @@
     align-items: center;
     overflow-y: auto;
     padding-top: 1rem;
-
 }
+
+.container-dados-visu-post::-webkit-scrollbar {
+    width: 7px; 
+}
+
+.container-dados-visu-post::-webkit-scrollbar-track {
+    background: transparent;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container-dados-visu-post::-webkit-scrollbar-thumb {
+    background-color: var(--cor-vinho-100);
+    border-radius: 30px;
+}
+
 .dados-visu-post{
     display: flex;
     min-height: 13%;

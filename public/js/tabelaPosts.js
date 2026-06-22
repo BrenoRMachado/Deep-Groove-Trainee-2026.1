@@ -1,13 +1,19 @@
 // // ! INÍCIO DO CÓDIGO DO MODAL DE EDIÇÃO DE USUÁRIOS DA TABELA DE USUÁRIOS
 // // *Seleciona icones de edicao de posts da tabela de posts, o modal de edição de usuários e o filtro ao abrir o modal da tabela de posts
 console.log("Arquvo carregado!")
-const filtroAoAbrirModalDaTabelaDePosts = document.querySelector('.filtro-ao-abrir-modal-da-tabelaPosts');
+const filtroAoAbrirModalDaTabelaDePosts = document.getElementById("fundo");
 // const iconesDeEdicaoDePost = document.querySelectorAll('.tabela .bi-pencil-square');
 // const modalDeEdicaoDePosts = document.querySelector('#modal-edicao-posts');
 // let estadoAtualDoModalDeEdicaoDePosts = 'fechado';
 
 // // *Implementa função que ativa o modal de edição de posts
-
+// function fecharFundo (){
+//         const modais = document.querySelectorAll(".modalfundo");
+//         modais.forEach(modal => {
+//                  modal.style.display = "none";
+//         });
+//         fundomodal.style.display = "none";
+// }
 // iconesDeEdicaoDePost.forEach((iconeDeEdicaoDePost) => {
 //         iconeDeEdicaoDePost.addEventListener('click', function () {
 //                 modalDeEdicaoDePosts.style.display = 'flex';

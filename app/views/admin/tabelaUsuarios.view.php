@@ -21,7 +21,8 @@
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2JL0vWa8Ck2rdkQ2Bzep5IDxbcnCeu0xjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
 
-    <title>Usuários Cadastrados</title>
+    <title>Tabela de Usuários - Deep Groove</title>
+    <link rel="icon" type="image/x-icon" href="/public/assets/logo-principal-deep-groove.png">
 </head>
 
 <body>
