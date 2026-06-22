@@ -42,6 +42,8 @@ class PaginaDePostsController {
 
         $posts = $bancoDeDados -> paginatePosts('publicacoes', $limite, $offset, $textoDeBusca, $colunaDeBusca, $filtro);
 
+        $generos = $bancoDeDados -> agrupaGeneros();
+
         //* Variáveis enviadas para a view
 
         return view('site/paginaDePosts', [
@@ -49,7 +51,8 @@ class PaginaDePostsController {
             'textoDeBusca' => $textoDeBusca,
             'filtro' => $filtro,
             'paginaAtual' => $paginaAtual,
-            'totalDePaginas' => $totalDePaginas
+            'totalDePaginas' => $totalDePaginas,
+            'generos' => $generos
         ]);
 
     }
