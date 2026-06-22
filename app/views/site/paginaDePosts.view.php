@@ -76,7 +76,7 @@
         <section id="container-posts-mobile">
             <?php foreach ($posts as $post): ?>
             <div class="capa-texto-album-container">
-                <a class="album" href="/paginaIndividual">
+                <a class="album" href="/paginaIndividual?id=<?= $post->id ?>">
                     <img src="<?= $post -> foto ?>" class="capa-album" alt="Capa do álbum de id <?= $post -> id ?>">
                 </a>
                 <div class="informacoes-do-album">
