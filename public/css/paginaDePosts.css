@@ -78,6 +78,7 @@ html {
 /* *Estilo do container de pesquisa, filtro e seleção */
 #pagina-de-posts #container-de-pesquisa-filtro-e-selecao {
     width: 65%;
+    margin-left: 4.5%;
 }
 
 #pagina-de-posts .container-pesquisa-e-filtro {
@@ -189,6 +190,7 @@ html {
     flex-wrap: wrap;
     width: 65%;
     margin: 4rem 0;
+    margin-left: 4.5%;
     row-gap: 4rem;
 }
 
@@ -399,7 +401,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     border: none;
     background-color: var(--cor-branco-100);
     color: var(--cor-preto-100);
@@ -549,5 +551,26 @@ html {
     }
     #pagina-de-posts #container-posts-mobile .capa-texto-album-container {
         width: 70%;
+    }
+    #pagina-de-posts #container-de-mudanca-de-pagina .container-botoes {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.6rem;
+        list-style: none;
+        padding: 0;
+    }
+    #pagina-de-posts #container-de-mudanca-de-pagina .seta-esquerda-mudar-para-pagina-anterior, #pagina-de-posts #container-de-mudanca-de-pagina .seta-direita-mudar-para-proxima-pagina {
+        font-size: 1.6rem;
+    }
+    #pagina-de-posts #container-de-mudanca-de-pagina .botao-numerado {
+        padding: 1rem;
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.2rem;
+    }
+    #pagina-de-posts #container-de-mudanca-de-pagina .existe-mais-paginas {
+        height: 2.5rem;
+        font-size: 1.4rem;
     }
 }
