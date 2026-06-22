@@ -44,13 +44,9 @@
                 <select name="filtro" class="botao-filtro-de-pesquisa" onchange="this.form.submit()">
                     <option class="titulo-do-filtro" value="" hidden>Filtrar</option>
                     <option class="opcao-do-filtro" value="">Sem filtro</option>
-                    <option class="opcao-do-filtro" value="pop" <?= $filtro == 'pop' ? 'selected' : ''?>>Pop</option>
-                    <option class="opcao-do-filtro" value="rock" <?= $filtro == 'rock' ? 'selected' : ''?>>Rock</option>
-                    <option class="opcao-do-filtro" value="rap" <?= $filtro == 'rap' ? 'selected' : ''?>>Rap</option>
-                    <option class="opcao-do-filtro" value="eletronica" <?= $filtro == 'eletronica' ? 'selected' : ''?>>Eletrônica</option>
-                    <option class="opcao-do-filtro" value="jazz" <?= $filtro == 'jazz' ? 'selected' : ''?>>Jazz</option>
-                    <option class="opcao-do-filtro" value="classica" <?= $filtro == 'classica' ? 'selected' : ''?>>Clássica</option>
-                    <option class="opcao-do-filtro" value="metal" <?= $filtro == 'metal' ? 'selected' : ''?>>Metal</option>
+                    <?php foreach($generos as $genero): ?>
+                        <option class="opcao-do-filtro" value="<?= $genero -> genero ?>" <?= $filtro == $genero -> genero ? 'selected' : ''?>><?= $genero -> genero ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
         </form>
