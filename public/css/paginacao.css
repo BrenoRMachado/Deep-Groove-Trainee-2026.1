@@ -1,0 +1,144 @@
+:root {
+    --coractivepaginacao: #773B36;
+    --coloractive:#FEECE8;
+    --cor-branco-300: #F4D8D2;
+}
+
+/* .pagination-container {
+    justify-content: center;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination a {
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    color: blue;
+    border-radius: 4px;
+}
+
+.pagination a.active {
+    background-color: blue;
+    color: white;
+    border-color: blue;
+}
+
+.pagination a.disabled {
+    color: #ccc;
+    pointer-events: none;
+} */
+
+.pagination-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0.5rem;
+}
+
+.pagination{
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.active{
+    background-color: var(--coractivepaginacao);
+    color: var(--coloractive) !important;
+    width: 2rem;
+    height: 2rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+     width: 2rem;
+    height: 2rem;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: var(--coractivepaginacao);
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: var(--fonte);
+
+    width: 2rem;
+    height: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pontos{
+    color: var(--coractivepaginacao);
+    height: 100%;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+@media (max-width: 600px){
+    .pagination {
+        gap: 0.1rem;
+    }
+
+    .pagination-container {
+        width: 100vw;
+    }
+    .active{
+    background-color: #FEECE8;
+    color: #D68164 !important;
+    width: 2rem;
+    height: 2rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    }
+
+    .disabled {
+        opacity: 0.3;
+        pointer-events: none;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .pagination a {
+        text-decoration: none;
+        color: #FEECE8;
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: var(--fonte);
+
+        width: 2rem;
+        height: 2rem;
+        border-radius: 2rem;
+
+    }
+
+    .pontos{
+        color: #FEECE8;
+    }
+}

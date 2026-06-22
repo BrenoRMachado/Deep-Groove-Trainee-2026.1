@@ -1,0 +1,322 @@
+/* *Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* *Variáveis */
+:root {
+    --cor-marrom-500: #6D3534;
+    --cor-marrom-300: #9A4E45;
+    --cor-bege-100: #C66E57;
+    --cor-laranja-100: #E08E60;
+}
+
+/* *Estilo da sidebar */
+.sidebar{
+    align-items: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.2px);
+    -webkit-backdrop-filter: blur(8.2px);
+    border: 2px solid #9A4E45;
+    border-bottom-right-radius: 3rem;
+    border-top-right-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 4.5rem;
+    height: 100vh;
+    padding: 0.625rem;
+    position: absolute;
+    left: 0;
+    width: 4vw;
+    z-index: 1;
+
+    transition: width 0.3s ease-in-out;
+
+    .nome-pg-adm{
+        width: 0;
+        color: transparent;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+       
+    }
+}
+.sidebar:hover{
+    .nome-pg-adm{
+        display: block;
+        width: auto;
+        color: #FEECE8;
+        opacity: 1;
+    }
+    width: 11.5vw;
+    overflow: hidden;
+
+}
+
+.menu-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+}
+
+#icones-admin{
+    align-items: center;
+}
+
+/* *Estilo do container dos itens para navegar para páginas administrativas da sidebar */
+.nav-pg-adm{
+    align-items: center;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 2.75rem;
+    height: 35rem;
+}
+
+.botaoso{
+    align-self: flex-start;
+}
+
+.nav-pg-adm li, .botao-sign-out{
+    width: 100%;
+    display: flex;
+}
+
+.nav-pg-adm a, .botao-sign-out{
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #FEECE8;
+    cursor: pointer;
+    font-size: 1.25rem;
+    text-decoration: none;
+    width: 100%;
+}
+
+.remove-padrao{
+    list-style-type: none;
+}
+
+/* *Estilo dos itens das páginas administrativas da sidebar */
+.icone{
+    display: flex;
+    font-size: 2rem;
+    flex-shrink: 0;
+    justify-content: center;
+    width: 2rem;
+}
+
+.bi-chevron-right{
+    font-size: larger;
+}
+.bi-house-door{
+    color: #FEECE8;
+    font-size: 2.30rem;
+} 
+.bi-person-square, .bi-grid-1x2, .bi-window-stack { 
+    color: #FEECE8; 
+}
+
+.nome-pg-adm{
+    color: #FEECE8;
+    margin-left: 1rem;
+    white-space: nowrap;
+}
+
+
+/*! RESPONSIVIDADE 4K */ 
+@media (min-width: 1921px) 
+{
+    .sidebar{
+        justify-content: space-around;
+        gap: 6rem;
+        padding: 1.5rem;
+        border-bottom-right-radius: 4rem;
+        border-top-right-radius: 4rem;
+        top: 0;
+        z-index: 10;
+    }
+
+    .botaoso{
+        align-self: flex-start;
+    }
+
+    .sidebar .nome-pg-adm{
+        white-space: nowrap;
+    }
+
+    .sidebar .nav-pg-adm{
+        gap: 4rem;
+        height: 65vh;
+    }
+    .sidebar:hover {
+        width: 10.5vw;
+        overflow: hidden;
+    }
+
+    .sidebar .nav-pg-adm a, .botao-sign-out{
+        font-size: 2.2rem;
+    }
+
+    .sidebar .icone{
+        font-size: 3.5rem;
+        width: 2.8rem;
+    }
+    
+    .sidebar .bi-house-door{
+        font-size: 4.1rem;
+    }
+}
+
+/*! RESPONSIVIDADE LAPTOP */
+@media (min-width: 1024px) and (max-width: 1439px) 
+{
+    .sidebar{
+        gap: 3rem;
+        padding: 0.5rem;
+        z-index: 10;
+        position: fixed;
+        top: 0;
+        width: 4.5vw;
+    }
+
+    .sidebar .nome-pg-adm {
+        width: 0;
+        color: transparent;
+        opacity: 0;
+        white-space: nowrap;
+        transition: opacity 0.3s ease;
+        font-size: 1rem;
+    }
+
+    /* Efeito de expansão Hover do Desktop */
+    .sidebar:hover {
+        width: 12.5vw;
+        overflow: hidden;
+    }
+
+    .sidebar:hover .nome-pg-adm {
+        display: block;
+        width: auto;
+        color: #FEECE8;
+        opacity: 1;
+        margin: 0;
+    }
+
+    .botaoso{
+        align-self: flex-start;
+    }
+    .sidebar .nav-pg-adm{
+        gap: 2rem;
+        height: 65vh;
+        align-items: center;
+        align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+        gap: 2.75rem;
+        height: 35rem;
+    }
+
+    .sidebar .nav-pg-adm a, .botao-sign-out{
+        font-size: 1.1rem;
+        gap: 0;
+        align-items: center;
+        text-decoration: none;
+        width: 100%;
+    }
+
+    .icone{
+        font-size: 1.5rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .bi-house-door{
+        font-size: 1.8rem;
+        justify-self: flex-start;
+    }
+}
+
+/*! RESPONSIVIDADE TABLET E MOBILEs */
+@media (max-width: 1023px) 
+{
+    .menu-hamburger{
+        display: block;
+        color: #FEECE8;
+        font-size: 2rem;
+    }
+
+    
+    body:has(.sidebar-mobile.active) .menu-hamburger {
+        color: #FEECE8;
+    }
+
+    .sidebar-mobile{
+       position: fixed;
+       top: 0;
+       left: -100%;
+       width: 100%;
+       height: 100%;
+       background-color: var(--cor-marrom-500);
+       border-radius: 0;
+       border: none;
+       justify-content: center;
+       align-items: center;
+       transition: left 0.4s ease-in-out;
+       z-index: 999;
+    }
+
+    /* Classe que o JavaScript vai injetar para Abrir o Menu */
+    .active {
+        left: 0;
+    }
+
+    .sidebar-mobile .nav-pg-adm-mobile{
+        height: auto;
+        gap: 2rem;
+        gap: 5rem;
+    }
+
+    .sidebar-mobile .nav-pg-adm-mobile a, .botao-sign-out{
+        font-size: 1.1rem;
+        padding-left: 0.5rem;
+        gap: 0;
+        align-items: end;
+    }
+    .botaoso{
+        align-self: flex-start;
+    }
+    .sidebar-mobile .nome-pg-adm{
+        display: block;
+        width: auto;
+        color: #FEECE8;
+        opacity: 1;
+        font-size: 1.5rem;
+    }
+
+    .sidebar-mobile .icone{
+        font-size: 2rem;
+        width: 2.8rem;
+        margin-left: 0.2rem;
+    }
+    .sidebar-mobile .bi-house-door{
+        font-size: 2.3rem;
+    }
+    .sidebar-mobile .nav-pg-adm-mobile li{
+        align-self: center;
+        justify-content: center;
+    }
+
+    /* Desativa o efeito de hover do desktop no mobile */
+    .sidebar:hover {
+        width: 100%;
+    }
+}

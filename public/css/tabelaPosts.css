@@ -1,0 +1,2102 @@
+:root {
+    --corclara: #FEECE8;
+    --fontetitulo: "Erica One", sans-serif;
+    --pesotitulo: 100;
+    --linhatabela: #FEB579;
+    --fonte: "Inter", sans-serif;
+    --cordestaque: #C06850;
+    --pesocabtab: 800;
+    --pesogertab: 550;
+    --pesopesq: 500;
+    --cortextopesq: #773B36;
+
+    /*! CORES PADRÃO DOS MODAIS */
+
+    --cor-branco-300: #F4D8D2;
+    --cor-branco-400: #E7C6BE;
+    --cor-vinho-100: #5D1D2D;
+    --cor-vermelho-50: #A62C3A;
+    --cor-laranja-200: #AC432B;
+    --cor-laranja-100: #F09859;
+
+    /** var modal editar */
+    --cor-branco-200: #FEECE8;
+    --cor-branco-100: #FFFFFF;
+    --cor-preto-100: #000000;
+    --cor-marrom-100: #6D3534;
+    --cor-vermelho-100: #FF0000;
+    --cor-verde-100: #22C55E;
+    --cor-marrom-50: #AE5E48;
+
+    /** var modal visualizar e excluir */
+     --fundodecorcontainerdados: #F7DBD4; 
+    --corfontedadovisu: #FEECE8;
+    --corfontedadovisusub: #AE706D;
+
+    --pesotitulomodal: 600;
+    --pesosub: 600;
+
+    --colorinfo: #571A29;
+    --pesomodal: 600;
+    --tamfontemodal: 0.8rem;
+    --tamfontemodaldes: 0.6rem;
+    --borderperfil: #EDBFBB;
+    --colorborda: #E8BDB6;
+
+    /* O resto dos botões vai seguir o padrão de cores do madal de editar */
+    --colorid: #7E193B;
+
+   --fonte-modal-titulo: "Montserrat", sans-serif;
+    --fonte-modal: "Montserrat", sans-serif;
+    --coraviso: #571A29;
+    --cordestaviso: #C2502E;
+    --backbotao: ##622223;
+    --letrabotao: #FEECE8;
+
+    --pesoaviso: 800;
+    --tamaviso: 1rem;
+
+    --pesoavisorodape: 500;
+    --tamavisorod: 0.8rem;
+
+    --pesoexcluirbotao: 700;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+#tbposts{
+    /* padding: 0 2rem 4rem 0; */
+    min-height: 100vh;
+    background: linear-gradient(
+        #6D3534 39%, 
+        #9A4E45 75%,
+        #C66E57 94%,
+        #E08E6D 100%
+    );
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.pagecontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90vw;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.userimg{
+    width: 3rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;   
+    background-color: var(--cor-marrom-50);
+
+}
+
+.addUser {
+    color: #000000;
+}
+
+.infoUser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.topoTabelaPosts {
+    display: flex;
+    /* o justify sempre mexe no eixo principal nesse caso row */
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+.textoTitulo {
+    color: var(--corclara);
+    font-family: var(--fontetitulo);
+    font-weight: var(--pesotitulo);
+    font-size: 7.5vh;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.tabela{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+
+    /* Para não ter a barra de arrastar para baixo */
+    overflow-y: hidden;
+
+    margin-top: 1rem;
+ 
+    justify-content: center;
+
+    /*! para tds as colunas da tabela ficarem do msm tamanho */
+    table-layout: fixed;
+
+    /*! qunado a lateral da tabela ficar maior q a tela, com isso é posivel rolar ela pro lado sem quebrar a tabela */
+    overflow-x: auto;
+
+    border-radius: 1rem;
+
+    background-color: var(--corclara);
+}
+
+/*? colunas das tabelas coluna cabeçalho e coluna body */
+.colunaCab, .colunageral{
+    text-align: center;
+
+    /* add um espaço na no topo e no baixo da div */
+    padding: 1.5vh;
+
+    font-family: var(--fonte);
+
+}
+
+
+.mais{
+    width: 1rem;
+}
+
+.colunageral {
+    border-top: 2px solid var(--linhatabela);
+    font-weight: var(--pesogertab);
+}
+
+.capa-thriller {
+    height: 3rem;
+    width: 3rem;
+}
+
+.colunaCab {
+    color: var(--cordestaque);
+    font-weight: var(--pesocabtab);
+}
+
+.textop {
+    font-family: var(--fonte);
+    color: var(--corclara);
+}
+
+.textoh3 {
+    font-family: var(--fonte);
+    color: var(--corclara);
+}
+
+.icone {
+    color: var(--corclara);
+    
+}
+
+.addPost {
+    background-color: var(--cordestaque);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    height: 2.5rem;
+    width: 8rem;
+
+}
+
+.pesquisar {
+    z-index: 0;
+    width: 80%;
+    padding-left: 0;
+    /* background-color: red; */
+}
+
+
+.busca {
+    /* background-color: var(--corclara); */
+    background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.03)
+        );
+    background-image: url(../assets/Frame94.svg); 
+    /*! pra img nn repitir no fundo td */
+    background-repeat: no-repeat;
+
+    /* border-radius: 3rem;
+    border: 1rem solid #6D3534; */
+
+    /* cima direita baixo esquerda */
+    padding: 1rem 1rem 1rem 3rem;
+
+    /*! coloca o o back 1 p/ laterais e no centro de td */
+    background-position: 1rem center; 
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--cor-laranja-200);
+    box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.08),
+        0 8px 32px rgba(0,0,0,0.35);
+    border-radius: 50px;
+}
+
+.busca::placeholder {
+    color: var(--cor-branco-100);
+    opacity: 0.5;
+    font-family: var(--fonte-primaria);
+}
+
+/* *Animação ao passar o mouse por cima dos ícones de ação da tabela de usuários */
+.tabelageral .acao {
+    transition: transform 0.2s;
+}
+
+.tabelageral .acao:hover {
+    transform: scale(1.35);
+    cursor: pointer;
+}
+
+/* *ESTILO DO MODAL DE EDIÇÃO DE POSTS */
+.modal-edicao-posts {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45%;
+    height: 85%;
+    border-radius: 30px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: url(../assets/fundo-modais-editada.jpeg);
+    background-size: cover;
+    font-family: var(--fonte);
+}    
+
+/* *Estilo da secao do texto, da foto, e do ícone de fechar o modal */
+.modal-edicao-posts .secao-texto-foto-fechar-modal {
+    width: 90%;
+    height: 23%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-edicao-posts .secao-texto-foto-fechar-modal h1 {
+    font-size: 3vh;
+}
+
+.modal-edicao-posts .secao-texto-foto-fechar-modal h2 {
+    font-size: 3vh;
+}
+
+/* *Estilo do texto de editar foto da capa do álbum */
+.modal-edicao-posts .container-texto {
+    font-size: 0.6rem;
+    width: 35%;
+    color: var(--cor-branco-300);
+    font-family: var(--fonteaviso);
+}
+
+/* *Estilo do container da foto da capa do álbum */
+.modal-edicao-posts .container-foto-capa-do-album {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+    border-radius: 10px;
+    background-color: var(--cor-branco-300);
+}
+
+/* *Estilo do ícone da foto da capa do álbum */
+.modal-edicao-posts .container-foto-capa-do-album .icone-foto-capa-do-album {
+    font-size: 3rem;
+    border: none;
+    background: none;
+}
+
+/* *Estilo do container do botão de fechar modal*/
+.modal-edicao-posts .container-botao-fechar-modal {
+    display: flex;
+    justify-content: flex-end;
+    width: 35%;
+}
+
+/* *Estilo do botão de fechar modal*/
+.modal-edicao-posts .botao-fechar-modal {
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    padding: 0.1rem;
+    line-height: 1;
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+}
+
+/* *Animação ao passar o mouse por cima do botão de fechar modal*/
+.modal-edicao-posts .botao-fechar-modal:hover {
+    transform: scale(1.015);
+    transition: transform 0.2;
+    cursor: pointer;
+    opacity: 0.95;
+}
+
+/* *Estilo da seção de edição das informações do usuário */
+.modal-edicao-posts .secao-edicao-dados-do-album {
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 67%;
+    width: 100%;
+}
+
+/* *Estilo da secao de instruções e de editar foto da capa do álbum */
+.modal-edicao-posts .secao-instrucao-editar-foto-capa-do-album {
+    width: 80%;
+    height: 20%;
+    border-radius: 30px;
+    font-family: "Roboto", sans-serif;
+    background-color: var(--cor-branco-300);
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* *Estilo do container de instruções de editar foto da capa do álbum */
+.modal-edicao-posts .container-instrucao-editar-foto-capa-do-album {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-edicao-posts .container-instrucao-editar-foto-capa-do-album p{
+    font-size: 2vh;
+}
+
+.modal-edicao-posts .container-instrucao-editar-foto-capa-do-album h2{
+    font-size: 3vh;
+}
+
+/* *Estilo do texto de instruções de editar foto da capa do álbum */
+.modal-edicao-posts .container-texto-instrucao-editar-foto-capa-do-album {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: var(--cor-vinho-100);
+}
+
+/* *Estilo do botão de editar foto da capa do álbum */
+.modal-edicao-posts .botao-alterar-foto-capa-do-album {
+    color: var(--cor-branco-300);
+    width: 35%;
+    height: 45%;
+    border: none;
+    background-color: var(--cor-vinho-100);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* *Animacao ao o mouse por cima do botão de editar foto da capa do álbum */
+.modal-edicao-posts .botao-alterar-foto-capa-do-album:hover {
+    transform: scale(1.015);
+    transition: transform 0.2;
+    cursor: pointer;
+    opacity: 0.95;
+}
+
+/* *Estilo da secao de editar informações do álbum e de salvar e cancelar */
+.modal-edicao-posts .secao-editar-titulo-ano-autor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    height: 70%;
+    background-color: var(--cor-branco-300);
+    border-radius: 30px;
+}
+
+/* *Estilo do container de editar o dado da publicação*/
+.modal-edicao-posts .container-editar-dado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 16.5%;
+    width: 90%;
+}
+
+/* *Estilo do título do dado a ser editado do usuário (Nome, E-mail, Senha) */
+.modal-edicao-posts .titulo-dado {
+    color: var(--cor-branco-300);
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    border-radius: 30px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    font-size: 0.8rem;
+}
+
+.modal-edicao-posts .titulo-titulo {
+    background-color: var(--cor-vinho-100);
+}
+
+.modal-edicao-posts .titulo-ano {
+    background-color: var(--cor-laranja-200);
+}
+
+.modal-edicao-posts .titulo-autor {
+    background-color: var(--cor-vermelho-50);
+}
+
+/* *Estilo do input de digitar o dado do usuário */
+.modal-edicao-posts .editar-dado {
+    border-radius: 10px;
+    height: 100%;
+    width: 75%;
+    padding: 0 0.4rem;
+    background: none;
+    border: 2px solid var(--cor-branco-400);
+    font-family: "Roboto", sans-serif;
+    color: var(--cor-vinho-100);
+}
+
+/* *Estilo do placeholder de editar dado */
+.modal-edicao-posts .editar-dado::placeholder {
+    color: var(--cor-vinho-100);
+    opacity: 0.5;
+}
+
+/* *Estilo da borda do input ao clicar nele */
+.modal-edicao-posts .editar-dado:focus {
+    outline: none;
+}
+
+/* *Estilo do container dos botões de salvar e cancelar */
+.modal-edicao-posts .secao-botoes-salvar-cancelar {
+    width: 90%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* *Estilo dos botões de salvar e cancelar */
+.modal-edicao-posts .secao-botoes-salvar-cancelar .botao {
+    border-radius: 30px;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    width: 40%;
+    height: 85%;
+}
+
+.modal-edicao-posts .secao-botoes-salvar-cancelar .botao-salvar {
+    background-color: var(--cor-vermelho-50);
+    color: var(--cor-branco-300);
+}
+
+.modal-edicao-posts .secao-botoes-salvar-cancelar .botao-cancelar {
+    border: 1px solid var(--cor-vinho-100);
+    background-color: transparent;
+    color: var(--cor-vinho-100);
+}
+
+/* *Animação ao passar o mouse por cima dos botões e cancelar e salvar a edição do post */
+.modal-edicao-posts .secao-botoes-salvar-cancelar .botao:hover {
+    transform: scale(1.015);
+    transition: transform 0.2;
+    cursor: pointer;
+    opacity: 0.95;
+}
+
+/* *Estilo do filtro ao abrir o modal */
+.filtro-ao-abrir-modal-da-tabelaPosts {
+    position: fixed;
+    inset: 0;
+    display: none;
+    background-color: var(--cor-preto-100);
+    opacity: 0.5;
+}
+
+/* !INÍCIO da responsividade PARA MODAL DE EDIÇÃO DE POSTS*/
+/* *Tablet deitado/Laptop pequeno */
+@media (max-width: 1025px){
+    .modal-edicao-posts {
+        width: 65%;
+    }
+}
+
+/* *Tablet na vertical */
+@media (max-width: 769px){
+    .modal-edicao-posts {
+        width: 80%;
+    }
+}
+
+/* *Celulares */
+@media (max-width: 600px){
+    .modal-edicao-posts {
+            width: 95%;
+            height: 95%;
+            top: 55%;
+        }
+}
+
+/* TODO: Acho melhor a tela de edição de usuário ocupar a tela inteira no mobile, vou obter essa opinião e se for aceita realizo depois, terei que meio que desativar o resto da página 
+
+/* !FIM da responsividade PARA MODAL DE EDIÇÃO DE POSTS*/
+
+
+/*? MODAL DE VISUALIZAR POST */
+
+.des-modal-vi-post{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45%;
+    height: 85%;
+    border-radius: 30px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: url(../assets/fundo-modais-editada.jpeg);
+    background-size: cover;
+    border: none;
+}
+
+.text-img-boX{
+    width: 90%;
+    height: 23%;
+    display: flex;
+    justify-content: space-between;
+}
+.oqmodalVI-post, .oqmodalEX-post{
+   font-size: 0.9rem;
+    width: 35%;
+    color: var(--cor-branco-300);
+    font-family: var(--fonteaviso);
+}
+
+/*! visu e excluir */
+.fundo{
+    background-color: #00000059;
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+    display: none;
+    inset: 0;
+    position: fixed;
+
+}
+
+#container-dados-visu, .mensagem-botao{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 70%;
+    background-color: var(--cor-branco-300);
+    border-radius: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+}
+/* Pertence ao modal de excluir */
+.des-modal-ex-post, .des-modal-vi-post{
+    font-family: var(--fonte-modal);
+}
+
+.mensagem-botao{
+    height: 40%;
+    padding: 1rem;
+    width: 70%;
+}
+
+.container-dados-visu-post{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 70%;
+    background-color: var(--cor-branco-300);
+    border-radius: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+    padding-top: 1rem;
+}
+
+.container-dados-visu-post::-webkit-scrollbar {
+    width: 7px; 
+}
+
+.container-dados-visu-post::-webkit-scrollbar-track {
+    background: transparent;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container-dados-visu-post::-webkit-scrollbar-thumb {
+    background-color: var(--cor-vinho-100);
+    border-radius: 30px;
+}
+
+.dados-visu-post{
+    display: flex;
+    min-height: 13%;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 5%;
+}
+.dado-visu-post{
+    border-radius: 10px;
+    height: 50%;
+    width: 75%;
+    padding: 0 0.4rem;
+    background: none;
+    border: 2px solid var(--cor-branco-400);
+    font-family: var(--fonte-modal);
+    color: var(--cor-vinho-100);
+}
+
+.destaque-dados-visup{
+    padding-right: 5%;
+    padding-left: 5%;
+    color: var(--cor-branco-300);
+    font-weight: bold;
+    border-radius: 30px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    font-size: 1vw;
+    font-family: var(--fonte-modal)
+    "Montserrat", sans-serif;
+    text-align: center;
+}
+
+.container-textarea-vi{
+    padding-top: 1rem;
+    display: flex;
+    width: 90%;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-grow: 1;
+    gap: 5%;
+}
+
+.container-textarea-vi textarea{
+    resize: vertical;
+    border-radius: 10px;
+    width: 75%;
+    padding: 0.4rem;
+    background: none;
+    border: 2px solid var(--cor-branco-400);
+    font-size: 1rem;
+    font-family: var(--fonte-modal);
+    color: var(--cor-vinho-100);
+}
+
+.imgpostvi, .imgpostex{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+    border-radius: 10px;
+    background-color: var(--cor-branco-300); 
+}
+
+.icone-capap{
+    font-size: 3rem;
+    border: none;
+    background: none;
+}
+.X{
+    display: flex;
+    justify-content: flex-end;
+    width: 35%;
+}
+.xisp{
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    padding: 0.1rem;
+    line-height: 1;
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+}
+
+.xisp:hover{
+    transform: scale(1.015);
+    transition: transform 0.2;
+    cursor: pointer;
+    opacity: 0.95;
+}
+
+
+/** MODAL EXCLUIR */
+.des-modal-ex-post{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45%;
+    height: 65%;
+    border-radius: 30px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../assets/fundo-modais-editada.jpeg);
+    background-size: cover;
+    padding: 1.5rem 0;
+    gap: 6rem;
+}
+.text-img-boX-ex{
+    width: 90%;
+    height: 28%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.containeravisop{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.avisoSEMdestaquep{
+    color: var(--coraviso);
+    font-family: var(--fonte-modal);
+    font-size: var(--tamaviso);
+    font-weight: var(--pesoaviso);
+    text-align: center;
+}
+
+.avisoCOMdestaquep{
+    color: var(--cordestaviso);
+    font-family: var(--fonte-modal);
+    font-size: var(--tamaviso);
+    font-weight: var(--pesoaviso);
+    text-align: center;
+}
+
+.rodapeavisop{
+    color: var(--coraviso);
+    font-family: var(--fonte-modal);
+    font-size: var(--tamavisorod);
+    font-weight: var(--pesoavisorodape);
+    justify-content: center;
+    text-align: center;
+}
+
+.containerbotoesp{
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+   justify-content: space-evenly;
+    width: 100%;
+}
+
+.botao{
+    align-items: center;
+    background-color: var(--backbotao);
+    /* tira a borda horrenda q vem no botao */
+    border: none; 
+    border-radius: 2rem;
+    color: var(--letrabotao);
+    cursor: pointer;
+    font-family: var(--fonte-modal);
+    font-weight: var(--pesoexcluirbotao);
+    height: 3.5vh;
+    justify-content: center;
+    transition: 0.3s;
+    width: 8vw;
+}
+
+.botao:hover{
+    transform: scale(1.1);
+}
+
+.mensagem-botao{
+    align-items: center;
+    display: flex;
+    gap: 2.5rem;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.simp{
+    border: 1px solid var(--cor-vinho-100);
+    background-color: transparent;
+    color: var(--cor-vinho-100);
+}
+.cancelarp{
+    border: 1px solid var(--cor-vinho-100);
+    background-color: transparent;
+    color: var(--cor-vinho-100);
+}
+
+.botao-novo-post{
+    align-items: center;
+    background-color: inherit;
+    border: none;
+    color: inherit;
+    display: flex;
+    justify-content: center;
+    outline: none;
+    text-decoration: none;
+}
+
+.botao-novo-post:hover{   
+    cursor: pointer;
+}
+
+/*todo: INÍCIO DA RESPONSIVIDADE DOS MODAIS DE VISUALIZAR E EXCLUIR POSTS */
+
+/*! RESPONSIVIDADE 4K */ 
+@media (min-width: 1921px) 
+{
+    .des-modal-vi-post{
+        width: 50%;
+        height: 75%;
+        border-radius: 40px;
+    }
+
+    .des-modal-ex-post{
+        width: 50%;
+        height: 65%;
+        gap: 6rem;
+    }
+
+    .oqmodalVI-post, .oqmodalEX-post{
+        font-size: 1.8rem;
+    }
+
+    .xisp{
+        font-size: 3rem;
+    }
+
+    .mensagem-botao{
+        height: 50%;
+    }
+
+    .containeravisop{
+        height: 15vh;
+        justify-content: center;
+        width: 50vh;
+    }
+    .avisoSEMdestaquep{
+        font-size: 2rem;
+    }
+    .avisoCOMdestaquep{
+        font-size: 2rem;
+    }
+    .rodapeavisop{
+        font-size: 1.7rem;
+    }
+    .destaque-dados-visup{
+        font-size: 1.5rem;
+        height: 3.5rem;
+    }
+
+    .dado-visu-post, .container-textarea-vi textarea{
+        font-size: 1.5rem;
+    }
+
+    .botao {
+        width: 8vw;
+        height: 4.5vh;
+        font-size: 1.5rem;
+        border-radius: 45px;
+    }
+}
+
+/*! RESPONSIVIDADE LAPTOP */
+@media (min-width: 769px) and (max-width: 1024px)
+{
+    .des-modal-vi-post{
+        width: 65%;
+        height: 80%;
+    }
+
+    .des-modal-ex-post{
+        width: 65%;
+        height: 55%;
+        gap: 3rem;
+    }
+
+    .text-img-boX-ex{
+        height: 35%;
+    }
+
+    .mensagem-botao{
+        height: 50%;
+    }
+
+    .container-dados-visu-post{
+        width: 90%; 
+    }
+
+    .botao{
+        width: 15vw; 
+        height: 4.5vh;
+    }
+}
+
+/*! RESPONSIVIDADE TABLET */
+@media (min-width: 766px) and (max-width: 768px)
+{
+    .des-modal-vi-post{
+        width: 75%;
+        height: 80%;
+    }
+
+    .des-modal-ex-post{
+        width: 70%;
+        height: 55%;
+        gap: 3rem;
+    }
+
+    .text-img-boX-ex{
+        height: 35%;
+    }
+
+    .mensagem-botao{
+        height: 50%;
+    }
+
+    .container-dados-visu-post{
+        width: 90%; 
+    }
+
+    .destaque-dados-visup{
+        height: 4.5vh;
+    }
+
+    .botao{
+        width: 15vw; 
+        height: 4.5vh;
+    }
+}
+
+/*! RESPONSIVIDADE MOBILE L */
+@media (min-width: 377px) and (max-width: 765px) 
+{
+    .des-modal-vi-post{
+        width: 90%; 
+        height: 85%; 
+        border-radius: 20px;
+    }
+
+    .des-modal-ex-post{
+        width: 90%;
+        height: 55%;
+        gap: 2rem;
+        padding: 1rem 0;
+    }
+
+    .text-img-boX, .text-img-boX-ex{
+        flex-direction: row;
+        width: 92%;
+        height: 20vh;
+    }
+
+    .oqmodalVI-post, .oqmodalEX-post{
+        width: 40%;
+        height: 80%;
+        font-size: 0.85rem;
+    }
+
+    .imgpostvi, .imgpostex{
+        width: 50%;
+        height: 90%;
+    }
+
+    .icone-capap{
+        font-size: 2rem;
+    }
+
+    .X{
+        display: flex;
+        justify-content: flex-end;
+        width: 30%;
+        align-self: baseline;
+        margin-top: 1rem;
+    }
+    .xisp{
+        font-size: 1.7rem;    
+    }
+    .container-dados-visu-post{
+        width: 92%;
+        height: 70%;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    .dados-visu-post{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    .destaque-dados-visup{
+        width: auto;
+        padding: 0 1rem;
+        height:2.2rem;
+        font-size: 0.85rem;
+    }
+
+    .dado-visu-post{
+        width: 100%;
+        height: 2.2rem;
+    }
+
+    .container-textarea-vi{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    .container-textarea-vi textarea{
+        width: 100%;
+    }
+
+    .mensagem-botao{
+        width: 90%;
+        height: 50%;
+        gap: 1.5rem;
+    }
+
+    .containeravisop{
+        width: 80%;
+    }
+    .containerbotoesp{
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .botao{
+        width: 25vw;
+        height: 4vh;
+    }
+}
+
+/*! RESPONSIVIDADE MOBILE M E S */ 
+@media (min-width: 320px) and (max-width: 375px) 
+{
+    .des-modal-vi-post{
+        width: 95%;
+        height: 90%;
+        border-radius: 15px;
+    }
+
+    .des-modal-ex-post{
+        width: 95%;
+        height: 55%;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    .text-img-boX, .text-img-boX-ex{
+        width: 92%;
+        height: 20vh;
+    }
+
+    .oqmodalVI-post, .oqmodalEX-post{
+        width: 30%;
+        height: 20vh;
+    }
+
+    .imgpostvi, .imgpostex{
+        width: 50%;
+        height: 20vh;
+    }
+
+    .icone-capap{
+        font-size: 1.6rem;
+    }
+
+    .X{
+        display: flex;
+        justify-content: flex-end;
+        width: 30%;
+        align-self: baseline;
+    }
+    .xisp{
+        font-size: 1.7rem;    
+    }
+
+    .container-dados-visu-post{
+        width: 92%;
+        gap: 0.8rem;
+    }
+
+    .dados-visu-post{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+        justify-content: center;
+    }
+
+    .destaque-dados-visup{
+        width: auto;
+        padding: 0 0.8rem;
+        height: 1.6rem;
+        font-size: 0.8rem;
+    }
+
+    .dado-visu-post{
+        width: 100%;
+        height: 2rem;
+        font-size: 0.9rem;
+    }
+
+    .container-textarea-vi{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+
+    .container-textarea-vi textarea{
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .mensagem-botao{
+        width: 92%;
+        height: 55%;
+        gap: 1.2rem;
+    }
+
+    .containeravisop{
+        width: 85%;
+        height: 11vh;
+    }
+    .avisoSEMdestaquep, .avisoCOMdestaquep{
+        font-size: 1rem;
+    }
+
+    .rodapeavisop{
+        font-size: 0.9rem;
+    }
+
+    .botao{
+        width: 27vw;
+        height: 4vh;
+        font-size: 0.9rem;
+    }
+}
+/*todo: FIM DA RESPONSIVIDADE DOS MODAIS DE VISUALIZAR E EXCLUIR POSTS */
+
+/*! MODAL DE CRIAR POSTS */
+/* Efeito visual para mostrar que não é possível clicar no botão se for usuário não administrador */
+
+.botao-novo-post:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.botao-novo-post:disabled:hover {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.desabilitado {
+    opacity: 0.5;
+    pointer-events: none;   
+}
+
+/* Modal de criar posts */
+
+#modal-criar-posts{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    width: 40%;
+    background-color: white;
+    flex-direction: row;
+}
+
+.metade-modal-criar {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imagem-modal-criar {
+    background-image: url(../assets/fundo-modais-editada.jpeg);
+    background-size: cover;
+    background-position: center;
+    gap: 2%;
+}
+
+.area-lapis-editar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 20%;
+}
+
+.container-lapis-editar {
+    display: flex;
+    background-color: white;
+    padding: 3%;
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+}
+
+.botao-lapis-modal-criar {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    background-color: inherit;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.botao-lapis-modal-criar:hover {
+    cursor: pointer;
+}
+
+.imagem-capa-modal-criar {
+    background-color: white;
+    border-radius: 5px;
+    width: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario-modal-criar {
+    padding-top: 5%;
+    justify-content: flex-start;
+    background-color: #CA998F;
+    color: white;
+    font-family: var(--fonte);
+}
+
+.container-formulario-criar {
+    display: flex;
+    height: 85%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5%;
+    justify-content: flex-start;
+}
+
+.area-input-modal-criar {
+    width: 70%;
+}
+
+.input-criar-post {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    height: 60%;
+    font-size: 1rem;
+    padding-left: 2%;
+}
+
+.input-criar-post::placeholder {
+    color: #CA998F;
+}
+
+.textarea-descricao {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding-left: 2%;
+}
+
+.textarea-descricao::placeholder {
+    color: #CA998F;
+    font-family: var(--fonte);
+}
+
+.container-botoes-criar {
+    display: flex;
+    height: 15%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 30%;
+    padding-left: 5%;
+    padding-right: 10%;
+}
+
+.botao-modal-criar {
+    height: fit-content;
+    font-size: large;
+    height: 50%;
+    width: 40%;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.botao-modal-criar:hover {
+    cursor: pointer;
+}
+
+.botao-modal-criar.cancelar {
+    background-color: #6D3534;
+}
+
+.botao-modal-criar.salvar {
+    background-color: #387736;
+}
+
+#dataPostCriado {
+    color: #CA998F;
+}
+
+.escrita-inputs-modal-criar {
+    color: #6D3534
+}
+
+#modal-criar-posts{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45%;
+    height: 85%;
+    background-color: white;
+    flex-direction: column;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: url(../assets/fundo-modais-editada.jpeg);
+    background-position: 50% 80%;
+    background-size: cover;
+}
+
+#modal-criar-posts button:hover {
+    transform: scale(1.025);
+    cursor: pointer;
+}
+
+.alto-modal-criar {
+    display: flex;
+    height: 23%;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--fonte-modal);
+}
+
+.um-terco-alto-modal-criar {
+    display: flex;
+    width: 33%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.um-terco-alto-modal-criar h2 {
+    font-size: 3vh;
+    color: var(--cor-branco-300);
+
+}
+
+.parte-esquerda-alto-modal {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.parte-media-alto-modal {
+    display: flex;
+    background-color: var(--cor-branco-300);
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.parte-direita-alto-modal {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-right: 5%;
+}
+
+.foto-album-criar-modal {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+#foto_renderizada {
+    border: none;
+    outline: none;
+    border-radius: 30px;
+}
+
+.container-x {
+    background-color: var(--cor-branco-300);
+    display: flex;
+    height: 20%;
+    aspect-ratio: 1/1;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    border: none;
+}
+
+.sair-da-pagina {
+    font-size: 3.5vh;
+}
+
+.baixo-modal-criar {
+    display: flex;
+    height: 67%;
+    width: 100%;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.area-de-colocar-informacoes {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 70%;
+    background-color: var(--cor-branco-300);
+    border-radius: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.container-informacoes-foto {
+    height: 20%;
+    gap: 5%;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+    font-family: var(--fonte-modal);
+}
+
+.container-informacoes-foto p {
+    font-size: 2vh;
+}
+
+.container-informacoes-foto h2 {
+    font-size: 3vh;
+    color: var(--cor-vinho-100);
+}
+
+.primeira-parte-do-container-informacoes-foto{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 5%;
+    width: 70%;
+    flex-direction: column;
+}
+
+.segunda-parte-do-container-informacoes-foto {
+    display: flex;
+    width: 30%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    padding: 0;
+}
+
+.botao-anexar-foto-modal-criar {
+    border: none;
+    height: 50%;
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: var(--cor-vinho-100);
+    color: var(--cor-branco-100);
+    gap: 5%
+}
+
+.area-de-colocar-informacoes::-webkit-scrollbar {
+    width: 7px; 
+}
+
+.area-de-colocar-informacoes::-webkit-scrollbar-track {
+    background: transparent;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.area-de-colocar-informacoes::-webkit-scrollbar-thumb {
+    background-color: var(--cor-vinho-100);
+    border-radius: 30px;
+}
+
+.quarto-da-area-informacoes {
+    display: flex;
+    min-height: 25%;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 5%;
+}
+
+.quarto-da-area-informacoes input {
+    border-radius: 10px;
+    height: 50%;
+    width: 75%;
+    padding: 0 0.4rem;
+    background: none;
+    border: 2px solid var(--cor-branco-400);
+    font-family: var(--fonte-modal);
+    color: var(--cor-vinho-100);
+}
+
+.container-textarea {
+    padding-top: 1rem;
+    display: flex;
+    width: 90%;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-grow: 1;
+    gap: 5%;
+}
+
+.container-textarea textarea {
+    resize: vertical;
+    border-radius: 10px;
+    width: 75%;
+    padding: 0.4rem;
+    background: none;
+    border: 2px solid var(--cor-branco-400);
+    font-family: var(--fonte-modal);
+    color: var(--cor-vinho-100);
+}
+
+.container-dado-a-criar {
+    padding-right: 5%;
+    padding-left: 5%;
+    color: var(--cor-branco-300);
+    font-weight: bold;
+    border-radius: 30px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    font-size: 0.8rem;
+    font-family: var(--fonte-modal);
+    text-align: center;
+    border: none;
+    font-size: 1vw;
+}
+
+.container-input-e-botao{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid var(--cor-branco-400);
+    width: 75%;
+    height: 50%;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.container-input-e-botao input{
+    border: none;
+    padding: 0 0.4rem;
+    background: none;
+    font-family: var(--fonte-modal);
+    color: var(--cor-vinho-100);
+    height: 100%;
+}
+
+.botao-container-com-input{
+    border-radius: 10px;
+}
+
+#modal-criar-posts button {
+    text-decoration: none;
+    outline: none;
+}
+
+.botao-modal-criar {
+    height: fit-content;
+    font-size: large;
+    height: 60%;
+    width: 40%;
+    border: none;
+    border-radius: 30px;
+    color: white;
+}
+
+.salva {
+    background-color: var(--cor-vermelho-50);
+    color: var(--cor-branco-300);
+}
+
+.cancelar {
+    border: 3px solid var(--cor-vinho-100);
+    background-color: transparent;
+    color: var(--cor-vinho-100);
+}
+
+.imagem-modal-criar {
+    background-image: url(../assets/fundo-modais-editada.jpeg);
+    background-size: cover;
+    background-position: center;
+    gap: 2%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.area-lapis-editar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 20%;
+}
+
+.container-lapis-editar {
+    display: flex;
+    background-color: white;
+    padding: 3%;
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+}
+
+.botao-lapis-modal-criar {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    background-color: inherit;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.botao-lapis-modal-criar:hover {
+    cursor: pointer;
+}
+
+.imagem-capa-modal-criar {
+    background-color: white;
+    border-radius: 5px;
+    width: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario-modal-criar {
+    padding-top: 5%;
+    justify-content: flex-start;
+    background-color: #CA998F;
+    color: white;
+    font-family: var(--fonte);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.container-formulario-criar {
+    display: flex;
+    height: 85%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5%;
+    justify-content: flex-start;
+}
+
+.area-input-modal-criar {
+    width: 70%;
+}
+
+.input-criar-post {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    height: 60%;
+    font-size: 1rem;
+    padding-left: 2%;
+}
+
+.input-criar-post::placeholder {
+    color: #CA998F;
+}
+
+.textarea-descricao {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding-left: 2%;
+}
+
+.textarea-descricao::placeholder {
+    color: #CA998F;
+    font-family: var(--fonte);
+}
+
+.container-botoes-criar {
+    display: flex;
+    height: 15%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 30%;
+    padding-left: 5%;
+    padding-right: 10%;
+}
+
+.botao-modal-criar {
+    height: fit-content;
+    font-size: large;
+    height: 50%;
+    width: 40%;
+    border: none;
+    border-radius: 30px;
+    color: white;
+}
+
+.botao-modal-criar:hover {
+    cursor: pointer;
+}
+
+.botao-modal-criar.cancelar {
+    border: 1px solid var(--cor-vinho-100);
+    background-color: transparent;
+    color: var(--cor-vinho-100);
+}
+
+.botao-modal-criar.salvar {
+    background-color: var(--cor-vermelho-50);
+    color: var(--cor-branco-300);
+}
+
+#dataPostCriado {
+    color: #CA998F;
+}
+
+.escrita-inputs-modal-criar {
+    color: #6D3534
+}
+
+/* *Tablet */
+
+@media (max-width: 769px){
+    #modal-criar-usuarios {
+            width: 80%;
+            top: 0;
+        }
+}
+
+/* *Mobile */
+
+
+@media (max-width: 600px){
+    #modal-criar-posts {
+            width: 95%;
+            height: 95%;
+            top: 55%;
+        }
+    #modal-criar-posts .area-de-colocar-informacoes {
+        width: 90%;
+    }
+    #modal-criar-posts .container-informacoes-foto {
+        gap: 0.1rem;
+    }
+    #modal-criar-posts .segunda-parte-do-container-informacoes-foto {
+        width: 43%;
+    }
+    .container-dado-a-criar {
+        font-size: 3vw;
+    }
+}
+
+.tabelaMobile{
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    width: 80%;
+}
+
+.tabeladentroMobile{
+    background-color: #FEECE8;
+    width: 75%;
+    height: 25vh;
+    border-radius: 2rem;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+
+    padding: 0;
+}
+
+.destaqueInfosMobile{
+    color: #C06850;
+    font-family: var(--fonte);
+    font-weight: 700;
+}
+
+.infosMobile{
+    font-family: var(--fonte);
+    font-weight: 500;
+}
+
+.parte1, .parte2, .parte3{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    min-width: 0;
+    height: 90%;
+}
+
+.parte2 {
+    border-right: 0.1rem solid #C06850;
+    border-left: 0.1rem solid #C06850;
+    padding: 0 0.4rem;
+
+}
+
+.containerId, .containerPerfil{
+    align-items: center;
+}
+
+.quebra {
+    overflow: hidden;
+    background: transparent;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* máximo 2 linhas */
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+
+}
+
+.infoUser {
+
+}
+
+.topoTabelaPosts {
+    justify-content: space-between;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.container-icones-crud-mobile {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto-de-cada-usuario-na-tabela {
+    height: 2rem;
+    aspect-ratio: 1 / 1;
+}
+
+.topoTabelaUser {
+    width: 80%;
+    display: flex;
+    /* o justify sempre mexe no eixo principal nesse caso row */
+    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+}
+
+.addUserdesktop {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background-color: #AE5E48;
+    height: 3rem;
+    width: 9rem;
+    border-radius: 2rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+
+}
+
+.textop{
+    font-size: 1rem;
+}
+
+.addUsermobile{
+    display: none;
+    align-items: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    justify-content: center;
+    background-color: #AE5E48;
+    
+    border-radius: 1.2rem;
+}
+
+
+
+@media (max-width: 600px){
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; 
+        align-items: center;
+        padding-right: 10%;
+    }   
+    .tabela{
+        display: none;
+    }
+
+    .pagecontainer {
+        width: 100%;
+    }
+
+    .topoTabelaUser {
+        width: 60%;
+        display: flex;
+        /* o justify sempre mexe no eixo principal nesse caso row */
+        justify-content: space-between;
+        align-items: center;
+        height: fit-content;
+        gap: 5%;
+    }
+
+    #tbposts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pesquisar{
+        margin-top: 5%;
+        margin-bottom: 10%;
+        padding-left: 0;
+        width: 80%;
+    }
+
+    .tabelaMobile{
+        display: flex;
+        width: 100%;
+    }
+
+
+    .userimg{
+        width: 2.5rem;
+        height: 2.5;
+    }
+
+    .textoh3{
+        font-size: 1rem;
+    }
+
+    .addUserdesktop {
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .addUserdesktop {
+        display: none;
+    }
+
+    .addUsermobile{
+        display: flex;
+    }
+
+    .espacom{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .busca{
+        width: 100%;
+    }
+
+    .active{
+    background-color: #FEECE8;
+    color: #D68164 !important;
+    width: 2rem;
+    height: 2rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.disabledseta {
+    opacity: 0.3;
+    pointer-events: none;
+     width: 2rem;
+    height: 2rem;
+}
+}

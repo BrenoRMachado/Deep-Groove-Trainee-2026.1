@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+
+    <!-- *LINK PARA CSS -->
+    <link rel="stylesheet" href="../../../public/css/sidebar.css">
+
+    <!-- *ÍCONES -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+
+    <button class="menu-hamburger" id="btn-hamburger">
+        <i class="bi bi-list" id="icone-menu"></i>
+    </button>
+
+    <main class="sidebar sidebar-mobile" id="sidebarjs">
+
+        
+
+        <nav class="nav-pg-adm remove-padrao nav-pg-adm-mobile" id="icones-admin">
+            <li class="pagina-inicial">
+                <a href="/ ">
+                    <i class="icone icone-mobile bi bi-house-door"></i>
+                    <span class="nome-pg-adm ">Home</span>
+                </a>
+            </li>
+            <li class="pagina-dashboard">
+                <a href="/dashboard">
+                    <i class="icone icone-mobile bi bi-grid-1x2"></i>
+                    <span class="nome-pg-adm ">Dashboard</span>
+                </a>
+            </li>
+            <li class="pagina-lista-de-usuarios">
+                <a href="/tabelaUsuarios">
+                    <i class="icone icone-mobile bi bi-person-square"></i>
+                    <span class="nome-pg-adm ">Usuários</span>
+                </a>
+            </li>
+            
+            <li class="pagina-tabela-de-publicacoes">
+                <a href="/tabelaPosts">
+                    <i class="icone icone-mobile icone-pagina-tabela-de-publicacoes bi bi-window-stack"></i>
+                    <span class="nome-pg-adm ">Publicações</span>
+                </a>
+            </li>
+            <form action="/logout" method="POST" class="botaoso">
+                <button class="botao-sign-out">
+                    <i class="icone icone-mobile bi bi-box-arrow-left"></i>
+                    <span class="nome-pg-adm ">Sair</span>
+                </button>
+            </form>
+        </nav>
+        
+    </main>
+    <script src="../../../public/js/sidebar.js"></script>
+</body>
+</html>

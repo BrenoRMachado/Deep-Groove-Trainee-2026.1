@@ -1,0 +1,1289 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    /* border: 1px solid red; */
+}
+
+/* ANTI-ESTOURO GLOBAL */
+@media (max-width: 1024px){
+    .slider-item {
+        width: 60vw;
+        /* Em telas menores, aumenta o slide para ficar melhor visualmente */
+    }
+}
+
+@font-face{
+    font-family: 'Fonte-Titulo';
+    src: url('../assets/fontes/TAN\ St.\ Canard\ Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*todo: Corta qualquer transbordo horizontal invisível */
+html, .tudolanding{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: linear-gradient(to bottom, #5B162D 25%, #000 78%);
+}
+
+/* HERO SECTION */
+.hero-section{
+    align-items: center;
+    align-self: stretch;
+
+    display: flex;
+    height: 100vh;
+    padding: 0 clamp(1.5rem, 5vw, 5rem);
+    min-height: 90vh;
+    width: 100%;
+}
+
+.elementos-hs{
+    align-items: center;
+    display: flex;
+    flex: 1 0 0;
+    gap: 4.25rem;
+    justify-content: center;
+    /* min-width: max-content; */
+    width: 100%;
+}
+
+.metade-texto{
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 3rem;
+    height: 47.05vh;
+    justify-content: center;
+    min-width: 17.5rem;
+}
+
+.tudolanding{
+    align-items: flex-start;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    line-height: 1 !important;
+}
+h3{
+    line-height: 1 !important;
+}
+
+.tdtitulo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    letter-spacing: 0.2rem;
+}
+
+.titulo2{
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    align-items: baseline;
+
+}
+
+.h1lan{
+    font-family: 'Fonte-Titulo';
+    color: #FEECE8;
+    font-size: 8vw;
+    font-weight: 700;
+}
+
+.h11lan{
+    font-family: 'Fonte-Titulo';
+    color: #FEECE8;
+    font-size: 8vw;
+    align-self: center;
+    padding-left: 8vw;
+    font-weight: 700;
+}
+
+.h3lan{
+    font-family: 'Fonte-Titulo';
+    font-size: 5vw;
+    color: #FEECE8;
+    font-weight: 700;
+}
+.espaco{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+.texto_hs{
+
+    /*todo: layout da caixa de texto */
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0;
+    justify-content: center;
+    width: 80%;
+
+    /*todo: tipografia */
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    text-align: center;
+}
+
+.botão{
+
+    /*todo: layout da caixa do botão */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    justify-content: center;
+    padding: 0.7rem 0 0.7rem 0;
+    width: 18vw;
+
+    /*todo: aparência da caixa */
+    background-color: #D8854A;
+    border-radius: 2.31vw;
+    border: none;
+
+    /*todo: tipografia */
+    color: #FFF !important;
+    font-family: Inter;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 600;
+    text-align: center;
+
+    transition: transform 0.3s ease;
+}
+.botão:hover{
+    transform: scale(1.1);
+    background-color: #e89b64;
+}
+
+/*todo: box que contem a imangem logo  */
+.metade-logo{
+    align-items: center;
+    display: flex;
+    flex: 1;
+    height: 70vh;
+    image-rendering: auto;
+    justify-content: center;
+    padding: 0.625rem;
+    transform: translateZ(0);
+    min-width: 17.5rem;
+}
+
+/*todo: imagem logo */
+#logopolvo{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* CARROUSSEL */
+/*! a box do carroussel como um todo */
+.carroussel{
+    align-self: center;
+    background-color: #FBF1E8;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    overflow: hidden;
+    padding: 1.5625rem clamp(1.5rem, 5vw, 5rem);
+    position: relative;
+    width: 95%;
+}
+
+.titulo-total1{
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 0 0 1rem 0;
+
+}
+/* ! titulo do carroussel-texto*/
+.titulo_carroussel{
+    color: #5B162D;
+    font-family: Montserrat;
+    font-size: clamp(1.2rem, 2.96vw, 2.5rem);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 2vh 0 3vh 0;
+    padding: 1rem 0 0 0;
+}
+
+/* ! titulo do carroussel-imagem*/
+.titulo_carroussel_img{
+    width: 6%;
+    padding-top: 0.5rem;
+}
+
+ /*! contem todo o carroussel menos o título */
+.slider{
+    padding: 0 1rem;
+}
+
+/*! contem as divs onde estam as imagens */
+.slider-conteudo{
+    display: flex;
+    overflow: hidden;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/*! onde está as imagens */
+.slider-item {
+  min-width: 30%;
+  transition: transform 0.3s ease;
+}
+
+.slider-item:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+/* Torna o link a base para o posicionamento absoluto do texto */
+.slider-link{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 4.16vw;
+}
+
+/*! Escurece a imagem quando passa o mouse */
+.slider-link:hover .slider-item img{
+    opacity: 0.25;
+    transform: scale(1.025);
+}
+
+/*! as imagens */
+.slider-item img{
+    border-radius: 4.16vw;
+    height: 35vh;
+    object-fit: cover;
+    transition: transform 0.3s, opacity 0.5s linear;
+    width: 100%;
+}
+
+/*! Container de informações inicialmente invisível */
+.slider-informacoes{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 1rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+    background-color: rgba(0, 0, 0, 0.70);
+}
+
+/*! Faz o texto aparecer no hover */
+.slider-link:hover .slider-informacoes{
+    opacity: 1;
+}
+
+/*! Estilização básica dos textos do carrossel */
+.slider-titulo{
+    color: #FBF1E8;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+.slider-texto{
+    color: #FBF1E8;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/*! as setas do carroussel */
+.nav-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(+30%);
+    color: #FBF1E8;
+    width: 3vw;
+    height: 6vh;
+    border-radius: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 25px;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+/*! efeito das setas quando o cursor passa em cima */
+.nav-arrow:hover{
+    background-color: #FFA96B;
+    color: white;
+}
+
+.seta_esquerda {left: 0.9vw;}
+.seta_direita {right: 0.9vw;}
+
+.im2{
+    transform: scaleX(-1);
+    padding-top: 0.5rem;
+}
+
+/* MOSAICO */
+.mosaico{
+    align-items: flex-start;
+    align-self: center;
+    background-color: #FBF1E8FF;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 83vh;
+    margin: 0 0 9rem 0;
+    min-height: 100%;
+    padding: 1.5625rem clamp(1.5rem, 5vw, 5rem);
+    width: 95%;
+}
+
+/*? contem as imagens e o texto */
+.titulo-total2{
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+/*? titulo do mosaico-texto */
+.titulo-mosaico{
+    color: #5B162D;
+    font-family: Montserrat;
+    font-size: clamp(1.2rem, 2.96vw, 2.5rem);
+    font-style: normal;
+    font-weight: 600;
+    padding-top: 0.5rem;
+    line-height: normal;
+}
+
+/* ? titulo do mosaico-imagem*/
+.titulo_mosaico_img{
+    width: 6%;
+}
+
+.im2m{
+    transform: scaleX(-1);
+}
+
+/*? contem o post grande e os posts pequenos */
+.elementos-post{
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    gap: 5rem;
+    height: auto;
+    justify-content: center;
+    width: 100%;
+}
+
+/*? coluna da esquerda: conteiner da imagem */
+.postGrande{
+    /*? layout */
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    image-rendering: auto;
+
+    /*? aparencia */
+    border-radius: 2.31vw;
+    box-shadow: 3px 3px 4px 4px rgba(0, 0, 0, 0.25);
+
+    /*? efeito escurecer a imagem e fazer o texto surgir com fundo escuro */
+    overflow: hidden;
+    position: relative;
+}
+
+.postGrande:hover{
+    cursor: pointer;
+}
+
+/*? imagem do postGrande */
+.postGrande img{
+    border-radius: 2.31vw;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s, opacity 0.7s linear;
+    width: 100%;
+}
+.postGrande {
+    transition: transform 0.3s ease;
+}
+/*? Escurece a imagem e dá zoom quando passa o mouse no post grande */
+.postGrande:hover {
+    transform: scale(1.015);
+    box-shadow: none;
+
+}
+
+/*? Container de informações inicialmente invisível (Copiado do slider) */
+.mosaico-informacoes{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 2rem;
+    text-align: center;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.70);
+    border-radius: 2.31vw;
+}
+
+.mosaico-titulo{
+    color: #FBF1E8;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+.mosaico-texto{
+    color: #FBF1E8;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/*? Faz o texto aparecer no hover do post grande */
+.postGrande:hover .mosaico-informacoes{
+    opacity: 1;
+}
+
+/*? Estilização do texto do conceito */
+.mosaico-conceito{
+    color: #FBF1E8;
+    font-family: Montserrat;
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    font-weight: bold;
+    margin: 0;
+}
+
+/*? coluna da direita: container dos 3 posts pequenos */
+.postsPquenos{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: auto;
+    justify-content: center;
+    width: 50%;
+}
+
+.im{
+    display: flex;
+    flex-shrink: 0;
+    height: 18.5vh;
+    border-radius: 1.5vw;
+    width: 36%;
+    flex-direction: column;
+    object-fit: cover;
+    justify-content: center;
+}
+/*? post 1: contem imagem e texto */
+.p1{
+    align-items: center;
+    align-self: stretch;
+    border-radius: 1.5vw;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    gap: 0.9375rem;
+    height: 17.87vh;
+
+    box-shadow: 3px 3px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 0.6rem;
+}
+
+/*? imagem 1 */
+.i1{
+    /*? layout */
+    display: flex;
+    flex-shrink: 0;
+    height: 16vh;
+    justify-content: center;
+    transform: translateZ(0);
+    object-fit: cover;
+
+    /*? aparencia */
+    border-radius: 1.5vw;
+}
+
+/*? texto 1 */
+.t1{
+    /*? layout */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    width: 55%;
+
+    /*? tipografia */
+    color: #000;
+    font-family: Montserrat;
+    font-size: clamp(0.9rem, 1.5vw, 1.3rem);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+
+/*! RESPONSIVIDADE MOBILE S e M */
+@media (min-width: 320px) and (max-width: 375px)
+{
+    html, .tudolanding{
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /*TODO:  HERO SECTION */
+    .hero-section{
+        height: auto; 
+        min-height: 90vh;
+        padding: 2rem 1rem; 
+        justify-content: center;
+    }
+
+    .elementos-hs{
+        flex-direction: column; 
+        gap: 1.5rem;
+    }
+
+    .metade-logo{
+        height: auto; 
+        flex: 0 0 auto;
+        order: -1; /*  Isso joga a logo para CIMA do texto */
+        margin-bottom: 2rem;
+        width: 50%;
+        
+    }
+
+    #logopolvo{
+        max-width: 250px; 
+        height: auto;
+    }
+
+    .metade-texto{
+        height: auto;
+        flex: 1 1 auto;
+        gap: 2rem; 
+        width: 100%;
+        min-width: unset;
+    }
+    
+    .tdtitulo{
+        align-items: center; 
+        letter-spacing: 0.1rem; 
+    }
+   
+    .titulo2{
+        gap: 2vw; 
+        justify-content: center;
+    }
+    
+    .h1lan, .h11lan{
+        font-size: 15vw; 
+        text-align: center;
+    }
+   
+    .h11lan{
+        padding-left: 3rem;
+    }
+    
+    .h3lan{
+        font-size: 8vw; /
+    }
+
+    .espaco{
+        gap: 1.5rem;
+    }
+  
+    .texto_hs{
+        width: 90%; 
+        font-size: 0.9rem;
+    }
+
+    .botão{
+        width: 13rem;
+        max-width: 320px; 
+        font-size: 1rem;
+        padding: 0.5rem;
+        border-radius: 50px; 
+    }
+
+    /*! CARROUSSEL */
+    .carroussel{
+        width: 100%; 
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .titulo-total1{
+        flex-direction: row;
+        gap: 0.3rem;
+    }
+
+    .titulo_carroussel{
+        font-size: 1.2rem;
+        margin: 1vh 0;
+    }
+
+    .titulo_carroussel_img{
+        width: 12%;
+        margin-top: 0.4rem;
+    }
+
+    .slider{
+
+        height: 27vh;
+    }
+    .slider-conteudo{
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 0;
+    }
+    .slider-conteudo::-webkit-scrollbar{display: none;}
+    .slider-item{
+        min-width: 100%; 
+        height: 27vh;
+    }
+
+    .slider-link{
+        border-radius: 15px; 
+    }
+
+    .slider-item img{
+        height: 25vh; 
+        border-radius: 15px;
+    }
+    
+    /* Mostrar as informações sempre ou em toque */
+    .slider-link:active .slider-informacoes{
+        opacity: 1;
+    }
+    .nav-arrow{
+        display: none;
+    }
+
+    /*? MOSAICO */
+    .mosaico{
+        width: 100%;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        margin: 0 0 2rem 0; /* Menos margem inferior */
+        padding: 0.5rem 1rem;
+        height: 170vh;
+    }
+   
+    .titulo-total2{
+        flex-direction: row;
+        gap: 0.3rem;
+    }
+
+    .titulo-mosaico{
+       font-size: 1.1rem;
+    }
+
+    .titulo_mosaico_img{
+        width: 12%;
+    }
+    .elementos-post{
+        flex-direction: column; 
+        gap: 2rem;
+    }
+
+    .postGrande{
+        display: none;
+    }
+
+    .postGrande img{
+        display: none;
+    }
+
+    .postsPquenos{
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    .p1{
+        flex-direction: column; 
+        height: auto;
+        padding: 1rem;
+        border-radius: 15px;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .im{
+        width: 100%;
+        height: auto;
+    
+    }
+
+    .i1{
+        width: 100%;
+        height: 30vh;
+        border-radius: 15px;
+    }
+
+    .t1{
+        width: 100%;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        text-align: left; /* Alinhamento padrão mobile */
+    }
+}
+
+/*! RESPONSIVIDADE MOBILE L */
+@media (min-width: 377px) and (max-width: 765px)
+{
+    html, .tudolanding{
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /*TODO:  HERO SECTION */
+    .hero-section{
+        height: auto;
+        min-height: 90vh;
+        padding: 2rem 1rem; 
+        justify-content: center;
+    }
+
+    .elementos-hs{
+        flex-direction: column; 
+        gap: 1.5rem;
+    }
+
+    .metade-logo{
+        height: auto; 
+        flex: 0 0 auto;
+        order: -1;
+        margin-bottom: 2rem;
+        width: 50%; 
+        
+    }
+
+    #logopolvo{
+        max-width: 250px; 
+        height: auto;
+        margin: 0 auto; 
+    }
+
+    .metade-texto{
+        height: auto;
+        flex: 1 1 auto;
+        gap: 2rem; 
+        width: 100%;
+        min-width: unset;
+    }
+    
+    .tdtitulo{
+        align-items: center;
+        letter-spacing: 0.1rem;
+    }
+   
+    .titulo2{
+        gap: 2vw; 
+        justify-content: center;
+    }
+    
+    .h1lan, .h11lan{
+        font-size: 15vw; 
+        text-align: center;
+    }
+   
+    .h11lan{
+        padding-left: 4rem;
+    }
+    
+    .h3lan{
+        font-size: 8vw; 
+    }
+
+    .espaco{
+        gap: 1.5rem;
+    }
+  
+    .texto_hs{
+        width: 90%; 
+        font-size: 0.9rem;
+    }
+
+    .botão{
+        width: 13rem;
+        max-width: 320px; 
+        font-size: 1rem;
+        padding: 0.5rem;
+        border-radius: 50px; 
+    }
+
+    /*! CARROUSSEL */
+    .carroussel{
+        width: 100%; 
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        padding: 1rem 1rem 2rem 1rem;;
+    }
+
+    .titulo-total1{
+        flex-direction: row;
+        gap: 0.3rem;
+    }
+
+    .titulo_carroussel{
+        font-size: 1.4rem;
+        margin: 1vh 0;
+    }
+
+    .titulo_carroussel_img{
+        width: 12%;
+        margin-top: 0.4rem;
+    }
+
+    .slider{
+        height: 30vh;
+    }
+
+    .slider-conteudo{
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 0;
+    }
+    .slider-conteudo::-webkit-scrollbar{display: none;}
+
+    .slider-item{
+        min-width: 85%; 
+        width: 85%;
+        height: 30vh;
+    }
+
+    .slider-link{
+        border-radius: 15px; 
+    }
+
+    .slider-item img{
+        height: 40vh; 
+        border-radius: 15px;
+    }
+    
+    .slider-link:active .slider-informacoes{
+        opacity: 1;
+    }
+
+    .nav-arrow{
+        display: none;
+    }
+
+    /*? MOSAICO */
+    .mosaico{
+        width: 100%;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        margin: 0 0 2rem 0;
+        padding:  1rem 2rem 1rem;
+        height: 155vh;
+    }
+   
+    .titulo-total2{
+        flex-direction: row;
+        gap: 0.3rem;
+    }
+
+    .titulo-mosaico{
+       font-size: 1.3rem;
+    }
+
+    .titulo_mosaico_img{
+        width: 12%;
+    }
+    .elementos-post{
+        flex-direction: column; 
+        gap: 2rem;
+    }
+
+    .postGrande{
+        display: none;
+    }
+
+    .postGrande img{
+        display: none;
+    }
+
+    .postsPquenos{
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    .p1{
+        flex-direction: column; 
+        height: auto;
+        padding: 1rem;
+        border-radius: 15px;
+        gap: 1rem;
+        align-items: flex-start;
+        align-self: center;
+        width: 90%;
+    }
+
+    .im{
+        width: 100%;
+        height: auto;
+    
+    }
+
+    .i1{
+        width: 100%;
+        height: 30vh;
+        border-radius: 15px;
+    }
+
+    .t1{
+        width: 100%;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        text-align: left;
+    }
+}
+
+
+/*! RESPONSIVIDADE TABLET */
+@media (min-width: 768px) and (max-width: 1023px)
+{
+    /*todo: HERO SECTION */
+    .hero-section{
+        height: auto;
+        min-height: 91vh;
+        padding: 4rem 2rem;
+    }
+
+    .elementos-hs{
+        flex-direction: column;
+        gap: 2rem; 
+    }
+
+    .metade-logo{
+        order: -1;
+        height: 20vh;
+        margin-bottom: 3rem;
+    }
+
+    #logopolvo{
+        max-width: 310px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .metade-texto{
+        gap: 3rem;
+    }
+
+    .h1lan, .h11lan{
+        font-size: 13vw;
+    }
+
+    .h11lan{
+        padding-left: 10vw;
+    }
+
+    .h3lan{
+        font-size: 7vw;
+    }
+
+    .texto_hs{
+        width: 95%;
+        font-size: 1.2rem;
+    }
+
+    .botão{
+        width: 34vw; 
+        font-size: 1.2rem;
+        border-radius: 25px;
+    }
+
+    /*! CARROUSSEL */
+    .carroussel{
+        width: 95%;
+        padding: 2rem;
+    }
+
+    .titulo-total1{
+        margin: 0;
+    }
+
+    .slider{
+        height: 35vh;
+    }
+
+    .slider-conteudo{
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 0;
+    }
+    .slider-conteudo::-webkit-scrollbar{display: none;}
+
+    .slider-item{
+        min-width: 55%; 
+        height: 35vh;
+    }
+
+    .slider-item img{
+        height: 100%; 
+    }
+
+    .titulo_carroussel_img{
+        width: 10%; 
+    }
+
+    .nav-arrow{
+        color: #5B162D;
+    }
+
+    /*? MOSAICO */
+    .mosaico{
+        width: 95%;
+        height: 90vh;
+        padding: 2rem;
+        margin-bottom: 5rem;
+    }
+
+    .elementos-post{
+        gap: 2rem; 
+        align-items: stretch;
+    }
+
+    .postGrande{
+       display: none;
+    }
+
+    .postGrande img{
+        display: none;
+    }
+
+    .postsPquenos{
+        width: 100%; 
+        gap: 1rem;
+    }
+
+    .p1{
+        height: 23vh; 
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .im{
+        width: 30%;
+        height: 100%;
+    }
+
+    .i1{
+        height: 100%;
+        width: 100%;
+    }
+
+    .t1{
+        width: 70%;
+        font-size: 1rem;
+    }
+    
+    .titulo_mosaico_img{
+        width: 10%;
+    }
+}
+
+/*! RESPONSIVIDADE 4K */
+@media (min-width: 1921px)
+{
+    /* LIMITADOR GLOBAL DE CONTEÚDO */
+    .elementos-hs, .carroussel, .mosaico{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* TODO: HERO SECTION */
+    .hero-section{
+        height: 85vh;
+        padding: 0 10rem;
+    }
+
+    .elementos-hs{
+        gap: 8rem; 
+    }
+
+    .metade-texto{
+        gap: 4rem;
+    }
+
+    .h1lan, .h11lan{
+        font-size: 11rem;
+    }
+
+    .h11lan{
+        padding-left: 6rem;
+    }
+
+    .h3lan{
+        font-size: 6rem;
+    }
+
+    .espaco{
+        gap: 4rem;
+    }
+    .texto_hs{
+        font-size: 2.2rem;
+        line-height: 1.6;
+        width: 35vw;
+    }
+
+    .botão{
+        width: 29rem;
+        font-size: 2.2rem;
+        border-radius: 60px;
+    }
+
+    .metade-logo{
+        height: 60vh;
+        width: 50vw;
+    }
+
+    #logopolvo{
+        width: 100%;
+    }
+
+    /*! CARROUSSEL */
+    .carroussel{
+        width: 95%;
+        border-top-left-radius: 3rem;
+        border-top-right-radius: 3rem;
+        padding: 4rem 5rem;
+    }
+
+    .titulo_carroussel{
+        font-size: 5rem;
+        margin-bottom: 4vh;
+    }
+
+    .titulo_carroussel_img{
+        width: 7%; 
+        margin-bottom: 2rem;
+    }
+
+    .slider-conteudo{
+        gap: 2rem; 
+    }
+
+    .slider-item{
+        min-width: 38%;
+    }
+
+    .slider-item img{
+        height: 40vh; 
+        border-radius: 2rem;
+    }
+
+    .slider-titulo{
+        font-size: 2rem;
+    }
+
+    .slider-texto{
+        font-size: 1.3rem;
+    }
+
+    .nav-arrow{
+        font-size: 40px;
+        width: 4vw;
+        height: 8vh;
+    }
+
+    /*? MOSAICO */
+    .mosaico{
+        border-bottom-left-radius: 3rem;
+        border-bottom-right-radius: 3rem;
+        padding: 4rem 5rem;
+        margin-bottom: 12rem;
+    }
+
+    .titulo-total2{
+        align-self: center;
+    }
+
+    .titulo-mosaico{
+        font-size: 5rem;
+    }
+
+    .titulo_mosaico_img{
+        width: 7%;
+    }
+
+    .elementos-post{
+        gap: 6rem;
+    }
+
+    .postGrande{
+        display: flex;
+        width: 45%;
+        height: 65vh;
+        border-radius: 2rem;
+    }
+
+    .postGrande img{
+        display: block;
+        border-radius: 2rem;
+    }
+
+    .mosaico-conceito{
+        font-size: 2.5rem;
+    }
+
+    .postsPquenos{
+        width: 55%;
+        gap: 2rem;
+    }
+
+    .p1{
+        height: 20vh;
+        padding: 1.5rem;
+        border-radius: 2rem;
+        gap: 2rem;
+    }
+
+    .im{
+        width: 25%;
+    }
+
+    .i1{
+        border-radius: 1.5rem;
+    }
+
+    .t1{
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
+}

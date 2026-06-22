@@ -1,0 +1,588 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#tudo-d {
+    /*! tem q colocar o display flex senao o gap é ignorado */
+    display: flex;
+    /*! coloquei pq o padrao do display flex é row (lado a lado) ai assim fica na coluna */
+    flex-direction: column;
+    gap: 1rem;
+    padding: /*TETO*/1vh /*LADO*/2vw;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/*TODO inicio da section 1 */
+
+/*? PRIMEIRA DIV DA SECTION 1 */
+
+#capa-d {
+    /*! faz os elementos ficarem lado a lado */
+    display: flex; /*acho q inline faz a msm coisa */
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.album-d {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 70vw;
+    height: 22vw;
+}
+
+/* quadrado vermelho em cima do disco */
+
+
+
+.capa-album-d {
+    border-radius: 0.7rem;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.disco-d {
+    height: 100%; 
+    position: absolute;
+    z-index: -2;
+    left: 7rem;
+    /* padding: 0.4rem 4rem; */
+    /*! nome da função - tempo para completar a volta - velocidade cte - por tempo infinito */
+    transition: left 1s;
+}
+
+/* *Animação do disco deslocando e girando */
+.disco-deslocando-e-girando {
+    animation: girar 3s linear 1s infinite;
+    left: 11rem;
+}
+
+/*? SEGUNDA DIV DA SECTION 1 */
+
+.conteudo-capa {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: /*TETO*/2rem /*LADO*/0;
+    width: 100%;
+} 
+
+.textinhos {
+   font-family: "Inter", sans-serif;
+   color: #E0D7D7;
+}
+
+.nome-album {
+    font-family: "EB Garamond", serif;
+    color: #E0D7D7;
+    font-size: 3rem;
+}
+
+.nota-d {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+.nota{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.vetor-nota-d {
+    /* largura */
+    width: 30px;
+    /* altura */
+    height: 30px;
+    margin: 0;
+}
+
+.h3-pagPost-d {
+     font-family: "Inter", sans-serif;
+     color: #E0D7D7;
+}
+
+
+.dados-capa-d {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.containerEstrelas{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.estrela {
+    width: 3rem;
+}
+
+#sobre-d {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.conceito {
+    background-color: #3B111F;
+    border-radius: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 5px solid #792B3C;
+    text-align: justify;
+    padding: /*TETO*/3vh /*LADO*/3vw;
+}
+
+.conteudo-faixas-d {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 2rem;
+}
+
+.musica-d {
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.dados-faixa-d {
+    display: flex;
+    gap: 1rem;
+    align-items: start;
+    width: 100%;
+}
+
+.nome-tempo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: start;
+    width: 100%;
+}
+
+.agrupamento-faixas-d {
+    /*! tem q colocar o display flex senao o gap é ignorado */
+    display: flex;
+    /*! coloquei pq o padrao do display flex é row (lado a lado) ai assim fica na coluna */
+    flex-direction: column;
+
+    gap: 4vh;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+#faixas-d {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5vh 0;
+    gap: 1rem;
+}
+
+.play {
+    font-size: 2rem;
+    color: #F09859;
+}
+
+.play:hover {
+    cursor: pointer;
+}
+
+.faixa {
+    width: 4.2vw;
+}
+
+/*! funçao q faz o disco rodar */
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.h2-sobre-d {
+    font-family: "Inter", sans-serif;
+     color: #F09859;
+     text-align: center;
+}
+
+
+
+#titulo-faixas-d {
+    font-family: "Inter", sans-serif;
+    color: #E0D7D7;
+}
+
+
+.nome-faixa-d {
+    font-family: "Montserrat", sans-serif;
+    color: #E0D7D7;
+    display: flex;
+    text-align: left;
+    width: 100%;
+}
+
+.textinhos-sobre {
+    color: #E0D7D7;
+     font-family: "Montserrat", sans-serif;
+}
+
+.postindividual{
+     width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+   
+    background: linear-gradient(to bottom, #5B162D 25%, #000 78%);
+    background-attachment: fixed; /* Fixa apenas a imagem/gradiente de fundo */
+    background-size: cover;
+}
+
+.linha-princ {
+    background-color: #E0D7D7;
+    width: 80%;
+    height: 2px;
+}
+
+
+.linha-d {
+    background-color: #792B3C;
+    width:100%;
+    height: 0.1rem;
+}
+.mobile{
+    display:none;
+}
+
+.desk{
+    display:flex;
+    grid-column: 1 / -1;
+}
+
+.seta{
+    width: 80%;
+    display: flex;
+    align-items: start;
+    position: relative;
+    top: 2rem;
+}
+
+.setaDentro {
+    width: 3rem;
+}
+
+@media (max-width:1238px){
+    .capa-album-d{
+        width: 16rem;
+    height: 40vh;
+
+    border-radius: 0.7rem;
+    }
+
+    
+   .disco-d {
+        height: 16rem; 
+      
+        left: 5.3rem;
+        
+    }
+
+      /* *Animação do disco deslocando e girando */
+    .disco-deslocando-e-girando {
+        animation: girar 3s linear 1s infinite;
+        left: 8.5rem;
+    }
+
+    .containerEstrelas{
+        width: 100%;
+    }
+   
+    .conteudo-faixas-d {
+        grid-template-columns: 1fr;
+    }
+
+    .desk{
+        display:none;
+    }
+
+    .mobile{
+        display:flex;
+    }
+
+    .faixa {
+        width: 5vw;
+    }
+
+    .seta{
+        top: 1rem;
+    }
+
+    .conteudo-capa{
+        padding: 0;
+    }
+
+    .musica-d {
+        width: 100%;
+    }
+
+}
+
+@media (max-width:1132px){
+    #capa-d {
+    flex-direction: column;
+    gap: 4rem;
+   }
+
+   .album-d{
+    width: 100%;
+    top: 3rem;
+   }
+   .disco-d {
+        height: 16rem; 
+      
+        left: 5rem;
+        
+    }
+
+    /* *Animação do disco deslocando e girando */
+    .disco-deslocando-e-girando {
+        animation: girar 3s linear 1s infinite;
+        left: 8.5rem;
+    }
+  
+   .album-foto{
+     width: 13rem;
+    height: 24.3vh;
+   }
+
+   .conteudo-capa-d {
+    padding-left: 0;
+   }
+
+   .dados-capa-d {
+    gap: 1rem;
+   }
+
+   .containerEstrelas{
+    width: 50%;
+}
+
+   #sobre-d {
+    display: flex;
+    flex-direction: column;
+   }
+    
+    .nome-album {
+        font-size: 4rem;
+        width: 100%;
+    }
+
+    .conceito {
+        background-color: #3B111F;
+        border-radius: 10px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        border: 5px solid #792B3C;
+        text-align: justify;
+        padding: /*TETO*/3vh /*LADO*/3vw;
+    }
+
+    .faixa {
+        width: 5vw;
+    }
+
+    .nome-album{
+        width: 80%;
+    }
+
+
+
+}
+
+@media (max-width:950px) {
+
+    #capa-d {
+    flex-direction: column;
+    gap: 5.5rem;
+   }
+   
+   .disco-d {
+        height: 14rem; 
+      
+        left: 5rem;
+        
+    }
+
+    /* *Animação do disco deslocando e girando */
+    .disco-deslocando-e-girando {
+        animation: girar 3s linear 1s infinite;
+        left: 8rem;
+    }
+
+
+    .album-d{
+    width: 100%;
+    top: 3rem;
+   }
+
+   .capa-album-d {
+     width: 14.5rem;
+    height: 35vh;
+   }
+
+   .album-foto{
+     width: 13rem;
+    height: 24.3vh;
+   }
+
+   .conteudo-capa-d {
+    padding-left: 0;
+   }
+
+   .dados-capa-d {
+    gap: 1rem;
+   }
+
+   #sobre-d {
+    display: flex;
+    flex-direction: column;
+   }
+
+    .containerEstrelas{
+        width: 100%;
+    }
+    
+    .nome-album {
+        font-size: 3.5rem;
+        width: 100%;
+    }
+
+    .conceito {
+        background-color: #3B111F;
+        border-radius: 10px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        border: 5px solid #792B3C;
+        text-align: justify;
+        padding: /*TETO*/3vh /*LADO*/3vw;
+    }
+
+    .faixa {
+        width: 7vw;
+    }
+
+}
+
+@media (max-width:585px) {
+
+    #capa-d {
+    flex-direction: column;
+    gap: 9rem;
+   }
+   .disco-d {
+        height: 12.5rem; 
+      
+        left: 3.5rem;
+        
+    }
+
+
+    /* *Animação do disco deslocando e girando */
+    .disco-deslocando-e-girando {
+        animation: girar 3s linear 1s infinite;
+        left: 6rem;
+    }
+
+    .album-d{
+    width: 100%;
+    top: 5rem;
+   }
+
+   .capa-album-d {
+     width: 12rem;
+    height: 30vh;
+   }
+
+   .album-foto{
+     width: 13rem;
+    height: 24.3vh;
+   }
+
+   .conteudo-capa-d {
+    padding-left: 0;
+   }
+
+   .dados-capa-d {
+    gap: 1rem;
+   }
+
+   #sobre-d {
+    display: flex;
+    flex-direction: column;
+   }
+  
+
+    .containerEstrelas{
+        width: 100%;
+    }
+    
+    .nome-album {
+        font-size: 2.1rem;
+        width: 100%;
+    }
+
+    .conceito {
+        background-color: #3B111F;
+        border-radius: 10px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        border: 5px solid #792B3C;
+        text-align: justify;
+        padding: /*TETO*/3vh /*LADO*/3vw;
+    }
+
+    .faixa {
+        width: 13vw;
+    }
+
+    .play {
+        font-size: 2rem;
+    }
+
+   
+
+    .setaDentro {
+        width: 2.5rem;
+    }
+    
+  
+
+
+}

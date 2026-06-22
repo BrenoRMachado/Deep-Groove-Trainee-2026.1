@@ -1,0 +1,350 @@
+@font-face {
+    font-family: 'Fonte-Titulo';
+    src: url('../assets/fontes/TAN\ St.\ Canard\ Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container-login {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: row;
+    color: white;
+}
+
+.titulo-login {
+    font-family: 'Fonte-Titulo';
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.container-titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+    padding-bottom: 2.5%;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h2, input, button, h3 {
+    font-family: "Inter", sans-serif;
+}
+
+.container-form {
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.container-botao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;  
+    margin: 0;
+}
+
+.container-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    align-items: center;
+}
+
+.container-elemento-input {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.mensagem-erro {
+    font-size: 1.5vw;
+    background-color: #ffffff;
+    color: black;
+    padding: 1%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+
+}
+
+.sem-erro {
+    display: none;
+    padding: 0;
+    background-color: none;
+}
+
+.container-logo {
+    height: 30%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.metade-tela-login {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.formulario {
+    background: linear-gradient(#5B162D, black);
+}
+
+.imagem-login {
+    background: url(../assets/background\ cadastro\ ween.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+input, button {
+    border: none;
+}
+
+input, button {
+    font-weight: 600;
+}
+
+.botao-login{
+    background-color: #f18d45;
+    border-radius: 2rem;
+    color: white;
+    font-size: large;
+    height: 2.2rem;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 20rem;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.botao-login:hover{
+    transform: scale(1.035);
+    background-color: #e89b64;
+}
+
+input {
+    border-radius: 2rem;
+    height: 2.2rem;
+    width: 20rem;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-size: large;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.para-cadastro {
+    color: #F09859;
+    text-decoration: underline;
+}
+
+.logo-login {
+    height: 17%;
+    width: 15%;
+    position: absolute;
+    bottom: 0;
+}
+
+.imagem-cadastro {
+    background: url(../assets/background\ cadastro\ ween.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    transition: transform 0.8s ease-in-out;
+}
+
+.mover{
+    transform: translateX(-100%);
+}
+
+button {
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    font-size: inherit;
+}
+
+.container-seta {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 5%;
+    padding-top: 2%;
+}
+
+.seta {
+    font-size: 3rem;
+    transition: transform 0.3s ease;
+}
+
+.seta:hover{
+    transform: scale(1.075);
+}
+
+.texto-sublinhado {
+    color: #F09859;
+    text-decoration: underline;
+    transition: transform 0.3s ease;
+}
+
+.texto-sublinhado:hover{
+    transform: scale(1.05);
+    color: #e89b64;
+}
+
+.seta:hover {
+    cursor: pointer;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.login-mobile {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.cadastro-mobile {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.imagem-mobile {
+    height: 30%;
+    width: 100%;
+}
+
+.inputs-mobile {
+    display: flex;
+    height: 70%;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(#5B162D, black);
+    color: white;
+    flex-direction: column;
+    gap: 2%;
+    padding-top: 10%;
+}
+
+.container-inputs-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    font-size: 75%;
+    height: 100%;
+    width: 100%;
+}
+
+.container-elemento-input-mobile input{
+    height: 60%;
+}
+
+.container-botao-mobile button{
+    height: 40%;
+}
+
+.imagem-mobile {
+    background: url(../assets/background\ cadastro\ ween.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 30%;
+}
+
+.titulo-login-mobile {
+    font-family: 'Fonte-Titulo';
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.container-logo-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-login-mobile {
+    display: flex;
+    position: absolute;
+    bottom: -2%;
+    height: 15%;
+    width: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.container-seta-mobile{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 5%;
+    padding-top: 2%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+   @media (max-width: 468px) {
+    .login-mobile {
+        display: flex;
+    }
+
+    .container-login {
+        display: none;
+    }
+
+    .mensagem-erro {
+        font-size: 4vw;
+    }
+   }

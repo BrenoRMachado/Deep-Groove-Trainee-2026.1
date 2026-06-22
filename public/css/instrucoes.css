@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'Fonte-Titulo';
+    src: url('../assets/fontes/TAN\ St.\ Canard\ Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+    overflow-x: hidden;
+
+    background: linear-gradient(to bottom, #591025 50%, #000000 100%)  !important; 
+}
+
+h1, h2 {
+    font-family: 'Fonte-Titulo';
+    font-size: smaller;
+}
+
+h3 {
+    text-align: center;
+}
+
+.container-instrucoes {
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    /* faz com que a tela possa crescer quando scrollamos */
+    min-height: 100vh;
+}
+
+.inicio-instrucoes {
+    width: 80vw;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: url(../assets/logo-instrucoes.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.metade-do-inicio-instrucoes {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 50vh;
+}
+
+.metade-do-inicio-instrucoes h2 {
+    font-family: 'Inter'; 
+    font-size: 300%; 
+    margin: 0;
+}
+
+.bem-vindo {
+    font-size: 700%;
+    text-align: center;
+    margin: 0;
+}
+
+.imagem-logo-instrucoes {
+    height: 100%;
+    aspect-ratio: 1/1;
+    opacity: 0.5;
+}
+
+.container-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    border-radius:30px;
+    padding: 5%;
+    text-align: center;
+    z-index: 3;
+    margin-bottom: 2%;
+}
+
+.background-opaco {
+    background-color: #330917;
+    border: 2px solid #F09859;
+}
+
+.amarelo {
+    color: #F09859;
+}
+
+.container-instrucoes-mobile {
+    align-items: center;
+    color: white;
+    display: none;
+    flex-direction: column;
+    width: 100vw;
+    /* faz com que a tela possa crescer quando scrollamos */
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #591025 50%, #000000 100%)  !important; 
+}
+
+.inicio-instrucoes-mobile {
+    width: 80vw;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (max-width: 468px){
+    .container-instrucoes {
+        display: none;
+    }
+
+    .container-instrucoes-mobile {
+        display: flex;
+    }
+
+    .inicio-instrucoes-mobile {
+        padding-top: 10%;
+        padding-bottom: 5%;
+    }
+
+    .inicio-instrucoes-mobile h2 {
+        font-size: 300%;
+    }
+
+    .bem-vindo {
+        font-size: 500%;
+    }
+
+    .inicio-instrucoes {
+        background-size: 300%;
+        width: 100vw;   
+    }
+}
