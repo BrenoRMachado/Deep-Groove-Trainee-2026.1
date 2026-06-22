@@ -126,7 +126,9 @@
                 <img src="<?= $publicacoesRecentes[0]->foto?>">
 
                 <div class="mosaico-informacoes">
-                    <h2 class="mosaico-conceito"><?= $publicacoesRecentes[0]->conceito ?></h2>
+                    <h2 class="mosaico-titulo"><?= $post->titulo ?></h2>
+                    <p class="mosaico-texto"><?= $post->ano ?></p>
+                    <p class="mosaico-texto"><?= $post->artista ?></p>
                 </div>
             </div>
 
