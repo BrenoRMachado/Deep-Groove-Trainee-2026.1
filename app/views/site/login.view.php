@@ -138,7 +138,7 @@
             <div class="titulo-mobile">
                 <h1 class="titulo-login-mobile">Cadastrar</h1>
             </div>
-            <form class="container-form-mobile" action="/cadastro" method="POST">
+            <form id="cadastro-form-mobile" class="container-form-mobile" action="/cadastro" method="POST">
                 <div class="container-inputs-mobile">
                     <div class="container-elemento-input-mobile">
                         <h2>Nome:</h2>

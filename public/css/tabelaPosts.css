@@ -1262,7 +1262,6 @@
 /* Modal de criar posts */
 
 #modal-criar-posts{
-    z-index: 999999;
     display: none;
     position: fixed;
     top: 50%;
@@ -1870,6 +1869,7 @@
 @media (max-width: 769px){
     #modal-criar-usuarios {
             width: 80%;
+            top: 0;
         }
 }
 
@@ -1880,6 +1880,7 @@
     #modal-criar-posts {
             width: 95%;
             height: 95%;
+            top: 55%;
         }
     #modal-criar-posts .area-de-colocar-informacoes {
         width: 90%;

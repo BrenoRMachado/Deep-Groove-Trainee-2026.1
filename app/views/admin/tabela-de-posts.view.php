@@ -133,11 +133,9 @@
 
                         <div class="parte3">
                             <p class="destaqueInfosMobile">AÇÕES</p>
-                            <div class="container-icones-crud-mobile">
                                 <i class="acao bi bi-eye-fill" onclick="abrirModal('modal-visu-post<?= $publicacao->id ?>')"></i>                                              
                                 <i class="acao bi bi-pencil-square <?= $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-edicao-posts<?= $publicacao->id ?>')"></i>
                                 <i class="acao bi bi-trash <?= $_SESSION['id'] == $publicacao->id_usuario ? '' : 'desabilitado' ?>" onclick="abrirModal('modal-excluir-post<?= $publicacao->id ?>')"></i>
-                            </div>
                         </div>
 
                     </div>
@@ -231,7 +229,7 @@
                         </div>
 
                         <figure class="imgpostvi">
-                            <i class="icone-capap bi bi-image"></i>
+                            <img class="foto-album-criar-modal" src="<?= $publicacao->foto ?>">
                         </figure>
 
                         <div class="X">
@@ -293,7 +291,7 @@
                         </section>
 
                         <figure class="imgpostex">
-                            <i class="icone-capap bi bi-image"></i>
+                            <img class="foto-album-criar-modal" src="<?= $publicacao->foto ?>">
                         </figure>
 
                         <div class="X">
